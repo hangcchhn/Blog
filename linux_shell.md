@@ -1,0 +1,204 @@
+# Linux Shell
+
+## 压缩文件
+
+```
+
+tar -xvf xxx.tar
+tar -zxvf xxx.tar.gz
+tar -jxvf xxx.tar.bz2
+tar -Zxvf xxx.tar.Z
+tar -Jxvf xxx.tar.xz
+
+unzip xxx.zip
+unrar e xxx.rar
+
+xz -d xxx.tar.xz 
+# 解压xz文件生成tar文件
+
+
+tar -cvf xxx.tar xxx
+tar -zcvf xxx.tar.gz xxx
+tar -jcvf xxx.tar.bz2 xxx
+tar -Zcvf xxx.tar.Z xxx
+tar -Jcvf xxx.tar.xz xxx
+
+
+
+```
+
+## 远程控制
+```
+
+ssh remote_user@remote_host
+
+
+scp local_file remote_user@remote_host:remote_path
+
+scp remote_user@remote_host:remote_file local_path 
+
+scp -R local_dir remote_user@remote_host:remote_path
+
+scp -R remote_user@remote_host:remote_file local_path
+
+```
+
+
+## 时区时间
+
+```
+# 时间
+# 查询时区时间
+date
+# 修改时间
+date -s "yyyy-MM-dd HH:mm:ss"
+
+
+# 时区：GMT|CST
+# 查看当前时区
+cat /etc/localtime
+# 查看所有时区
+cd /usr/share/zoneinfo/
+
+# 修改时区为GMT
+rm -f /etc/localtime
+cp /usr/share/zoneinfo/GMT0 /etc/localtime
+
+
+# 修改时区为CST
+rm -f /etc/localtime
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+export TZ=Asia/Shanghai
+
+tzselect
+
+
+```
+
+## 系统命令
+
+
+
+
+```
+
+# 服务状态|开启|停止|重启
+service ****** status|start|stop|restart
+
+# 服务开机启用|禁用
+chkconfig ****** on|off
+
+# 服务状态|开启|停止|重启
+systemctl status|start|stop|restart ******|******.service
+
+# 服务开机启用|禁用
+systemctl enable|disable ******|******.service
+
+
+
+
+```
+
+
+## 复制移动
+
+> 复制copy 
+> 移动move
+
+
+### 删除
+```
+# 选项
+-f（确认）
+-r（递归）
+# 删除文件
+rm -f /path/name.file
+# 删除文件夹
+rm -rf /path/dir/
+```
+
+### 复制
+
+> -f ： 如果有同名文件时才会出现需要确认
+
+```
+# 复制文件到路径
+cp -f /scr/path/name.file /dest/path/
+# 复制并重命名文件
+cp -f /scr/path/name.file /dest/path/name.file
+# 复制文件夹到路径
+cp -rf /scr/path/dir/ /dest/path/
+# 复制并重命名文件夹
+cp -rf /scr/path/dir/ /dest/path/dir/
+```
+### 移动
+
+> -r : 没有这个选项直接移动文件或文件夹
+
+
+```
+# 移动文件到路径
+mv -f /scr/path/name.file /dest/path/
+# 移动并重命名文件
+mv -f /scr/path/name.file /dest/path/name.file
+# 移动文件夹到路径
+mv -f /scr/path/dir/ /dest/path/
+# 移动并重命名文件夹
+mv -f /scr/path/dir/ /dest/path/dir/
+
+
+
+
+```
+
+
+## 关机重启
+
+```
+# 关机
+halt
+shutdown -h now
+shutdown -h n (单位分钟)
+shutdown -h HH:mm:ss
+poweroff
+
+
+# 重启
+reboot
+shutdown -r now
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
