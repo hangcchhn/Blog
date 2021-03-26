@@ -29,16 +29,15 @@ tar -Jcvf xxx.tar.xz xxx
 
 ## 远程控制
 ```
-
+# ssh remote
 ssh remote_user@remote_host
 
-
+# scp local remote
 scp local_file remote_user@remote_host:remote_path
-
-scp remote_user@remote_host:remote_file local_path 
-
 scp -R local_dir remote_user@remote_host:remote_path
 
+# scp remote local
+scp remote_user@remote_host:remote_file local_path 
 scp -R remote_user@remote_host:remote_file local_path
 
 ```
@@ -64,14 +63,24 @@ cd /usr/share/zoneinfo/
 rm -f /etc/localtime
 cp /usr/share/zoneinfo/GMT0 /etc/localtime
 
+sudo cp -f /usr/share/zoneinfo/GMT  /etc/localtime
+sudo cp -f /usr/share/zoneinfo/UTC  /etc/localtime
+
+
 
 # 修改时区为CST
 rm -f /etc/localtime
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
+sudo cp -f /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
 export TZ=Asia/Shanghai
 
 tzselect
+
+
+
+
+
 
 
 ```
@@ -159,14 +168,30 @@ mv -f /scr/path/dir/ /dest/path/dir/
 # 关机
 halt
 shutdown -h now
-shutdown -h n (单位分钟)
-shutdown -h HH:mm:ss
-poweroff
-
 
 # 重启
 reboot
 shutdown -r now
+
+
+
+# 定时关机
+shutdown -h n (单位分钟)
+shutdown -h HH:mm
+shutdown -h HH:mm:ss
+
+# 断电关机
+poweroff
+
+# 账户
+login:chench
+# 密码
+password:chench
+# 注销
+logout
+# 退出
+exit
+
 
 
 ```

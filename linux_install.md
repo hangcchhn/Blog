@@ -48,11 +48,24 @@ dpkg -i xxx.deb
 
 ```
 
-sudo apt install xxx
+ 
+apt install xxx
 apt remove xxx
+apt remove --purge xxx
+apt autoremove xxx
 
 apt update
 apt upgrade
+
+
+apt search xxx
+apt show xxx
+
+
+
+
+
+
 
 ```
 
@@ -62,8 +75,7 @@ apt upgrade
 
 ```
 
-yum install --assumeyes xxx
-yum install -y xxx
+yum install xxx
 yum remove xxx
 
 yum update
@@ -86,16 +98,40 @@ rpm -e xxx
 ```
 
 
-## package
+
+
+
+
+
+## dpkg(Debian Package)
+
+```
+# 安装
+dpkg i xxx.deb
+# 列表
+dpkg -L xxx
+dpkg -l xxx
+# 查询状态
+dpkg -s xxx
+# 显示包
+
+
+# 卸载软件删除配置
+dpkg -P|--purge xxx
+# 卸载软件保留配置
+dpkg -r|--remove xxx
+
 
 ```
 
-# java 
-rpm -ivh jdk-8u144-linux-x64.rpm
-# /usr/java
+
+## epel(Extra Packages for Enterprise Linux)
+
+```
 
 
-# epel(Extra Packages for Enterprise Linux)
+
+# 安装企业linux额外package发布
 yum install epel-release
 
 
