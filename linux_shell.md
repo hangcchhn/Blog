@@ -173,15 +173,28 @@ shutdown -h now
 reboot
 shutdown -r now
 
+# 取消
+shutdown -c
 
 
-# 定时关机
-shutdown -h n (单位分钟)
-shutdown -h HH:mm
-shutdown -h HH:mm:ss
+# 定时
+shutdown -h|-r n (单位分钟)
+shutdown -h|-r HH:mm
+shutdown -h|-r HH:mm:ss
 
-# 断电关机
+# 断电
 poweroff
+
+
+# 初始化
+init n
+# 0 - 停机
+# 1 - 单用户模式
+# 2 - 多用户，没有 NFS
+# 3 - 完全多用户模式(标准的运行级)
+# 4 – 系统保留的
+# 5 – X11 （x window)
+# 6 - 重新启动
 
 # 账户
 login:chench
