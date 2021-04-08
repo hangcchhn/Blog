@@ -42,14 +42,15 @@ pasv_promiscuous=YES
 ```
 # vsftp使用系统用户作为登录用户步骤
 # 创建路径
-mkdir /ftp_path
+mkdir -p /ftp_path
 # 添加用户
 useradd -s /sbin/nologin -d /ftp_path ftp_user
 # 修改密码
 passwd ftp_user
-password
-password
-
+ftp_passwd
+ftp_passwd
+# 编写脚本创建用户修改密码
+echo ftp_user:ftp_passwd|chpasswd
 # 修改权限
 chown -R ftp_user:ftp_user /ftp_path
 chmod -R 755 /ftp_path
@@ -118,36 +119,24 @@ reboot
 ### 嵌套配置
 
 ```
-# 用户组
-mkdir /ftp_path
-useradd -s /sbin/nologin -d /ftp_path ftp_user
-passwd ftp_user
-password
-password
-chown -R ftp_user:ftp_user /ftp_path
-chmod -R 755 /ftp_path
-
 # 父用户
-mkdir /ftp_path/sup_path
+mkdir -p /ftp_path/sup_path
 useradd -s /sbin/nologin -d /ftp_path/sup_path sup_user
-passwd sup_user
-password
-password
-chown -R ftp_user:sup_user /ftp_path/sup_path
+echo sup_user:sup_passwd|chpasswd
+chown -R sup_user:sup_user /ftp_path/sup_path
 chmod -R 755 /ftp_path/sup_path
 
 # 子用户
-mkdir /ftp_path/sup_path/sub_path
+mkdir -p /ftp_path/sup_path/sub_path
 useradd -s /sbin/nologin -d /ftp_path/sup_path/sub_path sub_user
-passwd sub_user
-password
-password
-chown -R ftp_user:sub_user /ftp_path/sup_path/sub_path
+echo sub_user:sub_passwd|chpasswd
+# 注意给子用户绑定父用户组
+chown -R sup_user:sub_user /ftp_path/sup_path/sub_path
 chmod -R 755 /ftp_path/sup_path/sub_path
 
-# 挂载父子目录
-mkdir /ftp_path/sup_path/pub_path
-mkdir /ftp_path/sup_path/sub_path/pub_path
+# 子目录下的公共目录挂载父目录下公共目录（注意挂载命令必须在分配权限之后执行）
+mkdir -p /ftp_path/sup_path/pub_path
+mkdir -p /ftp_path/sup_path/sub_path/pub_path
 mount --bind /ftp_path/sup_path/pub_path /ftp_path/sup_path/sub_path/pub_path
 ```
 
