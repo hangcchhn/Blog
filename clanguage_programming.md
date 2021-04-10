@@ -1,6 +1,6 @@
 
 # programming
-> 程序设计
+> C语言程序设计
 
 ## 一、vim编辑器
 	vim helloworld.c

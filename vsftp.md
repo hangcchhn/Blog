@@ -1,6 +1,5 @@
-# Linux Vsftp
-> Very Secure FTP 
-> Unix/Linux 系统自带
+# Vsftp
+> Very Secure FTP —— Unix/Linux 系统自带
 
 
 ## 命令

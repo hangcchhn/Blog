@@ -1,6 +1,6 @@
-# Linux Install
+# Linux Install Command
 
-> 安装软件
+> Linux系统软件安装命令
 
 
 ## Unix/Linux

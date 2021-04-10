@@ -1,8 +1,9 @@
 # Zookeeper
 
-## 配置
+## 安装配置
 
-### 简单配置
+### 单机部署
+
 ```
 
 tar -zxvf zookeeper-x.x.x.tar.gz
@@ -54,11 +55,11 @@ ehco 1 > /tmp/zookeeper/zookeeper1/myid
 
 ### 命令配置
 
-> path
-> data
-> acl权限控制（authority control）：read|write|create|delete|admin|all 
-> watch
-> version
+- path
+- data
+- acl权限控制（authority control）：read|write|create|delete|admin|all 
+- watch
+- version
 
 ```
 /usr/zookeeper/zkCli.sh -server 127.0.0.1:2181

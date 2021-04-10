@@ -53,9 +53,11 @@ update table_ set money_ = money_ - price_ where pk = id and money_ - price_ >= 
 
 - Redis 2.6.12之前：
 ```
-
 SETNX lock true
 EXPIRE lock 1000
+
+两条语句是非原子操作
+
 ```
 - Redis 2.6.12新增：
 
