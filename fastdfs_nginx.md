@@ -64,7 +64,7 @@ store_path0=/root/fdfs/fastdfs/storage
 #store_path1=/home/yuqing/fastdfs1
 
 ```
-1. 修改nginx配置文件
+2. 修改nginx配置文件
 > /usr/local/nginx/nginx-1.15.1/conf/nginx.conf
 - tracker.conf:http.server_port=8998（注意不是22122）
 - storage.conf:store_path0=/root/fdfs/fastdfs/storage（注意加上data）
@@ -87,11 +87,11 @@ server {
 
 }
 ```
-2. 上传图片文件
+3. 上传图片文件
 执行：fdfs_upload_file /etc/fdfs/client.conf /root/fdfs/fastdfs/1.jpg
 返回：group0/M00/00/00/wKgKqGBu8waAfad_AABMhF3BNkg740.jpg
 
-3. 浏览器访问url
+4. 浏览器访问url
 网址：http://192.168.10.153:8998/group0/M00/00/00/wKgKqGBu8waAfad_AABMhF3BNkg740.jpg
 
 
