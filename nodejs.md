@@ -1,4 +1,4 @@
-# Node
+# NodeJS
 
 > nodejs
 
