@@ -2,7 +2,7 @@
 # Install Docker
 
 
-# centos install docker
+## centos install docker
 > 至少centos7|centos6不行
 
 
@@ -64,6 +64,23 @@ vim /etc/docker/daemon.json
   "registry-mirrors": ["https://registry.docker-cn.com"]
 }
 systemctl restart docker.service
+```
+
+
+## ubuntu install docker
+
+```
+
+# 卸载老版本
+apt autoremove --purge docker
+# 安装新版本
+apt install docker.io
+
+systemctl daemon-reload
+systemctl start docker
+systemctl enable docker
+
+
 ```
 
 
