@@ -41,7 +41,7 @@ make
 ```
 ./configure --prefix=/usr/local/nginx/nginx-1.14.2
 make && make install
-make install
+
 
 cd /usr/local/nginx/nginx-1.14.2
 

@@ -1,0 +1,221 @@
+
+# MySQL Oracle SQL_Server
+
+## 不同类型数据库
+1. mysql(mariadb)
+
+2. oracle(inspur)
+
+3. sqlserver(sybase)
+
+
+
+
+### 别名as可以省略直接空格隔开 
+> 别名分为表别名 和列别名 
+1. mysql(mariadb)
+as 支持 表别名和列别名 
+ 
+2. oracle(inspur)
+as 只支持列别名 不支持表别名
+
+3. sqlserver(sybase)
+as 支持 表别名和列别名 
+
+
+### 关键字与字段名冲突：
+
+1. mysql(mariadb)
+使用``，例如：`create`
+
+2. oracle(inspur)
+使用""，例如："create"
+
+3. sqlserver(sybase)
+
+
+### 校验表名是否存在
+1. mysql(mariadb)
+select 1 as len from information_schema. tables where table_schema=(select database()) and table_name=?
+
+2. oracle(inspur)
+select 1 as len from user_tables where table_name=upper(?)
+
+3. sqlserver(sybase)
+select 1 as len from sysobjects where type='U' AND name=?
+
+select 1 as len from information_schema. tables where table_name=?
+
+### 查询表名主键列名
+1. mysql(mariadb)
+```sql
+select column_name from information_schema. key_column_usage where table_schema=(select database())  and table_name=?
+```
+
+2. oracle(inspur)
+```sql
+select * from user_cons_columns where constraint_name in(select constraint_name from user_constraints where table_name=upper(?) and constraint_type='P')
+
+select cols. *, cons. * from user_cons_columns as cols, user_constraints as cons where cols. constraint_name= cons. constraint_name and cons. constraint_type='P' and table_name=upper(?)
+```
+
+3. sqlserver(sybase)
+```sql
+select column_name from information_schema. key_column_usage where table_name=?
+```
+### 分页查询：number 查询前多少条记录
+1. mysql(mariadb)
+LIMIT number
+
+LIMIT offset, number
+LIMIT number OFFSET offset
+
+offset 索引下标（从零开始）（如果为零可以省略该参数及其后面的分号）
+number 从下标开始查询前多少条记录（如果为-1表示查询到最后一条）
+
+
+2. oracle(inspur)
+WHERE ROWNUM <= number
+
+3. sqlserver(sybase)
+不支持limit关键字
+SELECT TOP number|percent column_name
+
+
+
+
+
+
+### 判断语法：
+
+1. mysql(mariadb)
+函数if(condition, true_value, false_value)
+如果condition为真则返回true_value，为假则返回true_value
+
+- 分支语句：
+```sql
+case expression
+when value1 then result1
+. . . 
+when valueN then resultN
+else default
+end 
+```
+如果expression等于valueN就返回resultN
+如果expression不等于所有valueN就返回default
+
+
+
+- 搜索语句：
+```sql
+case
+when condition1 then search1
+. . . 
+when conditionN then searchN
+else default
+end 
+```
+如果conditionN为真则返回searchN
+如果conditionN都为假则返回default
+
+
+2. oracle(inspur)
+函数decode(expression, value1, result1, . . . , valueN, resultN, default)
+
+如果expression等于valueN就返回resultN
+如果expression不等于所有valueN就返回default
+
+搜索语句：
+```sql
+case
+whwhenere condition1 then search1
+. . . 
+when conditionN then searchN
+else default
+end 
+```
+
+如果conditionN为真则返回searchN
+如果conditionN都为假则返回default
+
+3. sqlserver(sybase)
+
+- 分支语句：
+```sql
+case expression
+when value1 then result1
+. . . 
+when valueN then resultN
+else default
+end 
+```
+如果expression等于valueN就返回resultN
+如果expression不等于所有valueN就返回default
+
+
+
+- 搜索语句：
+```sql
+case
+when condition1 then search1
+. . . 
+when conditionN then searchN
+else default
+end 
+```
+
+如果conditionN为真则返回searchN
+如果conditionN都为假则返回default
+
+
+- 使用经验：
+1. mysql中使用case-when作为条件，then-else中可以为true和fasle，但在oracle执行相同语句会报错。
+分析原因：mysql使用tinyint(1)存储true和fasle（值1和0）的boolean类型，oracle没有boolean类型
+解决方案：case删除，end删除，第一个when删除，之后的when使用or替换，else使用or替换，or之间的使用()括起来，then使用and替换，
+
+
+
+### 判空函数：
+如果expr1为空则返回expr2
+如果expr1不为空则返回expr1
+
+1. mysql(mariadb)
+`ifnull(expr1,expr2)`
+
+2. oracle(inspur)
+`nvl(expr1,expr2)`
+
+3. sqlserver(sybase)
+`isnull(expr1,expr2)`
+
+### 字符截取函数|时间截取函数
+
+
+- 数值保留函数：函数(number, digits)：number数值，保留小数位数digits
+- 数值保留位数方式：整数使用0替换，小数直接截取，没有四舍五入
+    1. 如果digits大于0，表示保留number几位小数
+    2. 如果digits小于等于0，表示number去掉小数部分，
+    整数部分按digits从底位开始依次使用0替换
+
+
+1. mysql(mariadb)
+
+- 函数`truncate(number, digits)`：number数值，保留小数位数digits
+- 函数`convert(number, decimal(length, digits))`
+
+2. oracle(inspur)
+
+- 函数`trunc(number[, digits])`：number数值，保留小数位数digits
+如果没有digits参数，表示去掉小数，保留整数， 视此状为默认情况
+
+
+3. sqlserver(sybase)
+
+- 函数round(number, digits)：number数值，保留小数位数digits
+- 函数convert(decimal(length, digits), number)
+数据类型decimal(length, digits):保留有效数字
+
+
+
+
+
