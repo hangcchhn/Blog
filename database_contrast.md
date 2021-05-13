@@ -1,7 +1,5 @@
 
-# MySQL Oracle SQL_Server
-
-## 不同类型数据库
+#  不同类型数据库
 1. mysql(mariadb)
 
 2. oracle(inspur)
@@ -26,13 +24,17 @@ as 支持 表别名和列别名
 ### 关键字与字段名冲突：
 
 1. mysql(mariadb)
+```
 使用``，例如：`create`
-
+```
 2. oracle(inspur)
+```
 使用""，例如："create"
-
+```
 3. sqlserver(sybase)
+```
 
+```
 
 ### 校验表名是否存在
 1. mysql(mariadb)
@@ -42,7 +44,7 @@ select 1 as len from information_schema. tables where table_schema=(select datab
 select 1 as len from user_tables where table_name=upper(?)
 
 3. sqlserver(sybase)
-select 1 as len from sysobjects where type='U' AND name=?
+select 1 as len from sysobjects where type='u' and name=?
 
 select 1 as len from information_schema. tables where table_name=?
 
@@ -54,9 +56,9 @@ select column_name from information_schema. key_column_usage where table_schema=
 
 2. oracle(inspur)
 ```sql
-select * from user_cons_columns where constraint_name in(select constraint_name from user_constraints where table_name=upper(?) and constraint_type='P')
+select * from user_cons_columns where constraint_name in(select constraint_name from user_constraints where table_name=upper(?) and constraint_type='p')
 
-select cols. *, cons. * from user_cons_columns as cols, user_constraints as cons where cols. constraint_name= cons. constraint_name and cons. constraint_type='P' and table_name=upper(?)
+select cols. *, cons. * from user_cons_columns as cols, user_constraints as cons where cols. constraint_name= cons. constraint_name and cons. constraint_type='p' and table_name=upper(?)
 ```
 
 3. sqlserver(sybase)
@@ -65,26 +67,46 @@ select column_name from information_schema. key_column_usage where table_name=?
 ```
 ### 分页查询：number 查询前多少条记录
 1. mysql(mariadb)
-LIMIT number
+```sql
+limit _number
 
-LIMIT offset, number
-LIMIT number OFFSET offset
+limit _offset, _number
+limit _number offset _offset
 
-offset 索引下标（从零开始）（如果为零可以省略该参数及其后面的分号）
-number 从下标开始查询前多少条记录（如果为-1表示查询到最后一条）
-
+_offset 索引下标（从零开始）（如果为零可以省略该参数及其后面的分号）
+_number 从下标开始查询前多少条记录（如果为-1表示查询到最后一条）
+```
 
 2. oracle(inspur)
-WHERE ROWNUM <= number
+```sql
+
+-- rownum
+select * from ( select rownum as no_id, column_name ...) t where t.no_id <= _number
+
+-- 
+offset _offset rows fetch next _number rows only
+```
 
 3. sqlserver(sybase)
-不支持limit关键字
-SELECT TOP number|percent column_name
+```sql
+
+select top _number|_percent column_name ...
 
 
+-- sql server >= 2005
+-- 使用行号函数
+row_number() over(order by )
 
+select tmp.* from (select row_number() 
+over(order by _order_by_list) as row, 
+tbl.* from (_select_string) as tbl) as tmp 
+where row between _page_begin and _page_end;
 
+-- sql server >= 2012
 
+offset _offset rows fetch next _number rows only
+
+```
 
 ### 判断语法：
 
@@ -97,12 +119,12 @@ SELECT TOP number|percent column_name
 case expression
 when value1 then result1
 . . . 
-when valueN then resultN
+when valuen then resultn
 else default
 end 
 ```
-如果expression等于valueN就返回resultN
-如果expression不等于所有valueN就返回default
+如果expression等于valuen就返回resultn
+如果expression不等于所有valuen就返回default
 
 
 
@@ -111,32 +133,32 @@ end
 case
 when condition1 then search1
 . . . 
-when conditionN then searchN
+when conditionn then searchn
 else default
 end 
 ```
-如果conditionN为真则返回searchN
-如果conditionN都为假则返回default
+如果conditionn为真则返回searchn
+如果conditionn都为假则返回default
 
 
 2. oracle(inspur)
-函数decode(expression, value1, result1, . . . , valueN, resultN, default)
+函数decode(expression, value1, result1, . . . , valuen, resultn, default)
 
-如果expression等于valueN就返回resultN
-如果expression不等于所有valueN就返回default
+如果expression等于valuen就返回resultn
+如果expression不等于所有valuen就返回default
 
 搜索语句：
 ```sql
 case
 whwhenere condition1 then search1
 . . . 
-when conditionN then searchN
+when conditionn then searchn
 else default
 end 
 ```
 
-如果conditionN为真则返回searchN
-如果conditionN都为假则返回default
+如果conditionn为真则返回searchn
+如果conditionn都为假则返回default
 
 3. sqlserver(sybase)
 
@@ -145,12 +167,12 @@ end
 case expression
 when value1 then result1
 . . . 
-when valueN then resultN
+when valuen then resultn
 else default
 end 
 ```
-如果expression等于valueN就返回resultN
-如果expression不等于所有valueN就返回default
+如果expression等于valuen就返回resultn
+如果expression不等于所有valuen就返回default
 
 
 
@@ -159,13 +181,13 @@ end
 case
 when condition1 then search1
 . . . 
-when conditionN then searchN
+when conditionn then searchn
 else default
 end 
 ```
 
-如果conditionN为真则返回searchN
-如果conditionN都为假则返回default
+如果conditionn为真则返回searchn
+如果conditionn都为假则返回default
 
 
 - 使用经验：

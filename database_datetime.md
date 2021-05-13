@@ -184,6 +184,12 @@ select add_months(trunc(sysdate,'year'), +|-n) from dual;
 ```
 
 
+```
+
+
+```
+
+
 ## sqlserver(sybase)
 > 后续补充
 ```sql
@@ -192,5 +198,21 @@ select add_months(trunc(sysdate,'year'), +|-n) from dual;
 ```
 
 
+## contrast
+> 对比
 
+### mysql->oracle
+
+- 字符串与日期时间互转：mysql中可以显式和隐式，oracle中只能显式强制转换
+
+#### 使用mybatis
+- Could not set parameters for mapping
+```xml
+#{dateTime, jdbcType=VARCHAR}
+```
+
+- ORA-01847:月份中日的值必须介于 1 和当月最后一日之间
+```sql
+to_date(dateTime, 'yyyy-mm-dd hh24:mi:ss')
+```
 
