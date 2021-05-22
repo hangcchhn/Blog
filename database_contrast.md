@@ -238,6 +238,14 @@ end
 数据类型decimal(length, digits):保留有效数字
 
 
-
-
+### 字符串拼接
+1. mysql(mariadb)
+```sql
+like concat('%','string','%')
+```
+2. oracle(inspur)
+```sql
+like ('%' || 'string' || '%')
+```
+3. sqlserver(sybase)
 
