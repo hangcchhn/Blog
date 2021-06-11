@@ -249,3 +249,40 @@ like ('%' || 'string' || '%')
 ```
 3. sqlserver(sybase)
 
+
+
+
+### 重复索引插入出错否则更新
+
+> 重复索引包括主键索引和唯一索引
+
+
+1. mysql(mariadb)
+```sql
+-- 单条插入
+insert into table_name(column_list_name) values(value_list_name)
+on duplicate key update column_name = value_name
+
+-- 批量插入
+insert into table_name(column_list_name) values(value1_list_name),(value2_list_name),...
+on duplicate key update column_name = values(value_name)
+
+```
+2. oracle(inspur)
+```sql
+-- 单条插入
+merge into table_name using dual on (pk_uk_column=pk_uk_value)
+when matched then update set column_name = value_name
+when not matched then insert (column_list_name) values(value_list_name)
+
+-- 批量插入
+merge into table_name alias_name using (
+    select (select value1_name1 column_alias1, value1_name1 column_alias2,... from dual 
+        union select value2_name1 column_alias1, value2_name1 column_alias2... from dual ... 
+    ) table_alias on (alias_name.pk_uk_column=table_alias.pk_uk_alias)
+when matched then update set alias_name.column_name = table_alias.column_alias
+when not matched then insert (column_list_name) values(table_alias.alias_list_name)
+
+
+```
+3. sqlserver(sybase)

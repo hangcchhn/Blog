@@ -165,7 +165,7 @@ select timestampdiff(second, '2017-06-01 08:12:25', '2016-06-15 00:00:00');-- -3
 ## oracle(inspur)
 ```sql
 -- 按格式将字符转换为日期
-select to_date('2019-10-21 14:34:15','yyyy-mm-dd hh24:mi:ss') from dual；
+select to_date('2019-10-21 14:34:15','yyyy-mm-dd hh24:mi:ss') from dual;
 -- 相差n天，计算时、分、秒、毫秒相应增删乘数即可
 select to_number(sysdate - (sysdate - n)) * 24 * 60 * 60 * 1000 from dual;
 -- 上个月
