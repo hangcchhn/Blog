@@ -165,7 +165,7 @@ select timestampdiff(second, '2017-06-01 08:12:25', '2016-06-15 00:00:00');-- -3
 ## oracle(inspur)
 ```sql
 -- 按格式将字符转换为日期
-select to_date('2019-10-21 14:34:15','yyyy-mm-dd hh24:mi:ss') from dual；
+select to_date('2019-10-21 14:34:15','yyyy-mm-dd hh24:mi:ss') from dual;
 -- 相差n天，计算时、分、秒、毫秒相应增删乘数即可
 select to_number(sysdate - (sysdate - n)) * 24 * 60 * 60 * 1000 from dual;
 -- 上个月
@@ -184,6 +184,12 @@ select add_months(trunc(sysdate,'year'), +|-n) from dual;
 ```
 
 
+```
+
+
+```
+
+
 ## sqlserver(sybase)
 > 后续补充
 ```sql
@@ -192,5 +198,21 @@ select add_months(trunc(sysdate,'year'), +|-n) from dual;
 ```
 
 
+## contrast
+> 对比
 
+### mysql->oracle
+
+- 字符串与日期时间互转：mysql中可以显式和隐式，oracle中只能显式强制转换
+
+#### 使用mybatis
+- Could not set parameters for mapping
+```xml
+#{dateTime, jdbcType=VARCHAR}
+```
+
+- ORA-01847:月份中日的值必须介于 1 和当月最后一日之间
+```sql
+to_date(dateTime, 'yyyy-mm-dd hh24:mi:ss')
+```
 
