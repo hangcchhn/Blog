@@ -5,10 +5,8 @@
 ## mysql(mariadb)
 ```sql
 
-select now();
-select sysdate();
--- now()始终记录整体开始执行时间
--- sysdate()记录函数执行当前时间
+select now();-- now()始终记录整体开始执行时间
+select sysdate();-- sysdate()记录函数执行当前时间
 select now(), sleep(3), now();
 select sysdate(), sleep(3), sysdate();
 
@@ -21,125 +19,165 @@ select cur[rent_]date[()];
 select cur[rent_]time[()];
 
 
-select date('2017-05-15 10:37:14.123456');-- 获取日期：2017-05-15
-select time('2017-05-15 10:37:14.123456');-- 获取时间：10:37:14.123456
+select date(now());-- 获取日期：yyyy-MM-dd
+select time(now());-- 获取时间：HH:mm:ss
 
-select dayname('2017-05-15 10:37:14.123456');-- monday(返回英文星期)
-select monthname('2017-05-15 10:37:14.123456');-- may(返回英文月份)
-
-```
-
-
-```sql
-select year('2017-05-15 10:37:14.123456');-- 获取年份
-select month('2017-05-15 10:37:14.123456');-- 获取月份
-select day('2017-05-15 10:37:14.123456');-- 获取日
-select hour('2017-05-15 10:37:14.123456');-- 获取时
-select minute('2017-05-15 10:37:14.123456');-- 获取分
-select second('2017-05-15 10:37:14.123456');-- 获取秒
-select microsecond('2017-05-15 10:37:14.123456');-- 获取毫秒
-select quarter('2017-05-15 10:37:14.123456');-- 获取季度
-select week('2017-05-15 10:37:14.123456');-- 20 (获取周)
-select week('2017-05-15 10:37:14.123456', 7);-- ****** 测试此函数在mysql5.6下无效
-select weekofyear('2017-05-15 10:37:14.123456');-- 同week()
-select dayofyear('2017-05-15 10:37:14.123456');-- 135 (日期在年度中第几天)
-select dayofmonth('2017-05-15 10:37:14.123456');-- 5 (日期在月度中第几天)
-select dayofweek('2017-05-15 10:37:14.123456');-- 2 (日期在周中第几天；周日为第一天)
-select weekday('2017-05-15 10:37:14.123456');-- 0
-select weekday('2017-05-21 10:37:14.123456');-- 6(与dayofweek()都表示日期在周的第几天，只是参考标准不同，weekday()周一为第0天，周日为第6天)
-select yearweek('2017-05-15 10:37:14.123456');-- 201720(年和周)
-
-
-select extract(year from '2017-05-15 10:37:14.123456');
-select extract(month from '2017-05-15 10:37:14.123456');
-select extract(day from '2017-05-15 10:37:14.123456');
-select extract(hour from '2017-05-15 10:37:14.123456');
-select extract(minute from '2017-05-15 10:37:14.123456');
-select extract(second from '2017-05-15 10:37:14.123456');
-select extract(microsecond from '2017-05-15 10:37:14.123456');
-select extract(quarter from '2017-05-15 10:37:14.123456');
-select extract(week from '2017-05-15 10:37:14.123456');
-select extract(year_month from '2017-05-15 10:37:14.123456');
-select extract(day_hour from '2017-05-15 10:37:14.123456');
-select extract(day_minute from '2017-05-15 10:37:14.123456');-- 151037(日时分)
-select extract(day_second from '2017-05-15 10:37:14.123456');-- 15103714(日时分秒)
-select extract(day_microsecond from '2017-05-15 10:37:14.123456');-- 15103714123456(日时分秒毫秒)
-select extract(hour_minute from '2017-05-15 10:37:14.123456');-- 1037(时分)
-select extract(hour_second from '2017-05-15 10:37:14.123456');-- 103714(时分秒)
-select extract(hour_microsecond from '2017-05-15 10:37:14.123456');-- 103714123456(日时分秒毫秒)
-select extract(minute_second from '2017-05-15 10:37:14.123456');-- 3714(分秒)
-select extract(minute_microsecond from '2017-05-15 10:37:14.123456');-- 3714123456(分秒毫秒)
-
-```
-
-```sql
-select last_day('yyyy-MM-dd');-- 返回月份中最后一天
--- 增加|减少单位
-select date_add|date_sub('yyyy-MM-dd HH:mm:ss.SSSSSS',interval 1 ?);
--- 年|季度|月|周|天|时|分|秒|毫秒
-year|quarter|month|week|day|hour|minute|second|microsecond
-
--- 根据格式yyyy-MM-dd HH:mm:ss.SSSSSS加减n个单位
-select period_add('yyyy-MM-dd HH:mm:ss.SSSSSS', +|-n)
-
-select period_diff(201706, 201703);
-
--- 日期差值
-select datediff('2017-06-05','2017-05-29');
--- 时间差值
-select timediff('2017-06-05 19:28:37', '2017-06-05 17:00:00');
-
--- 
-
-
-
-
-
+select dayname(now());-- 返回英文星期
+select monthname(now());-- 返回英文月份
 
 ```
 
 
 ```sql
--- 从00:00:00开始计秒数（相互转化）
-select time_to_sec('01:00:05'); -- 3605
-select sec_to_time(3605);-- 01:00:05
+select year(now());-- 获取年yyyy
+select month(now());-- 获取月MM
+select day(now());-- 获取日dd
+select hour(now());-- 获取时HH
+select minute(now());-- 获取分mm
+select second(now());-- 获取秒ss
+
+select microsecond(now());-- 获取毫秒；总是为0
+select quarter(now());-- 获取季度；春季为1
+
+
+select weekofyear(now());-- 当年的第几周
+select dayofyear(now());-- 当年的第几天
+select dayofmonth(now());-- 当月的第几天；同day(now())
+select dayofweek(now());-- 当周的第几天；周日为1
+
+select weekday(now());-- 当周的第几天；周一为0
+select week(now());-- 获取周数；以周日开始算
+select yearweek(now());-- 哪一年的那一周；以周日开始算
+
+```
+
+
+
+
+
+
+## week(date[,mode])
+
+
+- 模式0：一周第一天是星期日；结果返回是0-53；从本年的第一个星期日开始是第一周，前面的计算为第0周
+- 模式1：一周第一天是星期一；结果返回是0-53；假如1月1日到第一个周一的天数超过3天，则计算为本年的第1周。否则为第0周
+- 模式2：一周第一天是星期日；结果返回是1-53；从本年的第一个星期日开始是第一周，前面的计算为上年度的第5x周
+- 模式3：一周第一天是星期一；结果返回是1-53；假如1月1日到第一个周日的天数超过3天，则计算为本年的第1周。否则为上年度的第5x周
+- 模式4：一周第一天是星期日；结果返回是0-53；假如1月1日到第一个周日的天数超过3天，则计算为本年的第1周。否则为第0周
+- 模式5：一周第一天是星期一；结果返回是0-53；从本年的第一个星期一开始是第一周，前面的计算为第0周。
+- 模式6：一周第一天是星期日；结果返回是1-53；假如1月1日到第一个周日的天数超过3天，则计算为本年的第1周。否则为上年度的第5x周
+- 模式7：一周第一天是星期一；结果返回是1-53；从本年的第一个星期一开始是第一周，前面的计算为上年度的第5x周
+
+
+```sql
+-- 模式
+week(date[,mode])
+--不传mode参数时依赖default_week_format参数，默认值为0，
+show variables like 'default_week_format'
+
+yearweek(date[,mode]);-- 同week(date[,mode])
+
+```
+
+
+```sql
+
+select extract(year from now());-- yyyy
+select extract(month from now());-- MM
+select extract(day from now());-- dd
+select extract(hour from now());-- HH
+select extract(minute from now());-- mm
+select extract(second from now());-- dd
+
+select extract(microsecond from now());;-- 获取毫秒；总是为0
+select extract(quarter from now());-- 获取季度；春季为1
+select extract(week from now());-- 获取周数；以周日开始算
+
+select extract(year_month from now());-- yyyyMM
+select extract(day_hour from now());-- HH
+select extract(day_minute from now());-- HHmm
+select extract(day_second from now());-- HHmmss
+select extract(day_microsecond from now());-- HHmmss000000
+select extract(hour_minute from now());-- HHmm
+select extract(hour_second from now());-- HHmmss
+select extract(hour_microsecond from now());-- HHmmss000000
+select extract(minute_second from now());-- mmss
+select extract(minute_microsecond from now());-- mmss000000
+
+```
+
+```sql
+-- 当月的最后一天
+select last_day(now());
+
+-- 增加|减少单位(年|季度|月|周|天|时|分|秒|毫秒)
+select date_add|date_sub(now(),interval 1 year|quarter|month|week|day|hour|minute|second|microsecond);
+
+
+-- 月份操作使用yyMM或yyyyMM，加不加引号都可以
+-- 增加|减少n个月输出
+select period_add([yy]yyMM, +|-n);
+-- 月份相差：前面-后面
+select period_diff([yy]yyMM, [yy]yyMM);
+
+-- 日期差值：前面 - 后面 = 相差天数
+select datediff(now(),'yyyy-MM-dd HH:mm:ss');
+-- 时间差值：前面 - 后面= (相差天数 * 24 + 相差小时):相差分钟:相差秒数
+select timediff(now(),'yyyy-MM-dd HH:mm:ss');
+
+```
+
+
+```sql
+-- 从00:00:00开始计秒数（相互转化）：3600 * HH + 60 * mm + ss
+select time_to_sec('01:01:05'); -- 3665
+select sec_to_time(3665);-- 01:01:05
+
 --从0000-00-00开始计天数（相互转化）
-select to_days('0000-00-00'); -- null 
-select to_days('2017-06-05'); -- 736850
-select from_days(0);           -- '0000-00-00' 
-select from_days(736850);      -- '2017-06-05'
+select to_days('0000-00-00');-- null
+select to_days('2000-12-31');-- 730850
+select from_days(0);-- '0000-00-00'
+select from_days(730850);-- '2000-12-31'
  
 -- 字符串转换为日期时间函数：str_to_date(str, format)
 select str_to_date('2017-06-05 19:40:30', '%Y-%m-%d %H:%i:%s');
 
 -- 日期时间格式化
-select date_format('2017-05-12 17:03:51', '%Y年%m月%d日 %H时%i分%s秒');-- 2017年05月12日 17时03分51秒(具体需要什么格式的数据根据实际情况来;小写h为12小时制;)
-select time_format('17:03:51', '%H时%i分%s秒');-- 17时03分51秒(time_format()只能用于时间的格式化)
+select date_format('2017-05-12 17:03:51', '%Y年%m月%d日 %H时%i分%s秒');-- 2017年05月12日 17时03分51秒
 -- str_to_date()和date_formate()为互逆操作
- 
--- 获得国家地区时间格式函数：get_format()
+
+select date('2017-05-12');-- 日期类型：2017-05-12
+select time_format('17:03:51', '%H时%i分%s秒');-- 17时03分51秒
+-- time_format()只能用于时间的格式化
+
+```
+
+
+```sql
+
+-- 拼凑日期、时间函数：makdedate(year,dayofyear), maketime(hour,minute,second)
+select makedate(2017,32);-- '2017-02-01'
+select maketime(19,52,35);-- '19:52:35'
+
+
+
+-- 获得不同地区日期|时间格式函数：get_format()
 get_format(date|time|datetime, 'eur'|'usa'|'jis'|'iso'|'internal')
 
  
--- 拼凑日期、时间函数：makdedate(year,dayofyear), maketime(hour,minute,second)
-select makedate(2017,31);   -- '2017-01-31' 
-select makedate(2017,32);   -- '2017-02-01'
-select maketime(19,52,35);  -- '19:52:35'
- 
 -- 时区（timezone）转换函数：convert_tz(dt,from_tz,to_tz)
-select convert_tz('2017-06-05 19:54:12', '+08:00', '+00:00'); -- 2017-06-05 11:54:12
+select convert_tz('2017-06-05 19:54:12', '+08:00', '+00:00');-- 2017-06-05 11:54:12
  
- 
--- 日期[时间]转换unix的时间戳函数
+ -- 日期[时间]转换unix的时间戳函数
 -- unix_timestamp(), unix_timestamp(date[time]), 
-select unix_timestamp();-- 当前时间的时间戳：1494815779
+select unix_timestamp();-- 当前时间的时间戳
 select unix_timestamp('2017-05-15');-- 指定日期的时间戳：1494777600
 select unix_timestamp('2017-05-15 10:37:14');-- 指定日期时间的时间戳：1494815834
  
 -- 将unix的时间戳转为时间
 -- from_unixtime(unix_timestamp), from_unixtime(unix_timestamp,format)
-select from_unixtime(1494815834);-- 2017-05-15 10:37:14 没有格式默认格式：YYYY-MM-dd HH:mm:ss
-select from_unixtime(1494815834, '%Y年%m月%d日 %H时%分%s秒');-- 获取时间戳对应的格式化日期时间
+select from_unixtime(1494815834);-- 2017-05-15 10:37:14 （默认格式：YYYY-MM-dd HH:mm:ss）
+select from_unixtime(1494815834, '%Y年%m月%d日 %H时%分%s秒');-- 2017年05月15日 10时分14秒
  
 -- 时间戳（timestamp）转换、增、减函数
 select timestamp('2017-05-15');-- 2017-05-15 00:00:00
@@ -164,22 +202,77 @@ select timestampdiff(second, '2017-06-01 08:12:25', '2016-06-15 00:00:00');-- -3
 
 ## oracle(inspur)
 ```sql
--- 按格式将字符转换为日期
-select to_date('2019-10-21 14:34:15','yyyy-mm-dd hh24:mi:ss') from dual;
--- 相差n天，计算时、分、秒、毫秒相应增删乘数即可
-select to_number(sysdate - (sysdate - n)) * 24 * 60 * 60 * 1000 from dual;
--- 上个月
-select to_char(add_months(trunc(sysdate),-1),'yyyy-mm') from dual;
--- 上个月最后一天
-select last_day(add_months(trunc(sysdate),-1)) from dual;
 
+-- 特殊写法：只支持yyyy-mm-dd格式日期
+select date'2000-01-01' from dual;
+
+-- 按格式将字符串和日期时间相互转换
+select to_date('2000-01-01 00:00:00', 'yyyy-mm-dd hh24:mi:ss') from dual;
+select to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss') from dual;
+
+-- 特殊格式：针对结果是英文的格式，注意也区分英文大小写，在此说明后续不再赘述）
+
+select to_char(sysdate, 'month') from dual;-- 全称月份
+select to_char(sysdate, 'mon') from dual;-- 简称月份
+
+select to_char(sysdate, 'day') from dual;-- 全称星期
+select to_char(sysdate, 'dy') from dual;-- 简称星期
+
+select to_char(sysdate, 'yyyy') from dual;-- 年份全四位
+select to_char(sysdate, 'yyy') from dual;-- 年份后三位
+select to_char(sysdate, 'yy') from dual;-- 年份后二位
+select to_char(sysdate, 'y') from dual;-- 年份后一位
+
+select to_char(sysdate, 'mm') from dual;-- 当年的第几月（01-12）
+
+select to_char(sysdate, 'ddd') from dual;-- 当年的第几天（001-366）
+select to_char(sysdate, 'dd') from dual;-- 当月的第几天（01-31）
+select to_char(sysdate, 'd') from dual; -- 当周的第几天（1-7）；周日为1
+
+select to_char(sysdate, 'ww') from dual;-- 当年的第几周
+select to_char(sysdate, 'w') from dual; -- 当月的第几周
+select to_char(sysdate, 'iw') from dual; -- 当月的第几周；ISO标准
+
+select to_char(sysdate, 'cc') from dual;-- 世纪（年份前两位）
+select to_char(sysdate, 'q') from dual; -- 季度；春季为1
+
+
+select trunc(sysdate) from dual; -- 当天
+select trunc(sysdate, 'dd') from dual; --当天
+
+select trunc(sysdate, 'd') from dual;-- 当周的第一天
+select trunc(sysdate, 'mm') from dual;-- 当月的第一天
+
+select trunc(sysdate, 'yyyy') from dual;-- 当年的第一天
+select trunc(sysdate, 'yyy') from dual;-- 当年的第一天
+select trunc(sysdate, 'yy') from dual;-- 当年的第一天
+select trunc(sysdate, 'y') from dual;-- 当年的第一天
+
+select trunc(sysdate, 'hh') from dual;-- yyyy-MM-dd HH:00:00
+select trunc(sysdate, 'mi') from dual;-- yyyy-MM-dd HH:mm:00
+
+-- trunc(数值（小数，正负数）)：保留整数，去掉小数
+-- trunc(数值（小数，正负数），位数（整数，正负数）)：直接截取，不四舍五入
+-- 位数为正数保留几位小数，位数为负数整数后几位使用0替换
+
+-- 截取日期时间某个部分（yyyy|MM|dd|HH|mm|ss）
+select extract(year|month|day|hour|minute|second from sysdate) from dual;
+
+
+-- 当月最后一天
+select last_day(sysdate) from dual;
 
 -- 增|减n天
-select next_day(sysdate,n) from dual;
--- 截取时间戳的某个部分
-select extract(year|month|day|hour|minute|second from sysdate))
+select next_day(sysdate, +|-n) from dual;
+
 -- 增|减n个月
-select add_months(trunc(sysdate,'year'), +|-n) from dual;
+select add_months(sysdate, +|-n) from dual;
+
+-- 相差n天，计算时、分、秒、毫秒相应增删乘数即可
+select to_number(sysdate - (sysdate - n)) * 24 * 60 * 60 * 1000 from dual;
+
+
+
 
 ```
 
@@ -214,5 +307,24 @@ select add_months(trunc(sysdate,'year'), +|-n) from dual;
 - ORA-01847:月份中日的值必须介于 1 和当月最后一日之间
 ```sql
 to_date(dateTime, 'yyyy-mm-dd hh24:mi:ss')
+```
+
+#### 判断时间是上一周
+
+```sql
+-- mysql
+select ... from ... t
+where yearweek(t.datetime) = yearweek(now()) - 1
+
+select date_sub(now(), interval (dayofweek(now()) + 6) day), date_sub(now(), interval (dayofweek(now()) ) day)
+
+
+-- oracle
+
+select sysdate - to_char(sysdate, 'd') - 6, sysdate - to_char(sysdate, 'd') from dual 
+
+-- 
+
+
 ```
 
