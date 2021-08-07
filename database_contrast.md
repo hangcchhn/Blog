@@ -147,10 +147,15 @@ end
 如果expression等于valuen就返回resultn
 如果expression不等于所有valuen就返回default
 
+针对大于或小于等判断条件，可以使用sign函数
+a > b:sign(a - b) == 1
+a < b:sign(a - b) == -1
+a == b:sign(a - b) == 0
+
 搜索语句：
 ```sql
 case
-whwhenere condition1 then search1
+when condition1 then search1
 . . . 
 when conditionn then searchn
 else default
