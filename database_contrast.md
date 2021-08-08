@@ -291,3 +291,21 @@ when not matched then insert (column_list_name) values(table_alias.alias_list_na
 
 ```
 3. sqlserver(sybase)
+
+
+
+#  不同类型数据库
+1. mysql(mariadb)
+```sql
+insert into table_name(column_list_name) values(value1_list_name),(value2_list_name),...
+```
+
+2. oracle(inspur)
+```sql
+insert into table_name(column_list_name) 
+select value1_name1 column_alias1, value1_name1 column_alias2,... from dual 
+    union select value2_name1 column_alias1, value2_name1 column_alias2... from dual ... 
+```
+
+3. sqlserver(sybase)
+
