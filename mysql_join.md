@@ -12,21 +12,23 @@
 
 
 ## 二、外连接
+> 外连接分主表和副表，主表关联副表，
+- 副表字段类似添加到主表作为拓展，
+- 关联关系中副本不存在的字段为NUL
 
 ### 1.左连接
-以左表为准，关联关系中右表不存在的字段为NULL
+以table_left为主
 
 ```
-# select ... from table_l tl left join table_r tr on tl.cl=tr.cr 
+# select ... from table_left tl left join table_right tr on tl.cl=tr.cr 
 
 ```
 
 ### 2.右连接
 
-以右表为准，关联关系中右表不存在的字段为NULL
-
+以右表为主，
 ```
-# select ... from table_l tl right join table_r tr on tl.cl=tr.cr 
+# select ... from table_left tl right join table_right tr on tl.cl=tr.cr 
 
 ```
 
