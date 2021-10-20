@@ -110,3 +110,36 @@ docker run -it -p 3306:3306/tcp --expose 3306/tcp --name ubuntu_mysql cch/ubuntu
 docker run -it -p 33306:3306/tcp --expose 3306/tcp --name ubuntu_mysql cch/ubuntu_mysql
 
 ```
+
+
+
+## Windows 10 Install MySQL 8
+
+
+> mysql-8.0.16-winx64.zip
+
+1. 安装
+
+```
+.\bin\mysqld.exe --initialize --console
+
+.\bin\mysqld.exe --install mysql8
+
+net start mysql8
+
+.\bin\mysql.exe -u root -p
+
+
+
+
+
+```
+2. 卸载
+
+```
+
+net stop mysql8
+
+.\bin\mysqld.exe --remove mysql8
+
+```
