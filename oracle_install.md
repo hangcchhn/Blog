@@ -20,37 +20,34 @@
 free
 
 # 增加2G=2048M
-dd if=/dev/zero of=/oracle/swap bs=1024 count=2048000
+dd if=/dev/zero of=/opt/oracle/swap bs=1024 count=2048000
 
 创建
-mkswap /oracle/swap
+mkswap /opt/oracle/swap
 启动
-swapon /oracle/swap
+swapon /opt/oracle/swap
 
 
 vim /etc/fstab
 # 最后一行追加
-/oracle/swap　　　　swap　　　　swap　　defaults　　0　　0
+/opt/oracle/swap　　　　swap　　　　swap　　defaults　　0　　0
 
 free
 
 关闭
-swapoff /oracle/swap
+swapoff /opt/oracle/swap
 删除
-rm -rf /oracle/swap
+rm -rf /opt/oracle/swap
 
 ```
-
+cd 
 ## 系统设置
 
 
 ```
 
 groupadd oracle 
-useradd -g oracle \
-        -s /bin/bash \
-        -d /oracle \
-        oracle
+useradd -g oracle -d /oracle oracle
 
 passwd oracle
 chench
@@ -98,12 +95,52 @@ sysctl -p /etc/sysctl.d/oracle.conf
 
 
 ```
-
-export ORACLE_HOME=/oracle/orcl
+export ORACLE_SID=orcl
+export ORACLE_BASE=/opt/oracle
+export ORACLE_HOME=$ORACLE_BASE/$ORACLE_SID
 export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib64:/usr/lib64:/usr/local/lib64
-export ORACLE_SID=orcl
 export PATH=$PATH:$ORACLE_HOME/bin
+
+
+```
+
+
+```
+
+oracle
+/root/oracle/database/runInstaller -silent -ignorePrereq -responseFile /root/oracle/database/response/db_install.rsp
+
+
+root
+/opt/oracle/orcl/root.sh
+
+
+oracle 
+/root/oracle/database/runInstaller -silent -executeConfigTools -responseFile /root/oracle/database/response/db_install.rsp 
+
+
+sqlplus sys/oracle12C@orcl as sysdba
+ 
+sqlplus system/oracle12C@orcl
+ 
+
+
+```
+
+```
+lsnrctl status
+
+lsnrctl start
+lsnrctl stop
+
+dbstart /opt/oracle/orcl
+dbshut /opt/oracle/orcl
+
+
+/opt/oracle/orcl/network/admin/listener.ora
+
+
 
 
 ```
