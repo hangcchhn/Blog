@@ -95,6 +95,9 @@ sysctl -p /etc/sysctl.d/oracle.conf
 
 
 ```
+su oracle
+vim ~/.bashrc
+
 export ORACLE_SID=orcl
 export ORACLE_BASE=/opt/oracle
 export ORACLE_HOME=$ORACLE_BASE/$ORACLE_SID
@@ -129,10 +132,17 @@ sqlplus system/oracle12C@orcl
 ```
 
 ```
+要先启动lsnrctl start，
+再执行dbstart启动数据库
 lsnrctl status
 
 lsnrctl start
 lsnrctl stop
+
+
+默认使用环境变量ORACLE_HOME
+dbstart
+dbshut
 
 dbstart /opt/oracle/orcl
 dbshut /opt/oracle/orcl
