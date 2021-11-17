@@ -282,8 +282,8 @@ when not matched then insert (column_list_name) values(value_list_name)
 
 -- 批量插入
 merge into table_name alias_name using (
-    select (select value1_name1 column_alias1, value1_name1 column_alias2,... from dual 
-        union select value2_name1 column_alias1, value2_name1 column_alias2... from dual ... 
+    select (select value1_name1 column_alias1, value1_name2 column_alias2,... from dual 
+        union select value2_name1 column_alias1, value2_name2 column_alias2... from dual ... 
     ) table_alias on (alias_name.pk_uk_column=table_alias.pk_uk_alias)
 when matched then update set alias_name.column_name = table_alias.column_alias
 when not matched then insert (column_list_name) values(table_alias.alias_list_name)
@@ -294,7 +294,7 @@ when not matched then insert (column_list_name) values(table_alias.alias_list_na
 
 
 
-#  不同类型数据库
+###  批量插入
 1. mysql(mariadb)
 ```sql
 insert into table_name(column_list_name) values(value1_list_name),(value2_list_name),...
@@ -303,8 +303,52 @@ insert into table_name(column_list_name) values(value1_list_name),(value2_list_n
 2. oracle(inspur)
 ```sql
 insert into table_name(column_list_name) 
-select value1_name1 column_alias1, value1_name1 column_alias2,... from dual 
+select value1_name1 column_alias1, value1_name2 column_alias2,... from dual 
     union select value2_name1 column_alias1, value2_name1 column_alias2... from dual ... 
+
+merge into table_name alias_name using (
+    select (select value1_name1 column_alias1, value1_name2 column_alias2,... from dual 
+        union select value2_name1 column_alias1, value2_name2 column_alias2... from dual ... 
+    ) table_alias on (alias_name.pk_uk_column=table_alias.pk_uk_alias)
+when not matched then insert (column_list_name) values(table_alias.alias_list_name)
+
+```
+
+3. sqlserver(sybase)
+
+
+
+
+#  批量更新
+1. mysql(mariadb)
+```sql
+
+update table_name alias_name join (
+    select value1_name1 column_alias1, value1_name2 column_alias2,... 
+        union select value2_name1 column_alias1, value2_name2 column_alias2...
+) table_alias on (alias_name.pk_uk_column=table_alias.pk_uk_alias)
+set alias_name.column_name = table_alias.column_alias
+
+
+
+# 依赖主键或唯一索引判断:先删除,再插入;
+replace into table_name(column_list_name) values(value1_list_name),(value2_list_name),...
+
+# 类比 insert into select (字段位置对应)
+replace into table_name(column_list_name) select ...
+# 类比 update set (单个记录)
+replace into table_name set column_name = value_name,...
+
+
+```
+
+2. oracle(inspur)
+```sql      
+merge into table_name alias_name using (
+    select (select value1_name1 column_alias1, value1_name1 column_alias2,... from dual 
+        union select value2_name1 column_alias1, value2_name1 column_alias2... from dual ... 
+    ) table_alias on (alias_name.pk_uk_column=table_alias.pk_uk_alias)
+when matched then update set alias_name.column_name = table_alias.column_alias
 ```
 
 3. sqlserver(sybase)
