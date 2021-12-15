@@ -65,7 +65,13 @@ select cols. *, cons. * from user_cons_columns as cols, user_constraints as cons
 ```sql
 select column_name from information_schema. key_column_usage where table_name=?
 ```
-### 分页查询：number 查询前多少条记录
+### 分页查询
+> _offset 索引下标（从零开始）（如果为零可以省略该参数及其后面的分号）
+> _number 从下标开始查询前多少条记录（如果为-1表示查询到最后一条）
+
+- **特别说明:**
+    - order by 后跟的排序字段如果存在重复或空值时，使用分页查询会出现重复或乱序的问题，解决方案是在排序字段最后再加上唯一索引或主键
+
 1. mysql(mariadb)
 ```sql
 limit _number
@@ -73,8 +79,7 @@ limit _number
 limit _offset, _number
 limit _number offset _offset
 
-_offset 索引下标（从零开始）（如果为零可以省略该参数及其后面的分号）
-_number 从下标开始查询前多少条记录（如果为-1表示查询到最后一条）
+
 ```
 
 2. oracle(inspur)
@@ -108,7 +113,7 @@ offset _offset rows fetch next _number rows only
 
 ```
 
-### 判断语法：
+### 判断语法
 
 1. mysql(mariadb)
 函数if(condition, true_value, false_value)
