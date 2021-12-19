@@ -81,6 +81,9 @@ yum remove xxx
 yum update
 yum upgrade
 
+yum search xxx
+yum info xxx
+
 ```
 
 ## rpm(RedHat Package Manager)
