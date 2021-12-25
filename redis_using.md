@@ -4,8 +4,74 @@
 > redis使用
 
 
+## 0
 
-### 1.数据类型
+
+```
+
+//检查连接
+>ping
+PONG
+
+//打印
+echo print
+>"print"
+
+
+
+//切换数据库
+select 0
+//数据库大小
+dbsize
+
+//信息
+info
+//时间
+time
+//退出
+quit
+
+//监控
+monitor
+
+
+//配置
+config get param
+config set param value
+
+//清空
+flushdb
+flushall
+
+
+//保存
+//rdb文件
+save
+dbsave
+lastsave
+//aof文件
+bgrewriteaof
+
+//关闭
+shutdown save|nosave
+
+//慢日志
+slowlog 
+slowlog len
+slowlog get 10
+
+
+
+//慢日志配置
+config set slowlog-log-slower-than 10000
+config set slowlog-max-len 128
+
+
+```
+
+
+
+## 1.数据类型
 
 命令规则：键key不能有空格和换行；值value随意
 

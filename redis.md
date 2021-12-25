@@ -36,7 +36,7 @@ RedisDesktopManager：https://github.com/uglide/RedisDesktopManager/releases/tag
 apt install redis-server
 
 #### (3)CentOS
-yum  install redis-server
+yum  install redis
 
 #### (4)Mac
 brew install redis
