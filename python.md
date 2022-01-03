@@ -1,74 +1,65 @@
 # Python
 
->python 号称"**胶水语言**" ：网络爬虫和机器学习
+>python 号称"**胶水语言**" 
 
-## 搭建开发环境
-
-### 程序
-#### python
-#### anaconda
-
-### 版本
-#### python2
-- python2.7.14
-
-#### python3
-- python3.6.5
-
-### 开发
-
-#### pycharm
-
-#### ipython
-
-#### jupyter notebook
-
-#### visual studio code
+## 
+- 网络爬虫
+- 科学计算
+- 机器学习
 
 
-### 模块
 
-#### 开发工具
-```
-pip install ipython jupyter notebook
 
-```
+## 版本
 
-#### 虚拟环境
-```
-pip install virtualenv virtualenvwrapper virtualenvwrapper-win
-```
+### Python2
+- 2.7.14
+- 2.7.18
 
-#### 网络爬虫
-```
-pip install scrapy tornado
-```
+### Python3
+- 3.6.5
+- 3.7.3|4
+- 3.8.5
+- 3.9.6|7
 
-#### 科学计算
-```
-pip install numpy scipy pandas matplotlib
+
+## 工具
+
+- ipython
+
+- jupyter notebook
+
+- anaconda
+
+- spyder
+
+- pycharm
+
+- visual studio code
+
+
+## 安装
+
+- linux
+
 ```
 
-#### 机器学习
-```
-pip install scikit-learn keras 
-```
 
-#### 机器学习
-```
-pip install tensorflow tensorboard
-```
+wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
 
-#### 服务端开发
+tar -zxvf Python-3.6.5.tgz
+
+yum install gcc gcc-c++ openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel
+
+./configure --prefix=/usr/local/python3
+
+./configure --enable-optimizations
+
+make
+
+make install
+
 ```
-pip install django flask 
-```
-
-#### 客户端开发
-- 游戏开发：`pip install pygame`
-- 界面开发：`pip install pyqt4 pyqt5`
-
-
 
 
  
