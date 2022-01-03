@@ -86,9 +86,14 @@ limit _number offset _offset
 ```sql
 
 -- rownum
-select * from ( select rownum as no_id, column_name ...) t where t.no_id <= _number
+select column_name,... where rownum <= _number
 
--- 
+select * from ( select rownum no_id, column_name,... ) t 
+where t.no_id > _offset and t.no_id <= _offset + _number
+
+-- 注意order by不影响rownum序号
+
+-- page
 offset _offset rows fetch next _number rows only
 ```
 
