@@ -3,26 +3,45 @@
 
 ## 常见
 ---
-- 间隔符：$a \quad b$
-- 省略号：$a \cdots b$
+- 空格 $a \quad b$
+- 冒号 $x \colon y$
+---
+- 底端对齐的省略号
+    - $1,2 \ldots N$
+    - $1,2 \dotso N$
 
-- 底端对齐的省略号，符号：\ldots，如：$1,2,\ldots,n$
-- 中线对齐的省略号，符号：\cdots，如：$x_1^2 + x_2^2 + \cdots + x_n^2$
+- 中线对齐的省略号
+    - $1,2 \cdots N$
+    - $1,2 \dotsm N$
 
+---
 - 下标：$x_1$
 - 指数：$y^2$
 - 上下标：$z_x^y$
 - 绝对值：$|x|$
 
-#### 
+---
+- 三点
+    - $x \ddots y$
+    - $x \vdots y$
+- 斜线
+    - $x \backslash y$
+    - $x \smallsetminus y$
+
+- 函数：$\operatorname{f}(x)$
+
+
+#### 上
 ---
 
 
-- $\overline{x}$
-- $\underline{x}$
 
-- $\bar{x}$
+- 均值：$\bar{x}$
+- 向量：$\vec{a}$
 
+
+- $\dot{x}$
+- $\ddot{x}$
 
 - $\acute{x}$
 - $\grave{x}$
@@ -33,18 +52,14 @@
 - $\breve{x}$
 - $\tilde{x}$
 
-- $\dot{x}$
-- $\ddot{x}$
-
 - $\widetilde{X}$
 - $\widehat{X}$
 
 
-
-
-- 向量：$\vec{a}$
-
-- 函数：$\operatorname{f}(x)$
+---
+- 上下
+    - $\overline{x}$
+    - $\underline{x}$
 
 ### 加减乘除
 ---
@@ -59,26 +74,22 @@
 ### 分式
 ---
 - $\frac{x+y}{y+z}$
-
-- $\dfrac{1}{3}$ 
-
+- $\dfrac{x+y}{y+z}$
 
 - ${x+y} \over {y+z}$
-
+- ${x+y} \choose {y+z}$
 
 #### 开方
 ---
-
 - 二次根号：$\sqrt{2}$
 - n次根号：$\sqrt[n]{n}$
-
 
  
 #### 对数 
 ---
 - $\ln{2}$
-- $\log_{10}{8}$
 - $\lg{8}$
+- $\log_{10}{8}$
 
 
 
@@ -89,15 +100,12 @@
 - $\int{x}dx$
 - $\int_{1}^{2}{x}dx$
 
-- $\int\limits_{1}^{2}{x}dx$
-
 - $\iint_{1}^{2}{x}dx$
 - $\oint_{1}^{2}{x}dx$
 
 ### 极限
 ---
 - $\lim{a+b}$
-- $\lim_{n\rightarrow+\infty}{a+b}$
 - $\lim\limits_{n\rightarrow+\infty}{a+b}$
 
 ### 累加类乘
@@ -116,8 +124,6 @@
    - $\prod\limits_{n=1}^{N}{x_n}$
 
 
-
-
 ### 关系符合
 
 
@@ -130,20 +136,20 @@
 
 ### 符号
 
-(∀):$\forall$
-(∃):$\exists$
+- (∀):$\forall$
+- (∃):$\exists$
 
 - 无穷(∞)：$\infty$
 - 空集(∅)：$\emptyset$
 
 
 
-$x \subset y$
-$x \supset y$
+- $x \subset y$
+- $x \supset y$
 
-$x \cup y$
-$x \cap y$
-$x \mid y$
+- $x \cup y$
+- $x \cap y$
+- $x \mid y$
 
 
 - 属于：$\in$
@@ -159,13 +165,12 @@ $x \mid y$
 
 
 ### 虚数
----
-z = x $\imath$ + j $\jmath$
 
+z = x $\imath$ + j $\jmath$
+---
 
 
 ### 三角函数
----
 - 角度：$\angle A = 30^\circ$
 
 - 正弦：$\sin(x)$
@@ -173,11 +178,11 @@ z = x $\imath$ + j $\jmath$
 - 正切：$\tan(x)$
 - 余切：$\cot(x)$
 
-
+---
 ## 希腊字母
 
-### 1.大写
 --- 
+### 1.大写
 - Alpha(A):$\Alpha$
 - Beta(B):$\Beta$
 - Chi(X):$\Chi$
@@ -202,9 +207,8 @@ z = x $\imath$ + j $\jmath$
 - Xi():$\Xi$
 - Zeta(Z):$\Zeta$
 
-
-### 2.小写
 ---
+### 2.小写
 - alpha(α):$\alpha$
 - beta(β):$\beta$
 - chi(χ):$\chi$
@@ -231,9 +235,8 @@ z = x $\imath$ + j $\jmath$
 - xi(ξ):$\xi$
 - zeta(ζ):$\zeta$
 
-
-### 3.变量
 ---
+### 3.变量
 - varepsilon(ε):$\varepsilon$ 
 - varkappa(ϰ):$\varkappa$
 - vartheta(ϑ):$\vartheta$
@@ -247,9 +250,8 @@ z = x $\imath$ + j $\jmath$
 
 
 
-
-## 矩阵
 ---
+## 矩阵
 $$
 
 \begin{matrix}
@@ -307,61 +309,73 @@ $$
 
 $$
 
-### 括号
 ---
+### 括号
 
-- $( x + y )$
-- $[ x + y ]$
+- 小括号
+    - $(x)$
+    - $\lgroup X \rgroup$
 
-- $\{ x + y \}$
+- 中括号： 
+    - $[x]$
 
+- 花括号
+    - $\{ X \}$
+    - $\lbrace X \rbrace$
 
-- $\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$
-
-- $\left(x\right)$
-- $\left(X\right)$
-
-
-
-
-- ${n+1 \choose k}={n \choose k}+{n \choose k-1}$
-
-
-
-- 下划线符号：$\underline{x+y}$
-- 上大括号：$\overbrace{a+b+c+d}^{2.0}$
-- 下大括号：$a+\underbrace{b+c}_{1.0}+d$
-
-
-
+---
+-  括号大小
 $$
+\small( X \small)
+\big( X \big)
+\Big( X \Big)
+\bigg( X \bigg)
+\Bigg( X \Bigg)
 
 \newline
+\small[ X \small]
+\big[ X \big]
+\Big[ X \Big]
+\bigg[ X \bigg]
+\Bigg[ X \Bigg]
 
 \newline
-
-\newline
-
+\small\{ X \small\}
+\big\{ X \big\}
+\Big\{ X \Big\}
+\bigg\{ X \bigg\}
+\Bigg\{ X \Bigg\}
 
 $$
+---
+- 成对符号
+    - $\langle$
+    - $\rangle$
 
 
-$$
-f\left(
-   \left[ 
-     \frac{
-       1+\left\{x,y\right\}
-     }{
-       \left(
-          \frac{x}{y}+\frac{y}{x}
-       \right)
-       \left(u+1\right)
-     }+a
-   \right]^{3/2}
-\right)
-\tag{1-1}
-$$
+    - $\lvert$
+    - $\rvert$ 
 
+    - $\lVert$
+    - $\rVert$ 
+
+    - $\lmoustache$
+    - $\rmoustache$
+
+---
+- 取整符号
+    - $\lceil$
+    - $\rceil$
+    - $\lfloor$
+    - $\rfloor$
+
+
+
+
+---
+- 大括号
+    - 上大括号：$\overbrace{a+b+c+d}^{2.0}$
+    - 下大括号：$a+\underbrace{b+c}_{1.0}+d$
 
 $$
 f(n)= 
@@ -369,5 +383,22 @@ f(n)=
 n/2, & \text {if $n$ is even} \\ 
 3n+1, & \text{if $n$ is odd} 
 \end{cases} 
+\tag{1-1}
 $$
+
+$$
+
+\newline
+
+\newline
+
+\newline
+
+
+$$
+
+
+
+
+
 

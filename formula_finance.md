@@ -7,7 +7,7 @@
 ## 指标
 
 
-- NAV:单位净值
+- NAV(Net Asset Value):单位净值
 
     - 基金单位净值 = (总资产 - 总负债) / 基金单位总数
     - 已知价又叫历史价，是指上一个交易日的收盘价
@@ -47,7 +47,7 @@
 - 区间内月份数：$ T $
 
 
-- 无风险收益率：$ r_f $
+- 无风险收益率：$ Rf_t $
 
 
 - t期：年y，月m，周w，天d
@@ -76,19 +76,74 @@ $$
 
 - 最大下跌
 $$
-Worst = min{r_1,\ldots r_n, 0}
+Worst = min(r_1,\ldots r_n, 0)
 $$
 
 
 
-- 最大回撤
+- 最大回撤：累计净值(分红再投)
+
+$$
+MaxDrawdown_t = max(max(
+    \frac{CNAV_i - CNAV_j}{CNAV_i}
+),0)
+
+$$
+
+- 胜率
+
+$$
+WinRatio= \frac{count(Rp_t - Rb_t)}{N}
+$$
 
 - 盈亏比
 $$
-    GainLossRatio = 
+GainLossRatio_t = -\frac{
+    \sum\limits_{t = 1}^{T}{Rp_t},(Rp_t>0)
+}{
+    \sum\limits_{t = 1}^{T}{Rp_t},(Rp_t<0)
+}
 $$
 
-- 标准差(Standard Deviation)
+
+
+- $\beta$:系统风险
+
+$$
+\beta = \frac{
+    \sum\limits_{t = 1}^{T}{(Rp_t \cdot Rb_t)} - 
+    \dfrac{1}{T} \sum\limits_{t = 1}^{T}{Rp_t} 
+    \cdot \sum\limits_{t = 1}^{T}{Rp_t}
+}
+{
+    \sum\limits_{t = 1}^{T}{Rb_t^2} -
+    \dfrac{1}{T} \bigg(\sum\limits_{t = 1}^{T}{Rp_t}\bigg)^2
+}
+$$
+
+- $\alpha$:超额收益
+
+$$
+\alpha_t = \bar{Rp_t} - \beta_t \cdot \bar{Rm_t}
+$$
+
+
+- $R^2$:拟合优度(Goodness of Fit)
+
+$$
+
+R^2 = \frac{
+    
+    \lbrace
+    \rbrace
+}{
+
+}
+$$
+
+# 
+
+- $\sigma$:标准差(Standard Deviation)
 $$
 
 \sigma_t = \sqrt{\frac{\sum\limits_{t = 1}^{T}{(r_t - \bar{r}_t) ^ 2}}{T - 1}}
@@ -97,7 +152,7 @@ $$
 
 - 下行(Downside)风险(标准差)
 $$
-\sigma_{d,t} = \sqrt{\frac{\sum\limits_{t = 1}^{T}{min(r_t - r_f, 0) ^ 2}}{T - 1}}
+\sigma_{d,t} = \sqrt{\frac{\sum\limits_{t = 1}^{T}{min(r_t - Rf_t, 0) ^ 2}}{T - 1}}
 
 $$
 
@@ -109,7 +164,7 @@ $$
 $$
 
 
-Sortino Ratio = \frac{\frac{1}{T}\sum\limits_{t = 1}^{T}{(r_t - r_f)}}{\sigma_{d,t}}
+Sortino Ratio = \frac{\frac{1}{T}\sum\limits_{t = 1}^{T}{(r_t - Rf_t)}}{\sigma_{d,t}}
 
 $$
 
