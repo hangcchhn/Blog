@@ -1,0 +1,173 @@
+
+
+### SMDD(Smoothed Multivariate Discrete Distributions)
+> 平滑多变量离散分布模型
+
+
+- 收益率r
+- 离散均匀分布随机变量R
+
+
+收益率Ri
+置信区间：$\theta$=0.05
+
+
+$$
+
+
+
+
+\sigma = \sqrt{\Omega}
+
+\newline
+
+\Omega = \phi^2 \cdot D[R_i]
+
+
+\newline
+
+\phi = \sqrt{(1 + \theta)} - 1 
+
+$$
+- 方差
+$$
+
+\newline
+
+D[R_j] = \frac{1}{j} \sum\limits_{i = 1}^{j}{(R_i - \overline{R}) ^ 2}
+
+\newline
+
+$$
+
+- SMDD
+
+$$
+\newline
+
+f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma}  e^{[-\frac{1}{2}(\frac{x - \mu}{\sigma})^2]}
+
+\newline
+
+f(x) = \frac{1}{n} \sum\limits_{j = 1}^{n}{f(x;R_j,\sigma)}
+
+
+\newline
+
+
+$$
+
+
+
+- $LPM_m(\tau)$是m阶下偏矩， τ是期望收益率
+
+$$
+
+\newline
+
+LPM_m(\tau)=\int_{1}^{2}{(\tau - x)^m f(x) dx}
+
+\newline
+
+
+$$
+
+$$
+
+LPM_1(\tau) = \frac{1}{n} \sum\limits_{j = 1}^{n}
+{[\sigma^2 f(\tau;R_j,\mu) + (\tau - R_j)f(\tau;R_j,\mu)]}
+
+$$
+
+
+$$
+
+
+LPM_2(\tau) = \frac{1}{n} \sum\limits_{j = 1}^{n} {\left[
+(\tau - R_j)\sigma^2 f(\tau;R_j,\mu) + [(\tau - R_j)^2 + \sigma^2] f(\tau;R_j,\mu)
+\right]}
+
+$$
+
+
+$$
+
+$$
+
+
+$$
+
+$$
+
+
+$$
+
+$$
+
+
+- 下行偏差
+$$
+
+DD(\tau) = \sqrt{LPM_2(\tau)}
+
+$$
+
+
+
+
+
+- CDF:累积概率密度函数$F(x)$
+
+- $F(x)$的反函数是$F^{-1}(x)$
+
+
+### VaR(Value at Risk):风险价值
+> 在一定的置信水平下，某一金融资产（或证券组合）在未来特定的一段时间内的最大可能损失。
+
+- 概率p
+$$
+
+VaR(p) = -F^{-1}(p)
+
+\newline
+
+
+
+
+\newline
+
+$$
+- 第k个收益率r_k
+$$
+
+k = |T \cdot p|
+\newline
+
+r_k
+
+\newline
+
+d = T \cdot p - k
+\newline
+
+VaR(p) = - 
+\begin{cases} 
+null, & if \quad k = 0 \\ 
+(r_k - r_{k-1}) \cdot d + r_{k-1}, & if \quad k > 0
+\end{cases} 
+\newline
+
+
+$$
+
+### CVaR(Conditional Value at Risk):条件风险价值
+- 估值函数E[X]
+$$
+
+CVaR(p) = E[-X|X \leq -VaR(p)]
+\newline
+
+CVaR(p) = - \frac{1}{k}\sum\limits_{i=1}^{k}{r_i}
+
+$$
+

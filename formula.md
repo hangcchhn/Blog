@@ -69,6 +69,9 @@
 ---
 - $\int{x}dx$
 - $\int_{1}^{2}{x}dx$
+
+- $\int\limits_{1}^{2}{x}dx$
+
 - $\iint_{1}^{2}{x}dx$
 - $\oint_{1}^{2}{x}dx$
 
@@ -344,8 +347,8 @@ $$
 $$
 f(n)= 
 \begin{cases} 
-n/2, & \text {if $n$ is even} \\ 
-3n+1, & \text{if $n$ is odd} 
+n/2, & \text {if n is even} \\ 
+3n+1, & \text{if n is odd} 
 \end{cases} 
 $$
 
