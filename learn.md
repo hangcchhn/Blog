@@ -90,21 +90,6 @@ LPM_2(\tau) = \frac{1}{n} \sum\limits_{j = 1}^{n} {\left[
 $$
 
 
-$$
-
-$$
-
-
-$$
-
-$$
-
-
-$$
-
-$$
-
-
 - 下行偏差
 $$
 
@@ -114,6 +99,64 @@ $$
 
 
 
+#  模型
+
+$$
+
+y_t - Rf_t = \alpha + \epsilon + 
+\sum\limits_{i}^{}{\beta_1(x_i - Rf_t)}
+
+$$
+
+
+$$
+
+$$
+
+- SDS(Standard Deviation Score):标准差比值法
+- 风格漂移(Style Drift)
+
+$$
+
+SDS = \sqrt{\frac{1}{T - 1} \cdot \sum\limits_{c = 1}^{N}{
+    \sum\limits_{t = 1}^{N}{(w_{c,t} - \overline{w_c})^2}}}
+
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 指标
 
 
 - CDF:累积概率密度函数$F(x)$
@@ -143,7 +186,7 @@ $$
 k = |T \cdot p|
 \newline
 
-r_k
+
 
 \newline
 
