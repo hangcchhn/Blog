@@ -16,11 +16,30 @@
 
 #### 
 ---
-- $\overline{X}$
+
+
+- $\overline{x}$
+- $\underline{x}$
 
 - $\bar{x}$
-- $\tilde{x}$
+
+
+- $\acute{x}$
+- $\grave{x}$
+
+- $\check{x}$
 - $\hat{x}$
+
+- $\breve{x}$
+- $\tilde{x}$
+
+- $\dot{x}$
+- $\ddot{x}$
+
+- $\widetilde{X}$
+- $\widehat{X}$
+
+
 
 
 - 向量：$\vec{a}$
@@ -124,7 +143,7 @@ $x \supset y$
 
 $x \cup y$
 $x \cap y$
-
+$x \mid y$
 
 
 - 属于：$\in$
@@ -347,8 +366,8 @@ $$
 $$
 f(n)= 
 \begin{cases} 
-n/2, & \text {if n is even} \\ 
-3n+1, & \text{if n is odd} 
+n/2, & \text {if $n$ is even} \\ 
+3n+1, & \text{if $n$ is odd} 
 \end{cases} 
 $$
 
