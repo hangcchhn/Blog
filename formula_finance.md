@@ -3,10 +3,29 @@
 > 金融公式
 
 
-
+---
 ## 指标
 
 
+
+
+- 区间：年y，月m，周w，天d
+
+- t期：2021，2021-12，202152，2021-12-31
+
+- 数据（净值和收益率）频率默认按月计算
+
+- 区间单位（月份）数：$ T $
+
+- 常用区间：
+    - 近一月，近三月，近六月，
+    - 近一年，近两年，近三年，近五年，近十年，
+    - 今年以来，成立以来
+
+- 截止日期
+
+
+---
 - NAV(Net Asset Value):单位净值
 
     - 基金单位净值 = (总资产 - 总负债) / 基金单位总数
@@ -37,46 +56,41 @@
 
 
 
-- 区间：
-    - 近一月，近三月，近六月，
-    - 近一年，近两年，近三年，近五年，近十年，
-    - 今年以来，成立以来
 
-- 数据（净值和收益率）频率默认按月计算
-
-- 区间内月份数：$ T $
+---
 
 
-- 无风险收益率：$ Rf_t $
 
-
-- t期：年y，月m，周w，天d
+- 投资组合(Portfolio)的区间（默认月度）收益率$ Rp_t $
 $$
+Rp_t = \frac{CNAV_{t} - CNAV_{t - 1}}{CNAV_{t - 1}}
+
+$$
+
+- 年化(Annual)收益率$ Ra_t $
+$$
+
+Ra_t = (1 + r_t) ^ {1 / y} - 1
+
+\newline
+
 y = m / 12 = w / 52 = d / 365.25 
 $$
 
-- 月度收益率：$ r_t $
-$$
-r_t = 
-
-$$
 
 
+- 无风险收益率$ Rf_t $
 
 
-- 年化收益率
+- 基准收益率$ Rb_t $
+- 市场收益率$ Rm_t $
 
-$$
-r_a = (1 + r_t) ^ {1 / y} - 1
+- 平均收益率$ \bar{R}p_t $
 
-$$
-
-
-
-
+---
 - 最大下跌
 $$
-Worst = min(r_1,\ldots r_n, 0)
+MaxFall = min(r_1,\ldots r_n, 0)
 $$
 
 
@@ -105,48 +119,281 @@ GainLossRatio_t = -\frac{
 }
 $$
 
+---
 
+- $\sigma$:标准差(Standard Deviation)
+$$
+
+\sigma_t = \sqrt{
+    \dfrac{
+        \sum\limits_{t = 1}^{T}{(Rp_t - \bar{R}p_t)^2
+    }}{T - 1}
+}
+
+$$
 
 - $\beta$:系统风险
 
 $$
 \beta = \frac{
-    \sum\limits_{t = 1}^{T}{(Rp_t \cdot Rb_t)} - 
-    \dfrac{1}{T} \sum\limits_{t = 1}^{T}{Rp_t} 
-    \cdot \sum\limits_{t = 1}^{T}{Rp_t}
+    \bigg\lgroup \sum\limits_{t=1}^{T}{(Rb_t \cdot Rp_t)} \bigg\rgroup
+     - \dfrac{1}{T}
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rb_t} \bigg\rgroup
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rp_t} \bigg\rgroup
 }
 {
-    \sum\limits_{t = 1}^{T}{Rb_t^2} -
-    \dfrac{1}{T} \bigg(\sum\limits_{t = 1}^{T}{Rp_t}\bigg)^2
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rb_t^2} \bigg\rgroup
+     - \dfrac{1}{T} 
+    \bigg\lgroup \sum\limits_{t = 1}^{T}{Rp_t} \bigg\rgroup^2
 }
 $$
 
 - $\alpha$:超额收益
 
 $$
-\alpha_t = \bar{Rp_t} - \beta_t \cdot \bar{Rm_t}
+\alpha_t = \bar{R}p_t - \beta_t \cdot \bar{R}b_t
 $$
 
+---
 
 - $R^2$:拟合优度(Goodness of Fit)
-
 $$
 
-R^2 = \frac{
-    
-    \lbrace
-    \rbrace
+R^2 = \dfrac{
+    \Bigg\lbrace 
+    \bigg\lgroup \sum\limits_{t=1}^{T}{(Rb_t \cdot Rp_t)} \bigg\rgroup
+     - \dfrac{1}{T}
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rb_t} \bigg\rgroup
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rp_t} \bigg\rgroup
+    \Bigg\rbrace^2
 }{
-
+    \Bigg\lbrace
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rb_t^2} \bigg\rgroup
+     - \dfrac{1}{T}
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rb_t} \bigg\rgroup^2
+    \Bigg\rbrace
+    \Bigg\lbrace
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rp_t^2} \bigg\rgroup
+     - \dfrac{1}{T}
+    \bigg\lgroup \sum\limits_{t=1}^{T}{Rp_t} \bigg\rgroup^2
+    \Bigg\rbrace
 }
 $$
 
-# 
 
-- $\sigma$:标准差(Standard Deviation)
+- $Skewness$:偏度
+
+$$
+Skewness = \dfrac{T}{(T - 1) \cdot (T - 2)}
+\Bigg\lbrace
+\dfrac{1}{\sigma_t^3}
+\sum\limits_{t=1}^{T}{(Rp_t - \bar{R}p_t)^3}
+\Bigg\rbrace
 $$
 
-\sigma_t = \sqrt{\frac{\sum\limits_{t = 1}^{T}{(r_t - \bar{r}_t) ^ 2}}{T - 1}}
+
+- $Kurtosis$:峰度
+$$
+Kurtosis = \dfrac{
+    T \cdot (T + 1) \cdot 
+    \Bigg\lbrace
+    \dfrac{1}{\sigma_t^4} \cdot
+    \sum\limits_{t=1}^{T}{(Rp_t - \bar{R}p_t)^4}
+    \Bigg\rbrace
+}{
+    (T - 1) \cdot (T - 2) \cdot (T - 3)
+}
+ - \dfrac{
+    3 \cdot (T - 1)^2
+ }{
+    (T - 2) \cdot (T - 3)
+ }
+
+$$
+
+- $M^2$:
+$$
+M^2 = Rf + \dfrac{\bar{R}p - Rf}{\sigma_p} \cdot \sigma_m
+
+$$
+---
+- $Sharpe$:夏普比率
+$$
+Sharpe = \dfrac{
+    \dfrac{1}{T} \cdot 
+    \sum\limits_{t=1}^{T}{(Rp_t - Rf_t)}
+}{\sigma_p}
+
+$$
+
+
+- $Treynor$:特雷诺比率
+$$
+Treynor = \dfrac{Ra - Rf}{\beta}
+
+$$
+
+
+
+- $Jensen$:詹森指数（阿尔法系数）
+
+$$
+Jensen = \bar{R}p - Rf - \beta \cdot (\bar{R}b - Rf)
+
+$$
+
+
+
+
+- $Calmar$:卡玛比率
+$$
+Calmar = \dfrac{Ra}{MaxDrawdown}
+
+$$
+
+---
+
+
+
+- SMDD(Smoothed Multivariate Discrete Distributions)
+- 平滑多变量离散分布模型
+
+- 离散均匀分布随机变量R
+
+
+收益率Ri
+置信区间：$\theta$=0.05
+
+
+$$
+
+
+
+
+\sigma = \sqrt{\Omega}
+
+\newline
+
+\Omega = \phi^2 \cdot D[R_i]
+
+
+\newline
+
+\phi = \sqrt{(1 + \theta)} - 1 
+
+$$
+- 方差
+$$
+
+\newline
+
+D[R_j] = \frac{1}{j} \sum\limits_{i = 1}^{j}{(R_i - \overline{R}) ^ 2}
+
+\newline
+
+$$
+
+- SMDD
+
+$$
+\newline
+
+f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{[-\frac{1}{2}(\frac{x - \mu}{\sigma})^2]}
+
+\newline
+
+f(x) = \frac{1}{n} \sum\limits_{j = 1}^{n}{f(x;R_j,\sigma)}
+
+
+\newline
+
+
+$$
+
+
+
+- $LPM_m(\tau)$是m阶下偏矩， τ是期望收益率
+
+$$
+
+\newline
+
+LPM_m(\tau)=\int_{1}^{2}{(\tau - x)^m f(x) dx}
+
+\newline
+
+
+$$
+
+$$
+
+LPM_1(\tau) = \frac{1}{n} \sum\limits_{j = 1}^{n}
+{[\sigma^2 f(\tau;R_j,\mu) + (\tau - R_j)f(\tau;R_j,\mu)]}
+
+$$
+
+
+$$
+
+
+LPM_2(\tau) = \frac{1}{n} \sum\limits_{j = 1}^{n} {\left[
+(\tau - R_j)\sigma^2 f(\tau;R_j,\mu) + [(\tau - R_j)^2 + \sigma^2] f(\tau;R_j,\mu)
+\right]}
+
+$$
+
+
+- 下行偏差
+$$
+
+DD(\tau) = \sqrt{LPM_2(\tau)}
+
+$$
+
+---
+
+
+- $Omega$:欧米伽比率
+$$
+Omega = \dfrac{Ra - Rf}{LPM_1 \times 12} + 1
+
+$$
+
+
+- $Kappa$:卡帕比率
+$$
+Kappa = \dfrac{Ra - Rf}{\sqrt[3]{LPM_3 \times 12}}
+
+$$
+
+
+
+
+
+- $Kappa$:卡帕比率
+$$
+Kappa = \dfrac{Ra - Rf}{\sqrt[3]{LPM_3 \times 12}}
+
+$$
+
+
+
+
+
+# 
+
+- 跟踪误差
+$$
+\sigma(Rp - Rb)
+
+$$
+
+
+- $IR$:信息比率
+$$
+IR = \dfrac{1}{T} \cdot \dfrac{
+    \sum\limits_{t = 1}^{T}{(Rp_t - Rb_t)}
+}{\sigma(Rp - Rb)}
 
 $$
 
@@ -159,13 +406,67 @@ $$
 
 
 
-- Sortino Ratio:索提诺比率
+- $Sortino$:索提诺比率
+$$
+Sortino Ratio = \frac{
+    \dfrac{1}{T}
+    \sum\limits_{t = 1}^{T}{(Rp_t - Rf_t)}
+}{\sigma_{d,t}}
 
 $$
 
 
-Sortino Ratio = \frac{\frac{1}{T}\sum\limits_{t = 1}^{T}{(r_t - Rf_t)}}{\sigma_{d,t}}
+- $Sortino_{MAR}$:索提诺比率(MAR)
+$$
+Sortino_{MAR} = \frac{
+    \dfrac{1}{T}
+    \sum\limits_{t = 1}^{T}{(Rp_t - min(Rp_1,Rp_2,\ldots,Rp_t))}
+}{\sigma_{d,t}}
 
 $$
 
+
+--- 
+
+- $UCR$:上行捕获收益率
+$$
+UCR = 
+\Bigg\lbrace 
+\prod\limits_{t = 1}^{K}{1 + Rp_t}
+\Bigg\rbrace^{
+    \dfrac{1}{\sum\limits_{t = 1}^{T}{count(1)}}
+} - 1
+
+\newline
+Rb_t \geq 0
+$$
+
+
+- $UC Ratio$:上行捕获率
+$$
+UC Ratio = \dfrac{UCRp}{UCRb}
+$$
+
+- $DCR$:下行捕获收益率
+$$
+UCR = 
+\Bigg\lbrace 
+\prod\limits_{t = 1}^{K}{1 + Rp_t}
+\Bigg\rbrace^{
+    \dfrac{1}{\sum\limits_{t = 1}^{T}{count(1)}}
+} - 1
+
+\newline
+Rb_t < 0
+$$
+
+- $DC Ratio$:下行捕获率
+$$
+DC Ratio = \dfrac{DCRp}{DCRb}
+
+$$
+
+
+
+---
 ## 模型
