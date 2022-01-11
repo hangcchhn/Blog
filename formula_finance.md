@@ -32,7 +32,7 @@
     - 已知价又叫历史价，是指上一个交易日的收盘价
     - 未知价又称期货价，是指当日证券市场上各种金融资产的收盘价
 
-- CNAV:累计(Cumulative)净值
+ - CNAV:累计(Cumulative)净值
 
     - 拆分比例：$S_n$
     - 分红金额：$D_n$
@@ -46,7 +46,7 @@
     
     - 分红再投
     $$
-    CNAV_t = CNAV_{t - 1} \times (1 + r_t)
+    CNAV_t = CNAV_{t - 1} \times (1 + Rp_t)
     \newline
     r_t = \frac{NAV_t \times S_t + D_t}{NAV_{t - 1}} - 1
     $$
@@ -61,16 +61,16 @@
 
 
 
-- 投资组合(Portfolio)的区间（默认月度）收益率$ Rp_t $
+- $ Rp_t $:投资组合(Portfolio)的区间（默认月度）收益率
 $$
 Rp_t = \frac{CNAV_{t} - CNAV_{t - 1}}{CNAV_{t - 1}}
 
 $$
 
-- 年化(Annual)收益率$ Ra_t $
+- $ Ra_t $:年化(Annual)收益率
 $$
 
-Ra_t = (1 + r_t) ^ {1 / y} - 1
+Ra_t = (1 + Rt_t) ^ {1 / y} - 1
 
 \newline
 
@@ -79,18 +79,18 @@ $$
 
 
 
-- 无风险收益率$ Rf_t $
+- $ Rf_t $:无风险(Risk-free)收益率
 
 
-- 基准收益率$ Rb_t $
-- 市场收益率$ Rm_t $
+- $ Rb_t $:基准(Benchmark)收益率
+- $ Rm_t $市场(Market)收益率
 
-- 平均收益率$ \bar{R}p_t $
+- $ \bar{R}_t $:平均收益率
 
 ---
 - 最大下跌
 $$
-MaxFall = min(r_1,\ldots r_n, 0)
+MaxFall = min(Rp_1,Rp_2,\ldots Rp_n, 0)
 $$
 
 
@@ -98,7 +98,7 @@ $$
 - 最大回撤：累计净值(分红再投)
 
 $$
-MaxDrawdown_t = max(max(
+MaxDrawdown = max(max(
     \frac{CNAV_i - CNAV_j}{CNAV_i}
 ),0)
 
@@ -219,11 +219,11 @@ $$
 ---
 - $Sharpe$:夏普比率
 $$
-Sharpe = \dfrac{
-    \dfrac{1}{T} \cdot 
+Sharpe
+ = \dfrac{\dfrac{1}{T} \cdot 
     \sum\limits_{t=1}^{T}{(Rp_t - Rf_t)}
 }{\sigma_p}
-
+ = \dfrac{ \bar{R}p - \bar{R}f }{\sigma_p}
 $$
 
 
@@ -261,20 +261,17 @@ $$
 - 离散均匀分布随机变量R
 
 
-收益率Ri
-置信区间：$\theta$=0.05
+- 收益率Rpi
+- 置信区间：$\theta$=0.05
 
 
 $$
-
-
-
 
 \sigma = \sqrt{\Omega}
 
 \newline
 
-\Omega = \phi^2 \cdot D[R_i]
+\Omega = \phi^2 \cdot D[Rp_i]
 
 
 \newline
@@ -287,7 +284,7 @@ $$
 
 \newline
 
-D[R_j] = \frac{1}{j} \sum\limits_{i = 1}^{j}{(R_i - \overline{R}) ^ 2}
+D[R_j] = \frac{1}{j} \sum\limits_{i = 1}^{j}{(Rp_i - \overline{R}p) ^ 2}
 
 \newline
 
@@ -302,7 +299,7 @@ f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{[-\frac{1}{2}(\frac{x - \mu}{\s
 
 \newline
 
-f(x) = \frac{1}{n} \sum\limits_{j = 1}^{n}{f(x;R_j,\sigma)}
+f(x) = \frac{1}{n} \sum\limits_{j = 1}^{n}{f(x;Rp_j,\sigma)}
 
 
 \newline
@@ -322,22 +319,13 @@ LPM_m(\tau)=\int_{1}^{2}{(\tau - x)^m f(x) dx}
 
 \newline
 
-
-$$
-
-$$
-
 LPM_1(\tau) = \frac{1}{n} \sum\limits_{j = 1}^{n}
-{[\sigma^2 f(\tau;R_j,\mu) + (\tau - R_j)f(\tau;R_j,\mu)]}
+{[\sigma^2 f(\tau;Rp_j,\mu) + (\tau - Rp_j)f(\tau;Rp_j,\mu)]}
 
-$$
-
-
-$$
-
+\newline
 
 LPM_2(\tau) = \frac{1}{n} \sum\limits_{j = 1}^{n} {\left[
-(\tau - R_j)\sigma^2 f(\tau;R_j,\mu) + [(\tau - R_j)^2 + \sigma^2] f(\tau;R_j,\mu)
+(\tau - Rp_j)\sigma^2 f(\tau;Rp_j,\mu) + [(\tau - Rp_j)^2 + \sigma^2] f(\tau;Rp_j,\mu)
 \right]}
 
 $$
@@ -389,7 +377,7 @@ $$
 $$
 
 
-- $IR$:信息比率
+- $IR$(Information Ratio):信息比率
 $$
 IR = \dfrac{1}{T} \cdot \dfrac{
     \sum\limits_{t = 1}^{T}{(Rp_t - Rb_t)}
@@ -399,7 +387,7 @@ $$
 
 - 下行(Downside)风险(标准差)
 $$
-\sigma_{d,t} = \sqrt{\frac{\sum\limits_{t = 1}^{T}{min(r_t - Rf_t, 0) ^ 2}}{T - 1}}
+\sigma_{d,t} = \sqrt{\frac{\sum\limits_{t = 1}^{T}{min(Rp_t - Rf_t, 0) ^ 2}}{T - 1}}
 
 $$
 
@@ -417,6 +405,7 @@ $$
 
 
 - $Sortino_{MAR}$:索提诺比率(MAR)
+- MAR(Minumum Acceptable Return):最小可接受收益率
 $$
 Sortino_{MAR} = \frac{
     \dfrac{1}{T}

@@ -30,7 +30,7 @@ swapon /opt/oracle/swap
 
 vim /etc/fstab
 # 最后一行追加
-/opt/oracle/swap　　　　swap　　　　swap　　defaults　　0　　0
+/opt/oracle/swap    swap    swap  defaults  0  0
 
 free
 
@@ -108,37 +108,57 @@ export PATH=$PATH:$ORACLE_HOME/bin
 
 ```
 
-
+## 安装配置
 ```
 
-oracle
+1.oracle用户执行
 /root/oracle/database/runInstaller -silent -ignorePrereq -responseFile /root/oracle/database/response/db_install.rsp
 
 
-root
+2.root用户执行
 /opt/oracle/orcl/root.sh
 
-
-oracle 
+3.oracle用户执行
 /root/oracle/database/runInstaller -silent -executeConfigTools -responseFile /root/oracle/database/response/db_install.rsp 
 
 
-sqlplus sys/oracle12C@orcl as sysdba
- 
-sqlplus system/oracle12C@orcl
+
+
  
 
 
 ```
-
+## 启动停止
 ```
-要先启动lsnrctl start，
-再执行dbstart启动数据库
+# centos系统启动停止
+# oracle数据库的流程
+
+# 0.切换用户
+su oracle
+
+# 1.启动监听器
+lsnrctl start
+# 2.启动数据库
+dbstart
+
+# 3.查询监听器状态
 lsnrctl status
 
-lsnrctl start
+# 4.测试数据库连接
+# 普通用户连接数据库
+sqlplus system/oracle12C@orcl
+# 使用管理员角色登陆数据库
+sqlplus sys/oracle12C@orcl as sysdba
+ 
+
+# 6.关闭数据库
+dbshut
+# 7.停止监听器
 lsnrctl stop
 
+
+```
+```
 
 默认使用环境变量ORACLE_HOME
 dbstart
@@ -152,5 +172,30 @@ dbshut /opt/oracle/orcl
 
 
 
+
+```
+
+## 操作运维
+
+```
+# lsnrctl
+lsnrctl version
+
+lsnrctl services
+
+lsnrctl status
+
+lsnrctl trace
+启动和停止监听器
+lsnrctl start｜stop
+
+
+# 保存listener.ora配置
+lsnrctl save_config
+# 重载listener.ora配置
+lsnrctl reload
+
+
+lsnrctl quit|exit
 
 ```
