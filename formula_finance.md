@@ -11,7 +11,7 @@
 
 - 区间：年y，月m，周w，天d
 
-- t期：2021，2021-12，202152，2021-12-31
+- t期：yyyy，yyyy-mm，yyyyww，yyyy-mm-dd
 
 - 数据（净值和收益率）频率默认按月计算
 
@@ -61,24 +61,34 @@
 
 
 
-- $ Rp_t $:投资组合(Portfolio)的区间（默认月度）收益率
-$$
+- $ Rp_t $:投资组合()的区间（默认月度）收益率
+$$Portfolio
 Rp_t = \frac{CNAV_{t} - CNAV_{t - 1}}{CNAV_{t - 1}}
-
+ = \frac{CNAV_{t}}{CNAV_{t - 1}} - 1
 $$
 
 - $ Ra_t $:年化(Annual)收益率
-$$
+    - 年数 = 季数 / 4 = 月数 / 12 = 周数 / 2 = 天数 / 365.25
+    $$
+    y = \frac{q}{4} = \frac{m}{12} = \frac{w}{52} = \frac{d}{365}
+    $$
 
-Ra_t = (1 + Rt_t) ^ {1 / y} - 1
+    - 现金分红
+    $$
+    Ra_t = \frac{\sum\limits_{t = 1}^{N}{Rp_t}}{y}
+    $$
 
-\newline
+    - 分红再投
+    $$
 
-y = m / 12 = w / 52 = d / 365.25 
-$$
+    Ra_t = (1 + Rp_t) ^ {\frac{1}{y}} - 1
+
+    $$
 
 
 
+
+---
 - $ Rf_t $:无风险(Risk-free)收益率
 
 
@@ -235,7 +245,8 @@ $$
 
 
 
-- $Jensen$:詹森指数（阿尔法系数）
+- $Jensen$:詹森指数（阿尔法系数
+    - Jensen Alpha
 
 $$
 Jensen = \bar{R}p - Rf - \beta \cdot (\bar{R}b - Rf)
@@ -309,7 +320,8 @@ $$
 
 
 
-- $LPM_m(\tau)$是m阶下偏矩， τ是期望收益率
+- $LPM_m(\tau)$是m阶下偏矩(Lower Partial Moments)
+- τ是期望收益率
 
 $$
 
