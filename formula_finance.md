@@ -9,9 +9,9 @@
 
 
 
-- 区间：年y，月m，周w，天d
+- 区间：年y，季q, 月m，周w，天d
 
-- t期：yyyy，yyyy-mm，yyyyww，yyyy-mm-dd
+- t期：yyyy，yyyyq, yyyy-mm，yyyyww，yyyy-mm-dd
 
 - 数据（净值和收益率）频率默认按月计算
 
@@ -48,7 +48,7 @@
     $$
     CNAV_t = CNAV_{t - 1} \times (1 + Rp_t)
     \newline
-    r_t = \frac{NAV_t \times S_t + D_t}{NAV_{t - 1}} - 1
+    Rp_t = \frac{NAV_t \times S_t + D_t}{NAV_{t - 1}} - 1
     $$
 
 
@@ -61,8 +61,8 @@
 
 
 
-- $ Rp_t $:投资组合()的区间（默认月度）收益率
-$$Portfolio
+- $ Rp_t $:投资组合(Portfolio)的区间收益率
+$$
 Rp_t = \frac{CNAV_{t} - CNAV_{t - 1}}{CNAV_{t - 1}}
  = \frac{CNAV_{t}}{CNAV_{t - 1}} - 1
 $$
