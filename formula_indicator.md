@@ -114,6 +114,13 @@ MaxDrawdown = max(max(
 
 $$
 
+
+- $Calmar$:卡玛比率
+$$
+Calmar = \dfrac{Ra}{MaxDrawdown}
+
+$$
+
 - 胜率
 
 $$
@@ -165,6 +172,45 @@ $$
 $$
 
 ---
+- $Sharpe$:夏普比率
+$$
+Sharpe
+ = \dfrac{\dfrac{1}{T} \cdot 
+    \sum\limits_{t=1}^{T}{(Rp_t - Rf_t)}
+}{\sigma_p}
+ = \dfrac{ \bar{R}p - \bar{R}f }{\sigma_p}
+$$
+
+
+- $Treynor$:特雷诺比率
+$$
+Treynor = \dfrac{Ra - Rf}{\beta}
+
+$$
+
+
+
+- $Jensen$:詹森指数（阿尔法系数
+    - Jensen Alpha
+
+$$
+Jensen = \bar{R}p - Rf - \beta \cdot (\bar{R}b - Rf)
+
+$$
+
+
+
+
+---
+
+
+- $M^2$:
+$$
+M^2 = Rf + \dfrac{\bar{R}p - Rf}{\sigma_p} \cdot \sigma_m
+
+$$
+
+
 
 - $R^2$:拟合优度(Goodness of Fit)
 $$
@@ -221,46 +267,6 @@ Kurtosis = \dfrac{
 
 $$
 
-- $M^2$:
-$$
-M^2 = Rf + \dfrac{\bar{R}p - Rf}{\sigma_p} \cdot \sigma_m
-
-$$
----
-- $Sharpe$:夏普比率
-$$
-Sharpe
- = \dfrac{\dfrac{1}{T} \cdot 
-    \sum\limits_{t=1}^{T}{(Rp_t - Rf_t)}
-}{\sigma_p}
- = \dfrac{ \bar{R}p - \bar{R}f }{\sigma_p}
-$$
-
-
-- $Treynor$:特雷诺比率
-$$
-Treynor = \dfrac{Ra - Rf}{\beta}
-
-$$
-
-
-
-- $Jensen$:詹森指数（阿尔法系数
-    - Jensen Alpha
-
-$$
-Jensen = \bar{R}p - Rf - \beta \cdot (\bar{R}b - Rf)
-
-$$
-
-
-
-
-- $Calmar$:卡玛比率
-$$
-Calmar = \dfrac{Ra}{MaxDrawdown}
-
-$$
 
 ---
 
