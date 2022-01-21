@@ -15,7 +15,7 @@ tar -Jxvf xxx.tar.xz
 unzip xxx.zip
 unrar e xxx.rar
 
-xz -d xxx.tar.xz 
+xz -d xxx.tar.xz
 # 解压xz文件生成tar文件
 
 # 压缩c：创建create
@@ -39,7 +39,7 @@ scp local_file remote_user@remote_host:remote_path
 scp -R local_dir remote_user@remote_host:remote_path
 
 # scp remote local
-scp remote_user@remote_host:remote_file local_path 
+scp remote_user@remote_host:remote_file local_path
 scp -R remote_user@remote_host:remote_file local_path
 
 ```
@@ -114,7 +114,7 @@ systemctl enable|disable ******|******.service
 
 ## 复制移动
 
-> 复制copy 
+> 复制copy
 > 移动move
 
 
@@ -134,14 +134,25 @@ rm -rf /path/dir/
 > -f ： 如果有同名文件时才会出现需要确认
 
 ```
-# 复制文件到路径
-cp -f /scr/path/name.file /dest/path/
-# 复制并重命名文件
-cp -f /scr/path/name.file /dest/path/name.file
-# 复制文件夹到路径
-cp -rf /scr/path/dir/ /dest/path/
-# 复制并重命名文件夹
-cp -rf /scr/path/dir/ /dest/path/dir/
+# 复制文件到目标路径
+cp -f file /dest/path/
+# 复制文件到目标路径并对文件进行重命名
+cp -f old_file /dest/path/new_file
+
+# 将文件夹复制到目标路径
+cp -rf dir /dest/path/
+# 复制文件夹到目标路径并对文件夹进行重命名
+cp -rf dir/ /dest/path/not_exist_dir/
+# 目标路径下不存在的文件夹就表示对文件夹重命名
+
+
+# 将文件夹下的全部复制到目标路径
+cp -rf dir/* /dest/path/
+# 虽说不带*也是一样的，但是不建议
+cp -rf dir/ /dest/path/
+# 网上说不同linux对此支持不一样
+
+
 ```
 ### 移动
 

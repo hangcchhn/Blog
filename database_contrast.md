@@ -9,16 +9,16 @@
 
 
 
-### 别名as可以省略直接空格隔开 
-> 别名分为表别名 和列别名 
+### 别名as可以省略直接空格隔开
+> 别名分为表别名 和列别名
 1. mysql(mariadb)
-as 支持 表别名和列别名 
- 
+as 支持 表别名和列别名
+
 2. oracle(inspur)
 as 只支持列别名 不支持表别名
 
 3. sqlserver(sybase)
-as 支持 表别名和列别名 
+as 支持 表别名和列别名
 
 
 ### 关键字与字段名冲突：
@@ -86,12 +86,14 @@ limit _number offset _offset
 ```sql
 
 -- rownum
-select column_name,... where rownum <= _number
-
-select * from ( select rownum no_id, column_name,... ) t 
-where t.no_id > _offset and t.no_id <= _offset + _number
+select column_name,... from table_name where rownum <= _number
 
 -- 注意order by不影响rownum序号
+select * from ( select rownum no_id, column_name,...
+from table_name order by order_column,... [asc|desc] ) t
+where t.no_id > _offset and t.no_id <= _offset + _number
+
+
 
 -- page
 offset _offset rows fetch next _number rows only
@@ -107,9 +109,9 @@ select top _number|_percent column_name ...
 -- 使用行号函数
 row_number() over(order by )
 
-select tmp.* from (select row_number() 
-over(order by _order_by_list) as row, 
-tbl.* from (_select_string) as tbl) as tmp 
+select tmp.* from (select row_number()
+over(order by _order_by_list) as row,
+tbl.* from (_select_string) as tbl) as tmp
 where row between _page_begin and _page_end;
 
 -- sql server >= 2012
@@ -128,10 +130,10 @@ offset _offset rows fetch next _number rows only
 ```sql
 case expression
 when value1 then result1
-. . . 
+. . .
 when valuen then resultn
 else default
-end 
+end
 ```
 如果expression等于valuen就返回resultn
 如果expression不等于所有valuen就返回default
@@ -142,10 +144,10 @@ end
 ```sql
 case
 when condition1 then search1
-. . . 
+. . .
 when conditionn then searchn
 else default
-end 
+end
 ```
 如果conditionn为真则返回searchn
 如果conditionn都为假则返回default
@@ -166,10 +168,10 @@ a == b:sign(a - b) == 0
 ```sql
 case
 when condition1 then search1
-. . . 
+. . .
 when conditionn then searchn
 else default
-end 
+end
 ```
 
 如果conditionn为真则返回searchn
@@ -181,10 +183,10 @@ end
 ```sql
 case expression
 when value1 then result1
-. . . 
+. . .
 when valuen then resultn
 else default
-end 
+end
 ```
 如果expression等于valuen就返回resultn
 如果expression不等于所有valuen就返回default
@@ -195,10 +197,10 @@ end
 ```sql
 case
 when condition1 then search1
-. . . 
+. . .
 when conditionn then searchn
 else default
-end 
+end
 ```
 
 如果conditionn为真则返回searchn
@@ -292,8 +294,8 @@ when not matched then insert (column_list_name) values(value_list_name)
 
 -- 批量插入
 merge into table_name alias_name using (
-    select value1_name1 column_alias1, value1_name2 column_alias2,... from dual union 
-    select value2_name1 column_alias1, value2_name2 column_alias2,... from dual union... 
+    select value1_name1 column_alias1, value1_name2 column_alias2,... from dual union
+    select value2_name1 column_alias1, value2_name2 column_alias2,... from dual union...
 ) table_alias on (alias_name.pk_uk_column = table_alias.pk_uk_alias and...)
 when matched then update set alias_name.column_name = table_alias.column_alias,...
 when not matched then insert (column_list_name) values(table_alias.alias_list_name)
@@ -312,13 +314,13 @@ insert into table_name(column_list_name) values(value1_list_name), (value2_list_
 
 2. oracle(inspur)
 ```sql
-insert into table_name(column_list_name) 
-select value1_name1 column_alias1, value1_name2 column_alias2,... from dual union 
-select value2_name1 column_alias1, value2_name1 column_alias2,... from dual union... 
+insert into table_name(column_list_name)
+select value1_name1 column_alias1, value1_name2 column_alias2,... from dual union
+select value2_name1 column_alias1, value2_name1 column_alias2,... from dual union...
 
 merge into table_name alias_name using (
-    select value1_name1 column_alias1, value1_name2 column_alias2,... from dual union 
-    select value2_name1 column_alias1, value2_name2 column_alias2,... from dual union... 
+    select value1_name1 column_alias1, value1_name2 column_alias2,... from dual union
+    select value2_name1 column_alias1, value2_name2 column_alias2,... from dual union...
 ) table_alias on (alias_name.pk_uk_column = table_alias.pk_uk_alias and...)
 when not matched then insert (column_list_name) values(table_alias.alias_list_name)
 
@@ -334,7 +336,7 @@ when not matched then insert (column_list_name) values(table_alias.alias_list_na
 ```sql
 
 update table_name alias_name join (
-    select value1_name1 column_alias1, value1_name2 column_alias2,... union 
+    select value1_name1 column_alias1, value1_name2 column_alias2,... union
     select value2_name1 column_alias1, value2_name2 column_alias2,... union...
 ) table_alias on (alias_name.pk_uk_column = table_alias.pk_uk_alias and...)
 set alias_name.column_name = table_alias.column_alias,...
@@ -342,24 +344,24 @@ set alias_name.column_name = table_alias.column_alias,...
 
 
 # 依赖主键或唯一索引判断:先删除,再插入;
-replace into table_name(column_list_name) 
+replace into table_name(column_list_name)
 values(value1_list_name), (value2_list_name),...
 
 # 类比 insert into select (字段位置对应)
-replace into table_name(column_list_name) 
+replace into table_name(column_list_name)
 select ...
 # 类比 update set (单个记录)
-replace into table_name 
+replace into table_name
 set column_name = value_name,...
 
 
 ```
 
 2. oracle(inspur)
-```sql      
+```sql
 merge into table_name alias_name using (
-    select value1_name1 column_alias1, value1_name2 column_alias2,... from dual union 
-    select value2_name1 column_alias1, value2_name2 column_alias2,... from dual union... 
+    select value1_name1 column_alias1, value1_name2 column_alias2,... from dual union
+    select value2_name1 column_alias1, value2_name2 column_alias2,... from dual union...
 ) table_alias on (alias_name.pk_uk_column = table_alias.pk_uk_alias and...)
 when matched then update set alias_name.column_name = table_alias.column_alias,...
 ```
