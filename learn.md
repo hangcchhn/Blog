@@ -33,3 +33,20 @@ min
     \bigg\rgroup^2}
 \Bigg)
 $$
+
+
+## SDS(Standard Deviation Score)标准差比值法
+
+
+$$
+SDS = \sqrt{
+    \dfrac{
+        \sum\limits_{i = 1}^{N}{(x_i - \bar{x})^2}
+    }{N - unbiased}
+}
+\newline
+
+unbiased = 0|1
+
+
+$$
