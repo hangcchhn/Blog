@@ -35,7 +35,7 @@ min
 $$
 
 
-## SDS(Standard Deviation Score)标准差比值法
+### SDS(Standard Deviation Score)标准差比值法
 
 
 $$
