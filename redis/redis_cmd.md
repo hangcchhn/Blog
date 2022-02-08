@@ -1,11 +1,10 @@
 
-# Redis Using
+# Redis Command
 
-> redis使用
+> redis命令
 
 
-## 0
-
+## 0.基本操作
 
 ```
 
@@ -85,7 +84,7 @@ config set slowlog-max-len 128
 
 -  hash——哈希
 
-### 2.字符串操作
+## 2.字符串操作
 
 ```
 //键值操作
@@ -120,7 +119,7 @@ flushdb
 flushall//设置键值
 ```
 
-### 3.双向链表操作
+## 3.双向链表操作
 
 ```
 //结点操作
@@ -137,7 +136,7 @@ ltrim list start end
 
 ```
 
-### 4.无序集合操作
+## 4.无序集合操作
 
 ```
 //成员操作
@@ -153,7 +152,7 @@ sunion sets//并集
 sdiff sets//差集
 ```
 
-### 5.有序集合操作
+## 5.有序集合操作
 
 ```
 //成员操作
@@ -173,7 +172,7 @@ zremrangebyrank zset min max
 
 ```
 
-### 6.哈希操作
+## 6.哈希操作
 
 ```
 //哈希操作
