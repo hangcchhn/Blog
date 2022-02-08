@@ -1,4 +1,4 @@
-# Linux Install MySQL
+# Install MySQL
 
 
 

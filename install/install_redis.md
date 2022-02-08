@@ -1,5 +1,5 @@
-# Redis Standalone
-> 单机模式
+# Install Redis
+> 单机模式standalone
 
 ## 安装
 
