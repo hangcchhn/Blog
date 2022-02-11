@@ -138,7 +138,7 @@ select to_days('0000-00-00');-- null
 select to_days('2000-12-31');-- 730850
 select from_days(0);-- '0000-00-00'
 select from_days(730850);-- '2000-12-31'
- 
+
 -- 字符串转换为日期时间函数：str_to_date(str, format)
 select str_to_date('2017-06-05 19:40:30', '%Y-%m-%d %H:%i:%s');
 
@@ -164,27 +164,27 @@ select maketime(19,52,35);-- '19:52:35'
 -- 获得不同地区日期|时间格式函数：get_format()
 get_format(date|time|datetime, 'eur'|'usa'|'jis'|'iso'|'internal')
 
- 
+
 -- 时区（timezone）转换函数：convert_tz(dt,from_tz,to_tz)
 select convert_tz('2017-06-05 19:54:12', '+08:00', '+00:00');-- 2017-06-05 11:54:12
- 
+
  -- 日期[时间]转换unix的时间戳函数
--- unix_timestamp(), unix_timestamp(date[time]), 
+-- unix_timestamp(), unix_timestamp(date[time]),
 select unix_timestamp();-- 当前时间的时间戳
 select unix_timestamp('2017-05-15');-- 指定日期的时间戳：1494777600
 select unix_timestamp('2017-05-15 10:37:14');-- 指定日期时间的时间戳：1494815834
- 
+
 -- 将unix的时间戳转为时间
 -- from_unixtime(unix_timestamp), from_unixtime(unix_timestamp,format)
 select from_unixtime(1494815834);-- 2017-05-15 10:37:14 （默认格式：YYYY-MM-dd HH:mm:ss）
 select from_unixtime(1494815834, '%Y年%m月%d日 %H时%分%s秒');-- 2017年05月15日 10时分14秒
- 
+
 -- 时间戳（timestamp）转换、增、减函数
 select timestamp('2017-05-15');-- 2017-05-15 00:00:00
 select timestamp('2017-05-15 08:12:25', '01:01:01');-- 2017-05-15 09:13:26
 -- timestampadd() 函数类似于 date_add()。
 select date_add('2017-05-15 08:12:25', interval 1 day);-- 2017-05-16 08:12:25
-select timestampadd(day, 1, '2017-05-15 08:12:25');-- 2017-05-16 08:12:25; 
+select timestampadd(day, 1, '2017-05-15 08:12:25');-- 2017-05-16 08:12:25;
 
 -- 计算时间戳的差值
 select timestampdiff(year, '2017-06-01', '2016-05-15');-- -1
@@ -259,11 +259,9 @@ select trunc(sysdate, 'mi') from dual;-- yyyy-MM-dd HH:mm:00
 select extract(year|month|day|hour|minute|second from sysdate) from dual;
 
 
--- 当月最后一天
-select last_day(sysdate) from dual;
 
 -- 增|减n天
-select next_day(sysdate, +|-n) from dual;
+select sysdate +|-n from dual;
 
 -- 增|减n个月
 select add_months(sysdate, +|-n) from dual;
@@ -272,7 +270,11 @@ select add_months(sysdate, +|-n) from dual;
 select to_number(sysdate - (sysdate - n)) * 24 * 60 * 60 * 1000 from dual;
 
 
+-- 下周几（下个星期几）:week=1~7或Monday~Sunday或Mon~Sun
+select next_day(sysdate, week) from dual;
 
+-- 当月最后一天
+select last_day(sysdate) from dual;
 
 ```
 
@@ -321,9 +323,9 @@ select date_sub(now(), interval (dayofweek(now()) + 6) day), date_sub(now(), int
 
 -- oracle
 
-select sysdate - to_char(sysdate, 'd') - 6, sysdate - to_char(sysdate, 'd') from dual 
+select sysdate - to_char(sysdate, 'd') - 6, sysdate - to_char(sysdate, 'd') from dual
 
--- 
+--
 
 
 ```

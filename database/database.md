@@ -331,7 +331,7 @@ when not matched then insert (column_list_name) values(table_alias.alias_list_na
 
 
 
-#  批量更新
+### 批量更新
 1. mysql(mariadb)
 ```sql
 
