@@ -214,7 +214,7 @@ end
 
 
 
-### 判空函数：
+### 判空函数
 如果expr1为空则返回expr2
 如果expr1不为空则返回expr1
 
@@ -331,7 +331,7 @@ when not matched then insert (column_list_name) values(table_alias.alias_list_na
 
 
 
-#  批量更新
+### 批量更新
 1. mysql(mariadb)
 ```sql
 
