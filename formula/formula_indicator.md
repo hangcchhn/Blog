@@ -361,8 +361,10 @@ $$
 
 
 ### 跟踪误差
+>Tracking Error
 $$
 \sigma(Rp - Rb)
+= \sqrt{\frac{\sum\limits_{t = 1}^{T}{(Rp_t - Rb_t) ^ 2}}{T - 1}}
 
 $$
 
