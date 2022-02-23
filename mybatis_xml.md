@@ -1,5 +1,5 @@
-# MyBatis
-> xml
+# MyBatis xml
+
 
 ## mybatis框架单独使用的配置文件
 - mybatis-config.xml:
