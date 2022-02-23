@@ -1,27 +1,7 @@
 
-#  金融
-> 模型
+# formula finance
+> 金融公式
 
----
-## T-M模型
-
-
-- $\alpha$:选股能力系数
-- $\beta_2$:择时能力系数。
-
-$$
-
-Rp_t - Rf_t = \alpha
- + \beta_1 \cdot (Rp_t - Rf_t)
- + \beta_2 \cdot (Rp_t - Rf_t)^2
-+ \epsilon_t
-
-\newline
-
-\newline
-
-
-$$
 
 ---
 ## RBSA
@@ -54,7 +34,7 @@ $$
 $$
 ER_i = Rf_i + \beta_{i, m} ERP_m
 
-\newline 
+\newline
 
 \beta_{i,m} = \frac{Cov(r_i,r_m)}{\sigma_m^2}
 
@@ -67,10 +47,10 @@ ER_p = \sum\limits_{i=1}^{N}{(ER_i \cdot w_i)}
 
 \newline
 
-\begin{cases} 
-0 < w_i < 1 \\ 
+\begin{cases}
+0 < w_i < 1 \\
 \sum\limits_{i=1}^{N}{w_i} = 1
-\end{cases} 
+\end{cases}
 
 
 \newline
@@ -110,10 +90,10 @@ $$
 $$
 \newline
 
-\begin{cases} 
-l < w_i < h \\ 
+\begin{cases}
+l < w_i < h \\
 \sum\limits_{i=1}^{N}{w_i} = 1
-\end{cases} 
+\end{cases}
 
 \newline
 
@@ -202,11 +182,11 @@ k = |T \cdot p|
 d = T \cdot p - k
 \newline
 
-VaR(p) = - 
-\begin{cases} 
-null, & if \quad k = 0 \\ 
+VaR(p) = -
+\begin{cases}
+null, & if \quad k = 0 \\
 (r_k - r_{k-1}) \cdot d + r_{k-1}, & if \quad k > 0
-\end{cases} 
+\end{cases}
 \newline
 
 
