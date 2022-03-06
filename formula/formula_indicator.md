@@ -159,7 +159,7 @@ $$
 ---
 ##
 ### 拟合优度(Goodness of Fit)
-> $R^2$
+> $R^2$:R-squared
 $$
 
 R^2 = \dfrac{
