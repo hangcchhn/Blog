@@ -5,7 +5,7 @@
 
 
 ## 一、stock valuation
-> 股票估值法
+> 股票估值
 
 
 ### 1.绝对价值法
@@ -157,7 +157,7 @@ P/S = \dfrac{P_t}{S_{t + 1}}
 
 $$
 
-- $S_{t + 1}$:公司第t+1期的每股销售额(Sale)
+- $S_{t + 1}$:公司第t+1期的每股销售额(sale)
 
 
 
@@ -175,3 +175,47 @@ $$
 EM = \dfrac{EV}{EBITDA}
 $$
 
+
+## 二、债券估值
+> bond valuation
+
+- $V$:内在价值
+- $M$:面值
+- $r$:年化市场利率
+
+### 1.零息债券估值
+
+$$
+V = M \times \dfrac{1}{(r + 1)^t}
+$$
+- $t$:债券到期时间，单位是年
+
+$$
+V = M \times （1 - \dfrac{t}{360} \times r)
+$$
+
+- $t$:债券到期时间，单位是天
+
+
+
+### 2.固定利率债券估值
+
+$$
+V = \sum\limits_{t=1}^{T}{
+    \dfrac{C}{(1 + r) ^ t}
+} + \dfrac{M}{(1 + r) ^ t}
+$$
+- $C$:每期要支付的利息
+
+
+
+### 3.统一公债估值
+$$
+V = \lim\limits_{n\rightarrow+\infty}{
+    \sum\limits_{t=1}^{T}{
+        \dfrac{C}{(1 + r) ^ t}
+    }
+} = \dfrac{C}{r}
+$$
+- r > 0
+- $-1 < \dfrac{1}{r + 1}| < 1$
