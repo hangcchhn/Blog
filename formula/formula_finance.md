@@ -3,21 +3,11 @@
 > 金融公式
 
 
----
-## RBSA
-$$
-Rp_t = \sum\limits_{i = 1}^{N}{(\beta_i \cdot Rp_i)} + \epsilon
-
-\newline
-\beta_i > 0
-\newline
- \sum\limits_{i = 1}^{N}{\beta_i} = 1
-$$
 
 
 ---
-## SDS
-- SDS(Standard Deviation Score):标准差比值法
+## 标准差比值法
+- SDS(Standard Deviation Score):
 - 风格漂移(Style Drift)
 
 $$
@@ -27,7 +17,8 @@ SDS = \sqrt{\frac{1}{T - 1} \cdot \sum\limits_{c = 1}^{N}{
 $$
 
 ---
-## CAPM
+## 资本资产定价
+> CAPM(Capital Asset Pricing Model)
 
 - $ER_i$:预期(Expect)收益率
 - $ERP_m$:预期超额收益
@@ -41,7 +32,8 @@ ER_i = Rf_i + \beta_{i, m} ERP_m
 $$
 
 ---
-## MPT
+## 套利定价理论
+> APT(Arbitrage Pricing Theory)
 $$
 ER_p = \sum\limits_{i=1}^{N}{(ER_i \cdot w_i)}
 
@@ -79,40 +71,57 @@ $$
 > Risk Parity
 - 投资组合由N个资产构成
 - 资产i的权重$w_i$
-- $w_i$构成权重向量$\vec{w}$
-- $w_i$的协方差(Covariance)矩阵$\sum{w}$
-
-- 资产i的绝对风险贡献$\sigma_i(w)$
-
-- 投资组合的标准差$\sigma(w)$
 - 权重上(high)限$h$
 - 权重下(low)限$l$
+
 $$
-\newline
-
 \begin{cases}
-l < w_i < h \\
-\sum\limits_{i=1}^{N}{w_i} = 1
+l < w_i < h, i=1,2,\cdots,N \\
+w_1 + w_2 + \cdots + w_N= 1
 \end{cases}
+$$
 
-\newline
+- $w_i$构成权重向量$\vec{w}$
+- $w_i$的协方差矩阵$\sum{w}$
 
-\sigma_i(w) = w_i \cdot x \cdot \sigma(w)
-= \frac{w_i \cdot {(\sum{w})}_i}
-{\sqrt{\vec{w} \cdot \sum{w}}}
 
-\newline
+- 投资组合的标准差$\sigma$
+
+$$
+\sigma = \sqrt{\vec{w}\sum{w}}
+$$
+
+
+$$
+\dfrac{\partial \sigma}{\partial w_i}
+ = \dfrac{1}{2\sqrt{\vec{w}\sum{w}}} \times
+ \dfrac{\partial(\vec{w}\sum{w})}{\partial w_i}
+$$
+
+- 资产i的风险贡献$\sigma_i(w)$
+$rc_i$
+
+
+
+
+$$
+
+rc_i = \dfrac{w_i}{\sigma} \times \dfrac{\partial \sigma}{\partial w_i}
+ = \frac{w_i \cdot {(\sum{w})}_i}{\sqrt{\vec{w} \cdot \sum{w}}}
+
+$$
+- ??
+
+$$
 
 \sigma(w) = \sqrt{\vec{w} \cdot \sum{w}}
 
-
-
 \newline
 
-\sigma(w) = \sum\limits_{i = 1}^{N}{\sigma_i(w)}
+\sigma(w) = \sum\limits_{i = 1}^{N}{rc_i}
 
 \newline
-\sigma_i(w) = \frac{\sigma(w)}{N}
+rc_i = \frac{\sigma(w)}{N}
 
 \newline
 min{\sum\limits_{i = 1}^{N}{[
@@ -122,13 +131,13 @@ min{\sum\limits_{i = 1}^{N}{[
 \newline
 
 
-\newline
 
 $$
 ---
 ## 风险预算模型
+> Risk Budget
 
-- 资产i的风险贡献比例$rc_i$
+- 资产i的风险贡献$rc_i$
 $$
 
 rc_i = \frac{\sigma_i(w)}{\sigma(w)}
@@ -152,8 +161,9 @@ $$
 
 - $F(x)$的反函数是$F^{-1}(x)$
 
-
-### VaR(Value at Risk):风险价值
+---
+### 风险价值
+>VaR(Value at Risk)
 > 在一定的置信水平下，某一金融资产（或证券组合）在未来特定的一段时间内的最大可能损失。
 
 - 概率p
@@ -191,8 +201,9 @@ null, & if \quad k = 0 \\
 
 
 $$
-
-### CVaR(Conditional Value at Risk):条件风险价值
+---
+### 条件风险价值
+> CVaR(Conditional Value at Risk)
 - 估值函数E[X]
 $$
 

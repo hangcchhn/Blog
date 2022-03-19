@@ -31,35 +31,7 @@
 - 函数：$\operatorname{f}(x)$
 
 
-#### 上
----
 
-
-
-- 均值：$\bar{x}$
-- 向量：$\vec{a}$
-
-
-- $\dot{x}$
-- $\ddot{x}$
-
-- $\acute{x}$
-- $\grave{x}$
-
-- $\check{x}$
-- $\hat{x}$
-
-- $\breve{x}$
-- $\tilde{x}$
-
-- $\widetilde{X}$
-- $\widehat{X}$
-
-
----
-- 上下
-    - $\overline{x}$
-    - $\underline{x}$
 
 ### 加减乘除
 ---
@@ -84,8 +56,8 @@
 - 二次根号：$\sqrt{2}$
 - n次根号：$\sqrt[n]{n}$
 
- 
-#### 对数 
+
+#### 对数
 ---
 - $\ln{2}$
 - $\lg{8}$
@@ -93,7 +65,12 @@
 
 
 
+#### 导数
+---
 
+- 偏导数$\dfrac{\partial y}{\partial x}$
+
+- 一阶导数$y^\prime$
 
 #### 积分
 ---
@@ -113,28 +90,111 @@
 - $\sum{a}$
 - $\prod{x}$
 
-- 带上下限 
+- 带上下限
+
    - $\sum_{n=1}^{n=100}{a_n}$
+
    - $\prod_{n=1}^{n=100}{x_n}$
 
 
 - 上下限在上下两侧
+
    - $\sum\limits_{n=1}^{N}{a_n}$
 
    - $\prod\limits_{n=1}^{N}{x_n}$
 
 
-### 关系符合
-
-
-
+### 关系运算
 - 小于等于$x \leq y$
 - 大于等于$x \geq y$
 - 不等于：$x \neq y$
 - 约等于：$x \approx y$
 - 恒等于：$x \equiv y$
 
-### 符号
+
+---
+### 括号
+
+- 小括号
+    - $(x)$
+    - $\lgroup X \rgroup$
+
+- 中括号：
+    - $[x]$
+
+- 花括号
+    - $\{ X \}$
+    - $\lbrace X \rbrace$
+
+---
+-  各种型号的括号
+$$
+\small( X \small)
+\big( X \big)
+\Big( X \Big)
+\bigg( X \bigg)
+\Bigg( X \Bigg)
+
+\newline
+\small[ X \small]
+\big[ X \big]
+\Big[ X \Big]
+\bigg[ X \bigg]
+\Bigg[ X \Bigg]
+
+\newline
+\small\{ X \small\}
+\big\{ X \big\}
+\Big\{ X \Big\}
+\bigg\{ X \bigg\}
+\Bigg\{ X \Bigg\}
+
+$$
+
+---
+- 大括号
+    - 上大括号：$\overbrace{a+b+c+d}^{4}$
+    - 下大括号：$a+\underbrace{b+c}_{2}+d$
+
+$$
+f(x)=
+\begin{cases}
+x^, & \text x \geq 0  \\
+-x, & \text{$x \lt 0$}
+\end{cases}
+\tag{1-1}
+$$
+
+
+#### 头上
+---
+
+- 均值：$\bar{x}$
+- 向量：$\vec{a}$
+
+
+- $\dot{x}$
+- $\ddot{x}$
+
+- $\acute{x}$
+- $\grave{x}$
+
+- $\check{x}$
+- $\hat{x}$
+
+- $\breve{x}$
+- $\tilde{x}$
+
+- $\widetilde{X}$
+- $\widehat{X}$
+
+
+---
+- 上下划线
+    - $\overline{x}$
+    - $\underline{x}$
+
+### 逻辑运算
 
 - (∀):$\forall$
 - (∃):$\exists$
@@ -164,12 +224,13 @@
 - 所以：$\therefore$
 
 
+
+
 ### 虚数
 
 z = x $\imath$ + j $\jmath$
+
 ---
-
-
 ### 三角函数
 - 角度：$\angle A = 30^\circ$
 
@@ -177,78 +238,6 @@ z = x $\imath$ + j $\jmath$
 - 余弦：$\cos(x)$
 - 正切：$\tan(x)$
 - 余切：$\cot(x)$
-
----
-## 希腊字母
-
---- 
-### 1.大写
-- Alpha(A):$\Alpha$
-- Beta(B):$\Beta$
-- Chi(X):$\Chi$
-- Delta(Δ):$\Delta$
-- Epsilon(E):$\Epsilon$
-- Eta(H):$\Eta$
-- Gamma(Γ):$\Gamma$
-- Iota(I):$\Iota$
-- Kappa(K):$\Kappa$
-- Lambda(Λ):$\Lambda$
-- Mu(M):$\Mu$
-- Nu(N):$\Nu$
-- Omega(Ω):$\Omega$
-- Phi():$\Phi$
-- Pi(Π):$\Pi$
-- Psi(Ψ):$\Psi$
-- Rho(P):$\Rho$
-- Sigma(Σ):$\Sigma$
-- Tau(T):$\Tau$
-- Theta():$\Theta$
-- Upsilon(Υ):$\Upsilon$
-- Xi():$\Xi$
-- Zeta(Z):$\Zeta$
-
----
-### 2.小写
-- alpha(α):$\alpha$
-- beta(β):$\beta$
-- chi(χ):$\chi$
-- delta(δ):$\delta$
-- digamma():$\digamma$
-- epsilon(ϵ):$\epsilon$
-- eta(η):$\eta$
-- gamma(γ):$\gamma$
-- iota(ι):$\iota$
-- kappa(κ):$\kappa$
-- lambda(λ):$\lambda$
-- mu(μ):$\mu$
-- nu(ν):$\nu$
-- omega(ω):$\omega$
-- omicron(ο):$\omicron$
-- phi(ϕ):$\phi$
-- pi(π):$\pi$
-- psi(ψ):$\psi$
-- rho(ρ):$\rho$
-- sigma(σ):$\sigma$
-- tau(τ):$\tau$
-- theta(θ):$\theta$
-- upsilon(υ):$\upsilon$
-- xi(ξ):$\xi$
-- zeta(ζ):$\zeta$
-
----
-### 3.变量
-- varepsilon(ε):$\varepsilon$ 
-- varkappa(ϰ):$\varkappa$
-- vartheta(ϑ):$\vartheta$
-- varpi(ϖ):$\varpi$
-- varrho(ϱ):$\varrho$
-- varsigma(ς):$\varsigma$
-- varphi():$\varphi$
-
-
-
-
-
 
 ---
 ## 矩阵
@@ -297,56 +286,11 @@ $$
    c & d
 \end{Vmatrix}
 
-\newline
-\newline
-\newline
-\newline
-\newline
-\newline
-\newline
-\newline
+
 
 
 $$
 
----
-### 括号
-
-- 小括号
-    - $(x)$
-    - $\lgroup X \rgroup$
-
-- 中括号： 
-    - $[x]$
-
-- 花括号
-    - $\{ X \}$
-    - $\lbrace X \rbrace$
-
----
--  括号大小
-$$
-\small( X \small)
-\big( X \big)
-\Big( X \Big)
-\bigg( X \bigg)
-\Bigg( X \Bigg)
-
-\newline
-\small[ X \small]
-\big[ X \big]
-\Big[ X \Big]
-\bigg[ X \bigg]
-\Bigg[ X \Bigg]
-
-\newline
-\small\{ X \small\}
-\big\{ X \big\}
-\Big\{ X \Big\}
-\bigg\{ X \bigg\}
-\Bigg\{ X \Bigg\}
-
-$$
 ---
 - 成对符号
     - $\langle$
@@ -354,10 +298,10 @@ $$
 
 
     - $\lvert$
-    - $\rvert$ 
+    - $\rvert$
 
     - $\lVert$
-    - $\rVert$ 
+    - $\rVert$
 
     - $\lmoustache$
     - $\rmoustache$
@@ -372,19 +316,6 @@ $$
 
 
 
----
-- 大括号
-    - 上大括号：$\overbrace{a+b+c+d}^{2.0}$
-    - 下大括号：$a+\underbrace{b+c}_{1.0}+d$
-
-$$
-f(n)= 
-\begin{cases} 
-n/2, & \text {if $n$ is even} \\ 
-3n+1, & \text{if $n$ is odd} 
-\end{cases} 
-\tag{1-1}
-$$
 
 $$
 
