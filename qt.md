@@ -18,6 +18,10 @@
 - 6.x
 
 ### 编译
+
+- qmake
+- cmake
+
 #### MinGW
 使用（Unix/Linux）系统自带的（C/C++）编译器（gcc/g++）
 
@@ -34,18 +38,20 @@
 
 ## 安装
 
-### Windows
+### windows
 #### MinGW
 
 #### MSVC
 
+
+
 ##### Visual Studio
 将Qt Creator整合到Visual Studio
 
-### Linux
+### linux
 
 
-### Mac
+### macos
 
 
 
@@ -61,7 +67,7 @@
 - 编辑模式Edit
 - 设计模式Design
 - 调试模式Debug
-- 项目配置Project
+- 项目配置Projects
 - 帮助文档Help
 
 ### 操作类型
@@ -69,40 +75,18 @@
 - 调试Debug
 - 构建Build
 
-### 
+###
 
 
 
 ## 项目
 
 ### 控制台项目
-#### QDebug
-```c++
-
-//stdio.h
-#include"qdebug.h"
-//iostream
-#include<QDebug>
-
-int main()
-{
-
-	//printf
-    qDebug("HelloWorld");
-	//cout
-    qDebug() << "HelloWorld" << endl;
-    
-    return 0;
-}
-
-
-```
+> qt console
 
 
 ### 图形化项目
+qt widgets
 
-### 个性化项目
-
-#### Chess
 
 
