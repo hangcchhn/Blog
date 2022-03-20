@@ -40,7 +40,7 @@
 ### Fama分解模型
 > Fama在1972年提出
 - $r_p$:投资组合收益率
-- $r_m$:市场组合收益率
+- $r_m$:市场指数收益率
 - $r_f$:无风险收益率
 - $r_\beta$:SML上相同系统风险的收益率
 
@@ -96,75 +96,84 @@ $$
 ---
 ### Brinson模型
 
+- 对股票投资组合进行相对收益的归因分析
+
 #### 单期Brinson模型
 
 ---
 ### BHB模型
 > Brinson，Hood和Beebower在1986年提出
 
-
-- $w_{b,i}$:资产类别i的比较基准权重
-- $w_{p,i}$:资产类别i的投资组合权重
-- $r_{b,i}$:资产类别i的比较基准收益率
-- $r_{p,i}$:资产类别i的投资组合收益率
-
-
-- $A = \sum_i(w_{b,i} \times r_{b,i})$:比较基准收益
-- $B = \sum_i(w_{p,i} \times r_{b,i})$:积极配置收益
-- $C = \sum_i(w_{b,i} \times r_{p,i})$:积极选择收益
-- $D = \sum_i(w_{p,i} \times r_{p,i})$:投资组合收益
+#### 基金业绩分解
+- 投资策略（战略资产配置）
+- 选股贡献
+- 择时贡献
+- 选股择时交互影响
 
 
+- $w^p_{i}$:投资组合资产类别i的权重
+- $r^p_{i}$:投资组合中资产类别i的收益率
 
-- 配置收益(Allocation):$AR = B - A$
+- $w^b_{i}$:基准指数中资产类别i的权重
+- $r^b_{i}$:基准指数中资产类别i的收益率
+
+
+
+
+- $A = \sum(w^b_{i} \times r^b_{i})$:基准指数的收益率
+- $B = \sum(w^p_{i} \times r^b_{i})$:
+- $C = \sum(w^b_{i} \times r^p_{i})$:
+- $D = \sum(w^p_{i} \times r^p_{i})$:投资组合的收益率
+
+
+
+- 配置效应(Allocation):$B - A$
 $$
 
 
-AR = \sum\limits_{i = 1}^{N}{(w_{p,i} \times r_{b,i} - w_{b,i} \times r_{b,i})}
+\sum{Allocation_i} = \sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})}
+
+\newline
+ = \sum{[(w^p_{i} - w^b_{i}) \times r^b_{i}]}
+
+$$
+- 选择效应(Selection):$C - A$
+$$
+
+\sum{Selection_i} = \sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})}
 
 \newline
 
-AR = \sum\limits_{i = 1}^{N}{[(w_{p,i} - w_{b,i}) \times r_{b,i}]}
+ = \sum{[w^b_{i} \times (r^p_{i} - r^b_{i})]}
 
 $$
-- 选择收益(Selection):$SR = C - A$
+
+- 交互效应(Interaction):$D - C - B + A$
 $$
 
-SR = \sum\limits_{i = 1}^{N}{(w_{p,i} \times r_{b,i} - w_{b,i} \times r_{b,i})}
+\sum{Interaction_i} = \sum{(w^p_{i} \times w^b_{i} - w^b_{i} \times r^p_{i} - w^p_{i} \times r^b_{i} + w^b_{i} \times r^b_{i})}
 
 \newline
 
-SR = \sum\limits_{i = 1}^{N}{[w_{b,i} \times (r_{p,i} - r_{b,i})]}
-
-
-$$
-
-- 交互收益(Interaction):$IR =  D - C - B + A$
-$$
-
-IR = \sum\limits_{i = 1}^{N}{(w_{p,i} \times w_{b,i} - w_{b,i} \times r_{p,i} - w_{p,i} \times r_{b,i} + w_{b,i} \times r_{b,i})}
-
-\newline
-
-IR = \sum\limits_{i = 1}^{N}{[(w_{p,i} - w_{b,i}) \times (r_{p,i} - r_{b,i})]}
+ = \sum{[(w^p_{i} - w^b_{i}) \times (r^p_{i} - r^b_{i})]}
 
 $$
 
 
-- 超额收益():$ER = AR + SR + IR = D - A$
+- 投资组合总收益率(Total):$TR = AR + SR + IR = D - A$
 $$
 
-ER =
+TR =
 \newline
-\sum\limits_{i = 1}^{N}{(w_{p,i} \times r_{b,i} - w_{b,i} \times r_{b,i}} +
+\sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i}} +
 \newline
-\sum\limits_{i = 1}^{N}{(w_{p,i} \times r_{b,i} - w_{b,i} \times r_{b,i})} +
+\sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})} +
 \newline
-\sum\limits_{i = 1}^{N}{ (w_{p,i} \times w_{b,i} - w_{b,i} \times r_{p,i} - w_{p,i} \times r_{b,i} + w_{b,i} \times r_{b,i})}
+\sum{ (w^p_{i} \times w^b_{i} - w^b_{i} \times r^p_{i} - w^p_{i} \times r^b_{i} + w^b_{i} \times r^b_{i})}
 
-\\
+\newline
 
-ER = \sum\limits_{i = 1}^{N}{[(w_{p,i} \times r_{p,i}) - (w_{b,i} \times r_{b,i})]}
+TR = \sum{[(w^p_{i} \times r^p_{i}) - (w^b_{i} \times r^b_{i})]}
 
 $$
 
@@ -173,11 +182,50 @@ $$
 ### IK模型
 > Ibbotson和Kaplan在2000年提出
 
+$$
+TR = (PR + 1) \times (AR + 1) - 1
+
+$$
+
+- $PR$:投资策略收益（战略资产配置）
+- $AR$:主动管理收益
+    - 选股贡献
+    - 择时贡献
+    - 选股择时交互影响
 
 ### BF模型
-Brinson和Fachler
+> Brinson和Fachler
 
 #### 多期Brinson模型
 
+
+
 $$
 $$
+
+
+
+
+
+### 相对收益，又称超额收益，基金收益超出业绩比较基准的部分
+> ER(Excess Return)
+
+- 主动收益（active）
+- 阿尔法收益（alpha）
+
+
+$$
+
+ER_a = R_p - R_b
+
+
+
+$$
+
+
+$$
+ER_g = \dfrac{R_p + 1}{R_b + 1} - 1
+
+$$
+
+

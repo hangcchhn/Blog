@@ -1,70 +1,6 @@
 
-# formula finance
-> 金融公式
-
-
-
-
----
-## 标准差比值法
-- SDS(Standard Deviation Score):
-- 风格漂移(Style Drift)
-
-$$
-SDS = \sqrt{\frac{1}{T - 1} \cdot \sum\limits_{c = 1}^{N}{
-    \sum\limits_{t = 1}^{N}{(w_{c,t} - \overline{w_c})^2}}}
-
-$$
-
----
-## 资本资产定价
-> CAPM(Capital Asset Pricing Model)
-
-- $ER_i$:预期(Expect)收益率
-- $ERP_m$:预期超额收益
-$$
-ER_i = Rf_i + \beta_{i, m} ERP_m
-
-\newline
-
-\beta_{i,m} = \frac{Cov(r_i,r_m)}{\sigma_m^2}
-
-$$
-
----
-## 套利定价理论
-> APT(Arbitrage Pricing Theory)
-$$
-ER_p = \sum\limits_{i=1}^{N}{(ER_i \cdot w_i)}
-
-\newline
-
-\begin{cases}
-0 < w_i < 1 \\
-\sum\limits_{i=1}^{N}{w_i} = 1
-\end{cases}
-
-
-\newline
-
-
-
-\sigma_p = \sum\limits_{i=1}^{N}{
-    \sum\limits_{j=1}^{N}{
-        (w_i \cdot w_j \cdot \sigma_{i,j})
-    }
-}
-
-
-\newline
-min(\sigma_p)
-
-
-\newline
-
-
-
-$$
+# 风险模型
+> risk model
 
 ---
 ## 风险平价模型
@@ -133,6 +69,10 @@ min{\sum\limits_{i = 1}^{N}{[
 
 
 $$
+
+
+
+
 ---
 ## 风险预算模型
 > Risk Budget
@@ -161,10 +101,17 @@ $$
 
 - $F(x)$的反函数是$F^{-1}(x)$
 
+
+
+
+
+
+
+
 ---
 ### 风险价值
 >VaR(Value at Risk)
-> 在一定的置信水平下，某一金融资产（或证券组合）在未来特定的一段时间内的最大可能损失。
+> 在一定的置信水平下，投资组合在未来的一段时间内的最大可能损失。
 
 - 概率p
 $$
