@@ -38,16 +38,11 @@ $$
 - $r_p - r_b$:超额收益Alpha
 - $r_p - r_i$:选股Alpha
 - $r_i - r_b$:风格Alpha
+
 $$
-r_p - r_b = (r_p - r_i) + (r_i - r_b)
+r_p - r_b = (r_p - r_i) + (r_i - r_b)
+
 $$
-
-
-
-
-
-
-
 
 ---
 ## 拟合度
