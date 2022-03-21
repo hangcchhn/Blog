@@ -14,6 +14,14 @@ $$
 Rp_t = \frac{CNAV_{t} - CNAV_{t - 1}}{CNAV_{t - 1}}
  = \frac{CNAV_{t}}{CNAV_{t - 1}} - 1
 $$
+### 大区间T包含N个小区间t
+- $R_p$:大区间T的收益率，
+- $R_i$:大区间t的收益率
+$$
+
+R_p = \prod\limits_{i = 1}^{N}{(R_i + 1)} - 1
+
+$$
 
 ---
 ## 年化(Annual)收益率
@@ -50,13 +58,6 @@ $$
 \bar{R}_G = \sqrt[T]{\prod\limits_{t = 1}^{T}{(R_t + 1)}} - 1
 $$
 
----
-## 阿尔法
-> $\alpha$
-
-$$
-\alpha_t = \bar{R}p_t - \beta_t \cdot \bar{R}b_t
-$$
 
 
 ## 业绩持续性
@@ -78,7 +79,7 @@ UCR =
     \dfrac{1}{\sum\limits_{t = 1}^{T}{count(1)}}
 } - 1
 
-\newline
+\\
 Rb_t \geq 0
 $$
 
@@ -98,7 +99,7 @@ UCR =
     \dfrac{1}{\sum\limits_{t = 1}^{T}{count(1)}}
 } - 1
 
-\newline
+\\
 Rb_t < 0
 $$
 ### 下行捕获率

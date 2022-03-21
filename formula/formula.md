@@ -4,7 +4,15 @@
 ## 常见
 ---
 - 空格 $a \quad b$
-- 冒号 $x \colon y$
+- 换行：
+$$
+
+第1行
+\\
+第2行
+\newline
+第3行
+$$
 ---
 - 底端对齐的省略号
     - $1,2 \ldots N$
@@ -21,6 +29,8 @@
 - 绝对值：$|x|$
 
 ---
+- 冒号 $x \colon y$
+
 - 三点
     - $x \ddots y$
     - $x \vdots y$
@@ -35,13 +45,15 @@
 
 ### 加减乘除
 ---
-- $x \pm y=z$
-- $x \mp y=z$
+- 加减
+    - $x \pm y=z$
+    - $x \mp y=z$
 
-- $x \times y=z$
-- $x \cdot y=z$
-- $x \ast y=z$
-- $x \div y=z$
+- 乘除
+    -  · : $x \cdot y=z$
+    - \* : $x \ast y=z$
+    -  × : $x \times y=z$
+    -  ÷ : $x \div y=z$
 
 ### 分式
 ---
@@ -135,14 +147,14 @@ $$
 \bigg( X \bigg)
 \Bigg( X \Bigg)
 
-\newline
+\\
 \small[ X \small]
 \big[ X \big]
 \Big[ X \Big]
 \bigg[ X \bigg]
 \Bigg[ X \Bigg]
 
-\newline
+\\
 \small\{ X \small\}
 \big\{ X \big\}
 \Big\{ X \Big\}
@@ -248,21 +260,21 @@ $$
    c & d
 \end{matrix}
 
-\newline
+\\
 
 \begin{pmatrix}
    a & b \\
    c & d
 \end{pmatrix}
 
-\newline
+\\
 
 \begin{bmatrix}
    a & b \\
    c & d
 \end{bmatrix}
 
-\newline
+\\
 
 \begin{Bmatrix}
    a & b \\
@@ -270,7 +282,7 @@ $$
 \end{Bmatrix}
 
 
-\newline
+\\
 
 
 \begin{vmatrix}
@@ -279,7 +291,7 @@ $$
 \end{vmatrix}
 
 
-\newline
+\\
 
 \begin{Vmatrix}
    a & b \\
@@ -319,11 +331,11 @@ $$
 
 $$
 
-\newline
+\\
 
-\newline
+\\
 
-\newline
+\\
 
 
 $$

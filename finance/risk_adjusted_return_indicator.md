@@ -1,6 +1,7 @@
 
 # formula indicator
 > 风险调整后收益指标
+> 用单位风险对应的收益评价业绩
 
 
 ---
@@ -37,24 +38,42 @@ Treynor = \dfrac{Ra - Rf}{\beta}
 $$
 
 
+---
+## 阿尔法
+> $\alpha$
+
+- 超额收益：超出业绩比较基准收益的那部分收益
+
+- 经风险调整后的主动管理超额收益
+
+- 同类被动型可投资业绩比较基准
+
+- 基金经理通过主动管理获取超额收益
+- 主动管理一般是指选股择时
+
+$$
+\alpha_t = \bar{R}p_t - \beta_t \cdot \bar{R}b_t
+$$
 
 
 ## 詹森指数（阿尔法系数)
-> $\alpha_j$:Jensen Alpha
+> 詹森阿尔法：Jensen Alpha
 
 - 假设总体风险仅为系统风险
 
 $$
-\alpha_j = \bar{R}p - Rf - \beta \cdot (\bar{R}b - Rf)
+Jensen = \bar{R}p - Rf - \beta \cdot (\bar{R}b - Rf)
 
 $$
 
 - 表示总体收益超过CAPM预测的那部分
 $$
 
-\alpha_j = (\bar{r}_p - \bar{r}_f) - \beta \times (\bar{r}_m - \bar{r}_f)
-\newline
-\alpha_j = \bar{r}_p - [\bar{r}_f + \beta \times (\bar{r}_m - \bar{r}_f)]
+Jensen = (\bar{r}_p - \bar{r}_f) - \beta \times (\bar{r}_m - \bar{r}_f)
+
+\\
+
+Jensen = \bar{r}_p - [\bar{r}_f + \beta \times (\bar{r}_m - \bar{r}_f)]
 
 
 $$
@@ -80,6 +99,8 @@ $$
 
 ### 卡玛比率
 > $Calmar$
+- 年化收益除以最大回撤
+
 $$
 Calmar = \dfrac{Ra}{MaxDrawdown}
 
@@ -88,6 +109,8 @@ $$
 
 ### 索提诺比率
 > $Sortino$
+
+
 $$
 Sortino = \frac{
     \dfrac{1}{T}

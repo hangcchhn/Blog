@@ -23,7 +23,7 @@ $$
 
 y = \alpha + \sum\limits_{t = 1}^{T}{\beta_{t} * x_t} + \epsilon
 
-\newline
+\\
 
 min
 \Bigg(
@@ -44,7 +44,7 @@ SDS = \sqrt{
         \sum\limits_{i = 1}^{N}{(x_i - \bar{x})^2}
     }{N - unbiased}
 }
-\newline
+\\
 
 unbiased = 0|1
 

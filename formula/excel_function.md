@@ -1,6 +1,7 @@
 
 
 # excel函数
+> Ctrl + Shift + Enter
 
 
 - LN(x):$ln(x)$
@@ -17,3 +18,28 @@ $$
 
 
 $$
+
+
+
+
+- PRODUCT(x0:xN)
+$$
+\prod\limits_{i = 1}^{N}{x_i}
+
+$$
+
+- SLOPE
+    - 求一元线性回归的斜率
+
+
+- SOLVER
+    -
+
+- CORREL
+    - 相关系数
+
+- MMULT
+    - 矩阵乘法
+
+- TRANSPOSE
+    - 矩阵转置

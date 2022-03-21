@@ -43,40 +43,24 @@ $$
 
 
 
-
----
-## 协方差
-> $Cov(r_p,r_b)$
-$$
-
-Cov(r_p,r_b) =
-
-$$
----
-## 相关系数
-> $\rho_{p,b}$
-$$
-\rho_{p,b} = \dfrac{Cov(r_p,rm)}{\sigma_p \times \sigma_b}
-$$
-
 ---
 ## 跟踪误差
 > tracking error
 
 $$
 \sigma_{p - b} = \sqrt{\sigma_p^2 + \sigma_b^2
- + 2 \times \rho_{p,b} \times \sigma_p \times \sigma_b }
+ + 2 \times \rho_{p, b} \times \sigma_p \times \sigma_b }
 
 $$
-
+---
 ### 贝塔
 > $\beta$
 
-- 表示投资组合系统风险
+- 表示投资组合的系统性风险
 $$
 
-\beta = \dfrac{Cov(r_p, r_b)}{\sigma_b^2}
- = \rho_{p,b} \times \dfrac{\sigma_p}{\sigma_b}
+\beta = \dfrac{cov(r_p, r_b)}{\sigma_b^2}
+ = \rho_{p, b} \times \dfrac{\sigma_p}{\sigma_b}
 
 $$
 
@@ -97,11 +81,6 @@ $$
 
 
 
-### 下行(Downside)风险(标准差)
-$$
-\sigma_{d,t} = \sqrt{\frac{\sum\limits_{t = 1}^{T}{min(Rp_t - Rf_t, 0) ^ 2}}{T - 1}}
-
-$$
 
 ## 偏度
 > $Skewness$:
@@ -153,10 +132,20 @@ $$
 
 
 
+---
+## 下行风险
+> (Downside Risk)
+> ShortFall Risk
+下行风险 = 损失概率 * 损失额度
 
+$$
+\sigma_{d,t} = \sqrt{\frac{\sum\limits_{t = 1}^{T}{min(Rp_t - Rf_t, 0) ^ 2}}{T - 1}}
+
+$$
 
 
 ### 最大回撤：累计净值(分红再投)
+> Maximun Drawdown
 $$
 MaxDrawdown = max(max(
     \frac{CNAV_i - CNAV_j}{CNAV_i}

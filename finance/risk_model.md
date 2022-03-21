@@ -52,19 +52,19 @@ $$
 
 \sigma(w) = \sqrt{\vec{w} \cdot \sum{w}}
 
-\newline
+\\
 
 \sigma(w) = \sum\limits_{i = 1}^{N}{rc_i}
 
-\newline
+\\
 rc_i = \frac{\sigma(w)}{N}
 
-\newline
+\\
 min{\sum\limits_{i = 1}^{N}{[
         w_i \cdot {(\sum{w})}_i - \sigma(w)^2 / N
 ]^2}}
 
-\newline
+\\
 
 
 
@@ -81,13 +81,13 @@ $$
 $$
 
 rc_i = \frac{\sigma_i(w)}{\sigma(w)}
-\newline
+\\
 
 \sum\limits_{i = 1}^{N}{[
     w_i \cdot (\sum{w})_i - rc_i(\vec{w} \cdot \sum{w})
 ]^2}
 
-\newline
+\\
 
 $$
 
@@ -109,42 +109,58 @@ $$
 
 
 ---
-### 风险价值
+## 风险价值
 >VaR(Value at Risk)
 > 在一定的置信水平下，投资组合在未来的一段时间内的最大可能损失。
+
+
+
+### 1.方差-协方差法
+> Variance-Covariance Method
+- 收益率呈正态分布
+
+
+
+### 2.历史数据模拟法
+> Historical Data Simulation Method
+
+
+### 3.蒙特卡洛模拟法
+> Monte Carlo Simulation Method
+
 
 - 概率p
 $$
 
 VaR(p) = -F^{-1}(p)
 
-\newline
+\\
 
 
 
 
-\newline
+\\
 
 $$
 - 第k个收益率r_k
 $$
 
 k = |T \cdot p|
-\newline
+\\
 
 
 
-\newline
+\\
 
 d = T \cdot p - k
-\newline
+\\
 
 VaR(p) = -
 \begin{cases}
 null, & if \quad k = 0 \\
 (r_k - r_{k-1}) \cdot d + r_{k-1}, & if \quad k > 0
 \end{cases}
-\newline
+\\
 
 
 $$
@@ -155,9 +171,17 @@ $$
 $$
 
 CVaR(p) = E[-X|X \leq -VaR(p)]
-\newline
+\\
 
 CVaR(p) = - \frac{1}{k}\sum\limits_{i=1}^{k}{r_i}
 
 $$
 
+## 压力测试
+> Stress testing
+
+- 历史极端事件法
+
+- 风险因子震荡法
+
+- 外部因子震荡法

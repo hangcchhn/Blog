@@ -48,7 +48,7 @@ $$
 
 r_p - r_f = (r_p - r_\beta) + (r_\beta - r_f)
 
-\newline
+\\
 
 r_\beta = \beta_p \times (r_m - r_f)
 
@@ -75,11 +75,11 @@ $$
 
 r_\beta - r_f = r_I + r_M
 
-\newline
+\\
 
 r_I = \beta_I \times (r_m - r_f)
 
-\newline
+\\
 
 r_M = (\beta_p - \beta_I) \times (r_m - r_f)
 
@@ -133,7 +133,7 @@ $$
 
 \sum{Allocation_i} = \sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})}
 
-\newline
+\\
  = \sum{[(w^p_{i} - w^b_{i}) \times r^b_{i}]}
 
 $$
@@ -142,7 +142,7 @@ $$
 
 \sum{Selection_i} = \sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})}
 
-\newline
+\\
 
  = \sum{[w^b_{i} \times (r^p_{i} - r^b_{i})]}
 
@@ -153,7 +153,7 @@ $$
 
 \sum{Interaction_i} = \sum{(w^p_{i} \times w^b_{i} - w^b_{i} \times r^p_{i} - w^p_{i} \times r^b_{i} + w^b_{i} \times r^b_{i})}
 
-\newline
+\\
 
  = \sum{[(w^p_{i} - w^b_{i}) \times (r^p_{i} - r^b_{i})]}
 
@@ -164,14 +164,14 @@ $$
 $$
 
 TR =
-\newline
+\\
 \sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i}} +
-\newline
+\\
 \sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})} +
-\newline
+\\
 \sum{ (w^p_{i} \times w^b_{i} - w^b_{i} \times r^p_{i} - w^p_{i} \times r^b_{i} + w^b_{i} \times r^b_{i})}
 
-\newline
+\\
 
 TR = \sum{[(w^p_{i} \times r^p_{i}) - (w^b_{i} \times r^b_{i})]}
 
