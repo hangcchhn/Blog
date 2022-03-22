@@ -111,19 +111,19 @@ $$
 - 选股择时交互影响
 
 
-- $w^p_{i}$:投资组合资产类别i的权重
-- $r^p_{i}$:投资组合中资产类别i的收益率
+- $w^p_i$:投资组合资产类别i的权重
+- $r^p_i$:投资组合中资产类别i的收益率
 
-- $w^b_{i}$:基准指数中资产类别i的权重
-- $r^b_{i}$:基准指数中资产类别i的收益率
-
-
+- $w^b_i$:基准指数中资产类别i的权重
+- $r^b_i$:基准指数中资产类别i的收益率
 
 
-- $A = \sum(w^b_{i} \times r^b_{i})$:基准指数的收益率
-- $B = \sum(w^p_{i} \times r^b_{i})$:
-- $C = \sum(w^b_{i} \times r^p_{i})$:
-- $D = \sum(w^p_{i} \times r^p_{i})$:投资组合的收益率
+
+
+- $A = \sum(w^b_i \times r^b_i)$:基准指数的收益率
+- $B = \sum(w^p_i \times r^b_i)$:
+- $C = \sum(w^b_i \times r^p_i)$:
+- $D = \sum(w^p_i \times r^p_i)$:投资组合的收益率
 
 
 
@@ -131,51 +131,89 @@ $$
 $$
 
 
-\sum{Allocation_i} = \sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})}
+\sum{Allocation} = \sum{(w^p_i \times r^b_i - w^b_i \times r^b_i)}
 
 \\
- = \sum{[(w^p_{i} - w^b_{i}) \times r^b_{i}]}
+ = \sum{[(w^p_i - w^b_i) \times r^b_i]}
 
 $$
 - 选择效应(Selection):$C - A$
 $$
 
-\sum{Selection_i} = \sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})}
+\sum{Selection} = \sum{(w^p_i \times r^b_i - w^b_i \times r^b_i)}
 
 \\
 
- = \sum{[w^b_{i} \times (r^p_{i} - r^b_{i})]}
+ = \sum{[w^b_i \times (r^p_i - r^b_i)]}
 
 $$
 
 - 交互效应(Interaction):$D - C - B + A$
 $$
 
-\sum{Interaction_i} = \sum{(w^p_{i} \times w^b_{i} - w^b_{i} \times r^p_{i} - w^p_{i} \times r^b_{i} + w^b_{i} \times r^b_{i})}
+\sum{Interaction_i} = \sum{(w^p_i \times w^b_i - w^b_i \times r^p_i - w^p_i \times r^b_i + w^b_i \times r^b_i)}
 
 \\
 
- = \sum{[(w^p_{i} - w^b_{i}) \times (r^p_{i} - r^b_{i})]}
+ = \sum{[(w^p_i - w^b_i) \times (r^p_i - r^b_i)]}
 
 $$
-
-
+---
 - 投资组合总收益率(Total):$TR = AR + SR + IR = D - A$
 $$
 
 TR =
 \\
-\sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i}} +
+\sum{(w^p_i \times r^b_i - w^b_i \times r^b_i)} +
 \\
-\sum{(w^p_{i} \times r^b_{i} - w^b_{i} \times r^b_{i})} +
+\sum{(w^p_i \times r^b_i - w^b_i \times r^b_i)} +
 \\
-\sum{ (w^p_{i} \times w^b_{i} - w^b_{i} \times r^p_{i} - w^p_{i} \times r^b_{i} + w^b_{i} \times r^b_{i})}
+\sum{ (w^p_i \times w^b_i - w^b_i \times r^p_i - w^p_i \times r^b_i + w^b_i \times r^b_i)}
 
 \\
 
-TR = \sum{[(w^p_{i} \times r^p_{i}) - (w^b_{i} \times r^b_{i})]}
+TR = \sum{[(w^p_i \times r^p_i) - (w^b_i \times r^b_i)]}
+$$
+- 主动管理效应 = 资产配置效应 + 证券选择效应 + 相互作用效应
+
+
+---
+### 多维绩效归因
+- SSA效应
+    - SSA
+- ID效应
+    - 实施偏差
+    - Implementation Differential
+
+- $w^{SSA}_i$:SSA的目标权重
 
 $$
+\sum{Interaction}  = \sum{SSA} + \sum{ID}
+\\
+\sum{SSA} = \sum{[(w^{SSA}_i - w^b_i) \times (r^p_i - r^b_i)]}
+\\
+\sum{ID} = \sum{[(w^p_i - w^{SSA}_i) \times (r^p_i - r^b_i)]}
+$$
+
+---
+### 全球、多资产、多币种、多基金经理
+- 相对收益
+    - Relative Return
+    - $RR = r_p - r_b$
+- 资产配置
+    - Asset Allocation
+    - $AA = r_{mb} - rb$
+- 证券选择
+    - Security Selection
+    - $SS = r_p - r_{mb}$
+- $RR = AA + SS$
+
+- 货币对冲
+    - Currency Hedging
+    - $CH = r_{mb_{ch}} - r_{mb}$
+- $r_{mb}$:基金经理基准的收益率
+- $r_{mb_{ch}}$:附有货币对冲策略的基金经理基准的收益率
+
 
 
 ---

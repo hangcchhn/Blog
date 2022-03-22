@@ -23,3 +23,42 @@ MA_n(t) = \dfrac{
     \sum\limits_{i = 1}^{n}{P_{t - i + 1}}
 }{n}
 $$
+
+
+
+---
+##
+
+### 主动投资管理的基本法则
+> Grinold在1989年提出
+$$
+
+IR = IC \times \sqrt{BR}
+
+$$
+
+- $IR$:信息比率
+- $IC$:信息系数
+- $BR$:决策广度
+
+#### 添加参数
+$$
+
+IR = IC \times \sqrt{BR} \times TC
+
+$$
+
+- $TC$:转移系数
+    - Transfer Corfficient
+
+
+### 横截面波动率
+$$
+\sigma_{CrossSection} = \sqrt{\sum\limits_{i = 1}^{N}{
+    w_i \times (r_i - \bar{r})^2
+}}
+
+$$
+- $w_i$:投资组合中证券i的权重
+- $r_i$:投资组合中证券i的收益率
+- $\bar{r}$:投资组合中所有证券的平均收益率

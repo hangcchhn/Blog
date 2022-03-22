@@ -55,6 +55,16 @@ $$
 \alpha_t = \bar{R}p_t - \beta_t \cdot \bar{R}b_t
 $$
 
+--
+## 超额收益
+- 算数超额收益
+$$
+\alpha_A = r_p - r_b
+$$
+- 几何超额收益
+$$
+\alpha_G = \dfrac{1 + r_p}{1 + r_b} - 1
+$$
 
 ## 詹森指数（阿尔法系数)
 > 詹森阿尔法：Jensen Alpha
