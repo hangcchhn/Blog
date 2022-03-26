@@ -4,38 +4,30 @@
 > 风险指标
 
 - 绝对风险
-    - 波动率（标准差）
+    - 标准差（波动率）
 - 相对风险
     - 跟踪误差
 
 
 
-
-
-
-
 ---
 ## 标准差(Standard Deviation)
-> $\sigma_p$
+> 波动率(Volatility)
 
-- 波动率(Volatility)
-$$
-
-\mu_p = \dfrac{\sum\limits_{t = 1}^{T}{r_t}}{T}
-$$
+- $\sigma_p$:
 
 $$
 \sigma_p = \sqrt{
-    \dfrac{\sum\limits_{t = 1}^{T}{(r_t - \mu_p)^2}}{T}
+    \dfrac{\sum\limits_{t = 1}^{T}{(r_t - \bar{r}_p)^2}}{T - 1}
 }
 
 $$
 
 $$
 
-\sigma_p = \sqrt{
+StdDev_p = \sqrt{
     \dfrac{
-        \sum\limits_{t = 1}^{T}{(Rp_t - \bar{R}p_t)^2
+        \sum\limits_{t = 1}^{T}{(Rp_t - \bar{R}p)^2
     }}{T - 1}
 }
 
@@ -43,30 +35,26 @@ $$
 
 
 
+
 ---
-## 跟踪误差
-> tracking error
+### 贝塔系数
+> beta coefficient
+
+投资组合的总风险分为系统风险和非系统性风险
+
+- $\beta_p$:投资组合p的系统风险
 
 $$
-\sigma_{p - b} = \sqrt{\sigma_p^2 + \sigma_b^2
- + 2 \times \rho_{p, b} \times \sigma_p \times \sigma_b }
 
-$$
----
-### 贝塔
-> $\beta$
-
-- 表示投资组合的系统性风险
-$$
-
-\beta = \dfrac{cov(r_p, r_b)}{\sigma_b^2}
+\beta_p = \dfrac{Cov(r_p, r_b)}{\sigma_b^2}
  = \rho_{p, b} \times \dfrac{\sigma_p}{\sigma_b}
 
 $$
 
+- $Beta_p$:
 $$
 
-\beta = \frac{
+Beta_p = \frac{
     \bigg\lgroup \sum\limits_{t=1}^{T}{(Rb_t \cdot Rp_t)} \bigg\rgroup
      - \dfrac{1}{T}
     \bigg\lgroup \sum\limits_{t=1}^{T}{Rb_t} \bigg\rgroup
@@ -80,6 +68,64 @@ $$
 $$
 
 
+---
+## 跟踪误差
+> Tracking Error
+- 表示投资组合p相对于基准b的跟踪偏离度的标准差
+
+
+$$
+TE = \sqrt{\dfrac{1}{T - 1} \times
+    \sum\limits_{t = 1}^{T}{(TD - \overline{TD})^2}
+}
+$$
+
+
+- $\sigma_{p - b}$:跟踪误差
+$$
+
+\sigma_{p - b} = \sqrt{\sigma_p^2 + \sigma_b^2
+ + 2 \times \rho_{p, b} \times \sigma_p \times \sigma_b }
+
+$$
+
+
+##
+- $TD$:跟踪偏离度(Tracking Difference)
+$$
+TD = r_p - r_b
+$$
+
+- $\overline{TD}$:平均跟踪偏离度
+$$
+\overline{TD} = \dfrac{1}{T} \times \sum\limits_{t = 1}^{T}{(Rp_t - Rb_t)}
+
+$$
+
+$$
+\overline{TD} = \bar{r}_p - \bar{r}_b
+$$
+
+
+---
+### 信息比率
+> Information Ratio
+
+- 表示单位跟踪误差下的平均跟踪偏离度
+- $IR$:
+
+$$
+
+IR = \dfrac{\overline{TD}}{TE}
+
+$$
+
+$$
+IR = \dfrac{\bar{r}_p - \bar{r}_b}{\sigma_{p - b}}
+$$
+
+
+
 
 
 ## 偏度
@@ -88,7 +134,7 @@ $$
 $$
 
 Skewness = \dfrac{
-    \sum\limits_{t = 1}^{T}{(r_t - \mu_p)^3}
+    \sum\limits_{t = 1}^{T}{(r_t - \bar{r}_p)^3}
 }{T \times \sigma_p^3}
 
 $$
@@ -106,7 +152,7 @@ $$
 
 $$
 Kurtosis = = \dfrac{
-    \sum\limits_{t = 1}^{T}{(r_t - \mu_p)^4}
+    \sum\limits_{t = 1}^{T}{(r_t - \bar{r}_p)^4}
 }{T \times \sigma_p^4}
 
 $$
@@ -134,25 +180,43 @@ $$
 
 ---
 ## 下行风险
-> (Downside Risk)
+> 下行标准差
+> Downside Risk
 > ShortFall Risk
 下行风险 = 损失概率 * 损失额度
-
+- $DR$
 $$
-\sigma_{d,t} = \sqrt{\frac{\sum\limits_{t = 1}^{T}{min(Rp_t - Rf_t, 0) ^ 2}}{T - 1}}
-
-$$
-
-
-### 最大回撤：累计净值(分红再投)
-> Maximun Drawdown
-$$
-MaxDrawdown = max(max(
-    \frac{CNAV_i - CNAV_j}{CNAV_i}
-),0)
+DR = \sqrt{\dfrac{
+    \sum\limits_{t = 1}^{T}{min(Rp_t - Rf_t, 0)^2}
+}{T - 1}}
 
 $$
 
+---
+### 索提诺比率
+> $Sortino$
+
+$$
+Sortino_p = \frac{
+    \dfrac{1}{T}
+    \sum\limits_{t = 1}^{T}{(Rp_t - Rf_t)}
+}{DR}
+
+$$
+
+### 索提诺比率(MAR)
+> MAR(Minumum Acceptable Return):最小可接受收益率
+
+- $Sortino_{MAR}$:
+
+$$
+
+Sortino_{MAR} = \frac{
+    \dfrac{1}{T}
+    \sum\limits_{t = 1}^{T}{(Rp_t - min(Rp_1, Rp_2, \ldots, Rp_t))}
+}{DR}
+
+$$
 
 
 
@@ -178,7 +242,7 @@ $$
 ###
 > $M^2$
 $$
-M^2 = Rf + \dfrac{\bar{R}p - Rf}{\sigma_p} \cdot \sigma_m
+M^2 = r_f + \dfrac{\bar{r}_p - r_f}{\sigma_p} \times \sigma_m
 
 $$
 ---

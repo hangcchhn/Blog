@@ -101,6 +101,7 @@ Omega = \dfrac{Ra - Rf}{LPM_1 \times 12} + 1
 $$
 ---
 ### 下行偏差
+> Downside Deviation
 $$
 
 DD(\tau) = \sqrt{LPM_2(\tau)}

@@ -2,71 +2,144 @@
 # 风险模型
 > risk model
 
+- 投资组合p由N个资产构成
+- $r_i$:资产i的收益率(return)
+- $w_i$:资产i的权重(weight)
+
+- $W$:权重组成的列向量
+$
+W = (w_1, w_2, \cdots, w_N)^T
+$
+
+- $\sum$:协方差矩阵
+
+
+
+---
+## 风险分解
+> Risk Decomposition
+
+- $r_p$:投资组合p的收益率
+$$
+r_p = \sum\limits_{i = 1}^{N}{w_i \times r_i}
+$$
+
+- $\sigma_p$:投资组合p的标准差
+$$
+\sigma_p = \sqrt{
+    \sum\limits_{i = 1}^{N}{\sum\limits_{j = 1}^{N}{
+    w_i \times w_j \times Cov(r_i, r_j)}}
+}
+$$
+
+$$
+\sigma_p = \sqrt{W^T \sum W}
+$$
+
+
+### 边际风险贡献
+> MRC(Marginal Risk Contribution)
+- $MRC_i$:资产i的边际风险贡献
+$$
+MRC_i = \dfrac{\partial \sigma_p}{\partial w_i}
+$$
+
+$$
+MRC_i = \dfrac{1}{\sigma_p} \times
+    \sum\limits_{j = 1}^{N}{w_j \times Cov(r_i, r_j)}
+$$
+
+
+$$
+MRC_i = \dfrac{Cov(r_i, r_p)}{\sigma_p}
+$$
+
+
+
+
+
+---
+$$
+MRC_i = \dfrac{(\sum W)_i}{\sqrt{W^T \sum W}}
+$$
+- $(\sum W)_i$:
+- $E_i$:第i个元素为1，其他元素为0的N维列向量
+
+$$
+MCR_i = \dfrac{\partial \sigma_p}{\partial w_i}
+\\
+ = \dfrac{1}{2\sqrt{W^T \sum W}} \times
+ \dfrac{\partial (\sqrt{W^T \sum W})}{\partial w}
+\\
+ = \dfrac{1}{2\sqrt{W^T \sum W}} \times
+ \dfrac{\partial (\sqrt{W^T \sum W})}{\partial W} \times
+ \dfrac{\partial W}{\partial w}
+\\
+ = \dfrac{1}{2\sqrt{W^T \sum W}} \times 2W^T \times E_i
+\\
+ = \dfrac{W^T E_i}{\sqrt{W^T \sum W}}
+
+ = \dfrac{E_i^T (\sum W)}{\sqrt{W^T \sum W}}
+
+ = \dfrac{(\sum W)_i}{\sqrt{W^T \sum W}}
+$$
+
+
+
+
+
+
+### 风险贡献
+> RC(Risk Contribution)
+- $RC_i$:资产i的风险贡献
+
+$$
+
+RC_i = w_i \times MRC_i
+$$
+
+
+
+$$
+\sigma_p = \sum\limits_{i = 1}^{N}{RC_i}
+$$
+
+
+
+
+
 ---
 ## 风险平价模型
 > Risk Parity
-- 投资组合由N个资产构成
-- 资产i的权重$w_i$
-- 权重上(high)限$h$
-- 权重下(low)限$l$
+
+- 权重上限(upper bound):$b_u$
+- 权重下限(lower bound):$b_l$
 
 $$
 \begin{cases}
-l < w_i < h, i=1,2,\cdots,N \\
+b_l < w_i < b_u, i=1,2,\cdots,N \\
 w_1 + w_2 + \cdots + w_N= 1
 \end{cases}
 $$
 
-- $w_i$构成权重向量$\vec{w}$
-- $w_i$的协方差矩阵$\sum{w}$
-
-
-- 投资组合的标准差$\sigma$
-
+- 各个资产的风险贡献相同
 $$
-\sigma = \sqrt{\vec{w}\sum{w}}
+RC_i = \dfrac{\sigma_p}{N}
 $$
 
-
 $$
-\dfrac{\partial \sigma}{\partial w_i}
- = \dfrac{1}{2\sqrt{\vec{w}\sum{w}}} \times
- \dfrac{\partial(\vec{w}\sum{w})}{\partial w_i}
+RC_i = RC_j, i \neq j
 $$
 
-- 资产i的风险贡献$\sigma_i(w)$
-$rc_i$
+$$
+\sum\limits_{i = 1}^{N}{\sum\limits_{j = 1}^{N}{(RC_i - RC_j)^2}} = 0
+$$
 
-
-
+### 优化
 
 $$
 
-rc_i = \dfrac{w_i}{\sigma} \times \dfrac{\partial \sigma}{\partial w_i}
- = \frac{w_i \cdot {(\sum{w})}_i}{\sqrt{\vec{w} \cdot \sum{w}}}
-
-$$
-- ??
-
-$$
-
-\sigma(w) = \sqrt{\vec{w} \cdot \sum{w}}
-
-\\
-
-\sigma(w) = \sum\limits_{i = 1}^{N}{rc_i}
-
-\\
-rc_i = \frac{\sigma(w)}{N}
-
-\\
-min{\sum\limits_{i = 1}^{N}{[
-        w_i \cdot {(\sum{w})}_i - \sigma(w)^2 / N
-]^2}}
-
-\\
-
-
+min{\sum\limits_{i = 1}^{N}{(\dfrac{RCi}{\sigma_p} - \dfrac{1}{N})^2}}
 
 $$
 
@@ -77,18 +150,9 @@ $$
 ## 风险预算模型
 > Risk Budget
 
-- 资产i的风险贡献$rc_i$
+
 $$
-
-rc_i = \frac{\sigma_i(w)}{\sigma(w)}
-\\
-
-\sum\limits_{i = 1}^{N}{[
-    w_i \cdot (\sum{w})_i - rc_i(\vec{w} \cdot \sum{w})
-]^2}
-
-\\
-
+\sum\limits_{i = 1}^{N}{[w_i (\sum W)_i - rc_i(W^T \sum W)]^2}
 $$
 
 
@@ -246,27 +310,6 @@ $$
 - 计算投资组合中各投资标的的协方差矩阵用来风险分解
 - 计算收益序列的风险统计数据
 
-### 风险分解
-> Risk Decomposition
-- 风险边际贡献
-    - MCR(Marginal Contribution to Risk)
-
-- $\sum$:协方差矩阵
-$$
-\sigma^2_{i, j} = \rho_{i, j} \times \sigma_i \times \sigma_j
-$$
-- $\sigma^2_{i, j}$:证券i和证券j之际的协方差
-
-- $\sigma_p$:投资组合的标准差
-$$
-\sigma_p = \sqrt{{W_p}^T \sum W_p}
-$$
-- $MCR_i$:投资标的i基于跟踪误差的风险边际贡献
-$$
-MCR_i = \dfrac{w^p_i W^T \sum}{\sigma_{p - b}}
-$$
-- $\sigma_{p - b}$:投资组合的跟踪误差
-- 基于标准差的$MRC_i$就将$\sigma_{p - b}$替换成$\sigma_p$
 
 
 ### 自相关系数

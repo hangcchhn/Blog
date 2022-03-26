@@ -9,34 +9,17 @@
 
 ### 分散投资可以降低风险
 
-- $r_p$:多资产投资组合p的收益率
-- $w_i$:投资组合p中资产i的权重（占比）
+
+### 风险取决于各资产之间的相关性
+
+- $w_i$:投资组合p中资产i的权重
 - $r_i$:投资组合p中资产i的收益率
-$$
-r_p = \sum\limits_{i = 1}^{N}{(w_i \times r_i)}
-$$
 
-
-### 风险取决于各资产直接的相关性
-
-
-
-
-
-
-- 标准差:$\sigma_p$
-$$
-
-\sigma_p = \sqrt{\sum\limits_{i = 1}^{N}{(w_i^2 \times \sigma_i^2)}}
-
-
-$$
-
-- 相关系数:$\rho_p$
+- $\rho_p$:投资组合p中各资产i之间的相关系数
 
 $$
 \rho_p^2 = \sum\limits_{i = 1}^{N}{(w_i^2 \times \sigma_i^2)}
-+ \sum\limits_{i = 1}^{N}{\sum\limits_{j = 1}^{M}(
++ \sum\limits_{i = 1}^{N}{\sum\limits_{j = 1}^{N}(
     w_i \times \sigma_i \times  w_j \times \sigma_j \times  \rho_{i,j}
 )}
 $$
@@ -70,19 +53,15 @@ $$
 ## 资本资产定价
 > CAPM(Capital Asset Pricing Model)
 > 威廉·夏普(William Sharpe)在1964年提出资本资产定价模型
-
-
-
-## 资产收益率与市场收益率是一次线性关系
-
-
-- 线性关系
-    - 斜率$\beta$
-    - 截距$\alpha$
-
 - 单因子模型
     - 市场收益
 
+
+### 线性关系
+> 资产i的收益率与市场收益率是一次线性关系
+
+- 斜率$\beta_i$
+- 截距$\alpha_i$
 $$
 r_i = \alpha_i + \beta_i \times r_m + \epsilon_i
 $$
@@ -90,20 +69,23 @@ $$
 - $r_m$:市场收益率
 - $r_i$:资产i的收益率
 
+
+
+
 ---
+### 系统风险
 - $\beta_i$:资产i的收益率对市场收益率的敏感系数
-$$
-
-\dfrac{r_i -r_f}{\beta_i} = \dfrac{r_m - rf}{\beta_m}
+- $\beta_m = 1$
 
 $$
 
+\dfrac{r_i -r_f}{\beta_i} = \dfrac{r_m - r_f}{\beta_m}
 
+$$
 
-- 市场系统风险
-    - $\beta_m = 1$
-- 风险溢价：收益率超过无风险收益率的差值
-    - $r_i - r_f$:
+---
+### 风险溢价
+- $r_i - r_f$:资产i的收益率超过无风险收益率的部分
 
 $$
 r_i - r_f = \beta_i \times (r_m - r_f)
@@ -118,6 +100,17 @@ r_i = (1 - \beta_i) \times r_f + \beta_i \times r_m
 
 $$
 
+
+
+### 证券市场线
+> SML(Security Market Line)
+
+- 期望收益率与系统性风险的一次线性关系
+$$
+
+E(r_i) = r_f - \beta_i \times [E(r_m) - r_f]
+
+$$
 
 
 
@@ -181,7 +174,7 @@ $$
 
 
 ---
-## 投资市场假说
+## 资本市场假说
 > CMA(Capital Market Assumption)
 
 - 均值方差优化
