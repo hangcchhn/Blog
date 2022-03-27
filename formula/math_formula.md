@@ -50,9 +50,10 @@ $$
 
 ## 相关系数
 > correlation coefficient
+
+
+- pearson相关系数
 - $\rho_{x, y}$
-
-
 $$
 \rho_{x, y} = \dfrac{Cov(x, y)}{\sigma_x \times \sigma_y}
 

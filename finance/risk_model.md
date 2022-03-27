@@ -143,8 +143,15 @@ min{\sum\limits_{i = 1}^{N}{(\dfrac{RCi}{\sigma_p} - \dfrac{1}{N})^2}}
 
 $$
 
+### 雅可比矩阵
+
+- $Jacobi$
 
 
+- $Jacobi_{i, j}$
+$$
+Jacobi_{i, j} =
+$$
 
 ---
 ## 风险预算模型
