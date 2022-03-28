@@ -87,7 +87,7 @@ $$
 - 年化收益除以最大回撤
 
 $$
-Calmar = \dfrac{Ra}{MaxDrawdown}
+Calmar = \dfrac{Ra}{MaximumDrawdown}
 
 $$
 

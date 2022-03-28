@@ -51,15 +51,16 @@ $$
 
 ---
 ## 超额净值
+>
 $$
 
 $$
 
 ---
 ## 最大回撤：累计净值(分红再投)
-> Maximun Drawdown
+> Maximum Drawdown
 $$
-MaxDrawdown = max(max(
+MD = max(max(
     \frac{CNAV_i - CNAV_j}{CNAV_i}
 ),0)
 
