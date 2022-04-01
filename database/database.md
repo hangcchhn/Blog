@@ -95,7 +95,7 @@ where t.no_id > _offset and t.no_id <= _offset + _number
 
 
 
--- page
+-- oracle >= 12c
 offset _offset rows fetch next _number rows only
 ```
 
