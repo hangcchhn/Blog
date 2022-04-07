@@ -280,7 +280,7 @@ like ('%' || 'string' || '%')
 -- 单条记录保存
 insert into table_name(insert_column1, insert_column2,...) values
     (insert_value1, insert_value2,...)
-on duplicate key update 
+on duplicate key update
     update_column1 = update_value1,
     update_column2 = update_value2,
     ...
@@ -288,10 +288,10 @@ on duplicate key update
 
 -- 批量保存记录
 insert into table_name(insert_column1, insert_column2,...) values
-    (value1_column1, value1_column2,...), 
+    (value1_column1, value1_column2,...),
     (value2_column1, value2_column2,...),
     ...
-on duplicate key update 
+on duplicate key update
     update_column1 = values(update_column1),
     update_column2 = values(update_column2),
     ...
@@ -301,31 +301,32 @@ on duplicate key update
 2. oracle(inspur)
 ```sql
 -- 单条记录保存
-merge into table_name using dual 
+merge into table_name using dual
 on (unique_column1 = unique_value1 and
     unique_column2 = unique_value2 and
     ...)
-when matched then update set 
+when matched then update set
     update_column1 = update_value1,
     update_column2 = update_value2,
     ...
-when not matched then 
-insert (insert_column1, insert_column2,...) 
+when not matched then
+insert (insert_column1, insert_column2,...)
 values (insert_value1, insert_value2,...)
 
 -- 批量保存记录
+-- 注意value_column中的数据不能唯一索引重复
 merge into table_name alias_name using (
     select value1_column1 table_column1, value1_column2 table_column2,... from dual union
     select value2_column1 table_column1, value2_column2 table_column2,... from dual union
-    ... ) temp_table 
-on (alias_name.unique_column1 = temp_table.unique_column1 and 
+    ... ) temp_table
+on (alias_name.unique_column1 = temp_table.unique_column1 and
     alias_name.unique_column2 = temp_table.unique_column2 and
     ...)
-when matched then update set 
+when matched then update set
     alias_name.update_column1 = temp_table.update_column1,
     alias_name.update_column2 = temp_table.update_column2,
     ...
-when not matched then 
+when not matched then
 insert (insert_column1, insert_column2,...)
 values (temp_table.insert_column1, temp_table.insert_column2,...)
 
