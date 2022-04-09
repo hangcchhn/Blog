@@ -85,7 +85,7 @@ $$
 $$
 
 \sigma_{p - b} = \sqrt{\sigma_p^2 + \sigma_b^2
- + 2 \times \rho_{p, b} \times \sigma_p \times \sigma_b }
+ - 2 \times \rho_{p, b} \times \sigma_p \times \sigma_b }
 
 $$
 
@@ -128,51 +128,43 @@ $$
 
 
 
+---
+
 ## 偏度
 > $Skewness$:
+- 总体偏度
 
 $$
 
-Skewness = \dfrac{
-    \sum\limits_{t = 1}^{T}{(r_t - \bar{r}_p)^3}
-}{T \times \sigma_p^3}
+Skewness = \dfrac{1}{T}
+    \sum\limits_{t = 1}^{T}
+    {(\dfrac{r_t - \bar{r}_p}{\sigma_p})^3}
 
 $$
+- 样本偏度
 
 $$
-Skewness = \dfrac{T}{(T - 1) \cdot (T - 2)}
-\Bigg\lbrace
-\dfrac{1}{\sigma_t^3}
-\sum\limits_{t=1}^{T}{(Rp_t - \bar{R}p_t)^3}
-\Bigg\rbrace
+Skewness = \dfrac{T}{(T - 1)(T - 2)}
+     \sum\limits_{t=1}^{T}{(\dfrac{r_t - \bar{r}_p}{\sigma_p})^3}
 $$
-
+---
 ## 峰度
 > $Kurtosis$
+- 总体峰度
+$$
+Kurtosis = = \dfrac{1}{T}
+    \sum\limits_{t = 1}^{T}
+    {(\dfrac{r_t - \bar{r}_p}{\sigma_p})^4}
 
 $$
-Kurtosis = = \dfrac{
-    \sum\limits_{t = 1}^{T}{(r_t - \bar{r}_p)^4}
-}{T \times \sigma_p^4}
 
+- 样本峰度
 $$
-
-
-$$
-Kurtosis = \dfrac{
-    T \cdot (T + 1) \cdot
-    \Bigg\lbrace
-    \dfrac{1}{\sigma_t^4} \cdot
-    \sum\limits_{t=1}^{T}{(Rp_t - \bar{R}p_t)^4}
-    \Bigg\rbrace
-}{
-    (T - 1) \cdot (T - 2) \cdot (T - 3)
-}
- - \dfrac{
-    3 \cdot (T - 1)^2
- }{
-    (T - 2) \cdot (T - 3)
- }
+Kurtosis = \dfrac{T(T + 1)}
+    {(T - 1)(T - 2)(T - 3)}
+    \sum\limits_{t=1}^{T}{(\dfrac{r_t - \bar{r}_p}{\sigma_p})^4} \\
+    - \dfrac{3(T - 1)^2}
+    {(T - 2)(T - 3)}
 
 $$
 
@@ -219,8 +211,15 @@ Sortino_{MAR} = \frac{
 $$
 
 
+$$
+E[(R - MAR)^2] = \dfrac{1}{T}\sum\limits_{t = 1}^{T}{(Rp_t - MAR)^2}
+$$
 
-
+$$
+Sortino = \dfrac{ER - MAR}{
+    \sqrt{E[(R - MAR)^2]}
+}
+$$
 
 
 

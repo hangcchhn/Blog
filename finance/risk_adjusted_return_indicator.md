@@ -94,7 +94,8 @@ $$
 
 
 ---
-###
+### M2
+> Modiglianli
 - $M^2$
 $$
 M^2 = r_f + \dfrac{\bar{r}_p - r_f}{\sigma_p} \times \sigma_m

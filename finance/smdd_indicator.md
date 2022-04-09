@@ -42,8 +42,8 @@ $$
 $$
 \\
 
-f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{[-\frac{1}{2}(\frac{x - \mu}{\sigma})^2]}
-
+f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma}
+    e^{-\dfrac{(x - \mu)^2}{2\sigma^2}}
 \\
 
 f(x) = \frac{1}{n} \sum\limits_{j = 1}^{n}{f(x;Rp_j,\sigma)}
@@ -80,9 +80,10 @@ LPM_2(\tau) = \frac{1}{n} \sum\limits_{j = 1}^{n} {\left[
 $$
 
 ---
-##
+
 ### 欧米伽比率
-> $Omega$
+> Keating和Shadwick在2002年提出
+
 
 - 风险调整后收益指标
 
@@ -94,9 +95,18 @@ $$
 
 $$
 
+- $Omega$:
+$$
+Omega = \dfrac{r_a - r_f}{LPM_1 \times 12} + 1
 
 $$
-Omega = \dfrac{Ra - Rf}{LPM_1 \times 12} + 1
+
+
+---
+### 卡帕比率
+> $Kappa$
+$$
+Kappa = \dfrac{r_a - r_f}{\sqrt[3]{LPM_3 \times 12}}
 
 $$
 ---
@@ -109,13 +119,7 @@ DD(\tau) = \sqrt{LPM_2(\tau)}
 $$
 
 
----
-### 卡帕比率
-> $Kappa$
-$$
-Kappa = \dfrac{Ra - Rf}{\sqrt[3]{LPM_3 \times 12}}
 
-$$
 
 
 

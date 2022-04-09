@@ -60,28 +60,35 @@ $$
 
 ---
 $$
-MRC_i = \dfrac{(\sum W)_i}{\sqrt{W^T \sum W}}
+\begin{aligned}
+\boxed{
+    MRC_i = \dfrac{(\sum W)_i}{\sqrt{W^T \sum W}}
+}
+\end{aligned}
 $$
 - $(\sum W)_i$:
 - $E_i$:第i个元素为1，其他元素为0的N维列向量
 
 $$
-MCR_i = \dfrac{\partial \sigma_p}{\partial w_i}
+\begin{aligned}
+MCR_i
+& = \dfrac{\partial \sigma_p}{\partial w_i}
 \\
- = \dfrac{1}{2\sqrt{W^T \sum W}} \times
+& = \dfrac{1}{2\sqrt{W^T \sum W}} \times
  \dfrac{\partial (\sqrt{W^T \sum W})}{\partial w}
 \\
- = \dfrac{1}{2\sqrt{W^T \sum W}} \times
+&  = \dfrac{1}{2\sqrt{W^T \sum W}} \times
  \dfrac{\partial (\sqrt{W^T \sum W})}{\partial W} \times
  \dfrac{\partial W}{\partial w}
 \\
- = \dfrac{1}{2\sqrt{W^T \sum W}} \times 2W^T \times E_i
+&  = \dfrac{1}{2\sqrt{W^T \sum W}} \times 2W^T \times E_i
 \\
- = \dfrac{W^T E_i}{\sqrt{W^T \sum W}}
-
- = \dfrac{E_i^T (\sum W)}{\sqrt{W^T \sum W}}
-
- = \dfrac{(\sum W)_i}{\sqrt{W^T \sum W}}
+&  = \dfrac{W^T E_i}{\sqrt{W^T \sum W}}
+\\
+&  = \dfrac{E_i^T (\sum W)}{\sqrt{W^T \sum W}}
+\\
+&  = \dfrac{(\sum W)_i}{\sqrt{W^T \sum W}}
+\end{aligned}
 $$
 
 

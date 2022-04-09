@@ -16,7 +16,7 @@
 ### 期望收益率
 > expected return
 
-- $E(r) = \bar{r}$:均值
+- $E(r) = \bar{r}$:期望，均值
 
 - $Var(r) = \sigma^2$:方差
 

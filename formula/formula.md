@@ -13,6 +13,31 @@ $$
 \newline
 第3行
 $$
+- 公式对齐
+$$
+\begin{aligned}
+a
+& = b
+\\
+& = c
+\end{aligned}
+$$
+- 公式方框
+$$
+\begin{aligned}
+\boxed{
+    a = b
+}
+\end{aligned}
+$$
+- 公式编号
+
+$$
+\begin{aligned}
+a = b \tag{1-1}
+\end{aligned}
+$$
+
 ---
 - 底端对齐的省略号
     - $1,2 \ldots N$
@@ -50,10 +75,10 @@ $$
     - $x \mp y=z$
 
 - 乘除
-    -  · : $x \cdot y=z$
-    - \* : $x \ast y=z$
-    -  × : $x \times y=z$
-    -  ÷ : $x \div y=z$
+    - 点乘：$x \cdot y=z$
+    - 星乘：$x \ast y=z$
+    - 叉乘：$x \times y=z$
+    - 除法：$x \div y=z$
 
 ### 分式
 ---
@@ -171,10 +196,9 @@ $$
 $$
 f(x)=
 \begin{cases}
-x^, & \text x \geq 0  \\
+x, & \text x \geq 0  \\
 -x, & \text{$x \lt 0$}
 \end{cases}
-\tag{1-1}
 $$
 
 
@@ -235,15 +259,17 @@ $$
 - 因为：$\because$
 - 所以：$\therefore$
 
-
-
-
+- 服从分布：$\sim$
+- 箭头指向：$\to$
+---
 ### 虚数
 
 z = x $\imath$ + j $\jmath$
 
 ---
 ### 三角函数
+- 垂直：$\bot$
+
 - 角度：$\angle A = 30^\circ$
 
 - 正弦：$\sin(x)$

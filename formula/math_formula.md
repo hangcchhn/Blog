@@ -1,10 +1,52 @@
 # 数学公式
->
+> math formula
+- $N$:总体数量
+- $n$:样本数量
+- $n < N$
+---
+## 期望
+> Expectation
+- 均值(mean)
+- $E(X)$
+$$
+E(X) = E(x_i) = \dfrac{1}{N}\sum\limits_{i = 1}^{N}{x_i}
+$$
 
+- 总体期望
+$$
+\mu = \dfrac{1}{N}\sum\limits_{i = 1}^{N}{x_i}
+$$
+- 样本期望
+$$
+\bar{x} = \dfrac{1}{n}\sum\limits_{i = 1}^{n}{x_i}
+$$
+
+
+---
+## 方差
+> Variance
+- $Var(x)$
+$$
+Var(x) = E\{[X - E(X)]^2\}
+$$
+
+
+- 总体方差
+$$
+\sigma_x^2 = \dfrac{\sum\limits_{i = 1}^{N}
+    {(x_i - \mu)^2}}{N}
+$$
+- 样本方差
+
+$$
+s_x^2 = \dfrac{\sum\limits_{i = 1}^{n}
+    {(x_i - \bar{x})^2}}{n - 1}
+$$
 
 ## 标准差
 > Standard Deviation
 - $\sigma_x$
+- $s_x$
 - 无偏性unbiasedness
 $$
 StdDev(unbiased) = \sqrt{
@@ -22,13 +64,9 @@ unbiased = 0|1
 
 $$
 
-## 方差
-> Variance
-- $Var(x)$
-$$
-Var(x) = \sigma_x^2
-$$
 
+
+---
 ## 协方差
 > Covariance
 - $Cov(x, y)$
@@ -96,7 +134,7 @@ $$
 
 
 ---
-## r-squared
+## R-square
 - y:拟合数据
 - x:真实数据
 
