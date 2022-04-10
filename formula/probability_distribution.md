@@ -3,39 +3,10 @@
 
 - $X$:随机变量X
 - $P(X = x)$:随机变量X等于x的概率(Probability)
----
-## 概率分布函数
-> PDF(Probability Distribution Function)
+- $E(X)$:期望
+- $D(X)$:方差
 - $f(x)$:概率分布函数
-
-- 连续型随机变量，概率密度函数
-    - PDF(Probability Density Function)
-$$
-P(a \leq X \leq b) = \int_{a}^{b}f(x)dx
-$$
-
-$$
-\int_{a}^{b}f(x)dx = 1
-$$
-- 离散型随机变量，概率质量函数
-    - PMF(Probability Mass Function)
-
----
-## 累积分布函数
-> CDF(Cumulative Distribution Function)
-- $F(x)$:累积分布函数
-$$
-F(x) = P(X \leq x)
-$$
-- CDF就是PDF的积分
-$$
-F(x) = \int_{-\infty}^{x}f(t)dt
-$$
-- PDF就是CDF的导数
-$$
-f(x) = F(x)^\prime
-$$
-
+- $F(x)$:
 ---
 ## 均匀分布
 - 离散型：$X \in \{x_1, x_2, \cdots, x_N\}$
@@ -76,7 +47,7 @@ P(X = 1) = 1 - P
 \\
 E(X) = p
 \\
-Var(X) = p(1 - p)
+D(X) = p(1 - p)
 
 $$
 
@@ -87,7 +58,7 @@ $$
 
 E(X) = np
 \\
-Var(X) = np(1 - p)
+D(X) = np(1 - p)
 
 $$
 
@@ -125,7 +96,7 @@ Laplace(x|\mu, \gamma) = \dfrac{1}{2\gamma}
 \\
 E(X) = \mu
 \\
-Var(X) = 2\gamma^2
+D(X) = 2\gamma^2
 $$
 
 ---
@@ -144,7 +115,7 @@ Poisson(X = k|\lambda) =
 \\
 E(X) = \lambda
 \\
-Var(X) = \lambda
+D(X) = \lambda
 $$
 
 ## 指数分布
@@ -189,6 +160,11 @@ $$
 
 - $Beta(x|\alpha, \beta)$
 $$
+Beta(x|\alpha, \beta) = \dfrac{n!}{(k - 1)!(n - k)!}
+    x^{k - 1}(1 - x)^{n - k}
+$$
+- $\alpha = k, \beta = n - k + 1$
+$$
 Beta(x|\alpha, \beta) =
     \dfrac{\Gamma(\alpha + \beta)}
     {\Gamma(\alpha)\Gamma(\beta)}
@@ -215,7 +191,8 @@ $$
 - $X \sim \chi^2$
 $$
 Chi-square(x|k) = \Gamma(x|\alpha = k/2, \beta = 2)
-\\
+$$
+$$
 Chi-square(x|k) = \dfrac{(1/2)^{k/2}}{\Gamma(k/2)}
     x^{k/2 - 1} e^{-x/2}
 $$
