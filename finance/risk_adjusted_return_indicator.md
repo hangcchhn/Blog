@@ -10,16 +10,11 @@
 
 - 表示单位总体风险下的平均超额收益率
 - 平均超额收益率除以标准差
-$$
-Sharpe = \dfrac{\bar{r}_p - \bar{r}_f}{\sigma_p}
-$$
 - $\sigma_p$:总体风险
+$$
+Sharpe_p = \dfrac{\bar{r}_p - \bar{r}_f}{\sigma_p}
+$$
 
-$$
-Sharpe_p = \dfrac{\dfrac{1}{T} \cdot
-    \sum\limits_{t=1}^{T}{(Rp_t - Rf_t)}
-}{\sigma_p}
-$$
 
 ## 特雷诺比率
 > $Treynor$
@@ -69,12 +64,7 @@ $$
 - 表示总体收益超过CAPM预测的那部分
 $$
 
-Jensen = (\bar{r}_p - \bar{r}_f) - \beta_m \times (\bar{r}_m - \bar{r}_f)
-
-\\
-
-Jensen = \bar{r}_p - [\bar{r}_f + \beta_m \times (\bar{r}_m - \bar{r}_f)]
-
+Jensen = \bar{r}_p - \bar{r}_f - \beta_p \times (\bar{r}_b - \bar{r}_f)
 
 $$
 
@@ -98,6 +88,10 @@ $$
 > Modiglianli
 - $M^2$
 $$
-M^2 = r_f + \dfrac{\bar{r}_p - r_f}{\sigma_p} \times \sigma_m
 
+M^2 = \bar{r}_f + \dfrac{\bar{r}_p - \bar{r}_f}{\sigma_p} \times \sigma_b
+
+\\
+
+M^2 = \bar{r}_f + Sharpe_p \times \sigma_b
 $$

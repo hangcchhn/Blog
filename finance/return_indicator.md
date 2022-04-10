@@ -7,7 +7,7 @@
 ## 区间(Interval)收益率
 > $ Ri_t $
 - $ Rp_t $:投资组合(Portfolio)的区间收益率
-- $ Rf_t $:无风险(Risk-free)收益率
+- $ Rf_t $:无风险(RiskFree)收益率
 - $ Rb_t $:基准(Benchmark)指数的区间收益率
 - $ Rm_t $:市场(Market)指数的区间收益率
 $$
