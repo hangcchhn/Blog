@@ -1,10 +1,11 @@
-# R
+# r
 
 ## 环境配置
 
-### R
+### r-cran
 - r x86
 - r x64
 
 ### RStudio
 
+RStudio Desktop
