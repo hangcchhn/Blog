@@ -108,6 +108,8 @@ systemctl enable|disable ******|******.service
 
 
 
+systemctl list-unit-files
+
 
 ```
 
