@@ -1,4 +1,5 @@
-# MyBatis xml
+# MyBatis config
+> MyBatis配置
 
 
 ## mybatis框架单独使用的配置文件
@@ -30,12 +31,12 @@
             二级缓存:手动开启
           -->
          <!-- <setting name="cacheEnabled" value="true"/> -->
-         
-         
+
+
          <!-- 开启下划线转驼峰的命名映射机制 -->
          <setting name="mapUnderscoreToCamelCase" value="true"/>
-         
-     </settings> 
+
+     </settings>
 
 
     <!-- 类型别名 -->
@@ -266,7 +267,7 @@ List<Result> resultList = resultMapper.selectResult();
                 enableUpdateByExample="false"
                 enableDeleteByExample="false"
                 enableSelectByExample="false"
-                selectByExampleQueryId="false"></table>    
+                selectByExampleQueryId="false"></table>
         </table>
     </context>
 </generatorConfiguration>
