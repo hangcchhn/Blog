@@ -1,66 +1,6 @@
-# MyBatis sql
+# MyBatis manual
+> 手册
 
-
-
-
-## 查询结果映射对象
-- sql数据库列名：result_name
-```sql
-select result_id, result_name from result_table
-```
-
-- java语言属性：resultName
-```java
-
-import package.ResultType
-
-public class ResultType{
-
-    private Integer resultId;
-    private String resultName;
-
-    //set and get
-}
-
-```
-
-### 1.使用别名
-- mybatis配置xml
-```xml
-<setting name="mapUnderscoreToCamelCase" value="true"/>
-```
-- spring-boot配置properties
-```properties
-mybatis.configuration.mapUnderscoreToCamelCase=true
-```
-
-- mapper.xml
-```xml
-<select resultType="package.ResultType">
-    select result_id resultId, result_name resultName from result_table 
-</select>
-```
-
-
-### 2.使用映射
-
-- javaType:包java.lang下的基本数据类型加上字符串
-
-- jdbcType:枚举org.apache.ibatis.type.JdbcType
-
-```xml
-<resultMap id="resultMap" type="package.ResultType">
-
-    <id property="resultId" javaType="java.lang.Integer" column="result_id"  jdbcType="Integer" />
-    <result property="resultName" javaType="java.lang.String" column="result_name" jdbcType="VARCHAR" />
-
-</resultMap>
-
-<select resultMap="resultMap">
-    select result_id, result_name from result_table 
-</select>
-
-```
 
 
 ## 使用自增主键
@@ -70,7 +10,7 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 - 报错：Error getting generated key or setting result to parameter object
 
 ```xml
-<!-- 
+<!--
     useGeneratedKeys开关
     keyProperty属性
     keyColumn列名
@@ -100,7 +40,7 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 </selectKey>
 ```
 
-- oracle 19c
+- oracle 12c
 ```xml
 <selectKey  keyProperty="userId" resultType="int" order="BEFORE">
     select nvl(max(user_id),0)+1 from tbl
@@ -126,4 +66,17 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 
 ## 调用存储过程
 
+### oracle数据库
 
+> mybatis oracle 调用存储过程，使用游标返回结果，参数必须使用java.util.Map
+
+```java
+public void callUser(Map<String, Object> map);
+```
+
+```xml
+<select id="callUser" statementType="CALLABLE" parameterType="java.util.Map">
+    { call sp_user(#{userName, mode=IN, jdbcType=VARCHAR, javaType=String},
+    #{userList, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=userMap}) }
+</select>
+```
