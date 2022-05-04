@@ -54,9 +54,60 @@ $$
 ## 拟合度
 > $R^2$:R-square
 
-- $R^2$是指观测变量与预测变量之间的相关系数的平方值
-- $R^2$能够评估模拟回归线与实际数据点之际的吻合程度
 
+
+
+- $y_i$:真实值
+- $\hat{y_i}$:拟合值
+
+- $SST$:总离平方和
+    - Total Sum of Squares
+$$
+SST = \sum\limits_{i = 1}^{N}{(y_i - \bar{y})^2}
+$$
+
+- $SSE$:残差平方和
+    - Sum of Squares due to Error
+$$
+SSR = \sum\limits_{i = 1}^{N}{(y_i - \hat{y})^2}
+$$
+
+- $SSR$:回归平方和
+    - Sum of Squares of the Regression
+$$
+SSR = \sum\limits_{i = 1}^{N}{(\hat{y_i} - \bar{y})^2}
+$$
+
+$$
+SST = SSE + SSR
+$$
+
+- $MSE$:均方差
+    - Mean Squared Error
+$$
+MSE = \dfrac{SSE}{N}
+$$
+
+- $RMSE$:均方根
+    - Root Mean Squared Error
+$$
+RMSE = \sqrt{MSE}
+$$
+
+- $R^2$是指观测变量与预测变量之间的相关系数的平方值
+- $R^2$能够评估模拟回归线与实际数据点之间的吻合程度
+- $R^2 \in [0, 1]$
+- $R^2$越接近1，模型拟合程度越好
+
+
+
+$$
+R^2 = 1- \dfrac{SSE}{SST}
+
+$$
+
+
+---
 - $VaR$:风险价值
 在一定置信区间下的最大损失
 $$
