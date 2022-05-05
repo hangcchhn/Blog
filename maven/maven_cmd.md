@@ -1,15 +1,15 @@
 # mvn cmd
 
-## 通用
-```sh
-# settings.xml：maven配置文件名称
 
-mvn -s settings_filepath command
+```sh
+# maven_settings_xml_path:maven配置文件（settings.xml）的绝对路径
+
+mvn -s maven_settings_xml_path command
 
 ```
 
-
-## 创建
+---
+## 项目创建
 
 
 - 创建java base项目
@@ -27,18 +27,37 @@ mvn -B archetype:generate -DgroupId=hn.cch -DartifactId=tomcat_webapp -Darchetyp
 
 
 
-## 打包
+
+## 项目打包
 
 
 ```sh
 mvn clean
 mvn complie
 
-mvn package -Dmaven.test.skip=true  
+mvn package  
 
 mvn install
+
+mvn deploy
+
+mvn site
+mvn test
+
+
+
+
+
+mvn -Dmaven.test.skip=true cmd
+
+-DskipTests:不执行测试用例，但编译测试用例类生成相应的class文件至target/test-classes下
+
+-Dmaven.test.skip=true:不执行测试用例，也不编译测试用例类
+
+
+
 ```
-## 发布
+## 项目发布
 ```sh
 # module_name 子模块名
 
@@ -50,6 +69,20 @@ mvn release:perform -pl module_name
 
 -Darguments="-DskipTests"
 
+-DautoVersionSubmodules=true
+-DreleaseVersion=1.0 
+-DdevelopmentVersion=1.0-SNAPSHOT
+
+
+
+mvn release:prepare -Darguments="-DskipTests"
+mvn release:rollback
+mvn release:perform -Darguments="-DskipTests" -DuseReleaseProfile=false
+
 mvn wagon:upload
 
 ```
+
+
+
+

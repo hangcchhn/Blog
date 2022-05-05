@@ -72,7 +72,9 @@ $$
 - $\min{\left( x \right)}$
 - $\max{\left( x \right)}$
 
-- $\text{MSE}(x)$
+- $\text {MSE}(x)$
+
+
 
 
 ### 加减乘除
@@ -112,9 +114,11 @@ $$
 #### 导数
 ---
 
-- 偏导数$\dfrac{\partial y}{\partial x}$
+- 微分：$\dfrac{{\rm d}y}{{\rm d}x}$
 
-- 一阶导数$y^\prime$
+- 偏导数：$\dfrac{\partial y}{\partial x}$
+
+- 一阶导数：$y^\prime$
 
 #### 积分
 ---
