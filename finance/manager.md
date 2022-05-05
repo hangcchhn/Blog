@@ -56,8 +56,8 @@ $D$是虚拟变量，当$R_m > R_f$时，$D=1$；当$R_m < R_f$时，$D=0$。
 $$
 
 Rp_t - Rf_t = \alpha +
-    \beta_1 \cdot min(0, (Rm_t - Rf_t)) +
-    \beta_2 \cdot max(0, (Rm_t - Rf_t)) +
+    \beta_1 \cdot \min(0, (Rm_t - Rf_t)) +
+    \beta_2 \cdot \max(0, (Rm_t - Rf_t)) +
     \epsilon_t
 
 $$

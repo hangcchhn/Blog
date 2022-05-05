@@ -205,7 +205,7 @@ $$
 
 Sortino_{MAR} = \frac{
     \dfrac{1}{T}
-    \sum\limits_{t = 1}^{T}{(Rp_t - min(Rp_1, Rp_2, \ldots, Rp_t))}
+    \sum\limits_{t = 1}^{T}{(Rp_t - \min(Rp_1, Rp_2, \ldots, Rp_t))}
 }{DR}
 
 $$

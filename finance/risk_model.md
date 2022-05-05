@@ -40,6 +40,7 @@ $$
 ### 边际风险贡献
 > MRC(Marginal Risk Contribution)
 - $MRC_i$:资产i的边际风险贡献
+    - 组合标准差对资产i权重的偏导数
 $$
 MRC_i = \dfrac{\partial \sigma_p}{\partial w_i}
 $$
@@ -66,7 +67,7 @@ $$
 }
 \end{aligned}
 $$
-- $(\sum W)_i$:
+- $(\sum W)_i$:第i个元素
 - $E_i$:第i个元素为1，其他元素为0的N维列向量
 
 $$
@@ -102,7 +103,7 @@ $$
 
 $$
 
-RC_i = w_i \times MRC_i
+RC_i = w_i \times MRC_i = \dfrac{w_i(\sum W)_i}{\sqrt{W^T \sum W}}
 $$
 
 
@@ -129,24 +130,42 @@ w_1 + w_2 + \cdots + w_N= 1
 \end{cases}
 $$
 
-- 各个资产的风险贡献相同
-$$
-RC_i = \dfrac{\sigma_p}{N}
-$$
+
+- 风险平价要求各个资产的风险贡献相同
 
 $$
-RC_i = RC_j, i \neq j
+RC_i = \dfrac{\sigma_p}{N}
 $$
 
 $$
 \sum\limits_{i = 1}^{N}{\sum\limits_{j = 1}^{N}{(RC_i - RC_j)^2}} = 0
 $$
 
-### 优化
+
+### 求最小值
+
+
+$$
+\min{\sum\limits_{i = 1}^{N}{\left(
+    RC_i - \dfrac{\sigma_p}{N}
+\right)^2}}
+$$
 
 $$
 
-min{\sum\limits_{i = 1}^{N}{(\dfrac{RCi}{\sigma_p} - \dfrac{1}{N})^2}}
+\min{\sum\limits_{i = 1}^{N}{\left(
+    \dfrac{w_i (\sum W)_i}{\sqrt{W^T \sum W}}
+     - \dfrac{\sqrt{W^T \sum W}}{N}
+\right)^2}}
+
+
+
+$$
+
+$$
+\min{\sum\limits_{i = 1}^{N}{\left(
+    w_i (\sum W)_i - \dfrac{W^T \sum W}{ N}
+\right)^2}}
 
 $$
 
@@ -165,20 +184,20 @@ $$
 > Risk Budget
 
 
+- 风险预算是风险平价的模型泛化
+- 取消各个资产的风险贡献相同的条件
+
+
 $$
-\sum\limits_{i = 1}^{N}{[w_i (\sum W)_i - rc_i(W^T \sum W)]^2}
+\sum\limits_{i = 1}^{N}{\left(
+    w_i \left(\sum W \right)_i - RC_i \times W^T \sum W
+\right)^2}
 $$
 
 
 
 
 ---
-
-
-- CDF:累积概率密度函数$F(x)$
-
-- $F(x)$的反函数是$F^{-1}(x)$
-
 
 
 

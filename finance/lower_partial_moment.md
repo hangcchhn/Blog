@@ -37,7 +37,7 @@ $$
 - 概率分布函数
 $$
 f(x|r_i, \sigma) = \frac{1}{\sqrt{2\pi}\sigma}
-    e^{-\dfrac{(x - r_i)^2}{2\sigma^2}}
+    \exp{\left( -\dfrac{(x - r_i)^2}{2\sigma^2} \right)}
 $$
 - 累计分布函数
 $$

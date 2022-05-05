@@ -33,7 +33,7 @@
 > MaxFall
 - 最小的收益率
 $$
-MaxFall = min(Rp_1,Rp_2,\ldots Rp_N, 0)
+MaxFall = \min(Rp_1,Rp_2,\ldots Rp_N, 0)
 $$
 
 

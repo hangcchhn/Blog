@@ -159,13 +159,11 @@ y = \alpha + \sum\limits_{t = 1}^{T}{\beta_{t} * x_t} + \epsilon
 
 \\
 
-min
-\Bigg(
+\min\left(
 \sum\limits_{t = 1}^{T}{
     \bigg\lgroup
         y - \sum\limits_{t = 1}^{T}{\beta_{t} * x_t}
-    \bigg\rgroup^2}
-\Bigg)
+    \bigg\rgroup^2}\right)
 $$
 
 ---

@@ -65,7 +65,14 @@ $$
 
 - 函数：$\operatorname{f}(x)$
 
+- 书法：$\mathcal{F}$
+- 手迹：$\mathscr{F}$
 
+- $\exp{\left( x \right)} = e^x$
+- $\min{\left( x \right)}$
+- $\max{\left( x \right)}$
+
+- $\text{MSE}(x)$
 
 
 ### 加减乘除
@@ -185,6 +192,15 @@ $$
 \Big\{ X \Big\}
 \bigg\{ X \bigg\}
 \Bigg\{ X \Bigg\}
+
+\\
+
+\left ( {
+    \dfrac{
+        \dfrac{X}{Z} + 1
+        }{Y}
+    }
+\right )
 
 $$
 

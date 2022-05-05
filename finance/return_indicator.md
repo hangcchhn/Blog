@@ -76,7 +76,8 @@ UCR =
 \Bigg\rbrace^{
     \dfrac{1}{\sum\limits_{t = 1}^{T}{count(1)}}
 } - 1
-
+$$
+$$
 \\
 Rb_t \geq 0
 $$

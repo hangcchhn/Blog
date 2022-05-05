@@ -4,10 +4,10 @@
 > Ctrl + Shift + Enter
 
 
-- LN(x):$ln(x)$
+- LN(x):$\ln(x)$
 
 
-- EXP():$e^x$
+- EXP():$\exp(x)$
 
 
 - NORMDIST(x, $\mu$, $\sigma$, cumulative)

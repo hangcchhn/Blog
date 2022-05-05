@@ -71,13 +71,13 @@ $$
 - 概率密度函数
 $$
 Normal(x|\mu, \sigma^2) = \dfrac{1}{\sqrt{2\pi}\sigma}
-    e^{-\dfrac{(x - \mu)^2}{2\sigma^2}}
+    \exp{\left( -\dfrac{(x - \mu)^2}{2\sigma^2} \right)}
 $$
 
 - 标准正态分布:$X \sim N(0, 1)$
 $$
 f(u) = \dfrac{1}{\sqrt{2\pi}}
-    e^{-\dfrac{u^2}{2}}
+    \exp{\left( -\dfrac{u^2}{2} \right)}
 $$
 
 $$
@@ -91,7 +91,7 @@ $$
 > Laplace distribution
 $$
 Laplace(x|\mu, \gamma) = \dfrac{1}{2\gamma}
-    e^{-\dfrac{x - \mu}{\gamma}}
+    \exp{\left( -\dfrac{x - \mu}{\gamma} \right)}
 
 \\
 E(X) = \mu

@@ -53,7 +53,7 @@
 
 #### 远期合约定价
 $$
-F = F_0 - S_0 \times e^{t * T}
+F = F_0 - S_0 \times \exp{\left( t * T \right)}
 
 $$
 - $F$:远期价格
