@@ -4,7 +4,7 @@
 
 
 ## CentOS MySQL Offline Install
-
+> centos 6.10 + mysql 5.7.9
 
 
 
@@ -39,6 +39,10 @@ rpm -ivh mysql-community-client-5.7.9-1.el6.x86_64.rpm
 yum install -y numactl
 
 rpm -ivh mysql-community-server-5.7.9-1.el6.x86_64.rpm
+
+# yum remove mysql-libs
+rpm -ivh mysql-community-libs-compat-5.7.9-1.el6.x86_64.rpm
+
 
 ```
 
