@@ -146,8 +146,10 @@ urls = ()
 
 if __name__ == "__main__":
     app = web.application(urls, globals())
-    # 使用fastcgi必须添加一下这行代码
-    web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
+    # 只有在Linux系统才使用fcgi或fastcgi启动web.py
+    if 'Linux' == platform.system():
+        web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
+        pass
     app.run()
     pass
 ```
