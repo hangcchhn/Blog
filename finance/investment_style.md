@@ -58,6 +58,7 @@ $$
 
 
 - $y_i$:真实值
+- $\bar{y_i}$:平均值
 - $\hat{y_i}$:拟合值
 
 - $SST$:总离平方和
@@ -69,7 +70,7 @@ $$
 - $SSE$:残差平方和
     - Sum of Squares due to Error
 $$
-SSR = \sum\limits_{i = 1}^{N}{(y_i - \hat{y})^2}
+SSE = \sum\limits_{i = 1}^{N}{(y_i - \hat{y})^2}
 $$
 
 - $SSR$:回归平方和
