@@ -1,5 +1,5 @@
-# 概率
-> probability
+# 概率论
+> probability theory
 
 - $X$:随机变量X
 - $P(X = x)$:随机变量X等于x的概率(Probability)

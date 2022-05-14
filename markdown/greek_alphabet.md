@@ -1,9 +1,9 @@
----
-## 希腊字母
-> Greek Alphabet
+
+# 希腊字母
+> greek alphabet
 
 ---
-### 1.大写
+## 1.大写
 - Alpha(A):$\Alpha$
 - Beta(B):$\Beta$
 - Chi(X):$\Chi$
@@ -29,7 +29,7 @@
 - Zeta(Z):$\Zeta$
 
 ---
-### 2.小写
+## 2.小写
 - alpha(α):$\alpha$
 - beta(β):$\beta$
 - chi(χ):$\chi$
@@ -60,7 +60,7 @@
 - zeta(ζ):$\zeta$
 
 ---
-### 3.变量
+## 3.变量
 - varepsilon(ε):$\varepsilon$
 - varkappa(ϰ):$\varkappa$
 - vartheta(ϑ):$\vartheta$
