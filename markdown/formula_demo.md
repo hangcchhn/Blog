@@ -11,6 +11,6 @@ $\tbinom{n}{k}$
 $\dbinom{n}{k}$
 
 $\binom{n}{k}$
-$ {n\brace k}$
-$ {n\choose k}$
-$ {n\brack k}$
+$ {n \brace k}$
+$ {n \choose k}$
+$ {n \brack k}$

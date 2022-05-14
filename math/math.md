@@ -1,78 +1,25 @@
+
+
 # 数学
 > math
 
-## 微分
->
+---
+- 下标:$x_1$
+- 角标:$z_x^y$
+
+- 自然常数:$e = \lim\limits_{n\rightarrow+\infty}{(\frac{x + 1}{x})^x} $
+
+- 虚数:$z = x \imath + j \jmath$
 
 
-### 导函数
+- 绝对值:$|x|$
 
-$$
-y = f(x)
-\\
-\Delta x = x_1 - x_0
-\\
-\Delta y = y_1 - y_0
-$$
+- 最小值:$\min{\left( x \right)}$
+- 最大值:$\max{\left( x \right)}$
+
+- 取余:$\bmod{\left( x \right)}$
 
 
-$$
-\dfrac{{\rm d}y}{{\rm d}x} = \lim\limits_{\Delta x \rightarrow +\infty}\dfrac{\Delta y}{\Delta x}
-$$
-- $dx$:微分
-- 极限存在，函数可微。
-
-$$
-\dfrac{{\rm d}y}{{\rm d}x} = y^\prime = f^\prime(x) = \dot y = D_xy = Df(x)
-$$
-- $\dfrac{{\rm d}y}{{\rm d}x}$:莱布尼茨（Leibinz）的表示方式
-- $y^\prime = f^\prime(x)$:拉格朗日（Lagrange）的表示方式
-- $\dot y$:牛顿（Newton）的表示方式
-- $D_xy = Df(x)$:柯西（）的表示方式
-- 指数
-$$
-\dfrac{{\rm d}(a^x)}{{\rm d}x} = a^xlna \quad \dfrac{{\rm d}(e^x)}{{\rm d}x} = e^x
-$$
-- 对数
-$$
-\dfrac{{\rm d}(log_ax)}{{\rm d}x} = \dfrac{1}{xlna} \quad \dfrac{{\rm d}(lnx)}{{\rm d}x} = \dfrac{1}{x}
-$$
-- 幂函数
-$$
-\dfrac{{\rm d}(x^a)}{{\rm d}x} = ax^{a - 1}
-$$
-#### 高阶微分
-$$
-f^{\prime\prime}(x) = y^{\prime\prime}
-\\
-f^{(n)}(x) = y^{(n)}
-$$
-
-### 偏微分
-
-$$
-z = f(x, y)
-$$
-
-$$
-\dfrac{\partial z}{\partial x} = f_x(x, y)
-\quad
-\dfrac{\partial z}{\partial y} = f_y(x, y)
-$$
-
-$$
-f_{xy} =
-\\
-f_{yx} =
-$$
-
-### 全微分
-
-$$
-z = f(x, y)
-$$
-
-
-$$
-\partial z = \dfrac{\partial z}{\partial x}dx + \dfrac{\partial z}{\partial y}dy
-$$
+---
+- 均值:$\bar{x}$
+- 向量:$\vec{a}$

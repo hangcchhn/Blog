@@ -34,15 +34,23 @@
 
 
 ---
+## 特征工程
+
+- 预处理
+    - 归一化
+    - 标准化
+    - 缺失值
+    - 异常值
 
 
+---
 ## 特征转换
-- 特征降维
+- 降维
     - 特征提取
     - 特征选择
 
-- 主成分分析(Principal Components Analysis, PCA)
-- 线性判别分析(Liner Discriminant Analysis, LDA)
+    - 主成分分析(Principal Components Analysis, PCA)
+    - 线性判别分析(Liner Discriminant Analysis, LDA)
 
 
 
@@ -52,6 +60,10 @@
 > Linear Regression
 $$
 
-f()
+f(\pmb{x};\pmb{w},b) = \pmb{w}^T
+
+
 
 $$
+
+
