@@ -25,11 +25,11 @@ $$
 - 极限存在，函数可微。
 
 $$
-\dfrac{{\rm{d}}y}{{\rm{d}}x} = y^\prime = f^\prime(x) = \dot y = D_xy = Df(x)
+\dfrac{{\rm{d}}y}{{\rm{d}}x} = y' = f'(x) = \dot y = D_xy = Df(x)
 $$
 - 表示方式
     - $\dfrac{{\rm{d}}y}{{\rm{d}}x}$:莱布尼茨（Leibinz）的表示方式
-    - $y^\prime = f^\prime(x)$:拉格朗日（Lagrange）的表示方式
+    - $y' = f'(x)$:拉格朗日（Lagrange）的表示方式
     - $\dot y$:牛顿（Newton）的表示方式
     - $D_xy = Df(x)$:柯西（）的表示方式
 
@@ -50,10 +50,9 @@ $$
 ---
 - 高阶微分
 $$
-
-f^{\prime\prime}(x) = y^{\prime\prime}
+y'' = f''(x)
 \\
-f^{(n)}(x) = y^{(n)}
+y^{(n)} = f^{(n)}(x)
 $$
 
 - 偏微分
