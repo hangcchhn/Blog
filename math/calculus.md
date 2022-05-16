@@ -84,8 +84,11 @@ $$
 \partial z = \dfrac{\partial z}{\partial x}dx + \dfrac{\partial z}{\partial y}dy
 $$
 
-
-
+---
+- 自动计算梯度
+    - 数值微分(Numerical Differentiation)
+    - 符号微分(Symbolic Differentiation)
+    - 自动微分(Automatic Differentiation)
 
 ---
 ## 积分

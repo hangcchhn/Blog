@@ -13,8 +13,7 @@
         - 支持向量机(Support Vector Machine, SVM)
         - 神经网络(Neural Network)
     - 回归(Regression)
-        - 线性回归(Linear Regression)
-        - 逻辑回归
+        
     
 - 无监督学习
     - 聚类
@@ -56,14 +55,55 @@
 
 
 ---
-## 线性回归
+
+## 回归
+> Regression
+
+### 线性回归
 > Linear Regression
 $$
 
 f(\pmb{x};\pmb{w},b) = \pmb{w}^T
 
-
-
 $$
+
+### Logistic回归
+> Logistic Regression
+
+
+
+### Softmax回归
+> Softmax Regression
+
+
+
+---
+
+## 分类
+> Classification
+### 二分类
+> Binary Classification
+
+### 多分类
+> Multi-class Classification
+
+
+---
+
+
+## 神经网络
+> NN(Neural Network)
+
+
+### 人工神经网络
+> ANN(Artifical Neural Network)
+
+
+### 循环神经网络
+> RNN(Recurrent Neural Network)
+
+
+### 卷积神经网络
+> CNN(Convolutional Neural Network)
 
 
