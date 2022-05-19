@@ -42,7 +42,7 @@ make & make install
 - webpy.py
 ```python
 #!/usr/bin/env python2
-# encoding=utf-8
+# —*— coding: utf-8 -*-
 import web
 
 # code
@@ -138,7 +138,7 @@ curl http://127.0.0.1:8080/
 - webpy.py
 ```python
 #!/usr/bin/env python2
-# encoding=utf-8
+# —*— coding: utf-8 -*-
 import web
 
 # code
