@@ -6,7 +6,7 @@
 - $E(X)$:期望
 - $D(X)$:方差
 - $f(x)$:概率分布函数
-- $F(x)$:
+- $F(x)$:累积分布函数
 ---
 ## 均匀分布
 - 离散型：$X \in \{x_1, x_2, \cdots, x_N\}$
@@ -70,7 +70,7 @@ $$
 - $X \sim N(\mu, \sigma^2)$
 - 概率密度函数
 $$
-Normal(x|\mu, \sigma^2) = \dfrac{1}{\sqrt{2\pi}\sigma}
+Normal(x; \mu, \sigma^2) = \dfrac{1}{\sqrt{2\pi}\sigma}
     \exp{\left( -\dfrac{(x - \mu)^2}{2\sigma^2} \right)}
 $$
 
@@ -90,7 +90,7 @@ $$
 ## 拉普拉斯分布
 > Laplace distribution
 $$
-Laplace(x|\mu, \gamma) = \dfrac{1}{2\gamma}
+Laplace(x; \mu, \gamma) = \dfrac{1}{2\gamma}
     \exp{\left( -\dfrac{x - \mu}{\gamma} \right)}
 
 \\
@@ -105,11 +105,11 @@ $$
 - 离散型
 - 在单位时间（或者单位面积）内事件发生的平均次数$\lambda$
 - 在单位时间（或者单位面积）内事件发生k次数的概率$P(X = k)$
-- $Poisson(X = k|\lambda)$
+- $Poisson(X = k; \lambda)$
 $$
-P(X = k) = Poisson(X = k|\lambda)
+P(X = k) = Poisson(X = k; \lambda)
 \\
-Poisson(X = k|\lambda) =
+Poisson(X = k; \lambda) =
 \dfrac{\lambda^k}{k!}e^{-\lambda},
     k = 0, 1, \cdots, N
 \\
@@ -144,13 +144,13 @@ $$
 \\
 \Gamma(k + 1) = k!
 $$
-- $Gamma(x|\alpha, \beta)$:
+- $Gamma(x; \alpha, \beta)$:
 $$
-Gamma(x|\alpha, \beta) = \dfrac{\beta x^\alpha e^{-\beta x}}{\Gamma(\alpha)}
+Gamma(x; \alpha, \beta) = \dfrac{\beta x^\alpha e^{-\beta x}}{\Gamma(\alpha)}
 $$
-- $Poisson(X = k|\lambda)$
+- $Poisson(X = k; \lambda)$
 $$
-Poisson(X = k|\lambda) = Gamma(\lambda|\alpha = k + 1, \beta = 1)
+Poisson(X = k; \lambda) = Gamma(\lambda; \alpha = k + 1, \beta = 1)
 $$
 
 
@@ -158,14 +158,14 @@ $$
 ## 贝塔分布
 > Beta distribution
 
-- $Beta(x|\alpha, \beta)$
+- $Beta(x; \alpha, \beta)$
 $$
-Beta(x|\alpha, \beta) = \dfrac{n!}{(k - 1)!(n - k)!}
+Beta(x; \alpha, \beta) = \dfrac{n!}{(k - 1)!(n - k)!}
     x^{k - 1}(1 - x)^{n - k}
 $$
 - $\alpha = k, \beta = n - k + 1$
 $$
-Beta(x|\alpha, \beta) =
+Beta(x; \alpha, \beta) =
     \dfrac{\Gamma(\alpha + \beta)}
     {\Gamma(\alpha)\Gamma(\beta)}
     x^{\alpha - 1}
@@ -179,7 +179,7 @@ $$
 - $\sum{x} = 1$
 
 $$
-Dirichlet(x|\alpha) =
+Dirichlet(x; \alpha) =
     \dfrac{\Gamma({\sum_{j = 1}^{N}{\alpha_j})}}
     {\prod_{j = 1}^{N}{\Gamma(\alpha_j)}}
     \prod\limits_{i = 1}^{N}{x_i^{\alpha_i - 1}}
@@ -190,10 +190,10 @@ $$
 > Chi-square distribution
 - $X \sim \chi^2$
 $$
-Chi-square(x|k) = \Gamma(x|\alpha = k/2, \beta = 2)
+Chi-square(x; k) = \Gamma(x; \alpha = k/2, \beta = 2)
 $$
 $$
-Chi-square(x|k) = \dfrac{(1/2)^{k/2}}{\Gamma(k/2)}
+Chi-square(x; k) = \dfrac{(1/2)^{k/2}}{\Gamma(k/2)}
     x^{k/2 - 1} e^{-x/2}
 $$
 

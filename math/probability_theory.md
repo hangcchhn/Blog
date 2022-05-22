@@ -5,12 +5,12 @@
 ## 随机变量
 > random variable
 
-- $X$:随机变量X
+- $X$
 
 
 
-## 概率
-> probability
+## 概率函数
+> probability function
 - $P(X = x_i) = p(x_i)$:随机变量X等于x的概率
 $$
 \sum\limits_{i = 1}^{N}{p(x_i)} = 1
@@ -19,11 +19,11 @@ $$
 
 ## 随机向量
 > random vector
-- $\pmb{X}$:随机变量X
+- $\pmb{X}$
 
 ## 期望
 > expectation
-- $\mathbb{E}(X)$
+- $\mathbb{E}(\pmb{X})$
 $$
 \mathbb{E}(X) = \sum\limits_{i = 1}^{N}{x_ip(x_i)}
 $$
@@ -31,10 +31,10 @@ $$
 ---
 ## 方差
 > variance
-- $var(x)$
-- $D(x)$
+- $var(\pmb{X})$
+- $\mathbb{D}(\pmb{X})$
 $$
-D(x) = \mathbb{E}\{[X - \mathbb{E}(X)]^2\}
+\mathbb{D}(\pmb{X}) = \mathbb{E}\{[\pmb{X} - \mathbb{E}(\pmb{X})]^2\}
 $$
 
 
@@ -43,9 +43,9 @@ $$
 ---
 ## 协方差
 > covariance
-- $cov(X, Y)$
+- $cov(\pmb{X}, \pmb{Y})$
 $$
-cov(X, Y) = \mathbb{E}\{[X - \mathbb{E}(X)][Y - \mathbb{E}(Y)]\}
+cov(\pmb{X}, \pmb{Y}) = \mathbb{E}\{[\pmb{X} - \mathbb{E}(\pmb{X})][\pmb{Y} - \mathbb{E}(\pmb{Y})]\}
 $$
 
 

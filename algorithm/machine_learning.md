@@ -13,8 +13,8 @@
         - 支持向量机(Support Vector Machine, SVM)
         - 神经网络(Neural Network)
     - 回归(Regression)
-        
-    
+
+
 - 无监督学习
     - 聚类
         - k-均值算法(k-means)
@@ -22,7 +22,7 @@
         - 分层聚类算法
     - 关联规则
         - Apriori
-        - 
+        -
 - 强化学习
 - 半监督学习
 - 自主学习
@@ -54,56 +54,9 @@
 
 
 
----
-
-## 回归
-> Regression
-
-### 线性回归
-> Linear Regression
-$$
-
-f(\pmb{x};\pmb{w},b) = \pmb{w}^T
-
-$$
-
-### Logistic回归
-> Logistic Regression
-
-
-
-### Softmax回归
-> Softmax Regression
 
 
 
 ---
-
-## 分类
-> Classification
-### 二分类
-> Binary Classification
-
-### 多分类
-> Multi-class Classification
-
-
----
-
-
-## 神经网络
-> NN(Neural Network)
-
-
-### 人工神经网络
-> ANN(Artifical Neural Network)
-
-
-### 循环神经网络
-> RNN(Recurrent Neural Network)
-
-
-### 卷积神经网络
-> CNN(Convolutional Neural Network)
 
 
