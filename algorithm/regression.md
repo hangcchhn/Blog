@@ -72,17 +72,49 @@ $$
 > Linear Regression
 $$
 
-f(\pmb{x};\pmb{w},b) = \pmb{w}^T \pmb{x} + b
+f(\pmb{x};\pmb{w}) = \pmb{w}^T \pmb{X}
+\\
+\pmb{X} \pmb{w} = \pmb{y}
+\\
+ \pmb{w} = \pmb{X}^{T} \pmb{y}
+\\
+\pmb{w} = (\pmb{X}^{T} \pmb{X})^{-1} \pmb{X}^{T} \pmb{y}
 
 $$
+
+- $\hat{w}$的最大对数似然估计量:$\hat{w} = (\pmb{X}^{T} \pmb{X})^{-1} \pmb{X}^{T} \pmb{y}$
+
+
+- 穆尔-彭罗斯广义逆矩阵(Moore Penrose):$\pmb{X}^{+}$
+    - $\pmb{X}$为非奇异矩阵:$\pmb{X}^{+} = (\pmb{X}^{T} \pmb{X})^{-1} \pmb{X}^{T}$
+    - $\pmb{X}$为可逆方阵:$\pmb{X}^{+} = (\pmb{X}^{T} \pmb{X})^{-1} \pmb{X}^{T} = \pmb{X}^{-1} (\pmb{X}^{T})^{-1} \pmb{X}^{T} = \pmb{X}^{-1}$
+    - $\pmb{X} = \pmb{U} \Sigma \pmb{V^T}$ SVD分解:$\pmb{X}^{+} = \pmb{U} \Sigma^{-1} \pmb{V^T}$
+
 
 
 
 ## Logistic回归
 > Logistic Regression
 
+- logistic函数
+$$
+
+logistic(x) = \dfrac{1}{1 + \exp(-x)}
+
+$$
 
 
 ## Softmax回归
 > Softmax Regression
+
+- softmax函数
+$$
+softmax(x_k) = \dfrac{\exp(x_k)}
+    {\sum_{i = 1}^{K}{\exp(x_i)}}
+$$
+
+
+## ARIMA:差分整合移动平均自回归模型
+> Auto Regressive Integrated Moving Average
+
 
