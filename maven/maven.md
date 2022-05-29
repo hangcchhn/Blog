@@ -20,6 +20,25 @@ jar包管理，maven仓库
 - MAVEN_HOME
     - M2_HOME
 
+- maven 3.2.5 -> jdk 1.6
+- maven 3.3.9 -> jdk 1.8
+
+- maven指定jdk版本
+```xml
+<profile>
+    <id>1.8</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+        <jdk>1.8</jdk>
+    </activation>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+    </properties>
+</profile>
+```
+
 ### 2.本地仓库
 ```xml
 <!-- 本地仓库路径配置 -->
@@ -51,9 +70,9 @@ mvn install:install-file -Dfile=xxx.jar -DgroupId=hn.cch -DartifactId=name -Dver
 
 
 ### 4.私服仓库
-
+- nexus
 ```sh
-# nexus-3.9.0-01-unix.tar.gz 
+# nexus-3.9.0-01-unix.tar.gz
 tar -zxvf nexus-3.9.0-01-unix.tar.gz
 cd nexus-3.9.0-01
 ./bin/nexus run
@@ -63,12 +82,8 @@ cd nexus-3.9.0-01
 <!-- nexus -->
 
 ```
-
-## 三、使用
-
-### 1.项目
 ---
-#### (1)项目结构
+## 项目结构
 - src
     - main
         - java
@@ -79,8 +94,3 @@ cd nexus-3.9.0-01
         - resources
 - target
 - pom.xml
-### 2.依赖
-
-
-
-### 3.编译
