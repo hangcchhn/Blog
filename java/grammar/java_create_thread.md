@@ -1,8 +1,8 @@
-# Java Thread 
-> Java语言创建Thread
+# java create thread
+> Java语言创建线程
 
-## Thread
-> 继承Thread类的run方法
+## 继承Thread类的run方法
+
 ```java
 Thread thread = new Thread() {
     @Override
@@ -21,8 +21,7 @@ thread.start();
 
 ```
 
-## Runnable
->实现Runnable接口的run方法 
+## 实现Runnable接口的run方法
 
 ```java
 Thread runnable = new Thread(new Runnable() {
@@ -40,8 +39,10 @@ Thread runnable = new Thread(new Runnable() {
 runnable.start();
 
 ```
-## Thread&Runnable
-> 继承Thread类和实现Runnable接口
+
+---
+## 继承Thread类和实现Runnable接口
+
 ```java
 // 运行的是Thread类的run方法
 // 而不是Runable接口的run方法
@@ -71,6 +72,6 @@ new Thread(new Runnable() {
 }.start();
 
 ```
-
+---
 ## ThreadPool
 > 线程池

@@ -1,13 +1,7 @@
-# Java Loop List
+# java list remove item
+> java语言列表删除元素
 
-
-
-## 使用loop删除数组元素
-
-
-
-
-
+### 准备list列表用于测试
 ```java
 List<String> stringList = new ArrayList<>();
 
@@ -28,8 +22,8 @@ System.out.println(stringList);
 ```
 
 
-
-## 使用index删除结果错误
+---
+### 使用index删除结果错误
 
 ```java
 for (int i = 0; i < stringList.size(); i++) {
@@ -46,8 +40,8 @@ System.out.println(stringList);
 ```
 
 
-
-## 使用foreach删除抛出异常
+---
+### 使用foreach删除抛出异常
 
 ```java
 for (String string : stringList) {
@@ -65,8 +59,8 @@ System.out.println(stringList);
 
 
 
-
-## 使用iterator删除结果正常
+---
+### 使用iterator删除结果正常
 
 ```java
 Iterator<String> stringIterator = stringList.iterator();

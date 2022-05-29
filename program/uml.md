@@ -2,13 +2,16 @@
 > 统一建模语言UML
 
 - Ration Rose
-    - IBM：企业工具
+    - IBM
 
 - PowerDesigner
     - sybase:数据库建模
 
 - StarUML
     - 韩国
+
+- Visio
+    - 微软
 
 ## 一、用例图
 ### 1.参与者（Actor）
