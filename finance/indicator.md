@@ -39,10 +39,10 @@ $$
 
 
 ### 胜率
-> WinRatio
+> WinRate
 - 投资组合收益率大于基准指数收益率的区间数量除以区间总数
 $$
-WinRatio= \frac{count(Rp_t - Rb_t)}{N}
+WinRate= \frac{count(Rp_t - Rb_t)}{N}
 $$
 
 ### 盈亏比

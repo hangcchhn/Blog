@@ -1,4 +1,4 @@
-# sql copy 
+# database copy
 > 数据库表复制
 
 ## 一、数据迁移
