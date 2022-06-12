@@ -1,10 +1,10 @@
 # numpy ndarray
 
-## 等号 
+## 等号
 
-> 指针 -> 内存  
-> 引用 -> 对象
-
+- 指针 --> 内存
+- 引用 --> 对象
+---
 - 赋值
 `array1 = array2`
 指针不同，内存相同
@@ -19,7 +19,7 @@
 `array1 = array2.copy()`
 指针不同，内存不同
 
-```python
+```py
 
 
 a = numpy.array(range(12))

@@ -8,7 +8,7 @@ pip install flask
 
 
 flask.py:
-```python
+```py
 # —*— coding: utf-8 -*-
 #! /usr/bin/env python2
 from flask import Flask

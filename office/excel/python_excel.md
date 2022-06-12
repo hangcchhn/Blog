@@ -18,7 +18,7 @@ cell
 column
 
 
-```python
+```py
 from openpyxl import load_workbook
 
 from openpyxl.chart import (
