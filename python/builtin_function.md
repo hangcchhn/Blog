@@ -46,8 +46,8 @@
 ---
 - callable()
 
-- globals()
-- locals()
+- globals():全局变量
+- locals():局部变量
 
 
 ---
