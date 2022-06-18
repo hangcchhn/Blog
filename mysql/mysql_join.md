@@ -6,8 +6,8 @@
 内连接相对于两表关联查询
 
 ```
-# select ... from table_1 t1 inner join table_2 t2 on t1.c1=t2.c2 
-# select ... from table_1 t1, table_2 t2 where t1.c1=t2.c2 
+# select ... from table_1 t1 inner join table_2 t2 on t1.c1=t2.c2
+# select ... from table_1 t1, table_2 t2 where t1.c1=t2.c2
 ```
 
 
@@ -20,7 +20,7 @@
 以table_left为主
 
 ```
-# select ... from table_left tl left join table_right tr on tl.cl=tr.cr 
+# select ... from table_left tl left join table_right tr on tl.cl=tr.cr
 
 ```
 
@@ -28,11 +28,11 @@
 
 以右表为主，
 ```
-# select ... from table_left tl right join table_right tr on tl.cl=tr.cr 
+# select ... from table_left tl right join table_right tr on tl.cl=tr.cr
 
 ```
 
-### 
+###
 
 
 
@@ -50,12 +50,13 @@
 
 结果的记录数=左表行数*右表行数
 
+使用`cross join`关键字实现交叉连接
 
 
 ```
-# select ... from table_l tl right join table_r tr on tl.cl=tr.cr 
+# select ... from table_l tl cross join table_r tr on tl.cl=tr.cr
 ```
 
- 
+
 
 
