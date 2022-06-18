@@ -40,7 +40,7 @@ make & make install
 ```
 
 - webpy.py
-```python
+```py
 #!/usr/bin/env python2
 # —*— coding: utf-8 -*-
 import web
@@ -136,7 +136,7 @@ curl http://127.0.0.1:8080/
 ### 使用spawn-fcgi启动
 
 - webpy.py
-```python
+```py
 #!/usr/bin/env python2
 # —*— coding: utf-8 -*-
 import web
