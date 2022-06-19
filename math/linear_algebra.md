@@ -2,13 +2,42 @@
 # 线性代数
 > linear algebra
 
-
-
 - 标量(scalar):$a$
 - 向量(vector):$\pmb{a}$
+$$
+
+\pmb{a} =
+\begin{bmatrix}
+    a_1 \\
+    a_2 \\
+    a_3 \\
+\end{bmatrix}
+
+$$
 - 矩阵(matrix):$\pmb{A}$
+
+$$
+
+\pmb{A} =
+\begin{bmatrix}
+    \pmb{a_1} & \pmb{a_2} & \pmb{a_3} \\
+\end{bmatrix}
+\\
+\pmb{A} =
+\begin{bmatrix}
+    a_{1,1} & a_{1,2} & a_{1,3} \\
+    a_{2,1} & a_{2,2} & a_{2,3} \\
+    a_{2,1} & a_{2,2} & a_{2,3} \\
+\end{bmatrix}
+$$
+
 - 空间维度(dimension):$N$
 - 欧式空间(euclidean):$\mathbb{R}^{N \times N}$
+
+
+
+
+
 ---
 - 转置矩阵(transposition):$\pmb{A}^T$
 - 对称矩阵(symmetric):$\pmb{A} = \pmb{A}^T$

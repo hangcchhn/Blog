@@ -33,6 +33,13 @@ $$
     - $\dot y$:牛顿（Newton）的表示方式
     - $D_xy = Df(x)$:柯西（）的表示方式
 
+- 复合函数
+$$
+\dfrac{{\rm{d}}f(g(x))}{{\rm{d}}x} =
+\dfrac{{\rm{d}}f}{{\rm{d}}g} \cdot \dfrac{{\rm{d}}g}{{\rm{d}}x}
+
+$$
+
 ---
 - 指数
 $$
