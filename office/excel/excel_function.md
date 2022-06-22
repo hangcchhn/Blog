@@ -4,6 +4,15 @@
 > Ctrl + Shift + Enter
 
 
+
+- VLOOKUP
+=VLOOKUP(
+    - 要查找的项,
+    - 要查找位置,
+    - 区域中包含要返回的值的列号,
+    - 返回近似匹配或精确匹配 - 指示为 1/TRUE 或 0/FALSE
+)
+
 - LN(x):$\ln(x)$
 
 
@@ -15,7 +24,7 @@
     - cumulative=FALSE:概率密度函数
 
 $$
-
+d
 
 $$
 
@@ -33,7 +42,7 @@ $$
 
 
 - SOLVER
-    -
+    - 方程组求解
 
 - CORREL
     - 相关系数
