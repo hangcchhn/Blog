@@ -39,7 +39,7 @@
 - 以10为底:$\lg{10}$
 
 
-### 极限 
+### 极限
 ---
 - $\lim{a+b}$
 - $\lim\limits_{n\rightarrow+\infty}{a+b}$
@@ -78,8 +78,8 @@
 
 ---
 ### 关系运算
-- 小于等于$x \leq y$
-- 大于等于$x \geq y$
+- 小于等于:$x \leq y$
+- 大于等于:$x \geq y$
 - 不等于:$x \neq y$
 - 约等于:$x \approx y$
 - 恒等于:$x \equiv y$

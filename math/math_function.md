@@ -1,32 +1,60 @@
-# 函数
-> function
-
-
-
-## sigmoid函数
-- logistic函数
+# 数学函数
+> math function
+---
+## Gaussian函数
 $$
-logistic(x) = \dfrac{1}{1 + \exp{\left( -K(x - x_0) \right)}}
+Gaussian(x) = \dfrac{1}{\sqrt{2\pi}\sigma}
+    \exp{\left( -\dfrac{(x - \mu)^2}{2\sigma^2} \right)}
 
 $$
+- 高度:$\dfrac{1}{\sqrt{2\pi}\sigma}$
+- 中心:$\mu$
+- 幅度:$\sigma$
 
 $$
-
-$$
-
-- softmax函数
-$$
-softmax(x_k) = \dfrac{\exp(x_k)}
-    {\sum_{i = 1}^{K}{\exp(x_i)}}
+y = h \cdot \exp{\left( -\dfrac{(x - \mu)^2}{2\sigma^2} \right)}
 
 $$
 
-- logistic函数
+---
+## Logistic函数
+$$
+Logistic(x) = \dfrac{1}{1 + \exp{\left( -K(x - x_0) \right)}}
+
 $$
 
-\sigma(x) = \dfrac{1}{1 + \exp(-x)}
+$$
 
 $$
+---
+## Softmax函数
+$$
+y_i = \dfrac{\exp(x_i)}
+    {\sum_{k = 1}^{K}{\exp(x_k)}}
+
+$$
+
+$$
+\dfrac{\partial y_j}{\partial x_i} = y_j(I_{ij} - y_i)
+$$
+- 克罗内克函数:当$i = j$时,$I_{ij} = 1$;当$i \neq j$时,$I_{ij} = 0$.
+
+
+
+---
+## Sigmoid函数
+- $(-\infty, +\infty) \rightarrow [0, 1]$
+$$
+\\
+
+y = \sigma(x) = \dfrac{1}{1 + \exp(-x)}
+\\
+y' = y(1 - y)
+
+
+$$
+
+---
 - tanh函数
 
 $$
@@ -38,12 +66,12 @@ $$
 tanh(x) = 2 \sigma(x) - 1
 
 $$
-
+---
 - ReLU(Rectified Linear Unit)
     - 修正线性单元
 
 $$
-ReLU(x) = \max(0, x) 
+ReLU(x) = \max(0, x)
 $$
 
 - ELU(Exponential Linear Unit)
