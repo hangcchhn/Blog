@@ -1,15 +1,26 @@
+# database sql
 
-#  不同类型数据库
+---
+## 不同类型数据库
 1. MySQL(mariadb)
+```sql
 
+
+```
 2. Oracle(inspur)
+```sql
 
+
+```
 3. SQL Server(sybase)
+```sql
 
 
+```
 
 
-### 别名as可以省略直接空格隔开
+---
+## 别名as可以省略直接空格隔开
 > 别名分为表别名 和列别名
 1. MySQL(mariadb)
 as 支持 表别名和列别名
@@ -20,35 +31,42 @@ as 只支持列别名 不支持表别名
 3. SQL Server(sybase)
 as 支持 表别名和列别名
 
-
-### 关键字与字段名冲突：
+---
+## 关键字与字段名冲突：
 
 1. MySQL(mariadb)
-```
-使用``，例如：`create`
+```sql
+-- 使用``，例如：`create`
+
 ```
 2. Oracle(inspur)
-```
-使用""，例如："create"
+```sql
+-- 使用""，例如："create"
 ```
 3. SQL Server(sybase)
+```sql
+--
 ```
 
-```
-
-### 校验表名是否存在
+---
+## 校验表名是否存在
 1. MySQL(mariadb)
+```sql
 select 1 as len from information_schema. tables where table_schema=(select database()) and table_name=?
-
+```
 2. Oracle(inspur)
+```sql
 select 1 as len from user_tables where table_name=upper(?)
-
+```
 3. SQL Server(sybase)
+```sql
 select 1 as len from sysobjects where type='u' and name=?
 
 select 1 as len from information_schema. tables where table_name=?
+```
 
-### 查询表名主键列名
+---
+## 查询表名主键列名
 1. MySQL(mariadb)
 ```sql
 select column_name from information_schema. key_column_usage where table_schema=(select database())  and table_name=?
@@ -65,7 +83,9 @@ select cols. *, cons. * from user_cons_columns as cols, user_constraints as cons
 ```sql
 select column_name from information_schema. key_column_usage where table_name=?
 ```
-### 分页查询
+
+---
+## 分页查询
 > _offset 索引下标（从零开始）（如果为零可以省略该参数及其后面的分号）
 > _number 从下标开始查询前多少条记录（如果为-1表示查询到最后一条）
 
@@ -120,7 +140,8 @@ offset _offset rows fetch next _number rows only
 
 ```
 
-### 判断语法
+---
+## 判断语法
 
 1. MySQL(mariadb)
 函数if(condition, true_value, false_value)
@@ -213,8 +234,8 @@ end
 解决方案：case删除，end删除，第一个when删除，之后的when使用or替换，else使用or替换，or之间的使用()括起来，then使用and替换，
 
 
-
-### 判空函数
+---
+## 判空函数
 如果expr1为空则返回expr2
 如果expr1不为空则返回expr1
 
@@ -227,9 +248,9 @@ end
 3. SQL Server(sybase)
 `isnull(expr1,expr2)`
 
-### 字符截取函数|时间截取函数
 
-
+---
+## 字符截取函数|时间截取函数
 - 数值保留函数：函数(number, digits)：number数值，保留小数位数digits
 - 数值保留位数方式：整数使用0替换，小数直接截取，没有四舍五入
     1. 如果digits大于0，表示保留number几位小数
@@ -255,7 +276,8 @@ end
 数据类型decimal(length, digits):保留有效数字
 
 
-### 字符串拼接
+---
+## 字符串拼接
 1. MySQL(mariadb)
 ```sql
 like concat('%','string','%')
@@ -268,8 +290,8 @@ like ('%' || 'string' || '%')
 
 
 
-
-### 记录保存
+---
+## 记录保存
 > 不存在的记录插入，存在的记录更新
 > 重复记录：主键索引和唯一索引重复
 > 分类：单条记录保存和批量保存记录
@@ -337,3 +359,34 @@ values (temp_table.insert_column1, temp_table.insert_column2,...)
 
 
 
+---
+## 批量插入
+1. MySQL(mariadb)
+```sql
+insert into table_name(insert_column1, insert_column2,...) values
+    (value1_column1, value1_column2,...),
+    (value2_column1, value2_column2,...);
+
+```
+
+2. Oracle(inspur)
+```sql
+insert all
+    into table_name(insert_column1, insert_column2,...)
+    values (value1_column1, value1_column2,...)
+    into table_name(insert_column1, insert_column2,...)
+    values (value2_column1, value2_column2,...)
+select 1 from dual;
+
+
+insert into table_name(insert_column1, insert_column2,...)
+(select value1_column1, value1_column2,... from dual )
+union all (select value2_column1, value2_column2,... from dual)
+...
+
+```
+3. SQL Server(sybase)
+```sql
+
+
+```
