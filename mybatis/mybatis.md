@@ -138,3 +138,14 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 
 ```
 
+
+
+---
+## truncate
+
+```xml
+<update id="truncateId">
+    truncate table table_name
+</update>
+
+```

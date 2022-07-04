@@ -11,17 +11,17 @@
 > 相同类型的同一数据库中不同表之间的复制数据
 
 ### create table like
-> 复制表结构
+> 复制表结构（包含约束条件）
 
 ``` sql
 create table new_tbl like old_tbl
 ```
 
-### create table as
-> 复制表结构和数据
+### create table as select
+> 复制表结构（不包含约束条件）和数据
 
 ``` sql
-create table new_tbl as old_tbl
+create table new_tbl as select * from old_tbl
 ```
 
 ### select into from
@@ -48,9 +48,10 @@ insert into clone_table select * from old_tbl where 0!=1
 - 不支持`select into from`
 
 ### oracle
-> inspur(国产浪潮K-DB)
+> inspur
+
 - 不支持`create table like`
-- 不支持`insert into select`
+
 
 ### sqlserver
 > sybase
