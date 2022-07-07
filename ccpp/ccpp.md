@@ -1,4 +1,4 @@
-# C语言&C++语言
+# C语言 & C++语言
 
 ## main
 
@@ -25,23 +25,10 @@ int main(int argc, char* argv[]){
 
 ```
 ---
-## 编译器
-> compiler
-
-### gcc
 
 
 
-## g++
-
-
-
-
-## msvcpp
-
-
-## mingw
-
-## clang
-
-
+## 编译
+> compile
+## 链接
+> link

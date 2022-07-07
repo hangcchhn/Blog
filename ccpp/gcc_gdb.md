@@ -1,5 +1,5 @@
-# gcc & gdb & g++
-> mac & unix & linux
+# gcc & gdb
+>
 
 ---
 ## gcc编译器
