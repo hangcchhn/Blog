@@ -22,4 +22,44 @@
 
 
 
+---
+## cron expression
+> java cron
+
+
+| 字段名称 | 取值范围 |
+| :- | :- |
+| 秒(second) | 0-59 , - / * |
+| 分(minute) | 0-59 , - / * |
+| 时(hour) | 0-23 , - / * |
+| 日(day of month) | 1-31 , - / * ? L W C |
+| 月(month) | 1-12(JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC) , - * / |
+| 周(day of week) | 1-7(SUN MON TUE WED THU FRI SAT) , - / * ? L C # |
+| 年(year)[可选]| 1970-2099 , - / * |
+
+- ab:a和b
+- a-b:从a到b
+- a/b:从a开始，每次递增b
+
+- *:表示所有值
+- ?:表示不指定
+
+- ?:day of month,day of week
+
+- L(last day):day of month,day of week.
+    - 3L:每月或每周的倒数第三个天
+
+- W(week day):day of month
+    - 3W:每月的三个工作日
+    - 3LW:每月的倒数第三个工作日
+
+- C:calendar
+
+
+---
+```java
+CronExpression cronExpression = new CronExpression("44 33 9 ? * 2");
+Date nextValidTimeAfter = cronExpression.getNextValidTimeAfter(new Date());
+System.out.println(nextValidTimeAfter.toString());
+```
 
