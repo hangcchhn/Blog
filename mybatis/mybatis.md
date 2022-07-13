@@ -149,3 +149,22 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 </update>
 
 ```
+
+---
+### map
+```java
+
+public interface Mapper{
+
+    List<Map<String, Object>> getListMap();
+
+    @MapKey("key")
+    Map<String, Object> getMap();
+}
+
+
+
+
+
+
+```
