@@ -13,6 +13,7 @@
 ---
 ## spring框架多种方式配置定时任务
 
+> spring-context
 - Scheduler
 
 - @Scheduled
@@ -55,11 +56,23 @@
 
 - C:calendar
 
+- 关于cron表达式中week数字取值范围是1-7，建议使用英文缩写MON-SUN
+    - quartz从SUN开始
+    - spring从MON开始
 
 ---
+- spring
+```
+CronSequenceGenerator cronSequenceGenerator = new CronSequenceGenerator("44 33 9 ? * 1");
+Date next = cronSequenceGenerator.next(new Date());
+System.out.println(next);
+```
+- quartz
 ```java
 CronExpression cronExpression = new CronExpression("44 33 9 ? * 2");
 Date nextValidTimeAfter = cronExpression.getNextValidTimeAfter(new Date());
 System.out.println(nextValidTimeAfter.toString());
+
 ```
 
+---
