@@ -1,4 +1,4 @@
-# python webpy
+# web.py
 
 ---
 ## web.py
