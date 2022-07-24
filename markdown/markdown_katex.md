@@ -1,5 +1,5 @@
 # markdown katex
-> 
+>
 
 
 - katex:https://katex.org/docs/supported.html
@@ -57,7 +57,7 @@ $$
 - 成对符号
 
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | 
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | $\langle$ | $\rangle$ | $\lvert$ | $\rvert$ | $\lVert$ | $\rVert$ | $\lmoustache$ | $\rmoustache$ |
 
 ---
@@ -183,7 +183,7 @@ $$
 ---
 ### 箭头
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | 
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | $\uparrow$ | $\downarrow$ | $\leftarrow$ | $\rightarrow$ | $\Uparrow$ | $\Downarrow$ | $\Leftarrow$ | $\Rightarrow$ |
 | $\upharpoonleft$ | $\downharpoonleft$ | $\upharpoonright$ | $\downharpoonright$ | $\rightharpoonup$ | $\leftharpoonup$ | $\rightharpoondown$ | $\leftharpoondown$ |
 | $\nearrow$ | $\swarrow$ | $\searrow$ | $\nwarrow$ |

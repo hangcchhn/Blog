@@ -31,18 +31,21 @@
 - 均值:$\bar{x}$
 - 向量:$\vec{a}$
 
+---
+## 实数
+- $\R$:实数
+- $\N$
+- $\Z$
 
+### 复数
+> complex
 $$
-\R
-\N
-\Z
+\pmb{z} = x \imath + y  \jmath
+$$
+- 虚数
 
-\\
-\Complex
-\\
-z = x \imath + j \jmath
-
-
+---
+$$
 \\
 \Bbbk
 

@@ -34,10 +34,31 @@ $$
 - 空间维度(dimension):$N$
 - 欧式空间(euclidean):$\mathbb{R}^{N \times N}$
 
+---
 
 
+## 行列式
+> n阶方阵
+- $|\pmb{A}| = \det(\pmb{A})$
 
+$$
+\det(\pmb{A}) = \sum\limits_{j = 1}^{N}{a_{ij}A_{ij}} \quad i = 1, 2, \cdots, N
 
+\\
+\pmb{A}_{ij} = (-1)^{i + j} \pmb{M}_{ij}
+\\
+
+$$
+
+- $\pmb{A}_{ij}$:元素$a_{ij}$的代数余子式
+- 把N阶行列式 中的元素$a_{ij}$所在第i行和第j列去掉后。剩下的N-1阶行列式，称元素$a_{ij}$的余子式，记$\pmb{M}_{ij}$
+
+- $\det(\pmb{A}) \neq 0 \iff \pmb{A}$ 是非奇异矩阵
+$$
+\det(\pmb{A}) = \det(\pmb{A}^T)
+\\
+\det(\pmb{AB}) = \det(\pmb{A})\det(\pmb{B})
+$$
 ---
 - 转置矩阵(transposition):$\pmb{A}^T$
 - 对称矩阵(symmetric):$\pmb{A} = \pmb{A}^T$
@@ -48,16 +69,15 @@ $$
 \pmb{I} = (\pmb{e_1}, \pmb{e_2}, \cdots \pmb{e_N}) = \rm{diag}(1, 1, \cdots, 1)
 $$
 
-
-
-
-
-
-- 逆矩阵(inverse)
-    - 非奇异矩阵
+---
+## 逆矩阵(inverse):
+- $\pmb{A}^{-1}$
 $$
 \pmb{A}\pmb{A}^{-1} = I
-\\
+$$
+
+- 如果$\pmb{A}^{-1}$存在，就称$\pmb{A}$是非奇异矩阵
+$$
 (\pmb{A}^{-1})^T = (\pmb{A}^T)^{-1}
 \\
 (\pmb{A}\pmb{B})^{-1} = \pmb{A}^{-1}\pmb{B}^{-1}
@@ -74,16 +94,13 @@ $$
 
 $$
 
-- 行列式
-    - 代数余子式:$A_{ij}$
-    - 余子式:$M_{ij}$
-$$
-\det(\pmb{A}) = \sum\limits_{j = 1}^{N}{a_{ij}A_{ij}} \quad i = 1, 2, \cdots, N
-\\
-A_{ij} = (-1)^{i + j}M_{ij}
-\\
 
-$$
+## 共轭矩阵
+> 埃尔米特(Hermite)矩阵
+
+- $\pmb{A}^H$
+- 两个实部相等，虚部互为相反数的复数互为共轭复数（conjugate complex number）
+
 
 ---
 
@@ -129,7 +146,7 @@ $$
 
 
 ## 奇异值分解
-
+> SVD(Singular Value Decomposition)
 $$
 
 \pmb{A} = \pmb{U} \Sigma \pmb{V^T}
