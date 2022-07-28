@@ -5,11 +5,11 @@
 ---
 ## 序号
 
-- rownum
-关键字
-注意在条件中使用时rownum只能从1开始，可以添加别名再嵌套外层查询进行判断，
-使用rownum=2、rownum>1, rownum between 2 and 3；等都查询不到数据；
-oracle中的rownum是在取数据时产生的序号（在order by排序之前确定序号）。
+### rownum
+> 关键字
+- 注意在条件中使用时rownum只能从1开始，可以添加别名再嵌套外层查询进行判断，
+- 使用rownum=2、rownum>1, rownum between 2 and 3；等都查询不到数据；
+- oracle中的rownum是在取数据时产生的序号（在order by排序之前确定序号）。
 
 
 ```sql
