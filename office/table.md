@@ -1,13 +1,14 @@
-# table
-> 表格
+# 表格
+> table
 ## 组成
-- 工作簿
-- 行
-- 列
-- 单元格
+- 工作簿:work book
+- 工作表:work sheet
+- 行:row
+- 列:col
+- 单元格:cell
 
 ## 样式
-
+> style
 
 - 颜色
     - 前景色
