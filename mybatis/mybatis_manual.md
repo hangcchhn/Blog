@@ -9,6 +9,8 @@
 
 - 报错：Error getting generated key or setting result to parameter object
 
+
+
 ```xml
 <!--
     useGeneratedKeys开关
@@ -17,6 +19,7 @@
  -->
 <insert id="insertUser" parameterType="hn.cch.springboot_datasource.jdbc.dto.User"
         useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
+    insert into t_user(user_id) values(#{user_id})
 </insert>
 
 ```
@@ -26,7 +29,7 @@
 #### 使用系统生产id
 ```xml
 
-<selectKey  keyProperty="userId" resultType="int" order="BEFORE">
+<selectKey keyProperty="userId" resultType="int" order="BEFORE">
     select sys_guid() from dual
 </selectKey>
 
@@ -35,15 +38,15 @@
 
 - oracle 11g
 ```xml
-<selectKey  keyProperty="userId" resultType="int" order="BEFORE">
+<selectKey keyProperty="userId" resultType="int" order="BEFORE">
     select s_tbl_user.nextval as id from dual
 </selectKey>
 ```
 
 - oracle 12c
 ```xml
-<selectKey  keyProperty="userId" resultType="int" order="BEFORE">
-    select nvl(max(user_id),0)+1 from tbl
+<selectKey keyProperty="userId" resultType="int" order="BEFORE">
+    select nvl(max(user_id),0)+1 from t_user
 </selectKey>
 ```
 
