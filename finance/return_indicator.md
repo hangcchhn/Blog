@@ -37,8 +37,10 @@ Ra_t = \frac{\sum\limits_{t = 1}^{N}{Rp_t}}{y}
 $$
 
 - 分红再投
+    - 成立日的净值$CNAV_0 = 1$
+    - 成立以来的收益率$Rp_t = \frac{CNAV_T}{CNAV_0} - 1$
 $$
-Ra_t = (1 + Rp_t) ^ {\frac{1}{y}} - 1
+Ra_t = (1 + Rp_t) ^ {\frac{1}{y}} - 1 = CNAV_t ^ {\frac{1}{y}} - 1
 $$
 
 ---
