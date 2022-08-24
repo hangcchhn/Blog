@@ -16,7 +16,32 @@
 > spring-context
 - Scheduler
 
-- @Scheduled
+- `@EnableScheduling`
+```java
+@EnableScheduling
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+
+- `@Scheduled`
+```java
+@Component
+public class Task {
+
+    // 每天00:00:00执行
+    @Scheduled(cron = "${application.properties.parameter:00 00 00 * * ?}")
+    private void task() {
+        // 调用定时任务业务
+    }
+}
+
+```
+
 
 ---
 ## quartz框架实现动态配置定时任务
