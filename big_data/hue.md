@@ -15,7 +15,7 @@ yum install gcc gcc-c++ make
 
 yum groupinstall 'Development Tools'
 
-yum install asciidoc cyrus-sasl-devel cyrus-sasl-gssapi cyrus-sasl-plain krb5-devel libffi-devel libxml2-devel libxslt-devel make mysql mysql-devel openldap-devel python-devel sqlite-devel gmp-devel
+yum install asciidoc cyrus-sasl-devel cyrus-sasl-gssapi cyrus-sasl-plain krb5-devel libffi-devel libxml2-devel libxslt-devel mysql mysql-devel openldap-devel python-devel sqlite-devel gmp-devel
 
 ```
 
