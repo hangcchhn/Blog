@@ -17,6 +17,8 @@ yum groupinstall 'Development Tools'
 
 yum install asciidoc cyrus-sasl-devel cyrus-sasl-gssapi cyrus-sasl-plain krb5-devel libffi-devel libxml2-devel libxslt-devel mysql mysql-devel openldap-devel python-devel sqlite-devel gmp-devel
 
+make apps
+
 ```
 
 - No local packages or download links found for cffi>=1.4.1

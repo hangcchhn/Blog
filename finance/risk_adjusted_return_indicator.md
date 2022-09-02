@@ -47,6 +47,7 @@ $$
 $$
 
 ## 超额收益
+> Excess Return
 - 算数超额收益
 $$
 \alpha_A = r_p - r_b
