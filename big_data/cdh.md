@@ -16,11 +16,29 @@ docker run --hostname=quickstart.cloudera --privileged=true -t -i \
 --name cdh cloudera/quickstart:latest /usr/bin/docker-quickstart
 
 
-/home/cloudera/cloudera-manager --express
 
+
+
+/home/cloudera/cloudera-manager --express
+WARNING: It is highly recommended that you run Cloudera Express in a VM with at least 8 GB of RAM.
+
+sudo /home/cloudera/cloudera-manager --force --express
+
+
+# 时间同步
 service ntpd start
 
+
+
+
 ```
+username:cloudera
+password:cloudera
+
+- http://ip:8888
+
+
+- http://ip:7180
 
 ---
 | 组件 | 端口号 | 端口用途 |
