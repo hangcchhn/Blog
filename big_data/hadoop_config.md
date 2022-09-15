@@ -171,7 +171,7 @@ ZKFC(ZooKeeper FailoverController)
 ```
 ---
 
-# HUE
+## HUE
 
 - hdfs-site.xml
 ```xml
