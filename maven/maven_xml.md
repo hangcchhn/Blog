@@ -19,7 +19,7 @@
     - dependency:dependencies|dependencyManagement
     - plugin:plugins｜pluginManagement
 
---- 
+---
 - 打包：设置主类
 ```
 
@@ -52,14 +52,17 @@
     </plugins>
 </build>
 ```
---- 
-
 
 
 
 ---
 ## settings.xml
 
+
+```xml
+
+
+```
 
 
 
