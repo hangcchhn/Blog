@@ -1,5 +1,5 @@
-# clanguage compiler
-> C语言编译器
+# compiler
+> 编译器
 
 
 - 前端(Frontend)

@@ -44,82 +44,46 @@ typedef struct { int i; } Struct, *PStruct;
 
 
 # 指针与字符串
-> `#include<string.h>`
----
-## C语言——结构体
+
 ```c
 
+char *char_pointer = "string";
+char char_array[] = "string";
 
-void printfStruct(Struct s)
-{
-    printf('%d\n', s.i);
-}
+#include<string.h>
+// 函数str___()
 
-int main()
-{
-    //创建结构体
-    struct Variable variable = { 0 };
-    Struct s = {0};
 
-    // 两种类型指针
-    Struct *p = &s;
-    PStruct ps = &s;
-    // 分配内存
-    PStruct pointer = malloc(sizeof(PStruct));
-    return 0;
-}
+
 
 ```
 
 
 
 ---
-## C++语言——结构体
+## 指针的申请和释放
 
-```cpp
-typedef struct Struct
-{
-    int i;
-    // C++语言可以在结构体内定义函数，C语言不可以
-    void coutStruct()
-    {
-        cout << i << endl;
-    }
+- C语言使用malloc和free对内存进行申请和释放
+- C++语言使用new和delete对内存进行申请和释放
+- C++语言时兼容C语言的，主要是比C语言多了面向对象编程
 
-}Struct, *PStruct;
+---
 
+- clanguage中malloc和free是函数
+```c
+#include<stdlib.h>
+#include<malloc.h>
 
-int main()
-{
-    Struct s = {1};
-    s.coutStruct();
-    return 0;
-}
+Struct *ps = (Struct*) malloc(sizeof(Struct));
+free(ps);
 
 ```
-## C++语言——类和对象
 
-
+- cplusplus中new和delete是关键字
 ```cpp
-class Class
-{
-    int i;
-    // 构造函数
-    Class(int i){
-        this.i = i;
-    }
-    void coutClass()
-    {
-        cout << i << endl;
-    }
-};
-
-
-int main()
-{
-    Class c = {1};
-    c.coutClass();
-    return 0;
-}
-
+Class *pc = new Class();
+delete pc;
 ```
+
+
+
