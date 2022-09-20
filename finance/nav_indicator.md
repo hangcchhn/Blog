@@ -59,10 +59,23 @@ $$
 ---
 ## 最大回撤：累计净值(分红再投)
 > Maximum Drawdown
-$$
-MD = max(max(
-    \frac{CNAV_i - CNAV_j}{CNAV_i}
-),0)
 
+- 区间:$[t_0, t_N]$
+- 最小收益率
+- 最大亏损值
+
+$$
+MaximumDrawdown = max(max(
+    \frac{CNAV_i - CNAV_{i+j}}{CNAV_i}
+),0)
+$$
+
+- 时刻i之后的最小累计净值
+$$
+minNAV_i = min(CNAV_{i + 1}, CNAV_1)
+\\
+minR_i = minNAV_i / CNAV_i - 1
+\\
+MaximumDrawdown = min(minR_i)
 $$
 
