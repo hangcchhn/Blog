@@ -168,3 +168,11 @@ public interface Mapper{
 
 
 ```
+
+
+```xml
+<resultMap id="getMap" type="java.util.Map">
+    <id property="resultId" javaType="java.lang.Integer" column="key"  jdbcType="Integer" />
+    <result property="resultName" javaType="java.lang.String" column="value" jdbcType="VARCHAR" />
+</resultMap>
+```

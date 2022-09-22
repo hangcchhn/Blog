@@ -39,13 +39,13 @@ $$
 
 - 累计净值（分红再投）
 $$
-CNAV_t = CNAV_{t - 1} \times (1 + Rp_t)
+CNAV_t = CNAV_{t - 1} \times (1 + R_t)
 
 $$
 
 $$
 
-Rp_t = \frac{NAV_t \times S_t + D_t}{NAV_{t - 1}} - 1
+R_t = \frac{NAV_t \times S_t + D_t}{NAV_{t - 1}} - 1
 $$
 
 
@@ -70,12 +70,16 @@ MaximumDrawdown = max(max(
 ),0)
 $$
 
-- 时刻i之后的最小累计净值
+- 计算时刻i之后的最小累计净值
 $$
-minNAV_i = min(CNAV_{i + 1}, CNAV_1)
-\\
-minR_i = minNAV_i / CNAV_i - 1
-\\
-MaximumDrawdown = min(minR_i)
+minNAV_i = min(CNAV_{i + 1}, CNAV_N)
+$$
+- 计算起始时刻i的最小收益率
+$$
+MinimunReturn_i = minNAV_i / CNAV_i - 1
+$$
+- 取起始时刻在区间中的最小收益率中的最小值为区间的最大回撤
+$$
+MaximumDrawdown = min(MinimunReturn_i)
 $$
 
