@@ -5,10 +5,12 @@
 ## jdk1.8
 
 ---
-### 匿名函数
-> lambda表达式
-lambda expression
+### lambda表达式
+> lambda expression
+> 匿名函数
 
+- lambda表达式由匿名内部类演变而来
+- 不能访问非final或effectively final的局部变量
 
 - (parameters) -> expression
 - (parameters) ->{ statements; }

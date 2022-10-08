@@ -67,7 +67,9 @@ select ... from table_left tl right join table_right tr on tl.cl=tr.cr
 
 
 ```sql
-select ... from table_l tl cross join table_r tr on tl.cl=tr.cr
+select ... from table_l tl cross join table_r tr
+-- on tl.cl=tr.cr
+[on 1 = 1]
 ```
 
 

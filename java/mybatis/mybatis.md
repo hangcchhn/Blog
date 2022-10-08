@@ -156,7 +156,7 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 
 public interface Mapper{
 
-    List<Map<String, Object>> getListMap();
+    List<Map<String, Object>> getMapList();
 
     @MapKey("key")
     Map<String, Object> getMap();
@@ -171,8 +171,45 @@ public interface Mapper{
 
 
 ```xml
-<resultMap id="getMap" type="java.util.Map">
+
+<select id="getMapList" resultMap="">
+    select column_name from table_name
+</select>
+
+<resultMap id="mapResult" type="java.util.Map">
     <id property="resultId" javaType="java.lang.Integer" column="key"  jdbcType="Integer" />
     <result property="resultName" javaType="java.lang.String" column="value" jdbcType="VARCHAR" />
 </resultMap>
+
+<select id="getMap" resultMap="mapResult">
+    select key, value from table_name
+</select>
+
+```
+
+
+```xml
+
+<resultMap id="personMap" type="StudentType">
+    <id property="id" javaType="java.lang.Integer" column="id"  jdbcType="Integer" />
+    <result property="name" javaType="java.lang.String" column="name" jdbcType="VARCHAR" />
+</resultMap>
+
+
+<resultMap id="studentMap" type="StudentType" extends="personMap">
+    <association property="teacher" column="id" select="teacherMapper.selectTeacher"></association>
+
+</resultMap>
+
+
+
+<select id="selectTeacher" resultMap="">
+    select * from t_teacher
+</select>
+
+
+<select id="selectTeacher" resultMap="">
+    select * from t_teacher
+</select>
+
 ```
