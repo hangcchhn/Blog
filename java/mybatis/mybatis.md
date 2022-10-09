@@ -141,7 +141,7 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 
 
 ---
-## truncate
+### truncate table使用update标签
 
 ```xml
 <update id="truncateId">
@@ -151,7 +151,7 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 ```
 
 ---
-### map
+### mybatis返回map结果
 ```java
 
 public interface Mapper{
@@ -161,10 +161,6 @@ public interface Mapper{
     @MapKey("key")
     Map<String, Object> getMap();
 }
-
-
-
-
 
 
 ```
@@ -183,33 +179,6 @@ public interface Mapper{
 
 <select id="getMap" resultMap="mapResult">
     select key, value from table_name
-</select>
-
-```
-
-
-```xml
-
-<resultMap id="personMap" type="StudentType">
-    <id property="id" javaType="java.lang.Integer" column="id"  jdbcType="Integer" />
-    <result property="name" javaType="java.lang.String" column="name" jdbcType="VARCHAR" />
-</resultMap>
-
-
-<resultMap id="studentMap" type="StudentType" extends="personMap">
-    <association property="teacher" column="id" select="teacherMapper.selectTeacher"></association>
-
-</resultMap>
-
-
-
-<select id="selectTeacher" resultMap="">
-    select * from t_teacher
-</select>
-
-
-<select id="selectTeacher" resultMap="">
-    select * from t_teacher
 </select>
 
 ```
