@@ -47,6 +47,9 @@ $$
 - SOCP问题
 - ADMM算法
 
+- 压缩矩阵
+> CSC(Compressed Sparse Column)
+
 
 
 ---
