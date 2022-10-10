@@ -16,24 +16,26 @@ $$
 第3行
 $$
 ---
-- 公式对齐
+- 对齐align
+- 方程equation
+- 聚集gather
 $$
-\begin{aligned}
+\begin{align}
 a
 & = b
 \\
 & = c
-\end{aligned}
+\end{align}
 $$
-- 公式方框
+- 方框boxed
 $$
-\begin{aligned}
+\begin{equation}
 \boxed{
     a = b
 }
-\end{aligned}
+\end{equation}
 $$
-- 公式编号
+- 编号tag
 $$
 \begin{aligned}
 a = b \tag{1-1}

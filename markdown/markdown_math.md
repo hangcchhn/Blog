@@ -104,6 +104,9 @@
 - 因为:$\because$
 - 所以:$\therefore$
 
-- 服从分布:$\sim$
+- 服从分布:$X \sim N(\mu, \sigma)$
 
 
+- 最优解:$x^*$
+
+- 梯度:$\nabla$
