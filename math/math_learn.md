@@ -1,7 +1,7 @@
 
 
 ---
-## OLS（最小二乘法）
+## OLS(Ordinary Least Square)最小二乘法
 
 
 $$

@@ -68,6 +68,7 @@ $$
 $$
 \pmb{I} = (\pmb{e_1}, \pmb{e_2}, \cdots \pmb{e_N}) = \rm{diag}(1, 1, \cdots, 1)
 $$
+- 零矩阵:$\pmb{O}$
 
 ---
 ## 逆矩阵(inverse):

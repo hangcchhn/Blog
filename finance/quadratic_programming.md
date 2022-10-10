@@ -31,7 +31,7 @@ $$
 \\
 s.t. \quad & g(\pmb{X}) \leq 0
 \\
-\quad & h(\pmb{X}) = 0
+& h(\pmb{X}) = 0
 \end{align}
 
 $$
@@ -147,7 +147,7 @@ $$
 
 \begin{bmatrix}
     \pmb{H} & - \pmb{A}^T \\
-    - \pmb{A} & \pmb{0}
+    - \pmb{A} & \pmb{O}
 \end{bmatrix}^{-1}
  =
 \begin{bmatrix}
@@ -195,13 +195,62 @@ $$
 $$
 
 
+---
+## OSQP & OLS
 
+
+$$
+\begin{align}
+\min \quad & ||\pmb{A} \pmb{x} - \pmb{b}||_2^2
+\\
+s.t. \quad & \pmb{A} \pmb{x} = \pmb{b}
+
+\\
+& 0 < x_i < 1
+
+\end{align}
+
+$$
+
+- 矩阵
+
+$$
+\begin{align}
+\min \quad & \pmb{y}^T \pmb{y}
+\\
+s.t. \quad & \pmb{y} = \pmb{A} \pmb{x} - \pmb{b}
+
+\\
+& 0 < x_i < 1
+
+\end{align}
+
+$$
+
+- 拉格朗日矩阵
+$$
+\begin{bmatrix}
+    \pmb{H} & - \pmb{I}^T \\
+    \pmb{I} & \pmb{O}
+\end{bmatrix}
+
+\begin{bmatrix}
+    \pmb{x} \\
+    \pmb{\lambda}
+\end{bmatrix}
+ =
+\begin{bmatrix}
+    - \pmb{g} \\
+    - \pmb{b}
+\end{bmatrix}
+$$
+
+$$
+
+
+$$
 
 ---
-
-
-- OSQP
-
 
 - ADMM
 
@@ -210,4 +259,4 @@ $$
 - 对偶(dual)
 
 
-
+---
