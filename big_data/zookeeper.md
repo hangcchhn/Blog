@@ -27,9 +27,11 @@ stat /
 ls2=ls+stat
 
 # 创建节点
-create [-e|-s] path data [acl]
+create [-e|s] path data [acl]
 -e:临时节点
 -s:持久节点
+
+create /root/
 
 # 删除节点
 delete path
