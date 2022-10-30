@@ -23,3 +23,17 @@ log.retention.bytes
 
 ##  consumer.properties
 
+
+```properties
+
+
+```
+
+
+##  producer.properties
+
+
+```properties
+
+
+```
