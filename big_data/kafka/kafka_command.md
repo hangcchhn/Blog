@@ -1,26 +1,5 @@
-# kafka
+# kafka command
 
-- cluster
-kafka通过zookeeper管理cluster中的broker
-- broker
-一个cluster包含多个broker
-
-
-- topic
-
-- stream
-
-- consumer group
-- consumer
-- producer
-
-
----
-## kafka config
-- zookeeper.properties
-
-
-- server.properties
 
 
 
@@ -45,5 +24,8 @@ bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 
 ```
+
+
+
 
 
