@@ -77,15 +77,8 @@ import matplotlib.pyplot as plt
 
 
 ---
-## color
 
-|  |  |
-| :-: | :-: |
-|  |  |
-
-
----
-
+## function
 
 | function | plt | ax |
 | :-: | :-: | :-: |

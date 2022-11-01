@@ -2,14 +2,15 @@
 > derivative
 
 ### 交易合约
-- 多头=买入（long position）：
-- 空头=卖出（short position）：
+- 多头=买入(long position)：
+- 空头=卖出(short position)：
+- 多空(both)
 
 ### 合约标的资产
 ---
 - 到期日
-- 交易单位（合约规模contract size）
-- 交割价格（delivery price）
+- 交易单位(合约规模contract size)
+- 交割价格(delivery price)
 - 结算
 
 ### 特性
@@ -23,10 +24,10 @@
 ### 合约特点
 ---
 - 合约特点
-    - 远期合约（forward contract）
-    - 期货合约（futures contract）
-    - 期权合约（options contract）
-    - 互换合约（swap contract）
+    - 远期合约(forward contract)
+    - 期货合约(futures contract)
+    - 期权合约(options contract)
+    - 互换合约(swap contract)
     - 结构化金融衍生工具
 
 - 产品形态
@@ -40,7 +41,7 @@
     - 其他衍生工具
 - 交易场所
     - 交易所交易
-    - 场外交易市场（OTC）
+    - 场外交易市场(OTC)
 
 
 ### 远期合约
@@ -70,4 +71,4 @@ $$
 
 远期合约和期权合约的买卖双方的盈利和亏损的机会均等
 
-期权合约不均等：买方需要事先支付一笔费用（期权费）给卖方
+期权合约不均等：买方需要事先支付一笔费用(期权费)给卖方
