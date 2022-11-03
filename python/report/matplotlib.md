@@ -1,5 +1,6 @@
 # matplotlib
 > matlab plot library
+- 数据可视化，绘制图形，类似matlab
 
 ```py
 import matplotlib as mpl
@@ -7,7 +8,7 @@ import matplotlib.pyplot as plt
 ```
 
 - plt.figure
-- AxesSubplot
+- Axes
 
 
 

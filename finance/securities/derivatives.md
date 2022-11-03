@@ -1,5 +1,5 @@
-# 衍生工具
-> derivative
+# 衍生品
+> derivatives
 
 ### 交易合约
 - 多头=买入(long position)：
