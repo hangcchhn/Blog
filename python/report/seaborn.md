@@ -66,13 +66,18 @@ import seaborn as sns
 
 - regplot()
 - lmplot()
-
-
+---
+## 热力图
+- heatmap()
 ---
 ## 二元变量图
 - jointplot
 
--
+---
+## 成对关系图
+- pairplot
+类似相关性
+
 ## 网格
 
 - FacetGrid
