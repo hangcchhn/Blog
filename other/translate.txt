@@ -272,7 +272,7 @@ read
 write
 输入输出
 IO
-input
+Input
 Output
 
 

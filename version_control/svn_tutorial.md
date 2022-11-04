@@ -1,9 +1,7 @@
 
-centos install git /svn
+# Subversion
 
-
-svn
-
+```sh
 tar -zxvf apr-1.3.9.tar.gz
 tar -zxvf apr-util-1.3.9.tar.gz
 
@@ -14,7 +12,6 @@ mv sqlite-amalgamation-3071501 sqlite-amalgamation
 ./configure --prefix=/usr/svn --with-apr=/usr/svn/apr --with-apr-util=/usr/svn/apr/apr-util
 make
 make install
-
 
 vim /etc/profile
 
@@ -34,3 +31,5 @@ Error:svn: E220001: Unreadable path encountered; access denied
 [general]
 anon-access = none
 auth-access = write
+
+```
