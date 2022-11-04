@@ -276,3 +276,21 @@ echo 0 > /proc/sys/vm/drop_caches
 echo 1 > /proc/sys/vm/drop_caches
 echo 2 > /proc/sys/vm/drop_caches
 echo 3 > /proc/sys/vm/drop_caches
+
+
+
+--------------------------------------------------------------------------------------------------
+
+防护墙
+centos6:
+service iptable stop
+service ip4table stop
+service ip6table stop
+
+centos7:
+service firewalld stop
+
+--------------------------------------------------------------------------------------------------
+
+firewall-cmd --permanent --add-port=2375/tcp
+firewall-cmd --reload

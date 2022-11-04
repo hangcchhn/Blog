@@ -16,7 +16,25 @@ windows
 
 git bash
 
---------------------------------------------------------------------------------------------------
+
+
+---
+## 远程控制
+```
+# ssh remote
+ssh remote_user@remote_host
+
+# scp local remote
+scp local_file remote_user@remote_host:remote_path
+scp -R local_dir remote_user@remote_host:remote_path
+
+# scp remote local
+scp remote_user@remote_host:remote_file local_path
+scp -R remote_user@remote_host:remote_file local_path
+
+```
+
+---
 
 .ssh/id_rsa-remote-ssh.pub
 .ssh/id_rsa-remote-ssh
@@ -25,11 +43,11 @@ git bash
 .ssh/known_hosts
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 免密码登陆
---------------------------------------------------------------------------------------------------
+---
 
 
 macos:zsh
@@ -37,7 +55,7 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remote-ssh
 
 ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub root@192.168.10.202
 ssh-add -K ~/.ssh/id_rsa-remote-ssh
---------------------------------------------------------------------------------------------------
+---
 
 
 linux:bash
@@ -54,7 +72,7 @@ Host 192.168.10.153
     IdentityFile ~/.ssh/id_rsa-remote-ssh
 
 
---------------------------------------------------------------------------------------------------
+---
 
 windows LTSC 2019:PowerShell 非管理员运行
 
@@ -66,7 +84,7 @@ scp "$env:USERPROFILE\.ssh\id_rsa-remote-ssh.pub" "${REMOTEHOST}:~/tmp.pub"
 ssh "$REMOTEHOST" "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat ~/tmp.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && rm -f ~/tmp.pub"
 
 
---------------------------------------------------------------------------------------------------
+---
 
 centos 6.x
 PowerShell
@@ -87,7 +105,7 @@ Host 192.168.10.153
     IdentityFile ~/.ssh/id_rsa-remote-ssh
 
 
---------------------------------------------------------------------------------------------------
+---
 ssh cent
 Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
 
@@ -96,14 +114,14 @@ Host cent
   HostName cent
   User root
   IdentityFile ~/.ssh/id_rsa-remote-ssh
---------------------------------------------------------------------------------------------------
+---
 
 
 WARNING: UNPROTECTED PRIVATE KEY FILE!
 密钥文件权限不能为777,不能被其它用户读取。
 chmod 700 id_rsa-remote-ssh
 
---------------------------------------------------------------------------------------------------
+---
 
 Bad owner or permissions on .ssh/config
 

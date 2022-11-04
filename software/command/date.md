@@ -1,5 +1,5 @@
 
-
+```sh
 date
 Sat Mar 19 11:30:19 CST 2022
 week month day hour:minute:second zone year
@@ -59,7 +59,7 @@ date -d '1 day ago'  +'%Y-%m-%d'
 
 year,month,day,hour,minute,second
 
-
+```
 
 
 
@@ -112,8 +112,8 @@ year,month,day,hour,minute,second
 
 
 --------------------------------------------------------------------------------------------------
-时间同步
-
+- 时间同步
+```sh
 yum install ntp -y
 systemctl start  ntpd
 systemctl enable  ntpd
@@ -127,3 +127,37 @@ ntpq -p
 
 yum install ntpdate -y
 ntpdate ntp1.aliyun.com
+
+```
+---
+
+## 时区时间
+
+```sh
+
+# 时区：GMT|CST
+# 查看当前时区
+cat /etc/localtime
+# 查看所有时区
+cd /usr/share/zoneinfo/
+
+# 修改时区为GMT
+rm -f /etc/localtime
+cp /usr/share/zoneinfo/GMT0 /etc/localtime
+
+sudo cp -f /usr/share/zoneinfo/GMT  /etc/localtime
+sudo cp -f /usr/share/zoneinfo/UTC  /etc/localtime
+
+
+
+# 修改时区为CST
+rm -f /etc/localtime
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+sudo cp -f /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+export TZ=Asia/Shanghai
+
+tzselect
+
+
+```
