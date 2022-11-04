@@ -1,3 +1,19 @@
+consul
+
+https://releases.hashicorp.com/consul/
+
+
+
+
+./consul agent -dev -ui \
+        -datacenter=consul \
+        -data-dir /usr/consul \
+        -http-port 8500 \
+        -bind 0.0.0.0 \
+        -client 0.0.0.0 &
+
+
+
 
 unzip consul_1.7.14_linux_amd64.zip
 
@@ -54,7 +70,7 @@ curl -X PUT \
   -H 'content-type: application/json' \
   -H 'postman-token: 6b672c02-350f-3d1c-7793-1a0d9e800fc9' \
   -d '{
-	"id": "test01",
+        "id": "test01",
     "name":"test01",
     "tags":[
         "java",
