@@ -1,0 +1,194 @@
+
+
+apt update && apt upgrade
+
+
+--------------------------------------------------------------------------------------------------
+
+ubuntu pro
+
+hangcchhn@163.com
+
+sudo pro attach C1V3QbcGdqMPsWaacx1tNPiA1kGed
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+网络配置
+
+/etc/network/interfaces
+iface ens33 inet staticll
+address 192.168.10.163
+netmask 255.255.255.0
+gateway 192.168.10.2
+
+ifconfig ens33 192.168.10.178 netmask 255.255.255.0
+
+route add default gw 192.168.10.2
+
+
+--------------------------------------------------------------------------------------------------
+
+ubuntu 20.04
+service network-manager stop
+rm /var/lib/NetworkManager/NetworkManager.state
+service network-manager start
+vim /etc/NetworkManager/NetworkManager.conf
+
+[ifupdown]
+managed=true
+
+service network-manager restart
+--------------------------------------------------------------------------------------------------
+
+
+ubuntu <= 18.04
+apt install unity-tweak-tool
+
+ubuntu >= 20.04
+apt install gnome-tweaks
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+cd /etc/apt/sources.list.d/
+
+
+apt update:更新安装列表
+apt upgrade:升级软件
+
+apt install xxx:安装软件
+apt remove --purge xxx:卸载软件及其配置
+apt autoremove xxx:卸载软件及其依赖的安装包
+
+--------------------------------------------------------------------------------------------------
+
+
+apt-get update
+apt-get upgrade
+
+apt-get install xxx
+apt-get remove xxx
+apt-get purge xxx
+
+apt-cache search xxx
+apt-cache show xxx
+apt-cache depends xxx
+
+--------------------------------------------------------------------------------------------------
+
+
+dpkg --list|-l:显示已安装的软件
+dpkg --show|-s:显示软件详细信息
+dpkg --install|-i  安装软件
+dpkg --remove|-r  卸载软件
+dpkg --purge|-P  卸载软件并删除配置
+dpkg --search|-S
+
+--------------------------------------------------------------------------------------------------
+
+
+
+apt install net-tools
+apt install netstat
+
+apt install vim
+apt install gcc
+apt install g++
+
+--------------------------------------------------------------------------------------------------
+
+
+apt install fonts-wqy-microhei
+
+apt install nautilus-open-terminal
+
+apt install ibus-libpinyin
+
+--------------------------------------------------------------------------------------------------
+
+apt install golang
+
+apt install nodejs
+
+
+apt install openssh-client
+apt install openssh-server
+
+
+apt install openjdk-8-jdk
+apt install openjdk-11-jdk
+apt install openjdk-17-jdk
+
+apt install qtcreator
+apt install qmlscene
+apt install qt5-default
+
+apt install qtdeclarative5-dev
+apt install qtvirtualkeyboard-plugin
+apt install qml-module-qt-labs-folderlistmodel
+
+
+apt install geany
+
+
+--------------------------------------------------------------------------------------------------
+
+ubuntu 16.04
+
+apt install ipython-notebook
+apt install jupyter-notebook
+
+apt install ipython3
+
+apt install python3-pip
+
+apt install python3-numpy
+apt install python3-scipy
+apt install python3-sympy
+apt install python3-pandas
+apt install python3-matplotlib
+apt install python3-sklearn
+
+
+apt install python3-django
+apt install python3-flask
+
+apt install python3-scrapy
+apt install python3-tornado
+
+apt install python3-pygame
+apt install python3-pyqt5
+
+apt install python3-pymysql
+apt install python3-redis
+
+
+
+apt install libopencv-dev
+apt install python3-opencv
+pkg-config --modversion opencv
+
+
+--------------------------------------------------------------------------------------------------
+ubuntu 22.04
+
+AppImages require FUSE to run.
+
+sudo add-apt-repository universe
+sudo apt install libfuse2
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+service --status-all
+
+
+

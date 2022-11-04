@@ -1,0 +1,132 @@
+
+ftp
+ftp> help
+
+ftp
+ftp> open host port
+username
+password
+
+ftp> ls
+
+--------------------------------------------------------------------------------------------------
+windows系统ftp命令
+
+quote pasv
+quote port
+实际不支持被动模式
+
+
+ftp -h
+
+将文件传送到运行 FTP 服务器服务(经常称为后台程序)的计算机以及将文件从该计算机
+传出。可以交互使用 Ftp。
+
+FTP [-v] [-d] [-i] [-n] [-g] [-s:filename] [-a] [-A] [-x:sendbuffer] [-r:recvbuffer] [-b:asyncbuffers] [-w:windowsize] [host]
+
+  -v              禁止显示远程服务器响应。
+  -n              禁止在初始连接时自动登录。
+  -i              关闭多文件传输过程中的
+                  交互式提示。
+  -d              启用调试。
+  -g              禁用文件名通配(请参阅 GLOB 命令)。
+  -s:filename     指定包含 FTP 命令的文本文件；命令
+                  在 FTP 启动后自动运行。
+  -a              在绑字数据连接时使用所有本地接口。
+  -A              匿名登录。
+  -x:send sockbuf 覆盖默认的 SO_SNDBUF 大小 8192。
+  -r:recv sockbuf 覆盖默认的 SO_RCVBUF 大小 8192。
+  -b:async count  覆盖默认的异步计数 3
+  -w:windowsize   覆盖默认的传输缓冲区大小 65535。
+  host            指定主机名称或要连接到的远程主机
+                  的 IP 地址。
+
+注意:
+  - mget 和 mput 命令将 y/n/q 视为 yes/no/quit。
+  - 使用 Ctrl-C 中止命令。
+
+
+
+--------------------------------------------------------------------------------------------------
+linux系统ftp命令
+
+passive:重复多次设置被动模式开关
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+sftp协议（依赖ssh）
+
+
+sftp用户使用私钥文件和私钥密码登陆
+1.使用ssh-keygen命令生成公钥和私钥文件
+ssh-keygen -t rsa -b 4096 -f key
+输入密码:chench
+生成文件key和key.pub
+
+
+2.将公钥key.pub文件拷到目标服务器
+cat key.pub >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+
+重启ssh服务端:systemctl restart sshd
+
+3.通过sftp客户端使用私钥文件key和密码chench测试连接
+sftp客户端:
+filezilla
+
+win:XshellXftp
+mac:PortX
+
+4.使用java语言的jsch组件测试连接
+com.jcraft.jsch.JSchException: invalid privatekey: [B@7b98f307
+解决问题参考：https://blog.csdn.net/wangfengtong/article/details/105968087
+
+使用低版本openssh生成公钥和私钥，重复上述操作
+
+
+--------------------------------------------------------------------------------------------------
+vsftp软件
+
+安装
+apt install vsftpd
+yum install vsftpd
+
+
+启动
+service vsftpd start
+配置
+/etc/vsftpd/vsftpd.conf
+
+新增用户
+useradd -s /sbin/nologin -d ftp_path ftp_user
+修改密码
+passwd ftp_user
+
+vsftpd 版本差异
+
+vsftpd使用必须禁用SeLinux不然会设置密码登录不上去
+
+对于高版本的vsftpd在设置密码后总是提示密码错误的解决版本
+修改/etc/pam.d/vsftpd文件
+在"auth required pam_shells.so"前面添加注释
+
+
+对于高版本的vsftpd在设置禁止访问默认目录以外的目录时
+即：禁止访问系统根路径，根路径就是默认路径（用户路径）
+会出现用户登录密码错误的问题，解决办法：
+除了修改/etc/vsftpdd/vsftpd.conf文件
+去掉chroot_local_user=YES前面的注释
+还需要加上一句配置allow_writeable_chroot=YES
+
+
+
+
+使用被动模式配置父子嵌套关系的ftp用户 要求读写权限控制
+
+--------------------------------------------------------------------------------------------------
+
+
+

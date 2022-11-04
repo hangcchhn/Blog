@@ -1,0 +1,113 @@
+
+
+--------------------------------------------------------------------------------------------------
+用户操作
+useradd username
+
+-s /sbin/nologin
+-s /bin/bash
+
+-d /home/username
+
+usermod -G groupname username
+
+userdel username
+
+-------------------------------------------
+组操作
+
+groupadd groupname
+
+groupmod groupname
+
+groupdel groupname
+
+
+
+-------------------------------------------
+密码设置
+
+passwd username
+输入password
+输入password
+
+相当于指定用户名和密码进行修改
+echo username:password|chpasswd
+
+
+-------------------------------------------
+给文件或文件夹设置用户和组
+
+-R 或 -r 递归regression
+
+chown -R groupname:username /home/username
+
+
+--------------------------------------------------------------------------------------------------
+给文件或文件夹设置权限（包括用户和组，读写和执行两大类）
+
+
+linux
+chmod -r [ ] path
+
+mac
+chmod -R [ ] path
+
+
+---------
+-文件
+d目录
+---------
+u用户user
+g同组group
+o其他other
+a所有all
+---------
++添加
+-减少
+=设置
+---------
+r读read
+w写write
+x执行execute
+---------
+
+
+
+---------
+1:owner
+2:group
+4:everyone
+---------
+4:write
+2:read
+1:execute
+---------
+
+
+-------------------------------------------
+
+切换用户
+su user
+
+切换用户和切换环境
+su - user
+
+$表示普通用户，#表示超级用户
+
+--------------------------------------------------------------------------------------------------
+非root用户使用sudo命令执行shell脚本
+
+
+vim /etc/sudoers
+root    ALL=(ALL)       ALL
+chench  ALL=(ALL)       ALL
+
+免密码配置
+chench  ALL=(ALL)       NOPASSWD: ALL
+
+%admin  ALL=(ALL)       NOPASSWD: ALL
+
+
+
+

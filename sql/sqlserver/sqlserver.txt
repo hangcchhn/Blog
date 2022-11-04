@@ -1,0 +1,161 @@
+
+SQL Server 2005
+
+SQL Server 2008 R2
+
+远程连接配置
+
+计算机管理->服务和应用程序->SQL Server配置管理器
+
+->SQL Server 20XX网络配置->SQLEXPRESS的协议
+->TCP/IP->IP地址->IPALL->TCP端口->1433
+
+
+--------------------------------------------------------------------------------------------------
+
+
+sql server -> sybase
+
+
+select type from sysobjects group by type
+
+C = CHECK 约束
+D = DEFAULT 默认值
+F = FOREIGN KEY 外键 
+FN = 标量函数
+IF = 内嵌表函数
+K = PRIMARY KEY 或 UNIQUE 
+L = 日志
+P = 存储过程
+R = 规则
+RF = 复制筛选存储过程
+S = 系统表
+TF = 表函数
+TR = 触发器
+U = 用户表
+V = 视图
+X = 扩展存储过程
+AF = 聚合函数 (CLR)
+FS = 程序集 (CLR) 标量函数
+FT = 程序集 (CLR) 表值函数
+IF = 内联表函数
+IT = 内部表
+PC = 程序集 (CLR) 存储过程
+PK = PRIMARY KEY 约束（type 为 K）
+SN = 同义词
+SQ = 服务队列
+TA = 程序集 (CLR) DML 触发器
+TT = 表类型
+UQ = UNIQUE 约束（type 为 K）
+
+
+
+
+查询用户对象(user)：查询数据库中所有表名
+select * from sysobjects where type='U' 
+
+
+查询系统对象(system)
+select * from sysobjects where type='S'
+
+视图(view)
+select * from sysobjects where type='V'
+存储过程(procedure)
+select * from sysobjects where type='S'
+
+主键或唯一标识约束(primary key | unique) [PK|UQ]
+select * from sysobjects where type='K'
+外键(foreign key)
+select * from sysobjects where type='F'
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+
+# 表重命名
+exec sp_rename 'old_table_name','new_table_name';
+# 表列名重命名
+exec sp_rename 'table_name.[old_column_name]','new_column_name','COLUMN';
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+select charindex(' ', '12345 67890')--6
+
+select stuff('1234567890', 6, 1, '00000')--12345000007890
+
+select stuff('1234567890', charindex(' ', '12345 67890'), 1, '00000')--12345000007890
+
+
+
+stuff(原始字符串, 替换序号, 替换长度, 替换字符串)--序号从1开始
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--/第1步**********删除所有表的外键约束*************************/
+ 
+DECLARE c1 cursor for
+select 'alter table ['+ object_name(parent_obj) + '] drop constraint ['+name+']; '
+from sysobjects
+where type = 'F'
+open c1
+declare @c1 varchar(8000)
+fetch next from c1 into @c1
+while(@@fetch_status=0)
+begin
+exec(@c1)
+fetch next from c1 into @c1
+end
+close c1
+deallocate c1
+ 
+--/第2步**********删除所有表*************************/
+ 
+declare @sql varchar(8000)
+while (select count(*) from sysobjects where type='U')>0
+begin
+SELECT @sql='drop table ' + name
+FROM sysobjects
+WHERE (type = 'U')
+ORDER BY 'drop table ' + name
+exec(@sql)
+end

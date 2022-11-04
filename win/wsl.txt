@@ -1,0 +1,25 @@
+
+列出所有容器版本
+wsl.exe --help
+
+--list
+    --quiet 名称信息
+    --verbose 详细信息
+
+--shutdown 关闭容器
+
+    
+
+wsl.exe -l -v
+
+
+
+  NAME                   STATE           VERSION
+* Ubuntu                 Running         1
+
+
+升级指定容器版本
+wsl.exe --set-version Ubuntu 2
+
+升级默认容器版本
+wsl.exe --set-default-version 2

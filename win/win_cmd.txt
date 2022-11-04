@@ -1,0 +1,179 @@
+
+默认是从当前盘根目录开始
+\path
+
+延时
+ping -n sleep_time 127.0.0.1 > nul
+
+
+setlocal enabledelayedexpansion
+
+
+for /f %%i in (file) do (
+    echo %%i
+)
+
+
+for /f "tokens=1,* delims=:" %%a in ("host:port") do (
+    echo %%a
+    echo %%b
+)
+--------------------------------------------------------------------------------------------------
+
+cd
+help cd
+
+切换到其他盘
+cd \D
+
+dir
+
+
+copy
+复制
+
+move
+移动
+
+
+md
+mkdir
+
+
+
+mkdir
+
+rd
+rmdir
+
+ren
+rename
+
+del
+
+tree
+显示目录树形结构
+
+type
+打开文件
+
+more
+分页打开文件
+
+
+
+cd C:\Users\chench\Desktop
+dir
+
+type *.txt >> all.txt
+
+
+--------------------------------------------------------------------------------------------------
+
+
+Windows 7
+Simplified Chinese
+
+cmd Properties Fonts
+
+Microsoft YaHei Mono
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont
+
+0+字符编码 936 中文 437 英文
+0936 Microsoft YaHei Mono
+0437 Microsoft YaHei Mono
+
+936 *Microsoft YaHei Mono
+
+--------------------------------------------------------------------------------------------------
+
+
+修改cmd编码
+OEM
+chcp 437
+
+GBK
+chcp 936
+
+UTF-8
+chcp 65001
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+windows cmd  findstr ""   =  linux bash grep ""
+
+
+
+netstat -ano|findstr "8080"
+
+tasklist|findstr "2020"
+
+taskkill /f /t /im java.exe
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+windows service
+
+
+windows->服务
+
+
+
+sc delete "service_name"
+
+
+服务操作
+net start "service_name"
+net stop "service_name"
+
+--------------------------------------------------------------------------------------------------
+
+
+ipconfig	查看网络配置
+netstat	    查看网络状态
+ping	    检查与目标主机的连通性
+tracert	    查看与目标主机的路由节点
+route print	打印与目标主机的路由
+arp	        查看本机的ARP缓存表
+nslookup	查看DNS域名解析记录
+net	        网络管理
+
+--------------------------------------------------------------------------------------------------
+
+cmd /c xxx：执行完xxx命令后关闭cmd窗口
+cmd /k xxx：执行完xxx命令后不关cmd窗口
+
+--------------------------------------------------------------------------------------------------
+查找命令所在位置
+where ssh
+
+--------------------------------------------------------------------------------------------------
+help chkdsk
+chkdsk /F
+
+--------------------------------------------------------------------------------------------------
+
+help icacls
+
+icacls chench /RESET /T /C /Q
+
+--------------------------------------------------------------------------------------------------
+
+Wmic product get name
+
+Wmic product where name="xxx" call uninstall
+
+--------------------------------------------------------------------------------------------------
+
+查看电源使用报告
+powercfg /batteryreport /output "C:\Users\CCH\Desktop\batteryreport.html"
+
+--------------------------------------------------------------------------------------------------

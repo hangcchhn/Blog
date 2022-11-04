@@ -1,0 +1,41 @@
+ sc.exe create MongoDB binPath= "\"C:\ProgramFiles\MongoDB\bin\mongod.exe\" --service --config=\"C:\ProgramFiles\MongoDB\cfg\mongod.cfg\"" DisplayName= "MongoDB" start= auto
+
+
+MongoDB 3.6.12
+MongoDB 2.6.12
+
+
+mongo
+> db
+
+show dbs
+show collections
+
+
+use database_name # 创建数据库|切换数据库
+
+db.auth(username,password) # 身份验证 登陆
+db.logout()
+
+db.dropDatabase()#删除数据库
+
+
+db.stats()
+
+
+
+
+db.createCollection(collection_name)
+
+
+db.getCollectionNames()
+
+
+db.collection_name.drop()
+
+document_json 文档格式（类型json）
+db.collection_name.insert(document_json)
+db.collection_name.save(document_json)
+db.collection_name.remove() # 文档删除
+# 查询
+db.collection_name.find()

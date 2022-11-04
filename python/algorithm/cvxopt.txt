@@ -1,0 +1,15 @@
+
+cvxopt
+Convex Optimization
+
+
+pip install cvxopt
+
+python 3.6.5
+pip install cvxopt==1.1.9
+
+
+python 2.7.14
+
+
+

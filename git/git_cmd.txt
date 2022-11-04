@@ -1,0 +1,100 @@
+
+
+--------------------------------------------------------------------------------------------------
+初始化版本库
+git init
+git init repository_name
+
+添加到暂存区
+git add file_name
+git add folder_name/
+
+git add source_code
+
+
+添加全部文件
+git add .
+
+从仓库删除
+git rm --cached file_name
+
+提交到版本库
+git commit -m 'commit message'
+
+git commit -m 'CCH'
+git commit -m 'hn'
+git commit -m 'chench'
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+对比差异
+
+git diff path/file 对比本地和暂存文件差异
+
+git diff –cached path/file 对比暂存和远程文件差异
+
+
+git diff version0:path0/file0 version1:path1/file1 对比两个版本文件差异
+
+--------------------------------------------------------------------------------------------------
+
+modify commit message
+
+修改最新提交信息
+git commit --amend
+类似vim修改文件操作
+i
+xxx
+:wq
+
+修改历史提交信息
+git rebase -i, --interactive father_commit_id
+
+注意previous_commit_id是指根据git log -oneline
+查询历史提交记录获取的要修改提交信息的前一个commit_id
+
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+
+1.pick -> reword
+类似vim修改文件操作将要修改的提交信息前面的pick改成reword
+保存后会进入同git commit --amend执行后的界面修改提交信息
+
+2.pick -> edit
+
+git commit --amend
+
+git rebase --continue
+
+多个edit就要重复执行上述两条命令
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------

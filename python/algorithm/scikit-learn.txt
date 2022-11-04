@@ -1,0 +1,164 @@
+
+scikit-learn
+
+pip install scikit-learn
+
+import sklearn
+
+
+--------------------------------------------------------------------------------------------------
+
+预处理（特征处理）:
+fit_transform()
+
+特征抽取（特征值化）
+sklearn.feature_extraction
+对字典数据的特征抽取
+sklearn.feature_extraction.DictVectorizer
+对文本数据的特征抽取
+sklearn.feature_extraction.text.CountVectorizer
+sklearn.feature_extraction.text.TfidfVectorizer
+
+结巴分词
+pip install jieba
+import jieba
+jieba.cut(str)
+
+
+#####################################################
+预处理（特征处理）
+sklearn.preprocessing
+数据归一化
+sklearn.preprocessing.MinMaxScaler
+数据标准化
+scikit-learn.preprocessing.StandardScaler
+缺失值处理
+sklearn.preprocessing.Imputer
+
+特征选择：
+1.过滤式：Filter
+2.嵌入式：Embedded
+3.包裹式：Wrapper
+sklearn.feature_selection.VarianceThreshold
+
+降维
+sklearn.decomposition
+
+主成分分析PCA
+sklearn.decomposition.PCA
+
+#####################################################
+
+数据集
+sklearn.datasets
+加载数据集
+sklearn.datasets.load_XXX
+下载数据集
+sklearn.datasets.fetch_XXX
+
+数据集划分为训练集和测试集
+sklearn.model_selection.train_test_split
+
+#####################################################
+分类：
+
+近邻算法
+sklearn.neighbors
+KNN分类器
+sklearn.neighbors.KNeighborsClassifier
+
+
+
+
+
+#####################################################
+回归：
+
+逻辑回归
+sklearn.linear_model.LogisticRegression
+线性回归
+sklearn.linear_model.LinearRegression
+岭回归
+sklearn.linear_model.Ridge
+
+#####################################################
+
+
+准确率
+
+召回率
+
+真实值
+
+预测值
+
+#####################################################
+
+分类报告指标
+sklearn.metrics.classification_report
+
+#####################################################
+
+朴素贝叶斯
+sklearn.naive_bayes
+sklearn.naive_bayes.MultinomialNB(alpha = 1.0)
+拉普拉斯平滑系数alpha
+
+
+交叉验证
+
+网格搜索
+sklearn.model_selection.GridSearchCV
+
+
+决策树和随机森林：分支，条件，选择
+if-else
+
+信息熵（比特）
+y=-xlogx
+H(X) = -XilogXi
+H(X|Y) = -(Xi/Yi)log(Xi/Yi)
+
+信息增益
+G(X|Y) = H(X) - H(X|Y)
+
+
+决策树算法：
+1.ID3：最大信息增益
+2.C4.5：最大信息增益比
+3.CART：
+	回归树：最小平方误差
+	分类树：最小基尼系数
+
+决策树
+sklearn.tree.DecisionTreeClassifier()
+sklearn.tree.export_graphviz() DOT格式
+dot->pdf
+graphviz
+apt install graphviz
+brew install graphviz
+dot -Tpdf tree.dot -o tree.pdf
+
+
+随机森林：多个决策树
+有放回的随机抽样
+sklearn.ensemble.RandomForestClassifier
+
+
+
+线性：
+y = wi * xi + b
+因变量=权重*自变量+偏置
+
+线性回归：一元或多元
+
+
+
+
+
+
+
+
+
+
+

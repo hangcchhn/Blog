@@ -1,0 +1,17 @@
+
+zabbix
+
+
+zabbix-agent
+
+zabbix-frontend-php
+
+
+zabbix-server-mysql
+zabbix-proxy-mysql
+
+
+
+vim /etc/zabbix/zabbix_server.conf
+
+systemctl restart zabbix-server zabbix-agent

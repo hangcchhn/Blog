@@ -1,0 +1,79 @@
+
+网络操作
+
+--------------------------------------------------------------------------------------------------
+linux
+
+
+----------
+ip
+ip addr[ess]
+
+
+ip addr show [eth0]
+
+ip route show
+
+
+ip -s link
+
+
+
+----------
+ifconfig
+
+
+
+----------
+netstat
+
+all：netstat -a
+tcp：netstat -t
+udp：netstat -u
+listen：netstat -l
+program：netstat -p
+statistics：netstat -s
+
+-n, --numeric:以数字形式显示主机和端口号
+
+根据端口号或程序查询进程
+netstat -anlp | grep port 
+netstat -anlp | grep "process"
+
+
+
+统计某端口连接数
+netstat -anlp | grep port |wc -l
+
+
+--------------------------------------------------------------------------------------------------
+win
+
+
+----------
+ipconfig
+
+
+----------
+netstat
+
+netstat -aon | findstr ""
+
+
+----------
+
+
+
+
+--------------------------------------------------------------------------------------------------
+mac
+
+
+----------
+ipconfig
+
+
+----------
+lsop
+
+lsop -i ""

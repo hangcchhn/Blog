@@ -1,0 +1,29 @@
+
+http = curl + wget
+
+sudo apt install httpie  
+
+
+GET
+http xxx 
+POST
+http --json, -j xxx
+http --form, -f xxx
+
+
+http --print WHAT, -p WHAT xxx
+WHAT
+'H' request headers
+'B' request body
+'h' response headers
+'b' response body
+
+
+
+http --print HBhb, -p WHAT HBhb xxx
+http --verbose, -v xxx
+--headers, -h
+--body, -b
+
+http xxx --output FILE, -o FILE
+--download, -d

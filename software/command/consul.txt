@@ -1,0 +1,13 @@
+consul
+
+https://releases.hashicorp.com/consul/
+
+
+
+
+./consul agent -dev -ui \
+        -datacenter=consul \
+        -data-dir /usr/consul \
+        -http-port 8500 \
+        -bind 0.0.0.0 \
+        -client 0.0.0.0 &

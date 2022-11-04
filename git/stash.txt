@@ -1,0 +1,76 @@
+
+暂存stash
+
+列表
+git stash list
+
+保存
+git stash save 'message'
+
+显示
+git stash show stash@{0}
+
+引用
+git stash apply stash@{0}
+
+出栈
+git stash pop stash@{0}
+
+删除
+git stash drop stash@{0}
+
+清空
+git stash clear
+
+
+
+--------------------------------------------------------------------------------------------------
+
+git checkout develop
+vim README.md
+git git stash save 'develop stash'
+
+git checkout master
+vim README.md
+git git stash save 'master stash'
+
+git stash list
+git stash show stash@{1}
+
+git checkout develop
+git stash apply stash@{1}
+git add README.md
+git commit -m 'develop commit'
+git stash drop stash@{1}
+git push
+
+
+git checkout master
+git stash pop
+git commit -m 'master commit'
+git stash clear
+git push
+
+
+
+--------------------------------------------------------------------------------------------------
+
+----------
+git status
+Changes not staged for commit:
+Untracked files:
+
+git add readme.md
+
+git stash -u -k
+
+
+----------
+git status
+Changes to be committed:
+
+git commit -m 'chench'
+
+git push
+
+

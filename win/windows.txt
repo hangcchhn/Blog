@@ -1,0 +1,254 @@
+
+
+华硕 X450JB4200
+
+--------------------------------------------------------------------------------------------------
+
+uefi启动和传统启动方式：
+ultraiso制作启动盘把U盘里的efi文件夹和bootmgr.efi文件删掉
+
+--------------------------------------------------------------------------------------------------
+
+mstsc：
+windows 7系统远程连接会导致无法使用aero主题
+windows 7更新会导致mstsc远程连接密码校验错误
+
+
+--------------------------------------------------------------------------------------------------
+
+win + R
+gpedit.msc
+计算机管理->系统->关机选项:开启
+
+
+--------------------------------------------------------------------------------------------------
+
+
+用户路径
+win=XP：
+C:\Documents and Settings\chench
+
+win>=7：
+C:\Users\chench\
+
+
+程序菜单
+win=XP：
+C:\Documents and Settings\All Users\「开始」菜单\程序
+C:\Documents and Settings\chench\「开始」菜单\程序
+
+win>=7：
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+C:\Users\chench\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+
+--------------------------------------------------------------------------------------------------
+
+win + R -> drivers
+C:\Windows\System32\drivers
+
+C:\Windows\System32\drivers\etc\hosts
+
+配置权限才能修改
+选中hosts->右键属性->菜单安全->按钮编辑->按钮添加->输入EveryOne->按钮确定->选中用户配置允许完全控制权限
+
+hosts:
+# localhost
+127.0.0.1       localhost
+::1             localhost
+
+# profiles
+127.0.0.1 		profile1
+127.0.0.1 		profile2
+
+
+
+--------------------------------------------------------------------------------------------------
+
+DOS
+
+debug
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+windows XP sp3
+
+office 2003
+visio 2003
+
+Mozilla Firefox
+Google Chrome
+
+notepad++
+7-zip
+
+
+python 2.7.9
+spyder 2.3.9
+
+java 7u80
+eclipse 4.2.2
+
+Qt 5.3.2
+Qt Creator 3.2.1
+
+Visual Studio 2005
+SQL Server 2005
+
+MySQL 5.6
+
+PostgreSQL 9.3
+
+Oracle 11g
+
+PowerDesiger
+StarUML
+
+
+VisualSVN
+TortoiseSVN
+
+
+
+emu8086
+
+WireShark
+
+
+
+https://cidoku.net/blog/windows_xp.html
+
+--------------------------------------------------------------------------------------------------
+
+windows 7 ultimate sp1
+
+32x86
+64x64
+
+en-US
+cn-ZH
+
+windows vista
+windows thin
+
+matlab 2014
+
+Anaconda2 5.0.1 => Python 2.7.14
+Anaconda3 5.2.0 => Python 3.6.5
+
+visual studio 2010 express
+c++
+c#
+
+office 2010
+visio 2010
+
+Mindjet MindManager 2012
+
+Enterprise Architect 13
+
+XMind 7
+
+Axure RP Pro 7
+
+Adobe Reader X
+
+calibre e-book
+
+markdown pad 2
+
+WinRAR
+BandZip
+
+UltraEdit
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+windows 10 2015
+
+office 2013
+visual studio 2012
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+windows 10 2016
+office 2016
+visio 2016
+
+
+
+jdk1.8u_44
+python3.6.5
+
+idea2016.3
+pycharm2016.3
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+windows 10 2019
+
+x86
+office 2019
+visio 2019
+visual studio 2019
+
+
+x64
+idea 2020.3
+pycharm anaconda 2018.3
+
+
+Xshell
+Xftp
+
+sublime text
+sublime merge
+
+
+
+--------------------------------------------------------------------------------------------------
+
+windows 11
+
+TPM 2.0
+
+
+vmware 16
+
+
+visual studio 2022
+x64
+
+visual studio code
+
+PowerToys
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+
+显示桌面:Win + D
+打开电脑:Win + E
+打开运行:Win + R
+
+
+
+Crtl + D
+Crtl + X
+Crtl + C
+Crtl + V
+

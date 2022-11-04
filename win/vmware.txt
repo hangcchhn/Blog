@@ -1,0 +1,145 @@
+
+共享虚拟机
+vmware workstation 14.x
+vmware fusion 10.x
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+vmware.vmx:
+smc.present = "TRUE"
+smc.version = "0"
+
+
+mac OS X -> Mac OS X 10.9.5
+
+
+mac OS X -> Mac OS X 10.10.5
+
+mac OS X -> Mac OS X 10.12.6
+
+mac OS X -> Mac OS X 10.13
+
+mac OS X -> Mac OS X 10.14.6
+
+--------------------------------------------------------------------------------------------------
+
+ubuntu 14.04
+ubuntu 16.04
+ubuntu 18.04
+ubuntu 20.04
+
+ubuntu server
+ubuntu kylin -> ubuntu server 16.04
+
+
+--------------------------------------------------------------------------------------------------
+
+
+Cent -> CentOS 6
+
+python
+jupyter
+
+java
+
+tomcat 8.0.x
+
+maven
+
+nexus
+
+mysql 5.7.9
+
+oracle 12c
+
+
+
+nacos
+zipkin
+sentinel
+rocketmq
+
+kibana
+
+gitlab
+jenkins
+
+
+
+nginx
+nginx 1.6.3 : spawn-fcgi + web.py
+
+nginx 1.15.1 : fastdfs
+
+nginx 1.14.2 : root path file
+http://192.168.10.153/root/
+
+nginx 1.18.0：uwsgi + flask
+http://192.168.10.153/root/
+
+
+consul 1.7.14
+
+
+
+spark 2.4.8 hadoop 2.7 standalone
+
+
+
+
+
+
+CentOS -> CentOS 7
+
+
+docker 18.09.2
+harbor 1.5.0
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+cluster -> CentOS 7
+Cent01 -> CentOS 7
+cent02 -> CentOS 7
+cent03 -> CentOS 7
+
+hadoop
+spark
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+CentOS 7
+CentOS 8
+
+
+
+
+windows vmware workstation
+windows vmware player
+mac osx vmware fusion
+
+--------------------------------------------------------------------------------------------------
+
+centos install vmware tools
+
+
+ls /dev
+cdrom
+
+mkdir -p /mnt/cdrom
+mount -t iso9660 /dev/cdrom /mnt/cdrom
+ls /mnt/cdrom/
+
+
+
+--------------------------------------------------------------------------------------------------
+
+

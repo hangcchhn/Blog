@@ -1,0 +1,35 @@
+切换输入法快捷键:CapsLock
+
+不同系统快捷键对比：
+win:ctrl|win
+mac:cmd|ctrl
+
+
+简介:command + I
+打开:command + down
+
+
+
+home:fn + left
+end:fn + right
+page up:fn + up
+page down:fn + down
+
+insert:fn + enter
+delete:fn + backspace
+
+将文件移至废纸:command-backspace
+清倒废纸篓:command + shift + backspace 
+
+
+全屏:control + command + F
+
+锁屏:control + command + Q
+
+
+
+复制:command + C
+粘贴:command + V
+剪切:command + option ＋ V
+
+复制路径:command + option ＋ C

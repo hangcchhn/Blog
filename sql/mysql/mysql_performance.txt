@@ -1,0 +1,42 @@
+
+性能
+performance
+
+--------------------------------------------------------------------------------------------------
+
+
+sysbench
+性能测试工具
+
+
+安装
+ubuntu:apt install sysbench
+centos:yum install sysbench
+
+sysbench cpu help
+
+sysbench cpu --cpu-max-prime=2000 run
+
+
+cpu 
+fileio 磁盘
+memory  内存
+threads 线程
+mutex   锁
+
+help 帮助
+
+run 运行
+prepare 准备
+cleanup 清理
+--------------------------------------------------------------------------------------------------
+
+
+mysqlhotcopy
+
+热备份工具
+
+
+
+
+

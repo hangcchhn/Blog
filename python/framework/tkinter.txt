@@ -1,0 +1,106 @@
+事件绑定bind
+bind(sequence="XXX", func=self.xxx)
+
+XXX事件触发
+
+鼠标
+Button
+ButtonPress
+ButtonRelease
+移动
+Motion
+双击三击
+Double
+Triple
+
+鼠标进入离开
+Enter
+Leave
+焦点进入离开
+FocusIn
+FocusOut
+
+按键
+Control, Control_L, Control_R
+Shift, Shift_L, Shift_R
+Alt, Alt_L, Alt_R
+
+Cancel
+
+Return (Enter)回车换行
+
+Escape
+
+BackSpace
+
+Caps_Lock
+
+Tab
+
+
+Prior (Page Up), Next (Page Down)
+Home, End
+
+Left, Up, Right, Down
+
+Insert, Delete
+
+F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11,F12
+
+Num_Lock, Scroll_Lock
+
+
+Key
+KeyPress
+KeyRelease
+
+xxx事件函数
+必须包含一个参数event
+Event类型
+
+属性：
+
+widget
+The widget which generated this event. This is a valid Tkinter widget instance, not a name. This attribute is set for all events.
+
+产生事件的组件。这是一个合法的Tkinter组件实例，而不是一个名字。所有的事件都归于此类。
+
+x, y
+The current mouse position, in pixels.
+
+当前的鼠标位置，单位：像素。
+
+x_root, y_root
+The current mouse position relative to the upper left corner of the screen, in pixels.
+
+当前鼠标位置相对于屏幕左上角的位置，单位：像素
+
+char
+The character code (keyboard events only), as a string.
+
+字符代码（仅键盘事件）字符串的格式
+
+keysym
+The key symbol (keyboard events only).
+
+按键符合（仅键盘事件）
+
+keycode
+The key code (keyboard events only).
+
+按键代码（仅键盘事件）
+
+num
+The button number (mouse button events only).
+
+按钮数字（仅鼠标按键事件）
+
+width, height
+The new size of the widget, in pixels (Configure events only).
+
+组件的新形状（仅configure事件）
+
+type
+The event type.
+
+事件type

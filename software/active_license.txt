@@ -1,0 +1,110 @@
+﻿active license
+--------------------------------------------------------------------------------------------------
+
+
+SQLyog 13.1
+Professional:   8e053a86-cdd3-48ed-b5fe-94c51b3d343c
+Enterprise: a46683b0-d3ec-4c16-8e3c-198d25a7fb52
+Ultimate:   60c1b896-7c22-4405-9f46-a6bce776ab36
+
+
+--------------------------------------------------------------------------------------------------
+
+PL/SQL Developer 13.0.6
+product code： 4vkjwhfeh3ufnqnmpr9brvcuyujrx3n3le
+serial Number: 226959
+password: xs374ca
+
+
+--------------------------------------------------------------------------------------------------
+windows 10
+
+NPPR9-FWDCX-D2C8J-H872K-2YT43
+--------------------------------------------------------------------------------------------------
+windows 11
+
+NPPR9-FWDCX-D2C8J-H872K-2YT43
+VK7JG-NPHTM-C97JM-9MPGT-3V66T
+YTMG3-N6DKC-DKB77-7M9GH-8HVX7
+--------------------------------------------------------------------------------------------------
+
+windows 10 2015 LTSC
+slmgr /ipk VK7JG-NPHTM-C97JM-9MPGT-3V66T
+slmgr /skms kms.03k.org
+slmgr /ato
+
+
+windows 10 2016 LTSC
+slmgr /upk
+slmgr /ipk DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ
+slmgr /skms kms.03k.org
+slmgr /ato
+
+windows 10 2019 LTSC
+slmgr -ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+slmgr -skms kms.03k.org
+slmgr -ato
+slmgr -dlv
+
+
+W77WN-TP36G-VBJFX-C77HK-2YT44
+NPPR9-FWDCX-D2C8J-H872K-2YT43
+
+windows server 2012
+D2N9P-3P6X9-2R39C-7RTCD-MDVJX
+windows server 2012 r2
+MR88Y-BXNRY-VH3DR-349CB-3GK8M
+
+--------------------------------------------------------------------------------------------------
+
+
+
+office 2016
+【Office Professional Plus 2016：XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99】
+【Office Standard 2016：JNRGM-WHDWX-FJJG3-K47QV-DRTFM】
+cd "C:\Program Files\Microsoft Office\Office16"
+cscript ospp.vbs /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
+cscript ospp.vbs /unpkey:BTDRB >nul
+cscript ospp.vbs /sethst:s8.uk.to
+cscript ospp.vbs /setprt:1688
+cscript ospp.vbs /act
+
+office 2019
+Windows PowerShell 管理员
+cd "C:\Program Files\Microsoft Office\Office16"
+cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+cscript ospp.vbs /sethst:kms.03k.org
+cscript ospp.vbs /act
+cscript ospp.vbs /dstatus
+
+
+
+--------------------------------------------------------------------------------------------------
+
+Xmanager 6
+181030-116880-999718
+181030-116827-999558
+181030-116996-999910
+181030-116608-999142
+181030-116152-999838
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+MindManager 2012
+MP10-284-EP12-CAMC-186A
+MP10-484-CP49-D555-22M2
+MP10-988-7P45-2A87-M118
+MP10-959-2PD8-291E-D7D4
+MP10-771-9P43-3AB1-A798
+MP10-518-DP5M-A5DF-F99A
+MP10-733-3P1E-FE7A-D3BM
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+

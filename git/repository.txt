@@ -1,0 +1,81 @@
+
+
+
+--------------------------------------------------------------------------------------------------
+
+克隆远程仓库（默认master分支）
+git clone http://xxx.git
+
+指导分支克隆远程仓库
+git clone -b develop http://xxx.git
+
+git pull
+git push
+
+git pull origin master
+git push origin master
+
+
+
+git pull --rebase origin master
+git pull --merge origin master
+
+git push -u origin master
+git push -u origin master -f
+
+git push -u origin --all
+git push -u origin --tags
+
+--------------------------------------------------------------------------------------------------
+
+
+查看远程仓库
+git remote -v
+
+添加远程仓库
+git remote add origin http://xxx.git
+删除远程仓库
+git remote remove origin
+
+--------------------------------------------------------------------------------------------------
+
+git fetch
+git fetch --all
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+创建新版本库
+
+git clone http://192.168.85.138/hangcchhn/helloworld.git
+cd helloworld
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+已存在的文件夹
+
+cd existing_folder
+git init
+git remote add origin http://192.168.85.138/hangcchhn/helloworld.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+已存在的 Git 版本库
+
+cd existing_repo
+git remote add origin http://192.168.85.138/hangcchhn/helloworld.git
+git push -u origin --all
+git push -u origin --tags
+
+--------------------------------------------------------------------------------------------------
+
+

@@ -1,0 +1,37 @@
+
+delimiter定界符，默认定界符是分号（;）
+
+创建存储过程之前要修改定界符为其他符号$$，
+创建存储过程完成之后再将定界符改回默认值。
+
+delimiter $$
+create procedure sp_name(
+    in args_name data_type
+    ,...)
+begin
+    ...;
+end$$
+delimiter ;
+
+删除
+drop procedure sp_name;
+
+
+调用
+call sp_name(param_value);
+
+
+查看
+
+show create procedure sp_name\G;
+
+show procedure status\G;
+
+
+
+select *
+from information_schema.routines
+where routine_name = 'sp_name'
+
+
+--------------------------------------------------------------------------------------------------

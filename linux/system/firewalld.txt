@@ -1,0 +1,13 @@
+
+centos6:
+service iptable stop 
+service ip4table stop 
+service ip6table stop 
+
+centos7:
+service firewalld stop 
+
+--------------------------------------------------------------------------------------------------
+
+firewall-cmd --permanent --add-port=2375/tcp
+firewall-cmd --reload

@@ -1,0 +1,8 @@
+
+表变量
+
+声明：declare table @table_variable(column_name data_type)
+插入数据：insert into @table_variable.data_type select column_name from table_name
+
+生命周期：当前执行过程中，以语句结束符为界
+

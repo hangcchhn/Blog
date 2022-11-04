@@ -1,0 +1,84 @@
+
+
+--------------------------------------------------------------------------------------------------
+
+环境变量
+一、系统变量：
+/etc/profile
+/etc/paths
+
+二、用户变量： 
+~/.bash_profile 
+~/.bash_login 
+~/.profile 
+~/.bashrc
+
+
+--------------------------------------------------------------------------------------------------
+
+
+隐藏文件
+defaults write com.apple.finder AppleShowAllFiles Yes && killall Finder //显示隐藏文件
+defaults write com.apple.finder AppleShowAllFiles No && killall Finder //不显示隐藏文件
+
+资料库
+chflags nohidden ~/Library
+
+
+删除登陆页面的其他用户图标
+sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWOTHERUSERS_MANAGED -bool FALSE
+
+
+--------------------------------------------------------------------------------------------------
+
+
+端口查询
+
+lsof -i:8080
+netstat -an |grep 8080
+
+
+--------------------------------------------------------------------------------------------------
+
+
+# bash
+export PS1="\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\W\[\033[00m\]\\$ "
+export LANG=en_US.UTF-8
+export CLICOLOR=YES
+
+--------------------------------------------------------------------------------------------------
+
+
+# added by Anaconda2 5.0.1 installer
+export PATH="/Users/chench/Library/Anaconda/anaconda2/bin:$PATH"
+
+# Setting PATH for Python 3.6
+export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:$PATH"
+
+--------------------------------------------------------------------------------------------------
+
+
+
+
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home
+export JRE_HOME=$JAVA_HOME/jre
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+# maven
+export MAVEN_PATH=/Users/chench/Desktop/ApacheMaven
+export PATH=$MAVEN_PATH/bin:$PATH
+
+--------------------------------------------------------------------------------------------------
+
+
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
+export JRE_HOME=$JAVA_HOME/jre
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+# maven
+export MAVEN_HOME=/Users/chench/Desktop/Apache/apache-maven-3.3.9
+export PATH=$MAVEN_HOME/bin:$PATH

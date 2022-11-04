@@ -1,0 +1,49 @@
+
+
+python
+MySQL
+
+
+--------------------------------------------------------------------------------------------------
+
+python2:pip2 install mysql-connector
+python2.7.14 mysql-connector-python-2.0.4
+https://download.lfd.uci.edu/pythonlibs/w4tscw6k/mysql_connector_python-2.0.4-py2.py3-none-any.whl
+使用上面的地址下载，使用本地文件离线安装pip install mysql_connector_python-2.0.4-py2.py3-none-any.whl
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+python2:pip2 install MySQL-python
+在线安装出错：error: Microsoft Visual C++ 9.0 is required.
+https://download.lfd.uci.edu/pythonlibs/w4tscw6k/cp27/MySQL_python-1.2.5-cp27-none-win_amd64.whl
+https://download.lfd.uci.edu/pythonlibs/w4tscw6k/cp27/MySQL_python-1.2.5-cp27-none-win32.whl
+使用上面的地址下载，使用本地文件离线安装MySQL_python-1.2.5-cp27-none-win*.whl
+
+
+
+--------------------------------------------------------------------------------------------------
+
+python3:pip3 install mysqlclient
+
+
+--------------------------------------------------------------------------------------------------
+
+
+python3:pip3 install PyMySQL
+
+支持MySQLdb模式
+pymysql.install_as_MySQLdb
+
+
+--------------------------------------------------------------------------------------------------
+
+DBUtiles:python数据库连接池
+
+
+PersistentDB
+PooledDB
+

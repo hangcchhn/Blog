@@ -1,0 +1,121 @@
+
+物联网
+IoT(Internet of Things)
+
+
+消息队列遥测传输
+MQTT(Message Queuing Telemetry Transport)
+
+EMQX 3.0
+
+
+EMQX:https://docs.emqx.io/broker/v3/en/guide.html
+
+MQTT_Box:http://workswithweb.com/html/mqttbox/getstarted.html
+
+MQTT_Client:https://github.com/fusesource/mqtt-client
+
+MQTT:https://github.com/mqtt/mqtt.github.io
+
+
+
+安装必要的依赖：
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+设置稳定的仓库：
+比如CentOS7：
+sudo yum-config-manager --add-repo https://repos.emqx.io/emqx-ce/redhat/centos/7/emqx-ce.repo
+
+安装最新版本的 EMQX
+sudo yum install emqx
+
+也可以安装指定版本
+先查询软件版本列表
+yum list emqx --showduplicates | sort -r
+
+emqx.x86_64                     3.1.0-1.el7                        emqx-stable
+emqx.x86_64                     3.0.1-1.el7                        emqx-stable
+emqx.x86_64                     3.0.0-1.el7                        emqx-stable
+
+选择其中一个版本安装
+
+sudo yum install emqx-3.1.0
+
+
+
+
+直接启动
+emqx start
+  emqx 3.1.0 is started successfully!
+
+emqx_ctl status
+  Node 'emqx@127.0.0.1' is started
+  emqx v3.1.0 is running
+
+系统启动
+sudo systemctl start emqx
+
+服务启动
+sudo service emqx start
+
+端口    端口对应的协议或者作用
+1883    MQTT protocol port
+8883    MQTT/SSL port
+8083    MQTT/WebSocket port
+8080    HTTP API port
+18083   Dashboard Management Console Port
+
+开放端口
+iptables -A INPUT -ptcp --dport  1883 -j ACCEPT
+iptables -A INPUT -ptcp --dport  8883 -j ACCEPT
+iptables -A INPUT -ptcp --dport  8083 -j ACCEPT
+iptables -A INPUT -ptcp --dport  8080 -j ACCEPT
+iptables -A INPUT -ptcp --dport  18083 -j ACCEPT
+
+保存操作
+service iptables save
+
+
+chrome：http://localhost:18083
+
+
+<dependency>
+    <groupId>org.fusesource.mqtt-client</groupId>
+    <artifactId>mqtt-client</artifactId>
+    <version>1.9</version>
+</dependency>
+
+
+public class MqttSubscriber {
+
+public static final String  MQTT_SERVER_URL="x.x.x.x";
+
+public static void main(String[] args) throws Exception {
+    MQTT mqtt = new MQTT();
+    mqtt.setHost(MQTT_SERVER_URL, 1883);
+    BlockingConnection connection = mqtt.blockingConnection();
+    connection.connect();
+    Topic[] topics = {new Topic("Java_Test", QoS.AT_LEAST_ONCE)};
+    byte[] qoses = connection.subscribe(topics);
+    Message message = connection.receive();
+    System.out.println(message.getTopic());
+    byte[] payload = message.getPayload();
+    System.out.println("打印接收到的消息："+new String(payload));
+    message.ack();
+    connection.disconnect();
+   }
+}
+
+public class MqttPublisher {
+
+public static void main(String[] args) throws Exception {
+    MQTT mqtt = new MQTT();
+    mqtt.setHost(MqttSubscriber.MQTT_SERVER_URL, 1883);
+    BlockingConnection connection = mqtt.blockingConnection();
+    connection.connect();
+    connection.publish("Java_Test", "Java".getBytes(), QoS.AT_LEAST_ONCE, true);
+    System.out.println("执行发送消息。。。。");
+  }
+}
+
+

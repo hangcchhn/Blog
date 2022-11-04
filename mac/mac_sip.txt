@@ -1,0 +1,31 @@
+
+macbook pro->shutdown->comand + R->terminal
+
+--------------------------------------------------------------------------------------------------
+
+vmware->shutdown->bios
+->enter setup->boot from a file
+->recovery HD
+->com.apple.recovery.boot
+->boot.efi
+->language
+->terminal
+
+--------------------------------------------------------------------------------------------------
+Operation not permitted
+
+csrutil disable
+csrutil enable
+csrutil status
+
+--------------------------------------------------------------------------------------------------
+Read-only file system
+
+mount -uw /
+
+--------------------------------------------------------------------------------------------------
+
+tccutil reset All com.vmware.fusion
+sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" 'insert into access values ("kTCCServiceScreenCapture", "com.vmware.fusion", 0, 1, 1, "", "", "", "UNUSED", "", 0,1565595574)'
+sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" 'insert into access values ("kTCCServiceListenEvent", "com.vmware.fusion", 0, 1, 1, "", "", "", "UNUSED", "", 0,1565595574)'
+sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" 'insert into access values ("kTCCServicePostEvent", "com.vmware.fusion", 0, 1, 1, "", "", "", "UNUSED", "", 0,1565595574)'

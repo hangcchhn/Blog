@@ -1,0 +1,43 @@
+
+git checkout
+功能
+
+1.切换到已存在的分支
+
+git checkout exists_branch
+
+
+2.丢弃指定目录的修改
+git status
+
+Change not staged for commit
+
+# 放弃修改
+# 有修改的相对路径
+git checkout modified_relative
+# 放弃所有修改
+git checkout .
+强制放弃所有修改
+git checkout -f .
+
+
+git checkout -- modified_filepath
+
+
+# 添加修改
+git add modified_file
+
+
+3.
+
+日志：获取commit_id
+git log
+commit_id
+
+
+检出：根据commit_id创建branch分支
+如果不指定branch分支默认创建commit_id分支
+git checkout commit_id
+git checkout -b branch commit_id
+
+

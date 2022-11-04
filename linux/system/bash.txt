@@ -1,0 +1,278 @@
+
+用户配置路径：~/.bash_profile
+全局配置路径：/etc/profile
+
+
+图形化界面登录读取配置文件：~/.bash_profile
+命令行界面登录读取配置文件：~/.bashrc
+
+centos6 使用root切换su其他用户，读取~/.bashrc，不读取~/.bash_profile，
+
+--------------------------------------------------------------------------------------------------
+
+# 颜色
+export CLICOLOR=YES
+
+
+locale
+
+export LANG=en_US.UTF-8
+
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+序列                说明
+\a                 ASCII 响铃字符（也可以键入 \007）
+\d                 "Wed Sep 06" 格式的日期
+\e                 ASCII 转义字符（也可以键入 \033）
+\h                 主机名的第一部分（如 "mybox"）
+\H                 主机的全称（如 "mybox.mydomain.com"）
+\j                 在此shell中通过按 ^Z 挂起的进程数
+\l                 此 shell 的终端设备名（如 "ttyp4"）
+\n                 换行符
+\r                 回车符
+\s                 shell 的名称（如 "bash"）
+\t                 24 小时制时间（如 "23:01:01"）
+\T                 12 小时制时间（如 "11:01:01"）
+\@                 带有 am/pm 的 12 小时制时间
+\u                 用户名
+\v                 bash 的版本（如 2.04）
+\V                 bash 版本（包括补丁级别）
+\w                 当前工作目录（如 "/home/drobbins"）
+\W                 当前工作目录的“基名 (basename)”（如 "drobbins"）
+\!                 当前命令在历史缓冲区中的位置
+\#                 命令编号（只要您键入内容，它就会在每次提示时累加）
+\$                 如果您不是超级用户 (root)，则插入一个 "$"；如果您是超级用户，则显示一个 "#"
+\xxx               插入一个用三位数 xxx（用零代替未使用的数字，如 "\007"）表示的 ASCII 字符
+\\                 反斜杠
+\[                 这个序列应该出现在不移动光标的字符序列（如颜色转义序列）之前。它使 bash 能够正确计算自动换行。
+\]                 这个序列应该出现在非打印字符序列之后。
+
+
+前景           背景          颜色
+30            40            黑色
+31            41            紅色
+32            42            绿色
+33            43            黄色
+34            44            蓝色
+35            45            紫红色
+36            46            青蓝色
+37            47            白色
+
+代码           意义
+0             OFF
+1             高亮显示
+4             underline
+5             闪烁
+7             反白显示
+8             不可见
+
+
+# centos
+export PS1="[\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]]\\$ "
+# ubuntu
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]\\$ "
+
+export PS1="[\[\033[32m\]\u@\h\[\033[00m\] \[\033[34m\]\W\[\033[00m\]]\\$ "
+
+# chench
+export PS1="[\[\033[35m\]\u@\h\[\033[00m\] \[\033[36m\]\W\[\033[00m\]]\\$ "
+# CCH
+export PS1="\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\W\[\033[00m\]\\$ "
+
+
+# git bash
+export PS1="\[\033]0;$MSYSTEM:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ "
+
+# zsh bash
+# colors
+autoload -U colors && colors
+
+# PROMPT
+PROMPT="%{$fg[magenta]%}%n@%m %{$fg[cyan]%}%1~ %{$reset_color%}%# "
+RPROMPT="[%{$fg[blue]%}%?%{$reset_color%}]"
+
+--------------------------------------------------------------------------------------------------
+
+
+tab提示bell功能：关闭声音打开显示
+vim /etc/inputrc
+set bell-style none
+set bell-style visible
+
+
+--------------------------------------------------------------------------------------------------
+
+
+修改主机名
+
+vim /etc/hosts
+127.0.0.1   cent
+::1         cent
+
+vim /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME=cent
+
+
+
+--------------------------------------------------------------------------------------------------
+
+#bogon
+# Mac OS
+sudo scutil --get HostName
+sudo scutil --set HostName 'chench-PC'
+
+# Cent OS
+hostnamectl set-hostname chench
+
+
+uname -a
+
+--------------------------------------------------------------------------------------------------
+
+查看磁盘使用情况
+df -h
+
+查看内存使用情况
+free -h
+
+
+查看当前目录下的文件夹大小
+du -h --max-depth=1 .
+du -sh *
+
+
+
+
+
+
+iostat
+
+apt install sysstat
+
+mpstat
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+ls -a 显示所有文件包括隐藏文件
+
+ls -l 显示文件详细信息
+
+
+文件类型：
+-:
+d:目录文件夹 directory
+c:字符设备 char device
+b:块设备 block device
+s:套接字文件 socket file
+l:链接文件 link file
+p:管道 pipe
+
+
+
+ls -la:long all
+
+ls -lh 文件大小使用K，M，G单位更加人性化
+
+ls -t 按修改时间由近到远(-tr倒序)来排序显示
+
+
+ls -i 显示文件索引节点地址
+
+ls -d file 只显示匹配的目录 file为空表示. 显示当前目录
+
+--------------------------------------------------------------------------------------------------
+每个文件对应都有一个索引节点index node
+file -> inode
+
+stat file 显示文件的索引节点
+
+  File: `文件名'
+  Size: 文件大小           Blocks: 块数量        IO Block: 块大小   regular file
+Device: 设备编号    Inode: 索引节点地址      Links链接数: 1
+Access文件权限: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access访问时间: 2019-10-13 23:32:18.832307995 +0800 访问内容
+Modify修改时间: 2018-06-29 22:44:50.000000000 +0800 修改内容
+Change状态时间: 2020-06-29 04:09:19.377786432 +0800 修改状态（大小，权限，链接）
+
+
+
+
+touch 创建文件或修改文件时间戳
+
+touch file -a|-m -d 'yyyy-MM-dd' -t 'HH:mm:ss'
+-a 访问时间
+-m 修改时间
+-d 'yyyy-MM-dd' -t 'HH:mm:ss' 使用指定⽇期时间，否则使用当前日期时间
+
+
+--------------------------------------------------------------------------------------------------
+软连接
+
+快捷方式 符号链接 Symbolic Link
+ln -s link_file desc_file
+
+硬链接
+ln dest_file link_file
+
+查看链接
+ls -la
+lrwxr-xr-x   1 root    root      10 Mon  d  yyyy link_file -> desc_file
+
+
+-------------------------------------------
+
+
+
+
+
+zmodel:xshell
+
+yum install lrzsz
+
+rz linux receive zmodel 远程上传
+sz linux send zmodel 远程下载
+
+
+
+
+
+-------------------------------------------
+
+
+wc -l 按行统计
+
+
+-------------------------------------------
+
+查看历史
+history
+后多少条
+history 10
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+Writing to this file causes the kernel to drop clean caches,dentries and inodes from memory, causing that memory to becomefree.
+to free pagecache, use echo 1 > /proc/sys/vm/drop_caches;
+to free dentries and inodes, use echo 2 > /proc/sys/vm/drop_caches;
+to free pagecache, dentries and inodes, use echo 3 >/proc/sys/vm/drop_caches.
+Because this is a non-destructive operation and dirty objects are not freeable, the user should run sync first.
+
+sync
+echo 0 > /proc/sys/vm/drop_caches
+echo 1 > /proc/sys/vm/drop_caches
+echo 2 > /proc/sys/vm/drop_caches
+echo 3 > /proc/sys/vm/drop_caches

@@ -1,0 +1,103 @@
+postman  nodejs  javascript
+
+Request
+Collection
+--------------------------------------------
+Pre-request Script
+Tests -> Test Results
+--------------------------------------------
+pm.info
+pm.info.eventName:String
+迭代
+pm.info.iteration:Number
+pm.info.iterationCount:Number
+
+pm.info.requestId:String
+pm.info.requestName:String
+
+--------------------------------------------
+pm.variables/pm.environment/pm.globals
+
+--------------------------------------------
+pm.request
+pm.request.url
+头部
+pm.request.headers
+pm.request.headers.add(headerName:String)
+pm.request.headers.delete(headerName:String)
+pm.request.headers.upsert({ key: headerName:String, value: headerValue:String})
+--------------------------------------------
+pm.response
+pm.response.code:Number
+pm.response.responseTime:Number
+
+pm.response.headers:HeaderList
+pm.response.reason():Function → String
+pm.response.text():Function → String
+pm.response.json():Function → Object
+
+
+--------------------------------------------
+pm.cookies
+pm.cookies.has(cookieName:String):Function → Boolean
+pm.cookies.get(cookieName:String):Function → String
+pm.cookies.toObject():Function → Object
+
+--------------------------------------------
+console.log("pm.response.code:" + pm.response.code)
+
+
+console.log("test2" + responseCode.code)
+
+console.log("test3" + responseBody)
+
+console.log("test1" + pm.response.json().content)
+
+pm.test(JSON.stringify(pm.response.json()), function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test(pm.response.text(), function () {
+    pm.response.to.have.status(200);
+});
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+字符 - URL编码值
+空格 - %20
+" - %22
+# - %23
+% - %25
+& - %26
+( - %28
+) - %29
++ - %2B
+, - %2C
+/ - %2F
+: - %3A
+; - %3B
+< - %3C
+= - %3D
+> - %3E
+? - %3F
+@ - %40
+\ - %5C
+| - %7C 
+
+URL特殊字符转义，URL中一些字符的特殊含义，基本编码规则如下：
+1、空格换成加号(+)
+2、正斜杠(/)分隔目录和子目录
+3、问号(?)分隔URL和查询
+4、百分号(%)制定特殊字符
+5、#号指定书签
+6、&号分隔参数
+如果需要在URL中用到，需要将这些特殊字符换成相应的十六进制的值
++ %2B
+/ %2F
+? %3F
+% %25
+# %23
+& %26

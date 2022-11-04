@@ -1,0 +1,66 @@
+调试
+
+pdb
+
+import pdb
+
+pdb.set_trace()
+
+pdb>
+
+--------------------------------------------------------------------------------------------------
+
+ipdb
+
+pip install ipdb
+
+import ipdb
+
+ipdb.set_trace()
+
+ipdb>
+
+--------------------------------------------------------------------------------------------------
+
+!var:查看变量
+!:避免命令冲突
+
+
+
+n:next运行到下一行
+s:step进入函数内部
+
+u:up
+d:down进入下一层堆栈帧
+a:args输出函数所有参数
+
+l l:list line|begin,end
+
+j l:jump line
+
+q:quit|exit
+h:help
+
+c:continue
+cl:clear
+
+p:print
+pp:pretty print
+
+r:return
+run:restart
+
+enter
+
+enable
+disable
+
+
+
+
+
+
+
+
+
+

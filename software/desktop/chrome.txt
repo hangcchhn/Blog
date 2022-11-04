@@ -1,0 +1,20 @@
+
+
+因为此网站使用了 HSTS
+
+chrome://net-internals/#hsts
+
+Query HSTS/PKP domain
+
+Delete domain security policies
+
+
+
+插件
+chrome://plugins/
+
+下载
+chrome://downloads
+
+chrome://flags/
+--------------------------------------------------------------------------------------------------

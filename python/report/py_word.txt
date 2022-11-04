@@ -1,0 +1,19 @@
+
+--------------------------------------------------------------------------------------------------
+word
+
+pip3 install python-docx
+
+不支持doc
+仅支持docx
+
+Document
+
+Paragraph
+
+Run
+
+
+
+https://blog.csdn.net/qq_45464895/article/details/123173742
+https://blog.csdn.net/ben_na_/article/details/124240275

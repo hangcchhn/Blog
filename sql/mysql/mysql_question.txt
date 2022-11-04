@@ -1,0 +1,151 @@
+--------------------------------------------------------------------------------------------------
+
+1067 Invalid default value for 'xxx'
+set session sql_mode='';
+set global sql_mode='';
+
+select @@session.sql_mode
+select @@global.sql_mode
+
+show variables like "%sql_mode%";
+
+my.ini|my.conf
+sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+
+
+1.ONLY_FULL_GROUP_BY
+对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中
+
+2.NO_AUTO_VALUE_ON_ZERO
+该值影响自增长列的插入。默认设置下，插入0或NULL代表生成下一个自增长值。如果用户希望插入的值为0，而该列又是自增长的，那么这个选项就有用了。
+
+3.STRICT_TRANS_TABLES
+如果一个值不能插入到一个事务中，则中断当前的操作，对非事务表不做限制
+
+4.NO_ZERO_IN_DATE
+不允许日期和月份为零
+
+5.NO_ZERO_DATE
+mysql数据库不允许插入零日期，插入零日期会抛出错误而不是警告
+
+6.ERROR_FOR_DIVISION_BY_ZERO
+在insert或update过程中，如果数据被零除，则产生错误而非警告。如果未给出该模式，那么数据被零除时Mysql返回NULL
+
+7.NO_AUTO_CREATE_USER
+禁止GRANT创建密码为空的用户
+
+8.NO_ENGINE_SUBSTITUTION
+如果需要的存储引擎被禁用或未编译，那么抛出错误。不设置此值时，用默认的存储引擎替代，并抛出一个异常
+
+9.PIPES_AS_CONCAT
+将"||"视为字符串的连接操作符而非或运算符，这和Oracle数据库是一样是，也和字符串的拼接函数Concat想类似
+
+10.ANSI_QUOTES
+不能用双引号来引用字符串，因为它被解释为识别符
+
+
+
+--------------------------------------------------------------------------------------------------
+linux异常关机，mysql无法启动
+rm /var/lib/mysql/mysql.sock
+
+恢复数据无法启动
+
+进入数据库保存文件路径
+
+ll database_name/
+db.opt:用来记录该库的默认字符集编码和字符集排序规则用的
+table_name.frm:存储与表相关的元数据信息，主要是表结构的定义信息
+table_name.idb:InnoDB存储引擎的存储数据库表数据的文件
+
+当采用共享表空间时所有InnoDB表的数据均存放在table_name.ibdata中
+独享表空间的方法是在my.ini配置文件中：Innodb_file_per_table=1
+MySQL-5.7版本配置是默认独享表空间的，不用特意在配置文件中
+
+.MYD:MY Data，是MyISAM存储引擎用于存储数据库表数据的文件；
+.MYI:MY Index，是MyISAM存储引擎用于存储数据库表索引相关信息的文件。
+
+
+
+
+innodb_force_recovery参数，默认为0
+控制mysql数据库innodb存储引擎的恢复模式
+当被设置成1-6时，表示数据库以安全模式启动
+只允许select，不允许insert,update,delete
+在此模式下可以导出数据，然后在正常模式重新导入
+
+1 (SRV_FORCE_IGNORE_CORRUPT)
+
+让服务器运行，即使它检测到一个损坏的页面。尝试让SELECT * FROM tbl_name跳过损坏的索引记录和页面，这有助于转储表。
+
+2 (SRV_FORCE_NO_BACKGROUND)
+
+阻止主线程和任何清除线程运行。如果在清除操作期间发生崩溃，则此恢复值将防止崩溃。
+
+3 (SRV_FORCE_NO_TRX_UNDO)
+
+在崩溃恢复后不运行事务回滚。
+
+4 (SRV_FORCE_NO_IBUF_MERGE)
+
+防止插入缓冲区合并操作。如果它们会导致坠机，那就不要做。不计算表统计信息。
+此值可能永久地损坏数据文件。使用此值后，准备删除和重新创建所有二级索引。设置InnoDB为只读。
+
+5 (SRV_FORCE_NO_UNDO_LOG_SCAN)
+
+启动数据库时不查看undo日志:InnoDB甚至会将未完成的事务视为已提交。
+此值可能永久地损坏数据文件。设置InnoDB为只读。
+
+6 (SRV_FORCE_NO_LOG_REDO)
+
+不做与恢复相关的重做日志前滚。此值可能永久地损坏数据文件。
+使数据库页面处于废弃状态，这反过来可能会对b-树和其他数据库结构带来更多的破坏。设置InnoDB为只读。
+
+my.ini:
+[mysqld]
+innodb_force_recovery=6
+
+shell:
+systemctl mysqld restart
+mysqldump -uroot -pchench data_rec tbl_user > /root/mysql/tbl_user.sql
+
+
+
+分离表空间
+解除table_name.frm和table_name.idb关联
+ALTER TABLE tbl_user DISCARD TABLESPACE;
+
+导入表空间
+绑定table_name.frm和table_name.idb关联
+ALTER TABLE tbl_user IMPORT TABLESPACE;
+
+my.ini:
+[mysqld]
+innodb_force_recovery=0
+
+shell:
+systemctl mysqld restart
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+Server returns invalid timezone.
+
+
+show variables like'%time_zone';
+
+显示SYSTEM表示没有设置时区
+
+set global time_zone = '+8:00';  
+
+
+
+
+--------------------------------------------------------------------------------------------------
+Note Code : 1265 Data truncated for column
+数据长度不够
+
+

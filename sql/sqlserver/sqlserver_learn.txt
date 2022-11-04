@@ -1,0 +1,223 @@
+
+
+--------------------------------------------------------------------------------------------------
+
+
+[]  可选
+<>  代替
+{}  必选
+|   或者
+
+
+条件condition
+
+
+
+--------------------------------------------------------------------------------------------------
+数据库database
+
+创建数据库
+create database database_name
+
+
+删除数据库
+drop database database_name
+
+
+
+--------------------------------------------------------------------------------------------------
+表格table
+模式
+
+
+创建
+create table table_name
+(
+	column_name column_type 
+	[null|not null]
+	[primary key|unique]
+	[check()]
+	[default{}]
+	[foreign key (column_name) reference ref_table_name(ref_column_name)]
+	[,...]
+)
+
+
+
+删除
+drop table table_name
+
+
+
+修改
+
+
+--------------------------------------------------------------------------------------------------
+
+视图view
+外模式
+	创建
+		create view view_name as
+			select column_name from table_name
+		with check option
+	修改
+		alter view view_name as 
+			select column_name from table_name
+
+--------------------------------------------------------------------------------------------------
+
+
+索引index
+内模式
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+插入数据
+insert into table_name(column_name_1, column_name_2, ...) 
+values (column_value_1_1, column_value_1_2, ...)[, (column_value_2_1, column_value_2_2, ...), ...]
+
+修改数据
+update table_name set column_name_1=column_value_1, [, column_name_2=column_value_2, ...]
+where condition
+
+删除数据
+delete from table_name 
+where condition
+
+--------------------------------------------------------------------------------------------------
+变量
+
+
+全局变量
+	@@variable_name
+
+局部变量
+	定义	
+        declare @variable column_type
+	赋值        
+        set @variable_name = variable_value
+	查询
+        select @variable_name
+
+--------------------------------------------------------------------------------------------------
+
+
+语句
+begin ... end:相当于{...}
+
+
+if语句
+
+case语句:相当于switch语句
+	case case_value_1 
+		when when_value_1 then then_value_1
+    case case_value_2 
+		when when_value_2 then then_value_2
+	
+while语句
+	break
+	continue
+
+goto语句 无条件跳转		
+    goto goto_name
+
+
+--------------------------------------------------------------------------------------------------
+
+函数function
+	标准函数
+		create function function_name (@parameter_name column_type) return column_type
+		begin
+
+		end
+
+	内嵌表值函数
+		create function function_name (@parameter_name column_type) return table
+		as return (select column_name from table_name)
+		
+	多语句表值函数
+		create function function_name (@parameter_name column_type) 
+		return @table_name 
+		(
+			column_name column_type 
+		) as
+		begin
+		
+			return
+		end 
+
+调用函数
+    dbo.function_name(paremeter_value)
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+存储过程procedure
+系统存储过程——sp_
+扩展存储过程——xp_
+
+创建存储过程
+create procedure procedure_name
+	@parameter column_type
+as
+	sql_statement
+	
+执行存储过程
+execute @return_status=procedure_name paremeter_value
+
+查看存储过程
+execute sp_help procedure_name
+execute sp_helptext procedure_name
+
+
+--------------------------------------------------------------------------------------------------
+
+触发器trigger
+
+	dml触发器
+		after触发器
+		instead of触发器
+	创建触发器
+	create trigger trigger_name on table_name|view_name
+	for|instead of insert,delete,update
+	as
+		sql_statement
+	
+	
+	
+	
+--------------------------------------------------------------------------------------------------
+
+事务transaction
+成功提交或失败回滚
+	自动提交事务
+	显示事务
+	隐式事务
+	批处理级事务
+	
+	begin transaction transaction_name
+	
+	commit transaction transaction_name
+	
+	rollback transaction transaction_name
+	
+	save transaction transaction_name
+	
+	
+
+	
+	
+
+
+
+
+

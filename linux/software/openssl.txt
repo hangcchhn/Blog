@@ -1,0 +1,192 @@
+
+
+--------------------------------------------------------------------------------------------------
+
+
+Ubuntu:
+apt install openssl
+apt install libssl-dev
+
+CentOS:
+yum install openssl
+yum install openssl-devel
+
+
+--------------------------------------------------------------------------------------------------
+
+openssl genrsa -out common.key 2048
+openssl req -x509 -new -nodes -key common.key -days   1024 -out common.pem
+
+
+mkdir server
+openssl genrsa -out server/server.key 2048
+openssl req -new -key server/server.key -out server/server.csr
+openssl pkcs8 -topk8 -inform PEM -outform PEM -in server/server.key -out server/server.pkcs8.key -nocrypt
+openssl x509 -req -in server/server.csr -CA ./common.pem -CAkey ./common.key -CAcreateserial -out server/server.crt -days 500 -sha256
+
+mkdir client
+openssl genrsa -out client/client.key 2048
+openssl req -new -key client/client.key -out client/client.csr
+openssl pkcs8 -topk8 -inform PEM -outform PEM -in client/client.key -out client/client.pkcs8.key -nocrypt
+openssl x509 -req -in client/client.csr -CA ./common.pem -CAkey ./common.key -CAcreateserial -out client/client.crt -days 500 -sha256
+
+
+openssl pkcs12 -export -cacerts -inkey client/client.key -in client/client.crt -out client/client.p12
+
+
+
+
+keytool -import -file ./common.pem -keystore client/client.jks
+
+keytool -importkeystore -deststorepass 123456 -destkeypass 123456 -destkeystore client/client.keystore -deststoretype jks -srckeystore ./client/client.jks -srcstoretype jks -srcstorepass 123456 -alias client
+
+
+keytool -importkeystore -srckeystore D:\keystore\keystore.p12 -destkeystore D:\keystore\new\keystore.p12 -deststoretype pkcs12
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+keytool -genkeypair -keyalg RSA -alias chench -keypass chench -storepass chench -keystore chench.jks 
+
+
+keytool -list -keystore chench.jks
+
+
+keytool -list -rfc --keystore chench.jks | openssl x509 -inform pem -pubkey
+
+
+
+-----BEGIN PUBLIC KEY-----
+...
+-----END PUBLIC KEY-----
+
+public.key
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+keytool
+密钥和证书管理工具
+
+命令:
+
+-certreq            生成证书请求
+-changealias        更改条目的别名
+-delete             删除条目
+-exportcert         导出证书
+-genkeypair         生成密钥对
+-genseckey          生成密钥
+-gencert            根据证书请求生成证书
+-importcert         导入证书或证书链
+-importpass         导入口令
+-importkeystore     从其他密钥库导入一个或所有条目
+-keypasswd          更改条目的密钥口令
+-list               列出密钥库中的条目
+-printcert          打印证书内容
+-printcertreq       打印证书请求的内容
+-printcrl           打印 CRL 文件的内容
+-storepasswd        更改密钥库的存储口令
+
+使用 "keytool -command_name -help" 获取 command_name 的用法
+
+
+
+keytool -genkeypair -help
+keytool -genkeypair [OPTION]...
+
+生成密钥对
+
+选项:
+
+ -alias <alias>                  要处理的条目的别名
+ -keyalg <keyalg>                密钥算法名称
+ -keysize <keysize>              密钥位大小
+ -sigalg <sigalg>                签名算法名称
+ -destalias <destalias>          目标别名
+ -dname <dname>                  唯一判别名
+ -startdate <startdate>          证书有效期开始日期/时间
+ -ext <value>                    X.509 扩展
+ -validity <valDays>             有效天数
+ -keypass <arg>                  密钥口令
+ -keystore <keystore>            密钥库名称
+ -storepass <arg>                密钥库口令
+ -storetype <storetype>          密钥库类型
+ -providername <providername>    提供方名称
+ -providerclass <providerclass>  提供方类名
+ -providerarg <arg>              提供方参数
+ -providerpath <pathlist>        提供方类路径
+ -v                              详细输出
+ -protected                      通过受保护的机制的口令
+
+使用 "keytool -help" 获取所有可用命令
+
+--------------------------------------------------------------------------------------------------
+//构建ca子目录 证书创建时，用到下述目录,最终在certs目录中获得证书文件
+echo 构建已发型证书存放目录 certs
+mkdir certs
+echo 构建新证书存放目录 newcerts
+mkdir newcerts
+echo 构建私钥存放目录 private
+mkdir private
+echo 构建证书吊销列表存放目录 crl
+mkdir cr1 
+//构建相关文件，完成后可以进行证书的构建和签发工作
+echo 构建索引文件 index.txt
+echo 0>index.txt
+echo 构建序列号文件 serial
+echo 01>serial
+//构建根证书 
+echo 构建随机数 private/.rand
+openssl rand -out private/.rand 1000
+//构建根证书私钥
+echo 构建根证书私钥 private/ca.key.pem
+openssl genrsa -aes256 -out private/ca.key.pem 2048
+//完成密钥构建操作后，需要生成根证书签发申请文件ca.csr
+//生成根证书签发申请
+echo 生成根证书签发申请 private/ca.csr
+openssl req -new -key private/ca.key.pem -out private/ca.csr -subj "/C=CN/ST=HUBEI/L=WUHAN/O=YALE/OU=YALE/CN=*.qiujinyong.org"
+//执行完后此处又要输入根证书密码
+//得到根证书签发申请文件后，可以将其发送给CA机构签发，也可以自行签发根证书
+echo 签发根证书 private/ca.cer  
+openssl x509 -req -days 1000 -sha1 -extensions v3_ca -signkey private/ca.key.pem -in private/ca.csr -out certs/ca.cer
+//执行完后此处又要输入根证书密码
+echo 根证书转换 private/ca.p12
+openssl pkcs12 -export -cacerts -inkey private/ca.key.pem -in certs/ca.cer -out certs/ca.p12
+//执行完后此处又要输入根证书密码
+//构建服务器证书
+echo 构建服务器私钥 private/server.key.pem
+openssl genrsa -aes256 -out private/server.key.pem 2048
+//服务器证书签发申请
+echo 生成服务器证书签发申请 private/server.csr
+openssl req -new -key private/server.key.pem -out private/server.csr -subj "/C=CN/ST=HUBEI/L=WUHAN/O=YALE/OU=YALE/CN=www.qiujinyong.com"
+//执行完后此处又要输入根证书密码
+//根证书签发服务器证书 
+echo 签发服务器证书 private/server.cer
+openssl x509 -req -days 3650 -sha1 -extensions v3_req -CA certs/ca.cer -CAkey private/ca.key.pem -CAserial ca.srl -CAcreateserial -in private/server.csr -out certs/server.cer
+//执行完后此处又要输入根证书密码
+//将OpenSSL产生的数字证书转换为PKCS#12编码格式
+echo 服务器证书转换 private/server.p12
+openssl pkcs12 -export -clcerts -inkey private/server.key.pem -in certs/server.cer -out certs/server.p12
+//执行完后此处又要输入根证书密码
+//构建客户证书
+echo 产生客户私钥 private/client.key.pem
+openssl genrsa -aes256 -out private/client.key.pem 2048
+//执行完后此处又要输入根证书密码
+//产生客户证书签发申请
+echo 生成客户证书签发申请 client.csr
+openssl req -new -key private/client.key.pem -out private/client.csr -subj "/C=CN/ST=HUBEI/L=WUHAN/O=YALE/OU=YALE/CN=qiujinyong"
+//执行完后此处又要输入根证书密码
+//根证书签发客户证书
+echo 签发客户证书 certs/client.cer
+openssl  x509 -req -days 3650 -sha1 -extensions v3_req -CA  certs/ca.cer  -CAkey  private/ca.key.pem  -CAserial ca.srl -CAcreateserial -in private/client.csr -out  certs/client.cer
+//执行完后此处又要输入根证书密码
+//将获得客户证书转换JAVA语言可以识别的PKCS#12编码格式
+echo 客户证书转换 certs/client.p12
+openssl pkcs12 -export -inkey private/client.key.pem -in certs/client.cer -out certs/client.p12
+//完成了双向认证的所需的全部证书
+--------------------------------------------------------------------------------------------------

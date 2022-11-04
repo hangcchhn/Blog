@@ -1,0 +1,65 @@
+
+
+
+
+iWork 09 密钥
+E4RJ-YKHP-9ER4-WK9Y-H4UM-5S2
+G9MU-9U9J-KN4M-4PAE-DYNA-5S2
+EGMU-3PKP-NN9G-3JW4-3RAD-5S2
+
+--------------------------------------------------------------------------------------------------
+
+vnc server
+vnc viewer
+
+Screen Sharing.app
+
+--------------------------------------------------------------------------------------------------
+
+卸载java
+sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+sudo rm -rf /Library/PreferencesPanes/JavaControlPanel.prefpane
+sudo rm -rf /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk
+
+--------------------------------------------------------------------------------------------------
+
+卸载python
+sudo rm -rf /Library/Frameworks/Python.framework/Versions/3.6
+sudo rm -rf /Applications/Python
+sudo rm -rf /var/db/receipts/*3.6*
+
+cd /usr/local/bin/
+rm -rf *.3*
+rm -rf *.3.6
+
+--------------------------------------------------------------------------------------------------
+
+卸载nodejs
+
+sudo rm -rf /usr/local/lib/node_modules
+sudo rm -rf /var/db/receipts/org.nodejs.*
+
+cd /usr/local/bin
+rm -rf node npm npx
+
+--------------------------------------------------------------------------------------------------
+
+卸载golang
+
+sudo rm -rf /usr/local/go
+sudo rm -rf /etc/paths.d/go
+
+--------------------------------------------------------------------------------------------------
+
+macosx 15.5 - office 2019
+
+关闭自动更新提醒
+cd /Library/Application\ Support/Microsoft/MAU2.0
+sudo chmod 000 Microsoft\ AutoUpdate.app
+
+
+
+设置路径
+~/Library/Preferences
+
+

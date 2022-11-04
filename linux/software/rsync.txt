@@ -1,0 +1,163 @@
+
+
+rsync(remote synchronous)
+文件同步备份工具
+
+yum install rsync
+
+--------------------------------------------------------------------------------------------------
+
+客户端使用
+
+
+本地同步
+rsync同步类似cp复制
+
+rsync -av /src /dest
+
+
+-v, --verbose   显示详细信息
+-q, --quiet     显示简要信息
+
+--progress      显示执行进度
+-P, --partial --progress
+
+-z, --compress  使用压缩机制
+
+-a, --archive, -rlptgoD
+使用归档模式
+-r, --recursive 使用递归模式
+-l, --links     将符号链接当作文件拷贝, 但不拷贝符号链接指向的文件.
+-p, --perms     保留文件权限
+-t, --times     保留时间戳
+-g, --group     保留用户组
+-o, --owner     保留拥有者
+-D, --devices --specials
+保留设备文件, 保留特殊文件
+
+
+-i, --itemize-changes  显示差异文件
+d   目录
+f   文件
+s   文件大小差异
+t   时间戳有差异
+o   拥有者有差异
+g   所属组有差异
+
+
+-u, --update    保留目标目录修改过的文件
+-d, --dirs      只同步目录，不同步文件
+
+
+--existing      只同步目标目录已存在的文件
+--delete        删除目标目录多余的文件和目录（先删除再同步）
+
+------------------------------------------------
+
+file-name是一种匹配模式
+
+
+--delete-excluded 'file-name'    排除在外
+
+单个匹配模式
+--include 'file-name'    包含
+--exclude 'file-name'    排除
+
+多个匹配模式
+--include={'file-name_1','file-name_2'}    包含
+--exclude={'file-name_1','file-name_2'}    排除
+
+------------------------
+file-list是一个文件，里面按行写着多个匹配模式
+file-list:
+file-name_1
+file-name_2
+
+--include-from 'file-list'    包含
+--exclude-from 'file-list'    排除
+
+
+------------------------
+-b, --backup
+同步文件时，针对目标目录已存在的文件创建备份文件
+./~filename
+
+--backup-dir ./ 指定备份文件目录（默认是当前目录）
+-suffix=~       指定备份文件前缀（默认是~）
+
+
+--max-size '' 指定最大文件大小
+
+-W, --whole-file    不对比文件是否有更新直接同步（io充足，cpu匮乏）
+
+
+--------------------------------------------------------------------------------------------------
+
+远程同步需要输入密码
+user@host:/path
+user@host::/path
+rsync://user@host:port/path
+
+The ':' usages connect via remote shell,
+while '::' & 'rsync://' usages connect to an rsync daemon,
+
+
+--port=873 指定rsync daemon端口（默认是873）
+
+定时任务
+cron
+0 0 * * * /usr/local/sbin/bkpscript &> /dev/null
+rsync -avz -e ‘ssh -p2093′ /home/test/ root@192.168.1.150:/oracle/data/
+
+
+-e shell, --rsh=shell   指定远端使用的shell命令
+
+--------------------------------------------------------------------------------------------------
+
+服务端配置
+
+
+vim /etc/rsyncd.conf
+
+# 指定运行rsync daemon的用户和用户组，默认nobody
+uid = root
+gid = root
+use chroot = no
+# 设置最大连接数，默认为0，表示无限制，负数表示关闭这个模块
+max connections = 10
+# 设置连接超时时间，默认为0，单位秒
+timeout = 60
+
+log file = /var/log/rsyncd.log
+pid file = /var/run/rsyncd.pid
+lock file = /var/run/rsyncd.lock
+
+#用户模块
+[rsync]
+# 用户共享目录
+path = /root/rsync/path
+#
+comment = comment
+# 忽略错误
+ignore errors
+# 可以修改
+read only = false
+# 不显示列表
+list = false
+# 指定访问黑白名单，格式：address/mask
+# hosts allow = 192.168.1.7/24
+# hosts deny = 0.0.0.0/32
+# 指定该模块的用户，多个用户使用空格或逗号分隔
+auth users = rsync
+# 指定存储用户名和密码的文件，格式：username:password
+secrets file = /etc/rsyncd.secrets
+# 欢迎信息文件路径
+motd file = /etc/rsyncd.motd
+
+vim /etc/rsyncd.secrets
+rsync:rsync
+
+vim /etc/rsyncd.motd
+rsyncd daemon
+
+rsync  --daemon

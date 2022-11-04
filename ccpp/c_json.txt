@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "cJSON.h"
+
+int main(int argc, const char * argv[]) {
+    
+    char *json = "{\"time\":\"2020-11-18 10:10:10\", \"data\":{\"info\":\"0123456789\"}}";
+    
+    cJSON *jsonRoot = cJSON_Parse(json);
+    if (jsonRoot == NULL) {
+        return -1;
+    }
+    
+    cJSON *jsonTime = cJSON_GetObjectItem(jsonRoot, "time");
+    if (jsonTime == NULL) {
+        return -1;
+    }
+    printf("time:%s\n", jsonTime->valuestring);
+    
+    char *data = cJSON_Print(jsonRoot);
+    
+    FILE *file = fopen("json.json", "w");
+    long size = fwrite(data, strlen(data), 1, file);
+    printf("size:%ld\n", size);
+    fclose(file);
+    
+    free(data);
+    
+    
+    cJSON_Delete(jsonRoot);
+    
+    return 0;
+    
+}

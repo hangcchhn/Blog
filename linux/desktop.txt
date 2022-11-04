@@ -1,0 +1,53 @@
+
+桌面快捷方式路径：
+/usr/share/applications
+~/.local/share/applications
+
+
+--------------------------------------------------------------------------------------------------
+
+应用图标启动（桌面快捷方式）
+
+应用程序名称.desktop文件格式分析：
+[Desktop Entry]> 引用块内容
+Encoding=UTF-8 //编码方式
+Name=aMule //应用程序名称，
+Comment=aMule //鼠标经过上面时的提示名称
+Exec=amule //执行程序的语句
+Icon=amule.png //显示在菜单项中的图标，可以为空
+Terminal=false //是否使用终端
+Type=Application //分类
+Categories=Application;Network; //分类
+
+--------------------------------------------------------------------------------------------------
+
+
+jmeter
+[Desktop Entry]
+Exec=/usr/jmeter/bin/jmeter.sh
+Icon=/usr/jmeter/docs/images/favicon.png
+Type=Application
+Terminal=false
+Name=JMeter
+GenericName=JMeter
+Categories=Application;Development;
+Name[en_US]=JMeter
+Name[zh_CN]=JMeter
+
+
+--------------------------------------------------------------------------------------------------
+
+
+matlab
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=MATLAB R2014a
+Icon=com-mathworks-util-postvminit.png
+Path=/home/chench/MATLAB/R2014a/bin
+Exec=/home/chench/MATLAB/R2014a/bin/matlab -desktop
+StartupNotify=false
+StartupWMClass=com-mathworks-util-PostVMInit
+OnlyShowIn=Unity;
+X-UnityGenerated=true

@@ -1,0 +1,40 @@
+
+
+python 3.6.5
+pip3 install cvxpy==1.1.7
+pip3 install scs==2.1.2
+
+python 2.7.14
+pip2 install cvxpy==1.0.25
+pip2 install scs==1.2.7
+
+
+
+
+pip install ecos==2.0.7.post1
+pip install osqp==0.6.1
+
+
+--------------------------------------------------------------------------------------------------
+
+```py
+
+from cvxpy import Variable, Minimize, Problem, square
+
+minimize = Minimize(sum(square(y - x @ k)))  # 最小二乘法目标函数：残差平方和最小
+problem = Problem(minimize, constraints)
+# 返回目标函数的最优值
+solve = problem.solve()
+# solve = problem.value
+
+```
+### problem.status
+- optimal:问题可以得到最优解
+- infeasible:问题的解是不可行的
+- unbounded:问题的解是无边界的
+
+--------------------------------------------------------------------------------------------------
+
+
+cvxpy.installed_solvers()
+['CVXOPT', 'ECOS', 'ECOS_BB', 'GLPK', 'GLPK_MI', 'OSQP', 'SCIPY', 'SCS']

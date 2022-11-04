@@ -1,0 +1,139 @@
+
+
+
+clone
+
+虚拟机|服务器克隆
+
+
+由于redhat和centos的udev的管理机制，网卡变成了eth1，想要改回eth0：
+
+mac_address 硬件地址
+rm -rf /etc/udev/rules.d/70-persistent-net.rules
+
+vim /etc/udev/rules.d/70-persistent-net.rules
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="mac_address", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0"
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+HWADDR=mac_address
+
+centos7.x:没有70-persistent-net.rules文件
+注意ifcfg-ens33文件中HWADDR=mac_address一致
+重启网络systemctl restart network.service
+
+
+--------------------------------------------------------------------------------------------------
+
+网卡设置
+
+ifconfig
+eth0
+lo
+
+
+vim /etc/sysconfig/network-scripts/ifcfg-*
+BOOTPROTO=dhcp|static
+ONBOOT=yes
+IPADDR=192.168.10.153
+NETMASK=255.255.255.0
+GATEWAY=192.168.10.2
+DNS1=8.8.8.8
+DNS2=114.114.114.114
+
+
+vim /etc/hosts
+127.0.0.1   cent
+::1         cent
+
+vim /etc/sysconfig/network
+cent
+
+hostnamectl set-hostname cent
+
+--------------------------------------------------------------------------------------------------
+虚拟机双网卡
+vmware 14.x
+centos 6.10
+
+ifconfig
+
+dmesg | grep eth
+
+cat  /etc/udev/rules.d/70-persistent-net.rules
+
+cd /etc/sysconfig/network-scripts/
+
+cp ifcfg-eth0 ifcfg-eth1
+
+vim ifcfg-eth1
+
+service network restart
+
+--------------------------------------------------------------------------------------------------
+
+cent01:192.168.10.201
+cent02:192.168.10.202
+cent03:192.168.10.203
+
+vim /etc/hosts
+192.168.10.202    cent02
+192.168.10.203    cent03
+
+#java
+export JAVA_HOME=/usr/java/jdk1.8.0_202
+export JRE_HOME=$JAVA_HOME/jre
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+#scala
+export SCALA_HOME=/usr/scala/scala-2.12.14
+export PATH=$SCALA_HOME/bin:$PATH
+
+#hadoop
+export HADOOP_HOME=/usr/hadoop/hadoop-3.2.1
+export PATH=$HADOOP_HOME/bin:$PATH
+
+#spark
+export SPARK_HOME=/usr/spark/spark-3.1.2-bin-hadoop3.2
+export PATH=$SPARK_HOME/bin:$PATH
+
+
+
+--------------------------------------------------------------------------------------------------
+
+fdisk -l
+fdisk /dev/sda
+
+n
+p
+4
+enter
+enter
+t
+4
+8e
+w
+
+
+mkfs -t ext3 /dev/sda4
+
+lvm
+> pvcreate /dev/sda4
+> vgdisplay
+#  VG Name                VolGroup
+> vgextend VolGroup /dev/sda4
+> vgdisplay -v
+
+# Free  PE / Size       2558 / 9.99 GiB
+
+> lvextend -l+2558 /dev/mapper/VolGroup-lv_root
+
+> pvdisplay
+> quit
+
+e2fsck -a /dev/mapper/VolGroup-lv_root
+
+centos 7
+xfs_growfs /dev/mapper/VolGroup-lv_root
+
+centos 6
+resize2fs /dev/mapper/VolGroup-lv_root

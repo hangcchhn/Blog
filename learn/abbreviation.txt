@@ -1,0 +1,14 @@
+
+英文缩写
+
+SOAP(Simple Object Access Protocol)
+WSDL(Web Services Description Language)
+UDDI(Universal Description Discovery Integration)
+
+
+SOAP UI Pro -> WebService 
+PostMan -> Restful API
+JMeter -> java
+
+
+

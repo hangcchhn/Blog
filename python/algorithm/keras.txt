@@ -1,0 +1,35 @@
+
+
+
+pip install keras
+
+tensorflow
+theano
+
+
+.keras\keras.json
+{
+    "floatx": "float32",
+    "epsilon": 1e-07,
+    "backend": "theano",
+    "image_data_format": "channels_last"
+}
+
+{
+    "floatx": "float32",
+    "epsilon": 1e-07,
+    "backend": "theano",
+    "image_dim_ordering": "tf"
+}
+
+floatx:float16, float32, float64
+
+backend:tensorflow, theano, cntk
+image_data_format:channels_last, channels_first
+
+
+import os
+os.environ['KERAS_BACKEND']= 'theano'
+
+
+--------------------------------------------------------------------------------------------------

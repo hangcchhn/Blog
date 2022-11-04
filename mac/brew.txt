@@ -1,0 +1,117 @@
+
+
+
+国内安装脚本
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh)"
+
+
+设置环境变量
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+
+软件安装路径
+/usr/local/Cellar/
+
+
+
+--------------------------------------------------------------------------------------------------
+
+切换国内镜像
+
+brew Homebrew 源代码仓库
+
+homebrew-core Homebrew 核心软件仓库
+
+homebrew-bottles Homebrew 预编译二进制软件包
+
+homebrew-cask MacOS 客户端应用
+
+Homebrew国内镜像源目前主要有中科大镜像、阿里镜像、清华镜像。
+https://mirrors.aliyun.com
+
+https://mirrors.ustc.edu.cn
+https://mirrors.tuna.tsinghua.edu.cn
+
+查看 brew.git 当前源
+cd "$(brew --repo)" && git remote -v
+
+查看 homebrew-core.git 当前源
+cd "$(brew --repo homebrew/core)" && git remote -v
+
+
+替换brew.git:
+cd "$(brew --repo)" && git remote set-url origin https://mirrors.ustc.edu.cn/homebrew/brew.git
+替换homebrew-core.git:
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core" && git remote set-url origin https://mirrors.ustc.edu.cn/homebrew/homebrew-core.git
+替换homebrew-cask.git:
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-cask" && git remote set-url origin https://mirrors.ustc.edu.cn/homebrew/homebrew-cask.git
+
+
+Mac OS在10.15系统开始，默认的shell从bash换成zsh
+
+zsh .zshrc 替换homebrew-bottles镜像
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.zshrc
+修改使其立即生效
+source ~/.zshrc
+
+
+bash .bash_profile 替换homebrew-bottles镜像
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bash_profile
+修改使其立即生效
+source ~/.bash_profile
+
+
+bash .bashrc 替换homebrew-bottles镜像
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bashrc
+修改使其立即生效
+source ~/.bashrc
+
+刷新源
+brew update
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+
+brew search xxx
+brew info xxx
+
+brew install xxx
+brew uninstall xxx
+
+
+brew list xxx
+brew deps xxx
+
+
+
+brew list
+
+brew cleanup
+
+
+--------------------------------------------------------------------------------------------------
+
+
+brew tap beeftornado/rmtree
+brew rmtree xxx
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+brew install caskroom/cask/brew-cask
+
+brew install brew-cask-completion
+
+brew cask
+
+
+brew cask install qt-creator

@@ -1,0 +1,212 @@
+
+
+竖线光标模式：当前字符 光标所在字符是竖线｜后面的那个字符
+
+N表示数字
+前面加上对于数字表示重复多少次
+
+移动光标
+HJKL 左下上右
+
+nH
+nJ
+nK
+nL
+
+小写表示当前按键 大写表示切换键+当前键
+普通模式:
+X 删除当前字符
+DD 删除当前一行
+Shift+J 删除行尾换行符将下一行连接到当前行尾
+U 撤销上一个操作
+Ctrl+R 重做
+
+I 当前字符前面插入
+A 当前字符后面插入
+O 当前行下方插入新行
+Shift+O 当前行上方插入新行
+Shift+I 当前
+
+Shift+Z+Z 保存退出
+
+:wq
+:q! 放弃修改并退出文件
+:e! 放弃修改并重载文件
+
+
+:help
+
+
+光标：
+0 绝对行首
+^ 第一个非空白字符
+$ 行尾
+
+翻页：
+Ctrl+B 向上(back)
+Ctrl+F 向下(forward)
+
+半屏：
+Ctrl+U 向上(up)
+Ctrl+D 向下(down)
+
+
+
+G+G 首行
+Shift+G 尾行
+
+W 跳到下一个单词的开头
+B 跳到上一个单词的开头
+E 跳到下一个单词的结尾
+G+E 跳到上一个单词的结尾
+
+nW 跳到下n个单词的开头
+
+行内搜索跳转：仅支持单字母
+F+搜索单个字母：向右搜索
+Shift+F+搜索单个字母：向左搜索
+
+/+搜索单词：向下搜索
+?+搜索单词：向下搜索
+查找光标所在的单词:
+* 向下
+# 向上
+N 向下
+Shift+N 向上
+
+只替换当前行
+:s/old_str/new_str/
+
+查找search
+:s
+替换replace
+:r
+
+:! 执行linux命令
+
+--------------------------------------------------------------------------------------------------
+编辑多个文件
+vim file1 file2
+:first 第一个
+:prev 上一个
+:next 下一个
+:last 最后一个
+:qa 全部退出
+
+
+
+分屏
+vim -o file1 file2
+vim -O file1 file2
+
+Ctrl+W+S 水平
+Ctrl+W+V 垂直
+
+Ctrl+W+方向键
+
+--------------------------------------------------------------------------------------------------
+
+
+在插入模式下，输入Ctrl+X将进入^X模式。屏幕底部将显示以下提示信息：
+-- ^X mode (^]^D^E^F^I^K^L^N^O^Ps^U^V^Y)
+Ctrl+] ，标签(tags)补全
+Ctrl+D ，定义补全
+Ctrl+E ，向上滚动文本
+Ctrl+F ，文件名补全
+Ctrl+I ，当前文件以及包含进来的文件补全
+Ctrl+K ，字典补全
+Ctrl+L ，整行补全
+Ctrl+N ，当前文件内的关键字补全，向下选择匹配项
+Ctrl+O ，全能补全
+Ctrl+P ，当前文件内的关键字补全，向上选择匹配项
+Ctrl+S ，拼写建议补全
+Ctrl+U ，用户自定义补全
+Ctrl+V ，Vim命令补全
+Ctrl+Y ，向下滚动文本
+
+假设在编辑main.c文件时，想要查找一个宏定义，
+首先按下Ctrl+X键进入^X模式再按下Ctrl+D键.
+
+
+使用Ctrl+N和Ctrl+P上下移动时，输入的文本也会随之变化。
+使用<Up>和<Down>上下移动时，输入的文字并不会变化。
+使用<PageUp>和<PageDown>键，可以在菜单中翻页。
+使用Ctrl+Y或Enter回车键，将使用当前匹配项完成补全。
+使用Ctrl+E键，将关闭菜单并退回到文字输入的原始状态。
+使用Esc键，将关闭弹出菜单，但会保留之前应用的匹配项。
+
+--------------------------------------------------------------------------------------------------
+
+
+Linux 快捷键
+Ctrl+S 锁定屏幕
+Ctrl+Q 解锁屏幕
+
+
+
+解决粘贴代码缩进问题：进入插入（粘贴）模式
+
+vim xxx
+Esc
+:set paste
+I:-- INSERT (paste) --
+Ctrl+V
+Esc
+:set nopaste
+I:-- INSERT --
+Esc
+:wq
+
+
+--------------------------------------------------------------------------------------------------
+
+# 在vim中通过如下设置文件编码和文件格式
+:set fileencodings=utf-8
+:set fileformat=unix
+
+
+# 在mac下使用dos2unix进行文件格式化
+find . -name "*.sh" | xargs dos2unix
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+        TO mode Normal  Visual  Select  Insert    Replace   Cmd-line  Ex
+FROM mode
+Normal                  v V ^V    *4     *1        R gR     : / ? !   Q
+Visual           *2               ^G     c C        --        :       --
+Select           *5     ^O ^G            *6         --        --      --
+Insert           <Esc>    --      --              <Insert>    --      --
+Replace          <Esc>    --      --    <Insert>              --      --
+Command-line     *3       --      --     :start     --                --
+Ex               :vi      --      --     --         --        --
+
+*1 Go from Normal mode to Insert mode by giving the command "i", "I", "a",
+   "A", "o", "O", "c", "C", "s" or "S".
+*2 Go from Visual mode to Normal mode by giving a non-movement command, which
+   causes the command to be executed, or by hitting <Esc> "v", "V" or "Ctrl-V"
+   (see |v_v|), which just stops Visual mode without side effects.
+*3 Go from Command-line mode to Normal mode by:
+   - Hitting <CR> or <NL>, which causes the entered command to be executed.
+   - Deleting the complete line (e.g., with Ctrl-U) and giving a final <BS>.
+   - Hitting Ctrl-C or <Esc>, which quits the command-line without executing
+     the command.
+   In the last case <Esc> may be the character defined with the 'wildchar'
+   option, in which case it will start command-line completion.  You can
+   ignore that and type <Esc> again.
+*4 Go from Normal to Select mode by:
+   - use the mouse to select text while 'selectmode' contains "mouse"
+   - use a non-printable command to move the cursor while keeping the Shift
+     key pressed, and the 'selectmode' option contains "key"
+   - use "v", "V" or "Ctrl-V" while 'selectmode' contains "cmd"
+   - use "gh", "gH" or "g Ctrl-H"  |g_Ctrl-H|
+*5 Go from Select mode to Normal mode by using a non-printable command to move
+  the cursor, without keeping the Shift key pressed.
+*6 Go from Select mode to Insert mode by typing a printable character.  The
+  selection is deleted and the character is inserted.
+
+
+
+--------------------------------------------------------------------------------------------------

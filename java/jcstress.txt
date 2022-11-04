@@ -1,0 +1,11 @@
+
+
+
+
+mvn archetype:generate 
+-DinteractiveMode=false 
+-DarchetypeGroupId=org.openjdk.jcstress 
+-DarchetypeArtifactId=jcstress-java-testarchetype 
+-DgroupId=hn.cch
+-DartifactId=jcstress-test 
+-Dversion=1.0

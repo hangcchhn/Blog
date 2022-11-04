@@ -1,0 +1,28 @@
+
+pip install spyder
+
+pip install pyside
+
+pip install pyqt5
+
+
+--------------------------------------------------------------------------------------------------
+
+
+spyder --new-instance
+
+spyder --reset
+
+
+windows -> start -> program
+python spyder_win_post_install.py -install
+python spyder_win_post_install.py -remove
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+cell
+
+#%%

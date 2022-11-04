@@ -1,0 +1,28 @@
+python
+MongoDB
+
+--------------------------------------------------------------------------------------------------
+
+mongo = pymongo.MongoClient(host="127.0.0.1", port=27017)
+
+// use test
+mongo.test
+mongo["test"]
+db = mongo.get_database(name="test")
+
+db.demo
+db["demo"]
+col = db.get_collection(name="demo")
+
+from bson.objectid import ObjectId
+col.find_one({"_id": ObjectId("5e4f50e8b7731c15543b5759")})
+
+
+cur = col.find()
+for doc in cur:
+    print(doc)
+    pass
+
+insert
+update
+delete

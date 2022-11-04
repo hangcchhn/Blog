@@ -1,0 +1,80 @@
+
+
+
+找到WINWord.exe，使用管理员运行
+
+设置开始->字体，解决默认字体
+
+设置主题->字体，解决样式字体
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+office 2010 其他版本类似
+Excel 2010 打开多个文件窗口
+
+1.进入HKEY_CLASSES_ROOT\Excel.Sheet.12\shell\Open 删除ddeexe或重命名
+
+2.进入HKEY_CLASSES_ROOT\Excel.Sheet.12\shell\Open 修改command和(默认)
+    将末尾的/dde改成"%1"，注意%1必须使用双引号括起来
+
+3.进入HKEY_CLASSES_ROOT\Excel.Sheet.8\shell\Open 删除ddeexec或重命名
+
+4.进入HKEY_CLASSES_ROOT\Excel.Sheet.8\shell\Open 修改command和(默认)
+    将末尾的/dde改成"%1"，注意%1必须使用双引号括起来
+
+--------------------------------------------------------------------------------------------------
+
+
+office 2019
+
+ERROR CODE: 0xC004F069
+ERROR DESCRIPTION: The Software Licensing Service reported that the product SKU is not found.
+
+
+@echo off
+
+SET OfficePath=%ProgramFiles%\Microsoft Office
+if not exist "%OfficePath%\root\Licenses16" SET OfficePath=%ProgramFiles(x86)%\Microsoft Office
+if not exist "%OfficePath%\root\Licenses16" (
+echo Could not find the license files for Office 2019!
+pause
+goto :eof
+)
+
+echo Press Enter to start VL-Conversion...
+echo.
+pause
+echo.
+cd /D "%SystemRoot%\System32"
+
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ppd.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul-oob.xrm-ms"
+
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\ProjectPro2019VL_KMS_Client_AE-ppd.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\ProjectPro2019VL_KMS_Client_AE-ul-oob.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\ProjectPro2019VL_KMS_Client_AE-ul.xrm-ms"
+
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\VisioPro2019VL_KMS_Client_AE-ppd.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\VisioPro2019VL_KMS_Client_AE-ul-oob.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\VisioPro2019VL_KMS_Client_AE-ul.xrm-ms"
+
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\SkypeforBusiness2019VL_KMS_Client_AE-ppd.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\SkypeforBusiness2019VL_KMS_Client_AE-ul.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\SkypeforBusiness2019VL_KMS_Client_AE-ul-oob.xrm-ms"
+
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\client-issuance-bridge-office.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\client-issuance-root.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\client-issuance-root-bridge-test.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\client-issuance-stil.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\client-issuance-ul.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\client-issuance-ul-oob.xrm-ms"
+cscript "%OfficePath%\Office16\ospp.vbs" /inslic:"%OfficePath%\root\Licenses16\pkeyconfig-office.xrm-ms"
+
+:eof
+
+
+--------------------------------------------------------------------------------------------------

@@ -1,0 +1,184 @@
+
+鼠标右键图标配置:WIN+R->regedit打开《注册表编辑器》程序
+HKEY_CLASSSES_ROOT>*>Shell->右键->新建->项:Open with Sublime Text
+Open with Sublime Text->右键->新建->字符串值:Icon
+Open with Sublime Text->Icon->右键->修改:C:\ProgramFiles\Sublime Text\sublime_text.exe,0
+
+Open with Sublime Text->右键->新建->项:command
+command->(默认)->右键->修改:C:\ProgramFiles\Sublime Text\sublime_text.exe %1
+
+注意:此次修改的两个字符串值不在一个层级
+
+
+--------------------------------------------------------------------------------------------------
+
+菜单栏->Preference->Settings
+
+"theme": "Adaptive.sublime-theme",
+"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+
+"font_face": "Microsoft YaHei Mono",
+"font_size": 11,
+
+"highlight_line": true,
+"show_encoding": true,
+"show_line_endings": true,
+
+"show_git_status": false,
+"update_check": false,
+
+"open_files_in_new_window": true,
+
+"trim_trailing_white_space_on_save": true,
+
+"show_full_path": true,
+
+
+
+--------------------------------------------------------------------------------------------------
+
+修改侧边栏和标签栏字体类型和大小
+安装PackageResourceViewer插件编辑主题配置文件
+
+本人测试搜索不到，使用离线下载源码安装模式
+https://github.com/skuroda/PackageResourceViewer/releases
+
+
+菜单栏Tool->Command Palette或快捷键Ctrl+Shift+P
+PackageResourceViewer: Open Resource
+-> Theme - Default -> Adaptive -> Adaptive.sublimt-theme
+
+
+
+分别搜索sidebar_label和tab_label，修改第一个，在其后添加
+"class": "sidebar_label",
+"class": "tab_label",
+
+"font.size": 12,
+"font.face": "Microsoft YaHei Mono",
+
+注意配置字段命名规则中间分隔符是.还是_
+
+
+--------------------------------------------------------------------------------------------------
+菜单栏->Tools->Build System->New Build System...
+
+{
+    // Ctrl+B
+    "cmd": ["javac", "$file", "&&", "java", "$file_base_name"],
+    "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+    "selector": "source.java",
+    "encoding":"cp936",
+    "shell": true,
+    // Ctrl+Shift+P javac -> java
+    "variants": [
+        {
+            "name": "javac",
+            "cmd": ["javac", "$file"],
+            "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+            "selector": "source.java",
+            "encoding":"cp936"
+        },
+           {
+            "name": "java",
+            "cmd": ["java", "$file_base_name"],
+            "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+            "selector": "source.java",
+            "encoding":"cp936"
+        }
+    ]
+}
+
+--------------------------------------------------------------------------------------------------
+
+sublime text 3.0.0
+
+
+0.0.0.0 license.sublimehq.com
+0.0.0.0 45.55.255.55
+0.0.0.0 45.55.41.223
+127.0.0.1 www.sublimetext.com
+127.0.0.1 sublimetext.com
+127.0.0.1 sublimehq.com
+127.0.0.1 telemetry.sublimehq.com
+
+----- BEGIN LICENSE -----
+Member J2TeaM
+Single User License
+EA7E-1011316
+D7DA350E 1B8B0760 972F8B60 F3E64036
+B9B4E234 F356F38F 0AD1E3B7 0E9C5FAD
+FA0A2ABE 25F65BD8 D51458E5 3923CE80
+87428428 79079A01 AA69F319 A1AF29A4
+A684C2DC 0B1583D4 19CBD290 217618CD
+5653E0A0 BACE3948 BB2EE45E 422D2C87
+DD9AF44B 99C49590 D2DBDEE1 75860FD2
+8C8BB2AD B2ECE5A4 EFC08AF2 25A9B864
+------ END LICENSE ------
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+sublime merge
+
+"sublime_merge_path": "C:/ProgramFiles/Sublime/Merge/sublime_merge.exe",
+
+"sublime_merge_path":
+
+"sublime_merge_path": "/usr/bin/smerge"
+
+--------------------------------------------------------------------------------------------------
+
+批量行首行尾添加字符
+
+1.Ctrl+A
+2.Ctrl+Shift+L
+3.Left
+4.Right
+
+
+--------------------------------------------------------------------------------------------------
+
+key map
+
+
+关闭标签
+win:Ctrl + F4, Ctrl + W
+mac:Command + W
+
+跳转文件
+win:Ctrl + P
+mac:Command + P
+
+跳转函数
+win:Ctrl + R
+mac:Command + R
+
+搜索
+win:Ctrl + F
+mac:Command + F
+
+替换
+win:Ctrl + H
+mac:Shift + Command + H
+
+替换换行
+Ctrl + Shift + Enter
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+菜单栏->Preference->Keys Bindings
+
+{ "keys": ["alt+shift+c"], "command": "cancel_build" },
+
+
+

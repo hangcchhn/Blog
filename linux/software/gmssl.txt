@@ -1,0 +1,50 @@
+
+download:https://github.com/guanzhi/GmSSL/archive/master.zip
+
+unzip GmSSL-master.zip
+cd GmSSL-master
+./config
+make
+make install
+
+注意系统时间导致文件时间过期导致编译失败
+make: Warning: File `crypto/include/internal/bn_conf.h.in' has modification time 367396851 s in the future
+解决方式修改系统时间重新解压配置编译安装
+
+
+gmssl=openssl
+
+openssl version
+gmssl version
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+centos 64
+ln -s /usr/local/lib64/libssl.so.1.1 /usr/lib64/libssl.so.1.1
+ln -s /usr/local/lib64/libcrypto.so.1.1 /usr/lib64/libcrypto.so.1.1
+
+
+
+ubuntu 32
+
+ln -s /usr/local/lib/libssl.so.1.1 /lib/i386-linux-gnu/libssl.so.1.1
+ln -s /usr/local/lib/libcrypto.so.1.1 /lib/i386-linux-gnu/libcrypto.so.1.1
+
+
+
+CentOS 64 : gcc -L/usr/local/lib64/ -o sms4 sms4.c -lcrypto 
+Ubuntu 32 : gcc -L/usr/local/lib/ -o sms4 sms4.c -lcrypto 
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

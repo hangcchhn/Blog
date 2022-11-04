@@ -1,0 +1,239 @@
+
+
+--------------------------------------------------------------------------------------------------
+
+distinct 去重
+不能部分使用distinct
+
+
+limit n = limit 0, n = limit n offset 0
+
+
+asc desc
+每列单独指定
+
+limit 位于 order by 之后
+
+mysql在执行where字符串匹配时默认不区分大小写 where xxx='xxx' | xxx like "xxx"
+空值匹配：is null | is not null
+
+mysql支持使用not 对in 、between 和 exists子句取反
+
+% 匹配给定位置的0个、1个或多个字符
+like "%" 不能匹配null空值
+
+_ 匹配给定位置的1个字符
+
+--------------------------------------------------------------------------------------------------
+
+正则表达式 regexp
+???
+
+
+
+concat()
+
+
+
+--------------------------------------------------------------------------------------------------
+
+函数 function
+???
+
+substring()
+trim()
+rtrim()
+ltrim()
+lower()
+upper()
+
+now() = yyyy-mm-dd hh:mm:ss
+date()
+time()
+
+abs()
+sqrt()
+
+聚类函数：列名一致(group by ... = select ...) 聚类函数除外
+count() 统计null
+
+avg(),sum(),max(), min() 忽略null  是否去重all|distinct列名
+
+
+--------------------------------------------------------------------------------------------------
+
+group by xxx with rollup
+having 过滤分组
+
+select子句顺序
+select > from > where > group by > having > order by > limit
+
+嵌套子查询：过滤（减少行）
+层数与性能
+
+子查询列匹配
+
+相关子查询：统计（新增列）
+歧义列名
+
+关系|关联|联结 查询
+列名要加上表名前缀
+from后跟多张表
+where判断主外键关联（被联结列）
+笛卡儿积：多表行数乘积
+
+内联结：多表关联查询
+select ... from t_a inner join t_b on ...
+
+自联结：嵌套子查询前后表面相同
+select ...from t_o where c_o *** (select c_o from t_o where ...)
+
+
+外联结：包含没有关联的行
+select ... from t_l left|right outer join t_r on ...
+统计所有的(left|right)->(t_l|t_r)中的行（左外联结|右外联结）
+
+
+组合查询： 并集
+
+（select c_u from t_u where w_a ）union （select c_u from t_u where w_b）
+= select c_u from t_u where w_a or w_b
+
+union all：显示重复的行
+
+组合不同的表：数据类型相同
+
+--------------------------------------------------------------------------------------------------
+
+全文本搜索|索引：fulltext(...) 类似 primary key(...)
+???
+创建表时加上全文本索引索引fulltext
+* 先导入数据再添加索引
+使用两个函数match()和against()执行全文本搜索
+其中match()指定被搜索的列
+against()指定要搜索的文本。
+
+数据迁移
+insert into t_a select * from t_b where ...
+
+忽略错误
+update ignore t set ... where ...
+
+
+自动增长
+auto_increment 
+select last_insert_id()
+
+--------------------------------------------------------------------------------------------------
+
+视图=虚表
+
+
+
+修改语句分隔符（mysql命令行以;代表运行）
+delimiter ;
+
+存储过程procedure
+create 创建
+call 调用
+
+变量
+create procedure p (
+in var
+out var
+inout var
+)
+begin
+select ... into var from t;
+end;
+
+call p(@var);
+
+select @var;
+
+declare 定义变量指定数据类型
+
+游标只能用于存储过程
+--定义
+declare c cursor
+for
+select ... from t ...
+-- 打开
+open c
+
+-- 使用
+fetch c into v
+
+-- 循环
+declare continue handler for sqlstate '02000' set d=1;
+repeat fetch c into v;
+until d end repeat; 
+
+-- 关闭
+close c
+
+
+触发器trigger:只支持表table
+
+create trigger trigger_name
+before|after insert|update|delete 
+on t for each row select t_p(触发打印)
+
+
+引擎：MyISAM和InnoDB
+MyISAM不支持事务而InnoDB才支持事务
+
+begin transaction transaction_name
+commit transaction_name
+rollback transaction_name
+
+savepoint transaction_point
+rollback to transaction_point
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+字符集
+show character set;
+校对顺序
+show collation;
+
+create table t(...)
+default character set utf8 collate utf8_general_ci
+
+
+用户
+
+create user u identified by 'password'
+rename user old_user to new_user 
+set password for u = password('password')
+drop user u
+
+
+权限
+show grants for u
+
+grant|revoke ... on database.table to user
+
+usage(无权限)
+all privileges 
+grant option
+
+grant all privileges on *.* to 'root'@'%' with grant option
+
+备份
+flush tables;
+mysqldump|msqlhotcopy
+
+backup|restore table
+select into 'table.sql' from table ...
+
+运维
+analyze table t
+check table t
+
+
+
+

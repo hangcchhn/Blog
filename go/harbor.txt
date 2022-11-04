@@ -1,0 +1,28 @@
+
+
+/root/harbor
+
+准备
+./prepare
+
+安装
+./install.sh
+
+启动
+docker-compose up
+关闭
+docker-compose down
+
+
+
+# docker repository
+
+docker push hangcchhn/vscode_docker:tagname
+
+
+docker配置aliyun账户
+sudo docker login --username=hangcchhn@163.com registry.cn-shenzhen.aliyuncs.com
+sudo docker pull registry.cn-shenzhen.aliyuncs.com/windows10_centos7/vscode_docker:[镜像版本号]
+sudo docker login --username=hangcchhn@163.com registry.cn-shenzhen.aliyuncs.com
+sudo docker tag [ImageId] registry.cn-shenzhen.aliyuncs.com/windows10_centos7/vscode_docker:[镜像版本号]
+sudo docker push registry.cn-shenzhen.aliyuncs.com/windows10_centos7/vscode_docker:[镜像版本号]

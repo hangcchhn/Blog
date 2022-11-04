@@ -1,0 +1,30 @@
+
+将HEAD添加标签
+git tag -a 1.0.1 -m "release version 1.0.1"
+
+展示标签
+git tag -l
+
+将所有标签推送到远程
+git push origin --tags
+
+
+
+
+
+
+
+git log --pretty=oneline --abbrev-commit
+7808739 first commit
+
+
+git tag -a 0.0.9 -m "release version 0.0.9" 7808739
+
+
+git push origin 0.0.9
+git push origin 0.0.9:refs/tags/0.0.9
+
+git tag -d 0.0.9
+git push origin :refs/tags/0.0.9
+
+git checkout 0.0.9

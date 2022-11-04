@@ -1,0 +1,62 @@
+vim /etc/gitlab/gitlab.rb        # 修改默认的配置文件；
+
+/opt/gitlab/embedded/service/gitlab-rails/config/gitlab.yml
+
+external_url 'http://192.168.10.153:4852'
+
+
+gitlab-rake gitlab:check SANITIZE=true --trace    # 检查gitlab；
+
+
+--------------------------------------------------------------------------------------------------
+
+gitlab 9.5.9
+gitlab-ctl start           # 启动所有 gitlab 组件；
+gitlab-ctl stop            # 停止所有 gitlab 组件；
+gitlab-ctl restart         # 重启所有 gitlab 组件；
+gitlab-ctl status          # 查看服务状态；
+gitlab-ctl reconfigure     # 启动服务；
+gitlab-ctl tail            # 查看日志；
+
+gitlab-ctl tail service
+
+gitlab-ctl cleanse
+gitlab-ctl uninstall
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+汉化
+
+/opt/gitlab/embedded/service/gitlab-rails/
+cp -rf gitlab-v9.5.9-zh/* /opt/gitlab/embedded/service/gitlab-rails/
+
+chmod 777 /opt/gitlab/embedded/service/gitlab-rails/Gemfile*
+
+cat /opt/gitlab/embedded/service/gitlab-rails/VERSION
+
+9.5.9
+
+--------------------------------------------------------------------------------------------------
+
+
+Administrator
+
+hangcchhn@163.com
+
+
+group:chench
+
+user:chenchanghang
+
+
+
+--------------------------------------------------------------------------------------------------
+
+gitlab-runner
+
+
+
+--------------------------------------------------------------------------------------------------

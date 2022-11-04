@@ -1,0 +1,47 @@
+
+
+git log
+功能
+
+--------------------------------------------------------------------------------------------------
+
+git log：默认模式（commit hash, author, date, commit message）
+enter键：翻页
+Q键：退出
+
+查看某个文件提交历史记录
+git log path/file
+
+
+
+git log --oneline：单行模式(commit hash 前7个字符串和commit message)
+
+git log --stat：在git log的基础上追加文件增删改的统计数据
+
+
+git log --author='name'：用来过滤commit,限定输出给定的用户
+
+
+git log -p：控制输出每个commit具体修改的内容，输出的形式以diff的形式给出。
+
+git show：控制输出每个commit具体修改的内容
+
+git shortlog：输出汇总信息，以作者进行分类
+
+git log --pretty='%cn committed %h on %cd'：自定义输出的信息
+
+git log -n：n为数字表示输出的数量
+
+
+git log --before|after 'dd-MM-yyyy'
+
+
+git log --merges|--no-merges:：是否显示合并信息
+
+
+git log --decoreate：控制输出对应commit所属的branch和tag信息
+
+--------------------------------------------------------------------------------------------------
+
+git reflog
+记录历史操作命令

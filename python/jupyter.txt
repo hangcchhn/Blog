@@ -1,0 +1,52 @@
+
+
+jupyter
+
+--------------------------------------------------------------------------------------------------
+
+jupyter notebook
+
+后台启动
+jupyter notebook > jupyter.log 2>&1 &
+
+jupyter notebook --allow-root &
+
+设置密码
+jupyter notebook password
+
+生成配额文件
+jupyter notebook --generate-config
+
+~/.jupyter/jupyter_notebook_config.py
+
+
+c.NotebookApp.allow_root = True
+c.NotebookApp.ip = '0.0.0.0'
+c.NotebookApp.port = 8888
+
+
+
+工作目录
+c.NotebookApp.notebook_dir = r'C:\Users\chench\Desktop\Jupyter Notebook'
+
+
+
+--------------------------------------------------------------------------------------------------
+
+jupyter lab
+
+后台启动
+jupyter lab > jupyter.log 2>&1 &
+
+
+jupyter labextension install @jupyterlab/debugger
+
+jupyter labextension install @jupyterlab/git
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+
+pip install voila

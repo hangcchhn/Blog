@@ -1,0 +1,53 @@
+
+
+
+windows xp desktop 
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+%USERPROFILE%\桌面
+C:\ProgramFiles\Desktop
+
+
+--------------------------------------------------------------------------------------------------
+删除3D对象文件夹
+
+windows 10 CN 删除31C0DD25-9439-4F12-BF41-7FF4EDA38722
+
+32位:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\
+{31C0DD25-9439-4F12-BF41-7FF4EDA38722}
+
+64位:
+HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\
+{31C0DD25-9439-4F12-BF41-7FF4EDA38722}
+
+
+
+windows 10 EN 删除:0DB7E03F-FC29-4DC6-9020-FF41B59E513A
+
+32位:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\
+{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}
+
+64位:
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
+{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}
+
+
+--------------------------------------------------------------------------------------------------
+
+
+设置图片预览工具
+
+bat
+
+echo "Windows Photo Viewer"
+
+reg add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v ".jpg" /t REG_SZ /d PhotoViewer.FileAssoc.Tiff /f
+
+reg add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v ".jpeg" /t REG_SZ /d PhotoViewer.FileAssoc.Tiff /f
+
+reg add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v ".bmp" /t REG_SZ /d PhotoViewer.FileAssoc.Tiff /f
+
+reg add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v ".png" /t REG_SZ /d PhotoViewer.FileAssoc.Tiff /f
+
+pause

@@ -1,0 +1,22 @@
+SSM
+Spring
+Spring MVC
+MyBatis
+
+
+省略service层使controller层直接调用mapper层
+以下是spring和springmvc的配置：
+applicationContext.xml
+<context:component-scan base-package="hn.cch">
+	<context:include-filter type="annotation" expression="hn.cch.controller"/>
+	<context:exclude-filter type="annotation" expression="hn.cch.service"/>
+</context:component-scan>
+
+dispatcher-config.xml
+<context:component-scan base-package="hn.cch">
+	<context:include-filter type="annotation" expression="hn.cch.controller"/>
+	<context:exclude-filter type="annotation" expression="hn.cch.service"/>
+</context:component-scan>
+
+
+

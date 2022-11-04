@@ -1,0 +1,119 @@
+HEAD：当前分支最新提交
+
+cat .git/HEAD
+ref: refs/heads/master
+
+cat.git/refs/heads/master
+commit_id
+
+代码合并分为主线分支和合并分支
+代码合并后当前分支就是主线分支
+
+
+
+主线分支最新提交
+HEAD=HEAD~0=HEAD^0
+
+主线分支最近一次提交
+HEAD~=HEAD~1
+
+从最近一次代码合并到最新提交主线分支还有K次提交
+HEAD~K
+
+最近一次代码合并的主线分支上最近一次提交
+HEAD^=HEAD^1=HEAD~(K+1)
+
+HEAD^~=HEAD^1~1=HEAD~(K+1+1)
+
+^M（方向）：切到最近第M-1次代码合并的合并分支上最近一次提交
+~N（距离）：走到所在分支上的最近第N+1次提交
+
+最近一次代码合并的合并分支上最近一次提交
+HEAD^2
+
+最近第M-1次代码合并的合并分支上最近第N+1次提交
+HEAD^M~N
+
+
+--------------------------------------------------------------------------------------------------
+
+在保留commit_id之后的版本的前提下，
+还原commit_id这个版本的修改
+git revert -n commit_id
+
+提交新的版本重新
+git commit -m 'commit message'
+
+
+--------------------------------------------------------------------------------------------------
+
+
+git reset HEAD
+
+使用HEAD替换暂存区的文件
+git reset -- file_name
+
+
+单个文件回退
+git reset HEAD file_name
+
+git reset commit_id file_name
+
+回退：版本库（不指定默认配置）
+commit_id之后的版本修改回退到暂存区
+git reset --mixed commit_id
+可重新提交到版本库
+git commit -m 'commit message'
+
+
+
+回退：版本库和暂存区
+git reset --soft commit_id
+commit_id之后的版本修改回退到工作区
+
+可重新添加到暂存区和提交到版本库
+git add file_name
+git commit -m 'commit message'
+
+
+回退：版本库，暂存区和工作区
+git reset --hard commit_id
+commit_id之后的版本修改全部回退删除
+注意此操作会将有修改的文件还原【无法恢复】
+
+--------------------------------------------------------------------------------------------------
+
+git checkout commit_id file_name
+
+使用暂存区替换工作区的文件
+全部文件:git checkout .
+单个文件:git checkout -- file_name
+
+使用HEAD替换暂存区和工作区的文件
+git checkout HEAD .
+git checkout HEAD file_name
+
+
+
+
+删除暂存区文件
+git rm --cached file_name
+
+git >= 2.23.0
+
+切换分支:git switch branch_name
+
+还原文件:git restore commit_id
+还原文件修改记录并重新提交
+
+
+git restore file_name
+
+git restore --staged file_name
+
+
+
+
+
+
+

@@ -1,0 +1,144 @@
+性能优化
+
+
+python多线程无法利用多核处理器加速
+
+cpython版本的python解释器
+
+全局解释器锁GIL(Global Interpreter Lock)
+同一时刻只允许一个线程在解释器中运行
+互斥锁，保证python在单核cpu上的使用率
+
+线程安全
+
+python多线程对IO密集型任务要不CPU密集型任务更加友好
+
+
+python多进程之间没有GIL，但是进程本身资源消耗较大
+
+指定处理器运行线程（使用affinity模块）
+
+jpython，ironpython等解释器没有GIL
+
+协程
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+python基于事件的性能分析
+import sys
+sys.setprofile(profile)
+
+linux统计式性能分析器oprofile
+
+python统计式性能分析器statprof
+
+--------------------------------------------------------------------------------------------------
+
+
+timeit
+
+profile
+
+--------------------------------------------------------------------------------------------------
+
+
+cProfile
+python -m cProfile -o prof.prof py_cprofile.py
+runsnake prof.prof
+
+python -m pstats prof.prof
+
+
+
+ncalls   函数总的调用次数
+tottime  函数内部（不包括子函数）的占用时间
+percall （第一个） tottime/ncalls
+cumtime  函数包括子函数所占用的时间
+percall （第二个）cumtime/ncalls
+
+filename:lineno(function)
+文件:行号(函数)
+
+
+--------------------------------------------------------------------------------------------------
+statprof
+pip install statprof
+
+python py_cprofile.py
+
+windows不支持statprof无反应
+centos：python2测试无结果，python3测试报错
+
+--------------------------------------------------------------------------------------------------
+
+line_profiler
+pip3 install line_profiler==3.3.0
+pip2 install line_profiler==2.1.2
+kernprof命令属于line_profiler
+
+@profile配合kernprof
+报错：基础开发环境不识别装饰器@profile
+命令：kernprof -l -v py_line_profiler.py
+生成：py_line_profiler.py.lprof
+查看：python -m line_profiler py_line_profiler.py.lprof
+
+
+Line：行号
+Hits：代码行执行总次数
+Time：代码行执行总时间
+Per Hit：代码行平均消耗时间
+% Time：代码行时间消耗比例
+Line Contents：行内容
+
+--------------------------------------------------------------------------------------------------
+
+pip install memory_profiler
+
+pip install objgraph
+
+--------------------------------------------------------------------------------------------------
+
+pip install pyprof2calltree
+pyprof2calltree -i prof.prof
+
+pyprof2calltree生成prof.prof.log
+[k|q]cachegrind打开prof.prof.log
+
+
+linux:kcachegrind
+win/mac:qcachegrind
+
+--------------------------------------------------------------------------------------------------
+
+
+win:pip install RunSnakeRun
+mac:pip install RunSnake
+
+Python3:
+pip install wxpython==4.0.7
+Python2:
+pip install wxpython==4.0.2
+pip install runsnakerun==2.0.1
+
+
+ubuntu:
+apt install kcachegrind
+apt install runsnakerun
+
+
+centos:
+yum install kcachegrind
+
+yum install python36-wxpython4
+
+pip install runsnakerun
+
+python -m cProfile -o prof.prof py_cprofile.py
+runsnake prof.prof
+
+
+--------------------------------------------------------------------------------------------------

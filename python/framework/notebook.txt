@@ -1,0 +1,118 @@
+
+
+--------------------------------------------------------------------------------------------------
+notebook
+
+
+!shell:系统命令
+%magic:魔法方法
+
+
+
+#%%
+
+#%%
+
+
+
+
+%reset
+
+
+# 运行文件
+%run /path/file.py
+# 加载文件
+%load /path/file.py
+
+
+# 运行文件
+!python /path/file.py
+
+# 当前路径
+!pwd
+# /path
+%pwd
+# '/path'
+
+
+
+# 单行代码性能
+%time
+# 当前代码单元性能
+%%time
+
+
+--------------------------------------------------------------------------------------------------
+
+
+样式设置
+site-packages/notebook/static/custom/custom.css
+
+~/.jupyter/custom/custom.css
+
+
+
+样式设置
+~\.ipython\profile_default\static\custom\custom.css
+
+--------------------------------------------------------------------------------------------------
+
+
+notebook 样式设置：custom.css
+/* Body */  #notebook-container {  width: 90% }  
+/* Markdown */ div#notebook { font-family: Consolas, "Microsoft YaHei"; line-height: 20px; -webkit-font-smoothing: antialiased !important; }
+/* Markdown - h2 */ div#notebook h2 { color: #007aff; }
+/* Markdown - quote */ div#notebook blockquote{ background-color: #f8f8f8; color: #505050; padding: 8.5px; margin: 0.5em -0.5em 0.5em -0.4em; }
+/* Markdown - code in paragraph */ div#notebook p code, div#notebook li code { font-family: Consolas, "Microsoft YaHei"; font-size: 1em !important; color: #111111; border: 0.5px solid #cfcfcf; border-radius: 2px; background-color: #f7f7f7; padding: .1em .2em; margin: 0px 2px; }
+/* Markdown - code */ div.text_cell_render pre { border: 1px solid #cfcfcf; border-radius: 2px; background: #f7f7f7; line-height: 1.21429em; padding: 8.5px; margin: 0.5em -0.5em 0.5em -0.4em; } div.text_cell_render code { background: #f7f7f7; }
+/* Code */ div.CodeMirror pre { font-family: Consolas, "Microsoft YaHei"; font-size: 11pt; line-height: 140%; -webkit-font-smoothing: antialiased !important; }
+/* Code - output */ div.output pre { font-family: Consolas, "Microsoft YaHei"; line-height: 20px; -webkit-font-smoothing: antialiased !important; }
+/* Code - comment */ span.cm-comment { font-family: Consolas, "Microsoft YaHei" !important; font-style: normal !important; } 
+
+
+
+.CodeMirror pre {font-family: Menlo;}
+* {font-family: Menlo;}
+div.output_area pre {font-family: Menlo;}
+div.input_prompt {font-family: Menlo;}
+div.out_prompt_overlay {font-family: Menlo;}
+div.prompt {font-family: Menlo;}
+span.cm-comment {font-family: Menlo;}
+
+
+
+
+.CodeMirror pre {font-family: "WenQuanYi Micro Hei Mono";}
+* {font-family: "WenQuanYi Micro Hei Mono";}
+div.output_area pre {font-family: "WenQuanYi Micro Hei Mono";}
+div.input_prompt {font-family: "WenQuanYi Micro Hei Mono";}
+div.out_prompt_overlay {font-family: "WenQuanYi Micro Hei Mono";}
+div.prompt {font-family: "WenQuanYi Micro Hei Mono";}
+span.cm-comment {font-family: "WenQuanYi Micro Hei Mono";}
+
+
+.CodeMirror pre {font-family: "Microsoft YaHei Mono";}
+* {font-family: "Microsoft YaHei Mono";}
+div.output_area pre {font-family: "Microsoft YaHei Mono";}
+div.input_prompt {font-family: "Microsoft YaHei Mono";}
+div.out_prompt_overlay {font-family: "Microsoft YaHei Mono";}
+div.prompt {font-family: "Microsoft YaHei Mono";}
+span.cm-comment {font-family: "Microsoft YaHei Mono";}
+
+
+
+--------------------------------------------------------------------------------------------------
+visual studio code
+key map
+
+mac
+run single cell
+mac:Shift + Enter
+
+debug single cell
+mac:Control + Shift + Enter
+
+clear cell output
+mac:Option + Fn + BackSpace
+
+

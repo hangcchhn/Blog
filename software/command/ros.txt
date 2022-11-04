@@ -1,0 +1,90 @@
+
+
+ROS(Robot Operating System)
+
+apt install ros-kinetic-desktop-full
+
+
+
+ROS master start 
+roscore
+
+rosrun turtlesim turtlesim_node
+
+rosrun turtlesim turtle_teleop_key
+
+
+
+tf
+rosrun rviz rviz
+
+
+
+rpt
+rpt_graph
+rpt_plot
+rpt_console
+
+
+rviz(the Robit Visualization tool)
+
+
+rosrun rviz rviz
+
+gazebo
+
+roslaunch gazebo_ros xxx.launch
+
+moveit
+
+
+rosbag
+
+
+rosbridge
+
+
+
+slam
+gmapping
+hector
+
+
+--------------------------------------------------------------------------------------------------
+
+ubuntu ros
+
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-$(lsb_release -sc).list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+
+sudo sh -c 'echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-$(lsb_release -sc).list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+
+sudo apt update
+sudo apt upgrade
+
+
+sudo apt install ros-noetic-desktop-full
+
+vim /etc/profile
+source /opt/ros/noetic/setup.bash
+source /etc/profile
+
+roscore
+
+rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+apt install python3-rosdep
+
+rosdep init
+rosdep update
+

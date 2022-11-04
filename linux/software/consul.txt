@@ -1,0 +1,70 @@
+
+unzip consul_1.7.14_linux_amd64.zip
+
+
+consul agent -dev
+consul agent -dev -ui -server \
+-datacenter=consul \
+-data-dir /usr/consul \
+-http-port 8500 \
+-bind 0.0.0.0 \
+-client 0.0.0.0
+
+
+consul numbers
+
+consul   -config-dir /usr/consul
+
+consul agent -dev -config-file /usr/consul/config.json
+{
+    "data_dir": "/usr/consul",
+    "datacenter": "consul",
+    "node_name": "0.0.0.0",
+    "bind_addr": "0.0.0.0",
+    "client_addr": "0.0.0.0",
+    "log_level": "INFO",
+    "ui":true,
+    "server": true,
+    "bootstrap_expect": 2
+}
+
+
+服务注册：
+1.
+service.json
+{
+    "service":{
+        "name":"service_name",
+        "address":"192.168.10.153",
+        "port": 8500,
+        "enable_tag_override": false,
+        "check":{
+            "deregisterCriticalServiceAfter":"90m",
+            "http":"http://192.168.1.131:8500/health",
+            "interval":"10s"
+        }
+    }
+}
+
+
+2.采用HTTP API 方式
+curl -X PUT \
+  http://127.0.0.1:8301/v1/agent/service/register \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 6b672c02-350f-3d1c-7793-1a0d9e800fc9' \
+  -d '{
+	"id": "test01",
+    "name":"test01",
+    "tags":[
+        "java",
+        ""
+    ],
+    "address":"127.0.0.1",
+    "port":8800,
+    "check":{
+        "deregisterCriticalServiceAfter":"90m",
+        "http":"http://127.0.0.1:3010/health",
+        "interval":"10s"
+    }
+}'

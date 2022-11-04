@@ -1,0 +1,27 @@
+
+存储分区
+
+工作区：
+[本地目录](workspace):git pull, git checkout
+
+暂存区：存储文件列表信息
+[索引)(stage/index):git add
+
+
+版本库：
+[本地仓库](repository):git commit, git clone, git fetch
+
+[远程仓库](remote):git push,  
+
+缓存(stash):git stash
+
+文件状态
+
+未跟踪(Untracked):new,git rm
+未修改(Unmodify):git clone,git checkout
+已修改(modified):edit,git reset
+已暂存(staged):git add,
+已提交(committed):git commit
+
+
+

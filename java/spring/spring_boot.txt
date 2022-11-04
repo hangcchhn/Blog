@@ -1,0 +1,215 @@
+
+--------------------------------------------------------------------------------------------------
+
+项目结构：
+maven
+spring boot
+/src/main/java/
+/src/main/resources/
+/src/main/webapp/
+/src/test/java/
+/src/test/resources/
+pom.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.15.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>hn.cch</groupId>
+	<artifactId>springboot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>springboot</name>
+	<description>hn.cch.springboot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+--------------------------------------------------------------------------------------------------
+
+优先级
+
+1.根路径
+2.类路径
+
+1.file:/
+2.classpath:/
+3.–file:./config/
+4.–file:./
+5.–classpath:/config/
+6.–classpath:/
+
+
+配置文件类型
+1.application.properties
+2.application.yml
+
+多个配置文件读取顺序
+1、/config/application.properties
+2、/config/application.yml
+3、/application.properties
+4、/application.yml
+5、/src/main/resources/config/application.properties
+6、/src/main/resources/config/application.yml
+7、/src/main/resources/application.properties
+8、/src/main/resources/application.yml
+
+idea VM Options -Darg=xxx
+
+java -jar xxx.jar -Darg=xxx
+
+org.springframework.boot.context.config.ConfigFileApplicationListener
+
+spring.config.name=application
+application-{active,include}.xx
+
+1.在启动程序命令中加上激活配置文件参数:-Dspring.profiles.active=develop
+2.在默认配置文件中加上激活配置文件参数:spring.profiles.active=release
+3.在默认配置文件中加上包含配置文件参数:spring.profiles.include=dev1,dev2
+
+按顺序加载配置，重复配置会覆盖
+
+
+local
+dev
+test
+
+sit:System Integrate Test（系统集成测试）
+uat:User Acceptance Test（用户验收测试）
+pet:Performance Evaluation Test（性能评估测试）
+
+live
+prod
+
+
+
+默认配置:
+spring.config.location=classpath:/,classpath:/config/,file:./,file:./config/
+
+启动参数:
+-Dspring.config.location=E:/work/
+-Dspring.config.location=E:/work/application.properties
+测试结果:如果指定配置文件目录必须带上最后的斜线
+
+在默认配置文件中加上参数spring.config.location不生效
+
+
+spring.config.additional-location
+用法同上，效果时在原有的配置文件基础上加上额外的配置文件
+
+--------------------------------------------------------------------------------------------------
+spring boot embedded server
+
+Jetty、Netty、Tomcat、Undertow
+
+
+spring webmvc tomcat servlet 
+
+spring webflux netty reactor
+
+
+
+spring boot 1.5.x -> jdk 1.7
+
+spring boot 2.x -> jdk 1.8
+
+
+--------------------------------------------------------------------------------------------------
+
+mvn spring-boot:run
+Started Application in 2.112 seconds (JVM running for 4.462)
+
+--------------------------------------------------------------------------------------------------
+
+
+
+spring.application.name=spring-boot-security-rest
+server.port=9009
+server.tomcat.uri-encoding=UTF-8
+
+# spring boot < 2.0
+server.context-path=/sbsr
+# spring boot >= 2.0
+server.servlet.context-path=/sbsr
+
+--------------------------------------------------------------------------------------------------
+
+
+# 设置静态路径
+hn.cch.static-path=E:\\work
+spring.resources.static-locations=classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${hn.cch.static-path}/
+
+
+org.springframework.boot.autoconfigure.web.ResourceProperties
+
+
+CLASSPATH_RESOURCE_LOCATIONS = {"classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/"}
+
+--------------------------------------------------------------------------------------------------
+
+spring boot 使用环境变量作为配置，冒号:后配置的时默认值
+environment.variable=${environment_variable:default_value}
+
+
+
+--------------------------------------------------------------------------------------------------
+
+
+logging.level.root=debug
+logging.pattern.console=%d{HH:mm:ss.SSS} [%X{RequestId}] [%thread] %-5level %-36logger{36}%line - %msg%n
+
+
+logging.pattern.file=%d{HH:mm:ss.SSS} [%X{RequestId}] [%thread] %-5level %-36logger{36}%line - %msg%n
+logging.path=/root/jenkins/project/spring_boot_security_rest/log
+logging.file=/root/jenkins/project/spring_boot_security_rest/log/spring_boot_security_rest.log
+
+
+logging.path 指定日志文件路径，默认日志文件名是 spring.log
+
+logging.file 配置需要指定日志文件绝对路径，相对路径指定在当前文件
+
+logging.path 和 logging.file 同时配置，只有 logging.file 生效
+
+
+建议使用logging.config=logback.xml通过logback配置文件设置日志
+
+
+--------------------------------------------------------------------------------------------------
+
+程序启动执行接口
+
+implements ApplicationRunner
+
+implements CommandLineRunner
+
+
+--------------------------------------------------------------------------------------------------
