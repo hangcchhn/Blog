@@ -17,7 +17,7 @@
 ---
 ## main
 
-### clanguage
+- clanguage
 ``` c
 #include<stdio.h>
 // 只适用C语言
@@ -27,7 +27,7 @@ void main()
 }
 ```
 
-### cplusplus
+- cplusplus
 ``` cpp
 #include<iostream>
 
