@@ -3,8 +3,8 @@ visual studio code
 ---
 ## windows 7 & visual studio code 1.70.3
 
-https://vscode.cdn.azure.cn/stable/a21a160d630530476218b85db95b0fd2a8cd1230/VSCodeSetup-ia32-1.70.3.exe
-
+- https://vscode.cdn.azure.cn/stable/a21a160d630530476218b85db95b0fd2a8cd1230/VSCodeSetup-ia32-1.70.3.exe
+- https://vscode.cdn.azure.cn/stable/a21a160d630530476218b85db95b0fd2a8cd1230/VSCodeSetup-x64-1.70.3.exe
 
 ---
 

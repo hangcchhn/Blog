@@ -1,6 +1,7 @@
-
+# 装饰器
+> 注解
 ---
-装饰器：注解
+
 
 可被调用对象callable:函数，实现__call__方法的类，偏函数functools.partial
 

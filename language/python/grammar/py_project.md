@@ -11,7 +11,7 @@ anaconda环境变量
 C:\ProgramFiles\Anaconda;C:\ProgramFiles\Anaconda\Scripts
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 __pycache__
@@ -22,15 +22,7 @@ __init__.py
 
 
 
-
-
-
-
-
-
-
-
---------------------------------------------------------------------------------------------------
+---
 
 
 
@@ -79,7 +71,7 @@ from xxx import yyy as bbb
 sys.path.append(os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir)))
 
 
---------------------------------------------------------------------------------------------------
+---
 
 import pathlib
 import importlib

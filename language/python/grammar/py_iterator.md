@@ -1,9 +1,9 @@
-#
+# 迭代器
+> Iterable -> Iterator -> Generator
+
 ---
 
-Iterable -> Iterator -> Generator
-
-0.可迭代的对象(Iterable)
+0. 可迭代的对象(Iterable)
 ```py
 class Iterable:
     """可迭代的对象:实现__iter__方法"""
@@ -15,7 +15,7 @@ class Iterable:
 
 
 
-1.迭代器(Iterator)
+1. 迭代器(Iterator)
 ```py
 class Iterator:
     """迭代器：实现__iter__或__next__方法"""
@@ -38,7 +38,7 @@ iter(set)   set_iterator
 
 iter(dict)  dict_keyiterator
 
-2.生成器(Generator)
+2. 生成器(Generator)
 使用yield替代return
 
 生成器函数
@@ -48,7 +48,7 @@ import itertools
 生成器表达式 = (expression from item in collection if condition)
 
 
-3.序列
+3. 序列
 
 字符串
 
@@ -59,7 +59,7 @@ import itertools
 集合解析式 = {expression from item in collection if condition}
 
 
-4.字典
+4. 字典
 
 字典解析式 = {key:value from item in collection if condition}
 

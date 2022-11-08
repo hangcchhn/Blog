@@ -44,24 +44,25 @@
 
 
 ---
+- 编码格式
 ```py
-# 指定执行版本：解决多版本编译器问题
+# 指定执行版本:解决多版本编译器问题
 #! /usr/bin/env python2
 #! /usr/bin/env python3
 
-# 指定编码格式：解决中文注释报错问题
+# 指定编码格式:解决中文注释报错问题
 # -*- coding: utf-8 -*-
 # encoding: utf-8
 
 
 
-# 文件格式：不同系统对应不同的换行符
+# 文件格式:不同系统对应不同的换行符
 :set fileformat——dos|unix
 Line Separators——CRLF|LF
 
 ```
 ---
-
+- 代码格式
 ```py
 # 代码格式
 # python中使用代码缩进形式代替C语言和java中的{}
@@ -80,17 +81,17 @@ s = 'str'; print(s)
 ```
 ---
 
+- 变量命名
+- `_`:用于临时变量指无意义，在REPL中使用返回上一表达式结果
+- `var_`:用于解决命名冲突问题(与关键字冲突)
+- `_var`:用于保护变量(使用通配符导入调用方法无效)
+- `__var`:用于私有变量（名称改写）
+- `__var__`:用于魔术方法（内置函数）
 
-_：用于临时变量指无意义，在REPL中使用返回上一表达式结果
-var_：用于解决命名冲突问题(与关键字冲突)
-_var：用于保护变量(使用通配符导入调用方法无效)
-__var：用于私有变量（名称改写）
-__var__：用于魔术方法（内置函数）
-
-
-__file__:源码脚步文件名
-__name__:程序运行模块名
-
+---
+- 启动入口
+- `__file__`:源码脚步文件名
+- `__name__`:程序运行模块名
 
 ```py
 if __name__ == '__main__':
@@ -102,19 +103,19 @@ if __name__ == '__main__':
 
 
 ---
-三目运算符
-三元表达式
 
+```py
+# 三元表达式
 result = true_value if flag else false_value
 
 
-列表表达式
+# 列表表达式
 to_list = [expression for i in from_list]
 
-
+```
 ---
 lambda表达式 -> 匿名函数
-
+```py
 def func(x):
     return expression(x)
 
@@ -122,9 +123,9 @@ func = lambda x: expression(x)
 
 
 
-map(lambda)
-filter(lambda)
-
+map(lambda x:)
+filter(lambda x:)
+```
 
 ---
 
@@ -151,13 +152,6 @@ func(**kwargs)
 func(key1=value1, key2=value2)
 
 
-
-定义函数
-
-
-调用函数
-
-
 zip(iter):
 - Python2将元素转成元组，整体组成列表
 - Python3将元素转成元组，整体组成对象，对象可转列表
@@ -165,7 +159,7 @@ zip(iter):
 以多个参数的维度的最小值为长度，取每个参数一个元素组成一个元组
 
 zip(*iter)=iter
-序列解包："*表达式"只支持Python3，不支持Python2
+序列解包:"*表达式"只支持Python3，不支持Python2
 使用"*表达式"获取任意长度的Iterable对象中某些固定模式数据
 "*表达式"可以位于第一个位置、最后一个位置或中间任意的位置
 

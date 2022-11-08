@@ -1,24 +1,16 @@
 
 
-
-
-
-
-
---------------------------------------------------------------------------------------------------
-
-
-
---------------------------------------------------------------------------------------------------
+---
 
 
 格式化源码
+```
 pip install autopep8
 autopep8 --aggressive --aggressive name.py
 
-
---------------------------------------------------------------------------------------------------
-pyc：python字节码文件
+```
+---
+pyc:python字节码文件
 
 python -m py.py
 
@@ -36,7 +28,7 @@ compileall.compile_dir(r'/path')
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 py gc
@@ -70,7 +62,7 @@ python程序将创建的对象添加到refchain环状双向链表中
 
 
 
-
+```py
 
 import sys
 # 查询变量引用计数
@@ -106,15 +98,15 @@ gc.get_count()
 gc.garbage
 
 
+```
 
-
---------------------------------------------------------------------------------------------------
+---
 
 
 缓存机制
 
 
---------------------------------------------------------------------------------------------------
+---
 
 dir方法
 不带参数时，返回当前范围内的变量、方法和定义的类型列表；
@@ -124,7 +116,7 @@ dir方法
 如果参数不包含__dir__()，该方法将最大限度地收集参数信息。
 
 内建属性和方法
-
+```py
 class obj:
     pass
 
@@ -156,8 +148,10 @@ dir(obj)
  '__str__',
  '__subclasshook__',
  '__weakref__']
-
+```
 内建函数 build-in function
+
+```py
 dir(__builtins__)
 ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BufferError',
  'BytesWarning', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception',
@@ -178,7 +172,7 @@ dir(__builtins__)
  'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'raw_input', 'reduce', 'reload',
  'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super',
  'tuple', 'type', 'unichr', 'unicode', 'vars', 'xrange', 'zip']
-
+```
 help(function)
 
 range
@@ -192,6 +186,7 @@ sorted
 
 
 Python2.7
+```py
 import functools
 dir(functools)
 ['WRAPPER_ASSIGNMENTS', 'WRAPPER_UPDATES', '__builtins__', '__doc__', '__file__', '__name__', '__package__',
@@ -207,7 +202,7 @@ dir(functools)
 'cmp_to_key', 'get_cache_token', 'lru_cache', 'namedtuple', 'partial', 'partialmethod',
 'recursive_repr', 'reduce', 'singledispatch', 'total_ordering', 'update_wrapper', 'wraps']
 
-
+```
 partial函数
 把一个函数的某些参数设置默认值，返回一个新的函数，调用这个新函数会 更简单。
 
@@ -215,4 +210,4 @@ wraps函数:装饰器或注解
 
 
 
---------------------------------------------------------------------------------------------------
+---
