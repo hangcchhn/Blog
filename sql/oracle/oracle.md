@@ -26,3 +26,48 @@ select ''''||column_name||''',' from table_name
 
 
 ```
+
+---
+
+
+- 闪回查询
+
+```sql
+
+select * from table_name
+as of timestamp to_timestamp('', 'yyyy-mm-dd hh24:mi:ss')
+where ...
+
+
+--
+
+select current_scn from v$database;
+
+select * from table_name
+as of scn xxx
+
+-- 版本
+select * from table_name
+versions between timestamp minvalue and maxvalue
+where ...
+
+
+versions between timestamp(systimestamp - interval '15' minute) and maxvalue
+
+
+-- 用户回收站
+select * from user_recyclebin;
+
+OBJECT_NAME
+
+
+select * from "OBJECT_NAME"
+
+-- 清空回收站
+purge recyclebin;
+
+
+show parameter recycle;
+
+
+```
