@@ -4,6 +4,22 @@ vmware workstation 14.x
 vmware fusion 10.x
 
 
+
+---
+
+macOS vmware fusion
+
+cd /Library/Preferences/VMware\ Fusion
+
+cat networking
+
+vmnet1
+
+vmnet8
+
+cat vmnet8/nat.conf
+
+
 --------------------------------------------------------------------------------------------------
 
 
