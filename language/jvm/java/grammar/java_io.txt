@@ -51,7 +51,7 @@ IO Input/OutPut 模型
 4.异步模型 Asynchronous AIO
 
 之前是OIO(old) Blocking
-java 1.4  
+java 1.4
 之后是NIO(new) Non-Blocking
 
 1.Channel通道
@@ -78,9 +78,9 @@ java 1.4
 
 
 通道类型
-1.FileChannel文件通道 
+1.FileChannel文件通道
 2.SocketChannel套接字通道 网络通道 TCP 客户端
-3.ServerSocketChannel 服务器套接字通道 
+3.ServerSocketChannel 服务器套接字通道
 4.DatagramChannel数据报通道 UDP
 
 选择器
@@ -112,7 +112,7 @@ join：线程合并
 master线程调用replica线程的合并操作master线程阻塞
 等待replica线程完成replica线程退出后master线程恢复
 
-java1.5 
+java1.5
 Callable|Runnable
 
 
@@ -141,9 +141,11 @@ I/O多路复用：单个线程可以处理多个IO操作
 核心函数：select，poll，epoll
 
 nio->reactor模型
-java语言->selector模型
-linux系统->epoll模型
 aio->proactor模型
+
+Java->selector模型
+Linux->epoll模型
+Unix->kqueue模型
 
 
 NIO：
