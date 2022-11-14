@@ -1,6 +1,22 @@
 # tornado
 
 
+- Application
+- RequestHandler
+
+- IOStream
+- IOLoop:核心IO循环，
+    - 封装了linux的epoll和unix的kqueue，是Tornado高性能的核心
+
+## HTTP协议
+- HTTPServer
+- HTTPConnection
+- HTTPRequest
+
+
+
+
+---
 ## start command
 > 启动命令
 ```sh
@@ -15,8 +31,6 @@ python xxx.py --help
 
 
 ```
-
-
 --log-file-max-size
 --log-file-num-backups
 --log-file-prefix
@@ -29,7 +43,7 @@ python xxx.py --help
 
 ```
 ---
-- Application
+- server
 ```py
 class IndexHandler(RequestHandler):
 
@@ -49,7 +63,7 @@ if __name__ == '__main__':
 
 ```
 
--
+- flask
 
 ```py
 
