@@ -28,8 +28,7 @@
 ---
 ## DataFrame
 > 二维：pandas.core.frame.DataFrame
-
-### \_\_new\_\_
+- `pd.DataFrame()`
 1. list,tuple,dict,Series -> list
 2. array,list,tuple,dict,Series -> dict
 3. numpy.ndarray
@@ -55,3 +54,37 @@
 
 - df.head()
 - df.tail()
+
+---
+
+## 缺失值判断：NaN, None
+- pd.isna(df)
+- pd.isnull(df)
+- df.isna()
+- df.notna()
+- df.isnull()
+- df.notnull
+
+- df.dropna():整行删除
+- df.fillna():缺失填充（平均值或中位数）
+
+### 对列统计
+- df[''].mean()
+- df[''].median()
+- df[''].max()
+- df[''].min()
+- df[''].argmax()
+- df[''].argmin()
+-
+- df[''].idxmax()
+- df[''].idxmin()
+
+
+
+
+- 对列去重
+    - `set(df[''].tolist())`
+    -  `df[''].unique()`
+
+
+
