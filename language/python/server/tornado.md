@@ -1,6 +1,11 @@
 # tornado
 
 
+
+## 版本
+- tornado > 6.0+ => python 3.7+
+- tornado > 5.1+ => python 2.7+
+---
 - Application
 - RequestHandler
 

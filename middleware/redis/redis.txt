@@ -2,42 +2,6 @@
 
 
 
-
---------------------------------------------------------------------------------------------------
-
-redis -h host -p port -a auth
-
-auth password
-help command
-
-set
-get
-
-# 生产环境禁止使用
-keys *
-
-
-
-exit
-
-
-
-
---------------------------------------------------------------------------------------------------
-
-info
-info server
-info clients
-info sentienl
-
-sentinel masters
-sentinel master mymaster
-sentinel slaves mymaster
-sentinel sentinels mymaster
-
-sentinel get-master-addr-by-name mymaster
-
-
 --------------------------------------------------------------------------------------------------
 
 
@@ -132,10 +96,6 @@ Redis高性能的原因：
 --------------------------------------------------------------------------------------------------
 
 
-redis 事务
 
-multi(begin)
-exec(commit)
-discard(rollback)
 
 

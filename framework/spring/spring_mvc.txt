@@ -74,9 +74,9 @@ View视图
     AnnotationMethodHandlerAdapter.invokeHandlerMethod(HttpServletRequest, HttpServletResponse, Object)
 
     AnnotationMethodHandlerAdapter.ServletHandlerMethodInvoker
-    ServletHandlerMethodInvoker.invokeHandlerMethod(Method, Object, NativeWebRequest, ExtendedModelMap) 
+    ServletHandlerMethodInvoker.invokeHandlerMethod(Method, Object, NativeWebRequest, ExtendedModelMap)
     ServletHandlerMethodInvoker.getModelAndView(Method, Class<?>, Object, ExtendedModelMap, ServletWebRequest)
-    ServletHandlerMethodInvoker.updateModelAttributes(Object, Map<String, Object>, ExtendedModelMap, NativeWebRequest) 
+    ServletHandlerMethodInvoker.updateModelAttributes(Object, Map<String, Object>, ExtendedModelMap, NativeWebRequest)
 
 8.doDispatch()调用HandlerExecutionChain.applyPostHandle(HttpServletRequest, HttpServletResponse, ModelAndView)
 9.doDispatch()调用DispatcherServlet.processDispatchResult(HttpServletRequest, HttpServletResponse, HandlerExecutionChain, , Exception)
@@ -124,3 +124,12 @@ private FlashMapManager flashMapManager;
 
 /** 视图解析器 */
 private List<ViewResolver> viewResolvers;
+
+
+--------------------------------------------------------------------------------------------------
+
+spring-mvc中XxxController默认采用单例singleton模式
+可以通过`@Scope("prototype")`配置prototype模式
+struct2中XxxAction默认采用prototype模式
+
+不要在单例模式的类中定义非静态变量，存在共享数据安全问题
