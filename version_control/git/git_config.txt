@@ -120,3 +120,8 @@ git pull
 Updates were rejected because the tip of your current branch is behind
 
 git pull origin master
+
+--------------------------------------------------------------------------------------------------
+
+
+git config --global --add safe.directory "*"
