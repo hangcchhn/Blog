@@ -182,3 +182,17 @@ public interface Mapper{
 </select>
 
 ```
+
+---
+
+
+- `DATE`类型映射的java变量只要年月日，`TIMESTAMP`类型映射的java遍历包含时分秒
+```xml
+
+
+<result property="xxxDate" javaType="java.util.Date" column="xxx_date" jdbcType="DATE" />
+
+<result property="xxxDate" javaType="java.util.Date" column="xxx_date" jdbcType="TIMESTAMP" />
+
+
+```
