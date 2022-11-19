@@ -186,13 +186,28 @@ public interface Mapper{
 ---
 
 
-- `DATE`类型映射的java变量只要年月日，`TIMESTAMP`类型映射的java遍历包含时分秒
+- `DATE`类型映射的java变量只有年月日，`TIMESTAMP`类型映射的java变量包含时分秒
 ```xml
 
 
 <result property="xxxDate" javaType="java.util.Date" column="xxx_date" jdbcType="DATE" />
 
 <result property="xxxDate" javaType="java.util.Date" column="xxx_date" jdbcType="TIMESTAMP" />
+
+
+```
+
+
+---
+
+- MyBatis框架连接Oracle数据库，不写resultMap映射关系
+
+```xml
+
+<select id="">
+    select column_name1 "columnName1"
+    from table_name
+</select>
 
 
 ```
