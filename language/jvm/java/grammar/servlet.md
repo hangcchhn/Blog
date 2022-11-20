@@ -1,13 +1,13 @@
-
+# servlet
 java
 maven
 tomcat
-servlet
-
---------------------------------------------------------------------------------------------------
 
 
-//继承HttpServlet类重写doGet和doPost方法
+---
+- TestServlet.java
+```java
+// 继承HttpServlet类重写doGet和doPost方法
 public class TestServlet extends HttpServlet {
 
     @Override
@@ -30,10 +30,10 @@ public class TestServlet extends HttpServlet {
     }
 
 }
-
-
-WEB-INF/web.xml
-
+```
+---
+- WEB-INF/web.xml
+```xml
 <web-app>
     <servlet>
         <servlet-name>test</servlet-name>
@@ -45,3 +45,4 @@ WEB-INF/web.xml
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
 </web-app>
+```
