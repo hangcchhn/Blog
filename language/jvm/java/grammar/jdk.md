@@ -1,5 +1,8 @@
---------------------------------------------------------------------------------------------------
-jdk1.8
+# JDK
+> Java Development Environment
+
+---
+## jdk1.8
 
 类不支持多继承，接口允许多继承
 
@@ -9,50 +12,50 @@ jdk1.8
 jdk<1.8 接口不支持静态成员
 
 jdk=1.8 函数式接口：@FunctionInterface
-有且仅有一个abstract方法的接口，
-不包含default和static方法
-来自超类Object的也不算
+- 有且仅有一个abstract方法的接口，
+- 不包含default和static方法
+- 来自超类Object的也不算
 
 
 
---------------------------------------------------------------------------------------------------
-
+---
+### 函数接口
 
 java.util.function
 
-Consumer    消费型接口
-Supplier    供给型接口
-Predicate   谓词型接口
-Function    功能型接口
+- 消费型接口:Consumer
+- 供给型接口:Supplier
+- 谓词型接口:Predicate
+- 功能型接口:Function
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 
 
-jdk 11 新特性：
-JEP 181: Nest-Based Access Control（基于嵌套的访问控制）
-JEP 309: Dynamic Class-File Constants（动态类文件常量）
-JEP 315: Improve Aarch64 Intrinsics（改进 Aarch64 函数）
-JEP 318: Epsilon: A No-Op Garbage Collector（Epsilon — 一个无操作的垃圾收集器）
-JEP 320: Remove the Java EE and CORBA Modules（删除 Java EE 和 CORBA 模块）
-JEP 321: HTTP Client (Standard)（标准HTTP客户端）
-JEP 323: Local-Variable Syntax for Lambda Parameters（用于 Lambda 参数的局部变量语法）
-JEP 324: Key Agreement with Curve25519 and Curve448（Curve25519 和 Curve448 算法的密钥协议）
-JEP 327: Unicode 10
-JEP 328: Flight Recorder（飞行记录器）
-JEP 329: ChaCha20 and Poly1305 Cryptographic Algorithms（ChaCha20 和 Poly1305 加密算法）
-JEP 330: Launch Single-File Source-Code Programs（启动单一文件的源代码程序）
-JEP 331: Low-Overhead Heap Profiling（低开销的 Heap Profiling）
-JEP 332: Transport Layer Security (TLS) 1.3（支持 TLS 1.3）
-JEP 333: ZGC: A Scalable Low-Latency Garbage Collector (可伸缩低延迟垃圾收集器)
-JEP 335: Deprecate the Nashorn JavaScript Engine（弃用 Nashorn JavaScript 引擎）
-JEP 336: Deprecate the Pack200 Tools and API（弃用 Pack200 工具和 API）
+## jdk-11 新特性：
+- JEP 181: Nest-Based Access Control（基于嵌套的访问控制）
+- JEP 309: Dynamic Class-File Constants（动态类文件常量）
+- JEP 315: Improve Aarch64 Intrinsics（改进 Aarch64 函数）
+- JEP 318: Epsilon: A No-Op Garbage Collector（Epsilon — 一个无操作的垃圾收集器）
+- JEP 320: Remove the Java EE and CORBA Modules（删除 Java EE 和 CORBA 模块）
+- JEP 321: HTTP Client (Standard)（标准HTTP客户端）
+- JEP 323: Local-Variable Syntax for Lambda Parameters（用于 Lambda 参数的局部变量语法）
+- JEP 324: Key Agreement with Curve25519 and Curve448（Curve25519 和 Curve448 算法的- 密钥协议）
+- JEP 327: Unicode 10
+- JEP 328: Flight Recorder（飞行记录器）
+- JEP 329: ChaCha20 and Poly1305 Cryptographic Algorithms（ChaCha20 和 Poly1305 加密- 算法）
+- JEP 330: Launch Single-File Source-Code Programs（启动单一文件的源代码程序）
+- JEP 331: Low-Overhead Heap Profiling（低开销的 Heap Profiling）
+- JEP 332: Transport Layer Security (TLS) 1.3（支持 TLS 1.3）
+- JEP 333: ZGC: A Scalable Low-Latency Garbage Collector (可伸缩低延迟垃圾收集器)
+- JEP 335: Deprecate the Nashorn JavaScript Engine（弃用 Nashorn JavaScript 引擎）
+- JEP 336: Deprecate the Pack200 Tools and API（弃用 Pack200 工具和 API）
 
---------------------------------------------------------------------------------------------------
+---
 
-
+```java
 public class Main {
 
 
@@ -172,6 +175,7 @@ public class Main {
 
 }
 
+```
 
 
 
@@ -185,7 +189,6 @@ public class Main {
 
 
 
-
---------------------------------------------------------------------------------------------------
+---
 
 

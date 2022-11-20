@@ -1,4 +1,5 @@
-jdk_11 jshell
+# jshell
+> jdk >= 11
 
 jshell> /help
 键入 Java 语言表达式, 语句或声明。

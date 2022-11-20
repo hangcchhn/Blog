@@ -1,6 +1,6 @@
 
 
-
+```sh
 vim /etc/profile
 
 # java
@@ -9,13 +9,28 @@ export JRE_HOME=$JAVA_HOME/jre
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
+# java 11
+export JAVA_HOME=/usr/java/jdk-11.0.9
+export PATH=$JAVA_HOME/bin:$PATH
+
+# java 17
+export JAVA_HOME=/usr/java/jdk-17.0.3.1
+export PATH=$JAVA_HOME/bin:$PATH
+
+
 # maven
-export MAVEN_HOME=/usr/maven/apache-maven-3.3.9
+export MAVEN_HOME=/usr/maven/maven-3.3.9
+export PATH=$MAVEN_HOME/bin:$PATH
+
+# maven
+export MAVEN_HOME=/usr/maven/maven-3.6.3
 export PATH=$MAVEN_HOME/bin:$PATH
 
 source /etc/profile
+```
+---
 
---------------------------------------------------------------------------------------------------
+```
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_60/bin/java 300
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.7.0_60/bin/javac 300
 sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.7.0_60/bin/jar 300
@@ -25,12 +40,12 @@ sudo update-alternatives --install /usr/bin/javap javap /usr/lib/jvm/jdk1.7.0_60
 sudo update-alternatives --config java
 
 java -version
-
---------------------------------------------------------------------------------------------------
+```
+---
 
 
 设置特定jdk
-export JAVA_HOME=/usr/ELK/jdk/jdk-11.0.9
+export JAVA_HOME=/usr/java/jdk-11.0.9
 
 
 执行jar中打包指定的含有main方法的类
@@ -58,9 +73,9 @@ java -cp .:common_module-1.0-SNAPSHOT.jar:engine_module-1.0-SNAPSHOT.jar:client_
 
 
 
---------------------------------------------------------------------------------------------------
-远程调试
-
+---
+## 远程调试
+```
 java \
     -Dcom.sun.management.jmxremote.ssl=false \
     -Dcom.sun.management.jmxremote.authenticate=false \
@@ -69,8 +84,8 @@ java \
 
 java -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=10569 -jar mvn_pkg.jar
 
-
---------------------------------------------------------------------------------------------------
+```
+---
 
 解决CPU过高：
 ps H -eo pid,tid,%cpu | grep pid
@@ -82,7 +97,7 @@ jstack pid
 jstack -l tid
 
 
---------------------------------------------------------------------------------------------------
+---
 
 编译
 1.javac -encoding utf-8 -d . Class.java
@@ -95,7 +110,7 @@ jstack -l tid
 反编译字节码文件成汇编代码
 
 
---------------------------------------------------------------------------------------------------
+---
 
 jps：Java Process Status
 jps -l 查看java进程状态
@@ -146,24 +161,22 @@ http://localhost:7000
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
-JConsole
+## JConsole
 
 
 
-Memory
-    Heap:Eden Space,Survivor Space, Tenured Gen
-    Non-Heap:Metaspace(Perm Gen) Code Cache
-
-    垃圾回收GC: 
-        新生代：多少秒一次 seconds on Copy (公共多少次 collections)
-        老年代：多少秒一次 seconds on MarkSweepCompact (公共多少次 collections)
-
-        PS MarkSweep(mirror gc)
-        PS Scavenge(full gc)
+- Memory
+    - Heap:Eden Space,Survivor Space, Tenured Gen
+    - Non-Heap:Metaspace(Perm Gen) Code Cache
+    - 垃圾回收GC: 
+        - 新生代：多少秒一次 seconds on Copy (公共多少次 collections)
+        - 老年代：多少秒一次 seconds on MarkSweepCompact (公共多少次 collections)
+        - PS MarkSweep(mirror gc)
+        - PS Scavenge(full gc)
 
 
---------------------------------------------------------------------------------------------------
+---
 

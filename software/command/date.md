@@ -115,8 +115,8 @@ year,month,day,hour,minute,second
 - 时间同步
 ```sh
 yum install ntp -y
-systemctl start  ntpd
-systemctl enable  ntpd
+systemctl start ntpd
+systemctl enable ntpd
 
 
 vim /etc/ntp.conf
