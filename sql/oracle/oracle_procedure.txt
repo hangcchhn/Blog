@@ -52,7 +52,7 @@ PL/SQL:Procedure Language/Structured Query Language
 
 
 declare
- 
+
 begin
 
 exception
@@ -64,7 +64,7 @@ end;
 
 游标
 
-cursor cur_name(par_name par_type) type) is 
+cursor cur_name(par_name par_type) type) is
 select ... from tbl_name
 
 par_type:tbl_name.col_name%type
