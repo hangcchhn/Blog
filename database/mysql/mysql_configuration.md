@@ -39,22 +39,32 @@
 - ./my.cnf
 
 
-linux安装mysql
-
--  linux install mysql*.rpm|deb
 ```sh
-export PATH=/usr/local/mysql/bin:$PATH
-```
--  linux mysql*.tar.gz install
-```
-/usr/local/mysql/
+cd /usr/local/mysql/
+
+cp support-files/my-default.cnf /etc/my.cnf
+
 support-files/mysql.server start|stop|restart|status
 mysqld_safe --user=root
 
 
-support-files/my-default.cnf -> /etc/my.cnf
+```
+
+
+```ini
+basedir=/usr/local/mysql/
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+
+pid-file=/var/run/mysqld/mysqld.pid
+log-error=/var/log/mysqld.log
 
 ```
+
+
+
+
+---
 - my.cnf
 ```ini
 

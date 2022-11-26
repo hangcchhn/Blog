@@ -27,18 +27,16 @@ yum remove 具体内核名和版本
 
 ubuntu:
 查看已安装内核
-dpkg --get-selections |grep linux-image
-
-卸载内核
-apt remove linux-image-?
+dpkg --get-selections |grep linux-modules
 
 卸载内核并删除配置文件
-apt remove --purge linux-image-?
+apt purge linux-modules-?
+
 
 移除失效的启动项
 update-grub
 
-
+dpkg --purge `dpkg --get-selections | grep deinstall | cut -f1`
 
 apt autoclean
 apt clean

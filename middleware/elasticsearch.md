@@ -1,5 +1,10 @@
-# elasticsearch
+# ElasticSearch
 > ES
+
+
+- 存储
+- 索引
+
 
 tar -zxvf elasticsearch-7.3.0-linux-x86_64.tar.gz
 cd elasticsearch-7.3.0
