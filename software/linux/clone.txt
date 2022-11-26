@@ -22,23 +22,13 @@ centos7.x:没有70-persistent-net.rules文件
 
 
 --------------------------------------------------------------------------------------------------
-
-网卡设置
+虚拟机双网卡
+vmware 14.x
+centos 6.10
 
 ifconfig
 eth0
 lo
-
-
-vim /etc/sysconfig/network-scripts/ifcfg-*
-BOOTPROTO=dhcp|static
-ONBOOT=yes
-IPADDR=192.168.10.153
-NETMASK=255.255.255.0
-GATEWAY=192.168.10.2
-DNS1=8.8.8.8
-DNS2=114.114.114.114
-
 
 vim /etc/hosts
 127.0.0.1   cent
@@ -48,13 +38,6 @@ vim /etc/sysconfig/network
 cent
 
 hostnamectl set-hostname cent
-
---------------------------------------------------------------------------------------------------
-虚拟机双网卡
-vmware 14.x
-centos 6.10
-
-ifconfig
 
 dmesg | grep eth
 

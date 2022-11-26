@@ -70,7 +70,7 @@ mysql -u root -h 127.0.0.1 -p chench
 
 
 
-## Ubuntu  MySQL Online Install 
+## Ubuntu  MySQL Online Install
 
 1. 安装和启动
 
@@ -91,7 +91,7 @@ mysql -u debian-sys-maint -p
 ```
 
 
-## Docker Install MySQL Image 
+## Docker Install MySQL Image
 
 ```
 mysql-server_5.7.9-1ubuntu14.04_amd64.deb-bundle.tar
@@ -147,3 +147,19 @@ net stop mysql8
 .\bin\mysqld.exe --remove mysql8
 
 ```
+
+
+CentOS
+```sh
+rpm -e | grep mysql
+rpm -e | grep mariadb
+
+bin/mysqld --initialize --user=root --basedir=/opt/mysql/mysql-8.0.16 --datadir=/opt/mysql/mysql-8.0.16/data
+
+vim /etc/my.cnf
+
+support-files/mysql.server start|stop|restart|status
+
+
+```
+
