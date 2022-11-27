@@ -6,8 +6,14 @@
 
 ---
 ## pom.xml
+> root:project
+- groupId
+- artifactId
+- version
+- properties
 
 
+---
 - dependencies：
     - 单模块总项目依赖包的名称和版本
     - 多模块子项目引入包的名称
@@ -18,6 +24,24 @@
 - 类似的还有
     - dependency:dependencies|dependencyManagement
     - plugin:plugins｜pluginManagement
+
+---
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>hn.cch</groupId>
+    <artifactId>spring_boot_start</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+</project>
+
+```
 
 ---
 - 打包：设置主类

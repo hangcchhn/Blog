@@ -19,8 +19,13 @@
 - 监控
     - Prometheus
 
-- 持续集成和持续交付:CI(Continuous Integration)/CD(Continuous Delivery)
 
+
+- Helm
+
+
+- 持续集成和持续交付:CI(Continuous Integration)/CD(Continuous Delivery)
+    - Jenkins
 ---
 ## Kubernetes
 > k8s
