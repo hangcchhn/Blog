@@ -1,6 +1,7 @@
-## 哨兵模式
+# Redis sentinel
+> 哨兵模式
 
-## redis sentinel
+##
 ```
 make install PREFIX=/Users/hn/Macintosh/work/redis/sentienl/
 
@@ -21,7 +22,7 @@ appendfilename redis_6379.aof
 logfile ./redis_6379.log
 #loglevel verbose
 
-# master not replica only 
+# master not replica only
 replicaof 127.0.0.1 6380
 masterauth chench
 
@@ -33,9 +34,9 @@ sentinel monitor mymaster 127.0.0.1 6380 2
 sentinel auth-pass mymaster chench
 
 
-root@localhost:sentinel# cat redis_conf.sh 
+root@localhost:sentinel# cat redis_conf.sh
 
-root@localhost:sentinel# cat sentinel_conf.sh 
+root@localhost:sentinel# cat sentinel_conf.sh
 ```
 
 ## start.sh|bat
@@ -174,5 +175,5 @@ read -p 'MASTER_AUTH:' MASTER_AUTH
 sed 's#^sentinel monitor mymaster.*#sentinel monitor mymaster '$MASTER_HOST' '$MASTER_PORT' 2 #' $SENTINEL_CONF -i
 sed '$asentinel auth-pass mymaster '$MASTER_AUTH'' $SENTINEL_CONF -i
 
-../bin/redis-server ./sentinel_$SENTINEL_PORT.conf --sentinel 
+../bin/redis-server ./sentinel_$SENTINEL_PORT.conf --sentinel
 ```

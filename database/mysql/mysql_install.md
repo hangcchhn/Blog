@@ -122,29 +122,42 @@ docker run -it -p 33306:3306/tcp --expose 3306/tcp --name ubuntu_mysql cch/ubunt
 
 > mysql-8.0.16-winx64.zip
 
-1. 安装
 
+- my.ini
+
+```ini
+
+[mysqld]
+character-set-server=utf8mb4
+port=3306
+basedir=C:\ProgramFiles\MySQL
+datadir=C:\ProgramFiles\MySQL\data
+
+[mysql]
+default-character-set=utf8mb4
+
+[client]
+default-character-set=utf8mb4
+port=3306
+
+```
+---
 ```
 .\bin\mysqld.exe --initialize --console
 
-.\bin\mysqld.exe --install mysql8
+A temporary password is generated for root@localhost: ******
 
-net start mysql8
+.\bin\mysqld.exe --install MySQL
+
+net start mysql
 
 .\bin\mysql.exe -u root -p
 
 
 
+net stop mysql
 
-
-```
-2. 卸载
-
-```
-
-net stop mysql8
-
-.\bin\mysqld.exe --remove mysql8
+.\bin\mysqld.exe --remove mysql
 
 ```
 

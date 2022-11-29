@@ -1,4 +1,4 @@
-# Redis Cluster 
+# Redis cluster
 
 ## 集群模式
 ```
@@ -20,14 +20,14 @@ appendfilename redis_6379.aof
 logfile ./redis_6379.log
 #loglevel verbose
 
-# master not replica only 
+# master not replica only
 replicaof 127.0.0.1 6380
 masterauth chench
 cluster-enabled yes
 cluster-node-timeout 15000
 cluster-config-file ./nodes_7001.conf
 
-root@localhost: cluster# cat cluster_conf.sh 
+root@localhost: cluster# cat cluster_conf.sh
 ```
 
 ### 配置脚本
@@ -108,10 +108,10 @@ cluster flushslots：移除指派给当前节点的所有槽，让当前节点�
 cluster countkeysinslot <slot>：返回槽目前包含的键值对数量。
 cluster getkeysinslot <slot> <count>：返回count个槽中的键。
 
-cluster setslot <slot> node <node_id> 将槽指派给指定的节点，如果槽已经指派给另一个节点，那么先让另一个节点删除该槽，然后再进行指派。  
-cluster setslot <slot> migrating <node_id> 将本节点的槽迁移到指定的节点中。  
-cluster setslot <slot> importing <node_id> 从 node_id 指定的节点中导入槽 slot 到本节点。  
-cluster setslot <slot> stable 取消对槽 slot 的导入（import）或者迁移（migrate）。 
+cluster setslot <slot> node <node_id> 将槽指派给指定的节点，如果槽已经指派给另一个节点，那么先让另一个节点删除该槽，然后再进行指派。
+cluster setslot <slot> migrating <node_id> 将本节点的槽迁移到指定的节点中。
+cluster setslot <slot> importing <node_id> 从 node_id 指定的节点中导入槽 slot 到本节点。
+cluster setslot <slot> stable 取消对槽 slot 的导入（import）或者迁移（migrate）。
 
 cluster failover：手动进行故障转移。
 cluster forget <node_id>：从集群中移除指定的节点，这样就无法完成握手，过期时为60s，60s后两节点又会继续完成握手。
