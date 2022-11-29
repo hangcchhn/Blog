@@ -1,5 +1,5 @@
 
-# oracle数据库sys用户
+# Oracle数据库
 
 
 - all_*
@@ -64,6 +64,8 @@ and us.type = 'PROCEDURE'
 -- and us.type = 'FUNCTION' -- 函数
 -- and us.type = 'TRIGGER' -- 触发器
 order by us.line asc
+
+
 
 
 ```

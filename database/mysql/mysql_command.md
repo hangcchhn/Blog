@@ -1,3 +1,6 @@
+# MySQL command
+
+`mysql> command`
 
 ---
 ## 新建用户

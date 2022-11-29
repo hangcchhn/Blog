@@ -40,13 +40,13 @@ swapoff /opt/oracle/swap
 rm -rf /opt/oracle/swap
 
 ```
-cd 
+cd
 ## 系统设置
 
 
 ```
 
-groupadd oracle 
+groupadd oracle
 useradd -g oracle -d /oracle oracle
 
 passwd oracle
@@ -119,12 +119,12 @@ export PATH=$PATH:$ORACLE_HOME/bin
 /opt/oracle/orcl/root.sh
 
 3.oracle用户执行
-/root/oracle/database/runInstaller -silent -executeConfigTools -responseFile /root/oracle/database/response/db_install.rsp 
+/root/oracle/database/runInstaller -silent -executeConfigTools -responseFile /root/oracle/database/response/db_install.rsp
 
 
 
 
- 
+
 
 
 ```
@@ -149,7 +149,7 @@ lsnrctl status
 sqlplus system/oracle12C@orcl
 # 使用管理员角色登陆数据库
 sqlplus sys/oracle12C@orcl as sysdba
- 
+
 
 # 6.关闭数据库
 dbshut

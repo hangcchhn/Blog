@@ -5,19 +5,6 @@ mysql数据库的show命令
 查看帮助
 mysql> help show
 
-like_or_where:like 'pattern' | where expr
-
-if the syntax for a given show statement includes a like 'pattern'
-part, 'pattern' is a string that can contain the sql "%" and "_"
-wildcard characters. the pattern is useful for restricting statement
-output to matching values.
-
-several show statements also accept a where clause that provides more
-flexibility in specifying which rows to display. see
-http://dev.mysql.com/doc/refman/5.7/en/extended-show.html.
-
-url: http://dev.mysql.com/doc/refman/5.7/en/show.html
-
 --------------------------------------------------------------------------------------------------
 模式相关
 show engine engine_name {status | mutex}
