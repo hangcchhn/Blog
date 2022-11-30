@@ -168,12 +168,12 @@ public interface Mapper{
 
 ```xml
 
-<select id="getMapList" resultMap="">
+<select id="getMapList" resultType="java.util.Map">
     select column_name from table_name
 </select>
 
 <resultMap id="mapResult" type="java.util.Map">
-    <id property="resultId" javaType="java.lang.Integer" column="key"  jdbcType="Integer" />
+    <id property="resultId" javaType="java.lang.Integer" column="key"  jdbcType="INTEGER" />
     <result property="resultName" javaType="java.lang.String" column="value" jdbcType="VARCHAR" />
 </resultMap>
 
