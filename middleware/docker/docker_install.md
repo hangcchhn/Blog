@@ -7,38 +7,51 @@
 tar -zxvf docker-20.10.21.tgz
 cp -p docker/* /usr/bin
 ```
+---
+- /etc/docker/daemon.json
+```json
+{
+    "registry-mirrors": ["https://8d3cvm4c.mirror.aliyuncs.com"]
+}
+
+```
+
 
 ---
 - /usr/lib/systemd/system/docker.service
 ```ini
 [Unit]
 Description=Docker Application Container Engine
-Documentation=http://docs.docker.com
-After=network.target docker.socket
+Documentation=https://docs.docker.com
+
+BindsTo=containerd.service
+After=network-online.target firewalld.service
+Wants=network-online.target
+Requires=docker.socket
+
 [Service]
 Type=notify
-EnvironmentFile=-/run/flannel/docker
-WorkingDirectory=/usr/local/bin
-ExecStart=/usr/bin/dockerd \
-                -H tcp://0.0.0.0:4243 \
-                -H unix:///var/run/docker.sock \
-                --selinux-enabled=false \
-                --log-opt max-size=1g
+ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
 ExecReload=/bin/kill -s HUP $MAINPID
-# Having non-zero Limit*s causes performance problems due to accounting overhead
-# in the kernel. We recommend using cgroups to do container-local accounting.
+TimeoutSec=0
+RestartSec=2
+Restart=always
+
+
+StartLimitBurst=3
+StartLimitInterval=60s
+
+
 LimitNOFILE=infinity
 LimitNPROC=infinity
 LimitCORE=infinity
-# Uncomment TasksMax if your systemd version supports it.
-# Only systemd 226 and above support this version.
-#TasksMax=infinity
-TimeoutStartSec=0
-# set delegate yes so that systemd does not reset the cgroups of docker containers
+
+TasksMax=infinity
+
 Delegate=yes
-# kill only the docker process, not all processes in the cgroup
+
 KillMode=process
-Restart=on-failure
+
 [Install]
 WantedBy=multi-user.target
 
