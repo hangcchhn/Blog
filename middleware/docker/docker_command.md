@@ -1,14 +1,7 @@
 
-centos 7：启动和停止
-systemctl daemon-reload
-systemctl restart docker
-
-systemctl start docker
-systemctl stop docker
+# Docker command
 
 
-systemctl enable docker
-systemctl disable docker
 
 
 信息
@@ -18,7 +11,7 @@ docker version
 测试
 docker run -it hello-world
 
---------------------------------------------------------------------------------------------------
+---
 
 
 docker update --restart=xxx container_id
@@ -28,7 +21,7 @@ on-failure[:max_times]  设置失败最大重启容器次数，默认无限重�
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 文件传输
@@ -45,7 +38,7 @@ docker cp local container_id:remote
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 根据镜像创建容器
 docker create --name container_name image_name:image_tag
@@ -55,7 +48,7 @@ docker commit -a=image_author -m=commit_message container_id image_name:image_ta
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 容器唯一标识ID
@@ -97,7 +90,7 @@ docker run -it -d --name container_name image_name:image_tag command_line
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 运行镜像举例说明
 
@@ -114,7 +107,6 @@ docker run --name theide --security-opt seccomp=unconfined -e GO111MODULE=auto -
 docker run --name cheide -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /root/cheide:/data eclipse/che start
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
-docker.io从版本1.13.x后分为企业版docker-ee和社区版docker-ce
