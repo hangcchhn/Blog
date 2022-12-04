@@ -8,7 +8,7 @@
 ---
 
 ## GELF
-
+> Graylog Extended Log Format
 
 ---
 

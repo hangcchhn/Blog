@@ -1,6 +1,6 @@
 
 # Java Log Framework
-> java语言日志框架
+> Java语言日志框架
 
 - 日志模块
     - JUL(java.util.logging)
@@ -12,7 +12,7 @@
     - JCL(Jakarta Commons Logging):commons-logging
     - slf4j(Simple Logging Facade for Java)
 
-
+---
 ## JUL
 > java.util.logging
 - Logger
@@ -183,41 +183,10 @@ Log4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelec
 
 
 ---
-## logback
-- logback-core
-- logback-classic
-- logback-access
 
-
-
-
----
-## spring boot框架默认集成logback日志
+## spring-boot框架移除logback日志引用log4j2日志
 
 - pom.xml
-```xml
-<dependency>
-    <artifactId>spring-boot-starter-logging</artifactId>
-    <groupId>org.springframework.boot</groupId>
-</dependency>
-```
-
-- application.properties
-
-```properties
-logging.level.hn.cch=trace
-logging.file=./log/log.log
-
-logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss,SSS} [%thread] %-5level %logger{50} - %msg%n
-logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss,SSS} [%thread] %-5level %logger{50} - %msg%n
-```
-
-- logback.xml
-```xml
-
-```
-- log4j2.xml
-
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -236,3 +205,5 @@ logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss,SSS} [%thread] %-5level %logger{50} 
     <artifactId>spring-boot-starter-log4j2</artifactId>
 </dependency>
 ```
+
+- log4j2.xml

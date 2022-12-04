@@ -35,7 +35,7 @@ mvn -B archetype:generate -DgroupId=hn.cch -DartifactId=tomcat_webapp -Darchetyp
 mvn clean
 mvn complie
 
-mvn package  
+mvn package
 
 mvn install
 
@@ -70,7 +70,7 @@ mvn release:perform -pl module_name
 -Darguments="-DskipTests"
 
 -DautoVersionSubmodules=true
--DreleaseVersion=1.0 
+-DreleaseVersion=1.0
 -DdevelopmentVersion=1.0-SNAPSHOT
 
 
