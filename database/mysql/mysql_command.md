@@ -103,5 +103,12 @@ alter user 'root'@'localhost' identified with caching_sha2_password by 'chench';
 ./bin/mysqladmin -S /opt/mysql/mysql-8.0.16/data/mysql.sock -u root -p shutdown
 
 
+# mysql 5.7.39
+./bin/mysqld --defaults-file=./etc/my.cnf --initialize --console
+
+./bin/mysqld --initialize --console
+
+./support-files/mysql.server start
+
 
 ```

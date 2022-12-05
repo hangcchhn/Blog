@@ -51,12 +51,28 @@ mysqld_safe --user=root
 
 
 ```ini
+[mysqld]
+character-set-server=utf8
+
+symbolic-links=0
 basedir=/usr/local/mysql/
 datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
 
 pid-file=/var/run/mysqld/mysqld.pid
 log-error=/var/log/mysqld.log
+
+port=3306
+user=root
+
+[mysql]
+default-character-set=utf8
+
+[client]
+default-character-set=utf8
+
+socket=/var/lib/mysql/mysql.sock
+port=3306
 
 ```
 

@@ -35,6 +35,8 @@ passwd username
 echo username:password|chpasswd
 
 
+echo "password" | passwd --stdin username
+
 -------------------------------------------
 给文件或文件夹设置用户和组
 

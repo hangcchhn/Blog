@@ -7,7 +7,7 @@
 listeners=PLAINTEXT://0.0.0.0:9092
 # 如果advertised.listeners没有配置，那么就引用listeners配置
 # 如果listeners配置的是多个IP，advertised.listeners配置必须是准确的IP
-advertised.listeners=PLAINTEXT://192.168.10.169:9092
+advertised.listeners=PLAINTEXT://192.168.10.171:9092
 
 
 ```
