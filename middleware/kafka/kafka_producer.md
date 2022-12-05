@@ -1,6 +1,19 @@
 # kafka producer
+> 生成者
 
 
+- Metadata
+- Partitioner
+- RecordAccumulator
+- NetworkClient
+- Sender
+
+---
+
+
+
+
+---
 
 ---
 
