@@ -60,8 +60,8 @@ container_uuid = 3ae297c6c09fae1a2b5f33b35b3889fd3d956ed45bbadd065263c2eb8419dd8
 
 可执行命令行sh
 command_line = /bin/bash
-
-查看容器的控制台日志
+```sh
+# 查看容器的控制台日志
 docker logs -f -t --tail -100 container_id
 
 docker inspect container_id
@@ -71,24 +71,24 @@ docker inspect container_id
 tail -10f container_uuid-json.log
 
 
-进入已运行容器的显示屏幕：同步阻塞窗口(不建议使用)
-如果容器有控制台日志，使用attach连接会阻塞
-使用attach连接shell执行exit时容器会stop
-退出快捷键Ctrl + P + Q，或关闭当前终端
+# 进入已运行容器的显示屏幕：同步阻塞窗口(不建议使用)
+# 如果容器有控制台日志，使用attach连接会阻塞
+# 使用attach连接shell执行exit时容器会stop
+# 退出快捷键Ctrl + P + Q，或关闭当前终端
 docker attach container_id
 
 
 
 
-在已运行的容器中执行命令(-it可以指导容器中执行命令)
-连接已运行的容器的控制台(command_line = /bin/bash)
+# 在已运行的容器中执行命令(-it可以指导容器中执行命令)
+# 连接已运行的容器的控制台(command_line = /bin/bash)
 docker exec -it container_id command_line
 
-根据镜像创建容器，并启动容器(-d后台运行否者前台启动)
-docker run：不会执行dockerfile中的ENTRYPOINT
+# 根据镜像创建容器，并启动容器(-d后台运行否者前台启动)
+docker run  # 不会执行dockerfile中的ENTRYPOINT
 docker run -it -d --name container_name image_name:image_tag command_line
 
-
+```
 
 ---
 

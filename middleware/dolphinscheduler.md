@@ -65,6 +65,7 @@ AlertServer
 
 ---
 - zookeeper
+- hadoop
 
 
 - http://192.168.10.171:12345/dolphinscheduler
