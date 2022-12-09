@@ -1,4 +1,4 @@
-
+# JVM(Java Virtual Machine):Java虚拟机
 ---
 
 - IBM J9 VM 绑定硬件  2019年开源  Eclipse OpenJ9
@@ -25,9 +25,9 @@
 
 ---
 
-JVM(Java Virtual Machine):Java虚拟机
-Runtime Data Area:运行时数据区
-Java Memory Model:内存模型(JMM)
+
+- Runtime Data Area:运行时数据区
+- Java Memory Model:Java内存模型(JMM)
 
 
 ---

@@ -9,8 +9,7 @@ ubuntu pro
 
 hangcchhn@163.com
 
-sudo pro attach C1V3QbcGdqMPsWaacx1tNPiA1kGed
-
+pro attach C1V3QbcGdqMPsWaacx1tNPiA1kGed
 
 
 --------------------------------------------------------------------------------------------------

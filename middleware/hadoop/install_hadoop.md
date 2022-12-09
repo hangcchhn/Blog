@@ -192,7 +192,7 @@ log4j.logger.org.apache.hadoop.util.NativeCodeLoader=ERROR
 
 - dfs.datanode.data.dir
 ```
-rm -rf /opt/hadoop/hdfs
+rm -rf /opt/hadoop/hdfs/
 
 ```
 
