@@ -193,27 +193,27 @@ System.gc();
 ---
 
 
-- Serial收集器:体现Stop the World特点(进行垃圾回收时，必须暂停所有其他线程)
+### Serial收集器:体现Stop the World特点(进行垃圾回收时，必须暂停所有其他线程)
 
 
-- PartNew收集器:支持并行收集，使用-XX:+UseParNewGC指定PartNew进行垃圾回收。
+### PartNew收集器:支持并行收集，使用-XX:+UseParNewGC指定PartNew进行垃圾回收。
 
 
 
-- Parallel Scavenge:
-    - 新生代收集器使用复制算法的多线程并行收集器，
-    注重可控的吞肚量，使用-XX:MaxCcPauseMillis和-XX:GCTimeRatio控制吞吐量，
-    适用于多后台运算而少交互中断的程序，充分利用CPU时间尽快完成CPU计算
-    吞吐量=用户代码运行时间/CPU总消耗时间=用户代码运行时间/(用户代码运行时间+垃圾回收时间)
-    - 老年代收集器使用标记-整理算法的多线程并行收集器，jdk1.6才开始提供
+### Parallel Scavenge收集器:
+- 新生代收集器使用复制算法的多线程并行收集器，
+注重可控的吞肚量，使用-XX:MaxCcPauseMillis和-XX:GCTimeRatio控制吞吐量，
+适用于多后台运算而少交互中断的程序，充分利用CPU时间尽快完成CPU计算
+吞吐量=用户代码运行时间/CPU总消耗时间=用户代码运行时间/(用户代码运行时间+垃圾回收时间)
+- 老年代收集器使用标记-整理算法的多线程并行收集器，jdk1.6才开始提供
 
-- CMS(Concurrent Mar Sweep)并发收集器:
-    使用标记-整理算法的多线程并行收集，以获取最短垃圾回收停顿时间为目的注重响应速度
-    CMS回收步骤:
-    1.初始标记(Stop the World)
-    2.并发标记
-    3.重新标记(Stop the World)
-    4.并发清除
+### CMS(Concurrent Mar Sweep)并发收集器:
+使用标记-整理算法的多线程并行收集，以获取最短垃圾回收停顿时间为目的注重响应速度
+CMS回收步骤:
+1. 初始标记(Stop the World)
+2. 并发标记
+3. 重新标记(Stop the World)
+4. 并发清除
 
-- G1(Garbage First)收集器:最新的收集器，在jdk1.6u14提供
+### G1(Garbage First)收集器:最新的收集器，在jdk1.6u14提供
     使用标记-整理算法的多线程并行收集
