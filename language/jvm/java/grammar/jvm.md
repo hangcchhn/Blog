@@ -123,7 +123,7 @@ Edem:From｜To Survivor=8:1
 ---
 ## 执行引擎
 
-- JIT(Just In Time) Complier:即时编译器
+- JIT(Just-In-Time) Complier:即时编译器
 
 
 - Interpreter:解释器

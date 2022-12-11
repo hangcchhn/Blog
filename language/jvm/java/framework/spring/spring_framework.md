@@ -1,7 +1,7 @@
-# spring Framework
+# Spring Framework
 > 微服务
 
-## spring
+## Spring
 
 
 - ioc
@@ -33,7 +33,7 @@
 - Spring Quartz
     - Quartz
 ---
-## spring boot
+## Spring Boot
 >
 - 自动配置
 - 简化开发
@@ -62,7 +62,7 @@
 
 
 ---
-## spring cloud
+## Spring Cloud
 > 微服务(microservice)
 
 
@@ -84,7 +84,7 @@
     - Zuul
 
 
-### spring cloud 2.x
+### Spring Cloud 2.x
 > alibaba
 
 - nacos
@@ -98,3 +98,17 @@
 
 - artifactId:spring-cloud-starter-xxx
 
+---
+
+# Spring Boot 3.0
+- 基于Spring Framework 6.0.2
+- 需要Java 17+
+- 需要GraalVM 22.3+和Native Build Tools Plugin 0.9.17+
+
+- Maven 3.5+
+- Gradle 7.5+
+GraalVM Community
+
+Native Build Tools
+
+- Spring Native

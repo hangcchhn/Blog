@@ -4,6 +4,24 @@ apt update && apt upgrade
 
 
 --------------------------------------------------------------------------------------------------
+Ubuntu系统重启/etc/profile环境变量不生效
+
+
+
+
+
+
+export JAVA_HOME=/opt/java/jdk-11.0.9
+export PATH=$JAVA_HOME/bin:$PATH
+
+#export SCALA_HOME=/usr/share/scala-2.11
+#export PATH=$SCALA_HOME/bin:$PATH
+
+#export HADOOP_HOME=/opt/hadoop
+#export PATH=$HADOOP_HOME/bin:$PATH
+
+
+--------------------------------------------------------------------------------------------------
 
 ubuntu pro
 
@@ -109,69 +127,7 @@ apt install nautilus-open-terminal
 
 apt install ibus-libpinyin
 
---------------------------------------------------------------------------------------------------
 
-apt install golang
-
-apt install nodejs
-
-
-apt install openssh-client
-apt install openssh-server
-
-
-apt install openjdk-8-jdk
-apt install openjdk-11-jdk
-apt install openjdk-17-jdk
-
-apt install qtcreator
-apt install qmlscene
-apt install qt5-default
-
-apt install qtdeclarative5-dev
-apt install qtvirtualkeyboard-plugin
-apt install qml-module-qt-labs-folderlistmodel
-
-
-apt install geany
-
-
---------------------------------------------------------------------------------------------------
-
-ubuntu 16.04
-
-apt install ipython-notebook
-apt install jupyter-notebook
-
-apt install ipython3
-
-apt install python3-pip
-
-apt install python3-numpy
-apt install python3-scipy
-apt install python3-sympy
-apt install python3-pandas
-apt install python3-matplotlib
-apt install python3-sklearn
-
-
-apt install python3-django
-apt install python3-flask
-
-apt install python3-scrapy
-apt install python3-tornado
-
-apt install python3-pygame
-apt install python3-pyqt5
-
-apt install python3-pymysql
-apt install python3-redis
-
-
-
-apt install libopencv-dev
-apt install python3-opencv
-pkg-config --modversion opencv
 
 
 --------------------------------------------------------------------------------------------------
