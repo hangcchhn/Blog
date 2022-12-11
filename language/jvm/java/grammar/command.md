@@ -71,8 +71,14 @@ java -cp .:* hn.cch.engine.boot.Main
 java -cp .:common_module-1.0-SNAPSHOT.jar:engine_module-1.0-SNAPSHOT.jar:client_module-1.0-SNAPSHOT.jar:server_module-1.0-SNAPSHOT.jar hn.cch.engine.boot.Main
 
 
+---
+## 启动参数
 
+VM Options:`-Darg=xxx`
 
+```
+java -jar xxx.jar -Darg=xxx
+```
 ---
 ## 远程调试
 ```

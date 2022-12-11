@@ -1,7 +1,18 @@
+# maven project
 
+## 项目结构
+- src
+    - main
+        - java
+        - resources
+        - webapp
+    - test
+        - java
+        - resources
+- pom.xml
 
-
--
+---
+- pom.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -13,7 +24,6 @@
     <artifactId>spring_boot_start</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -31,13 +41,5 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
 ```
