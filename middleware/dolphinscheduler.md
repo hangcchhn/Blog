@@ -1,6 +1,20 @@
 # DolphinScheduler
 
 
+- Azkaban
+    - Hadoop
+- Oozie:重量级
+
+- Airflow:由Python实现
+    - http://airflow.apache.org/
+    - Airflow 1.10.x -> Python 2.7.x
+    - Airflow 2.2.x -> Python 3.6.x
+- DolphinScheduler
+
+
+---
+
+
 - CentOS/Ubuntu/Debian/Fedora
 ```sh
 # CentOS
