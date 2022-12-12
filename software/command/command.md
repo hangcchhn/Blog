@@ -159,3 +159,11 @@ service firewalld stop
 
 firewall-cmd --permanent --add-port=2375/tcp
 firewall-cmd --reload
+
+---
+
+
+- `uptime`
+```
+- 23:26:20 up 1 min,  2 users,  load average: 0.42, 0.24, 0.09
+- HH:mm:ss up 系统运行时间,  登录用户数量 users, load average: 最近1分钟, 5分钟, 15分钟的系统负载
