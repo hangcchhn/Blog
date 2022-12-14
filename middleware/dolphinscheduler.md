@@ -44,7 +44,7 @@ spring.datasource.password=chench
 
 
 ```
-
+- `mv mysql-connector-java-5.1.47.jar ./lib/`
 
 - `./script/create-dolphinscheduler.sh`
 
