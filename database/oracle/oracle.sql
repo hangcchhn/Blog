@@ -40,6 +40,10 @@ update table_name
 set column_name = replace(column_name, 'old_string', 'new_string')
 
 
+-- 制表符:chr(9)
+-- 换行符:chr(10)
+-- 回车符:chr(13)
+
 --------------------------------------------------------------------------------------------------
 
 
