@@ -1,4 +1,16 @@
-# JVisualVM
+# VisualVM
+
+
+
+
+---
+
+- ./etc/visualvm.conf
+```ini
+visualvm_jdkhome="D:\jdk\jdk1.8.0_202"
+
+```
+
 
 
 ---

@@ -37,3 +37,9 @@
 
 ---
 ## 静态编译
+
+```sh
+export GRAALVM_PATH=
+
+
+```

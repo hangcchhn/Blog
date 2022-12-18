@@ -36,9 +36,9 @@ snap find xxx
 snap install xxx
 
 snap remove xxx
-
+# 更新
 snap refresh xxx
-
+# 回滚
 snap revert xxx
 ```
 
