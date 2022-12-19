@@ -91,7 +91,15 @@ AlertServer
 
 ./bin/dolphinscheduler-daemon.sh start standalone-server
 
+vim ./bin/env/dolphinscheduler_env.sh
+
 ./bin/stop-all.sh
 ./bin/start-all.sh
 
 ```
+
+---
+
+- dolphinscheduler-3.0.3
+- hadoop-3.0.3
+- spark-3.0.3
