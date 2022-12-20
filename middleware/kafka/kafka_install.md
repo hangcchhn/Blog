@@ -10,24 +10,24 @@
 ```sh
 
 # 后台启动zookeeper
-bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
+./bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
 # 后台启动kafka
-bin/kafka-server-start.sh  -daemon config/server.properties
+./bin/kafka-server-start.sh  -daemon config/server.properties
 
 # kafka创建主题
-bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+./bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
 
 # kafka列出主题
-bin/kafka-topics.sh --list --zookeeper localhost:2181
+./bin/kafka-topics.sh --list --zookeeper localhost:2181
 ```
 
 - 分别启动生产者和消费者
 ```sh
 # 启动kafka终端生产者
-bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 
 # 启动kafka终端消费者
-bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 
 ```
 

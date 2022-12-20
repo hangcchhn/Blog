@@ -29,16 +29,16 @@ clientPort=2181
 
 - bin/zkServer.sh
 ```sh
-bin/zkServer.sh
+./bin/zkServer.sh
 Usage: bin/zkServer.sh {start|start-foreground|stop|restart|status|upgrade|print-cmd}
 
-bin/zkServer.sh start
+./bin/zkServer.sh start
 Starting zookeeper ... STARTED
 
-bin/zkServer.sh status
+./bin/zkServer.sh status
 Mode: standalone
 
-bin/zkServer.sh stop
+./bin/zkServer.sh stop
 Stopping zookeeper ... STOPPED
 
 ```

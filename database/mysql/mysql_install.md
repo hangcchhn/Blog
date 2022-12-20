@@ -167,7 +167,7 @@ CentOS
 rpm -e | grep mysql
 rpm -e | grep mariadb
 
-bin/mysqld --initialize --user=root --basedir=/opt/mysql/mysql-8.0.16 --datadir=/opt/mysql/mysql-8.0.16/data
+./bin/mysqld --initialize --user=root --basedir=/opt/mysql/mysql-8.0.16 --datadir=/opt/mysql/mysql-8.0.16/data
 
 vim /etc/my.cnf
 

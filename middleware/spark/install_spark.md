@@ -16,7 +16,7 @@
 ## 1.本地模式Local
 - spark-2.4.8-bin-hadoop2.7.tgz
 ```sh
-bin/spark-shell
+./bin/spark-shell
 scala> :help
 scala> :quit
 
@@ -79,7 +79,7 @@ jps
 Master
 Worker
 
-bin/spark-shell --master spark://192.168.10.169:7077
+./bin/spark-shell --master spark://192.168.10.169:7077
 scala>
 val txtFile = sc.textFile("hdfs://192.168.10.169:8020/word_count/word.txt")
 val wordCount = txtFile.flatMap(_.split(" ")).map((_,1)).reduceByKey(_ + _)

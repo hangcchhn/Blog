@@ -18,7 +18,7 @@
 - version
 
 ```
-bin/zkCli.sh -server 127.0.0.1:2181
+./bin/zkCli.sh -server 127.0.0.1:2181
 [zk: 127.0.0.1:2181(CONNECTED) 0]
 
 ls=help

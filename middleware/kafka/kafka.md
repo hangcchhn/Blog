@@ -16,11 +16,11 @@ kafka通过zookeeper管理cluster中的broker
 
 
 
-- stream:流
+- stream:
 
 - consumer group:消费者组
 - consumer(消费者):
-    - pull:拉模式
+    - pull(拉):轮训
 - producer(生产者):
     - push:推模式
 

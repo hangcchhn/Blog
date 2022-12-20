@@ -31,7 +31,7 @@ Hello Logstash
 
 
 版本适配关系
-Elasticsearch Kibana  X-Pack  Beats^* Elastic Agent^* Logstash^*  ES-Hadoop (jar)*****   
+Elasticsearch Kibana  X-Pack  Beats^* Elastic Agent^* Logstash^*  ES-Hadoop (jar)*****
 https://www.elastic.co/cn/support/matrix#matrix_compatibility
 
 logstash程序的logstash-input-log4j只支持2.4.x
@@ -258,7 +258,7 @@ output {
     }
 }
 
-bin/logstash -f logstash-shipper.conf
+./bin/logstash -f logstash-shipper.conf
 
 
 Indexer
@@ -288,7 +288,7 @@ output {
    }
 }
 
-bin/logstash -f logstash-indexer.conf
+./bin/logstash -f logstash-indexer.conf
 
 
 

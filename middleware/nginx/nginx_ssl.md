@@ -160,7 +160,7 @@ wget --no-check-certificate "https://127.0.0.1:443"
 ---
 ## jmeter
 ```
-bin/jmeter -Djavax.net.ssl.trustStore=client.store -Djavax.net.ssl.keyStorePassword=123456 -Djavax.net.ssl.keyStore=client.p12
+./bin/jmeter -Djavax.net.ssl.trustStore=client.store -Djavax.net.ssl.keyStorePassword=123456 -Djavax.net.ssl.keyStore=client.p12
 ```
 
 ## postman

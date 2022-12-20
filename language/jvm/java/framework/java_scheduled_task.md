@@ -1,5 +1,5 @@
 
-# java time task
+# java scheduled task
 > java语言实现定时任务方式
 
 
@@ -13,40 +13,49 @@
 ---
 ## spring框架多种方式配置定时任务
 
-> spring-context
-- Scheduler
+- spring-context
 
-- `@EnableScheduling`
-```java
-@EnableScheduling
-@SpringBootApplication
-public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-}
-```
-
-
-- `@Scheduled`
 ```java
 @Component
-public class Task {
+@EnableScheduling
+public class Job {
 
     // 每天00:00:00执行
-    @Scheduled(cron = "${application.properties.parameter:00 00 00 * * ?}")
+    @Scheduled(cron = "${job.task.cron:00 00 00 * * ?}")
     private void task() {
         // 调用定时任务业务
     }
 }
 
 ```
+- 原理:ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization
+
+
+- spring-boot动态管理定时任务：实现SchedulingConfigurer接口，重写configureTasks方法
 
 
 ---
 ## quartz框架实现动态配置定时任务
 
+- spring-boot 2.x集成quartz实现动态管理定时任务
 
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-quartz</artifactId>
+</dependency>
+
+```
+```java
+@Service
+public class SchedulerService {
+    @Autowired
+    private Scheduler scheduler;
+
+    // 动态管理定时任务
+}
+
+```
 
 ---
 ## cron expression
