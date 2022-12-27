@@ -39,7 +39,29 @@
 ## 静态编译
 
 ```sh
-export GRAALVM_PATH=
+export GRAALVM_PATH=/opt/graalvm
+export PATH=$GRAALVM_PATH/bin:$PATH
 
+```
+
+---
+
+```sh
+yum install gcc glibc-devel zlib-devel
+apt install build-essential libz-dev zlib1g-dev
+
+
+# GraalVM Updater本地安装native-image
+gu -L install native-image-installable-svm-java11-linux-amd64-X.Y.Z.jar
+
+```
+
+
+---
+
+```sh
+
+
+native-image --jar jar-file.jar
 
 ```

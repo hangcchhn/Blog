@@ -11,14 +11,14 @@
 
 ![](./disk_extend/fdisk_help.jpg)
 
-- `p -> n -> enter -> enter -> p -> w`
+- `p -> n -> p -> enter -> enter -> p -> w`
 
 ![](./disk_extend/fdisk_command.jpg)
 
 ---
 
 ![](./disk_extend/vgdisplay_before.jpg)
--
+- `reboot`
 - `pvcreate /dev/sda3`
 - `vgextend centos /dev/sda3`
 
@@ -33,17 +33,17 @@
 ---
 
 
-- `Free  PE / Size       2559 / <10.00 GiB`
+- `Free PE               2559`
 - `lvextend -l+2559 /dev/mapper/centos-root`
 ![](./disk_extend/lvextend.jpg)
 
 ![](./disk_extend/vgdisplay_after.jpg)
 
 ---
-- 文件系统格式
+- 查看文件系统格式:`cat /etc/fstab | grep centos-root`
 ![](./disk_extend/fstab.jpg)
 
-- xfs_growfs /dev/mapper/centos-root
+- `xfs_growfs /dev/mapper/centos-root`
 
 ![](./disk_extend/xfs_growfs.jpg)
 `
