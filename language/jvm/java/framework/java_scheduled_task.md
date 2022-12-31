@@ -57,6 +57,19 @@ public class SchedulerService {
 
 ```
 
+
+---
+## xxl-job
+
+---
+
+## PowerJob
+
+---
+
+## ScheduleX 2.0
+
+
 ---
 ## cron expression
 > java cron
