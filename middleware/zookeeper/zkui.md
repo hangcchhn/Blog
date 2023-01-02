@@ -9,3 +9,5 @@ mvn clean install
 
 
 ```
+- http://ip:9090/
+- admin/manager
