@@ -7,17 +7,15 @@
 - 配置好ssh免密登录
 
 ---
-- 注意hadoop 2.x和hadoop 3.x配置不同
-
-- windows hadoop winutils
-https://github.com/cdarlint/winutils
+- 注意Hadoop 2.x和Hadoop 3.x配置不同
 
 ---
-## 伪分布式
-> Pseudo-Distrubuted Mode
+## 单机模式
 
 - hadoop-2.7.7
-- centos 7.x
+- jdk1.8.0_202
+- scala-2.11.12
+- CentOS 7.x
 
 ```sh
 vim /etc/profile
@@ -94,8 +92,8 @@ spark-shell
 - `http://192.168.10.169:8088`
 
 
-
-- use root start/stop hadoop-3.3.0
+---
+- use root start/stop Hadoop 3.x
 - /etc/profile
 ```sh
 export HDFS_NAMENODE_USER=root
@@ -109,8 +107,9 @@ export YARN_NODEMANAGER_USER=root
 
 ---
 ### protobuf
-```sh
+> 没有使用
 
+```sh
 # 源码编译
 yum install protobuf
 yum install protobuf-devel
@@ -195,178 +194,3 @@ log4j.logger.org.apache.hadoop.util.NativeCodeLoader=ERROR
 rm -rf /opt/hadoop/hdfs/
 
 ```
-
----
-
-## 完全分布式
-
-- `/usr/hadoop/hadoop-3.2.1`
-- centos 7.x
-```
-vim /etc/hosts
-192.168.10.201    cent01
-192.168.10.202    cent02
-192.168.10.203    cent03
-
-
-export HADOOP_HOME=/usr/hadoop/hadoop-3.2.1
-export PATH=$HADOOP_HOME/bin:$PATH
-
-export HADOOP_HDFS_HOME=$HADOOP_HOME
-export HADOOP_YARN_HOME=$HADOOP_HOME
-export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
-
-export HDFS_NAMENODE_USER=root
-export HDFS_DATANODE_USER=root
-export HDFS_SECONDARYNAMENODE_USER=root
-
-export YARN_RESOURCEMANAGER_USER=root
-export YARN_NODEMANAGER_USER=root
-
-
-vim /etc/ssh/sshd_config
-PermitRootLogin no
-UsePAM no
-PasswordAuthentication no
-RSAAuthentication yes
-PubkeyAuthentication yes
-
-
-hadoop-env.sh
-#export JAVA_HOME=${JAVA_HOME}
-export JAVA_HOME=/usr/java/jdk1.8.0_202
-
-
-```
-- workers
-    - cent01
-    - cent02
-    - cent03
-
-- core-site.xml
-```xml
-<configuration>
-    <property>
-        <name>fs.defaultFS</name>
-        <value>hdfs://cent01:9820</value>
-    </property>
-    <property>
-        <name>hadoop.tmp.dir</name>
-        <value>/root/hdfs/hadoop/tmp</value>
-    </property>
-    <property>
-        <name>hadoop.native.lib</name>
-        <value>false</value>
-    </property>
-</configuration>
-```
-- hdfs-site.xml
-```xml
-<configuration>
-    <property>
-        <name>dfs.secondary.http.address</name>
-        <value>cent01:9868</value>
-    </property>
-    <property>
-        <name>dfs.replication</name>
-        <value>3/value>
-    </property>
-    <property>
-        <name>dfs.namenode.name.dir</name>
-        <value>file:/root/hdfs/hadoop/name</value>
-    </property>
-    <property>
-        <name>dfs.datanode.data.dir</name>
-        <value>file:/root/hdfs/hadoop/data</value>
-    </property>
-</configuration>
-
-```
-- mapred-site.xml
-```xml
-<configuration>
-    <property>
-        <name>mapreduce.framework.name</name>
-        <value>yarn</value>
-    </property>
-</configuration>
-
-```
-- yarn-site.xml
-```xml
-<configuration>
-    <property>
-        <name>yarn.nodemanager.aux-services</name>
-        <value>mapreduce_shuffle</value>
-    </property>
-    <property>
-        <name>yarn.resourcemanager.hostname</name>
-        <value>cent01</value>
-    </property>
-</configuration>
-```
-
-```shell
-scp -r workers hadoop-env.sh core-site.xml hdfs-site.xml mapred-site.xml yarn-site.xml root@192.168.10.202:$PWD
-scp -r workers hadoop-env.sh core-site.xml hdfs-site.xml mapred-site.xml yarn-site.xml root@192.168.10.203:$PWD
-
-vim /root/.ssh/config
-Host cent01
-  HostName cent01
-  User root
-  IdentityFile ~/.ssh/id_rsa-remote-ssh
-Host cent02
-  HostName cent02
-  User root
-  IdentityFile ~/.ssh/id_rsa-remote-ssh
-Host cent03
-  HostName cent03
-  User root
-  IdentityFile ~/.ssh/id_rsa-remote-ssh
-
-scp -r config root@192.168.10.202:$PWD
-scp -r config root@192.168.10.203:$PWD
-
-hdfs version
-hdfs namenode -format
-
-
-./sbin/start-dfs.sh
-./sbin/start-yarn.sh
-
-hdfs dfsadmin -report
-
-http://cent01:9870
-http://cent01:8088
-
-spark-shell
-scala>
-val txtFile = sc.textFile("hdfs://cent01:9820/spark/word.txt")
-val wordCount = txtFile.flatMap(_.split(" ")).map((_,1)).reduceByKey(_ + _)
-wordCount.collect
-wordCount.saveAsTextFile("hdfs://cent01:9820/spark/count")
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

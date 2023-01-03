@@ -4,26 +4,26 @@
 vim /etc/profile
 
 # java
-export JAVA_HOME=/usr/java/jdk1.8.0_202
+export JAVA_HOME=/opt/java/jdk1.8.0_202
 export JRE_HOME=$JAVA_HOME/jre
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 # java 11
-export JAVA_HOME=/usr/java/jdk-11.0.9
+export JAVA_HOME=/opt/java/jdk-11.0.9
 export PATH=$JAVA_HOME/bin:$PATH
 
 # java 17
-export JAVA_HOME=/usr/java/jdk-17.0.3.1
+export JAVA_HOME=/opt/java/jdk-17.0.3.1
 export PATH=$JAVA_HOME/bin:$PATH
 
 
 # maven
-export MAVEN_HOME=/usr/maven/maven-3.3.9
+export MAVEN_HOME=/opt/maven/maven-3.3.9
 export PATH=$MAVEN_HOME/bin:$PATH
 
 # maven
-export MAVEN_HOME=/usr/maven/maven-3.6.3
+export MAVEN_HOME=/opt/maven/maven-3.6.3
 export PATH=$MAVEN_HOME/bin:$PATH
 
 source /etc/profile

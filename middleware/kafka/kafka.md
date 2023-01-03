@@ -55,3 +55,7 @@ kafka通过zookeeper管理cluster中的broker
 - 每个message都有一个offset，用来表示在patition中的位置
 - 多个consumer可以同时消费同一个patition上的不同message
 
+
+---
+
+- kafka3.x放弃依赖zookeeper，使用kraft机制实现

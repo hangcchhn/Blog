@@ -28,7 +28,9 @@ CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
 ## Nginx
 
 ```
+docker pull nginx
 
+docker run --name nginx -p 80:80 -d nginx
 
 ```
 

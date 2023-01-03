@@ -53,6 +53,13 @@ snap install postman
 
 snap install sublime-text --classic
 snap install sublime-merge --classic
+
+
+snap install docker
+snap restart docker
+
+service snap.docker.dockerd status
+
 ```
 
 ---

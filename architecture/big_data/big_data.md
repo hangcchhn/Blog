@@ -63,19 +63,13 @@
 
 
 ---
-## version
+## 版本
+> version
 
-scala2.12.16 要求 jdk1.8u202
+- scala-2.12.16 要求 jdk1.8.0_202
 
-hadoop2.7.7
-
-
-spark3.1.3
+- hadoop-2.7.7, spark-2.4.8
+- hadoop-3.0.3, spark-3.0.3
 
 
 ---
-## CDH
-> Cloudera Hadoop
-
-- CDP(Cloudera Data Platform)
-- Cloudera Manager
