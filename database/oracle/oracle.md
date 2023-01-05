@@ -71,3 +71,78 @@ show parameter recycle;
 
 
 ```
+
+
+---
+
+## 行列转换
+
+- 转置
+
+$$
+
+M^T = N
+\\
+M = N^T
+
+$$
+
+
+| M | A | B |
+| - | - | - |
+| X | 1 | 2 |
+| Y | 3 | 4 |
+| Z | 5 | 6 |
+
+| N | X | Y | Z |
+| - | - | - | - |
+| A | 1 | 3 | 5 |
+| B | 2 | 4 | 6 |
+
+
+- pivot/unpivot
+
+```sql
+--  M -> N
+with m as (
+    select 'X' as M, 1 as A, 2 as B from dual union all
+    select 'Y' as M, 3 as A, 4 as B from dual union all
+    select 'Z' as M, 5 as A, 6 as B from dual
+)
+, t as (
+    select M, N, T from m
+    unpivot(T for N in (A, B))
+)
+select * from t
+pivot(max(T) for M in (
+    'X' as "X",
+    'Y' as "Y",
+    'Z' as "Z"
+))
+order by N
+;
+
+---
+--  M -> N -> M
+with m as (
+    select 'X' as M, 1 as A, 2 as B from dual union all
+    select 'Y' as M, 3 as A, 4 as B from dual union all
+    select 'Z' as M, 5 as A, 6 as B from dual
+)
+, t as (
+    select M, N, T from m
+    unpivot(T for N in (A, B))
+)
+, n as (select * from t
+pivot(max(T) for M in ('X' as "X",'Y' as "Y",'Z' as "Z"))
+order by N
+)
+, s as (
+  select N, M, S from n
+  unpivot(S for M in (X, Y, Z))
+)
+select * from s
+pivot(max(S) for N in ('A' as "A",'B' as "B"))
+order by M
+
+```

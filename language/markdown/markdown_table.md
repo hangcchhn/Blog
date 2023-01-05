@@ -2,10 +2,10 @@
 # 表格
 > table
 
-表格表头1|表格表头2
--|-
-行列1|行1列2
-行2列1|行2列2
+| 表格表头1 | 表格表头2 |
+| - | - |
+| 行1列1 | 行1列2 |
+| 行2列1 | 行2列2 |
 
 - &#124;
 - <br>
@@ -48,33 +48,33 @@
 
 <table>
     <tr>
-        <td>行/列</td> 
-        <td>列2</td> 
-        <td>列3</td> 
+        <td>行/列</td>
+        <td>列2</td>
+        <td>列3</td>
    </tr>
     <tr>
-  		 <td>行2列1</td> 
-      	 <td colspan="2">跨两列合并行</td>    
+  		 <td>行2列1</td>
+      	 <td colspan="2">跨两列合并行</td>
     </tr>
     <tr>
-        <td colspan="3">跨三列合并行</td>    
+        <td colspan="3">跨三列合并行</td>
     </tr>
 </table>
 
 - 列合并
 <table>
     <tr>
-        <td>行1列1</td> 
-        <td>行1列2</td> 
-        <td>行1列3</td> 
+        <td>行1列1</td>
+        <td>行1列2</td>
+        <td>行1列3</td>
    </tr>
     <tr>
-        <td rowspan="2">合并两列</td>    
-  		 <td>行2列2</td> 
-      	 <td>行2列3</td> 
+        <td rowspan="2">合并两列</td>
+  		 <td>行2列2</td>
+      	 <td>行2列3</td>
     </tr>
     <tr>
-        <td>行3列2</td> 
-        <td>行3列3</td>    
+        <td>行3列2</td>
+        <td>行3列3</td>
     </tr>
 </table>
