@@ -1,6 +1,8 @@
 # HUE
+> Hadoop User Experience
 
-
+- https://github.com/cloudera/hue/tree/branch-3.12
+- https://docs.gethue.com/releases/release-notes-3.12.0
 
 - hue-release-3.12.0.tar.gz
 https://codeload.github.com/cloudera/hue/tar.gz/refs/tags/release-3.12.0
@@ -50,5 +52,15 @@ desktop/conf.dist/hue.ini
 # development
 build/env/bin/hue runserver
 desktop/conf/pseudo-distributed.ini
+
+```
+
+---
+
+```sh
+docker pull gethue/hue:4.10.0
+
+docker run -it -p 8888:8888 gethue/hue:4.10.0
+
 
 ```

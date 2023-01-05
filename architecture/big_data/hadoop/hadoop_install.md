@@ -68,7 +68,20 @@ ResourceManager
 
 yarn jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.7.jar pi 4 100
 
+vim ./etc/hadoop/mapred-site.xml
 
+    <property>
+        <name>yarn.app.mapreduce.am.env</name>
+        <value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+    </property>
+    <property>
+        <name>mapreduce.map.env</name>
+        <value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+    </property>
+    <property>
+        <name>mapreduce.reduce.env</name>
+        <value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+    </property>
 
 vim word.txt
 hello me you he she
@@ -93,7 +106,7 @@ spark-shell
 
 
 ---
-- use root start/stop Hadoop 3.x
+## Hadoop 3.x
 - /etc/profile
 ```sh
 export HDFS_NAMENODE_USER=root
@@ -103,7 +116,10 @@ export YARN_RESOURCEMANAGER_USER=root
 export YARN_NODEMANAGER_USER=root
 
 ```
-
+---
+- jdk1.8含有javax.activation包，jdk-11移除了javax.activation包
+- https://jar-download.com/?search_box=javax.activation
+- `mv activation-1.1.1.jar ./share/hadoop/common/`
 
 ---
 ### protobuf

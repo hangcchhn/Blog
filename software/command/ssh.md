@@ -1,22 +1,16 @@
 
 ssh
 
-
-centos:
+- linux:openssh
+```sh
+# centos
 yum install openssh-server
 yum install openssh-client
 
-ubuntu:
+# ubuntu
 apt install openssh-server
 apt install openssh-client
-
-
-
-windows
-
-git bash
-
-
+```
 
 ---
 ## 远程控制
@@ -64,14 +58,18 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remote-ssh
 
 ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub root@192.168.10.202
 
-代替ssh-add手动在config文件中添加
-$env:USERPROFILE\.ssh\config
-Host 192.168.10.153
-    HostName 192.168.10.153
+
+- ~\.ssh\config
+```
+Host 192.168.10.202
+    HostName 192.168.10.202
     User root
     IdentityFile ~/.ssh/id_rsa-remote-ssh
-
-
+Host cent02
+    HostName cent02
+    User root
+    IdentityFile ~/.ssh/id_rsa-remote-ssh
+```
 ---
 
 windows LTSC 2019:PowerShell 非管理员运行

@@ -8,14 +8,9 @@
 docker
 ```sh
 
-docker pull cloudera/quickstart:latest
+docker pull cloudera/quickstart
 
-
-docker run --hostname=quickstart.cloudera --privileged=true -t -i \
-[OPTIONS] [IMAGE] /usr/bin/docker-quickstart
-
-
-docker run --hostname=quickstart.cloudera --privileged=true -t -i \
+docker run --hostname=quickstart.cloudera --privileged=true -t -i -d \
 -p 8888:8888 \
 -p 8020:8020 \
 -p 8022:8022 \
@@ -35,36 +30,24 @@ docker run --hostname=quickstart.cloudera --privileged=true -t -i \
 -p 19888:19888 \
 -p 7187:7187 \
 -p 11000:11000 \
---name cloudera cloudera/quickstart:latest /usr/bin/docker-quickstart
+--name cloudera-quickstart cloudera/quickstart /usr/bin/docker-quickstart
 ```
-
-- HUE:http://ip:8888
+- HUE:http://quickstart.cloudera:8888
     - username/password:cloudera/cloudera
 
-```sh
-docker exec -it cloudera /bin/bash
 
-
-/home/cloudera/cloudera-manager --express
-WARNING: It is highly recommended that you run Cloudera Express in a VM with at least 8 GB of RAM.
+```
+docker exec -it cloudera-quickstart /bin/bash
 
 sudo /home/cloudera/cloudera-manager --force --express
-
-
-# 时间同步
-service ntpd start
-
-
-
-
+sudo /home/cloudera/cloudera-manager --enterprise
 ```
 
 
-
-
-
-- Cloudera Manager:http://ip:7180
+- Cloudera Manager:http://quickstart.cloudera:7180
     - username/password:cloudera/cloudera
+
+
 
 ---
 | 组件 | 端口号 | 端口用途 |

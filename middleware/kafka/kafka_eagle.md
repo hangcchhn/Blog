@@ -3,38 +3,27 @@
 - efak(Eagle For Apache Kafka)
 
 ---
-
+- /etc/profile
 ```sh
 
-export JAVA_HOME=/usr/java/jdk-11.0.16
-export PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME=/opt/java/jdk1.8.0_202
+export PATH=$JAVA_HOME/bin:$PATH
 
-export KE_HOME=/usr/kafka_eagle/efak-web-3.0.0
-export PATH=$PATH:$KE_HOME/bin
-
-
-./bin/ke.sh start
-
+export KE_HOME=/opt/kafka-eagle/kafka-eagle-1.4.8
+export PATH=$KE_HOME/bin:$PATH
 
 ```
 
-- MySQL
-```sql
-create database ke;
-
-
-```
 - conf/system-config.properties
 ```ini
 # zookeeper
 efak.zk.cluster.alias=cluster1
-efak.zk.cluster.alias=cluster1
+kafka.eagle.zk.cluster.alias=cluster1
 
-cluster1
-
+cluster1.zk.list=localhost:2181
 
 ```
-
+---
 - kafka jmx:kafka-server-start.sh
 
 ```sh
@@ -44,5 +33,15 @@ if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
     # export KAFKA_HEAP_OPTS="-Xmx1G -Xms1G"
 fi
 
+```
+- MySQL
+```sql
+create database ke;
 
 ```
+
+
+---
+- `./bin/ke.sh start`
+- http://ip:8048/ke
+- admin/123456

@@ -2,12 +2,16 @@
 
 # Hadoop Cluster
 
-
+---
+- CPU:2-core
+- MEM:3072MB
+---
 - CentOS 7.x
 - java-11.0.9
 - scala-2.12.14
 - hadoop-3.0.3
 - spark-3.0.3
+
 ---
 - /etc/hosts
 ```
@@ -116,6 +120,9 @@ cent03
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
     </property>
+
+
+
 </configuration>
 
 ```
