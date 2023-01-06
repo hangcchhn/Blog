@@ -199,12 +199,31 @@ select timestampdiff(second, '2017-06-01 08:12:25', '2016-06-15 00:00:00');-- -3
 ```
 
 
-
+---
 ## oracle(inspur)
 ```sql
 
+
+
+-- 增|减n天
+select sysdate +|-n from dual;
+
+-- 增|减n个月
+select add_months(sysdate, +|-n) from dual;
+
+-- 相差n天，计算时、分、秒、毫秒相应增删乘数即可
+select to_number(sysdate - (sysdate - n)) * 24 * 60 * 60 * 1000 from dual;
+
+
+-- 下周几(下个星期几):week=1~7或Sunday~Saturday或Sun~Sat
+select next_day(sysdate, week) from dual;
+
+-- 当月最后一天
+select last_day(sysdate) from dual;
+
 -- 特殊写法：只支持yyyy-mm-dd格式日期
 select date'2000-01-01' from dual;
+
 
 -- 按格式将字符串和日期时间相互转换
 select to_date('2000-01-01 00:00:00', 'yyyy-mm-dd hh24:mi:ss') from dual;
@@ -237,6 +256,13 @@ select to_char(sysdate, 'cc') from dual;-- 世纪（年份前两位）
 select to_char(sysdate, 'q') from dual; -- 季度；春季为1
 
 
+
+
+
+```
+
+
+```sql
 select trunc(sysdate) from dual; -- 当天
 select trunc(sysdate, 'dd') from dual; --当天
 
@@ -251,6 +277,11 @@ select trunc(sysdate, 'y') from dual;-- 当年的第一天
 select trunc(sysdate, 'hh') from dual;-- yyyy-MM-dd HH:00:00
 select trunc(sysdate, 'mi') from dual;-- yyyy-MM-dd HH:mm:00
 
+-- 返回本周周一
+select trunc(sysdate, 'iw') from dual;  --Monday为每周第一天
+select trunc(sysdate, 'ww') from dual;  --当年1月1日为每周第一天
+select trunc(sysdate, 'w') from dual;   --当月1日为每周第一天
+
 -- trunc(数值（小数，正负数）)：保留整数，去掉小数
 -- trunc(数值（小数，正负数），位数（整数，正负数）)：直接截取，不四舍五入
 -- 位数为正数保留几位小数，位数为负数整数后几位使用0替换
@@ -258,33 +289,9 @@ select trunc(sysdate, 'mi') from dual;-- yyyy-MM-dd HH:mm:00
 -- 截取日期时间某个部分（yyyy|MM|dd|HH|mm|ss）
 select extract(year|month|day|hour|minute|second from sysdate) from dual;
 
-
-
--- 增|减n天
-select sysdate +|-n from dual;
-
--- 增|减n个月
-select add_months(sysdate, +|-n) from dual;
-
--- 相差n天，计算时、分、秒、毫秒相应增删乘数即可
-select to_number(sysdate - (sysdate - n)) * 24 * 60 * 60 * 1000 from dual;
-
-
--- 下周几（下个星期几）:week=1~7或Monday~Sunday或Mon~Sun
-select next_day(sysdate, week) from dual;
-
--- 当月最后一天
-select last_day(sysdate) from dual;
-
 ```
 
-
-```
-
-
-```
-
-
+---
 ## sqlserver(sybase)
 > 后续补充
 ```sql
@@ -292,7 +299,7 @@ select last_day(sysdate) from dual;
 
 ```
 
-
+---
 ## contrast
 > 对比
 
