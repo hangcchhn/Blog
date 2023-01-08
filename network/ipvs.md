@@ -68,15 +68,6 @@ vim/etc/sysctl.conf
 
 sysctl -p
 
-
-echo "1" > /proc/sys/net/ipv4/conf/lo/arp_ignore
-echo "2" > /proc/sys/net/ipv4/conf/lo/arp_announce
-echo "1" > /proc/sys/net/ipv4/conf/all/arp_ignore
-echo "2" > /proc/sys/net/ipv4/conf/all/arp_announce
-
-
-
-
 ```
 
 
@@ -85,6 +76,11 @@ echo "2" > /proc/sys/net/ipv4/conf/all/arp_announce
 
 - /etc/sysctl.conf
 ```conf
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.conf.all.arp_announce = 2
+net.ipv4.conf.ens33.arp_ignore = 1
+net.ipv4.conf.ens33.arp_announce = 2
+
 net.ipv4.ip_forward = 1
 net.ipv4.conf.all.send_redirects = 0
 net.ipv4.conf.default.send_redirects = 0
