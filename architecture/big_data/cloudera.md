@@ -31,6 +31,14 @@ docker run --hostname=quickstart.cloudera --privileged=true -t -i -d \
 -p 7187:7187 \
 -p 11000:11000 \
 --name cloudera-quickstart cloudera/quickstart /usr/bin/docker-quickstart
+
+
+docker run --hostname=quickstart.cloudera --privileged=true -tid -p 8888:8888
+--name cloudera-quickstart cloudera/quickstart /usr/bin/docker-quickstart
+
+
+
+cloudera/quickstart /bin/bash -c '/usr/bin/docker-quickstart && /home/cloudera/cloudera-manager --force --express && service ntpd start'
 ```
 - HUE:http://quickstart.cloudera:8888
     - username/password:cloudera/cloudera
