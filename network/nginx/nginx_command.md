@@ -7,7 +7,7 @@
 ```sh
 
 # 检查配置文件合法
-./sbin/nginx -t ./conf/nginx.conf
+./sbin/nginx -t -c ./conf/nginx.conf
 # 加载配置文件启动
 ./sbin/nginx -c ./conf/nginx.conf
 

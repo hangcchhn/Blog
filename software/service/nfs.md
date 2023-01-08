@@ -120,3 +120,11 @@ ls -la /opt/share
 
 
 ---
+
+```sh
+
+systemctl stop rpcbind.socket
+systemctl stop rpcbind
+systemctl stop nfs
+
+```

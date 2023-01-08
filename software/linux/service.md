@@ -4,7 +4,7 @@
 - /usr/lib/systemd/system/
 - /etc/lib/systemd/user/
 - /etc/systemd/system/
-
+- /etc/systemd/system/multi-user.target.wants/
 
 ---
 - .service
@@ -68,5 +68,7 @@ systemctl enable|disable ******|******.service
 
 systemctl list-unit-files
 systemctl list-units
+
+systemctl daemon-reload
 
 ```

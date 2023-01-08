@@ -11,12 +11,6 @@
 
 -
 - CentOS 6.10
-
-```sh
-cd /etc/sysconfig/network-scripts/
-```
-
-
 - ifcfg-eth0
 ```
 BOOTPROTO=dhcp|static
@@ -52,6 +46,16 @@ GATEWAY=192.168.10.2
 DNS1=8.8.8.8
 DNS2=114.114.114.114
 
+```
+
+---
+
+```sh
+# ens33
+vim /etc/sysconfig/network-scripts/ifcfg-ens33
+
+# reboot
+systemctl restart network
 ```
 
 

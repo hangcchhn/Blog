@@ -29,7 +29,8 @@ make
 --with-zlib=/chench/zlib-1.2.11 \
 --user=nginx --group=nginx
 
-./configure --prefix=/usr/nginx --with-http_ssl_module --with-stream
+./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-stream
+make && make install
 ```
 
 
