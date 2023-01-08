@@ -167,3 +167,53 @@ firewall-cmd --reload
 ```
 - 23:26:20 up 1 min,  2 users,  load average: 0.42, 0.24, 0.09
 - HH:mm:ss up 系统运行时间,  登录用户数量 users, load average: 最近1分钟, 5分钟, 15分钟的系统负载
+
+```
+
+---
+## 关机重启
+
+```sh
+# 关机
+halt
+shutdown -h now
+
+# 重启
+reboot
+shutdown -r now
+
+# 取消
+shutdown -c
+
+# 定时
+shutdown -h|-r n (单位分钟)
+shutdown -h|-r HH:mm
+shutdown -h|-r HH:mm:ss
+
+# 断电
+poweroff
+
+
+# 初始化
+init n
+# 0 - 停机
+# 1 - 单用户模式
+# 2 - 多用户，没有 NFS
+# 3 - 完全多用户模式(标准的运行级)
+# 4 – 系统保留的
+# 5 – X11 （x window)
+# 6 - 重新启动
+
+# 账户
+login:chench
+# 密码
+password:chench
+# 注销
+logout
+# 退出
+exit
+
+
+
+```
+
