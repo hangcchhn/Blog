@@ -103,13 +103,12 @@ virtual_server 192.168.10.183 80 {
 
 ```
 
-
----
-
-- popt
 ---
 
 ```sh
+ip addr
+# inet 192.168.10.183/32 scope global ens33
+# MASTER和BACKUP都有，防火墙配置问题
 
 # 开启防火墙
 systemctl start firewalld
@@ -121,3 +120,4 @@ iptables -A IN_public -p vrrp -j icmp
 iptables -nL
 
 ```
+---
