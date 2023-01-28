@@ -1,8 +1,13 @@
-# kafka
+# Kafka
 
+- 最初由Linkedin公司开发，后贡献给了Apache基金会成为顶级开源项目
+- 由Scala语言编写的分布式，支持分区，多副本的消息系统
+- 高吞吐、低延迟，高扩展性，高可用性
+
+---
 - cluster(集群)
 kafka通过zookeeper管理cluster中的broker
-- broker():一个cluster包含多个broker
+- broker(节点):一个cluster包含多个broker
     - leader:选举产生，producer和consumer只与leader交互
     - follower:从leader复制数据
         - pull:拉模式
@@ -59,3 +64,7 @@ kafka通过zookeeper管理cluster中的broker
 ---
 
 - kafka3.x放弃依赖zookeeper，使用kraft机制实现
+
+---
+
+- Kafka集群中节点Broker的选举Loader机制

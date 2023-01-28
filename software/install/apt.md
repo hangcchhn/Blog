@@ -1,4 +1,11 @@
+# apt
 
+```sh
+
+apt update && apt upgrade
+
+```
+---
 
 ```sh
 
@@ -16,3 +23,7 @@ apt show xxx
 
 
 ```
+
+
+---
+

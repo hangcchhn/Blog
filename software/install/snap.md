@@ -55,13 +55,20 @@ snap install sublime-text --classic
 snap install sublime-merge --classic
 
 
+```
+---
+
+- snap docker
+```
+
 snap install docker
 snap restart docker
 
 service snap.docker.dockerd status
 
-```
 
+
+```
 ---
 
 - error: cannot install "xxx": snap "core" has changes in progress
