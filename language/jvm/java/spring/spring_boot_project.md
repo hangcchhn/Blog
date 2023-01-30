@@ -1,6 +1,6 @@
 
 
-优先级
+## 优先级
 
 1. 根路径:`file:/`
 2. 类路径:`classpath:/`
@@ -14,10 +14,10 @@
 6. –classpath:/
 
 
-
-多个默认配置文件读取顺序
-
 ---
+
+## 多个默认配置文件读取顺序
+
 1. /config/application.properties
 2. /config/application.yml
 3. /application.properties
