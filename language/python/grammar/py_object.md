@@ -73,6 +73,7 @@ def function_name() -> return_type:
 
 var0 is var1:两个变量指向同一对象返回True
 var0 == var1:两个变量指向同一对象含有相同内容返回True
+id(var0) == id(var1):返回True不能说明是两个变量是同一对象
 
 克隆对象(集合属性的浅复制)
 is False
@@ -88,6 +89,7 @@ var1 = copy.copy(var0)  # 浅复制
 var2 = copy.deepcopy(var0)  # 深复制
 ```
 
+- 特别注意，赋值和切片都是浅复制
 
 ---
 ## str

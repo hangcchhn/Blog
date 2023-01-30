@@ -1,6 +1,7 @@
 # matplotlib
 > matlab plot library
 - 数据可视化，绘制图形，类似matlab
+- https://matplotlib.org/
 
 ```py
 import matplotlib as mpl
