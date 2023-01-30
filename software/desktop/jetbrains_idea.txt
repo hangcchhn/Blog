@@ -210,3 +210,4 @@ Java Method Breakpoints
 
 --------------------------------------------------------------------------------------------------
 
+Project -> Show Options Menu -> Compact Middle Packages
