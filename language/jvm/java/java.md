@@ -32,21 +32,5 @@
 
 
 
-- 基本数据类型
-    - boolean
-    - byte
-    - char
-    - int
-    - long
-    - float
-    - double
-    - complex
-
-- 衍生数据类型
-    - 类class
-    - 接口interface
-    - 枚举enum
-    - 注解:@interface
-
 
 

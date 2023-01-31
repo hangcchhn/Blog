@@ -12,10 +12,10 @@
 一个进程有一个或多个线程组成
 
 线程实现
-1.继承Thread类
-2.实现Runnable接口（无返回值）
-3.实现Callable接口（有返回值，返回值是Future接口）
---------------------------------------------------------------------------------------------------
+1. 继承Thread类
+2. 实现Runnable接口（无返回值）
+3. 实现Callable接口（有返回值，返回值是Future接口）
+---
 
 
 线程的六种状态：java.lang.Thread.State
@@ -44,7 +44,7 @@ LockSupport.unpark(Thread):TIMED_WAITING->RUNNABLE
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 ThreadPoolExecutor.execute():执行任务，无返回值
 ThreadPoolExecutor.sublime():提交任务，有返回值
@@ -73,7 +73,7 @@ ThreadPoolExecutor.sublime():提交任务，有返回值
     * 设置allowCoreThreadTimeout=true（默认false）时，核心线程会超时关闭
     * 如果allowCoreThreadTimeout=true，则会直到线程数量=0
 
-    
+
 6、rejectedExecutionHandler：任务拒绝处理器
     * 两种情况会拒绝处理任务：
         - 当线程数已经达到maxPoolSize，切队列已满，会拒绝新任务
@@ -109,7 +109,7 @@ corePoolSize：
     * rejectedExecutionHandler=AbortPolicy()
 
 
-        
 
---------------------------------------------------------------------------------------------------
+
+---
 

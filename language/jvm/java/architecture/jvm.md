@@ -1,15 +1,15 @@
 # JVM(Java Virtual Machine):Java虚拟机
----
 
+---
 - IBM J9 VM 绑定硬件  2019年开源  Eclipse OpenJ9
 - SUN HotSpot VM 2009年被oracle收购
 - BEA JRockit VM 2008年被oracle收购
 - oracle在jdk8版本完成将JRockit整合到HotSpot
 - JRockit最终版本R28，只支持到jdk6
 - JRockit是即时编译器——JIT(Just In Time) Complier
----
 
-## Class Loaded Subsystem:类加载子系统
+---
+## 一、Class Loaded Subsystem:类加载子系统
 - 一、Loading:加载
     - 1.Bootstrap Class Loader:引导类加载器
     - 2.Extension Class Loader:扩展类加载器
@@ -24,14 +24,12 @@
 
 
 ---
-
-
-## Runtime Data Area:运行时数据区
+## 二、Runtime Data Area:运行时数据区
 [Java内存模型](jmm.md)
 
 
 ---
-## 执行引擎
+## 三、执行引擎
 
 - JIT(Just-In-Time) Complier:即时编译器
 

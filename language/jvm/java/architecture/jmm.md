@@ -2,17 +2,18 @@
 
 ---
 
-## 线程私有:PC Register, JVM Stack, Native Method Stack
+## 一、线程私有:PC Register, JVM Stack, Native Method Stack
 
-### PC(Program Counter) Register:程序计数器(寄存器)
+---
+### 1.PC(Program Counter) Register:程序计数器(寄存器)
 保存下一条要执行的指令的地址
 当前线程正在执行的字节码文件中指令的行号
 如果正在执行的是native方法，那么程序计数器的值为undefined
 程序计数器是JVM中唯一不会出现OOM的区域
 
 
-
-### JVM(Java Virtual Machine) Stack:Java虚拟机栈(线程栈)
+---
+### 2.JVM(Java Virtual Machine) Stack:Java虚拟机栈(线程栈)
 俗称栈(Stack):有一个或多个栈帧(Stack Frame)组成
 每个方法在执行的同时都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法返回值等信息
 在线程中只有位于栈顶的帧才是有效的，称为当前栈帧，其对应的方法就是线程正在执行的，称为当前方法
@@ -21,17 +22,18 @@
 
 基本类型变量区、执行环境上下文、存储操作指令区
 
-
-### Native Method Stack:本地方法栈
+---
+### 3.Native Method Stack:本地方法栈
 使用C/C++语言实现的操作系统底层方法
 本地方法使用关键字native修饰的方法
 
 
 ---
 
-## 线程共享:Heap和Method Area
+## 二、线程共享:Heap和Method Area
 
-### Heap:堆
+---
+### 1.Heap:堆
 通过new关键字创建的对象使用Heap堆内存
 所有线程共享的
 有线程安全问题
@@ -64,8 +66,8 @@ Edem:From｜To Survivor=8:1
 参数-XX:NewRatio=2
 
 
-
-### Method Area:方法区
+---
+### 2.Method Area:方法区
 方法区只是一个概念，在不同jdk版本中实现方式不一样
 
 - jdk1.6:使用永久代实现方法区
