@@ -56,5 +56,27 @@ Runnable runnable = ()-> System.out.println("runnable");
 
 
 
+---
+## jdk1.9
 
 
+
+---
+
+## jdk-11
+
+
+- Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+
+```sh
+
+# -XX:+UseConcMarkSweepGC
+-XX:+UseG1GC
+
+```
+
+- Unrecognized VM option
+```sh
+# -XX:+UseCMSCompactAtFullCollection
+# -XX:+UseFastAccessorMethods
+```

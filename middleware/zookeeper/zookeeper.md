@@ -17,14 +17,14 @@
 - watch
 - version
 
-```
+```sh
 ./bin/zkCli.sh -server 127.0.0.1:2181
 [zk: 127.0.0.1:2181(CONNECTED) 0]
 
 ls=help
 ls /
 stat /
-ls2=ls+stat
+# ls2=ls+stat
 
 # 创建节点
 create [-e|s] path data [acl]

@@ -39,6 +39,7 @@ public class Job {
 
 - spring-boot 2.x集成quartz实现动态管理定时任务
 
+- pom.xml
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -46,6 +47,7 @@ public class Job {
 </dependency>
 
 ```
+- SchedulerService.java
 ```java
 @Service
 public class SchedulerService {
@@ -57,17 +59,6 @@ public class SchedulerService {
 
 ```
 
-
----
-## xxl-job
-
----
-
-## PowerJob
-
----
-
-## ScheduleX 2.0
 
 
 ---

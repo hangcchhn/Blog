@@ -69,19 +69,15 @@ server.tomcat.uri-encoding=UTF-8
 server.context-path=/xxx
 # spring boot >= 2.0
 server.servlet.context-path=/xxx
-```
----
-
 
 # 设置静态路径
 hn.cch.static-path=path
 spring.resources.static-locations=classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${hn.cch.static-path}/
 
+```
+- `org.springframework.boot.autoconfigure.web.ResourceProperties`
 
-`org.springframework.boot.autoconfigure.web.ResourceProperties`
-
-
-CLASSPATH_RESOURCE_LOCATIONS = {"classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/"}
+- `CLASSPATH_RESOURCE_LOCATIONS = {"classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/"}`
 
 ---
 
@@ -91,9 +87,11 @@ configuration.parameter=${ENVIRONMENT_VARIABLE:default_value}
 
 
 ---
-
-
+## 日志
+```ini
 logging.level.root=debug
+logging.
+
 logging.pattern.console=%d{HH:mm:ss.SSS} [%X{RequestId}] [%thread] %-5level %-36logger{36}%line - %msg%n
 
 
@@ -101,20 +99,16 @@ logging.pattern.file=%d{HH:mm:ss.SSS} [%X{RequestId}] [%thread] %-5level %-36log
 logging.path=/root/jenkins/project/spring_boot_security_rest/log
 logging.file=/root/jenkins/project/spring_boot_security_rest/log/spring_boot_security_rest.log
 
-
-logging.path 指定日志文件路径，默认日志文件名是 spring.log
-
-logging.file 配置需要指定日志文件绝对路径，相对路径指定在当前文件
-
-logging.path 和 logging.file 同时配置，只有 logging.file 生效
-
-
-建议使用logging.config=logback.xml通过logback配置文件设置日志
+```
+- logging.path 指定日志文件路径，默认日志文件名是 spring.log
+- logging.file 配置需要指定日志文件绝对路径，相对路径指定在当前文件
+- logging.path 和 logging.file 同时配置，只有 logging.file 生效
+- 建议使用logging.config=logback.xml通过logback配置文件设置日志
 
 
 ---
 
-程序启动执行接口
+## 程序启动执行接口
 
 - implements ApplicationRunner
 
