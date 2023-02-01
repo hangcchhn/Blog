@@ -41,6 +41,11 @@
 ```sh
 export GRAALVM_PATH=/opt/graalvm
 export PATH=$GRAALVM_PATH/bin:$PATH
+# gu
+export PATH=$GRAALVM_PATH/lib/installer/bin:$PATH
+# native-image
+export PATH=$GRAALVM_PATH/lib/svm/bin:$PATH
+
 
 ```
 
@@ -48,7 +53,7 @@ export PATH=$GRAALVM_PATH/bin:$PATH
 
 ```sh
 yum install gcc glibc-devel zlib-devel
-apt install build-essential libz-dev zlib1g-dev
+apt install build-essential zlib1g-dev
 
 
 # GraalVM Updater本地安装native-image

@@ -11,8 +11,10 @@ apt update && apt upgrade
 
 apt install xxx
 apt remove xxx
-apt remove --purge xxx
-apt autoremove xxx
+apt purge xxx
+apt autoremove
+
+
 
 apt update
 apt upgrade
@@ -27,3 +29,10 @@ apt show xxx
 
 ---
 
+
+```sh
+
+apt purge openjdk*
+
+
+```

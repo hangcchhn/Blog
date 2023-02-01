@@ -1,15 +1,15 @@
-# Install MySQL
+# MySQL install
 
 
 
 
-## CentOS MySQL Offline Install
+## CentOS 6.x install MySQL 5.x
 > centos 6.10 + mysql 5.7.9
 
 
 
 1. 卸载
-```
+```sh
 # 卸载系统自带的mysql及其依赖
 rpm -qa|grep mysql
 yum remove mysql-libs
@@ -22,15 +22,13 @@ rpm -qa|grep mariadb
 2. 下载
 
 
-- 下载链接：https://downloads.mysql.com/archives/community/
-- 选择版本：5.7.9和Linux
-- 下载软件：mysql-5.7.9-1.el6.x86_64.rpm-bundle.tar
+- 下载链接:https://downloads.mysql.com/archives/community/
+- 选择版本:5.7.9和Linux
+- 下载软件:mysql-5.7.9-1.el6.x86_64.rpm-bundle.tar
+- 解压:`tar -xvf mysql-5.7.9-1.el6.x86_64.rpm-bundle.tar`
 
-3. 解压
-`tar -xvf mysql-5.7.9-1.el6.x86_64.rpm-bundle.tar`
-
-3.安装
-```
+3. 安装
+```sh
 rpm -ivh mysql-community-common-5.7.9-1.el6.x86_64.rpm
 rpm -ivh mysql-community-libs-5.7.9-1.el6.x86_64.rpm
 rpm -ivh mysql-community-client-5.7.9-1.el6.x86_64.rpm
@@ -48,7 +46,8 @@ rpm -ivh mysql-community-libs-compat-5.7.9-1.el6.x86_64.rpm
 
 
 4. 启动
-```
+```sh
+# datadir
 rm -rf /var/lib/mysql/*
 
 sudo mysqld --initialize
@@ -61,20 +60,13 @@ service mysqld start
 ```
 
 
-5. 连接
 
-```
-mysql -u root -h 127.0.0.1 -p chench
-
-```
-
-
-
-## Ubuntu  MySQL Online Install
+---
+## Ubuntu install MySQL Online
 
 1. 安装和启动
 
-```
+```sh
 su root
 apt search mysql
 apt install mysql-server
@@ -83,7 +75,7 @@ service mysql start
 ```
 
 2. 用户和密码
-```
+```sh
 cat /etc/mysql/debian.cnf
 mysql -u debian-sys-maint -p
 
@@ -91,9 +83,9 @@ mysql -u debian-sys-maint -p
 ```
 
 
-## Docker Install MySQL Image
+## Docker install MySQL Image
 
-```
+```sh
 mysql-server_5.7.9-1ubuntu14.04_amd64.deb-bundle.tar
 
 tar -xvf mysql-server_5.7.9-1ubuntu14.04_amd64.deb-bundle.tar
@@ -117,7 +109,7 @@ docker run -it -p 33306:3306/tcp --expose 3306/tcp --name ubuntu_mysql cch/ubunt
 
 
 
-## Windows 10 Install MySQL 8
+## Windows 10 install MySQL 8.x
 
 
 > mysql-8.0.16-winx64.zip
@@ -162,16 +154,20 @@ net stop mysql
 ```
 
 
-CentOS
+## CentOS 7.x install MySQL 8.x
+-
 ```sh
 rpm -e | grep mysql
 rpm -e | grep mariadb
 
 ./bin/mysqld --initialize --user=root --basedir=/opt/mysql/mysql-8.0.16 --datadir=/opt/mysql/mysql-8.0.16/data
 
+# /etc/my.cnf
+./bin/mysqld --initialize --console --user=root
+
 vim /etc/my.cnf
 
-support-files/mysql.server start|stop|restart|status
+./support-files/mysql.server start|stop|restart|status
 
 
 ```

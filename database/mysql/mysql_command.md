@@ -3,7 +3,7 @@
 `mysql> command`
 
 ---
-## 新建用户
+## MySQL用户管理
 > 远程连接:`host=%`
 
 - 给每个数据库配置一个用户
@@ -19,7 +19,7 @@ flush privileges;
 ```
 
 ---
-## mysql8不支持创建用户与配置权限同时执行，需要把创建用户与配置权限分开
+## MySQL 8.x不支持创建用户与配置权限同时执行，需要把创建用户与配置权限分开
 
 ```sql
 -- 新建用户
@@ -30,7 +30,7 @@ alter user 'root'@'localhost' identified  by '******';
 drop user 'user_name'@'host_name';
 ```
 
-配置权限：
+- 配置权限
 ```sql
 show grants for 'user_name';
 grant all privileges on *.* to 'user_name'@'host_name' with grant option;
@@ -48,7 +48,7 @@ bind-address=0.0.0.0
 
 ---
 
-# 解决mysql密码过期问题
+## MySQL密码过期
 
 - 跳过授权表格（跳过安全登陆）
 - my.cnf|my.ini:
@@ -66,49 +66,17 @@ set password for 'root'@'localhost' = password('******');
 
 - 不同版本mysql修改密码
 ```sql
-use mysql;
 -- 插件plugin
-select user, host, plugin from user;
+select user, host, plugin from mysql.user;
 
 -- MySQL 5.x插件plugin=mysql_native_password
-alter user 'root'@'localhost' identified with mysql_native_password by 'chench';
+alter mysql.user 'root'@'localhost' identified with mysql_native_password by 'chench';
 
 -- MySQL 8.x插件plugin=caching_sha2_password
-alter user 'root'@'localhost' identified with caching_sha2_password by 'chench';
+alter mysql.user 'root'@'localhost' identified with caching_sha2_password by 'chench';
 ```
 
 - 由于SQLyog连接工具只支持mysql_native_password插件加密密码，建议MySQL 8.x修改用户插件mysql_native_password按MySQL 5.x方式
 
 
 
-
----
-
-
-
-```sh
-
-./bin/mysqld --defaults-file=/opt/mysql/mysql-8.0.16/my.cnf --initialize --console
-
-./bin/mysqld --defaults-file=/opt/mysql/mysql-8.0.16/my.cnf
-
-./bin/mysqld_safe --defaults-file=/opt/mysql/mysql-8.0.16/my.cnf
-
-
-./bin/mysql -S /opt/mysql/mysql-8.0.16/data/mysql.sock
-```
-
-
-```
-./bin/mysqladmin -S /opt/mysql/mysql-8.0.16/data/mysql.sock -u root -p shutdown
-
-
-# mysql 5.7.39
-./bin/mysqld --defaults-file=./etc/my.cnf --initialize --console
-
-./bin/mysqld --initialize --console
-
-./support-files/mysql.server start
-
-
-```
