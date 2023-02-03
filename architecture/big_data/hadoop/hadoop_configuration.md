@@ -167,6 +167,19 @@ ZKFC(ZooKeeper FailoverController)
         <name>yarn.resourcemanager.webapp.address</name>
         <value>0.0.0.0:8088</value>
     </property>
+    <!-- 关闭物理内存和虚拟内存的校验，默认开启，测试环境资源有限，避免任务因为资源意外终止 -->
+    <property>
+        <name>yarn.nodemanager.pmem-check-enabled</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.vmem-check-enabled</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>yarn.log.server.url</name>
+        <value>http://0.0.0.0:19888/jobhistory/logs</value>
+    </property>
 </configuration>
 ```
 ---

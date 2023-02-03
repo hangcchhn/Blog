@@ -1,51 +1,81 @@
 
 # Spark Cluster
 
+- [hadoop cluster](../hadoop/hadoop_cluster.md)
+
+---
+- ./conf/slaves
 ```sh
-192.168.10.201:master
-192.168.10.202:worker1
-192.168.10.203:worker2
+cent01
+cent02
+cent03
+```
 
+- spark-env.sh
+```sh
+export SPARK_MASTER_HOST=cent01
+export SPARK_MASTER_PORT=7077
+export SPARK_MASTER_WEBUI_PORT=8089
 
-cd ./conf
-cp workers.template workers
-vim workers
-192.168.10.201
-192.168.10.202
-192.168.10.203
-:wq
+export SPARK_WORKER_CORES=1
+export SPARK_WORKER_MEMORY=1g
 
-cp spark-env.sh.template spark-env.sh
-vim spark-env.sh
-SPARK_MASTER_HOST=192.168.10.201
-SPARK_MASTER_PORT=7077
+export JAVA_HOME=/opt/java/jdk-11.0.9
+export HADOOP_HOME=/opt/hadoop/hadoop-3.0.3
 
-SPARK_MASTER_WEBUI_PORT=8089
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
 
-SPARK_WORKER_CORES=1
-SPARK_WORKER_MEMORY=1g
+# 使用without-hadoop包时，必须添加SPARK_DIST_CLASSPATH配置
+export SPARK_DIST_CLASSPATH=$($HADOOP_HOME/bin/hadoop classpath)
+# 动态库
+export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native:$LD_LIBRARY_PATH
 
-JAVA_HOME=/usr/java/jdk1.8.0_202
-
-HADOOP_CONF_DIR=/usr/hadoop/hadoop-3.2.1/etc/hadoop
-YARN_CONF_DIR=/usr/hadoop/hadoop-3.2.1/etc/hadoop
-:wq
-
-scp -r workers spark-env.sh root@192.168.10.202:$PWD
-scp -r workers spark-env.sh root@192.168.10.203:$PWD
-
-sbin/start-all.sh
-
-http://192.168.10.201:8089
-
-./bin/spark-shell --master spark://192.168.10.201:7077
-
-http://192.168.10.201:4040
+# 历史服务
+export SPARK_HISTORY_OPTS="
+-Dspark.history.ui.port=18080
+-Dspark.history.fs.logDirectory=hdfs://cent01:9820/directory
+-Dspark.history.retainedApplications=30
+"
 
 ```
 
 
+```sh
+cd /opt/spark/spark-3.0.3/conf
+scp -r slaves spark-env.sh spark-defaults.conf root@cent02:$PWD
+scp -r slaves spark-env.sh spark-defaults.conf root@cent03:$PWD
+```
 
+- `./sbin/start-all.sh`
+    - http://cent01:8089
+
+- `./bin/spark-shell --master spark://cent01:7077`
+    - http://cent01:4040
+
+
+
+---
+## 历史服务
+- spark-defaults.conf
+```conf
+spark.master                     spark://cent01:7077
+spark.eventLog.enabled           true
+spark.eventLog.dir               hdfs://cent01:9820/directory
+spark.driver.memory              1g
+
+spark.yarn.historyServer.address=cent01:18080
+spark.history.ui.port=18080
+
+```
+```sh
+hdfs dfs -mkdir -p /directory
+mkdir -p /tmp/spark-events
+
+
+${SPARK_HOME}/sbin/start-history-server.sh
+```
+- http://cent01:18080
 
 ---
 ## 命令
@@ -66,38 +96,43 @@ http://192.168.10.201:4040
     - `./sbin/start-workers.sh`
     - `./sbin/stop-workers.sh`
 
+---
+- 执行方式
+    1. 直接编写代码即时运行:`./sbin/spark-shell --help`
+    2. 将代码打包提交到集群:`./sbin/spark-submit --help`
 
-- 代码执行方式
-    - 1.直接编写代码即时运行:`./sbin/spark-shell --help`
-    - 2.将代码打包提交到集群:`./sbin/spark-submit --help`
+
+---
+## Standalone部署代码提交发布模式：
 
 
+---
+## spark部署
+- Local模式
+- Standalone模式
+- Yarn模式
+```sh
+--master:local[*],spark://cent01:7077,yarn
+```
 
-- 代码提交模式：
-    - 1.client模式
-    ```sh
-    ${SPARK_HOME}/bin/spark-submit \
-    --master yarn  \
-    --deploy-mode client \
-    --driver-memory 512m \
-    --driver-cores 1 \
-    --executor-memory 512m \
-    --num-executors 2 \
-    --executor-cores 1 \
-    --class org.apache.spark.examples.SparkPi \
-    ${SPARK_HOME}/examples/jars/spark-examples_2.12-3.0.1.jar \
-    10
-    ```
+## spark执行
+1. client模式
+```sh
+# 使用client模式执行
+${SPARK_HOME}/bin/spark-submit \
+--master spark://cent01:7077 \
+# --deploy-mode client \
+--class org.apache.spark.examples.SparkPi \
+${SPARK_HOME}/examples/jars/spark-examples_2.12-3.0.3.jar \
+10
+```
 
-    - 2.cluster模式
-    ```sh
-    ${SPARK_HOME}/bin/spark-submit \
-    --master yarn \
-    --deploy-mode cluster \
-    --driver-memory 512m \
-    --executor-memory 512m \
-    --num-executors 1 \
-    --class org.apache.spark.examples.SparkPi \
-    ${SPARK_HOME}/examples/jars/spark-examples_2.12-3.0.1.jar \
-    10
-    ```
+2. cluster模式
+```sh
+${SPARK_HOME}/bin/spark-submit \
+--master spark://cent01:7077 \
+--deploy-mode cluster \
+--class org.apache.spark.examples.SparkPi \
+${SPARK_HOME}/examples/jars/spark-examples_2.12-3.0.3.jar \
+10
+```
