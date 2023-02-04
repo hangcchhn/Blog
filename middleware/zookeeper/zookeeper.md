@@ -31,7 +31,7 @@ create [-e|s] path data [acl]
 -e:临时节点
 -s:持久节点
 
-create /root/node/path 'data'
+create -s /root/node/path 'data'
 
 # 删除节点
 delete path

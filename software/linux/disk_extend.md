@@ -11,42 +11,47 @@
 
 ![](./disk_extend/fdisk_help.jpg)
 
-- `p -> n -> p -> enter -> enter -> p -> w`
+- `p -> n -> p -> enter -> enter -> enter -> p -> w`
 
 ![](./disk_extend/fdisk_command.jpg)
+
+- `reboot`
 
 ---
 
 ![](./disk_extend/vgdisplay_before.jpg)
-- `reboot`
+![](./disk_extend/pvdisplay_before.jpg)
+
 - `pvcreate /dev/sda3`
 - `vgextend centos /dev/sda3`
 
 ![](./disk_extend/create_extend.jpg)
+
 - PV(Physical Volume)
 - VG(Volume Group)
 
+![](./disk_extend/vgdisplay_after.jpg)
 
-![](./disk_extend/pvdisplay.jpg)
+![](./disk_extend/pvdisplay_after.jpg)
 
 
 ---
 
-
-- `Free PE               2559`
 - `lvextend -l+2559 /dev/mapper/centos-root`
+
 ![](./disk_extend/lvextend.jpg)
 
-![](./disk_extend/vgdisplay_after.jpg)
+
 
 ---
 - 查看文件系统格式:`cat /etc/fstab | grep centos-root`
+
 ![](./disk_extend/fstab.jpg)
 
-- `xfs_growfs /dev/mapper/centos-root`
+- CentOS 7.x:`xfs_growfs /dev/mapper/centos-root`
 
 ![](./disk_extend/xfs_growfs.jpg)
-`
+
 - CentOS 6.x:`resize2fs /dev/mapper/centos-root`
 
 

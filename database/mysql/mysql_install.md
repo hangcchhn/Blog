@@ -171,4 +171,29 @@ vim /etc/my.cnf
 
 
 ```
+- CentOS 7.x install MySQL 7.x
+- 系统重启删除/var/run/mysqld/（/var/run下的文件夹位于内存中）
 
+
+```
+
+
+
+```
+
+
+
+
+
+```sh
+
+# 安装时按配置初始化
+./bin/mysqld --defaults-file=./etc/my.cnf --initialize --console
+
+# /etc/my.cnf
+./bin/mysqld --initialize --console
+
+./support-files/mysql.server start
+
+
+```
