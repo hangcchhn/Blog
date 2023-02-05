@@ -23,29 +23,6 @@ scala> :help
 ```
 - :quit
 
----
-### 类型
-
-
-- Any:所有类型的基类
-    - AnyVal:数值类型的基类
-        - Int(默认整型):0
-        - Short
-        - Long
-        - Float
-        - Double(默认浮点型):0.0
-        - Byte
-        - Char
-        - Boolean:false
-        - Unit:void
-    - AnyRef:引用类型的基类
-        - String():null
-        - Array
-        - class
-        - object
-        - Null:null
-
-- Nothing
 
 
 
@@ -80,3 +57,9 @@ package hn.cch {
 ---
 ## case object
 > 样例对象
+
+---
+
+## akka
+- 基于Actor模型
+- 高并发，分布式

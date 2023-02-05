@@ -10,7 +10,7 @@
 - ./doc/db/tables_xxl_job.sql
 ```
 mysql> create database xxl_job;
-mysql> source ;
+mysql> source tables_xxl_job.sql;
 
 ```
 
@@ -37,6 +37,20 @@ spring.datasource.*
 - powerjob-server
 - powerjob-worker
 
+
+---
+```sh
+# powerjob-mysql.sql
+create database powerjob;
+
+mysql> source powerjob-mysql.sql;
+
+java -jar powerjob-worker-samples-xxx.jar
+
+java -jar powerjob-server-starter-xxx.jar
+```
+- http://ip:7700
+首页注册应用:powerjob-agent-test
 ---
 ## ElasticJob
 
@@ -51,7 +65,7 @@ spring.datasource.*
 
 ---
 
-- elastic-job-lite-ui:http://localhost:8088
+- elastic-job-lite-ui:http://ip:8088
     - username/password:root/root
 
 ---

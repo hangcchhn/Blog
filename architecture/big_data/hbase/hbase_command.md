@@ -20,7 +20,6 @@ list_namespace
 create_namespace 'n1'
 
 
-
 ```
 
 

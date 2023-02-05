@@ -48,15 +48,17 @@ mvn test
 
 
 
-mvn -Dmaven.test.skip=true cmd
+mvn package -Dmaven.test.skip=true
+mvn package -DskipTests
 
--DskipTests:不执行测试用例，但编译测试用例类生成相应的class文件至target/test-classes下
+mvn package '-Dmaven.test.skip=true'
+mvn package '-DskipTests'
 
--Dmaven.test.skip=true:不执行测试用例，也不编译测试用例类
-
-
+# -DskipTests:不执行测试用例，但编译测试用例类生成相应的class文件至target/test-classes下
+# -Dmaven.test.skip=true:不执行测试用例，也不编译测试用例类
 
 ```
+
 ## 项目发布
 ```sh
 # module_name 子模块名
