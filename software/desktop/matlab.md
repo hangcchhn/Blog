@@ -1,56 +1,58 @@
-
 # MATLAB
-
-R2014b
+> R2014b
 
 ---
-
+- 中文语言
+```matlab
 feature('locale')
 
 
-环境变量
+% 环境变量:英文翻译
+% MWLOCALE_TRANSLATED=OFF
 
-MWLOCALE_TRANSLATED
-OFF
 
-英文
-
+```
 ---
 
 
-cell
-%%
+- cell
+```matlab
+%% 单元格
+% 注释符
 
 
-
-%为注释符
-
-
-算术运算符
+- 算术运算符
 
 
+```
 
 
-
-关系运算符:~=(不等于)
-逻辑运算符:&&(与),||(或),~(非)
-
-系统特殊变量与常数:ans,inf,i,j,pi
+- 关系运算符:~=(不等于)
+- 逻辑运算符:&&(与),||(或),~(非)
+- 系统特殊变量与常数:ans,inf,i,j,pi
 
 
-常用命令
-...(代码续行)
-;(不回显结果)
-who ans     (显示变量简要结果)
-whos ans    (显示变量详细结果)
-clear       (清除当前workspace)
-clc         (清除当前command)
+- 常用命令
+```matlab
+% 代码续行
+...
+% 不回显结果
+;
+% 显示变量简要结果
+who ans
+% 显示变量详细结果
+whos ans
+% 清除当前workspace
+clear
+% 清除当前command
+clc
 
-display('显示函数')
+% 中文 字符 字符串 用单引号括起来 ''
+str = 'String'
 
-中文 字符 字符串 用单引号括起来 ''
----
-
+# 输入输出
+variable = input('prompt')
+display('variable' + variable)
 
 
 A = [a11,a12;a21;a22]
@@ -59,7 +61,7 @@ A(:,1) = [a11;a21]
 
 
 
-加减乘除
+% 加减乘除
 A + 2 = [a + 2]
 A - 2 = [a - 2]
 A * 2 = [a * 2]
@@ -69,25 +71,20 @@ A \ 2 = [2 / a]
 
 A.^B = power(a, b)
 
-转置B = A.'
 
+B = A.' % 转置:B=A^T
+```
 ---
-
-
-
-
-
-
 
 
 
 
 ---
 
-程序设计
+- 程序设计
+```matlab
 
-variable = input('prompt')
-
+% 判断
 if condition
 
 else
@@ -107,7 +104,7 @@ switch variable
 end
 
 
-
+% 循环
 for variable=start:step:stop
 
 end
@@ -118,12 +115,14 @@ while condition
 
 end
 
-
+```
 
 
 ---
 
-函数绘图
+- 函数绘图
+```matlab
+
 自变量=起始值:步长:终止值
 
 二维图形   y=plot(x)   plot(x,y)
@@ -163,21 +162,20 @@ subplot(m,n,p)
 罗盘图compass
 羽毛图feather
 
-
+```
 
 ---
 
 
-概率分布
+## 概率分布
 
-
-pdf：连续分布的密度函数｜离散分布的概率函数
-cdf：分布函数
-inv：逆概率分布函数
-rnd：随机数
-fit：参数的最大似然估计和置信区间
-stat：期望和方差
-like：负对数似然函数
+- pdf:连续分布的密度函数｜离散分布的概率函数
+- cdf:分布函数
+- inv:逆概率分布函数
+- rnd:随机数
+- fit:参数的最大似然估计和置信区间
+- stat:期望和方差
+- like:负对数似然函数
 
 
 
@@ -197,74 +195,80 @@ vpasolve()
 
 ---
 
-图形用户界面设计
-File->New>GUI
-控件：
+## 图形用户界面设计
+> File->New>GUI
 
-    弹出式菜单(Pop-up Menu)
-    按钮(Push Button)
-    开关(Toggle Button)
-    静态文本框(Static Text)
-    编辑文本框(Edit Text)
-    单选框(Radio Button)
-    复选框(Check Box)
-    滚动条(Slider)
-    列表框(Listbox)
-    坐标轴(Axes)
-    面板(Panel)
+### 控件:
 
-属性Property Inspector
-对齐Align Objects
-对象Object Browser
-菜单Menu Editor
-句柄(handle)
+- 弹出式菜单(Pop-up Menu)
+- 按钮(Push Button)
+- 开关(Toggle Button)
+- 静态文本框(Static Text)
+- 编辑文本框(Edit Text)
+- 单选框(Radio Button)
+- 复选框(Check Box)
+- 滚动条(Slider)
+- 列表框(Listbox)
+- 坐标轴(Axes)
+- 面板(Panel)
+---
+- 属性Property Inspector
+- 对齐Align Objects
+- 对象Object Browser
+- 菜单Menu Editor
+- 句柄(handle)
 
-图形层次
 
-图形函数
-    figure
-    newplot
-    axes
-    line
-    patch
-    surface
-    image
-    uicontrol
-    uimenu
 
-gcf
-gca
-gco
-gcbo
-delete
-findobj
+### 图形函数
+- figure
+- newplot
+- axes
+- line
+- patch
+- surface
+- image
+- uicontrol
+- uimenu
 
-句柄属性获取和设置
-get(handle,'PropertyName')
-set(handle,'PropertyName',value)
+---
+- gcf
+- gca
+- gco
+- gcbo
+- delete
+- findobj
 
-公用对话框
-文件选择对话框：[fname,pname]=uigetfile(ffilter,strTitle,x,y)
-颜色选择对话框：c=uisetcolor(h,strTitle)
-字体选择对话框：h_Font=uisetfont(h,strTitle)
-页面设置对话框：
+---
+- 句柄属性获取和设置
+    - get(handle,'PropertyName')
+    - set(handle,'PropertyName',value)
 
-警告与错误信息对话框：
-   warndlg({'WARNING:……','Try Again'},'Warning')
-   errordlg({'ERROE:……','Program Cancel'},'Error')
+## 公用对话框
+- 文件选择对话框:[fname,pname]=uigetfile(ffilter,strTitle,x,y)
+- 颜色选择对话框:c=uisetcolor(h,strTitle)
+- 字体选择对话框:h_Font=uisetfont(h,strTitle)
+- 页面设置对话框:
 
-简单帮助信息对话框：helpdlg()
+- 警告与错误信息对话框:
+    - warndlg({'WARNING:……','Try Again'},'Warning')
+    - errordlg({'ERROE:……','Program Cancel'},'Error')
+
+- 简单帮助信息对话框:helpdlg()
 
 
 
 
 ---
+## Visual Studio 2013 & MATLAB R2014b
+- MATLAB编写函数:function [ a ] = add()
+```matlab
+>> mbuild -setup
 
-mbuild -setup
+>> deploytool
 
-deploytool
-
-***.h,***.dll,***.lib
+```
+- 生成C++动态库:***.h,***.dll,***.lib
 
 ### 项目属性
 - VC++目录

@@ -59,9 +59,13 @@ Started Application in 2.112 seconds (JVM running for 4.462)
 
 ---
 
+- application.properties
 
 ```ini
-spring.application.name=xxx
+
+# 微服务名称配置不能使用下划线，正确配置如下：
+spring.application.name=service-name
+
 server.port=8080
 server.tomcat.uri-encoding=UTF-8
 
