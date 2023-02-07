@@ -30,14 +30,14 @@ import matplotlib.pyplot as plt
 
 ---
 ## color
-
+- RGBA:Red, Green, Blue, Alpha
 | 缩写 | 英文 |中文 |
 | :-: | :-: | :-: |
 | b | blue |  |
 | g | green |  |
 | r | red |  |
-| c | cyan |  |
-| m | magenta |  |
+| c | cyan | 青色 |
+| m | magenta | 紫红色 |
 | y | yellow |  |
 | k | black |  |
 | w | white |  |

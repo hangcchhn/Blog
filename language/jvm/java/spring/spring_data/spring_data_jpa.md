@@ -1,5 +1,5 @@
 
-spring data 
+# Spring Data JPA
 数据库持久层
 
 
@@ -13,10 +13,10 @@ JPA是SUN公司推出的一套基于ORM的规范，
 
 JPA依赖hibernate框架，hibernate框架是ORM框架，给JPA提供ORM实现
 
---------------------------------------------------------------------------------------------------
+---
 
 maven:pom.xml
-
+```xml
 <dependency>
     <groupId>org.springframework.data</groupId>
     <artifactId>spring-data-jpa</artifactId>
@@ -32,12 +32,12 @@ maven:pom.xml
     <artifactId>mysql-connector-java</artifactId>
     <version>5.1.6</version>
 </dependency>
-
---------------------------------------------------------------------------------------------------
+```
+---
 
 
 实体类中配置映射关系
-
+```java
 // 表名=类名
 @Entity
 @Table(name = "table_name")
@@ -53,13 +53,13 @@ public class TableClass implements Serializable {
     @Column(name = "column_name")
     private String columnField;
 }
+```
 
-
---------------------------------------------------------------------------------------------------
+---
 
 
 在maven工程的resources路径下创建一个名为META-INF的文件夹，在文件夹下创建一个名为persistence.xml的配置文件
-
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -89,10 +89,10 @@ public class TableClass implements Serializable {
         </properties>
     </persistence-unit>
 </persistence>
+```
+---
 
---------------------------------------------------------------------------------------------------
-
-
+```java
 EntityManagerFactory factory = Persistence.createEntityManagerFactory("springdata");
 EntityManager entityManager = factory.createEntityManager();
 EntityTransaction transaction = entityManager.getTransaction();
@@ -101,25 +101,26 @@ Article article = entityManager.find(Article.class, 1);
 //curd code
 transaction.commit();
 entityManager.close();
-
---------------------------------------------------------------------------------------------------
+```
+---
 
 
 EntityManagerFactory接口主要用来创建EntityManager实例
 EntityManagerFactory是一个线程安全的对象，并且其创建极其浪费资源，所以编程的时候要保持它是单例的。
 
 在JPA规范中,EntityManager是操作数据库的重要API，他是线程不安全的，需要保持线程独有。重要方法说明：
-    getTransaction: 获取事务对象
-    persist：保存操作
-    merge：更新操作
-    remove：删除操作
-    find/getReference：根据id查询
+- getTransaction: 获取事务对象
+- persist：保存操作
+- merge：更新操作
+- remove：删除操作
+- find/getReference：根据id查询
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 spring-boot:application.properties
+```ini
 # 设置数据库平台：指定数据库方言
 # spring.jpa.database=MySQL
 # spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
@@ -129,21 +130,21 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 # ddl创表语句：create或update
 spring.jpa.hibernate.ddl-auto=update
+```
 
 
 
 
 
+---
 
---------------------------------------------------------------------------------------------------
+- Repository
 
-Repository
+- CrudRepository
 
-CrudRepository
+- PagingAndSortingRepository
 
-PagingAndSortingRepository
-
-JpaRepository
+- JpaRepository
 
 
 Spring框架会使用JdkDynamicAopProxy为Repository接口生成一个代理对象
@@ -156,7 +157,7 @@ SpringData JPA底层还是用的JPA的API，
 SpringData JPA只是对标准JPA操作进行了些封装
 
 
---------------------------------------------------------------------------------------------------
+---
 方法命名规则查询
 
 
@@ -170,12 +171,12 @@ SpringData JPA只是对标准JPA操作进行了些封装
 
 
 
---------------------------------------------------------------------------------------------------
+---
+
+
+## JPQL(Java Persistence Query Language)
 
 复杂业务逻辑可以使用@Query注解，结合JPQL语句方式完成查询
-
-JPQL（Java Persistence Query Language）
-
 
 
 ?index表示按位置来确定参数

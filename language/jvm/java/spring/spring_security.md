@@ -1,6 +1,6 @@
 
 
-spring-security
+# Spring Security
 
 采用spring-aop
 基于servlet-filter
@@ -17,8 +17,8 @@ Using default security password: e1141ea7-ca8d-4213-8b48-257e9d9b1295
 
 
 
-web.xml:
-
+- web.xml:
+```xml
 <!--Spring Security过滤器链，注意过滤器名称必须叫springSecurityFilterChain-->
 <filter>
     <filter-name>springSecurityFilterChain</filter-name>
@@ -29,14 +29,14 @@ web.xml:
     <url-pattern>/*</url-pattern>
 </filter-mapping>
 
+```
 
 
 
+---
 
---------------------------------------------------------------------------------------------------
 
-
-Spring Security过滤器链
+## Spring Security过滤器链
 
 
 1. org.springframework.security.web.context.SecurityContextPersistenceFilter
@@ -53,13 +53,13 @@ Spring Security过滤器链
     如果不包含，则报错。起到防止csrf攻击的效果。
 5. org.springframework.security.web.authentication.logout.LogoutFilter
     匹配URL为/logout的请求，实现用户退出,清除认证信息。
-6. org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+6. org.springframework.security.web.authentication.**UsernamePasswordAuthenticationFilter**
     认证操作全靠这个过滤器，默认匹配URL为/login且必须为POST请求。
 7. org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter
     如果没有在配置文件中指定认证页面，则由该过滤器生成一个默认认证页面。
 8. org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter
     由此过滤器可以生产一个默认的退出登录页面
-9. org.springframework.security.web.authentication.www.BasicAuthenticationFilter
+9. org.springframework.security.web.authentication.www.**BasicAuthenticationFilter**
     此过滤器会自动解析HTTP请求中头部名字为Authentication，且以Basic开头的头信息。
 10. org.springframework.security.web.savedrequest.RequestCacheAwareFilter
     通过HttpSessionRequestCache内部维护了一个RequestCache，用于缓存HttpServletRequest
@@ -72,10 +72,10 @@ Spring Security过滤器链
     SecurityContextRepository限制同一用户开启多个会话的数量
 14. org.springframework.security.web.access.ExceptionTranslationFilter
     异常转换过滤器位于整个springSecurityFilterChain的后方，用来转换整个链路中出现的异常
-15. org.springframework.security.web.access.intercept.FilterSecurityInterceptor
+15. org.springframework.security.web.access.intercept.**FilterSecurityInterceptor**
     获取所配置资源访问的授权信息，根据SecurityContextHolder中存储的用户信息来决定其是否有权限。
 
---------------------------------------------------------------------------------------------------
+---
 
 
 
@@ -98,7 +98,7 @@ Spring Security过滤器链
 .failureForwardUrl("/error")//登录失败页面跳转
 
 
---------------------------------------------------------------------------------------------------
+---
 
 注解：
 
@@ -109,7 +109,7 @@ Spring Security过滤器链
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 RBAC（Role-Based Access Control ）基于角色的访问控制。
 用户user
@@ -133,4 +133,4 @@ RBAC（Role-Based Access Control ）基于角色的访问控制。
 
 
 
---------------------------------------------------------------------------------------------------
+---
