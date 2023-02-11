@@ -38,6 +38,12 @@
 
 ```
 
+---
+
+```sh
+
+./bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group group-name --topic topic-name:patition --reset-offsets –to-offset 1 --execute
+
 
 
 

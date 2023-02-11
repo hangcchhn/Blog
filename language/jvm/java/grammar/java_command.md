@@ -80,10 +80,16 @@ java -cp .:library.jar:execute.jar package.MainClass
 ---
 ## 启动参数
 
-VM Options:`-Darg=xxx`
+- VM Options:`-Dxxx=yyy`
+-
+Program arguments:`--xxx=yyy`
+```sh
+java -jar -Dxxx=yyy xxx.jar --xxx=yyy
 
-```
-java -jar xxx.jar -Darg=xxx
+# Spring Boot Jar
+
+java -jar
+
 ```
 ---
 ## 远程调试

@@ -79,6 +79,14 @@ logging.file=/root/jenkins/project/spring_boot_security_rest/log/spring_boot_sec
 - logging.path 和 logging.file 同时配置，只有 logging.file 生效
 - 建议使用logging.config=logback.xml通过logback配置文件设置日志
 
+```ini
+# spring boot >
+loging.file.path=
+loging.file.name=
+
+
+
+```
 
 ---
 

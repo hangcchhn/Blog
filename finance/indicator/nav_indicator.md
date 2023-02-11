@@ -69,14 +69,13 @@ MaximumDrawdown = max(max(
     \frac{CNAV_i - CNAV_{i+j}}{CNAV_i}
 ),0)
 $$
-
-- 计算时刻i之后的最小累计净值
+- 假设时刻i是最大累积净值，计算时刻i之后的最小累计净值
 $$
-minNAV_i = min(CNAV_{i + 1}, CNAV_N)
+minCNAV_i = min(CNAV_{i + 1}, CNAV_N)
 $$
 - 计算起始时刻i的最小收益率
 $$
-MinimunReturn_i = minNAV_i / CNAV_i - 1
+MinimunReturn_i = minCNAV_i / CNAV_i - 1
 $$
 - 取起始时刻在区间中的最小收益率中的最小值为区间的最大回撤
 $$

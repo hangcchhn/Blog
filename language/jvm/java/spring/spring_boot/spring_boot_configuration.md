@@ -1,33 +1,13 @@
 # Spring Boot配置
 
 
-1. 根路径:`file:/`
+1. 根路径:`file:./`
 2. 类路径:`classpath:/`
 
 ---
-
-## 配置文件优先级
-
-1. file:/
-2. classpath:/
-3. –file:./config/
-4. –file:./
-5. –classpath:/config/
-6. –classpath:/
-
-
----
-
-## 多个默认配置文件读取顺序
-
-1. /config/application.properties
-2. /config/application.yml
-3. /application.properties
-4. /application.yml
-5. /src/main/resources/config/application.properties
-6. /src/main/resources/config/application.yml
-7. /src/main/resources/application.properties
-8. /src/main/resources/application.yml
+## 默认配置文件读取顺序
+- .properties > .yml
+- ./config/ >  ./
 
 ---
 
