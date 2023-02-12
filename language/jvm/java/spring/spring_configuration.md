@@ -1,4 +1,4 @@
-# spring配置
+# Spring配置
 
 
 - XML文件配置
@@ -58,14 +58,14 @@ String[] locations() default {};
 
 ---
 ## 省略service层使controller层直接调用mapper层
-- spring:applicationContext.xml
+- Spring:applicationContext.xml
 ```xml
 <context:component-scan base-package="hn.cch">
     <context:include-filter type="annotation" expression="hn.cch.controller"/>
     <context:exclude-filter type="annotation" expression="hn.cch.service"/>
 </context:component-scan>
 ```
-- spring-mvc:dispatcher-config.xml
+- Spring MVC:dispatcher-config.xml
 ```xml
 <context:component-scan base-package="hn.cch">
     <context:include-filter type="annotation" expression="hn.cch.controller"/>

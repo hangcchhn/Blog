@@ -1,14 +1,36 @@
-# spring-boot
+# Spring Boot
 
 
 
 ---
-- spring boot embedded server
+## 内置的服务器
+> embedded server
 
+- Tomcat:默认
+- Undertow:比Tomcat强
 - Jetty
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <exclusions>
+    <exclusion>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+    </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jetty</artifactId>
+</dependency>
+
+
+```
+
 - Netty
-- Tomcat
-- Undertow
+
 
 
 - spring webmvc tomcat servlet
@@ -33,16 +55,7 @@ Started Application in 2.112 seconds (JVM running for 4.462)
 
 ```ini
 
-# 微服务名称配置不能使用下划线，正确配置如下：
-spring.application.name=service-name
 
-server.port=8080
-server.tomcat.uri-encoding=UTF-8
-
-# spring boot < 2.0
-server.context-path=/xxx
-# spring boot >= 2.0
-server.servlet.context-path=/xxx
 
 # 设置静态路径
 hn.cch.static-path=path
@@ -62,31 +75,44 @@ configuration.parameter=${ENVIRONMENT_VARIABLE:default_value}
 
 ---
 ## 日志
+- 默认日志文件名是 spring.log
 ```ini
 logging.level.root=debug
-logging.
+
 
 logging.pattern.console=%d{HH:mm:ss.SSS} [%X{RequestId}] [%thread] %-5level %-36logger{36}%line - %msg%n
-
-
 logging.pattern.file=%d{HH:mm:ss.SSS} [%X{RequestId}] [%thread] %-5level %-36logger{36}%line - %msg%n
+
+
 logging.path=/root/jenkins/project/spring_boot_security_rest/log
 logging.file=/root/jenkins/project/spring_boot_security_rest/log/spring_boot_security_rest.log
 
-```
-- logging.path 指定日志文件路径，默认日志文件名是 spring.log
-- logging.file 配置需要指定日志文件绝对路径，相对路径指定在当前文件
-- logging.path 和 logging.file 同时配置，只有 logging.file 生效
-- 建议使用logging.config=logback.xml通过logback配置文件设置日志
 
-```ini
-# spring boot >
+
+# Spring Boot < 2.2.0
+logging.path=
+logging.file=
+# Spring Boot >= 2.2.0
 loging.file.path=
 loging.file.name=
 
 
+```
+- logging.path 指定日志文件路径，
+- logging.file 配置需要指定日志文件绝对路径，相对路径指定在当前文件
+- logging.path 和 logging.file 同时配置，只有 logging.file 生效
+
+```ini
+
+logging.config=logback.xml
+# logging.config=logback-local.xml
 
 ```
+
+- logback.xml
+
+- 建议使用logging.config=logback.xml通过logback配置文件设置日志
+
 
 ---
 

@@ -27,6 +27,8 @@ set "CATALINA_HOME=C:\ProgramFiles\Tomcat\apache-tomcat-6.0.53"
 ```
 
 ---
+
+```sh
 日志备份
 cp catalina.out catalina.bak
 echo -n  "" > catalina.out
@@ -35,9 +37,9 @@ echo -n  "" > catalina.out
 cp /dev/null catalina.out
 
 
-查看版本
+# 查看版本
 ./bin/version.sh
-
+```
 
 
 
@@ -72,7 +74,7 @@ echo 'startup tomcat'
 
 
 tomcat role user
-conf/tomcat-users.xml:
+- conf/tomcat-users.xml:
 ```xml
 <tomcat-users>
     <role rolename="manager-gui"/>
@@ -87,33 +89,34 @@ conf/tomcat-users.xml:
 
 
 ---
-java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+- java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
 
-url中的特殊字符需要进行编码
-    %20
-#   %23
-%   %25
-&   %26
-+   %2B
-.   %2E
-/   %2F
-:   %3A
-=   %3D
-?   %3F
-\   %5C
-
-
-可以使用JavaScript中的encodeURIComponent('HTTP://www.xxx.com/')函数。
-
-使用Post方法提交数据
+- 网址中的特殊字符需要进行编码
+| 字符 | 编码 |
+| :-: | :-: |
+|   | %20 |
+| # | %23 |
+| % | %25 |
+| & | %26 |
+| + | %2B |
+| . | %2E |
+| / | %2F |
+| : | %3A |
+| = | %3D |
+| ? | %3F |
+| \ | %5C |
 
 
-conf/catalina.properties
+- 可以使用JavaScript中的encodeURIComponent('HTTP://www.xxx.com/')函数。
+
+- 可以使用POST方法提交数据
+
+
+- conf/catalina.properties
 org.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true
 
 ---
-## tomcat
-> utf-8
+## 乱码问题
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
@@ -123,23 +126,20 @@ org.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true
 
 - conf/server.xml
 ```xml
-<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="utf-8" />
 ```
 ---
 
-## 在idea中配置tomcat
-> win系统
-
-### 处理控制台乱码问题
+- 在windows系统中使用idea配置tomcat:处理控制台的乱码问题
 
 - bin/catalina.bat
 ```bat
-set "JAVA_OPTS=%JAVA_OPTS% %JSSE_OPTS% -Dfile.encoding=UTF-8"
+set "JAVA_OPTS=%JAVA_OPTS% %JSSE_OPTS% -Dfile.encoding=utf-8"
 ```
 
 - bin/idea.exe.vmoptions
 ```
--Dfile.encoding=UTF-8
+-Dfile.encoding=utf-8
 ```
 
 ---

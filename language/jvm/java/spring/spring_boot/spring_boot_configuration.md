@@ -3,6 +3,7 @@
 
 1. 根路径:`file:./`
 2. 类路径:`classpath:/`
+3. 包路径:`classpath*:/`
 
 ---
 ## 默认配置文件读取顺序
@@ -53,3 +54,57 @@ spring.config.location=classpath:/,classpath:/config/,file:./,file:./config/
 
 - `-Dspring.config.additional-location=`
 用法同上，效果时在原有的配置文件基础上加上额外的配置文件
+
+
+
+---
+- application.properties
+
+```ini
+
+
+# 关闭启动SpringBoot标志显示
+spring.main.banner-mode=off
+
+# 微服务名称配置不能使用下划线，可以使用减号代替
+spring.application.name=service-name
+
+# 端口
+server.port=8080
+# 前缀
+# Spring Boot < 2.0
+server.context-path=/xxx
+# Spring Boot >= 2.0
+server.servlet.context-path=/xxx
+
+```
+---
+
+- Parameter.java
+```java
+
+@Component
+@ConfigurationPorperties(prefix = "parameter")
+public class Parameter {
+
+    private String field;
+
+    private String[] array;
+
+}
+
+
+
+```
+
+- application.yml
+
+```yaml
+
+parameter:
+    field: value
+    array:
+        - item0
+        - item1
+
+```

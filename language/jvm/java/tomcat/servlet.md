@@ -1,7 +1,5 @@
 # servlet
-java
-maven
-tomcat
+
 
 
 ---

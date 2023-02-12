@@ -9,8 +9,6 @@
 
 
 ---
-## spring EL 表达式
-
 
 
 ---
@@ -36,6 +34,6 @@ afterAccess()
 默认关闭限流机制即concurrencyLimit=-1，当关闭情况下会不断创建新的线程来处理任务
 
 
-spring-boot推荐使用ThreadPoolTaskExecutor，
+spring-boot推荐使用ThreadPoolTaskExecutor
 
 
