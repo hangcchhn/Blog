@@ -2,13 +2,14 @@
 
 
 1. 根路径:`file:./`
-2. 类路径:`classpath:/`
+2. 类路径:`classpath:./`
 3. 包路径:`classpath*:/`
 
 ---
 ## 默认配置文件读取顺序
 - .properties > .yml
 - ./config/ >  ./
+- file:./ > classpath:./
 
 ---
 

@@ -1,4 +1,4 @@
-# database
+# DataBase
 > 数据库
 
 
@@ -8,7 +8,7 @@
 - SQL Server
 - PostgreSQL
 - SQLite
-- H2
+
 
 
 ## 非关系型数据库

@@ -109,12 +109,12 @@ windows cmd  findstr ""   =  linux bash grep ""
 
 
 
-netstat -ano|findstr "8080"
+netstat -ano | findstr "port"
 
-tasklist|findstr "2020"
+tasklist | findstr "pid"
 
 taskkill /f /t /im java.exe
-
+taskkill /f /t /pid "pid"
 
 --------------------------------------------------------------------------------------------------
 

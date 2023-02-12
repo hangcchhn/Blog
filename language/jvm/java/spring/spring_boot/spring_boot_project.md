@@ -31,4 +31,101 @@ public class Application {
 ```
 
 ---
+- ApplicationTest.java
+- Spring Boot < 2.2.0
+```java
+
+// @RunWith(SpringJUnit4ClassRunner.class)
+// @ContextConfiguration(classes = Application.class)
+@SpringBootTest
+public class ApplicationTest {
+
+    @Test
+    public void test() {
+        // code
+    }
+}
+
+
+
+@AutoConfigureMockMvc
+@SpringBootTest
+public class Test {
+
+    @Test
+    public void test(@Autowired MockMvc mvc) {
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/path");
+        ResultActions actions = mvc.perform(builder);
+
+        StatusResultMatchers status = MockMvcResultMatchers.status();
+        ResultMatcher matcher = status.isOk();
+
+
+        ContentResultMatchers content = MockMvcResultMatchers.content();
+        ResultMatcher matcher = content.json("{\"id\":1}");
+
+        HeaderResultMatchers header = MockMvcResultMatchers.header();
+        ResultMatcher matcher = header.string("Content-Type", "application/json");
+
+        actions.andExpect(matcher);
+
+
+    }
+
+}
+```
+
+
+
+---
+## 打包执行
+
+```xml
+
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+
+```
+
+
+- xxx.jar
+    - META-INF
+        - MANIFEST.MF
+    - BOOT-INF
+        - classes
+        - lib
+    - org
+        - springframework
+            - boot
+                - loader
+                    - JarLauncher.class
+
+---
+
+- MANIFEST.MF
+```
+Manifest-Version: 1.0
+Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
+Implementation-Title: spring-boot-start
+Implementation-Version: 1.0-SNAPSHOT
+Spring-Boot-Layers-Index: BOOT-INF/layers.idx
+Start-Class: package.Application
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Build-Jdk-Spec: 1.8
+Spring-Boot-Version: 2.5.4
+Created-By: Maven Jar Plugin 3.2.0
+Main-Class: org.springframework.boot.loader.JarLauncher
+
+
+```
+
+
 

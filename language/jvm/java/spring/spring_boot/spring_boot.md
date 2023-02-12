@@ -77,15 +77,14 @@ configuration.parameter=${ENVIRONMENT_VARIABLE:default_value}
 ## 日志
 - 默认日志文件名是 spring.log
 ```ini
+
 logging.level.root=debug
+logging.level.package=warn
+logging.group.package=info
 
 
 logging.pattern.console=%d{HH:mm:ss.SSS} [%X{RequestId}] [%thread] %-5level %-36logger{36}%line - %msg%n
 logging.pattern.file=%d{HH:mm:ss.SSS} [%X{RequestId}] [%thread] %-5level %-36logger{36}%line - %msg%n
-
-
-logging.path=/root/jenkins/project/spring_boot_security_rest/log
-logging.file=/root/jenkins/project/spring_boot_security_rest/log/spring_boot_security_rest.log
 
 
 
@@ -107,6 +106,8 @@ loging.file.name=
 logging.config=logback.xml
 # logging.config=logback-local.xml
 
+logging.logback.
+
 ```
 
 - logback.xml
@@ -124,3 +125,19 @@ logging.config=logback.xml
 
 
 ---
+
+- 校验
+```xml
+
+<dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator</artifactId>
+</dependency>
+
+
+```
