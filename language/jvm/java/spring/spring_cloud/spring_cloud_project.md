@@ -19,3 +19,37 @@
 
 
 ```
+
+---
+## 远程调用
+- RestTemplate
+```java
+@RestController
+public class ConsumerController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Bean
+    public RestTemplate restTemplate() {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate;
+    }
+
+    @Value(value = "${service.provider.url}")
+    private String serviceProviderUrl;
+
+    @GetMapping(value = "/{id}")
+    public Result getById(@PathVariable Long id) {
+        return restTemplate.getForObject(serviceProviderUrl + id, Result.class);
+    }
+
+
+
+}
+
+
+```
+
+
+---

@@ -18,26 +18,28 @@
 | 2.6.x | 2020.0.0|
 | 2.7.x | 2021.0.3|
 | 3.0.x | 2020.0.0|
+
+
 ---
-
-
-- NetFlix:Spring Cloud 1.x
+---
+## NetFlix:Spring Cloud 1.x
     - Eureka
     - Ribbon
     - Hystrix
     - Zuul
 
-- Alibaba:Spring Cloud 2.x
-    - Nacos
-    - Sentienl
-    - Seata
+---
+## Alibaba:Spring Cloud 2.x
+    - Nacos:注册中心，配置中心
+    - Sentienl:限流
+    - Seata:分布式事务
 
 
 
 
 
 ---
-
+## 组件
 - Spring Cloud Config
 - Spring Cloud Bus
 - Spring Cloud Ribbon
@@ -49,13 +51,29 @@
 
 - Skywalking
 
-
+### 远程调用
 - OpenFeign
 
-
+### 链路监控
 - Zipkin
 - Sleuth
+
+### 流量控制
 - Hystix:
+
+
+
+## Consul
+> 注册中心
+
+
+## Sleuth
+> 链路追踪
+
+
+## Zipkin
+> 收集时间维度数据
+
 
 
 
