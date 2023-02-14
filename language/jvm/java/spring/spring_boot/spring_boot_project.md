@@ -127,5 +127,25 @@ Main-Class: org.springframework.boot.loader.JarLauncher
 
 ```
 
+---
+## 使用Maven构建的Spring Boot项目读取src/java/resource下文件
 
 
+```java
+
+@Service
+public class FileServiceImpl implements FileService {
+
+    @Autowired
+    ResourceLoader resourceLoader;
+
+    public void getFile() {
+        Resource resource = resourceLoader.getResource("classpath:/static/xxx");
+
+        ClassPathResource classPathResource = new ClassPathResource("/static/xxx");
+    }
+}
+
+```
+
+- 使用File或ResourceUtils无法读取jar内文件
