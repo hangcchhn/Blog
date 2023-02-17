@@ -86,10 +86,6 @@ Program arguments:`--xxx=yyy`
 ```sh
 java -jar -Dxxx=yyy xxx.jar --xxx=yyy
 
-# Spring Boot Jar
-
-java -jar
-
 ```
 ---
 ## 远程调试

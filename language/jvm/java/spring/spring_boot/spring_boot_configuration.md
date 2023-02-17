@@ -16,7 +16,12 @@
 
 ## 不同环境使用不同配置文件
 
-1. 在启动程序命令中加上激活配置文件参数:-Dspring.profiles.active=develop
+1. 在启动程序命令中加上激活配置文件参数
+```sh
+java -jar -Dspring.profiles.active=develop xxx.jar
+java -jar xxx.jar --spring.profiles.active=develop
+
+```
 2. 在默认配置文件中加上激活配置文件参数:spring.profiles.active=release
 3. 在默认配置文件中加上包含配置文件参数:spring.profiles.include=dev1,dev2
 

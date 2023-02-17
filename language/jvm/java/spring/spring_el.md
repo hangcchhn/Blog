@@ -8,7 +8,7 @@
 ---
 - `ExpressionParser`
 ---
-- `@Value("")`
+- `@Value("#{}")`
 ```java
 
 public class Class() {
@@ -54,11 +54,18 @@ public class Class() {
 
 
 
+
+```
+
+
+---
+- 读取配置文件:`@Value("${}")`
+```java
 // 配置文件
 @Configuration(value = "parameter.properties")
 public class ParameterConfiguration {
 
-    @Value(value = "#{package.parameter:defaulte}")
+    @Value(value = "${package.parameter:defaulte}")
     private String value;
 }
 
