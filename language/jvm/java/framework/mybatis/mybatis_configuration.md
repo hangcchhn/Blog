@@ -1,6 +1,4 @@
-# MyBatis config
-> MyBatis配置
-
+# MyBatis配置
 
 ## mybatis框架单独使用的配置文件
 - mybatis-config.xml:

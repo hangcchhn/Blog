@@ -58,22 +58,31 @@ skip-grant-tables
 ```
 - 重启MySQL服务
 ```sql
+-- 插件plugin
+select user, host, plugin from mysql.user;
+
+update user set password=password('chench') where user='root' and host='localhost';
+
 update mysql.user set authentication_string=password('chench') where user='root';
 
-set password for 'root'@'localhost' = password('******');
+set password for 'root'@'localhost' = password('chench');
+
+
+
+
 ```
 
 
 - 不同版本mysql修改密码
 ```sql
--- 插件plugin
-select user, host, plugin from mysql.user;
+-- 切换数据库
+use mysql;
 
 -- MySQL 5.x插件plugin=mysql_native_password
-alter mysql.user 'root'@'localhost' identified with mysql_native_password by 'chench';
+alter user 'root'@'localhost' identified with mysql_native_password by 'chench';
 
 -- MySQL 8.x插件plugin=caching_sha2_password
-alter mysql.user 'root'@'localhost' identified with caching_sha2_password by 'chench';
+alter user 'root'@'localhost' identified with caching_sha2_password by 'chench';
 ```
 
 - 由于SQLyog连接工具只支持mysql_native_password插件加密密码，建议MySQL 8.x修改用户插件mysql_native_password按MySQL 5.x方式
