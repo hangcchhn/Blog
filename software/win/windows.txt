@@ -228,22 +228,6 @@ sublime merge
 
 
 
---------------------------------------------------------------------------------------------------
-
-windows 11
-
-TPM 2.0
-
-
-vmware 16
-
-
-visual studio 2022
-x64
-
-visual studio code
-
-PowerToys
 
 
 

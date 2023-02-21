@@ -1,6 +1,6 @@
 
 列出所有容器版本
-wsl.exe --help
+wsl --help
 
 --list
     --quiet 名称信息
@@ -10,7 +10,7 @@ wsl.exe --help
 
     
 
-wsl.exe -l -v
+wsl -l -v
 
 
 
@@ -18,8 +18,19 @@ wsl.exe -l -v
 * Ubuntu                 Running         1
 
 
-升级指定容器版本
-wsl.exe --set-version Ubuntu 2
+指定容器版本
+wsl --set-version Ubuntu 2
 
 升级默认容器版本
-wsl.exe --set-default-version 2
+wsl --set-default-version 2
+
+默认分发
+wsl --set-default Ubuntu
+
+wsl --status
+wsl --update
+
+
+wsl --list --online
+
+wsl --install --distribution Ubuntu
