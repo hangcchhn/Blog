@@ -77,7 +77,17 @@ cscript ospp.vbs /sethst:kms.03k.org
 cscript ospp.vbs /act
 cscript ospp.vbs /dstatus
 
+office 2021
+cmd
 
+for /f %x in ('dir /b ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%x"
+
+cd "C:\Program Files\Microsoft Office\Office16"
+cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+cscript ospp.vbs /unpkey:6F7TH >nul
+cscript ospp.vbs /sethst:s8.uk.to
+cscript ospp.vbs /setprt:1688
+cscript ospp.vbs /act
 
 --------------------------------------------------------------------------------------------------
 

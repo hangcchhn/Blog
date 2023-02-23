@@ -1,7 +1,10 @@
 # PowerShell
 
 ---
+```powershell
+# 注释
 
+```
 
 
 
@@ -30,7 +33,8 @@ Set-Service -Name sshd -StartupType 'Automatic'
 
 ## Windows LTSC
 
-```
+```powershell
+# 添加应用
 Add-AppxPackage -Path xxx.appx
 Add-AppxPackage ./xxx.msixbundle
 
@@ -44,8 +48,3 @@ Get-Help
 查找命令所在位置
 Get-Command ssh
 
-
----
-
-- PowerShell Hyper-V
-bcdedit /set hypervisorlaunchtype off
