@@ -73,9 +73,22 @@ col[umn]
 - varchar2:存放变长字符数据(max length=4000byte）
 
 
-- Oracle的clob 转 Java的string 需要使用to_char()函数
+- Oracle的clob 转 Java的String 需要使用to_char()函数
 
+- number格式化
+```sql
+-- 9作用是整数补空格和小数补0，
+-- fm去掉9整数空格和小数0
+-- 0作用是填充0，超过指定格式长度则返回#
+-- 不带fm返回的数据第一位永远是空格，且不占指定格式的位数
+select to_char(666332/3, '999,990.99') from dual;
 
+select to_char(1/2,'9.99') from dual; -- '  .50'
+select to_char(1/2,'0.00') from dual; -- ' 0.50'
+select to_char(1/2,'fm0.00') from dual; -- '0.50'
+select to_char(1/2,'fm0.99') from dual; -- '0.5'
+
+```
 
 ---
 - 聚合函数会过滤null值

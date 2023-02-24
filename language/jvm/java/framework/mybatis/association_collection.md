@@ -108,7 +108,7 @@ public class Teacher {
 
 ---
 ## 集合属性（一对多关心）使用`collection`标签
-    - `ofType`：指定集合元素类型
+- `ofType`：指定集合元素类型
 - TeacherMapper
 ```xml
 <resultMap id="teacherMap" type="xxx.entity.Teacher">

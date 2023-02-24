@@ -2,32 +2,33 @@
 
 ---
 
-spring-boot + mybatis/mybatis-plus
-
-配置参数前缀mybatis或mybatis-plus
-
-参数项config-location是配置mybatis-config.xml路径的
-参数项mapper-locations是配置XxxMapper.xml路径的
-
-参数项type-aliases-package是配置数据库表映射实体类所在包路径的
+## Spring Boot整合MyBatis/MyBatis-Plus
 
 
+```java
+// 指定package前缀扫描Mapper.java
+@MapperScan(value = {"hn.cch.mapper"})
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
 
----
-
-- 日志
-
-```yaml
+- 配置参数前缀mybatis或mybatis-plus
+```yml
+# 指定XML文件匹配模式
 mybatis:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-
-
-mybatis-plus:
+  mapper-locations:
+    - classpath*:mapper/**/*.xml
+  type-aliases-package: hn.cch.entity
+  config-location: classpath*:mybatis-config.xm
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 ```
+
+
 
 

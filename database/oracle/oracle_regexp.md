@@ -28,7 +28,7 @@ select column_name from table_name where regexp_like(column_name,'^[0-9]+[0-9]$'
 ---
 - `connect by level`
 ```sql
-
+-- 按逗号,分隔
 select regexp_substr(list, '[^,]+', 1, level,'i') as item
 from ( select 'red,yellow,blue,green' as list from dual )
 connect by level <= length(list) - length(regexp_replace(list, ',', '')) + 1
