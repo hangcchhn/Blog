@@ -154,3 +154,9 @@ private Date date;
 ```
 
 ---
+
+1. HandlerInterceptor.preHandle
+2. ResponseBodyAdvice.supports
+3. ResponseBodyAdvice.beforeBodyWrite
+4. HandlerInterceptor.postHandle
+5. HandlerInterceptor.afterCompletion

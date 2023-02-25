@@ -129,23 +129,6 @@ history
 history 10
 
 
----
-
-
-
-Writing to this file causes the kernel to drop clean caches,dentries and inodes from memory, causing that memory to becomefree.
-to free pagecache, use echo 1 > /proc/sys/vm/drop_caches;
-to free dentries and inodes, use echo 2 > /proc/sys/vm/drop_caches;
-to free pagecache, dentries and inodes, use echo 3 >/proc/sys/vm/drop_caches.
-Because this is a non-destructive operation and dirty objects are not freeable, the user should run sync first.
-
-sync
-echo 0 > /proc/sys/vm/drop_caches
-echo 1 > /proc/sys/vm/drop_caches
-echo 2 > /proc/sys/vm/drop_caches
-echo 3 > /proc/sys/vm/drop_caches
-
-
 
 ---
 

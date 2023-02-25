@@ -136,7 +136,7 @@ mac:Command + Option + Right
 
 
 
-关闭文件
+Close Tab
 win:Ctrl + W
 mac:Command + W
 
@@ -158,11 +158,11 @@ F9：跳到下个断点
 
 win|mac
 
-运行
+Run
 win:Ctrl + Shift + F10
 mac:Ctrl + Shift + R
 
-调试
+Debug
 win:Ctrl + Shift + F9
 mac:Ctrl + Shift + D
 

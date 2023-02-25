@@ -13,7 +13,23 @@
 
 ---
 
+- ClassPathXmlApplicationContext
+- FileSystemXmlApplicationContext
+- XmlWebApplicationContext
+- AnnotationConfigWebApplicationContext
 
+
+
+---
+- AnnotationConfigApplicationContext
+- AnnotationConfigServletWebServerApplicationContext
+- AnnotationConfigReactiveWebServerApplicationContext
+
+```java
+
+
+
+```
 
 
 
