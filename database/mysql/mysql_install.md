@@ -108,7 +108,7 @@ docker run -it -p 33306:3306/tcp --expose 3306/tcp --name ubuntu_mysql cch/ubunt
 ```
 
 
-
+---
 ## Windows 10 install MySQL 8.x
 
 
@@ -153,9 +153,9 @@ net stop mysql
 
 ```
 
-
+---
 ## CentOS 7.x install MySQL 8.x
--
+
 ```sh
 rpm -e | grep mysql
 rpm -e | grep mariadb
@@ -171,7 +171,9 @@ vim /etc/my.cnf
 
 
 ```
-- CentOS 7.x install MySQL 7.x
+
+---
+## CentOS 7.x install MySQL 5.7.x
 - 系统重启删除/var/run/mysqld/（/var/run下的文件夹位于内存中）
 
 

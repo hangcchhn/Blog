@@ -1,24 +1,15 @@
 # Java
 
-> java语言
-
-
-
-
-- java:https://www.oracle.com/technetwork/java/archive-139210.html
-- eclipse:
-- idea:
-
 - JVM(Java Visual Machine)
 - JDK(Java Development Environment)
 - JRE(Java Runtime Environment)
 
+- 下载地址:https://www.oracle.com/technetwork/java/archive-139210.html
 
-- 生态
-    - spring
-    - tomcat
-    - mysql
-    - maven
+## IDE
+- eclipse:
+- idea:
+
 
 - 跨平台
     - 在windows、macos、linux系统都可以安装jdk、jre软件，

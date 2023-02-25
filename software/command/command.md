@@ -95,6 +95,9 @@ ls -la
 lrwxr-xr-x 1 root root 10 Mon d yyyy link_file -> desc_file
 
 
+unlink link_file
+rm link_file
+
 ---
 
 

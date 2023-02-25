@@ -34,6 +34,7 @@ Set-Service -Name sshd -StartupType 'Automatic'
 ## Windows LTSC
 
 ```powershell
+
 # 添加应用
 Add-AppxPackage -Path xxx.appx
 Add-AppxPackage ./xxx.msixbundle
@@ -41,10 +42,12 @@ Add-AppxPackage ./xxx.msixbundle
 ```
 
 ---
+```powershell
 
+# 帮助
 Get-Help
 
-
-查找命令所在位置
+# 查找命令所在位置
 Get-Command ssh
 
+```

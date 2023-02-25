@@ -1,12 +1,13 @@
 # 内核
+> kernel
 
 
-
-linux
-获取当前运行内核版本
+- Linux
+```sh
+# 获取当前运行内核版本
 uname -r
 
-
+```
 
 ---
 - CentOS
@@ -26,9 +27,8 @@ yum remove 具体内核名和版本
 
 
 ---
-
-·
 - Ubuntu
+
 ```sh
 # 查看已安装内核
 dpkg --get-selections |grep linux-modules

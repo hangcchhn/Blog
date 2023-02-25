@@ -1,21 +1,42 @@
+# Oracle问题
+> ORA-XXXXX
+---
 
+- ORA-28000: the account is locked
+需要以sysdba身份连接数据库执行下列语句
+使用sys/tiger用户以sysdba身份解锁scott
+```sql
+sqlplus sys/tiger as sysdba
+alter user  account unlock;
+commit;
+```
+---
+- ORA-28001: the password has expired
 
-ORA-01861: 文字与格式字符串不匹配
+```sql
+sqlplus / as sysdba
+select * from dba_profiles where profile='DEFAULT' and resource_name='PASSWORD_LIFE_TIME';
+alter profile default limit password_life_time unlimited;
+alter user chench identified by chench;
+```
+---
+
+- ORA-01861: 文字与格式字符串不匹配
 to_date('string','yyyy-mm-dd')
 
-ORA-00933: SQL 命令未正确结束
+- ORA-00933: SQL 命令未正确结束
 删除句末分号(;)
 检查是否存在limit语句
 
 
-ORA-00904:  标识符无效
+- ORA-00904:  标识符无效
 双引号中的不是标识符
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
-ORA-01795: maximum number of expressions in a list is 1000
+- ORA-01795: maximum number of expressions in a list is 1000
 
 where column_name in (column_value1,...,column_valueN)
 oracle使用in筛选时参数个数不能超过999
@@ -29,7 +50,7 @@ where column_name in ( select column_value from table_name)
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 select listagg(column_name, ',') within group (order by order_column )
 over([partition by group_column] order by order_column)
@@ -44,7 +65,7 @@ group by group_column
 select rtrim(xmlagg(xmlelement(e, column_name, ',').extract('//text()')
  order by order_column).GetClobVal(), ',') from table_name
 
---------------------------------------------------------------------------------------------------
+---
 
 
  在Oracle中，VARCHAR2 字段类型，最大字节长度为4000；
@@ -65,7 +86,7 @@ org.apache.ibatis.type.ClobTypeHandler
 
 <result property="clob_property" javaType="" column="clob_column" jdbcType="Clob" typeHandler="org.apache.ibatis.type.ClobTypeHandler" />
 
---------------------------------------------------------------------------------------------------
+---
 
 
 select userenv('language') from dual;
@@ -94,7 +115,7 @@ select lengthb('字') from dual; -- 返回2,表示2个字节byte
 select length('字')  from dual; -- 返回1,表示1个字符char
 
 
-ORA-01461: 只有在将值插入数据类型为 LONG 的列时，才可以绑定一个 LONG 值
+- ORA-01461: 只有在将值插入数据类型为 LONG 的列时，才可以绑定一个 LONG 值
 
 原因
 select "" from dual
@@ -103,7 +124,7 @@ select "" from dual
 数据库表字段使用CLOB或BLOB类型
 
 批量插入，存在就更新
-
+```xml
 <mapper namespace="package.XxxMapper">
 
     <insert id="batchInsertUpdate" parameterType="package.XxxEntity">
@@ -115,13 +136,14 @@ select "" from dual
         </foreach>
     </insert>
 </mapper>
+```
 
 
-
---------------------------------------------------------------------------------------------------
+---
 oracle中文排序
 
-默认排序是二进制(BINARY)排序
+```sql
+-- 默认排序是二进制(BINARY)排序
 select * from v$nls_parameters
 where parameter = 'NLS_SORT';
 
@@ -130,34 +152,17 @@ alter session set NLS_SORT='XXX';
 
 
 
-nsl_sort(column_name, 'NLS_SORT=SCHINESE_PINYIN_M')函数
-SCHINESE_PINYIN_M:按拼音排序
-SCHINESE_RADICAL_M:按照部首（第一顺序）、笔划（第二顺序）排序
-SCHINESE_STROKE_M:按照笔划（第一顺序）、部首（第二顺序）排序
 
 
 select column_name from table_name
 order by nsl_sort(column_name, 'NLS_SORT=SCHINESE_PINYIN_M');
 
+```
+
+### nsl_sort(column_name, 'NLS_SORT=SCHINESE_PINYIN_M')函数
+- SCHINESE_PINYIN_M:按拼音排序
+- SCHINESE_RADICAL_M:按照部首（第一顺序）、笔划（第二顺序）排序
+- SCHINESE_STROKE_M:按照笔划（第一顺序）、部首（第二顺序）排序
 
 
 
-
-
---------------------------------------------------------------------------------------------------
-
-ORA-28000: the account is locked
-需要以sysdba身份连接数据库执行下列语句
-使用sys/tiger用户以sysdba身份解锁scott
-sqlplus sys/tiger as sysdba
-alter user  account unlock;
-commit;
-
-
-ORA-28001: the password has expired
-sqlplus / as sysdba
-select * from dba_profiles where profile='DEFAULT' and resource_name='PASSWORD_LIFE_TIME';
-alter profile default limit password_life_time unlimited;
-alter user chench identified by chench;
-
---------------------------------------------------------------------------------------------------

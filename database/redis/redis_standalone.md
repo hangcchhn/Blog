@@ -50,21 +50,19 @@ make install PREFIX=/usr/local/redis
 
 - edit redis.conf
 
-```
+```conf
 bind 0.0.0.0 # 地址
 requirepass ****** # 密码
 daemonize yes # 开启守护线程
 protected-mode no # 禁用保护模式
 ```
 
-- server start
-```
+```sh
+# 服务端启动
 redis-server redis.conf
-```
-
-- client connect
-```
+# 客户端连接
 redis-cli -h host -p port -a auth
+
 ```
 
 
@@ -98,7 +96,7 @@ root@localhost:standalone# cat standalone_conf.sh
 
 ---
 ## 脚本
-```
+```sh
 #!/bin/bash
 
 REDIS_PORT=6379
