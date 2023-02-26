@@ -108,7 +108,7 @@ public class ConsumerController {
     private String serviceInstanceName;
 
     @GetMapping(value = "/{id}")
-    public Result user(@PathVariable Long id) {
+    public Result getUserById(@PathVariable Long id) {
         return restTemplate.getForObject(
             Sting.format("http://%s/%d", serviceInstanceName, id) + , Result.class);
     }

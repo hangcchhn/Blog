@@ -11,10 +11,10 @@
 ## 接口IRule:默认实现ZoneAvoidanceRule
 
 - RoundRobinRule:轮询规则
-- AvailabilityFilteringRule
+- AvailabilityFilteringRule:可用性过滤
 - WeightedResponseTimeRule:以响应时间作为权重值
-- ZoneAvoidanceRule
-- BestAvailableRule
+- ZoneAvoidanceRule:区域避免
+- BestAvailableRule:最小并发数
 - RandomRule:随机
 - RetryRule:重试
 

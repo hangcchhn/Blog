@@ -18,6 +18,14 @@
 </dependencyManagement>
 
 
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-dependencies</artifactId>
+    <version>2020.0.3</version>
+    <type>pom</type>
+    <scope>import</scope>
+</dependency>
+
 ```
 
 ---
