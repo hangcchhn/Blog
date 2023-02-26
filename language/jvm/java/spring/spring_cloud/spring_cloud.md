@@ -31,7 +31,7 @@
 ---
 ## Alibaba:Spring Cloud 2.x
     - Nacos:注册中心，配置中心
-    - Sentienl:限流
+    - Sentinel:限流
     - Seata:分布式事务
 
 

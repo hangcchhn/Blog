@@ -89,7 +89,7 @@ config set slowlog-max-len 128
 info
 info server
 info clients
-info sentienl
+info sentinel
 
 sentinel masters
 sentinel master mymaster

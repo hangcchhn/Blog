@@ -3,7 +3,7 @@
 
 ##
 ```
-make install PREFIX=/Users/hn/Macintosh/work/redis/sentienl/
+make install PREFIX=/Users/hn/Macintosh/work/redis/sentinel/
 
 
 # redis.conf
