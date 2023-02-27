@@ -8,32 +8,32 @@
 
 - 给每个数据库配置一个用户
 ```sql
-grant all privileges on database_name.* to 'user_name'@'%' identified by '******' with grant option;
+grant all privileges on database_name.* to 'root'@'%' identified by 'chench' with grant option;
 flush privileges;
 ```
 
 - 配置最大权限的用户
 ```sql
-grant all privileges on *.* to 'root'@'%' identified by '******' with grant option;
+grant all privileges on *.* to 'root'@'%' identified by 'chench' with grant option;
 flush privileges;
 ```
 
 ---
-## MySQL 8.x不支持创建用户与配置权限同时执行，需要把创建用户与配置权限分开
+### MySQL 8.x不支持创建用户与配置权限同时执行，需要把创建用户与配置权限分开
 
 ```sql
 -- 新建用户
-create user 'root'@'%' identified by '******';
+create user 'root'@'%' identified by 'chench';
 -- 修改密码
-alter user 'root'@'localhost' identified  by '******';
+alter user 'root'@'%' identified  by 'chench';
 -- 删除用户
-drop user 'user_name'@'host_name';
+drop user 'root'@'%';
 ```
 
 - 配置权限
 ```sql
-show grants for 'user_name';
-grant all privileges on *.* to 'user_name'@'host_name' with grant option;
+show grants for 'root';
+grant all privileges on *.* to 'root'@'%' with grant option;
 flush privileges;
 ```
 
@@ -61,18 +61,19 @@ skip-grant-tables
 -- 插件plugin
 select user, host, plugin from mysql.user;
 
+-- 处理plugin是auth_socket，只能本地登录，无法远程连接
+update user set plugin='mysql_native_password' where user='root' and host='localhost';
+
+-- 修改密码
 update user set password=password('chench') where user='root' and host='localhost';
 
 update mysql.user set authentication_string=password('chench') where user='root';
 
 set password for 'root'@'localhost' = password('chench');
 
-
-
-
 ```
 
-
+---
 - 不同版本mysql修改密码
 ```sql
 -- 切换数据库
