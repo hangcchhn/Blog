@@ -1,9 +1,6 @@
-## nacos
-> Dynamic Naming and Configuration Service
-
+# Nacos Install
 ---
-## 部署
-### 单机模式
+## 单机部署
 
 ```sh
 ./bin/startup.sh -m standalone &
@@ -13,7 +10,7 @@
     - nacos/nacos
 
 ---
-### 集群部署
+## 集群部署
 
 - MySQL
 ```sql
@@ -36,34 +33,15 @@ localhost:38848
 # 集群配置域名
 nacos.inetutils.prefer-hostname-over-ip=true
 # 多网卡指定IP
-nacos.inetutils.ip-address=192.168.10.201
+nacos.inetutils.ip-address=localhost
 
 
-
+# 数据库配置
 spring.datasource.platform=mysql
 db.num=1
-db.url.0=jdbc:mysql://127.0.0.1:3306/nacos?autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
-db.user.0=nacos
-db.password.0=nacos
+db.url.0=jdbc:mysql://localhost:3306/nacos?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+db.user.0=root
+db.password.0=chench
 
 ```
-
-
-
-
 ---
-
-
-## 版本
-- 1.x:http
-
-- 2.x:grpc
-
-
----
-
-```xml
-
-
-
-```

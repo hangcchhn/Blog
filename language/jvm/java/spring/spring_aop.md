@@ -1,6 +1,6 @@
 # Spring AOP
-
-
+> 面向切面编程
+- AOP(Aspect Oriented Programming)
 - Spring AOP是基于spring IoC实现的
 
 
@@ -27,3 +27,16 @@ java.lang.reflect.Proxy类
 - 字节码技术
 
 实现MethodInterceptor接口
+
+
+
+---
+
+```java
+
+
+
+
+```
+
+

@@ -2,6 +2,27 @@
 > 注册表
 
 
+
+---
+Windows 10
+右键Windows Terminal
+计算机\HKEY_CLASSES_ROOT\Directory\Background
+
+https://github.com/microsoft/terminal/blob/main/res/terminal.ico
+
+C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.16.10261.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe
+
+command
+Icon
+
+```bat
+
+reg add "
+
+```
+
+
+
 ---
 
 删除3D对象文件夹
