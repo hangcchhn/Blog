@@ -1,14 +1,14 @@
+# dpkg
+> Debian Package
 
-
-
-```
+```sh
 # 安装
-dpkg i xxx.deb
+dpkg -i|--install xxx.deb
 # 列表
-dpkg -L|--list-files xxx
-dpkg -l xxx
+dpkg -l|--list xxx
 # 查询
 dpkg -s|--status xxx
+# 搜索
 dpkg -S|--search xxx
 
 
@@ -23,8 +23,12 @@ dpkg --unpack xxx.deb
 
 # 配置软件
 dpkg --configure xxx
-# 软件内容
-dpkg -c xxx.deb
+
+
+
+
+dpkg -b, --build
+dpkg -c, --contents
 
 
 ```

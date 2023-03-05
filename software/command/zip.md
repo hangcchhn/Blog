@@ -1,8 +1,27 @@
+# 解压压缩
 
+---
 
+## 算法
 
-## 解压压缩
+- tar软件生成tar文件使用stored算法:只改变存储方式，并没有压缩空间
 
+- gzip软件生成gz文件使用deflated算法
+
+- bzip2软件生成bz2文件使用bzip2算法
+
+- lzma算法
+
+---
+# 文件
+- zip文件
+- tar文件
+
+- gz文件
+
+---
+## 软件
+- tar
 ```
 
 
@@ -29,5 +48,11 @@ tar -Jcvf xxx.tar.xz xxx
 
 
 ```
+- zip
 
 
+- rar
+
+- gzip(GUN zip)
+
+- bzip2
