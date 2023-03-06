@@ -69,6 +69,8 @@ apt install fonts-wqy-microhei
 apt install ibus-libpinyin
 
 apt install nautilus-open-terminal
+# GNOME桌面的文件管理器
+apt install nautilus -y
 
 apt install net-tools
 apt install netstat
