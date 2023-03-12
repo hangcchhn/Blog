@@ -113,14 +113,14 @@ public class Test {
 ```
 Manifest-Version: 1.0
 Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
-Implementation-Title: spring-boot-start
+Implementation-Title: spring-boot
 Implementation-Version: 1.0-SNAPSHOT
 Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 Start-Class: package.Application
 Spring-Boot-Classes: BOOT-INF/classes/
 Spring-Boot-Lib: BOOT-INF/lib/
 Build-Jdk-Spec: 1.8
-Spring-Boot-Version: 2.5.4
+Spring-Boot-Version: 2.4.13
 Created-By: Maven Jar Plugin 3.2.0
 Main-Class: org.springframework.boot.loader.JarLauncher
 
