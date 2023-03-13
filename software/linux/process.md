@@ -145,3 +145,22 @@ kill -HUP `cat /path/file.pid`
 ```
 
 ---
+- psmisc
+```sh
+# CentOS
+yum install psmisc
+killall
+pstree
+fuser
+
+
+# 关闭所有同一类型的进程
+killall java
+
+# 统计进程中的线程总数
+pstree -p pid |wc -l
+
+
+
+
+```

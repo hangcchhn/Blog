@@ -15,12 +15,9 @@ ifconfig
 yum install -y telnet
 telnet
 
-yum install -y psmisc
-killall
-pstree
-fuser
 
-pstree -p pid
+
+
 
 
 

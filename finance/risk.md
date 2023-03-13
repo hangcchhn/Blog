@@ -4,11 +4,11 @@
 ## 压力测试
 > stress testing
 
-- 历史极端事件法
+### 敏感度分析
+> sensitive analysis
+- 历史情景分析
+- 假设性情景分析
 
-- 风险因子震荡法
-
-- 外部因子震荡法
 
 ### 情景分析
 > scenario analysis
