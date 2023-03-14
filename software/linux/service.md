@@ -72,3 +72,12 @@ systemctl list-units
 systemctl daemon-reload
 
 ```
+
+---
+- Ubuntu
+```sh
+apt install chkconfig
+# Ubuntu 16.04使用sysv-rc-conf替代chkconfig
+apt install sysv-rc-conf
+cp /usr/sbin/sysv-rc-conf /usr/sbin/chkconfig
+```
