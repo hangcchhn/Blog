@@ -1,7 +1,39 @@
 nginx http
 
-
+---
 ## http
+
+
+```nginx
+
+http {
+
+    server {
+        listen 81;
+        server_name localhost;
+
+        location / {
+            return 200 'index';
+        }
+
+        location ^~ /api/v2 {
+            return 200 'api-v2';
+        }
+
+        location /api {
+            return 200 'api-v1';
+        }
+
+    }
+
+}
+
+```
+
+
+
+---
+- upstream
 ```nginx
 
 http {

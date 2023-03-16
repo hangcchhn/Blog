@@ -45,7 +45,8 @@ location /test5 {
 ## rewrite
 > 重定向
 
-- rewrite status_code
+- rewrite status_code;
+- rewrite regex replacement flag;
 -
 
 | 优先级 | 匹配符 | 含义 |
@@ -54,6 +55,13 @@ location /test5 {
 |  | break | 终止后续匹配规则 |
 |  | redirect | 返回302临时重定向 |
 |  | parmanent | 返回301永久重定向 |
+
+```nginx
+rewrite ^/(.*)  http://host:port/$1 permanent;
+rewrite ^/$  http://host:port permanent;
+
+
+```
 
 ---
 ## return
@@ -67,7 +75,7 @@ location /test5 {
 
 ```nginx
 
-
+return 200 'hello-world';
 return 200 $uri;
 
 
