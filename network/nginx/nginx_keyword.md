@@ -2,50 +2,11 @@
 > 关键字
 
 ---
-## location
-> 定位
-- location % xxx { ... }
-
-| 优先级 | 匹配符 | 含义 |
-| :- | :- | :- |
-| 1 | = | 精准匹配 |
-| 2 | ^~ | 前缀匹配 |
-| 3 | ~ | 区分大小写正则匹配 |
-| 3 | *~ | 不区分大小写正则匹配 |
-| 4 |   | 普通匹配，存储匹配项用于默认值。 |
-
-
-```nginx
-
-
-location = /test1 {
-    return 200 $uri;
-}
-
-location ^~ /test2 {
-    return 200 $uri;
-}
-
-location ~* /test3 {
-    return 200 $uri;
-}
-
-location /test4 {
-    return 200 $uri;
-}
-
-location /test5 {
-    return 200 $uri;
-}
-
-```
-
-
----
 ## rewrite
 > 重定向
 
-- rewrite status_code
+- rewrite status_code;
+- rewrite regex replacement flag;
 -
 
 | 优先级 | 匹配符 | 含义 |
@@ -54,6 +15,13 @@ location /test5 {
 |  | break | 终止后续匹配规则 |
 |  | redirect | 返回302临时重定向 |
 |  | parmanent | 返回301永久重定向 |
+
+```nginx
+rewrite ^/(.*)  http://host:port/$1 permanent;
+rewrite ^/$  http://host:port permanent;
+
+
+```
 
 ---
 ## return
@@ -67,7 +35,7 @@ location /test5 {
 
 ```nginx
 
-
+return 200 'hello-world';
 return 200 $uri;
 
 
