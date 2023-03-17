@@ -1,9 +1,9 @@
 # 云原生
 > Cloud Native
-- 云原生计算基金会(Cloud Native Computing Foundation, CNCF)
+- CNCF:云原生计算基金会(Cloud Native Computing Foundation)
 - 云原生Cloud Native Landscape
 ---
-- 开发和运维:DevOps(Development Operations)
+- DevOps:开发(Development)和运维(Operations)
 
 - 微服务(Microservice)
 - 无服务(Serverless)
@@ -21,60 +21,12 @@
 
 
 
-- Helm
-
-
-- 持续集成和持续交付:CI(Continuous Integration)/CD(Continuous Delivery)
+- CI/CD:持续集成(Continuous Integration)和持续交付(Continuous Delivery)
     - Jenkins
----
-## Kubernetes
-> k8s
-
-- 最小部署单元:Pod
-    - 一个Pod由一个或多个Container组成
-    - 一个Pod的所有Container共享存储和网络
-    - 一个Pod的所有Container运行在同一个docker上
-
-
-### Master
-
-- Scheduler
-- API Server
-- Controller Manager
-- etcd
-
-
-
-### Node
-- kubelet
-- kube-proxy
-- Docker Engine
-
----
-- Docker容器
-- Etcd:存储
-- Flannel:网络
-
----
-### kubeadm
-> 快速搭建Kubernetes集群
-- kubeadm init
-- kubeadm join
----
-### minikube
-> 轻量化的Kubernetes集群
 
 ---
 
 
-
-
-
----
-- Cloud
-    - IaaS
-    - PaaS
-    - SaaS
 
 
 ---
@@ -85,7 +37,6 @@
 
 ---
 
-## kubectl命令
 
 
 ---
