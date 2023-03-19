@@ -1,7 +1,13 @@
+# pip
+---
 
---------------------------------------------------------------------------------------------------
-windows:~/pip/pip.ini
-linix:~/.pip/pip.conf
+```sh
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+```
+
+- windows:~/pip/pip.ini
+- linix:~/.pip/pip.conf
 
 [global]
 index-url=https://mirrors.aliyun.com/pypi/simple/
@@ -9,13 +15,11 @@ index-url=https://mirrors.aliyun.com/pypi/simple/
 trusted-host=mirrors.aliyun.com
 
 
---------------------------------------------------------------------------------------------------
 
+---
 
-
---------------------------------------------------------------------------------------------------
-
-下载本地
+```sh
+# 下载本地
 
 pip wheel -w folder -r requirements.txt
 
@@ -26,19 +30,18 @@ pip download -d folder -r requirements.txt
 
 
 
-离线安装
+# 离线安装
 
 pip install xxx.whl
 pip install xxx.tar.gz
 
-
-对于压缩文件可以解压后进入文件夹执行下列命令安装
+# 对于压缩文件可以解压后进入文件夹执行下列命令安装
 python setup.py build
 python setup.py install
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 安装出现错误可以尝试安装历史版本
 pip install package==version
@@ -60,21 +63,20 @@ python -m pip install -r requirements.txt
 
 python -m pip install -U pip==version
 
+```
 
+---
 
---------------------------------------------------------------------------------------------------
+导出安装第三包的版本:`pip freeze > requirements.txt`
 
-导出安装第三包的版本
-pip freeze > requirements.txt
-
-requirements.txt:
+- requirements.txt:
 package==version
 
-
+```sh
 pip install -r requirements.txt
 pip install -c constraints.txt
 
-升级
+# 升级
 pip install -U package
 
 
@@ -87,24 +89,20 @@ pip install --cache-dir 'cache' -r requirements.txt
 
 
 
-平台
+# 平台
 --platform=win32, win_amd64, manylinux, macosx
 
---------------------------------------------------------------------------------------------------
-
-卸载
+# 卸载
 pip uninstall -y -r requirements.txt
-
---------------------------------------------------------------------------------------------------
-
+```
 
 
---------------------------------------------------------------------------------------------------
+---
 
-python语言使用pip工具安装模块
+## python语言使用pip工具安装模块
 
 
-
+```sh
 pip install ipython spyder
 
 pip install jupyter notebook
@@ -170,3 +168,4 @@ pip install bottle fastapi
 pip install web.py wsgilog
 
 
+```
