@@ -2,7 +2,7 @@
 > risk
 
 ## 压力测试
-> stress testing
+> stress test
 
 ### 敏感度分析
 > sensitive analysis
