@@ -6,15 +6,17 @@
 基于servlet-filter
 
 相关的包
-spring-security-core
-spring-security-web
-spring-security-config
-spring-security-taglibs
-
-默认用户user
-默认密码
-Using default security password: e1141ea7-ca8d-4213-8b48-257e9d9b1295
-
+- spring-security-core
+- spring-security-web
+- spring-security-config
+- spring-security-taglibs
+---
+- 默认用户:user
+- 默认密码:Using default security password:
+```ini
+security.user.name=root
+security.user.password=chench
+```
 
 
 - web.xml:

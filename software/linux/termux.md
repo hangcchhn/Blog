@@ -6,11 +6,10 @@
 ---
 
 ```sh
-# 更改仓库
-termux-change-repo
 # 安装存储
 termux-setup-storage
-
+# 更改仓库
+termux-change-repo
 ```
 
 
@@ -22,17 +21,21 @@ termux-setup-storage
 
 pkg update
 
-pkg install sshd
-# pkg uninstall xxx
+pkg install proot
+termux-chroot
 
-
+pkg install openssh
+sshd
+# sshd: no hostkeys available -- exiting
+ssh-keygen -A
 
 pkg install termux-services
 sv-enable sshd
 
 
-pkg install proot
-termux-chroot
+
+
+# pkg uninstall xxx
 
 ```
 
