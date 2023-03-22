@@ -1,6 +1,6 @@
 
 # 反射
-> reflex
+> reflect
 
 动态语言是指程序在运行时可以改变其结构
 新的函数可以引进，已有的函数可以被删除等结构上的变化。
@@ -11,14 +11,12 @@
 缺点：性能消耗
 
 使用场景：
-1.jdbc配置数据库驱动类
-2.Servlet
-3.spring依赖注入和切面编程
+1. jdbc配置数据库驱动类
+2. Servlet
+3. spring依赖注入和切面编程
 
 ---
 ## 动态代理
-
-package:java.lang.reflect
 
 - ClassLoader类加载器
 - Class类
@@ -28,9 +26,12 @@ package:java.lang.reflect
 - Annotation注解
 - Array数组
 - Template泛型
+- Primitive:基本数据类型
 
 
 ```java
+import java.lang.reflect.*
+
 Class clazz = object.getClass();
 Class clazz = Java.class;
 Class clazz=Class.forName("package.java");
