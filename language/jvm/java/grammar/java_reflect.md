@@ -26,7 +26,9 @@
 - Annotation注解
 - Array数组
 - Template泛型
-- Primitive:基本数据类型
+- Primitive基本数据类型
+
+- 已声明的:Declared
 
 
 ```java
@@ -50,7 +52,7 @@ Java java = (Java) constructor.newInstance();
 ```
 
 ---
-
+## 泛型
 - Type
 - 实现类:sun.reflect.generics.reflectiveObjects.*Impl
 

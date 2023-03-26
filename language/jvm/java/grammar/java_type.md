@@ -118,22 +118,6 @@ private static final long serialVersionUID = 1L;
 
 Java事务的类型有三种：JDBC事务、JTA（Java Transaction API）事务、容器事务。
 
----
 
-泛型：模板Template
-```java
-
-public class Template<T>{
-
-}
-
-public class Class {
-    public <T> T method(){
-
-    }
-}
-
-
-```
 ---
 jmh——Java Micro-benchmark Harness
