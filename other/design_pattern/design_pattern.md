@@ -6,12 +6,23 @@
 
 - 多用组合，少用继承。
 
--  开放关闭原则
+---
+- 单一职责原则(Single Responsibility Principle)
+    - 一个类只有一个发生变化的原因
+
+- 开放关闭原则(Open Closed Principle)
     - 类应该对扩展开放，对修改关闭。
 
-- 依赖倒置原则
-    - 要依赖抽象，不要依赖具体类。
+- 里氏替换原则(Liskov Substitution Principle)
+    - 不影响原功能
 
+- 接口隔离原则(Interface Segregation Principle)
+    - 拆分为更小粒度的接口
+
+- 依赖倒置原则(Dependence Inversion Principle)
+    - 要依赖抽象接口，不要依赖具体类。
+
+---
 ## 创建型模式
 - 工厂模式(Factory Pattern)
 - 抽象工厂模式(Abstract Factory Pattern)
@@ -19,6 +30,8 @@
 - 建造者模式(Builder Pattern)
 - 原型模式(Prototype Pattern)
 
+
+---
 ## 结构型模式
 
 - 代理模式(Proxy Pattern)
@@ -30,6 +43,7 @@
 - 享元模式(Flyweight Pattern)
 
 
+---
 ## 行为型模式
 
 - 责任链模式(Chain of Responsibility Pattern)
