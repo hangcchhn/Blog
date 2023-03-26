@@ -34,7 +34,20 @@ java.lang.reflect.Proxy类
 
 ```java
 
+@Aspect
+@Component
+public class AnnotationAspect(){
+    @Pointcut(value = "@annotation(hn.cch.common.annotation.Annotation)")
+    public void pointcut() {
 
+    }
+
+
+    @Around("pointcut()")
+    public Object around(ProceedingJoinPoint proceedingJoinPoint) {
+
+    }
+}
 
 
 ```
