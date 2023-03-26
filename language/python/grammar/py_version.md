@@ -1,6 +1,13 @@
 # python version
 
+```py
+import sys
+print(sys.version)
 
+# 2或3
+sys.version_info.major
+
+```
 
 
 ## 字符串

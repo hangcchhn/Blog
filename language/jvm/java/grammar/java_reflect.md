@@ -100,7 +100,7 @@ public interface WildcardType extends Type {
 ```java
 
 public interface GenericArrayType extends Type {
-
+    // 获取泛型元素类型
     Type getGenericComponentType();
 }
 ```

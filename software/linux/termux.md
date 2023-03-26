@@ -18,6 +18,7 @@ termux-change-repo
 ## pkg
 
 ```sh
+pkg help
 
 pkg update
 
