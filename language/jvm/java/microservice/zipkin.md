@@ -1,16 +1,20 @@
 
-zipkin
+# Zipkin
 
---------------------------------------------------------------------------------------------------
+- 由Twitter开源
 
 
-zipkin使用mysql作为存储
+---
 
+
+- zipkin使用mysql作为存储
+```sh
 java -jar ./zipkin-server-2.12.9-exec.jar --STORAGE_TYPE=mysql --MYSQL_HOST=127.0.0.1 --MYSQL_TCP_PORT=3306 --MYSQL_DB=zipkin --MYSQL_USER=root --MYSQL_PASS=chench
+```
 
 数据库创建表脚本：
 
-
+```sql
 CREATE TABLE IF NOT EXISTS zipkin_spans (
   `trace_id_high` BIGINT NOT NULL DEFAULT 0 COMMENT 'If non zero, this means the trace uses 128 bit traceIds instead of 64 bit',
   `trace_id` BIGINT NOT NULL,
@@ -59,15 +63,16 @@ CREATE TABLE IF NOT EXISTS zipkin_dependencies (
   `error_count` BIGINT,
   PRIMARY KEY (`day`, `parent`, `child`)
 ) ENGINE=InnoDB ROW_FORMAT=COMPRESSED CHARACTER SET=utf8 COLLATE utf8_general_ci;
+```
 
+---
+- zipkin使用elasticsearch作为存储
 
---------------------------------------------------------------------------------------------------
-zipkin使用elasticsearch作为存储
-
+```sh
 java -jar zipkin-server-2.12.9-exec.jar --STORAGE_TYPE=elasticsearch --ES-HOST=localhost:9200
+```
 
-
---------------------------------------------------------------------------------------------------
+---
 
 
 

@@ -35,7 +35,7 @@ public class Application {
 - Spring Boot < 2.2.0
 ```java
 
-// @RunWith(SpringJUnit4ClassRunner.class)
+// @RunWith(value = SpringJUnit4ClassRunner.class)
 // @ContextConfiguration(classes = Application.class)
 @SpringBootTest
 public class ApplicationTest {

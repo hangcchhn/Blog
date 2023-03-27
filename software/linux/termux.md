@@ -25,6 +25,8 @@ pkg update
 pkg install proot
 termux-chroot
 
+whoami
+# ssh user@host -p 8022
 pkg install openssh
 sshd
 # sshd: no hostkeys available -- exiting
