@@ -23,8 +23,11 @@ list0:
 
 
 # 转义字符
-tab："\t"
+tab: "\t"
 enter: "\n"
+
+# 特殊字符
+all: "*"
 
 # 日期:yyyy-MM-dd
 date: 2000-01-01

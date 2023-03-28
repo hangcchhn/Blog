@@ -141,3 +141,21 @@ logging.logback.
 
 
 ```
+
+---
+- 懒加载
+
+- 独立控制
+```java
+@Lazy
+@Component
+public class Xxx {
+
+}
+
+```
+
+- 全局配置
+```properties
+spring.main.lazy-initialization=true
+```

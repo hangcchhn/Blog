@@ -40,6 +40,7 @@ flush privileges;
 - my.cnf|my.ini:
 ```ini
 [mysqld]
+# mysql库中user表的host字段不能使用域名
 skip-name-resolve
 
 bind-address=0.0.0.0
