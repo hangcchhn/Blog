@@ -1,11 +1,18 @@
 # ZooKeeper
-> 分布式应用程序协调服务，是Google的Chubby一个开源的实现
+> 分布式应用程序协调服务
 
+
+- ZooKeeper是Chubby(分布式锁服务)的开源实现
+
+## 保证一致性的共识算法
 - paxos算法
 - raft算法
 
 
+- Zookeeper原子广播(Zookeeper atomic broadcast, Zab)协议
 
+- 节点
+- 树结构
 
 
 ## 命令配置
