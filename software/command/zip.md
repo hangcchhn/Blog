@@ -32,6 +32,8 @@ tar -jxvf xxx.tar.bz2
 tar -Zxvf xxx.tar.Z
 tar -Jxvf xxx.tar.xz
 
+tar -zxvf xxx.tar.gz -C /path
+
 unzip xxx.zip
 unrar e xxx.rar
 

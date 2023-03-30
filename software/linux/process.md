@@ -59,10 +59,10 @@ ps auxf
 ps aux | grep xxx | grep -v grep | awk '{print $2}' | xargs kill -9
 
 
-pids = `pgrep -f 'file'`
+pids=`pgrep -f 'file'`
 for pid in ${pids}
 do
- kill -9 $pid
+    kill -9 $pid
 done
 
 ls -la /proc/pid

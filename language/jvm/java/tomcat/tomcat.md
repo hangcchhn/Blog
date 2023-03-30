@@ -92,6 +92,7 @@ tomcat role user
 - java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
 
 - 网址中的特殊字符需要进行编码
+
 | 字符 | 编码 |
 | :-: | :-: |
 |   | %20 |
