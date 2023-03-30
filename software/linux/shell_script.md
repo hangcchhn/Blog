@@ -164,23 +164,33 @@ test -z string  空字符串
 test -n string  非空字符串
 
 - 文件状态
+```sh
 $file_name
+# 判断文件是否存在
+if [ -e $file_name ]
+    # 存在就删除
+    rm $file_name
+fi
 
-[ -e $file_name ]
+$file_path
+# 判断文件夹是否存在
+if [ ! -e $file_path ]
+    # 不存在就创建
+    mkdir -p $file_path
+fi
+```
+- -e  是否存在
+- -s  是否非空
 
--e  是否存在
--s  是否非空
+- -r  是否可读
+- -w  是否可写
+- -x  是否可执行
 
--r  是否可读
--w  是否可写
--x  是否可执行
-
-
--d  是否是目录
--f  是否是文件
--L  是否是链接
--c  是否是符号设备
--b  是否是块设备
+- -d  是否是目录
+- -f  是否是文件
+- -L  是否是链接
+- -c  是否是符号设备
+- -b  是否是块设备
 
 
 
