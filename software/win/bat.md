@@ -5,14 +5,10 @@
 
 ---
 
-xxx.bat:
+- xxx.bat:
 ```bat
-@关闭命令回显
-
 @echo off
-@rem 注释
-
-
+@rem 注释：关闭命令回显
 
 title "xxx"
 echo "xxx"

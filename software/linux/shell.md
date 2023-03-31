@@ -1,46 +1,30 @@
+# shell
 
 
-
-
-shell
-
-壳shell
-核kernel
-
-
-command interpreter
-命令解析器
-
-windows
-cmd powershell
-
-mac
-zsh
-
-sh bash
-echo $SHELL
-
-shell.sh
+---
+- shell.sh
+```sh
 #!/bin/bash
 
 # 注释
 
-分配执行权限
+# 分配执行权限
 chmod +x shell.sh
 
-将windows格式文件转换成unix格式文件
-
-dos2unix
+- 将windows格式文件转换成unix格式文件
+```sh
+dos2unix shell.sh
 apt install dos2unix
 
+vim shell.sh
 :set ff=unix
 :set fileformat=unix
-
+```
 
 ---
 
 ```sh
-
+# 赋值符号=前后不能有空格
 # 定义变量
 variable=10
 
@@ -50,11 +34,6 @@ echo ${variable}
 
 # 重置变量
 unset $variable
-
-# 变量赋值
-variable=''
-
-赋值符号=前后不能有空格
 
 
 # 键盘输入
@@ -73,8 +52,36 @@ echo -e '第一行\n第二行'
 - 数组
 
 ```sh
+# 数组
+array=(item0 item1 item2)
 
-array=(item0, item1, item2)
+# 长度：*=@
+echo ${#array[@]}
+echo ${#array[*]}
+
+# 下标：从0开始，至-1结束
+echo ${array[0]}
+echo ${array[-1]}
+
+
+# 下标越界，新增元素
+array[4]=10
+# 删除元素
+unset array[2]
+
+# 切片
+slice=(${array[@]:offset:number})
+
+# 替换
+replace=(${array[@]/old_item/new_item})
+
+# 所有元素：返回以空格分割的字符串
+echo ${array[@]}
+# 遍历
+for item in ${array[@]}
+do
+    echo $item
+done
 
 ```
 
@@ -107,93 +114,6 @@ do
 done
 ```
 
----
-
-开启新的shell环境执行shell脚本
-
-/path/shell.sh
-
-cd /path
-./shell.sh
-
-bash /path/shell.sh
-
-sh /path/shell.sh
-
-
-在当前shell环境中执行shell脚本
-
-. /path/shell.sh
-
-source /path/shell.sh
-
-
-调试shell脚本
-sh -vx /path/shell.sh
-
-shell.sh:
-set -x
-
-
----
-
-
-su(switch user)
-su username     切换用户但不切换环境变量
-su - username   切换用户并且切换环境变量
-
-指导用户执行命令
-su - username -c command
-
-
----
-
-
-(
-    # open new shell execute
-)
-
-{
-    # current shell execute
-}
 
 
 
-
-
----
-
-重定向
-
-command
-delimiter	定界符
-
-0	/dev/stdin		从键盘读取输入
-1	/dev/stdout		标准输出到屏幕
-2	/dev/stderr		错误输出到屏幕
-
-
-输入
-command < file_path
-command << delimiter
-> input1
-> input2
-> delimiter
-
-
-
-输出
-覆盖
-command > file_path
-追加
-command >> file_path
-
-
-标准输出
-command > file_path
-错误输出
-command 2> file_path
-
-command > /dev/null
-
-command > file_path 2>&1
