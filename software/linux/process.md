@@ -58,12 +58,11 @@ ps auxf
 
 ps aux | grep xxx | grep -v grep | awk '{print $2}' | xargs kill -9
 
+pgrep -f xxx
 
-pids=`pgrep -f 'file'`
-for pid in ${pids}
-do
-    kill -9 $pid
-done
+kill -9 pid
+
+
 
 ls -la /proc/pid
 cwd # 进程目录
@@ -96,13 +95,13 @@ chkconfig auto_start.sh on
 
 ```sh
 # 控制台日志输出到当前路径下的nohup.out文件
-nohup java -jar *.jar &
+nohup java -jar xxx.jar &
 
 # 控制台不输出日志
-nohup java -jar *.jar > /dev/null &
+nohup java -jar xxx.jar > /dev/null 2>&1 &
 
 # 控制台日志输出到指定文件
-nohup java -jar *.jar > out.log 2>&1 &
+nohup java -jar xxx.jar > out.log 2>&1 &
 
 
 jps -l
@@ -157,7 +156,7 @@ fuser
 # 关闭所有同一类型的进程
 killall java
 
-# 统计进程中的线程总数
+# 统计某个进程的线程总数
 pstree -p pid |wc -l
 
 

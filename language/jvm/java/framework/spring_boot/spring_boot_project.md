@@ -84,6 +84,7 @@ public class Test {
 
 
 <build>
+    <finalName>xxx</finalName>
     <plugins>
         <plugin>
             <groupId>org.springframework.boot</groupId>
@@ -93,6 +94,27 @@ public class Test {
 </build>
 
 ```
+
+
+---
+- restart-spring-boot-jar.sh
+```sh
+env=prod
+jar_path='/path/xxx.jar'
+pids=`pgrep -f $jar_path`
+for pid in ${pids}
+do
+    kill -9 $pid
+    sleep 3
+    echo "stop $pid:$jar_path"
+done
+
+su - chench -c "nohup java -jar $jar_path --spring.profiles.active=$env > /dev/null 2>&1 &"
+pids=`pgrep -f $jar_path`
+echo "start $pids:$jar_path"
+
+```
+
 
 
 - xxx.jar
@@ -107,25 +129,6 @@ public class Test {
                 - loader
                     - JarLauncher.class
 
----
-
-- MANIFEST.MF
-```
-Manifest-Version: 1.0
-Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
-Implementation-Title: spring-boot
-Implementation-Version: 1.0-SNAPSHOT
-Spring-Boot-Layers-Index: BOOT-INF/layers.idx
-Start-Class: package.Application
-Spring-Boot-Classes: BOOT-INF/classes/
-Spring-Boot-Lib: BOOT-INF/lib/
-Build-Jdk-Spec: 1.8
-Spring-Boot-Version: 2.4.13
-Created-By: Maven Jar Plugin 3.2.0
-Main-Class: org.springframework.boot.loader.JarLauncher
-
-
-```
 
 ---
 ## 使用Maven构建的Spring Boot项目读取src/java/resource下文件
