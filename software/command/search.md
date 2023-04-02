@@ -3,7 +3,7 @@
 # 搜索
 
 ```sh
-
+# linux bash
 which command_name
 # 在环境变量匹配命令，默认只显示第一匹配项的绝对地址
 which -a command
@@ -13,6 +13,10 @@ whereis execute_name
 # source 源文件
 # manual 帮助手册
 
+# windows cmd
+where command_name
+# windows powershell
+Get-Command command_name
 ```
 ---
 

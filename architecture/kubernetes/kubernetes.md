@@ -1,7 +1,7 @@
 
 # Kubernetes
 > k8s
-- Google
+- 由Google开发
 
 
 
@@ -38,21 +38,11 @@
 - kubeadm join
 
 
-## kubectl命令
-
-```
-kubectl get service
-
-
-
-
-```
-
 ---
 
+## kind
+> Kubernetes in Docker
 
-## minikube
-> 轻量化的Kubernetes集群
 
 
 
