@@ -23,7 +23,7 @@ java必须与idea系统位数保持一致
 
 IDEA 2020.1 以上社区版Community
 win:~/AppData/Roaming/JetBrains/IdeaICXXXX.x/
-mac:~/Library/Application Support/JetBrains/IdeaICXXXX.x/
+mac:~/Library/Application\ Support/JetBrains/IdeaICXXXX.x/
 linux:~/.config/JetBrains/IdeaICXXXX.x/
 
 
