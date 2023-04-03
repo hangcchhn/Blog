@@ -1,6 +1,18 @@
+# node
 
-初学node了解到的知识
 
+## version
+
+- LTS——Long Term Support
+    - 8.x(8.16.2)
+    - 10.x(10.15.3)
+
+
+
+
+---
+- server
+```js
 "use strict";//使用严格语法模式
 
 // 模块
@@ -18,3 +30,4 @@ server = server.listen(9090, "0.0.0.0");
 
 console.log("http://0.0.0.0:9090");
 
+```

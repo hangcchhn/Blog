@@ -1,27 +1,14 @@
-# NodeJS
-
-> nodejs
-
-
-
-版本
-
-> LTS——Long Term Support(8.16.2)
-
-- 8.x
-- 10.x
-
-
 
  ## 一、工具
 
 
 
-### 1.nvm——node version manager
+## nvm
+> Node Version Manager
 
-> nvm（unix|linux）|nvmw(windows)
+- nvm（unix|linux）|nvmw(windows)
 
-```
+```sh
 # 安装
 nvm install 8.16.2
 # 使用（切换）
@@ -41,9 +28,10 @@ nvm reinstall-package
 
 
 
-### 2.npm——node package manager
+### npm
+> Node Package Manager
 
-```
+```sh
 npm install
 -g:--global
 -P:--save-prov
@@ -56,11 +44,12 @@ npm install
 
 
 
-### 3.nrm——node registry manager
+### nrm
+> Node Registry Manager
 
-> npm|cnpm|taobao|nj|rednpm|npmMirror
+- npm|cnpm|taobao|nj|rednpm|npmMirror
 
-```
+```sh
 # 安装
 npm install -g nrm
 # 测试（测速）

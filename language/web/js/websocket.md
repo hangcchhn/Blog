@@ -22,8 +22,14 @@ webSocket.addEventListener('message', function (event) {
 
 ```
 
-
+---
+- SockJS
 
 ---
 - STOMP:Simple(Streaming) Text Orientated Messaging Protocol
 简单(流)文本定向消息协议
+
+
+---
+
+
