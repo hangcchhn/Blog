@@ -8,7 +8,7 @@
 ```js
 
 // 创建WebSocket连接.
-const webSocket = new WebSocket('ws://localhost:8080');
+const webSocket = new WebSocket('ws://' + window.location.host + '/websocket');
 
 // 连接成功触发
 webSocket.addEventListener('open', function (event) {
@@ -23,12 +23,17 @@ webSocket.addEventListener('message', function (event) {
 ```
 
 ---
-- SockJS
+## SockJS
+- 应对某些浏览器不支持WebSocket而生
+- SockJS是WebSocket的一种模拟
+- SockJS是WebSocket的备选方案
 
 ---
-- STOMP:Simple(Streaming) Text Orientated Messaging Protocol
-简单(流)文本定向消息协议
-
+## STOMP
+> Simple(Streaming) Text Orientated Messaging Protocol
+- 简单(流)文本定向消息协议
+- 基于WebSocket的
+- 基于帧的线路格式层
 
 ---
 

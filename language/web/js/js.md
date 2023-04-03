@@ -1,4 +1,4 @@
-# Javascript
+# JavaScript
 
 ## 1.1 基础
 
