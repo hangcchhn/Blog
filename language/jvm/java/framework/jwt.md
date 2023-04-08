@@ -6,26 +6,30 @@ JWT的结构由三部分组成
 之间使用.分隔连接
 
 
-
-Header
+- Header
+```json
 {
     "alg":"",
     "typ":"",
 }
+```
 
-
-Payload
+- Payload
+```json
 {
     "sub":"",
     "userid":"",
     "openid":"",
 }
+```
 
-Signature
+- Signature
 HMACSHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),
   secret)
+
+---
 
 ```java
 # 构建

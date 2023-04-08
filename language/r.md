@@ -1,11 +1,14 @@
-# r
+# R
+> r langurage
 
 ## 环境配置
 
 ### r-cran
-- r x86
-- r x64
+- R x86
+- R x64
+- R tools
+
 
 ### RStudio
 
-RStudio Desktop
+- RStudio Desktop
