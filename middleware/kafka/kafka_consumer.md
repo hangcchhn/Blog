@@ -40,7 +40,8 @@ public class TopicListener{
 
     @KafkaListener(topics = "#{'${custom.kafka.topics}'.split(',')}")
     public void listen(ConsumerRecord<String, String> consumerRecord, Acknowledgment acknowledgment) {
-
+        // 手动提交
+        acknowledgment.acknowledge();
     }
 
 }
@@ -48,21 +49,22 @@ public class TopicListener{
 ```
 
 ```ini
+# 多个使用逗号,分隔
+custom.kafka.listener-topics=topic-name
 spring.kafka.bootstrap-servers=localhost:9092
 # 生产者
-spring.kafka.producer.acks=1
 spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
 spring.kafka.producer.value-serializer=org.apache.kafka.common.serialization.StringSerializer
-# 消费者
+spring.kafka.producer.acks=1
 
-spring.kafka.consumer.group-id=kafka-start-group
+# 消费者
+spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.consumer.group-id=group-name
 spring.kafka.consumer.auto-offset-reset=earliest
+# 禁用自动提交
 spring.kafka.consumer.enable-auto-commit=false
 
 
-spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
-spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.StringDeserializer
-
-custom.kafka.topics=test-topic
 
 ```
