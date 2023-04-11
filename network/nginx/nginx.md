@@ -1,5 +1,8 @@
 # nginx
 
+- nginx使用linux系统的epoll模型
+
+---
 
 
 - http

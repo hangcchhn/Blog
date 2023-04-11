@@ -15,7 +15,14 @@ $$
 Sharpe_p = \dfrac{\bar{r}_p - \bar{r}_f}{\sigma_p}
 $$
 
+- 成立以来的夏普比率通常使用成立以来的年化收益率和年化标准差计算
+$$
+Sharpe = \dfrac{r_a - r_f}{\sigma_a}
 
+$$
+
+
+---
 ## 特雷诺比率
 > $Treynor$
 - 假设总体风险仅为系统风险
