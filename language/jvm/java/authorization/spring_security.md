@@ -38,6 +38,66 @@ security.user.password=chench
 ---
 
 
+
+
+
+## 前后端分离
+
+
+
+登录和退出都不需要编写Controller接口，Security为我们封装好了。
+默认登录和退出路径分别是/login和/logout，也可以修改默认路径。
+注意login和要使用POST方式，username和password作为form-data.
+
+登录成功和失败需要实现AuthenticationSuccessHandler和AuthenticationFailureHandler接口
+
+```java
+.successHandler(authenticationSuccessHandler)//登录成功处理逻辑
+.failureHandler(authenticationFailureHandler)//登录失败处理逻辑
+
+.successForwardUrl("/index")//登录成功页面跳转
+.failureForwardUrl("/error")//登录失败页面跳转
+
+```
+---
+- 继承WebSecurityConfigurerAdapter类
+-
+
+- 注解：
+```java
+@EnableGlobalMethodSecurity(prePostEnabled = true,securedEnabled = true)
+
+
+@PreAuthorize
+// 参数
+hasAuthority
+hasAnyAuthority
+hasRole
+hasAnyRole
+
+```
+---
+- CSRF(XSRF):跨站请求伪造(Cross-site Request Forgery)
+    - 令牌同步机制可以避免CSRF攻击
+
+    后端生成一个csrf_token，前端发送请求携带这个csrf_token
+
+```java
+
+httpSecurity.csrf().disable()
+
+```
+
+- CORS:跨域资源共享(Cross-Orign Resources Sharing)
+
+```java
+httpSecurity.cors() // 跨域
+
+```
+
+
+
+---
 ## Spring Security过滤器链
 
 
@@ -82,53 +142,30 @@ security.user.password=chench
 
 
 
-前后端分离：
-
-
-
-登录和退出都不需要编写Controller接口，Security为我们封装好了。
-默认登录和退出路径分别是/login和/logout，也可以修改默认路径。
-注意login和要使用POST方式，username和password作为form-data.
-
-登录成功和失败需要实现AuthenticationSuccessHandler和AuthenticationFailureHandler接口
-
-
-.successHandler(authenticationSuccessHandler)//登录成功处理逻辑
-.failureHandler(authenticationFailureHandler)//登录失败处理逻辑
-
-.successForwardUrl("/index")//登录成功页面跳转
-.failureForwardUrl("/error")//登录失败页面跳转
-
 
 ---
 
-注解：
+# RBAC(Role-Based Access Control)
+> 基于角色的访问控制。
 
-@EnableGlobalMethodSecurity(prePostEnabled = true,securedEnabled = true)
-
-
-
-
+- 用户user
+- 角色role
+- 菜单menu
+- 数据data
+- 路径path
 
 
 ---
+## BAC(Broken Access Control)
+> 越权访问
 
-RBAC（Role-Based Access Control ）基于角色的访问控制。
-用户user
-角色role
-菜单menu
+1. 垂直越权
+    - 不同角色越权访问：基于路径的访问控制
+    - 访问某个路径时校验角色是否有权限
 
-
-越权访问BAC（Broken Access Control）
-1.垂直越权
-    不同角色越权访问：基于路径的访问控制
-
-    访问某个路径时校验角色是否有权限
-
-2.水平越权
-    不同用户越权访问：基于数据的访问控制
-
-    访问某个数据时校验用户是否有权限
+2. 水平越权
+    - 不同用户越权访问：基于数据的访问控制
+    - 访问某个数据时校验用户是否有权限
 
 
 

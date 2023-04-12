@@ -33,3 +33,13 @@
 group by和having之间执行聚合函数(aggregate function)
 
 ---
+
+## SPL
+> Structured Process Language
+
+- 解释型语言
+- 支持动态数据结构
+- 支持丰富的集合运算函数
+- 兼容SQL
+
+- esProc

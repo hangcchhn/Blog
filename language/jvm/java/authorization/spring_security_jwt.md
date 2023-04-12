@@ -25,8 +25,3 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 ```
 
-
-- CSRF(XSRF):跨站请求伪造
-    - 令牌同步机制可以避免CSRF攻击
-
-- CORS:跨域资源共享
