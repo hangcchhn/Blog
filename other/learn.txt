@@ -27,14 +27,6 @@ java实现
 python实现
 
 
-
---------------------------------------------------------------------------------------------------
-
-
-
-dbeaver
-/Users/hn/Library/DBeaverData/workspace6/General/Scripts/
-
 --------------------------------------------------------------------------------------------------
 文件下载
 Content-Disposition:attachment;filename=xxx.xxx
@@ -114,3 +106,16 @@ sqlalchemy读取数据库表
 ELK(ElasticsSearch, Logstash, Kibana)
 
 OSS(OpenSourceSystem)
+
+
+--------------------------------------------------------------------------------------------------
+
+面试准备工作：
+1.简历
+2.jvm
+3.spring
+4.redis
+5.mysql
+6.kafka
+7.python
+

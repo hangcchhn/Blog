@@ -1,8 +1,23 @@
 # Spring IoC
 
 
+---
+## 依赖注入的方式
+- set方法注入
 
+- 构造器注入
 
+- 自动装配（注解模式）：优先级低于set方法注入和构造器注入
+```java
+
+@Component
+public class Xxx {
+
+    @Autowired
+    private Yyy yyy;
+}
+
+```
 
 ---
 - 按类型注入@Autowired:
