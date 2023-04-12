@@ -51,26 +51,12 @@ rm /var/lib/mysql/mysql.sock
 
 恢复数据无法启动
 
-进入数据库保存文件路径
-
-ll database_name/
-db.opt:用来记录该库的默认字符集编码和字符集排序规则用的
-table_name.frm:存储与表相关的元数据信息，主要是表结构的定义信息
-table_name.idb:InnoDB存储引擎的存储数据库表数据的文件
-
-当采用共享表空间时所有InnoDB表的数据均存放在table_name.ibdata中
-独享表空间的方法是在my.ini配置文件中：Innodb_file_per_table=1
-MySQL-5.7版本配置是默认独享表空间的，不用特意在配置文件中
-
-.MYD:MY Data，是MyISAM存储引擎用于存储数据库表数据的文件；
-.MYI:MY Index，是MyISAM存储引擎用于存储数据库表索引相关信息的文件。
 
 
-
-
+---
 innodb_force_recovery参数，默认为0
 控制mysql数据库innodb存储引擎的恢复模式
-当被设置成1-6时，表示数据库以安全模式启动
+当被设置成1~6时，表示数据库以安全模式启动
 只允许select，不允许insert,update,delete
 在此模式下可以导出数据，然后在正常模式重新导入
 
@@ -139,7 +125,7 @@ show variables like'%time_zone';
 
 显示SYSTEM表示没有设置时区
 
-set global time_zone = '+8:00';  
+set global time_zone = '+8:00';
 
 
 

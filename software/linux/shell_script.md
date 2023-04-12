@@ -122,7 +122,7 @@ stop)
     echo "stoping"
     ;;
 *)
-    echo "Usage: {start|stop} “
+    echo "Usage: {start|stop} "
 esac
 
 ```

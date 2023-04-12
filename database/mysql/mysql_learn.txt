@@ -24,40 +24,7 @@ like "%" 不能匹配null空值
 
 _ 匹配给定位置的1个字符
 
---------------------------------------------------------------------------------------------------
 
-正则表达式 regexp
-???
-
-
-
-concat()
-
-
-
---------------------------------------------------------------------------------------------------
-
-函数 function
-???
-
-substring()
-trim()
-rtrim()
-ltrim()
-lower()
-upper()
-
-now() = yyyy-mm-dd hh:mm:ss
-date()
-time()
-
-abs()
-sqrt()
-
-聚类函数：列名一致(group by ... = select ...) 聚类函数除外
-count() 统计null
-
-avg(),sum(),max(), min() 忽略null  是否去重all|distinct列名
 
 
 --------------------------------------------------------------------------------------------------
@@ -121,118 +88,13 @@ update ignore t set ... where ...
 
 
 自动增长
-auto_increment 
+auto_increment
 select last_insert_id()
 
 --------------------------------------------------------------------------------------------------
 
-视图=虚表
 
 
-
-修改语句分隔符（mysql命令行以;代表运行）
-delimiter ;
-
-存储过程procedure
-create 创建
-call 调用
-
-变量
-create procedure p (
-in var
-out var
-inout var
-)
-begin
-select ... into var from t;
-end;
-
-call p(@var);
-
-select @var;
-
-declare 定义变量指定数据类型
-
-游标只能用于存储过程
---定义
-declare c cursor
-for
-select ... from t ...
--- 打开
-open c
-
--- 使用
-fetch c into v
-
--- 循环
-declare continue handler for sqlstate '02000' set d=1;
-repeat fetch c into v;
-until d end repeat; 
-
--- 关闭
-close c
-
-
-触发器trigger:只支持表table
-
-create trigger trigger_name
-before|after insert|update|delete 
-on t for each row select t_p(触发打印)
-
-
-引擎：MyISAM和InnoDB
-MyISAM不支持事务而InnoDB才支持事务
-
-begin transaction transaction_name
-commit transaction_name
-rollback transaction_name
-
-savepoint transaction_point
-rollback to transaction_point
-
-
-
---------------------------------------------------------------------------------------------------
-
-
-字符集
-show character set;
-校对顺序
-show collation;
-
-create table t(...)
-default character set utf8 collate utf8_general_ci
-
-
-用户
-
-create user u identified by 'password'
-rename user old_user to new_user 
-set password for u = password('password')
-drop user u
-
-
-权限
-show grants for u
-
-grant|revoke ... on database.table to user
-
-usage(无权限)
-all privileges 
-grant option
-
-grant all privileges on *.* to 'root'@'%' with grant option
-
-备份
-flush tables;
-mysqldump|msqlhotcopy
-
-backup|restore table
-select into 'table.sql' from table ...
-
-运维
-analyze table t
-check table t
 
 
 
