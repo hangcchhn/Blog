@@ -41,7 +41,7 @@ Redis默认的内存淘汰策略
 使用config set maxmemory-policy noeviction命令设置内存淘汰策略，
 无需重启立刻生效，启内存淘汰策略配置丢失
 
-配置文件redis.conf对应的配置项是"maxmemory-policy noeviction"
+配置文件redis.conf对应的配置项是“maxmemory-policy noeviction”
 
 - 默认内存淘汰策略
     - noeviction：不淘汰任何数据，当内存不足时，执行缓存新增操作会报错
@@ -69,12 +69,13 @@ Redis<3.0根据配置maxmemory_samples（默认为5）随机采样，根据LRU�
 Redis>=3.0对LRU进行了升级，
 - Redis维护一个全局LRU时钟，记录了自服务启动后的LRU时间，每100ms更新一次。
 - Redis维护一个驱逐池(eviction pool)，容量为16，包含key和空闲时间，空闲时间等于当前时间-访问时间，驱逐池中按空闲时间排序，
-- 内存不足时，开始随机采样，将空闲时间最大的key插入驱逐池，当驱逐池满了后淘汰空闲时间最大的数据
+- 当内存达到最大内存配置时，开始随机采样选中空闲时间最大的key，如果驱逐池未满时按空闲时间插入，如果驱逐池满了时将空闲时间最小的剔除驱逐池，内存不足时淘汰空闲时间最大的数据
 
 ### 2.LFU（Least Frequently Used，最不常用的）淘汰算法
 > 记录数据的访问次数，淘汰最久没有访问的数据
 
-- 衰减机制
+- 衰减机制：lfu-log-factor 用于调整Logistic Counter的增长速度，lfu-log-factor值越大，Logistic Counter增长越慢。
+
 ---
 
 ## 单机锁：
@@ -97,11 +98,5 @@ Redis>=3.0对LRU进行了升级，
     - 乐观锁实现步骤：冲突检测和数据更新
     - CAS三个操作数：内存地址，预期原原和修改新值
     - 只有当内存地址的实际值与预期值一致时才能对内存地址更新值
-
-
-
----
-
-
 
 
