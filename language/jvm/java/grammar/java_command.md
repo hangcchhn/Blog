@@ -81,8 +81,7 @@ java -cp .:library.jar:execute.jar package.MainClass
 ## 启动参数
 
 - VM Options:`-Dxxx=yyy`
--
-Program arguments:`--xxx=yyy`
+- Program arguments:`--xxx=yyy`
 ```sh
 java -jar -Dxxx=yyy xxx.jar --xxx=yyy
 
@@ -137,3 +136,23 @@ jstack -l tid
 
 ---
 
+## jdb
+
+```sh
+
+jdb MainClass
+> stop in MainClass.methodName
+> run
+> next
+
+```
+---
+## jhsdb
+
+```sh
+# 命令行
+jhsdb clhsdb  --pid pid
+# 图形化
+jhsdb hsdb --pid pid
+
+```

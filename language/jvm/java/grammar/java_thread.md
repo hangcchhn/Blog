@@ -107,10 +107,11 @@ ThreadPoolExecutor.sublime()// 提交任务，有返回值
 
 - `long keepAliveTime`:线程空闲时间
     - 当线程数大于corePoolSize，如果线程空闲时间达到keepAliveTime时，线程会退出，直到线程数减少到corePoolSize
-- `TimeUnit unit`:
+- `TimeUnit unit`:单位
 - `BlockingQueue<Runnable> workQueue`:任务队列
 
 - `ThreadFactory threadFactory`:线程工厂
+    - 线程设置
 
 
 - `RejectedExecutionHandler handler`:任务拒绝处理器
