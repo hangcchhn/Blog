@@ -1,5 +1,5 @@
-# java stream
-> java流:Stream<T>
+# 流
+> `Stream<T>`
 
 - jdk1.8
 - lambda表达式

@@ -25,5 +25,3 @@ pagehelper.reasonable=true
 
 
 ```
-
-- ThreadLocal

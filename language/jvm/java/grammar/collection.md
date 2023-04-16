@@ -1,3 +1,8 @@
+# 集合
+
+```java
+interface Collection<E> extends Iterable<E>
+```
 
 
 Arrays.asList()返回的是Arrays.ArrayList(Arrays的内部类)
@@ -14,22 +19,19 @@ Arrays.ArrayList类虽然实现了List接口，但是没有完整的实现List�
 
 
 
-默认初始容量initialCapacity默认为16
+- 初始容量(initialCapacity)：默认为16
 
-默认加载因子loadFactory默认为0.75
-当元素占有比达到加载因子就会进行扩容
+- 负载系数(loadFactor)：默认为0.75
+
+- 当HashMap中元素占有比率达到loadFactor就会进行扩容, 容量按照2^n次幂进行扩容
+- 当长度为2的n次幂的时候，不同的key算得得index相同的几率较小。
+
+### 通过key找到对应的value的位置
+- 先根据key通过hashcode函数计算获得哈希值，
+- 再将哈希值与HashMap的长度减一并做位运算与&得到index
+- 总结得到的公式就是index = hash(key) & (length - 1)
 
 
-容量按照2^n次幂进行扩容
-
-要通过key找到对应的value的位置
-先根据key通过hashcode函数计算获得哈希值，
-再将哈希值与hashmap的长度减一并做位运算与&得到index
-总结得到的公式就是index = hash(key) & (length - 1)
-
-当数组长度为2的n次幂的时候，不同的key算得得index相同的几率较小，
-那么数据在数组上分布就比较均匀，也就是说碰撞的几率小，相对的，
-查询的时候就不用遍历某个位置上的链表，这样查询效率也就较高了。
 
 
 
@@ -52,3 +54,7 @@ Arrays.ArrayList类虽然实现了List接口，但是没有完整的实现List�
 
 ---
 
+## HashTable & ConcurrentHashMap
+
+- 线程安全
+- HashTable整体一把锁，每次只能有一个线程操作

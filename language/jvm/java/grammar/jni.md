@@ -1,4 +1,7 @@
-JNI(Java Native interface):Java本地接口
+# JNI
+> Java Native interface
+
+- Java本地接口
 
 ---
 ## 加载动态库

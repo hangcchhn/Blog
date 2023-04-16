@@ -1,4 +1,5 @@
-# Exception
+# 异常
+> Exception
 
 ## Throwable
 > Java语言中所有错误或异常的超类。
