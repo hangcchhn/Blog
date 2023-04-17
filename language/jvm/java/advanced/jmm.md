@@ -41,8 +41,8 @@
 
 - 非静态成员变量在类的实例化时开辟空间并初始化，所以类的非静态成员变量也放在堆中。
 
-Heap=Young｜New + Tenure|Old
-Young｜New = Eden + Survivor
+- Heap=Young｜New + Tenure|Old
+- Young｜New = Eden + Survivor * 2
 
 
 堆初始大小-Xms256m

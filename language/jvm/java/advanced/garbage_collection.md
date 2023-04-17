@@ -41,7 +41,9 @@ Reference Chain 引用链
 
 解决了内存碎片化问题，但是只能内存利用率最多只有一般，当存活对象过多要复制的对象也增多效率降低
 
-- 标记-整理算法(Mark-Compact)
+- 标记-整理（压缩）算法(Mark-Compact)
+
+
 
 
 ---
@@ -106,12 +108,6 @@ major GC和full GC通常是等价的。
 
 - JVM调优主要时针对full GC进行调优
 
----
-## STW(Stop The World)
-- 执行垃圾回收时，用户线程会暂停，
-- 垃圾回收结束后，用户线程会恢复。
-
-
 新生代中的eden区和from survive使用复制算法进行垃圾回收minor GC，
 老年代使用标记-清除和标记-整理算法进行垃圾回收major GC或full GC。
 
@@ -150,119 +146,10 @@ System.gc();
 
 ---
 
-```
--XX:GCTimeRatio=n           设置垃圾回收时间占程序运行时间的百分比
--XX:ParallelGCThreads=n     设置并行收集器收集线程数
--XX:MaxGCPauseMillis=n      设置并行收集最大暂停时间
-
-
-
--XX:+UseSerialGC        设置串行收集
-
-
-1.吞吐量优先的并行收集器
--XX:+UseParallelGC          设置年轻代并行收集器
--XX:ParallelGCThreads=n     设置年轻代并行收集器最大的线程数
--XX:MaxGCPauseMillis=n      设置年轻代并行收集器最大间隔时间
-
-
--XX:+UseParalledlOldGC      设置老年代为并行收集
-
--XX:+UseAdaptiveSizePolicy  自适应策略:自动选择年轻代和相应的Survivor区大小比例
-
-
-2.响应时间优先的并发收集器
-
--XX:+UseParNewGC            设置年轻代为并行收集
--XX:+UseConcMarkSweepGC     设置年老代为并发收集
-
--XX:CMSFullGCsBeforeCompaction=5        设置运行n次GC以后对内存空间进行压缩
--XX:+UseCMSCompactAtFullCollection      打开对年老代GC之后内存空间进行压缩
-```
----
-
-## 垃圾回收器
-- 串行回收:单线程
-
-
-
-- 并行回收:多线程
-
-
-
-- 并发回收
-
 
 ---
 
-
-### Serial垃圾回收器
-- 体现Stop the World特点(进行垃圾回收时，必须暂停所有其他线程)
-
-- 新生代使用
-- 采用复制算法
-- 并行回收
-
-- `-XX:+UseSerialGC`
-
-### PartNew垃圾回收器
-
-- 多线程版Serial垃圾回收器
-
-- `-XX:+UseParNewGC`
-- `-XX:ParallelGCThreads=2`
-
-### Parallel Scavenge垃圾回收器
-- 新生代使用
-- 采用复制算法
-- 并行回收
-
-- 适用于多后台运算而少交互中断的程序，充分利用CPU时间尽快完成CPU计算
-- 吞吐量=用户代码运行时间/CPU总消耗时间=用户代码运行时间/(用户代码运行时间+垃圾回收时间)
-
-
-- `-XX:MaxGCPauseMillis`
-- `-XX:GCTimeRatio`
-- `-XX:+UseAdptiveSizePolicy`
-
-### Serial Old
-- 老生代使用
-- 采用标记-整理算法
-- 串行回收
-
-### Parallel Old
-- 老生代使用
-- 采用标记-整理算法
-- 并行回收
-- 与Parallel Scavenge配合使用
-
-### CMS(Concurrent Mark Sweep)并发收集器:
-- 老年代使用
-- 采用标记-整理算法
-- 并行回收
-
-- 以获取最短垃圾回收停顿时间为目的注重响应速度
-
-CMS回收步骤:
-1. 初始标记(Stop the World)
-2. 并发标记
-3. 重新标记(Stop the World)
-4. 并发清除
-
-### G1(Garbage First)
-
-- 采用标记-整理算法
-- 并行回收
-- mixed GC:新生代和老年代混合垃圾回收
-- 充分利用多CPU，多核的硬件优势
-
-- 可以设置垃圾回收停顿时间
-
-- `-XX:+UseG1GC`
-- `-XX:MaxGCPauseMills`
-
-
-### ZGC(Z Garbage Collection)
-- jdk11
-- 基于Region内存布局，使用了读屏障、染色指针和内存多重映射
-- 采用标记-整理算法
+---
+## STW(Stop The World)
+- 执行垃圾回收时，用户线程会暂停，
+- 垃圾回收结束后，用户线程会恢复。
