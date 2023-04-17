@@ -1,10 +1,10 @@
 # JVM(Java Virtual Machine):Java虚拟机
 
 ---
-- IBM J9 VM 绑定硬件  2019年开源  Eclipse OpenJ9
-- SUN HotSpot VM 2009年被oracle收购
-- BEA JRockit VM 2008年被oracle收购
-- oracle在jdk8版本完成将JRockit整合到HotSpot
+- IBM J9 VM:绑定硬件,2019年开源Eclipse OpenJ9
+- SUN HotSpot VM:2009年被Oracle收购
+- BEA JRockit VM:2008年被Oracle收购
+- Oracle在jdk8版本完成将JRockit整合到HotSpot
 - JRockit最终版本R28，只支持到jdk6
 - JRockit是即时编译器——JIT(Just In Time) Complier
 

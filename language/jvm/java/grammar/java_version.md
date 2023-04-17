@@ -55,15 +55,45 @@ Runnable runnable = ()-> System.out.println("runnable");
 多个参数：第一个参数是方法所属对象，其他参数就是方法调用参数
 
 
+---
+
+类不支持多继承，接口允许多继承
+
+接口的default和static方法
+
+
+jdk<1.8 接口不支持静态成员
+
+jdk=1.8 函数接口：@FunctionInterface
+- 有且仅有一个abstract方法的接口，
+- 不包含default和static方法
+- 来自超类Object的也不算
+
+
 
 ---
-## jdk1.9
+### 函数接口
+
+java.util.function
+
+- 消费型接口:Consumer
+- 供给型接口:Supplier
+- 谓词型接口:Predicate
+- 功能型接口:Function
+
 
 
 
 ---
 
 ## jdk-11
+
+
+---
+
+- 动态类型var
+
+---
 
 
 - Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
