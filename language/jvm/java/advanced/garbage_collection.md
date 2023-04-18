@@ -1,9 +1,7 @@
 
 # GC(Garbage Collection):垃圾回收
 
-- 只对堆进行垃圾回收，不对栈进行垃圾回收
-
-
+- 只对堆Heap进行垃圾回收，不对栈Stack进行垃圾回收
 
 ---
 
@@ -23,12 +21,30 @@ Reference Chain 引用链
 - 方法区中的常量引用的对象
 - 本地方法栈中JNI(java native interface)的引用的对象
 
+### 并发漏标问题——读写屏障
+- 增量更新(Incremental Update):CMS垃圾回收器采用
 
-### 并发漏标问题
-- 增量更新法(Incremental Update):CMS垃圾回收器采用
+- 原始快照(Snapshot At The Beginning):G1垃圾回收器采用
 
-- 原始快照法(Snapshot At The Beginning):G1垃圾回收器采用
+---
+## 颜色指针(Colored Pointer)
+> CMS
+- 64位=18位预留+1位Finalizable+1位Remapped+2位Marked+42位内存地址(支持2^42=4TB)
 
+- 2位Marked在每个GC周期中轮换使用，这样可使前后两次标记不同，表示重置所有标记
+- 颜色指针拥有自愈能力，只需一次读屏障，减少了写屏障使用
+
+## 设置安全点区域
+> 引用关系不会发生变化，GC时安全的
+- 方法返回之前
+- 调用方法之后
+- 抛出异常时
+- 循环结尾
+
+---
+## STW(Stop The World)
+- 执行垃圾回收时，用户线程会暂停，
+- 垃圾回收结束后，用户线程会恢复。
 ---
 
 ## 垃圾回收算法
@@ -50,27 +66,27 @@ Reference Chain 引用链
 
 ## 分代回收算法
 
-- heap(堆)
-    - new generation(新生代young)
-    - old generation(老年代tenured)。
+- Heap(堆)
+    - New generation(新生代young)
+    - Old generation(老年代tenured)。
 
 - 新生代垃圾回收频率高，速度快；
 - 老年代垃圾回收频率低，速度慢。
 
 
-- new generation分为一个eden区(伊甸园)、from survivor和to survivor(幸存区)。
+- New generation分为一个Eden区(伊甸园)、from Survivor和to Survivor(幸存区)。
 
-- 两个survivor是同个等级的，同一时间两个survivor中有一个用来保存对象(from survivor)
-，而另一个是空的(to survivor)，在下次的新生代GC中保存对象，关于from和to survivor是动态的。
+- 两个Survivor是同个等级的，同一时间两个Survivor中有一个用来保存对象(from Survivor)
+，而另一个是空的(to Survivor)，在下次的新生代GC中保存对象，关于from和to Survivor是动态的。
 
-- 创建对象都放在eden区，当eden区满了之后会触发minor GC，将eden区和from survivor中存活对象转移到to survivor，上述过程是循环的，此时from和to survivor的名称进行对调。
+- 创建对象都放在Eden区，当Eden区满了之后会触发minor GC，将Eden区和from Survivor中存活对象转移到to Survivor，上述过程是循环的，此时from和to Survivor的名称进行对调。
 
-- 如果eden区和from survivor中存活对象多于to survivor，
-- 那么当to survivor满后多的对象直接转到old generation，
-- 如果old generation空间还不够就会报out of memory异常。
+- 如果Eden区和from Survivor中存活对象多于to Survivor，
+- 那么当to Survivor满后多的对象直接转到Old generation，
+- 如果Old generation空间还不够就会报out of memory异常。
 
-- 当survivor中存活对象每经历一次GC后还存在时其年龄就会加一，
-- 当survivor中年龄到达阀值的对象就会转移到old generation，
+- 当Survivor中存活对象每经历一次GC后还存在时其年龄就会加一，
+- 当Survivor中年龄到达阀值的对象就会转移到Old generation，
 - 默认阈值为15，最大阀值也是15，存放年龄空间只有4个字节
 - `-XX:MaxTenuringThreshold=15`
 New代对象在Survivor区经过15次GC之后才进入Old代，设置为0表示直接进入Old代
@@ -79,37 +95,32 @@ New代对象在Survivor区经过15次GC之后才进入Old代，设置为0表示�
 - 有可能还没到阈值就从survive直接转到Old generation
 - 当对象大小超过设置的阀值gc后直接转到Old generation
 
-- -XX:PretenureSizeThreshold=1024k
+- -XX:PretenureSizeThreshOld=1024k
 New代对象大小超过1024k时GC之后就进入Old代，设置为0表示直接进入Old代
 
 ---
 
 # minor GC & major GC & full GC
 
-- 一般情况下当old generation满了之后才会触发major GC。
-new generation的GC称为minor GC，
-old generation的GC称为major GC，
+- 一般情况下当Old generation满了之后才会触发major GC。
+New generation的GC称为minor GC，
+Old generation的GC称为major GC，
 
-- 当minor GC时eden区和from survivor的空间之和大于old generation的剩余空间时会引发major GC。
+- 当minor GC时Eden区和from Survivor的空间之和大于Old generation的剩余空间时会引发major GC。
 
 ### 三种垃圾回收现象:minor GC、major GC和full GC
-- 对新生代new gen进行垃圾回收叫做minor GC，
-- 对老年代old gen进行垃圾回收叫做major GC，
-- full GC包括minor GC和之后触发的major GC，
-同时对新生代和老年代进行垃圾回收叫做full GC，
+- 对新生代New gen进行垃圾回收叫做minor GC，对老年代Old gen进行垃圾回收叫做major GC，
+- full GC包括minor GC和之后触发的major GC，同时对新生代和老年代进行垃圾回收叫做full GC，
+
+
+
+- 许多major GC是由minor GC触发的，所以很难将这两种垃圾回收现象分开，major GC和full GC通常是等价的。
 
 - 对于jdk8之前，full GC还包括永生代的垃圾回收。
+- JVM调优主要时针对full GC进行调优。
 
-
-- 许多major GC是由minor GC触发的，
-所以很难将这两种垃圾回收现象分开，
-major GC和full GC通常是等价的。
-
-
-- JVM调优主要时针对full GC进行调优
-
-新生代中的eden区和from survive使用复制算法进行垃圾回收minor GC，
-老年代使用标记-清除和标记-整理算法进行垃圾回收major GC或full GC。
+- 新生代中的Eden区和from Survivor使用复制算法进行垃圾回收minor GC，
+- 老年代使用标记-清除和标记-整理算法进行垃圾回收major GC或full GC。
 
 ---
 
@@ -140,7 +151,7 @@ System.gc();
     Total time for which application threads were stopped: 0.0468229 seconds
 
 -XX:+PrintTenuringDistribution      在垃圾回收时打印Survivor区的对象的大小和年龄
-    Desired survivor size 163840 bytes, new threshold 1 (max 15)
+    Desired Survivor size 163840 bytes, New threshold 1 (max 15)
 
 ```
 
@@ -150,6 +161,4 @@ System.gc();
 ---
 
 ---
-## STW(Stop The World)
-- 执行垃圾回收时，用户线程会暂停，
-- 垃圾回收结束后，用户线程会恢复。
+
