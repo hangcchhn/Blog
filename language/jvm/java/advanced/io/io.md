@@ -54,7 +54,8 @@ GenericFutureListener->FutureCallback
 
 
 ---
-### File描述符｜Socket套接字
+### 文件描述符
+> Socket套接字
 
 I/O多路复用:单个线程可以处理多个IO操作
 核心函数:select，poll，epoll

@@ -98,19 +98,6 @@ java \
 java -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=10569 -jar mvn_pkg.jar
 
 ```
----
-
-## 解决CPU过高:
-```sh
-ps H -eo pid,tid,%cpu | grep pid
-
-top -p pid -H
-
-jstack pid
-
-jstack -l tid
-```
-
 
 
 
@@ -156,3 +143,11 @@ jhsdb clhsdb  --pid pid
 jhsdb hsdb --pid pid
 
 ```
+
+
+---
+## jcmd
+
+---
+
+## jdeps

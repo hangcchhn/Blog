@@ -2,7 +2,8 @@
 
 ---
 
-## jps:Java Process Status
+## jps
+> Java Process Status
 
 ```sh
 jps -l
@@ -13,9 +14,16 @@ jps -v
 
 ```
 
+## jinfo:基本信息
+
+```sh
+jinfo pid
+
+```
 
 ---
-## jstat:垃圾回收
+## jstat
+> Java Statistics
 
 - 可带刷新时间间隔动态打印进程状态信息
 
@@ -38,25 +46,37 @@ jstat -gcold pid
 
 ```
 
+## jstatd
+> jstat Daemon
 
-## jinfo:基本信息
 
-```sh
-jinfo pid
-
-```
 
 ---
-## jstack:线程
+## jstack
+
+- 线程
 
 ```sh
 
 jstack pid
 ```
 
+- 解决CPU过高:
+```sh
+ps H -eo pid,tid,%cpu | grep pid
+
+top -p pid -H
+
+jstack pid
+
+jstack -l tid
+```
 
 
-## jmap:内存
+---
+
+## jmap
+> Java Memory
 
 ```sh
 jmap -heap pid
@@ -64,8 +84,12 @@ jmap -heap pid
 jmap -dump:format=b,file=filename.hprof pid
 
 ```
+
+
+
 ---
-## jhat:Java Heap Analyse Tool
+## jhat
+> Java Heap Analyse Tool
 
 ```sh
 jhat -port 7000 filename.hprof
@@ -73,5 +97,12 @@ jhat -port 7000 filename.hprof
 ```
 - http://localhost:7000
 
+---
+
+## jmc
+> Java Mission Control
+
+
+##
 
 

@@ -29,18 +29,47 @@
     - 水平触发(level-triggered):同时支持阻塞和非阻塞套接字
     - 边沿触发(edge-triggered):只支持非阻塞套接字
 
-- 文件描述符数上限
-```sh
-# 系统文件描述符数上限
-cat /proc/sys/fs/file-max
-# 进程文件描述符数上限
-ulimit -n
 
-```
+---
+## Linux操作系统限制
+
+- 系统文件描述符数上限：`/proc/sys/fs/file-max`
+- 单个进程文件描述符数上限：文件`/etc/security/limits.conf`中的`noproc`配置
+- 单个用户进程数上限：文件`/etc/security/limits.conf`中的`noproc`配置
+- 系统线程数上限：`/proc/sys/kernel/threads-max`
+
+
+
+
 - /etc/security/limits.conf
-
 ```conf
 *               soft    nofile          65536
 *               hard    nofile          65536
 ```
 
+- `ulimit -n`
+
+---
+## Linux操作系统工具
+
+```sh
+# 查看负载
+uptime
+
+dmesg
+tail
+
+pidstat
+vmstat l
+mpstat -P ALL l
+
+
+free -m
+top
+
+sar -n DEV l
+
+
+
+
+```
