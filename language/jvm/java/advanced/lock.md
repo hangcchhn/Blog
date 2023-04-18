@@ -61,7 +61,7 @@ public static synchronized Object method(Object object) {
 
 ## Lock
 
-
+- 可重入锁:ReentrantLock
 ```java
 
 

@@ -39,14 +39,7 @@ JMM定义了一套在多线程读写共享数据时，对共享数据的可见�
 
 
 
-
-
-
-
 ---
-
-
-
 
 ## 线程调度：
     - 抢占式调度
@@ -74,16 +67,22 @@ JMM定义了一套在多线程读写共享数据时，对共享数据的可见�
 
 
 ---
-## 乐观锁机制-锁自旋-非阻塞算法
-> jdk1.5:java.util.concurrent.atomic
 
 
-- ABS(Abstract Queued Synchronizer):抽象的队列式的同步器
+## AQS
+> Abstract Queued Synchronizer
+- 抽象队列式同步器
 定义了一套多线程访问共享资源的同步器框架
-同步器的实现是 ABS 核心（state 资源状态计数）
+同步器的实现是AQS核心（state 资源状态计数）
+- 乐观锁机制-锁自旋-非阻塞算法
 
+- 同步器:Sync,FairSync, NonfairSync,Worker
 
-ReentrantLock/Semaphore/CountDownLatch
+- ReentrantLock
+- Semaphore:信号量
+- CountDownLatch:计数器
+- CyclicBarrier:可重复使用的栅栏
+- ThreadPoolExecutor
 独占资源:只有一个线程能执行 ReentrantLock
 共享资源:多个线程可同时执行 CountDownLatch
 

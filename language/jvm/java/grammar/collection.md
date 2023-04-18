@@ -58,3 +58,10 @@ Arrays.ArrayList类虽然实现了List接口，但是没有完整的实现List�
 
 - 线程安全
 - HashTable整体一把锁，每次只能有一个线程操作
+
+
+---
+## 线程安全集合
+- `ConcurrentHashMap`是`HashMap`的线程安全版本
+- `CopyOnWriteArrayList`是`ArrayList`的线程安全版本
+- `LinkedBlokingQueue`

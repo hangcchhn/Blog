@@ -121,3 +121,12 @@ Java事务的类型有三种：JDBC事务、JTA（Java Transaction API）事务�
 
 ---
 jmh——Java Micro-benchmark Harness
+
+---
+包装类
+
+
+---
+## 原子操作
+> java1.5
+- `java.util.concurrent.atomic`
