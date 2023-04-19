@@ -41,13 +41,13 @@ JMM定义了一套在多线程读写共享数据时，对共享数据的可见�
 
 ---
 
-## 线程调度：
-    - 抢占式调度
-    - 协同式调度
+## 线程调度
+
+- 抢占式调度
+- 协同式调度
 
 - 先来先服务（FCFS）调度算法
 - 短作业优先(SJF)调度算法
-
 
 - 非抢占式优先权算法
 - 抢占式优先权调度算法
@@ -72,8 +72,7 @@ JMM定义了一套在多线程读写共享数据时，对共享数据的可见�
 ## AQS
 > Abstract Queued Synchronizer
 - 抽象队列式同步器
-定义了一套多线程访问共享资源的同步器框架
-同步器的实现是AQS核心（state 资源状态计数）
+- 定义了一套多线程访问共享资源的同步器框架
 - 乐观锁机制-锁自旋-非阻塞算法
 
 - 同步器:Sync,FairSync, NonfairSync,Worker
@@ -83,14 +82,9 @@ JMM定义了一套在多线程读写共享数据时，对共享数据的可见�
 - CountDownLatch:计数器
 - CyclicBarrier:可重复使用的栅栏
 - ThreadPoolExecutor
-独占资源:只有一个线程能执行 ReentrantLock
-共享资源:多个线程可同时执行 CountDownLatch
 
+---
+- 独占资源:只有一个线程能执行——ReentrantLock
+- 共享资源:多个线程可同时执行——CountDownLatch
 
-
-1．isHeldExclusively()：该线程是否正在独占资源。只有用到 condition 才需要去实现它。
-2．tryAcquire(int)：独占方式。尝试获取资源，成功则返回 true，失败则返回 false。
-3．tryRelease(int)：独占方式。尝试释放资源，成功则返回 true，失败则返回 false。
-4．tryAcquireShared(int)：共享方式。尝试获取资源。负数表示失败；0 表示成功，但没有剩余可用资源；正数表示成功，且有剩余资源。
-5．tryReleaseShared(int)：共享方式。尝试释放资源，如果释放后允许唤醒后续等待结点返回true，否则返回 false。
 
