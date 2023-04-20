@@ -183,6 +183,19 @@ public interface Mapper{
 
 ```
 
+- 处理null值没有对应key问题
+
+- spring-boot:`mybatis.configuration.call-setters-on-nulls=true
+`
+
+```java
+MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
+MybatisConfiguration configuration = new MybatisConfiguration();
+configuration.setCallSettersOnNulls(true);
+sqlSessionFactory.setConfiguration(configuration);
+
+```
+
 ---
 
 
