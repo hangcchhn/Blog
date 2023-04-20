@@ -2,30 +2,19 @@
 > 计算机网络
 
 ---
-## 协议
-> protocol
 
 
 
----
-## IP
-> Internet Protocol
-
----
-## TCP
-
-
----
-## HTTP
-
+- 以太网Ethernet
 
 
 ---
 - HTTPS
 
 
-- SSL/TLS
-
+- 安全套接字层SSL(Secure Socket Layer)
+- 传输协议安全TLS(Transport Layer Security)
+-
 
 - CA
 ---
