@@ -152,14 +152,17 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 
 ---
 ### mybatis返回map结果
+
+- key是列名,value是值
+
 ```java
 
 public interface Mapper{
 
-    List<Map<String, Object>> getMapList();
+    List<Map<String, Object>> getList();
 
-    @MapKey("key")
-    Map<String, Object> getMap();
+    @MapKey(value = "column_key")
+    Map<String, Map<String, Object>> getMap();
 }
 
 
@@ -168,17 +171,12 @@ public interface Mapper{
 
 ```xml
 
-<select id="getMapList" resultType="java.util.Map">
-    select column_name from table_name
+<select id="getList" resultType="map">
+    select column_name_list from table_name
 </select>
 
-<resultMap id="mapResult" type="java.util.Map">
-    <id property="resultId" javaType="java.lang.Integer" column="key"  jdbcType="INTEGER" />
-    <result property="resultName" javaType="java.lang.String" column="value" jdbcType="VARCHAR" />
-</resultMap>
-
-<select id="getMap" resultMap="mapResult">
-    select key, value from table_name
+<select id="getMap" resultMap="map">
+    select column_key,column_name from table_name
 </select>
 
 ```
@@ -217,7 +215,7 @@ sqlSessionFactory.setConfiguration(configuration);
 
 ```xml
 
-<select id="">
+<select id="get">
     select column_name1 "columnName1"
     from table_name
 </select>
