@@ -98,9 +98,12 @@ reg_exp0XXXreg_exp1
 ---
 
 
-- 统计当前路径下文本文件的行数
-find . "(" -name "*.java" -or -name "*.py" ")" -print | xargs wc -l
+```sh
+#  统计当前路径下文本文件的行数
+find . "(" -name "*.java" -or -name "*.py" ")" -print | \
+xargs wc -l
 
 
-- 统计当前路径下文件的个数
+#  统计当前路径下文件的个数
 ls -l | grep "^-" | wc -l
+```
