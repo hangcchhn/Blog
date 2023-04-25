@@ -19,7 +19,7 @@ yum info xxx
 
 ```sh
 # yum下载rpm包
-yum install --downloadonly package --downloaddir= direction
+yum install --downloadonly package --downloaddir=/direction
 
 ```
 
