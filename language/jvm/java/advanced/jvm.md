@@ -49,6 +49,7 @@ Class<?> forName(String name, boolean initialize, ClassLoader loader)
 
 
 - `Thread.currentThread().getContextClassLoader()`:线程上下文类加载器
+ContextClassLoader从父线程继承而来，main线程以AppClassLoader作为ContextClassLoader，所有线程的ContextClassLoader默认都是AppClassLoader
 ---
 
 
