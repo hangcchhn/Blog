@@ -10,17 +10,55 @@
 
 ---
 ## 一、Class Loaded Subsystem:类加载子系统
-- 一、Loading:加载
-    - 1.Bootstrap Class Loader:引导类加载器
-    - 2.Extension Class Loader:扩展类加载器
-    - 3.Application Class Loader:应用类加载器
+### 1.Loading:加载
 
-- 二、Linking:连接
-    - 1.Verify:验证
-    - 2.Prepare:准备
-    - 3.Resolve:解析
+- Bootstrap Class Loader:引导类加载器，加载$JAVA_HOME/lib/rt.jar包里的运行时类(java.util.*, java.lang.*, java.io.*, java.nio.*, ...)
 
-- 三、Initialization:初始化
+
+- Extension Class Loader:扩展类加载器，加载$JAVA_HOME/lib/ext/*.jar包里的拓展类(javax.*)
+- Application Class Loader:应用类加载器，加载classpath下的jar包和class字节码，
+
+- 双亲委派：应用类加载器将工作委派给引导类加载器和扩展类加载器
+```java
+public abstract class ClassLoader {
+    private final ClassLoader parent;
+}
+```
+
+- ExtClassLoader的parent是null，表示parent是Bootstrap Class Loader
+- AppClassLoader的parent是ExtClassLoader
+- 加载类流程是AppClassLoader将要加载的类先委派的parent，即ExtClassLoader，如果ExtClassLoader不可以加载，AppClassLoader再去classpath下检索；ExtClassLoader将要加载的类先委派的parent。即引导类加载器，如果引导类加载器不可以加载，ExtClassLoader再去$JAVA_HOME/lib/ext/*.jar包里检索
+
+
+---
+
+- `sun.misc.Launcher`
+    - 静态内部类`AppClassLoader`和`ExtClassLoader`都继承`URLClassLoader`类
+```java
+Class<?> forName(String className)
+Class<?> forName(String name, boolean initialize, ClassLoader loader)
+
+
+```
+
+
+- `ClassLoader.getSystemClassLoader()`
+
+
+- `URLClassLoader`类可以加载本地和远程类
+
+
+- `Thread.currentThread().getContextClassLoader()`:线程上下文类加载器
+ContextClassLoader从父线程继承而来，main线程以AppClassLoader作为ContextClassLoader，所有线程的ContextClassLoader默认都是AppClassLoader
+---
+
+
+### 2.Linking:连接
+- Verify:验证
+- Prepare:准备
+- Resolve:解析
+
+- Initialization:初始化
 
 
 ---
