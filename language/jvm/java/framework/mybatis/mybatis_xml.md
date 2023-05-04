@@ -92,7 +92,7 @@ public class ResultType{
     private Integer resultId;
     private String resultName;
 
-    //set and get
+    // set and get
 }
 
 ```
