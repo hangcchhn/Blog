@@ -18,7 +18,8 @@ fi
 ```
 
 
-
+---
+```sh
 export JAVA_HOME=/opt/java/jdk-11.0.9
 export PATH=$JAVA_HOME/bin:$PATH
 
@@ -27,19 +28,16 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 #export HADOOP_HOME=/opt/hadoop
 #export PATH=$HADOOP_HOME/bin:$PATH
-
+```
 
 ---
 
-ubuntu pro
+- Ubuntu Pro
 
-hangcchhn@163.com
-
+```sh
 pro attach C1V3QbcGdqMPsWaacx1tNPiA1kGed
-
-
 apt install ubuntu-advantage-tools
-
+```
 ---
 
 
@@ -59,7 +57,8 @@ route add default gw 192.168.10.2
 
 ---
 
-ubuntu 20.04
+- ubuntu 20.04
+```sh
 service network-manager stop
 rm /var/lib/NetworkManager/NetworkManager.state
 service network-manager start
@@ -69,37 +68,27 @@ vim /etc/NetworkManager/NetworkManager.conf
 managed=true
 
 service network-manager restart
+```
 ---
 
-
-ubuntu <= 18.04
+```sh
+# Ubuntu <= 18.04
 apt install unity-tweak-tool
 
-ubuntu >= 20.04
+# Ubuntu >= 20.04
 apt install gnome-tweaks
 
+```
 
 
 
 ---
-
----
-
-
-
-
-
-
-
----
-ubuntu 22.04
-
-AppImages require FUSE to run.
-
+- Ubuntu 22.04:AppImages require FUSE to run.
+```sh
 sudo add-apt-repository universe
 sudo apt install libfuse2
 
-
+```
 ---
 
 

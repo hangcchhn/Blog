@@ -12,7 +12,10 @@
 
 ---
 
+- MyBatis-Spring
+- MyBatis-Guice
 
+---
 - 先通过SqlSessionFactoryBuilder读取配置构建SqlSessionFactory实例，再通过SqlSessionFactory打开SqlSession执行SQL语句获取返回结果
 
 ```java

@@ -1,5 +1,8 @@
 
-# mybatis框架的association和collection标签
+# mybatis框架的
+
+- 关联`association`
+- 集合`collection`
 
 
 ---
