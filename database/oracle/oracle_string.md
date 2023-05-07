@@ -1,7 +1,26 @@
-# oracle正则表达式
+# Oracle字符串
+
+
+---
+
+```sql
+-- 截取子串，下标从1开始，包头不包尾
+select substr('1234567890', 1, 3) from dual; -- 123
+
+--
+
+select instr('12345678.SZ','3',1) from dual; -- 3
+
 
 
 ```
+
+
+
+---
+## 匹配
+
+```sql
 -- 模糊匹配
 column_name like '%xxx%'
 
