@@ -14,7 +14,7 @@ uname -r
 
 ```sh
 # 查看所所有安装的内核版本
-rpm -qa| grep kernel
+rpm -qa | grep kernel
 # 删除具体单个内核
 rpm -e 具体内核名和版本
 
@@ -35,8 +35,8 @@ dpkg --get-selections |grep linux-modules
 dpkg --get-selections |grep linux-headers
 
 # 卸载内核并删除配置文件
-apt purge linux-modules-?
-apt purge linux-headers-?
+apt purge linux-modules-
+apt purge linux-headers-
 
 # 移除失效的启动项
 update-grub

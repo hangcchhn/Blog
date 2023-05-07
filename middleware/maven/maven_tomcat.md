@@ -1,7 +1,15 @@
 # maven tomcat
 > maven集成并运行tomcat
 
-- 配置(pom.xml)
+## 使用maven构建war包项目
+
+
+
+---
+
+## 使用maven对应tomcat插件运行war包项目
+
+- pom.xml
 ```xml
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
@@ -25,9 +33,6 @@
 
 ```
 
-
-
-- 运行(cmd,sh)
 ```sh
 mvn tomcat7:run
 ```
