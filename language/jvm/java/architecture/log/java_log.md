@@ -1,5 +1,5 @@
 
-# Java Log Framework
+# Java Log
 > Java语言日志框架
 
 - 日志模块

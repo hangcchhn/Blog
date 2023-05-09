@@ -1,8 +1,11 @@
 
 # ehcache
-> 缓存
 
+- 由Java语言实现
 
+- 速度快，缓存共享麻烦
+
+---
 ## 缓存同步
 - ehcache.xml
 ```xml

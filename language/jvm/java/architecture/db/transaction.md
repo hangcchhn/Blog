@@ -1,5 +1,6 @@
+# Java事务
 
-Java事务
+
 1.JDBC事务：Java DataBase Connection
 分自动提交和手工提交
 
