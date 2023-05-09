@@ -59,6 +59,16 @@ public interface ProviderMapper {
 }
 ```
 
+- 指定类和方法
+```java
+public class SourceProvider {
+
+    public String selectTable(String tableColumn, String orderColumn) {
+        // code
+    }
+
+}
+
 
 
 - 实现`ProviderMethodResolver`接口，在`@XxxxxxProvider`注解中不要指定方法，默认匹配到同名方法上。

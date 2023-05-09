@@ -5,28 +5,27 @@
 
 
 ---
-# Spring AOP底层原理是代理模式
-代理模式，其实就是让别人做同样的事情，但是别人却不仅将我的事情做了，还会把他的事情也做了
+## 代理模式
+- 底层原理是代理模式：其实就是让别人做同样的事情，但是别人却不仅将我的事情做了，还会把他的事情也做了
 
 
-- 静态代理
+### 静态代理
 
 
 
 
-- JDK动态代理
-必须有接口
+### JDK动态代理
+- 必须有接口
 
+- `java.lang.reflect.Proxy`类
 
-java.lang.reflect.Proxy类
+- 实现`InvocationHandler`接口的invoke方法
+- 通过Proxy类的newProxyInstance方法创建代理对象
 
-需要实现InvocationHandler接口的invoke方法
-通过Proxy类的newProxyInstance方法创建代理对象
-
-- CGlib动态代理
+### CGlib动态代理
 - 字节码技术
 
-实现MethodInterceptor接口
+- 实现`MethodInterceptor`接口
 
 
 ---

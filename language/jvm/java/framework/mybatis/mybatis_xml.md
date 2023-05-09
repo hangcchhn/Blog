@@ -138,6 +138,22 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 
 ```
 
+---
+- ResultType类如果没有无参构造函数，使用constructor标签指定有参构造函数
+```xml
+<resultMap id="resultTypeMap" type="package.ResultType">
+
+       <constructor>
+            <idArg column="result_id" jdbcType="Integer" />
+            <arg column="result_name" jdbcType="VARCHAR" />
+        </constructor>
+
+    <id property="resultId" javaType="java.lang.Integer" column="result_id"  jdbcType="Integer" />
+    <result property="resultName" javaType="java.lang.String" column="result_name" jdbcType="VARCHAR" />
+
+</resultMap>
+```
+
 
 
 ---
