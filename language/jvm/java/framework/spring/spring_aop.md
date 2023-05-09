@@ -29,6 +29,18 @@ java.lang.reflect.Proxy类
 实现MethodInterceptor接口
 
 
+---
+
+- `JoinPoint`连接点：方法调用，异常抛出
+- `Pointcut`切入点：`JoinPoint`连接点集合
+- `Advice`通知
+- `Advisor`：包括`Pointcut`切入点和`Advice`通知
+
+
+- `Before`
+- `After`
+- `Around`
+
 
 ---
 

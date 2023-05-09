@@ -67,6 +67,8 @@
 </selectKey>
 ```
 
+
+---
 ## 调用存储过程
 
 ### oracle数据库
@@ -78,8 +80,45 @@ public void callUser(Map<String, Object> map);
 ```
 
 ```xml
-<select id="callUser" statementType="CALLABLE" parameterType="java.util.Map">
+
+<select id="callUser" statementType="CALLABLE" databaseId="oracle" parameterType="java.util.Map">
     { call sp_user(#{userName, mode=IN, jdbcType=VARCHAR, javaType=String},
     #{userList, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=userMap}) }
 </select>
+
+<resultMap id="userEntityMap" type="UserEntity">
+    <id >
+    <result property="userName" javaType="java.lang.String" column="user_name" jdbcType="VARCHAR" />
+</resultMap>
+
+<resultMap id="userResultMap" type="UserResult">
+    <result property="userName" javaType="java.lang.String" column="user_name" jdbcType="VARCHAR" />
+    <collection property="userList" ofType="UserEntity" resultMap="userEntityMap"></collection>
+</resultMap>
+
+<select id="callUser" statementType="CALLABLE" databaseId="oracle" parameterType="UserResult">
+    { call sp_user(#{userName, mode=IN, jdbcType=VARCHAR, javaType=String},
+    #{userList, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=userResultMap}) }
+</select>
+
+```
+
+```java
+
+public class UserEntity {
+    private String userId;
+    private String userName;
+    // set and get
+}
+
+public class UserResult {
+    private String userName;
+    private List<UserEntity> userList;
+    // set and get
+}
+
+
+
+
+
 ```

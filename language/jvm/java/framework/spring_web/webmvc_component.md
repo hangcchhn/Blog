@@ -33,24 +33,6 @@
 
 
 
----
-
-## `HandlerInterceptor`接口
-
-### 实现方法
-- `preHandle()`方法
-- `postHandle()`方法
-- `afterCompletion()`方法
-
-
-### 拓展
-- `AsyncHandlerInterceptor`接口继承`HandlerInterceptor`接口，多声明`afterConcurrentHandlingStarted()`方法
-
-- `HandlerInterceptorAdapter`抽象类实现`AsyncHandlerInterceptor`接口，已弃用。
-
-
-
-
 
 ---
 ## Aspect
