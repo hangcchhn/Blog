@@ -1,5 +1,13 @@
 # Arthas
 
+- 集成async-profiler
+
+---
+## async-profiler
+
+- https://github.com/jvm-profiling-tools/async-profiler
+
+- `./profiler.sh`
 
 ---
 ```sh

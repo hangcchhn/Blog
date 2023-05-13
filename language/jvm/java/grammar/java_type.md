@@ -18,6 +18,9 @@
     - 注解:@interface
 
 
+---
+
+
 
 ---
 
@@ -38,9 +41,12 @@ byte->8bit
 
 
 ---
-## 整型Integer,Long,Short
-> 对应基础数据类型的包装类型，自动装箱拆箱
+## 包装类型
+> 对应基本数据类型，自动装箱拆箱
 
+- 尽量使用基本数据类型替代对应包装类型
+
+### 整型Integer,Long,Short
 - IntegerCache
 整型缓存默认范围[-128,127]，可使用`-XX:AutoBoxCacheMax=high`调整[-128,high]，要求high>127,否则不生效
 - Float,Double没有缓冲
@@ -75,13 +81,26 @@ compareTo()的返回值类型是int
 
 使用+进行字符串连接：先会创建两个子串对象，赋值时又会创建拼接之后的字符串对象
 
+
+### StringBuilder
+- 多线程不安全
+
+### StringBuffer
+- 线程安全，同步机制
+- 默认初始化容量是16，当达到最大容量时会扩容到当前容量的2倍加2，即2*N+2。
+- 首先创建一个新的字符数组，然后复制旧的字符数组，开销很大。
+
+
 ---
 
 ## 终态final
 
+
 final变量：常量，其值一旦初始化就不能再修改
-final函数：不能被重载
+final方法：不能被重载
 final类：不能被继承
+
+final类所有的方法都是终态(final)的，Java编译器会内联(inline)所有final方法
 
 
 ---
@@ -102,14 +121,37 @@ private static final long serialVersionUID = 1L;
 
 ---
 
-赋值：
-1.基本类型：复制内容（数值）
-2.对象类型：复制引用（地址）
 
-复制
-1.浅复制：复制对象的引用但不复制引用的对象
-2.深复制：复制引用的对象及其成员引用的对象
 
+
+
+---
+
+## 克隆
+
+
+- `Cloneable`接口
+```java
+public class CloneDemo implements Cloneable {
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+```
+
+- 基本类型和对象类型都可以深度克隆
+- 自定义类需要实现`Cloneable`,作为类属性时需要单独调用`clone`方法实现深复制
+
+- 赋值：
+    1. 基本类型：复制内容（数值）
+    2. 对象类型：复制引用（地址）
+
+- 复制
+    1. 浅复制：复制对象的引用但不复制引用的对象
+    2. 深复制：复制引用的对象及其成员引用的对象
 
 
 
