@@ -6,21 +6,28 @@
 - 底层实现是代理模式；参考[Java代理](../../grammar/java_proxy.md)
 ---
 
-- 通过`DefaultAopProxyFactory`类`createAopProxy`方法决定使用JDK还是cglib
-    - 都实现`AopProxy`接口，属性`AdvisedSupport`类`getMethodInterceptor`方法返回`MethodInterceptor`接口
-    - `JdkDynamicAopProxy`类实现`InvokeHandler`接口`invoke`方法
-        - `ReflectiveMethodInvocation`类实现`MethodInvocation`接口
+### 通过`DefaultAopProxyFactory`类`createAopProxy`方法决定使用JDK还是cglib
+- 都实现`AopProxy`接口，属性`AdvisedSupport`类`getMethodInterceptor`方法返回`MethodInterceptor`接口
+- `JdkDynamicAopProxy`类实现`InvokeHandler`接口`invoke`方法
+    - `ReflectiveMethodInvocation`类实现`MethodInvocation`接口
 
-    - `ObjenesisCglibAopProxy`类继承`CglibAopProxy`类，其中`DynamicAdvisedInterceptor`静态类实现`MethodInterceptor`接口
-        - `CglibMethodInvocation`类实现`MethodInvocation`接口
+- `ObjenesisCglibAopProxy`类继承`CglibAopProxy`类，其中`DynamicAdvisedInterceptor`静态类实现`MethodInterceptor`接口
+    - `CglibMethodInvocation`类实现`MethodInvocation`接口
 ---
 - `JoinPoint`连接点：方法调用，异常抛出，
 - `Pointcut`切入点：`JoinPoint`连接点集合
     - `AspectJExpressionPointcut`类
 - `Advice`通知：环绕
     - `MethodInterceptor`接口
-- `Advisor`：包括`Pointcut`切入点和`Advice`通知
+- `Advisor`切面：包括`Pointcut`切入点和`Advice`通知
     - `PointcutAdvisor`接口
+
+- `@Aspect`切面：相对于`Advisor`优先级高
+
+
+- `AnnotationAwareAspectJAutoProxyCreator`
+    - `findEligibleAdvisors`
+    - `wrapIfNecessary`
 ---
 
 - 实现`MethodInterceptor`接口，注意是org.aopalliance包下的，不是cglib动态代理中的
@@ -60,49 +67,14 @@ dynamicProxyApi.method("xyz");
 ---
 
 
-
-- `Before`
-- `After`
-- `Around`
+- `org.aspectj.lang.annotation`->`org.springframework.aop.aspectj`
+    - `Before`
+    - `After`
+    - `Around`：环绕
+- 适配器模式：所有类型通知转换成环绕通知
+- 所有`Advice`类都实现`MethodInterceptor`接口，线程使用`MethodInvocation`类
+- 责任链模式：`MethodInvocation`接口递归调用，依次执行环绕通知，类似拦截器和过滤器
 
 
 ---
-
-
----
-
-```java
-
-@Aspect
-@Component
-public class AnnotationAspect(){
-    @Pointcut(value = "@annotation(hn.cch.common.annotation.Annotation)")
-    public void pointcut() {
-
-    }
-
-
-    @Around("pointcut()")
-    public Object around(ProceedingJoinPoint proceedingJoinPoint) {
-
-    }
-}
-
-
-```
-
----
-## AspectJ
-> Eclipse
-
-- 基于Java语言的AOP框架
-- Spring 2.0+支持AspectJ，注解`@EnableAspectJAutoProxy`
-- 支持类，接口，字段，方法，构造方法，静态方法，静态变量初始赋值，final终态等
-
-- 织入：编译和加载过程中修改字节码实现增强，性能较高，入侵性较强
-
-- AspectJ编译器(ajc)
-- compile:maven插件aspectj-maven-plugin
-
-- agent:`-javaagent:./aspectjweaver.jar`
 

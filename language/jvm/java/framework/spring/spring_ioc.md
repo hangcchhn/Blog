@@ -64,3 +64,11 @@ public void superAttribute(){
 @Autowired
 protected Attribute attributes;
 ```
+
+
+---
+## ApplicationContext
+- GenericApplicationContext
+- AnnotationConfigApplicationContext
+- ClassPathXmlApplicationContext
+- FileSystemXmlApplicationContext
