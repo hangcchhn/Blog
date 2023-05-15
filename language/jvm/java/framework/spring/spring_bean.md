@@ -27,4 +27,31 @@ public class Bean {
 
 ---
 
+- `BeanFactory`接口
+    - `getBean`方法
+    - `DefaultListableBeanFactory`类实现`BeanFactory`接口
 
+
+- `ApplicationContext`接口继承`BeanFactory`接口，Spring的核心容器
+    - `getMessage`方法：获取信息，实现国际化
+    - `getResources`方法：获取资源
+    - `getEnvironment`方法：获取环境
+    - `publishEvent`方法：发布事件，实现事件解耦
+
+---
+### `ApplicationContext`接口实现类
+
+- ClassPathXmlApplicationContext
+- FileSystemXmlApplicationContext
+- XmlWebApplicationContext
+- AnnotationConfigWebApplicationContext
+
+- AnnotationConfigApplicationContext
+- AnnotationConfigServletWebServerApplicationContext
+- AnnotationConfigReactiveWebServerApplicationContext
+
+
+-
+---
+
+- `MessageSource`类实例化bean对象名称固定`messageSource`

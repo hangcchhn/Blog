@@ -19,7 +19,7 @@ mybatis:
   mapper-locations:
     - classpath*:mapper/**/*.xml
   type-aliases-package: hn.cch.entity
-  config-location: classpath*:mybatis-config.xm
+  config-location: classpath*:mybatis-config.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 

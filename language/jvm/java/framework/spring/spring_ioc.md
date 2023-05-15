@@ -1,5 +1,5 @@
 # Spring IoC
-
+- 控制反转IoC(Inversion of Control)
 
 ---
 ## 依赖注入的方式
