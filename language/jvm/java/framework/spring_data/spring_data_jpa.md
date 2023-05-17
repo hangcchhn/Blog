@@ -147,14 +147,14 @@ spring.jpa.hibernate.ddl-auto=update
 - JpaRepository
 
 
-Spring框架会使用JdkDynamicAopProxy为Repository接口生成一个代理对象
-JdkDynamicAopProxy源码invoke方法
-SimpleJpaRepository类
-EntityManager对象
+Spring框架会使用`JdkDynamicAopProxy`为`Repository`接口生成一个代理对象
+`JdkDynamicAopProxy`类`invoke`方法
+`SimpleJpaRepository`类
+`EntityManager`对象
 
 
-SpringData JPA底层还是用的JPA的API，
-SpringData JPA只是对标准JPA操作进行了些封装
+Spring Data JPA底层还是用的JPA的API，
+Spring Data JPA只是对标准JPA操作进行了些封装
 
 
 ---

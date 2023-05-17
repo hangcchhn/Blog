@@ -16,16 +16,16 @@
 ---
 
 ### `@Scope`作用域
-- singleton:单例
+- singleton:默认单例
 - prototype:多例
 - request:请求
 - session:会话
 - application:应用
 
-### 在单例bean中依赖注入其他作用域bean会有问题，解决方法：推迟注入
+### 在单例bean中依赖注入其他作用域bean会失效的，解决方法：推迟注入
 
 - `@Lazy`:生成代理
-- `@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)`:生成代理
-- `ObjectFactory`:间接注入
+- `@Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)`:生成代理
+- `ObjectFactory<>`:间接注入
 - `ApplicationContext.getBean`:间接注入
 

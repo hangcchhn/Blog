@@ -3,7 +3,7 @@
 - AOP(Aspect Oriented Programming)
 - Spring AOP是基于spring IoC实现的
 
-- 底层实现是代理模式；参考[Java代理](../../grammar/java_proxy.md)
+- 底层实现是代理模式；参考[Java代理](../../../grammar/java_proxy.md)
 ---
 
 ### 通过`DefaultAopProxyFactory`类`createAopProxy`方法决定使用JDK还是cglib
