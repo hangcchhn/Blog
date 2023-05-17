@@ -20,10 +20,10 @@ public class Xxx {
 ```
 
 ---
-- 按类型注入@Autowired:
-如果使用@Autowired注解装配的类型有多个实例，
-可以使用@Primary注解指定一个默认的实例注入，
-也可以使用@Qualifier注解指定注入实例的名称
+### 按类型注入@Autowired:
+- 如果使用@Autowired注解装配的类型有多个实例，
+- 可以使用@Primary注解指定一个默认的实例注入，
+- 也可以使用@Qualifier注解指定注入实例的名称
 ```java
 public class Demo {
 
@@ -36,8 +36,8 @@ public class Demo {
 ```
 
 
-- 按名称注入@Resource:
-可以根据name按名称注入，也可以按type按类型注入，默认按名称注入，注入实例可以为空
+### 按名称注入@Resource:
+- 可以根据name按名称注入，也可以按type按类型注入，默认按名称注入，注入实例可以为空
 ```java
 public class Demo {
     @Resource(name="", type="")
@@ -67,8 +67,3 @@ protected Attribute attributes;
 
 
 ---
-## ApplicationContext
-- GenericApplicationContext
-- AnnotationConfigApplicationContext
-- ClassPathXmlApplicationContext
-- FileSystemXmlApplicationContext

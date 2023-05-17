@@ -79,3 +79,5 @@ ApplicationContext applicationContext = new ClassPathXmlApplicationContext("clas
 ResultMapper resultMapper = applicationContext.getBean(ResultMapper.class);
 List<Result> resultList = resultMapper.selectResult();
 ```
+
+- mybatis-spring-1.3.2中取消了自动注入`SqlSessionFactory`和`SqlSessionTemplate`
