@@ -86,7 +86,7 @@ try {
 - `Lock`需要显式获得和释放锁
 
 ---
-## Lock & Condition
+## `ReentrantLock & Condition`
 
 - 多条件锁
 
@@ -94,9 +94,9 @@ try {
 
 
 ```java
-Lock.lock()
+ReentrantLock.lock()
 Condition.await()/signal()
-Lock.unlock()
+ReentrantLock.unlock()
 ```
 
 ## ReentrantReadWriteLock
