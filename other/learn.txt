@@ -150,3 +150,29 @@ MyBatis和MyBatisPlus用法
 4.深入了解技术的本质和思想，书:Effective Java,Thinking In Java
 5.编程，人机交互，始终离不开人，离不开沟通能力
 
+
+--------------------------------------------------------------------------------------------------
+
+
+Java
+
+使用Spring AOP实现根据日历表计算动态日期（最近多久，今年以来，成立以来等）
+
+使用@ControllerAdvice对返回数据做统一封装，包括常量转换和敏感信息加密处理
+使用@ExceptionHandler实现异常处理
+
+同步数据：从上游同步数据，根据表名配置，
+通过MyBatis的@SelectProvider实现动态SQL，
+并配置执行器类型为Batch提交插入数据性能
+
+
+Spring Security实现权限控制
+JWT封装用户信息生成token返回给前端
+加密，编码
+
+使用过滤器实现校验前端带的cookie中的SessionId，
+将Session存储在redis中实现集群部署
+
+
+
+SOAP方式发送短信
