@@ -54,4 +54,39 @@ public interface ResultHandler<T> {
 ```
 
 
+---
+
+- `MappedStatement`
+- `SqlSource`
+- `BoundSql`
+
+```java
+
+public class MappedStatement {
+
+    private SqlSource sqlSource;
+
+    public BoundSql getBoundSql(Object parameterObject) {
+        // code
+    }
+
+public interface SqlSource {
+    BoundSql getBoundSql(Object var1);
+}
+
+public class BoundSql {
+    private final String sql;
+    private final List<ParameterMapping> parameterMappings;
+    private final Object parameterObject;
+    private final Map<String, Object> additionalParameters;
+    private final MetaObject metaParameters;
+
+}
+
+```
+
+---
+
+- `MapperProxyFactory`
+- `MapperProxy`
 
