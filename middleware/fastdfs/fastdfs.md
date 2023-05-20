@@ -1,15 +1,15 @@
+# FastDFS
+
+
+---
+
+- 配置文件路径：/etc/fdfs/
+- 执行文件路径：/usr/bin/fdfs_*
 
 
 
---------------------------------------------------------------------------------------------------
 
-配置文件路径：/etc/fdfs/
-执行文件路径：/usr/bin/fdfs_*
-
-
-
-
-
+```sh
 # 测试上传
 fdfs_test /etc/fdfs/client.conf upload /root/fdfs/fastdfs/1.jpg
 
@@ -18,7 +18,7 @@ fdfs_test /etc/fdfs/client.conf upload /root/fdfs/fastdfs/1.jpg
 fdfs_upload_file /etc/fdfs/client.conf /root/fdfs/fastdfs/1.jpg
 
 # 下载文件
-fdfs_download_file /etc/fdfs/client.conf 
+fdfs_download_file /etc/fdfs/client.conf
 
 # 删除storage节点
 fdfs_monitor /etc/fdfs/client.conf delete group0 192.168.10.168
@@ -45,8 +45,9 @@ cat /root/fdfs/fastdfs/storage/logs/storaged.log
 
 vim /etc/fdfs/client.conf
 
---------------------------------------------------------------------------------------------------
-
+```
+---
+```sh
 vim /etc/fdfs/mod_fastdfs.conf
 ps aux |grep nginx
 
@@ -58,11 +59,11 @@ vim /usr/local/nginx/nginx-1.15.1/conf/nginx.conf
 
 cat /usr/local/nginx/nginx-1.15.1/logs/error.log
 cat /usr/local/nginx/nginx-1.15.1/logs/access.log
+```
 
 
-
---------------------------------------------------------------------------------------------------
-
+---
+```sh
 vim /etc/fdfs/storage1.conf
 vim /etc/fdfs/storage2.conf
 
@@ -75,17 +76,17 @@ fdfs_monitor /etc/fdfs/storage2.conf
 cat /root/fdfs/fastdfs/storage1/logs/storaged.log
 cat /root/fdfs/fastdfs/storage2/logs/storaged.log
 
+```
 
 
 
 
 
+---
 
---------------------------------------------------------------------------------------------------
+- client.conf:
 
-client.conf:
-
-
+```ini
 # fdfs_trackerd
 tracker_server=192.168.10.153:22122
 
@@ -95,23 +96,19 @@ http.server_port=8998
 
 base_path=/root/fdfs/fastdfs/
 
-storage_ids_filename = storage_ids.conf
+storage_ids_filename=storage_ids.conf
+```
 
---------------------------------------------------------------------------------------------------
-storage_ids.conf:
-
+- storage_ids.conf:
+```ini
 # <id>  <group_name>  <ip_or_hostname>
 100001   group0  192.168.10.153
 #100002   group1  192.168.10.153
 
+```
 
---------------------------------------------------------------------------------------------------
-
-
-
---------------------------------------------------------------------------------------------------
-mod_fastdfs.conf:
-
+- mod_fastdfs.conf:
+```sh
 # fdfs_storaged
 storage_server_port=23000
 
@@ -147,36 +144,26 @@ storage_server_port=23001
 store_path_count=1
 store_path0=/root/fdfs/fastdfs/storage1
 
---------------------------------------------------------------------------------------------------
-nginx.conf:
-    location ~ /group0/M00/ {
-        root /root/fdfs/fastdfs/storage/data;
-        ngx_fastdfs_module;
-    }
+```
+- nginx.conf:
+```nginx
 
-    location ~ /group1/M00/ {
-        root /root/fdfs/fastdfs/storage1/data;
-        ngx_fastdfs_module;
-    }
+location ~ /group0/M00/ {
+    root /root/fdfs/fastdfs/storage/data;
+    ngx_fastdfs_module;
+}
 
-    location ~ /group([0-9])/M00/ {
-        root /root/fastdfs/storage/data;
-        ngx_fastdfs_module;
-    }
+location ~ /group1/M00/ {
+    root /root/fdfs/fastdfs/storage1/data;
+    ngx_fastdfs_module;
+}
 
---------------------------------------------------------------------------------------------------
+location ~ /group([0-9])/M00/ {
+    root /root/fastdfs/storage/data;
+    ngx_fastdfs_module;
+}
 
-
-
-
-
-
-
---------------------------------------------------------------------------------------------------
-
-
-
---------------------------------------------------------------------------------------------------
+```
 
 
 

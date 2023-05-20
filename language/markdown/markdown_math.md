@@ -32,11 +32,11 @@
 #### 对数
 ---
 
-- x是以a为底b的对数:$\log_{a}{b}$
+- x是以a为底b的对数：$\log_{a}{b}$
     - a叫底数
     - b叫真数
-- 以e为底:$\ln{e}$
-- 以10为底:$\lg{10}$
+- 以e为底：$\ln{e}$
+- 以10为底：$\lg{10}$
 
 
 ### 极限
@@ -62,6 +62,26 @@
 
    - $\prod\limits_{n=1}^{N}{x_n}$
 
+- 带多条件
+$$
+\sum_{
+    \begin{gathered}
+        1\le i \le n \\
+        1\le j \le m
+    \end{gathered}
+}M_{i, j}
+$$
+
+$$
+\prod_{
+    \begin{gathered}
+        1\le i \le n \\
+        1\le j \le m
+    \end{gathered}
+}M_{i, j}
+$$
+
+
 
 ---
 ### 三角函数
@@ -69,44 +89,44 @@
     - $\bot$
     - $\top$
 
-- 角度:$\angle A = 30^\circ$
+- 角度：$\angle A = 30^\circ$
 
-- 正弦:$\sin(x)$
-- 余弦:$\cos(x)$
-- 正切:$\tan(x)$
-- 余切:$\cot(x)$
+- 正弦：$\sin(x)$
+- 余弦：$\cos(x)$
+- 正切：$\tan(x)$
+- 余切：$\cot(x)$
 
 ---
 ### 关系运算
-- 小于等于:$x \leq y$
-- 大于等于:$x \geq y$
-- 不等于:$x \neq y$
-- 约等于:$x \approx y$
-- 恒等于:$x \equiv y$
+- 小于等于：$x \leq y$
+- 大于等于：$x \geq y$
+- 不等于：$x \neq y$
+- 约等于：$x \approx y$
+- 恒等于：$x \equiv y$
 
 ---
 ### 逻辑运算
 
-- 全部:$\forall$
-- 存在:$\exists$
+- 全部：$\forall$
+- 存在：$\exists$
 
-- 无穷:$\infty$
-- 空集:$\emptyset$
+- 无穷：$\infty$
+- 空集：$\emptyset$
 
-- 属于:$\in$
-- 不属于:$\notin$
+- 属于：$\in$
+- 不属于：$\notin$
 
-- 与:$\land$
-- 或:$\lor$
-- 非:$\lnot$
-
-
-- 因为:$\because$
-- 所以:$\therefore$
-
-- 服从分布:$X \sim N(\mu, \sigma)$
+- 与：$\land$
+- 或：$\lor$
+- 非：$\lnot$
 
 
-- 最优解:$x^*$
+- 因为：$\because$
+- 所以：$\therefore$
 
-- 梯度:$\nabla$
+- 服从分布：$X \sim N(\mu, \sigma)$
+
+
+- 最优解：$x^*$
+
+- 梯度：$\nabla$
