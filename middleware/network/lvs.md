@@ -1,11 +1,13 @@
 # IPVS
-> IP(Internet Protocol) Virtual Server
+> Internet Protocol Virtual Server
 
-- LVS(Linux Virtual Server)
-- 负载均衡(Load balance)
+- LVS(Linux Virtual Server)：Linux虚拟服务器
+- 运行在LVS上提供负载均衡LB(Load Balance)功能
 
 ---
 
+
+- IPVS转发模式：NAT、DR、TUN
 
 
 - DS:Director Server
@@ -18,7 +20,7 @@
 ---
 ## DR模式
 >Direct Routing
-
+- 通过直接路由实现
 
 
 ```sh
@@ -96,10 +98,12 @@ net.ipv4.conf.all.rp_filter = 0
 ---
 ## NAT模式
 > Network Address Translation
+
+- 通过网络地址转换实现
 ---
 ## TUN模式
-
-
+> IP Tunnel
+- 通过IP隧道实现
 
 ---
 ## ipvsadm

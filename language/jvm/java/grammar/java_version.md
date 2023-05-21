@@ -53,31 +53,26 @@ Runnable runnable = ()-> System.out.println("runnable");
 
 
 ---
-
-- 类不支持多继承，接口允许多继承
-
-- 接口的default和static方法
-
-
-java<1.8 接口不支持静态成员
-
-java>1.8 函数接口:`@FunctionInterface`
+### 函数接口
+> Function Interface
+- 函数接口`@FunctionInterface`注解
 - 有且仅有一个`abstract`方法的接口，
 - 不包含`default`和`static`方法
 - 来自超类`Object`的也不算
 
+---
 
+- 接口类型：`java.util.function`
+    - Runnable
+    - 消费型接口:Consumer
+    - 供给型接口:Supplier
+    - 谓词型接口:Predicate
+    - 功能型接口:Function
 
 ---
-### 函数接口
-
-`java.util.function`
-- Runnable
-- 消费型接口:Consumer
-- 供给型接口:Supplier
-- 谓词型接口:Predicate
-- 功能型接口:Function
-
+- 类不支持多继承，接口允许多继承
+- 接口的default和static方法
+- java<1.8 接口不支持静态成员
 
 ---
 ### Optional
@@ -98,7 +93,10 @@ java>1.8 函数接口:`@FunctionInterface`
 
 ---
 
-- 动态类型var
+- 动态类型：`var`
+
+
+- 模块化：`module-info.java`
 
 ---
 
@@ -117,3 +115,8 @@ java>1.8 函数接口:`@FunctionInterface`
 # -XX:+UseCMSCompactAtFullCollection
 # -XX:+UseFastAccessorMethods
 ```
+
+---
+## java17
+
+

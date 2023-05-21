@@ -22,3 +22,19 @@
 
 
 ```
+
+
+---
+
+# 多数据源
+> MultiDataSource
+
+
+
+- Spring提供`AbstractRoutingDataSource`抽象类
+    - 只支持单数据源事务
+
+- Spring Boot提供`DataSourceBuilder`类
+
+- Spring提供`DataSourceTransactionManager`类管理事务
+

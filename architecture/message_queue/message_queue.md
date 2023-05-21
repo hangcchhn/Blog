@@ -17,13 +17,13 @@
 ## ZeroMQ
 
 ---
-## kafka
+## Kafka
 
 
 ---
 
-## redis
-
+## Redis
+- 不推荐使用Redis实现消息队列
 ### Redis 2.0.0之前：
 1. 使用List：lpush和brpop
 2. 使用ZSet：zadd和zrangebyscore

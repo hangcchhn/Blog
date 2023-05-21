@@ -157,10 +157,6 @@ public class CloneDemo implements Cloneable {
 
 ---
 
-
-Java事务的类型有三种：JDBC事务、JTA（Java Transaction API）事务、容器事务。
-
-
 ---
 jmh——Java Micro-benchmark Harness
 
