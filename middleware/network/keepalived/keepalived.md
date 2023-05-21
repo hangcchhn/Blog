@@ -2,12 +2,13 @@
 
 
 - 基于VRRP协议(Virtual Router Redundancy Protocol,虚拟路由冗余协议)
+- 通过VIP实现LVS高可用HA
 
-- 双机热备HA
-
-- www.keepalived.org
 
 ---
+## 双机热备
+- 虚拟IP
+
 ```sh
 yum install -y openssl openssl-devel
 yum install -y libnl libnl-devel

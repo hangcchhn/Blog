@@ -1,0 +1,73 @@
+
+# Flask
+
+- `pip install flask`
+
+- flask.py
+```py
+# —*— coding: utf-8 -*-
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'flask'
+
+app.debug = True
+app.run()
+
+```
+
+- request.py
+```py
+from flask import request
+
+header = request.headers.get("name")
+
+value = request.args.get("key", "default")
+
+key = request.form.get("key")
+
+import json
+data = json.loads(request.get_data(as_text=True))
+
+```
+---
+
+## flask-restful
+
+- `pip install flask-restful`
+
+- restful.py
+```py
+# —*— coding: utf-8 -*-
+
+from flask import Flask
+from flask_restful import Api, Resource
+
+
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': 'world'}
+
+
+if __name__ == '__main__':
+    app = Flask(__name__)
+    api = Api(app)
+
+    api.add_resource(HelloWorld, '/')
+
+    app.debug = True
+    app.run()
+
+```
+
+
+
+
+
+---
+
+

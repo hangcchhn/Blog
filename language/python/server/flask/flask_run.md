@@ -1,11 +1,4 @@
-# flask
-
-
-
-
-
-pip install flask
-
+# flask run
 
 - flask.py
 ```py
@@ -15,10 +8,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
-    return 'hello'
+    return 'flask'
 
 app.debug = True
 # 启动服务：进程阻塞，后面代码不会执行

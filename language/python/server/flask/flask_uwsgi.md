@@ -1,12 +1,12 @@
+# uwsgi
+
+- `pip install uwsgi`
 ---
 
-uwsgi + flask
-
-pip install uwsgi
-
+## uwsgi & flask
 
 - uwsgi.ini
-
+```ini
 [uwsgi]
 http=0.0.0.0:8000
 # uwsgi + nginx -> socket
@@ -44,7 +44,9 @@ threads=2
 # 启动用户和组
 uid=root
 gid=root
+```
 
+```sh
 
 uwsgi uwsgi.ini
 
@@ -56,15 +58,13 @@ uwsgi --stop uwsgi.pid
 
 curl http://127.0.0.1:8000/
 
+```
 ---
 
-uwsgi + nginx
+## uwsgi & nginx
 
-./configure --prefix=/usr/local/nginx/nginx-1.18.0
-make
-make install
-
-使用nginx转发时需要修改uwsgi.ini文件使用socket配置
+- 需要先启动uwsgi再启动nginx
+- 使用nginx转发时需要修改uwsgi.ini文件使用socket配置
 
 ```nginx
 location / {
@@ -81,8 +81,6 @@ location / {
 ```
 - `curl http://127.0.0.1:80/`
 
-
-需要先启动uwsgi再启动nginx
 
 
 

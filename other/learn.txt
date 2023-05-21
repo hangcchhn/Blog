@@ -173,6 +173,9 @@ JWT封装用户信息生成token返回给前端
 使用过滤器实现校验前端带的cookie中的SessionId，
 将Session存储在redis中实现集群部署
 
+Flask使用uwsgi部署
+Fast API使用uvicorn部署
+web.py
 
 多数据源切换和事务管理
 
