@@ -15,6 +15,21 @@
     </dependency>
 </dependencies>
 ```
+- Test.java
+```java
+
+public class Test {
+
+    @Test
+    public void test() {
+
+    }
+
+}
+
+```
+
+- `@Test`测试用例中创建的多线程都是守护线程，无法执行配置Spring框架的`@Async`异步方法
 
 
 ---
@@ -29,9 +44,9 @@
 
 ---
 
-Spring Boot >= 2.4.0默认使用JUnit 5.x，@SpringBootTest带有@ExtendWith(SpringExtension.class)
-如果要使用JUnit 4.x，需要手动添加junit-vintage-engine
-
+- Spring Boot >= 2.4.0默认使用JUnit 5.x，`@SpringBootTest`带有`@ExtendWith(SpringExtension.class)`
+- 如果要使用JUnit 4.x，需要手动添加junit-vintage-engine
+- Spring Boot < 2.0.0不支持JUnit 5.x
 
 | JUnit 4.x | JUnit 5.x|
 | :- | :- |

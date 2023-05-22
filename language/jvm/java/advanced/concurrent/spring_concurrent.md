@@ -4,15 +4,15 @@
 ---
 
 ---
-# 异步调用
-@Async
-要求修饰的方法返回值为void或Future<T>
+## 异步调用
 
-spring默认使用SimpleAsyncTaskExecutor线程池
+- `@Async`要求修饰的方法返回值为`void`或`Future<T>`
+
+- Spring框架默认使用`SimpleAsyncTaskExecutor`线程池
 
 默认大小16个
 
-SimpleAsyncTaskExecutor提供了限流机制:ConcurrencyThrottleSupport
+`SimpleAsyncTaskExecutor`提供了限流机制:`ConcurrencyThrottleSupport`
 org.springframework.util.ConcurrencyThrottleSupport
 beforeAccess()
 afterAccess()
@@ -20,4 +20,4 @@ afterAccess()
 默认关闭限流机制即concurrencyLimit=-1，当关闭情况下会不断创建新的线程来处理任务
 
 
-spring-boot推荐使用ThreadPoolTaskExecutor
+- Spring Boot框架推荐使用`ThreadPoolTaskExecutor`线程池
