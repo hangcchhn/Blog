@@ -65,17 +65,6 @@
 - 抢占式优先权调度算法
 - 高响应比优先调度算法
 
----
-## CAS
-> Compare And Swap
-- 比较并交换
-
-- JVM的CAS是使用CPU提供的CMPXCHG指令
-
-- 使用锁机制和循环CAS实现原子操作
-- CAS只能保证一个共享变量的原子操作
-- 多个共享变量的原子操作可以使用锁机制
-
 
 
 ---
@@ -151,3 +140,9 @@ try {
     throw new RuntimeException(e);
 }
 ```
+
+---
+
+## CyclicBarrier
+
+- 使一定数量

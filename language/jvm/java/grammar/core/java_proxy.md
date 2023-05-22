@@ -78,7 +78,7 @@ proxyInstance.method("xyz");
 ## cglib动态代理
 > Code Generation Library
 - 针对类实现代理，通过继承机制生成一个子类，目标和代理是父子关系
-- 不支持动态final类和方法，静态static和私有private方法
+- 不支持终态final类和方法，静态static和私有private方法
 
 - pom.xml
 ```xml
