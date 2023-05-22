@@ -100,3 +100,54 @@
 - 共享资源:多个线程可同时执行——CountDownLatch
 
 
+
+---
+## CountDownLatch
+
+```java
+CountDownLatch countDownLatch = new CountDownLatch(count);
+countdownLatch.countDown();// count--;
+countdownLatch.await();// 当前线程等待，直到count=0当前线程会被唤醒
+```
+
+- `count=1`:多个线程同时执行
+```java
+int n = 3;
+CountDownLatch countDownLatch = new CountDownLatch(1);
+ExecutorService threadPool = Executors.newFixedThreadPool(n);
+
+for (int i = 0; i < n; i++) {
+    threadPool.submit(() -> {
+        code();// 业务代码
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    });
+}
+// 多个线程同时执行
+countDownLatch.countDown();
+```
+
+
+- `count=N`:某个线程要等待N个线程执行完毕才运行
+
+```java
+int n = 3;
+CountDownLatch countDownLatch = new CountDownLatch(n);
+ExecutorService threadPool = Executors.newFixedThreadPool(n);
+
+for (int i = 0; i < n; i++) {
+    threadPool.submit(() -> {
+        code();// 业务代码
+        countDownLatch.countDown();
+    });
+}
+// 要等待N个线程执行才运行
+try {
+    countDownLatch.await();
+} catch (InterruptedException e) {
+    throw new RuntimeException(e);
+}
+```

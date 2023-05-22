@@ -2,7 +2,7 @@
 
 
 - 基于VRRP协议(Virtual Router Redundancy Protocol,虚拟路由冗余协议)
-- 通过VIP实现LVS高可用HA
+- 通过VIP实现LVS高可用HA(High Availability)
 
 
 ---
