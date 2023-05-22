@@ -1,7 +1,7 @@
 # MySQL事务
 
-- MyISAM不支持事务
-- InnoDB才支持事务
+
+- 存储引擎：MyISAM不支持事务，InnoDB才支持事务
 
 ```sql
 -- 开始事务
@@ -17,6 +17,8 @@ savepoint transaction_point
 rollback to transaction_point
 
 ```
+
+
 ---
 ## MySQL事务隔离级别
 
@@ -36,18 +38,6 @@ A事务修改数据时，B事务读取数据要阻塞等待，不允许读写并
 select @@tx_isolation;
 SET [SESSION|GLOBAL] TRANSACTION ISOLATION LEVEL [READ UNCOMMITTED|READ COMMITTED|REPEATABLE READ|SERIALIZABLE]
 ```
-
-# MySQL日志
-> binlog
-
-- STATEMENT
-基于SQL语句的复制(statement-based replication, SBR)
-
-- ROW
-基于行的复制(row-based replication, RBR)
-
-- MIXED
-混合模式复制(mixed-based replication, MBR)
 
 
 

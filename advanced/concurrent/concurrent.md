@@ -1,5 +1,5 @@
-# concurrent programming
-> 并发编程
+# 并发
+> concurrent
 
 
 

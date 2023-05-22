@@ -36,12 +36,14 @@
 
 ---
 ## synchronized
-> 可以保证同一时刻只有一个线程执行被修饰的方法或者代码块
+> 同步的
+
+- 可以保证同一时刻只有一个线程执行被修饰的方法或者代码块
 
 - 还可以保证共享变量的内存可见性
 - 代码重排序也不会影响其执行结果
 
-- synchronized：编译成字节码后就是monitor enter和monitor exit两条指令
+- 编译成字节码后就是`monitor enter`和`monitor exit`两条指令
 
 ```java
 //锁定变量
@@ -71,6 +73,7 @@ public static synchronized Object method(Object object) {
 
 ---
 ## volatile
+> 易变的
 
 - 可以保证内存可见性
 - 可以保证指令有序性

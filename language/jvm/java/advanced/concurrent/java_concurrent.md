@@ -10,7 +10,7 @@
 
 
 
-### 多线程并发的三个特性
+## 并发三个特性
 - 操作原子性
 - 内存可见性
 - 指令有序性
@@ -28,27 +28,6 @@
 - JMM定义了一套在多线程读写共享数据时，对共享数据的可见性，有序性，原子性的原则和保障。
 
 
----
-## 线程间通讯
-
-线程间通过共享数据来实现通信，通过同步互斥访问机制保证线程的安全性
-
-- `volatile`
-- `synchronized`
-- `wait & notify`
-- `ReentrantLock & Condition`
-- `LockSupport`
-
-- `ReentrantLock`
-- `CyclicBarrier`
-- 管道`PipedInputStream & PipedOutputStream`
-- `BlockingQueue`
-
-- `Thread.join()`
-- `FutureTask`
-- `Callable`
-
-- 生产者消费者模型
 
 
 ---
@@ -89,10 +68,9 @@
 - 共享资源:多个线程可同时执行——CountDownLatch
 
 
-
 ---
 ## CountDownLatch
-
+> 计数器
 ```java
 CountDownLatch countDownLatch = new CountDownLatch(count);
 countdownLatch.countDown();// count--;
@@ -100,49 +78,18 @@ countdownLatch.await();// 当前线程等待，直到count=0当前线程会被�
 ```
 
 - `count=1`:多个线程同时执行
-```java
-int n = 3;
-CountDownLatch countDownLatch = new CountDownLatch(1);
-ExecutorService threadPool = Executors.newFixedThreadPool(n);
-
-for (int i = 0; i < n; i++) {
-    threadPool.submit(() -> {
-        code();// 业务代码
-        try {
-            countDownLatch.await();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    });
-}
-// 多个线程同时执行
-countDownLatch.countDown();
-```
-
-
 - `count=N`:某个线程要等待N个线程执行完毕才运行
-
-```java
-int n = 3;
-CountDownLatch countDownLatch = new CountDownLatch(n);
-ExecutorService threadPool = Executors.newFixedThreadPool(n);
-
-for (int i = 0; i < n; i++) {
-    threadPool.submit(() -> {
-        code();// 业务代码
-        countDownLatch.countDown();
-    });
-}
-// 要等待N个线程执行才运行
-try {
-    countDownLatch.await();
-} catch (InterruptedException e) {
-    throw new RuntimeException(e);
-}
-```
 
 ---
 
 ## CyclicBarrier
+> 可重复使用的栅栏
 
-- 使一定数量
+- 使一定数量线程在栅栏处等待，当所有线程都到了后执行
+```java
+CyclicBarrier cyclicBarrier = new CyclicBarrier(parties);
+// 当线程到达栅栏后
+CyclicBarrier cyclicBarrier = new CyclicBarrier(parties, Runnable);
+
+cyclicBarrier.await()
+```
