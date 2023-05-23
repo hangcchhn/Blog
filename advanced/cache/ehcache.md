@@ -1,5 +1,5 @@
 
-# ehcache
+# EhCache
 
 - 由Java语言实现
 

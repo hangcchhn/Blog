@@ -89,6 +89,8 @@ proxyInstance.method("xyz");
 </dependency>
 ```
 
+- spring-core模块中内嵌了cglib包
+
 
 
 - 实现`MethodInterceptor`接口`intecept`方法，使用`Enhancer`创建子类

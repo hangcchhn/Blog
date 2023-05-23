@@ -9,12 +9,12 @@
 ### 线程
 - 系统运算调度的基本单位
 - 一个进程有一个或多个线程组成
-- 当所有非守护线程退出后进程才会退出
+- 当所有非守护线程退出后进程才会退出，创建线程设置守护线程`thread.setDaemon(true)`
 
 ### 线程实现
-1. 继承Thread类
-2. 实现Runnable接口（无返回值）
-3. 实现Callable接口（有返回值，返回值是Future接口）
+1. 继承`Thread`类
+2. 实现`Runnable`接口（无返回值）
+3. 实现`Callable`接口（有返回值，返回值是`Future`接口）
 
 
 ---
@@ -84,10 +84,16 @@
 - 实际中无法保证`yield()`达到让步的目的，让步的线程可能被线程调度程序再次选中。
 
 ---
-## ThreadLocal：存放线程私有数据
+## ThreadLocal
 
-- ThreadLocalMap，初始容量16，负载因子2/3
+- `ThreadLocal<T>`：存放线程私有数据
+- `ThreadLocalMap`内部静态类：初始容量16，负载因子2/3
+    - `Entry`内部静态类：`Entry`的`key`是一个`WeakReference`弱应用，当不存在外部强引用的时候，就会自动被回收，但是Entry中的value依然是强引用。
+        - `value`：Entry->ThreadLocalMap->Thread
 
 
 
+- 拦截器的`postHandle()`方法要执行`ThreadContextHolder.destroy()`，即执行`ThreadLocal.remove()`
 
+- `ThreadLocal.withInitial()`
+- 不需要`ThreadLocal`变量时，需要主动调用`ThreadLocal.remove()`方法解决内存泄漏问题

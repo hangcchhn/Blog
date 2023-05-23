@@ -53,7 +53,7 @@
 > Abstract Queued Synchronizer
 - 抽象队列式同步器
 - 定义了一套多线程访问共享资源的同步器框架
-- 乐观锁机制-锁自旋-非阻塞算法
+- 乐观锁-自旋锁-非阻塞算法
 
 - 同步器:Sync,FairSync, NonfairSync,Worker
 
@@ -93,3 +93,12 @@ CyclicBarrier cyclicBarrier = new CyclicBarrier(parties, Runnable);
 
 cyclicBarrier.await()
 ```
+
+---
+
+## atomic
+> java.util.concurrent.atomic
+- 自旋锁+CAS
+
+- `AtomicInteger`
+

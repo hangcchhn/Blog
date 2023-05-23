@@ -1,5 +1,5 @@
 # Spring EL(Expression Language)
-> SpEL
+> SpEL表达式
 
 - Spring 3.x引入
 - JSP EL:`${}`

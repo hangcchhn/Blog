@@ -21,3 +21,7 @@ afterAccess()
 
 
 - Spring Boot框架推荐使用`ThreadPoolTaskExecutor`线程池
+
+---
+- `ThreadPoolTaskExecutor`
+-

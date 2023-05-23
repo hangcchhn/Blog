@@ -2,8 +2,15 @@
 > 缓存
 
 ---
+## 缓存类型
+- 进程内缓存
+    - ehcache
+    - caffeine
+- 集中式缓存
+    - redis
+    - memcached
 
-
+- j2cache：多级缓存
 ---
 
 ---
