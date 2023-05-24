@@ -16,7 +16,7 @@ Error是系统级别的，程序无法处理
 > 异常
 Exception是程序级别的，需要程序处理
 
-1. 运行时异常RuntimeException： IOException、SQLException
+1. 运行时异常RuntimeException：IOException、SQLException
 
 2. 检查异常CheckedException：
 

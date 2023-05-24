@@ -10,15 +10,18 @@
 
 ---
 ## 一、Class Loaded Subsystem:类加载子系统
-### 1.Loading:加载
+### 1.Loading
+> 加载
 
-- Bootstrap Class Loader:引导类加载器，加载$JAVA_HOME/lib/rt.jar包里的运行时类(java.util.*, java.lang.*, java.io.*, java.nio.*, ...)
+- Bootstrap Class Loader:引导类加载器，加载`$JAVA_HOME/lib/rt.jar`包里的运行时类(`java.util.*, java.lang.*, java.io.*, java.nio.*, ...`)
 
 
-- Extension Class Loader:扩展类加载器，加载$JAVA_HOME/lib/ext/*.jar包里的拓展类(javax.*)
+- Extension Class Loader:扩展类加载器，加载`$JAVA_HOME/lib/ext/*.jar`包里的拓展类(`javax.*`)
 - Application Class Loader:应用类加载器，加载classpath下的jar包和class字节码，
 
+- 通过双亲委派方式根据全限定名读取对应字节码文件到运行时数据区的方法区
 - 双亲委派：应用类加载器将工作委派给引导类加载器和扩展类加载器
+
 ```java
 public abstract class ClassLoader {
     private final ClassLoader parent;
@@ -50,20 +53,37 @@ Class<?> forName(String name, boolean initialize, ClassLoader loader)
 
 - `Thread.currentThread().getContextClassLoader()`:线程上下文类加载器
 ContextClassLoader从父线程继承而来，main线程以AppClassLoader作为ContextClassLoader，所有线程的ContextClassLoader默认都是AppClassLoader
+
+---
+## 虚方法表
+> Virtual Method Table
+- 多级继承层次比较深时，采用虚方法表的方式来优化调用效率；加载类时为每一个类创建一张表，存储该类所有的动态绑定方法及其地址，包括父类的方法，被子类重写的方法只保存子类的，没有被重写的方法保存父类的，每个方法只保存一条记录
 ---
 
 
-### 2.Linking:连接
-- Verify:验证
-- Prepare:准备
-- Resolve:解析
+### 2.Linking
+> 连接
 
-- Initialization:初始化
+- Verify验证：格式，语义
+- Prepare准备：静态变量分配内存空间赋默认值，常量赋值
+- Resolve解析：将常量池中的符号引用替换为直接引用的过程。
 
+- Initialization初始化：
+    - 静态变量赋值
+    - 执行静态代码块（执行JVM调用，只执行一次）
+    - 如果存在父类，先初始化父类
 
 ---
-## 二、Runtime Data Area:运行时数据区
-[Java内存模型](jmm.md)
+## 描述创建对象过程
+- 在堆中分配对象所需的内存空间：包括本类和父类所有实例变量
+- 将方法区所有实例变量的定义拷贝到堆中并赋默认值
+- 执行实例代码块和构造方法：如果存在父类，先执行父类的
+- 先在栈中定义引用变量，再使用在堆中分配内存的对象地址赋值
+
+---
+## 二、Runtime Data Area
+
+- [运行时数据区](./runtime_data_area.md)
 
 
 ---

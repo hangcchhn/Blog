@@ -116,7 +116,7 @@ Old generation的GC称为major GC，
 
 - 许多major GC是由minor GC触发的，所以很难将这两种垃圾回收现象分开，major GC和full GC通常是等价的。
 
-- 对于jdk8之前，full GC还包括永生代的垃圾回收。
+- 对于jdk8之前，full GC还包括永久代的垃圾回收。
 - JVM调优主要时针对full GC进行调优。
 
 - 新生代中的Eden区和from Survivor使用复制算法进行垃圾回收minor GC，
