@@ -1,6 +1,26 @@
 
 # Flask
 
+
+- 轻量级，可扩展
+
+
+- Jinja2模板引擎
+- Werkzeug WSGI套件
+
+
+---
+
+## 装饰器
+- 路由：`@app.route('/')`
+
+- `@app.before_request`
+- `@app.after_request`
+- `@app.errorhandler(404)`
+
+
+---
+
 - `pip install flask`
 
 - flask.py
@@ -34,40 +54,57 @@ import json
 data = json.loads(request.get_data(as_text=True))
 
 ```
+
+---
+## 表单
+
+- `pip install WTForms`
+
 ---
 
-## flask-restful
+## Jinja2模板引擎
 
-- `pip install flask-restful`
-
-- restful.py
-```py
-# —*— coding: utf-8 -*-
-
-from flask import Flask
-from flask_restful import Api, Resource
-
-
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
-
-
-if __name__ == '__main__':
-    app = Flask(__name__)
-    api = Api(app)
-
-    api.add_resource(HelloWorld, '/')
-
-    app.debug = True
-    app.run()
+- `return render_template('index.html',key='value')`
+- index.html
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>key = {{ key }}</title>
+    </head>
+    <body>
+        <h1>key = {{ key }}</h1>
+    </body>
+</html>
 
 ```
 
+- `{{ key }}`获取变量的值
+- `{%  %}`
+
+---
+## SQLAlchemy数据库持久化模块
+- `pip install SQLAlchemy`
+
+```py
+from flask_sqlalchemy import SQLAlchemy
+
+app.config['SQLALCHEMY_DATABASE_URI'] = ''
+db = SQLAlchemy(app)
+
+```
+
+---
+
+
+
 
 
 
 
 ---
-
-
+## 扩展模块
+- Flask-WTF
+- Flask-Login
+- Flask-Cache
+- Flask-Mail

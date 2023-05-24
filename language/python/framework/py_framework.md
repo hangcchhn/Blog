@@ -12,7 +12,7 @@
 - 轻量级
 - 使用Jinja2模板
 
-#### 
+####
 
 - flask-restplus
     - flask-restful
@@ -21,13 +21,13 @@
 
 
 ### Tornado
-> 
-> 
-> 
+>
+>
+>
 - 高并发、可扩展
 
-### Twisted 
-> 
+### Twisted
+>
 - 基于事件驱动，高性能，跨平台，可扩展性的网络框架
 - reactor模型：netty框架
 
@@ -61,6 +61,6 @@
 
 
 
-### peewee  
+### peewee
 
 

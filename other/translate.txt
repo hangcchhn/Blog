@@ -341,6 +341,7 @@ rpt
 --------------------------------------------------------------------------------------------------
 短信:SMS(Short Message Service)
 
+应用编程接口:API(Application Programming Interface)
 
 
 
