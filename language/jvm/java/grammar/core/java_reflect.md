@@ -20,7 +20,7 @@
 - Class类
 - Field属性
 - Method方法
-- Constructor构造函数
+- Constructor构造器
 - Annotation注解
 - Array数组
 - Template泛型
@@ -43,7 +43,7 @@ Constructor[] constructors = clazz.getDeclaredConstructors();
 
 Java java = (Java) clazz.newInstance();
 
-//无参构造函数
+//无参构造器
 Constructor constructor = clazz.getDeclaredConstructor();
 Java java = (Java) constructor.newInstance();
 

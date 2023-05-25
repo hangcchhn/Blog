@@ -34,3 +34,5 @@ hn.cch.spi.Service=hn.cch.spi.impl.ServiceImpl0,hn.cch.spi.impl.ServiceImpl1
 List<Service> list = SpringFactoriesLoader.loadFactories(Service.class,
         Thread.currentThread().getContextClassLoader());
 ```
+
+- `spring.factories`功能Spring Boot 2.7+废弃，Spring Boot 3.0+移除

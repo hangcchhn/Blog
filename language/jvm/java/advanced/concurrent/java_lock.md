@@ -45,7 +45,7 @@
 - 可以保证同一时刻只有一个线程执行被修饰的方法或者代码块
 
 - 还可以保证共享变量的内存可见性
-- 代码重排序也不会影响其执行结果
+- 指令重排序也不会影响其执行结果
 
 - 编译成字节码后就是`monitor enter`和`monitor exit`两条指令
 
@@ -103,9 +103,11 @@ public static synchronized Object method(Object object) {
 
 ## Lock
 
-- 可重入锁:ReentrantLock
-```java
+- 可重入锁`ReentrantLock`
+    - 默认构造器是非公平锁，可以使用`new ReentrantLock(true)`创建公平锁
 
+
+```java
 
 Lock lock = new ReentrantLock();
 try {

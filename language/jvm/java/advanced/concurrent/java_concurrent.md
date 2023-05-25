@@ -11,31 +11,23 @@
 
 
 ## 并发三个特性
-- 操作原子性
-- 内存可见性
-- 指令有序性
+- 内存可见性：某个线程对共享变量的修改，其他个线程能够立刻读取
+- 操作原子性：一个或者多个操作在CPU执行的过程中不能被中断
+- 指令有序性：JVM具有指令重排优化功能
 
 - 指令重排不会影响单线程执行的结果，但会影响多线程并发执行结果的准确性，
 
+- `volatile`可以保证可见性，可以禁止JVM指令重排，保证有序性
+- `synchronized`可以保证可见性和原子性
+
+### happens-before order
+- 前面一个操作的结果对后续操作是可见的
 
 ---
 
 
 
 
----
-
-## 线程调度
-
-- 抢占式调度
-- 协同式调度
-
-- 先来先服务（FCFS）调度算法
-- 短作业优先(SJF)调度算法
-
-- 非抢占式优先权算法
-- 抢占式优先权调度算法
-- 高响应比优先调度算法
 
 
 
@@ -44,11 +36,14 @@
 
 ## AQS
 > Abstract Queued Synchronizer
-- 抽象队列式同步器
-- 定义了一套多线程访问共享资源的同步器框架
+- 抽象队列式同步器：定义了一套多线程访问共享资源的同步器框架
+- 使用一个`volatile`修饰的`int`类型的成员变量State来表示同步状态,通过CAS完成对State值的修改。
+
+
+-
 - 乐观锁-自旋锁-非阻塞算法
 
-- 同步器:Sync,FairSync, NonfairSync,Worker
+- 同步器:Sync,FairSync,NonfairSync,Worker
 
 - ReentrantLock
 - Semaphore:信号量
@@ -85,7 +80,26 @@ CyclicBarrier cyclicBarrier = new CyclicBarrier(parties);
 CyclicBarrier cyclicBarrier = new CyclicBarrier(parties, Runnable);
 
 cyclicBarrier.await()
+cyclicBarrier.reset()
 ```
+
+- `reakBarrier()`方法
+- `nextGeneration()`方法
+
+---
+
+## Semaphore
+> 信号量
+
+```java
+semaphore.acquire() // 获取
+semaphore.release() // 归还
+```
+
+- 内部静态类
+    - 终态静态类`FairSync `和`NonfairSync`类继承`Sync`类
+- 信号量提供公平和非公平两种工作模式
+
 
 ---
 

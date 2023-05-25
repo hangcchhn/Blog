@@ -1,4 +1,5 @@
-# JVM(Java Virtual Machine):Java虚拟机
+# Java虚拟机
+> JVM(Java Virtual Machine)
 
 ---
 - IBM J9 VM:绑定硬件,2019年开源Eclipse OpenJ9
@@ -9,7 +10,8 @@
 - JRockit是即时编译器——JIT(Just In Time) Complier
 
 ---
-## 一、Class Loaded Subsystem:类加载子系统
+## 一、类加载子系统
+> Class Loaded Subsystem
 ### 1.Loading
 > 加载
 
@@ -77,13 +79,13 @@ ContextClassLoader从父线程继承而来，main线程以AppClassLoader作为Co
 ## 描述创建对象过程
 - 在堆中分配对象所需的内存空间：包括本类和父类所有实例变量
 - 将方法区所有实例变量的定义拷贝到堆中并赋默认值
-- 执行实例代码块和构造方法：如果存在父类，先执行父类的
+- 执行实例代码块和构造器：如果存在父类，先执行父类的
 - 先在栈中定义引用变量，再使用在堆中分配内存的对象地址赋值
 
 ---
-## 二、Runtime Data Area
-
-- [运行时数据区](./runtime_data_area.md)
+## 二、运行时数据区
+> Runtime Data Area
+- [二、运行时数据区](./runtime_data_area.md)
 
 
 ---

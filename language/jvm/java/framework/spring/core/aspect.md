@@ -27,7 +27,7 @@ public class AnnotationAspect(){
 
 - 基于Java语言的AOP框架
 - Spring 2.0+支持AspectJ，注解`@EnableAspectJAutoProxy`
-- 支持类，接口，字段，方法，构造方法，静态方法，静态变量初始赋值，final终态等
+- 支持类，接口，字段，方法，构造器，静态方法，静态变量初始赋值，final终态等
 
 - 织入：编译和加载过程中修改字节码实现增强，性能较高，入侵性较强
 
