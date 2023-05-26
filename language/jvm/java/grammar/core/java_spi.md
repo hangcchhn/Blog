@@ -35,4 +35,10 @@ List<Service> list = SpringFactoriesLoader.loadFactories(Service.class,
         Thread.currentThread().getContextClassLoader());
 ```
 
+
+- 案例
+    - `EnableAutoConfiguration`
+    - `ApplicationListener`
+    - `ApplicationContextInitializer`
+
 - `spring.factories`功能Spring Boot 2.7+废弃，Spring Boot 3.0+移除

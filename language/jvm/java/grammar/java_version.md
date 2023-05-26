@@ -3,7 +3,7 @@
 
 
 ## java1.8
-
+> 52.0
 ---
 ### lambda表达式
 > lambda expression
@@ -89,7 +89,7 @@ Runnable runnable = ()-> System.out.println("runnable");
 ---
 
 ## java11
-
+> 55.0
 
 ---
 
