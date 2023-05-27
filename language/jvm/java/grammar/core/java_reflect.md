@@ -3,10 +3,9 @@
 > reflect
 
 - 在程序运行时动态加载类并获取类的详细信息，从而操作类或对象的属性和方法。
+- 反射是在JVM运行时读取方法区(Method Area)中类的字节码数据，反编译字节码数据获取类的详细信息。
 
-
-优点：代码灵活
-缺点：性能消耗
+- 通过反射机制调用方法时可以忽略权限检查，可能会破坏封装性而导致安全问题。
 
 使用场景：
 1. JDBC配置数据库驱动类
@@ -49,6 +48,20 @@ Java java = (Java) constructor.newInstance();
 
 ```
 
+---
+
+
+- 委托模式：委托`MethodAccessor`接口处理执行`Method.invoke`方法
+- 有两个类继承`MethodAccessorImpl`抽象类，实现`MethodAccessor`接口，
+    - `DelegatingMethodAccessorImpl`委托实现类：实现本地实现和动态实现之间切换
+    - `NativeMethodAccessorImpl`本地实现类
+- 通过`acquireMethodAccessor`方法创建，在`reflectionFactory.newMethodAccessor`方法中，先调用`checkInitted`校验初始化
+    - 本地实现：通过`NativeMethodAccessorImpl`创建`DelegatingMethodAccessorImpl`
+    - 动态实现：通过`MethodAccessorGenerator`类的`generateMethod`方法生成
+
+- 当反射调用次数达到inflationThreshold时，委托实现由本地实现切换成动态实现，可以通过noInflation关闭此优化过程
+- 本地实现：调用底层C++语言实现的native方法执行目标函数
+- 动态实现：通过动态生成字节码的方式直接调用目标方法
 ---
 ## 泛型
 - Type

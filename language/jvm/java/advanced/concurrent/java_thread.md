@@ -14,7 +14,8 @@
 ### 线程实现
 1. 继承`Thread`类
 2. 实现`Runnable`接口（无返回值）
-3. 实现`Callable`接口（有返回值，返回值是`Future`接口）
+3. 实现`Callable`接口（有返回值）
+    - `FutureTask`接口继承`Runnable`接口和`Future`接口
 
 
 ---
