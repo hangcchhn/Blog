@@ -3,6 +3,18 @@
 > 风险调整后收益指标
 > 用单位风险对应的收益评价业绩
 
+## 超额收益率
+> Excess Return
+- 相对收益率
+
+- 算数超额收益率
+$$
+\alpha_A = r_p - r_b
+$$
+- 几何超额收益率
+$$
+\alpha_G = \dfrac{1 + r_p}{1 + r_b} - 1
+$$
 
 ---
 ## 夏普比率
@@ -53,16 +65,6 @@ $$
 \alpha = \bar{r}_p - \beta \times \bar{r}_b
 $$
 
-## 超额收益
-> Excess Return
-- 算数超额收益
-$$
-\alpha_A = r_p - r_b
-$$
-- 几何超额收益
-$$
-\alpha_G = \dfrac{1 + r_p}{1 + r_b} - 1
-$$
 
 ---
 
