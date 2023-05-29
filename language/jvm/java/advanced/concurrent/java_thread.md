@@ -9,7 +9,14 @@
 ### 线程
 - 系统运算调度的基本单位
 - 一个进程有一个或多个线程组成
-- 当所有非守护线程退出后进程才会退出，创建线程设置守护线程`thread.setDaemon(true)`
+
+### 守护线程
+
+- 执行特殊任务
+- 垃圾回收线程就是守护线程
+
+- 当所有非守护线程退出后进程才会退出
+- 创建线程设置守护线程`thread.setDaemon(true)`
 
 ### 线程实现
 1. 继承`Thread`类
@@ -87,9 +94,11 @@
 ---
 ## ThreadLocal
 
+- ThreadLocal并不是用来解决多线程对共享资源访问的问题，因为每个线程中的共享资源只是副本，并不共享；因此ThreadLocal适合作为线程上下文变量，简化线程内传参。
+
 - `ThreadLocal<T>`：存放线程私有数据
 - `ThreadLocalMap`内部静态类：初始容量16，负载因子2/3
-    - `Entry`内部静态类：`Entry`的`key`是一个`WeakReference`弱应用，当不存在外部强引用的时候，就会自动被回收，但是Entry中的value依然是强引用。
+    - `Entry`内部静态类：`Entry`的`key`是一个`WeakReference`弱应用，当不存在外部强引用的时候，就会自动被回收，但是`Entry`的`value`依然是强引用。
         - `value`：Entry->ThreadLocalMap->Thread
 
 

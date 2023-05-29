@@ -107,5 +107,13 @@ class Impl implements Api {
 
 ---
 
-##
+## 引用
+> reference
 
+- `Reference`抽象类
+
+- `WeakReference`
+- `SoftReference`
+- `WeakReference`
+- `WeakReference`
+-

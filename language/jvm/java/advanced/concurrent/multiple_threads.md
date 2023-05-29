@@ -49,7 +49,6 @@
 - 线程加锁时（进入同步代码块时）：将清空本地内存中共享变量的值，从而使用共
 享变量时需要从主内存中重新读取最新的值（加锁与解锁是同一把锁）
 
-- volatile是轻量级的synchronized同步
 
 ### synchronized使用
 
@@ -70,22 +69,30 @@ public static synchronized Object method(Object object) {
 }
 ```
 
+---
+## synchronized锁升级
+- 首次申请锁，使用偏向锁，偏向首个拥有锁的线程
+- 再次申请锁，如果需要等待，则将偏向锁升级为轻量级锁
+- 如果申请锁自旋到一定次数后还需要等待，则将轻量级锁升级为重量级锁
+
 
 ---
 ## volatile
 > 易变的
+- volatile是轻量级的synchronized同步
+- `volatile`执行修饰成员变量和静态成员变量
+- `volatile`使用禁止指令重排序优化和内存屏障保证可见性
 
 
-- `volatile`禁止JVM指令重排序
 - `volatile`不能保证原子性
-- `volatile`使用内存屏障保证可见性
+
 
 - 当对`volatile`变量进行写操作时，JVM会向处理器发送一条lock前缀的指令，将该变量的缓存数据刷新到内存
 - 由于缓存一致性协议MESI，其他处理器通过嗅探在总线上传递的数据检查自身缓存是否过期，在操作该变量之前重新从内存中读取到缓存中
 
 
-### 进程全局内存 & 线程工作内存
-- 线程改变变量只会改变线程工作内存，不会改变进程全局内存，导致其他线程工作内存不变
+- `volatile`和`Lock`配合使用可以保证线程安全
+
 
 - 调用`System.out.println()`使用了`synchronized`关键字会导致`volatile`关键字效果不明显
 
