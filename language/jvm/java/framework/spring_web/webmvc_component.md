@@ -14,7 +14,14 @@
 
 - `javax.servlet.Filter`
 
+- 依赖Servlet
 - 基于函数回调
+
+- 应用启动初始化，停止销毁
+- 多次执行
+
+- `HttpServletRequestWrapper`
+- `OncePerRequestFilter`：每个请求只执行一次的过滤器
 
 
 ---
@@ -25,13 +32,15 @@
 ## Interceptor
 > 拦截器
 
-- spring-mvc实现
+- spring框架实现，可用于非Web应用
 - 基于反射机制
 - Interceptor可以访问Controller上下文，Filter不能
 - Interceptor可以获取bean对象，Filter不能
-- Interceptor对所有请求起作用，Filter
+- Interceptor只对符合的请求起作用，Filter对几乎所有请求起作用
 
 
+
+- Spring Boot 2.0+也会拦截静态资源
 
 
 ---

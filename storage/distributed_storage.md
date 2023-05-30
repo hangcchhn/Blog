@@ -5,10 +5,14 @@
 ## GFS
 > Google File System
 
+- 不开源
+
 ## HDFS
 > Hadoop Distributed File System
 - 分布式文件系统
 - [](../architecture/big_data/hadoop/hdfs.md)
+
+- 具有高容错性和可扩展性
 
 
 ## Swift
@@ -42,6 +46,8 @@
 ---
 ## FastDFS
 
+- 部署麻烦
+- SDK不全
 
 ## GlusterFS
 
@@ -49,11 +55,3 @@
 
 
 ---
-## 存储
-- Memory
-
-- Disk
-    - DAS(Direct-Attached Storage)
-    - FAS(Fabric-Attached Storage)
-        - NAS(Network-Attached Storage)
-        - SAN(Storage Area Network)
