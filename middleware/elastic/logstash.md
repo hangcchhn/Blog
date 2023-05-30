@@ -46,7 +46,7 @@ Elasticsearch = Kibana =  Logstash：（7.3.0）
 ---
 
 ## log4j
-
+```conf
 input {
     log4j {
         mode => "server"
@@ -63,6 +63,7 @@ output {
         codec => rubydebug
     }
 }
+```
 
 ./bin/logstash -f ./config/log4j.conf
 
