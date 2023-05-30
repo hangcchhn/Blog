@@ -43,3 +43,24 @@ group by和having之间执行聚合函数(aggregate function)
 - 兼容SQL
 
 - esProc
+
+
+
+---
+
+## 大表优化
+
+- 索引
+
+- 缓存
+
+- 读写分离：主库写，从库读，主从复制
+
+- 分表
+    - 垂直分表：分列
+    - 水平分表：分行
+
+- 分库：
+    - redis生成
+    - Twitter的snowflake算法
+    - 美团的Leaf分布式ID生

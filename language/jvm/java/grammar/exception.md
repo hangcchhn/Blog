@@ -4,23 +4,15 @@
 - 创建异常需要保存运行时栈快照，开销很大，抛出异常和捕获异常开销都不大
 
 ---
-## Throwable
-> Java语言中所有错误或异常的超类。
 
-### Error
-> 错误
-系统内部错误和资源耗尽错误
-Error是系统级别的，程序无法处理
+- `Throwable`类：Java语言中所有错误或异常的超类
+- `Error`错误类和`Exception`异常类是`Throwable`类的直接子类
+- `Error`错误类：系统内部错误和资源耗尽错误，系统级别的错误程序无法处理
+- `Exception`异常类：程序级别的异常需要程序处理
 
-### Exception
-> 异常
-Exception是程序级别的，需要程序处理
-
-1. 运行时异常RuntimeException： IOException、SQLException
-
-2. 检查异常CheckedException：
-
-
+- `RuntimeException`运行时异常：IOException、SQLException
+- 检查异常：除了`RuntimeException`运行时异常之外，所有直接继承`Exception`异常类的子类
+- 非检查异常：`Error`错误类及其子类和`RuntimeException`运行时异常及其子类
 
 
 
@@ -96,4 +88,7 @@ public return method(Class param) {
 ```
 
 
+---
 
+
+- Spring Boot使用`@ControllerAdvice % @ExceptionHandler`处理异常

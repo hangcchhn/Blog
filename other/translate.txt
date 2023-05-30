@@ -337,10 +337,12 @@ rpt
 并发:Concurrency
 并行:Parallelism
 
+上下文:context
 
 --------------------------------------------------------------------------------------------------
 短信:SMS(Short Message Service)
 
+应用编程接口:API(Application Programming Interface)
 
 
 

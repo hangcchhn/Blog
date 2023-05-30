@@ -20,3 +20,16 @@ innodb_file_per_table=1
 - .MYD(MyISAM Data)是MyISAM存储引擎用于存储数据库表数据的文件；
 - .MYI(MyISAM Index)是MyISAM存储引擎用于存储数据库表索引相关信息的文件。
 
+---
+# MySQL日志
+> binlog
+
+- STATEMENT
+基于SQL语句的复制(statement-based replication, SBR)
+
+- ROW
+基于行的复制(row-based replication, RBR)
+
+- MIXED
+混合模式复制(mixed-based replication, MBR)
+

@@ -2,12 +2,12 @@
 >
 
 
-- katex:https://katex.org/docs/supported.html
+- https://katex.org/docs/supported.html
 
 ## 常见
 ---
 
-- 换行:
+- 换行
 $$
 第1行
 \\
@@ -76,7 +76,7 @@ $$
     - $(x)$
     - $\lgroup X \rgroup$
 
-- 中括号:
+- 中括号
     - $[x]$
 
 - 花括号
@@ -119,8 +119,8 @@ $$
 
 ---
 - 大括号
-    - 上大括号:$\overbrace{a+b+c+d}^{4}$
-    - 下大括号:$a+\underbrace{b+c}_{2}+d$
+    - 上大括号：$\overbrace{a+b+c+d}^{4}$
+    - 下大括号：$a+\underbrace{b+c}_{2}+d$
 
 $$
 f(x)=
@@ -137,16 +137,16 @@ $$
 - 粗体(黑体)boldface
     - $\bf{T}$
     - $\bold{T}$
-- $\it{T}$:斜体(意大利字体)italic
-- $\rm{d}$:罗马字体roman
-- $\sf{A}$:sans serif
+- $\it{T}$：斜体(意大利字体)italic
+- $\rm{d}$：罗马字体roman
+- $\sf{A}$：sans serif
 - $\tt{d}$
 - $\cal{d}$
 
-- $\mathbb{R}$:黑板粗体blackboard bold
-- $\mathtt{A}$:打字机字体
-- $\mathscr{A}$:花体
-- $\mathcal{A}$:书法calligraphy
+- $\mathbb{R}$：黑板粗体blackboard bold
+- $\mathtt{A}$：打字机字体
+- $\mathscr{A}$：花体
+- $\mathcal{A}$：书法calligraphy
 
 
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
@@ -192,8 +192,8 @@ $$
 | $\leftrightarrow$ | $\Leftrightarrow$ | $\updownarrow$ | $\Updownarrow$ |
 | $\iff$ | $\to$ | $\mapsto$ | $\gets$ |
 
-- 箭头加长:$\longrightarrow$
-- 箭头加勾:$\hookrightarrow$
+- 箭头加长：$\longrightarrow$
+- 箭头加勾：$\hookrightarrow$
 
 
 

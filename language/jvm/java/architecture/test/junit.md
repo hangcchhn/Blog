@@ -1,20 +1,33 @@
 # JUnit
 
 - JUnit 4.x
-    - 4.12
-    - 4.13.2
+    - ``
 - JUnit 5.x
-- pom.xml
-```xml
-<dependencies>
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
-    </dependency>
-</dependencies>
+    - `org.junit.jupiter.api.Test`
+
+| Annotation | JUnit4 | JUnit5 |
+| :-: | :-: | :-: |
+| 测试 | org.junit.Test | org.junit.jupiter.api.Test |
+| 断言 | org.junit.Assert | org.junit.jupiter.api.Assertions |
+| 假设 | org.junit.Assert | org.junit.jupiter.api.Assertions |
+|  | @Before,@After | @BeforeEach,@AfterEach |
+|  | @BeforeClass,@AfterClass | @BeforeAll,@AfterAll |
+
+- Test.java
+```java
+
+public class Test {
+
+    @Test
+    public void test() {
+
+    }
+
+}
+
 ```
+
+- `@Test`测试用例中创建的多线程都是守护线程，无法执行配置Spring框架的`@Async`异步方法
 
 
 ---
@@ -29,9 +42,9 @@
 
 ---
 
-Spring Boot >= 2.4.0默认使用JUnit 5.x，@SpringBootTest带有@ExtendWith(SpringExtension.class)
-如果要使用JUnit 4.x，需要手动添加junit-vintage-engine
-
+- Spring Boot >= 2.4.0默认使用JUnit 5.x，`@SpringBootTest`带有`@ExtendWith(SpringExtension.class)`
+- 如果要使用JUnit 4.x，需要手动添加junit-vintage-engine
+- Spring Boot < 2.0.0不支持JUnit 5.x
 
 | JUnit 4.x | JUnit 5.x|
 | :- | :- |

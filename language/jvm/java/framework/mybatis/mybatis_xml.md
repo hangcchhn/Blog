@@ -139,7 +139,7 @@ mybatis.configuration.mapUnderscoreToCamelCase=true
 ```
 
 ---
-- ResultType类如果没有无参构造函数，使用constructor标签指定有参构造函数
+- ResultType类如果没有无参构造器，使用constructor标签指定有参构造器
 ```xml
 <resultMap id="resultTypeMap" type="package.ResultType">
 

@@ -88,9 +88,9 @@ object Object {
         // protected var
 
 
-        // 辅助构造函数
+        // 辅助构造器
         def this() {
-            // 调用默认构造函数
+            // 调用默认构造器
             this()
         }
 

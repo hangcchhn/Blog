@@ -93,15 +93,6 @@ compareTo()的返回值类型是int
 
 ---
 
-## 终态final
-
-
-final变量：常量，其值一旦初始化就不能再修改
-final方法：不能被重载
-final类：不能被继承
-
-final类所有的方法都是终态(final)的，Java编译器会内联(inline)所有final方法
-
 
 ---
 
@@ -155,18 +146,8 @@ public class CloneDemo implements Cloneable {
 
 
 
----
-
-
-Java事务的类型有三种：JDBC事务、JTA（Java Transaction API）事务、容器事务。
-
 
 ---
 jmh——Java Micro-benchmark Harness
 
 
-
----
-## 原子操作
-> java1.5
-- `java.util.concurrent.atomic`
