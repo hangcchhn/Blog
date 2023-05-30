@@ -28,10 +28,10 @@ public class Job {
 }
 
 ```
-- 原理:ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization
+- 原理:`ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization`
+- 定时任务默认是单线程的，默认情况下，上一个定时任务没有执行完，下一个定时任务是不会开始的。
 
-
-- spring-boot动态管理定时任务：实现SchedulingConfigurer接口，重写configureTasks方法
+- Spring Boot动态管理定时任务：实现`SchedulingConfigurer`接口，重写`configureTasks`方法
 
 
 ---

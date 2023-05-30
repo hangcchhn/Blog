@@ -50,3 +50,12 @@
 
 ---
 ## Controller
+
+- 基于`Servlet`容器
+
+
+- 每个请求都有一个线程来处理
+- Tomcat的线程池`maxThreads=200`，`minSpareThreads=25`
+- bean对象默认是单例模式，是非线程安全的，尽量使用局部变量，不要使用成员变量
+
+- 在Tomcat服务中，`Servlet`是单例的

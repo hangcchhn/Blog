@@ -8,6 +8,7 @@
 ---
 ## PC(Program Counter) Register
 > 程序计数器(寄存器)
+
 保存下一条要执行的指令的地址
 当前线程正在执行的字节码文件中指令的行号
 如果正在执行的是native方法，那么程序计数器的值为undefined
