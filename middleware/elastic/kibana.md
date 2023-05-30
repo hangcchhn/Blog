@@ -1,3 +1,8 @@
+# Kibana
+
+
+
+
 
 ./config/kibana.yml
 

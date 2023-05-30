@@ -1,5 +1,9 @@
+# LogStash
 
 
+
+
+```sh
 ./bin/logstash -e "input{stdin{}} output{stdout{}}"
 ./bin/logstash -e 'input{stdin{}}output{stdout{codec=>rubydebug}}'
 
@@ -18,9 +22,9 @@ output{
 
 
 
-启动后日志打印停止后输入
+# 启动后日志打印停止后输入
 Hello Logstash
-屏幕显示下列表示启动成功
+# 屏幕显示下列表示启动成功
 ./vendor/bundle/jruby/2.5.0/gems/awesome_print-1.7.0/lib/awesome_print/formatters/base_formatter.rb:31: warning: constant ::Fixnum is deprecated
 {
     "@timestamp" => 2021-02-26T10:55:39.822Z,
@@ -28,7 +32,7 @@ Hello Logstash
        "message" => "Hello Logstash",
           "host" => "chench"
 }
-
+```
 
 版本适配关系
 Elasticsearch Kibana  X-Pack  Beats^* Elastic Agent^* Logstash^*  ES-Hadoop (jar)*****
@@ -39,9 +43,9 @@ logstash程序的logstash-input-log4j只支持2.4.x
 版本匹配选择：Elasticsearch = Kibana：（5.6.16） Logstash：（2.4.1）
 
 Elasticsearch = Kibana =  Logstash：（7.3.0）
---------------------------------------------------------------------------------------------------
+---
 
-# log4j
+## log4j
 
 input {
     log4j {
@@ -68,7 +72,8 @@ output {
 
 
 
-# log4j.properties
+- log4j.properties
+```properties
 log4j.appender.Socket=org.apache.log4j.net.SocketAppender
 log4j.appender.Socket.RemoteHost=192.168.10.153
 log4j.appender.Socket.port=4560
@@ -76,9 +81,10 @@ log4j.appender.Socket.ReconnectionDelay=60000
 log4j.appender.Socket.LocationInfo=true
 log4j.appender.Socket.layout=org.apache.log4j.PatternLayout
 log4j.appender.Socket.layout.conversionPattern=%d{ABSOLUTE} %5p %c{1}:%L - %m%n
+```
 
-
-# log4j.xml
+- log4j.xml
+```xml
 <appender name="Socket" class="org.apache.log4j.net.SocketAppender">
     <param name="RemoteHost" value="192.168.10.153" />
     <param name="port" value="4560" />
@@ -88,13 +94,14 @@ log4j.appender.Socket.layout.conversionPattern=%d{ABSOLUTE} %5p %c{1}:%L - %m%n
         <param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n" />
     </layout>
 </appender>
+```
 
 
+---
 
-
-
-# logstash tcp
-
+## logstash tcp
+- ./config/tcp.conf
+```conf
 input {
     tcp {
         mode => "server"
@@ -112,11 +119,13 @@ output {
         codec => rubydebug
     }
 }
+```
 
-./bin/logstash -f ./config/tcp.conf
+- `./bin/logstash -f ./config/tcp.conf`
 
-
-# log4j2
+---
+## log4j2
+```xml
 <Socket name="Socket" host="192.168.10.153" port="4560" protocol="TCP">
     <PatternLayout>
         <Charset>UTF-8</Charset>
@@ -124,22 +133,24 @@ output {
         <Pattern>{"logger": "%logger", "level": "%level", "msg": "%message"}%n</Pattern>
     </PatternLayout>
 </Socket>
+```
 
 
-
-pom.xml
+- pom.xml
 <dependency>
     <groupId>net.logstash.logback</groupId>
     <artifactId>logstash-logback-encoder</artifactId>
     <version>4.10</version>
 </dependency>
 
-# logback
 
+---
+## logback
+
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
-
-
 <configuration debug="true">
+
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <!--<layout></layout>-->
         <!--ch.qos.logback.classic.encoder.PatternLayoutEncoder-->
@@ -154,17 +165,17 @@ pom.xml
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>
     </appender>
 
-
     <root level="DEBUG">
         <appender-ref ref="Console"/>
         <appender-ref ref="Logstash"/>
     </root>
 
 </configuration>
+```
 
 
-
-# spring boot logback-spring.xml
+- logback-spring.xml
+```xml
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
@@ -178,66 +189,51 @@ pom.xml
         <appender-ref ref="logstash"/>
     </root>
 </configuration>
+```
 
 
 
 
 
 
---------------------------------------------------------------------------------------------------
 
 
 
-
---------------------------------------------------------------------------------------------------
-
+---
 
 
+```sh
 ps -def|grep elasticsearch
 ps -def|grep kibana
 ps -def|grep logstash
-
---------------------------------------------------------------------------------------------------
-
-
+```
+---
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
     <contextName>Logback For demo Mobile</contextName>
     <property name="LOG_HOME" value="/log" />
     <springProperty scope="context" name="appName" source="spring.application.name"
                     defaultValue="localhost" />
-    ...
+    <!-- ... -->
 
     <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        ...
+        <!-- ... -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{25} ${appName} -%msg%n</pattern>
         </encoder>
-        ...
+        <!-- ... -->
     </appender>
-    ...
+    <!-- ... -->
 </configuration>
 
+```
+---
 
-Shipper
-logstash-shipper.conf
+- logstash-shipper.conf
+```conf
 input {
     file {
         path => [
@@ -257,12 +253,13 @@ output {
         key => "logstash_list_0"  # 发布通道名称
     }
 }
+```
 
-./bin/logstash -f logstash-shipper.conf
+- `./bin/logstash -f logstash-shipper.conf`
 
 
-Indexer
-logstash-indexer.conf
+- logstash-indexer.conf
+```conf
 input {
     redis {
         host      => "192.168.142.131"    # redis主机地址
@@ -287,11 +284,14 @@ output {
         index => "logback"
    }
 }
+```
 
-./bin/logstash -f logstash-indexer.conf
+- `./bin/logstash -f logstash-indexer.conf`
 
 
+---
 
+```
 [program:elasticsearch]
 environment=JAVA_HOME="/usr/java/jdk1.8.0_221/"
 directory=/home/elk/elk/elasticsearch
@@ -309,7 +309,7 @@ environment=LS_HEAP_SIZE=5000m
 directory=/home/elk/elk/kibana
 user=elk
 command=/home/elk/elk/kibana/bin/kibana
-
+```
 
 
 
