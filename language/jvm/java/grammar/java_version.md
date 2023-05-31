@@ -62,13 +62,17 @@ Runnable runnable = ()-> System.out.println("runnable");
 
 ---
 
-- 接口类型：`java.util.function`
-    - Runnable
-    - 消费型接口:Consumer
-    - 供给型接口:Supplier
-    - 谓词型接口:Predicate
-    - 功能型接口:Function
-
+## 接口类型：`java.util.function`
+- `Runnable`：`() -> void`
+- 消费者接口：`accept`方法
+    - `Consumer`：`(P) -> void`
+- 供应者接口：`get`方法
+    - `Supplier`：`() -> void`
+- 谓词型接口：`test`方法
+    - `Predicate`：`() -> R`
+- 功能型接口：`apply`方法
+    - `Function`：`(P) -> R`
+    - `BiFunction`：`(P1, P2) -> R`
 ---
 - 类不支持多继承，接口允许多继承
 - 接口的default和static方法

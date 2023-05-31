@@ -11,49 +11,6 @@
 
 
 
----
-## CAS
-> Compare And Swap
-- 比较并交换：冲突检测
-
-- CAS三个操作数：内存地址，预期原值和新值
-- 只有当内存地址的值与预期原值一致时，才能将内存地址的的值更新为新值
-
-- JVM的CAS是使用CPU提供的CMPXCHG指令
-
-- 使用锁机制和循环CAS实现原子操作
-- 多个共享变量的原子操作可以使用锁机制
-
-- CAS只能保证一个共享变量的原子操作
-- 自旋：不断的进行比较判断是否可以交换，不断循环时间长开销大
-
-
-- CAS是无法解决ABA问题，内存地址的值是A，有个线程改成B，后来又改成A，CAS则认为内存地址没有被修改过。
-- 解决ABA问题策略
-    - 添加版本号
-    - 添加时间戳
-    - 悲观锁
-    - 乐观锁
-
-
-## 原子操作
->java1.5
-
-- `java.util.concurrent.atomic`
-- `AtomicReference`原子引用类：保证引用对象之间的原子性
-- `AtomicStampedReference`类解决ABA问题
-- `AtomicMarkableReference`类
-
-- `AtomicInteger`类
-    - `getAndIncrement`方法
-    - `compareAndSwapInt`方法
-
-- `AtomicIntegerArray`类
----
-
-- `Lock`接口
-
-
 
 ## Lock
 
