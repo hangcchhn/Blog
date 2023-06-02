@@ -36,6 +36,15 @@
 ```java
 public class C {
 
+
+    final static class C0 {
+        //
+    }
+
+    static class C1 {
+        // 静态内部类
+    }
+
     static {
         // 静态代码块
     }
@@ -44,7 +53,7 @@ public class C {
         // 实例代码块
     }
 
-    public final static String f0;// 常量
+    public final static String f0;// 静态常量
     public static String f1;// 静态变量
     private String f;// 实例变量
 
@@ -55,18 +64,27 @@ public class C {
 ```
 
 
+- 静态内部类
+
+- `import static`
+
 
 ---
 ## 终态final
 
-
-- final变量：其值一旦初始化就不能再修改
+- final基本类型：值不能被修改
+- final引用类型：引用不能被修改，即不能再指向其他对象，但指向的对象内容可以被修改
 - final方法：不能被重载
 - final类：不能被继承
 
 - final类所有的方法都是终态(final)的，Java编译器会内联(inline)所有final方法
 
-- 常量：被`final`修饰的`static`变量
+---
+
+- 被`static final`修饰的
+    - 成员变量：属于类，只能初始化，不能被修改
+    - 方法：属于类，不能被重载
+    - 内部类：属于类，不能被继承
 
 ---
 ## 继承 & 实现

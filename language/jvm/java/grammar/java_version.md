@@ -1,8 +1,8 @@
-# java version
->
+# Java版本
+> version
 
 
-## java1.8
+## Java1.8
 > 52.0
 ---
 ### lambda表达式
@@ -90,9 +90,11 @@ Runnable runnable = ()-> System.out.println("runnable");
 ### Stream
 [Stream](java_stream.md)
 
+
+
 ---
 
-## java11
+## Java11
 > 55.0
 
 ---
@@ -121,6 +123,6 @@ Runnable runnable = ()-> System.out.println("runnable");
 ```
 
 ---
-## java17
+## Java17
 
 

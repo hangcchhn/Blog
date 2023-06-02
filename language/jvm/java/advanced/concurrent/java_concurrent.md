@@ -28,104 +28,132 @@
 
 
 
+# 多线程
+
+
+---
+## Java内存模型
+> JMM(Java Memory Model)
+
+- JMM定义了一套在多线程读写共享数据时，对共享数据的可见性、有序性、原子性的原则和保障。
+
+- 主内存：共享区域，包括堆和方法区
+- 工作内存(Thread Local Memory)：私有区域，保存该线程需要的所有共享变量的副本
+
+
+- 线程对共享变量的所有操作都必须在工作内存中进行
+    - 先从主内存读取共享变量的值到自己的工作内存中
+    - 所有操作完成后再将共享变量的值回写到主内存中
+- 某个线程修改共享变量的值后，其他线程不能立即访问到修改后的值
+    - 不同线程不能直接访问其他线程的工作内存
+    - 线程间共享变量的值传递是通过主内存实现
+
+
+- 内存屏障(Memory Barrier)：控制内存交互操作的顺序和可见性，load和store指令
+    - LoadLoad
+    - StoreStore
+    - LoadStore
+    - StoreLoad
+
+---
+
+
 
 
 
 
 
 ---
+## synchronized
+> 同步的
+
+- 可以保证同一时刻只有一个线程执行被修饰的方法或者代码块
 
 
-## AQS
-> Abstract Queued Synchronizer
-- 抽象队列式同步器：定义了一套多线程访问共享资源的同步器框架
-- `AbstractQueuedSynchronizer`类使用一个`volatile`修饰的`int`类型的成员变量state来表示同步状态，通过CAS完成对state值的修改。
-- 同步器同步器线程申请锁时：
-    - state等于0表示没有任何线程占用共享资源，当前线程可以获得锁并将state改成1；
-    - state等于1表示其他线程正在使用共享资源，当前线程加入同步队列等待。
-- 同步器依赖内部的同步队列来完成同步状态的管理：一个先进先出的双向队列(CLH)，每个节点会根据是否为共享锁标记状态为共享或独占模式，
-- `Node`节点
-    - `waitStatus`等待状态
-    - `thread`线程引用
-    - `nextWaiter`
-- 独占锁和共享锁都是以非公平策略获取锁的
-- 申请锁失败后，`addWaiter`方法将当前线程封装成`Node`节点，从tail节点插入同步队列，如果队列为空，会先添加一个空的head节点，再使用CAS方式处理添加节点冲突；最后使用`selfInterrupt`方法中断当前线程
-- 释放锁成功后，从`head`节点开始唤醒其`next`节点，如后继节点被取消，则转为从`tail`节点开始唤醒其`prev`节点。
-- 共享锁释放成功后，除了唤醒头部阻塞节点，还会通过`setHeadAndPropagate`方法唤醒其后续节点，其中传播参数`propagate`表示存在多少个后续节点需要被唤醒
+- 编译成字节码后就是`monitor enter`和`monitor exit`两条指令
+
+### JMM关于synchronized的两条规定：
+- 线程解锁前（退出同步代码块时）：必须把自己工作内存中共享变量的最新值刷新
+到主内存中
+
+- 线程加锁时（进入同步代码块时）：将清空本地内存中共享变量的值，从而使用共
+享变量时需要从主内存中重新读取最新的值（加锁与解锁是同一把锁）
+
+
+### synchronized使用
 
 ```java
-tryAcquire(int);        // 尝试获取独占锁，可获取返回true，否则false
-tryRelease(int);        // 尝试释放独占锁，可释放返回true，否则false
-tryAcquireShared(int);  // 尝试以共享方式获取锁，失败返回负数，只能获取一次返回0，否则返回正数
-tryReleaseShared(int);  // 尝试释放共享锁，可获取返回true，否则false
-isHeldExclusively();    // 判断线程是否独占资源
+//锁定变量
+synchronized(this) {
+    //代码块
+}
+
+//锁定对象
+public synchronized Object method(Object object) {
+    //方法
+}
+
+//锁定类
+public static synchronized Object method(Object object) {
+    //静态方法
+}
 ```
 
-
-- 乐观锁-自旋锁-非阻塞算法
-
-- 同步器:Sync,FairSync,NonfairSync,Worker
-
-- ReentrantLock
-- Semaphore:信号量
-- CountDownLatch:计数器
-- CyclicBarrier:可重复使用的栅栏
-- ThreadPoolExecutor
-
 ---
-- 独占资源:只有一个线程能执行——ReentrantLock
-- 共享资源:多个线程可同时执行——CountDownLatch
+## synchronized锁升级
+- 首次申请锁，使用偏向锁，偏向首个拥有锁的线程
+- 再次申请锁，如果需要等待，则将偏向锁升级为轻量级锁
+- 如果申请锁自旋到一定次数后还需要等待，则将轻量级锁升级为重量级锁
 
 
 ---
-## CountDownLatch
-> 计数器
-- `CountDownLatch`只能使用一次
-- 用于某个线程等待其他线程执行完任务再执行
-```java
-CountDownLatch countDownLatch = new CountDownLatch(count);
-countdownLatch.countDown();// count--;
-countdownLatch.await();// 当前线程等待，直到count=0当前线程会被唤醒
-```
+## volatile
+> 易变的
+- volatile是轻量级的synchronized同步
+- `volatile`执行修饰成员变量和静态成员变量
+- `volatile`使用禁止指令重排序优化和内存屏障保证可见性
 
-- `count=1`:多个线程同时执行
-- `count=N`:某个线程要等待N个线程执行完毕才运行
 
----
+- `volatile`不能保证原子性
 
-## CyclicBarrier
 
-- 可重复使用的栅栏：使一定数量线程在栅栏处等待，当所有线程都到了后执行
-- 用于一组线程互相等待到某个状态，然后这组线程再同时执行。
--
-```java
-CyclicBarrier cyclicBarrier = new CyclicBarrier(parties);
-// 当线程到达栅栏后
-CyclicBarrier cyclicBarrier = new CyclicBarrier(parties, Runnable);
+- 当对`volatile`变量进行写操作时，JVM会向处理器发送一条lock前缀的指令，将该变量的缓存数据刷新到内存
+- 由于缓存一致性协议MESI，其他处理器通过嗅探在总线上传递的数据检查自身缓存是否过期，在操作该变量之前重新从内存中读取到缓存中
 
-cyclicBarrier.await()
-cyclicBarrier.reset()
-```
 
-- `reakBarrier()`方法
-- `nextGeneration()`方法
+- `volatile`和`Lock`配合使用可以保证线程安全
 
----
 
-## Semaphore
-> 信号量
-- 用于控制同时访问特定资源的线程数量，控制并发线程数。
+- 调用`System.out.println()`使用了`synchronized`关键字会导致`volatile`关键字效果不明显
 
-```java
-semaphore.acquire() // 获取
-semaphore.release() // 归还
-```
 
-- 内部静态类
-    - 终态静态类`FairSync `和`NonfairSync`类继承`Sync`类
-- 信号量提供公平和非公平两种工作模式
+
+
+
+
 
 
 ---
+## 多线程间通讯
+
+多线程间通过共享数据来实现通信，通过同步互斥访问机制保证线程的安全性
+
+- `volatile`
+- `synchronized`
+- 等待通知机制：`wait|notify`
+- `ReentrantLock & Condition`
+- `LockSupport`
+
+- `ReentrantLock`
+- `CyclicBarrier`
+- 管道`PipedInputStream & PipedOutputStream`
+- `BlockingQueue`
+
+- `Thread.join()`
+- `FutureTask`
+- `Callable`
+
+- 生产者消费者模型
+
 
 

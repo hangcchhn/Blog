@@ -64,22 +64,14 @@ byte->8bit
 
 ## 字符串String
 
-重写Object超类的equals方法
-在类型都是String的前提下一个一个字符的判断是否相等
+- `String`字符串类重写`Object`超类的`equals`方法
+    - 在类型都是字符串的前提下，从头依次判断字符是否相等
 
+- 比较：运算符`==`和函数`equals()`的区别
 
-equals()返回值类型是boolean
-compareTo()的返回值类型是int
+- `String`字符串类，被`final`修饰，不能被`extends`；
 
-字符串String比较：运算符==和函数equals()的区别
-
-字符串String是被final修饰的不可继承类
-
-
-存储位置：字符串常量池 String Table（字符串表）
-
-
-使用+进行字符串连接：先会创建两个子串对象，赋值时又会创建拼接之后的字符串对象
+- `substring`方法：重新构造新的字符串对象，复制原来的内容，即保护性拷贝
 
 
 ### StringBuilder
@@ -91,28 +83,24 @@ compareTo()的返回值类型是int
 - 首先创建一个新的字符数组，然后复制旧的字符数组，开销很大。
 
 
----
-
 
 ---
 
+## 序列化
+- 将对象转化为字节数组，可以保存在磁盘上，或可以通过网络进行传输，以达到以后恢复成原来的对象。
 
-Java序列化：将对象转化为字节数组，
-可以保存在磁盘上，或可以通过网络进行传输
-以达到以后恢复成原来的对象。
+- 静态变量不能被序列化
 
-静态成员不序列化
+- 实现`Serializable`接口
+```java
+public class SerializableClass {
+    // 序列化版本ID
+    private static final long serialVersionUID = 1L;
 
-实现java.io.Serializable接口
-序列化 ID
-private static final long serialVersionUID = 1L;
-
-在成员前加上transient关键字，可以阻止该成员被序列化到文件中
-在被反序列化后，被关键字transient修饰的成员的值被设为初始值
-
----
-
-
+}
+```
+- 在成员前加上transient关键字，可以阻止该成员被序列化到文件中
+- 在被反序列化后，被关键字transient修饰的成员的值被设为初始值
 
 
 
@@ -121,9 +109,9 @@ private static final long serialVersionUID = 1L;
 ## 克隆
 
 
-- `Cloneable`接口
+- 实现`Cloneable`接口的`clone`方法
 ```java
-public class CloneDemo implements Cloneable {
+public class CloneClass implements Cloneable {
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
@@ -133,8 +121,8 @@ public class CloneDemo implements Cloneable {
 
 ```
 
-- 基本类型和对象类型都可以深度克隆
-- 自定义类需要实现`Cloneable`,作为类属性时需要单独调用`clone`方法实现深复制
+- 基本类型和引用类型都可以深度克隆
+- 克隆引用属性时需要单独调用引用类型的`clone`方法实现深复制
 
 - 赋值：
     1. 基本类型：复制内容（数值）
