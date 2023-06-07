@@ -71,7 +71,7 @@
 
 
 ```
-
+- 不推荐使用Executors创建线程池，
 ## ThreadPoolExecutor
 - `ThreadPoolExecutor`类继承`AbstractExecutorService`抽象类
 

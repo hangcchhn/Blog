@@ -27,7 +27,7 @@
 begin;
 select money_ from table_ where index_ = where_ for upadte;
 update table_ set money_ = money_ - price_ where index_ = where_
-commit; 
+commit;
 
 ```
 
@@ -44,7 +44,7 @@ update table_ set money_ = money_ - price_, `version` = `version` +1   where pk 
 
 -- 并发量大的时候只有一个线程可以修改成功，解决版本：减小乐观锁的粒度
 update table_ set money_ = money_ - price_ where pk = id and money_ - price_ >= 0
-``` 
+```
 ### 使用redis实现
 
 > https://redis.io/topics/distlock
