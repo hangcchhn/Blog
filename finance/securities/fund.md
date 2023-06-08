@@ -267,3 +267,9 @@ ER_g = \dfrac{R_p + 1}{R_b + 1} - 1
 $$
 
 
+---
+
+## Brinson模型
+
+---
+## Campisi模型

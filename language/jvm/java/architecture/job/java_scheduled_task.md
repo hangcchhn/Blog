@@ -1,43 +1,25 @@
 
-# java scheduled task
-> java语言实现定时任务方式
+# Java scheduled task
+> Java语言实现定时任务方式
 
 
 ---
-## java语言原生方式实现定时任务
+## Java语言原生方式实现定时任务
 
 - Timer+TimeTask实现方式
 
 - ScheduleExecutorService实现方式
 
 ---
-## spring框架多种方式配置定时任务
+## Spring框架多种方式配置定时任务
 
 - spring-context
-
-```java
-@Component
-@EnableScheduling
-public class Job {
-
-    // 每天00:00:00执行
-    @Scheduled(cron = "${job.task.cron:00 00 00 * * ?}")
-    private void task() {
-        // 调用定时任务业务
-    }
-}
-
-```
-- 原理:`ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization`
-- 定时任务默认是单线程的，默认情况下，上一个定时任务没有执行完，下一个定时任务是不会开始的。
-
-- Spring Boot动态管理定时任务：实现`SchedulingConfigurer`接口，重写`configureTasks`方法
-
+- `@Scheduled`注解
 
 ---
-## quartz框架实现动态配置定时任务
+## Quartz框架实现动态配置定时任务
 
-- spring-boot 2.x集成quartz实现动态管理定时任务
+- Spring Boot 2.0+集成Quartz实现动态管理定时任务
 
 - pom.xml
 ```xml
@@ -58,21 +40,6 @@ public class SchedulerService {
 }
 
 ```
-
----
-
-## Control-M
-> BMC
-
----
-## TWS(Tivoli Workload Scheduler)
-> IBM
-- TWS engine
-- TWS connector
-- JSC(Job Scheduling Console)
-- MDM(Master Domain Manager)
-- FTA(Fault Tolerant Agent)
-- SA(Standard Agent)
 
 
 ---
@@ -109,17 +76,17 @@ public class SchedulerService {
 - C:calendar
 
 - 关于cron表达式中week数字取值范围是1-7，建议使用英文缩写MON-SUN
-    - quartz从SUN开始
-    - spring从MON开始
+    - Quartz从SUN开始
+    - Spring从MON开始
 
 ---
-- spring
+- Spring
 ```
 CronSequenceGenerator cronSequenceGenerator = new CronSequenceGenerator("44 33 9 ? * 1");
 Date next = cronSequenceGenerator.next(new Date());
 System.out.println(next);
 ```
-- quartz
+- Quartz
 ```java
 CronExpression cronExpression = new CronExpression("44 33 9 ? * 2");
 Date nextValidTimeAfter = cronExpression.getNextValidTimeAfter(new Date());

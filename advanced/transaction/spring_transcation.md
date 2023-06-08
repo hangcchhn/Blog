@@ -68,8 +68,8 @@
 -
 
 ### 实现原理，创建代理
-- 为每个bean创建一个`BeanFactoryTransactionAttributeSourceAdvisor`切点实例，判断当前bean对应的class中是否含有`@Transactional`注解标注的方法，如果存在就适配切点实例，创建代理对象管理事务
-- 创建bean时，寻找适配切点实例，如果由就表示切点实例能够应用到bean中，即`AopUtils.canApply(Pointcut, Class<?>, boolean)`
+- 为每个Bean对象创建一个`BeanFactoryTransactionAttributeSourceAdvisor`切点实例，判断当前Bean对象对应的class中是否含有`@Transactional`注解标注的方法，如果存在就适配切点实例，创建代理对象管理事务
+- 创建Bean对象时，寻找适配切点实例，如果由就表示切点实例能够应用到Bean对象中，即`AopUtils.canApply(Pointcut, Class<?>, boolean)`
 
 - `AbstractFallbackTransactionAttributeSource.computeTransactionAttribute()`
 - `AbstractFallbackTransactionAttributeSource.getTransactionAttribute()`

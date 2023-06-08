@@ -1,20 +1,24 @@
 # Spring Bean
-> 对象实例
+> Bean对象
+
+
 
 - 执行顺序：构造器(Constructor) -> 依赖注入(@Autowired) -> 初始化(@PostConstruct)
 
-### bean初始化方式及其执行顺序
+### Bean对象初始化方式及其执行顺序
 1. `@PostConstruct`注解：Java提供，修饰非静态无返回方法
 2. 实现`InitializingBean`接口`afterPropertiesSet`方法
 3. `@Bean(initMethod=)`注解配置initMethod方法
 
-### bean销毁方式及其执行顺序
+### Bean对象销毁方式及其执行顺序
 1. `@PreDestroy`注解：Java提供，修饰非静态无返回方法
 2. 实现`DisposableBean`接口`destroy`方法
 3. `@Bean(destroyMethod=)`注解配置destroyMethod方法
 
 ---
 ## 内置功能
+> Spring容器
+
 - `BeanFactory`接口
     - `getBean`方法
     - `DefaultListableBeanFactory`类实现`BeanFactory`接口
@@ -29,14 +33,14 @@
 ---
 ### `ApplicationContext`接口实现类
 
-- ClassPathXmlApplicationContext
-- FileSystemXmlApplicationContext
-- XmlWebApplicationContext
-- AnnotationConfigWebApplicationContext
+- `ClassPathXmlApplicationContext`
+- `FileSystemXmlApplicationContext`
+- `XmlWebApplicationContext`
+- `AnnotationConfigWebApplicationContext`
 
-- AnnotationConfigApplicationContext
-- AnnotationConfigServletWebServerApplicationContext
-- AnnotationConfigReactiveWebServerApplicationContext
+- `AnnotationConfigApplicationContext`
+- `AnnotationConfigServletWebServerApplicationContext`
+- `AnnotationConfigReactiveWebServerApplicationContext`
 
 ---
 
@@ -50,10 +54,10 @@
 ---
 
 - `Aware`接口：提供内置功能
-    - `BeanNameAware`接口：处理bean名字
+    - `BeanNameAware`接口：处理Bean命名
     - `BeanFactoryAware`接口：注入`BeanFactory`容器
     - `ApplicationContextAware`接口：注入`ApplicationContext`容器
-    - `EmbeddedValueResolverAware`接口：处理@Value("${}")
+    - `EmbeddedValueResolverAware`接口：处理`@Value("${}")`
 ---
 - 读取环境变量:`@Value("${JAVA_HOME}")`
 
@@ -73,13 +77,13 @@ beanFactory.addEmbeddedValueResolver(new StandardEnvironment()::resolvePlacehold
 
 ---
 ## 拓展功能
-### `BeanPostProcessor`:Bean后置处理器
+### `BeanPostProcessor`Bean后置处理器
 
 - `ConfigurationPropertiesBindingPostProcessor`
     - `@ConfigurationProperties`
 
 
-### `BeanFactoryPostProcessor`:BeanFactory后置处理器
+### `BeanFactoryPostProcessor`BeanFactory后置处理器
 
 - `AutowiredAnnotationBeanPostProcessor`
     - `@Autowired`
@@ -97,4 +101,12 @@ beanFactory.addEmbeddedValueResolver(new StandardEnvironment()::resolvePlacehold
 ### `FactoryBean`
 
 ---
+
+### Bean命名
+
+- 建议采用驼峰命名法给Bean对象命名Name
+
+- `BeanNameGenerator`接口：Bean命名生成器
+    - DefaultBeanNameGenerator
+    - AnnotationBeanNameGenerator
 

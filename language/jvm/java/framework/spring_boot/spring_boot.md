@@ -159,3 +159,8 @@ public class Xxx {
 ```properties
 spring.main.lazy-initialization=true
 ```
+
+---
+## 自动配置
+
+- `*AutoConfiguration`

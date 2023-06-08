@@ -1,5 +1,5 @@
 # Spring注解
-
+- Spring 3.0+
 
 ---
 - `@Order(value=)`注解中整型参数`value`越小，优先级越高，默认是`Integer.MAX_VALUE`
@@ -15,17 +15,32 @@
 
 ---
 
-### `@Scope`作用域
+## `@Scope`作用域
 - singleton:默认单例
 - prototype:多例
 - request:请求
 - session:会话
 - application:应用
 
-### 在单例bean中依赖注入其他作用域bean会失效的，解决方法：推迟注入
+### 在单例Bean对象中依赖注入其他作用域Bean对象会失效的，解决方法：推迟注入
 
 - `@Lazy`:生成代理
 - `@Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)`:生成代理
 - `ObjectFactory<>`:间接注入
 - `ApplicationContext.getBean`:间接注入
+
+
+
+---
+
+- `@ImportResource`注解：读取XML配置文件
+- `@Import`注解：导入配置类`@Configuration`
+- `@ComponentScan`注解：扫描包`package`
+
+- `@PropertySource`
+- `@PropertySources`
+- `@`
+- `@`
+- `@`
+- `@`
 

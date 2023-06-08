@@ -22,9 +22,10 @@
 期货future
 期权option
 
-商品commodities
+commodities：大宗商品，商品期货
 衍生品derivatives
 
+currencies：货币，外汇
 
 市场market
 基准benchmark
@@ -144,6 +145,7 @@ LOF(Listed Open-ended Fund)
 QDII(qualified domestic institutional investor)
 
 
+FICC(Fixed Income, Currencies and Commodities)
 
 
 
