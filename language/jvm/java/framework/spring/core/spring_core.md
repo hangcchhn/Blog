@@ -27,5 +27,7 @@
 ---
 - Spring容器：负责管理对象
     - IoC容器
+    - 配置元数据
+    - 实例化容器：`BeanDefinition`
 
 - Bean对象：Java对象，Spring管理

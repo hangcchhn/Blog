@@ -94,9 +94,7 @@ byte->8bit
 - 实现`Serializable`接口
 ```java
 public class SerializableClass {
-    // 序列化版本ID
     private static final long serialVersionUID = 1L;
-
 }
 ```
 - 在成员前加上transient关键字，可以阻止该成员被序列化到文件中

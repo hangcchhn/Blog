@@ -1,4 +1,6 @@
 # Java
+> Jakarta(Java 1.8+)
+
 
 - JVM(Java Visual Machine)
 - JDK(Java Development Kit)
@@ -7,6 +9,8 @@
 - 下载地址:https://www.oracle.com/technetwork/java/archive-139210.html
 
 ## IDE
+
+
 - eclipse:
 - idea:
 
@@ -18,9 +22,21 @@
 
 
 
+---
 
+- Java SE(Standard Edition)：标准版
+- Java EE(Enterprise Edition)：企业版
+    - JPA(Java Persistence API)
+    - JSF(Java Server Faces)
+    - JSP(Java Server Pages )
+    - JAX-RS(RESTful Service)
+    - EJB(Enterprise Java Beans)：
+    - CDI(Context Dependency Injection)：上下文和依赖注入
 
+- Java EE(Micro Edition)：微型版
 
+- JCP(Java Community Process)：Java社区进程
+- JSP(Java Specification Requests)：Java规范提案
 
 
 

@@ -1,11 +1,20 @@
 # Spring配置
 
 
-- XML文件配置
-- Java注解配置
+- 基于XML配置：
+- 基于注解配置：Spring 2.5+，先生效注解配置，后生效XML配置
+    - `@Required`：修饰Bean对象实例变量的setter方法
+    - `@Autowired`：
+    - `@Qualifier`：
+- 基于Java配置：Spring 3.0+
+    - `@Configuration`
+    - `@Bean`
+    - `@Import`
+    - `@DependsOn`
 
-
-
+- 基于properties配置
+- 基于YAML配置
+---
 
 ```java
 @Value("${parameter.name:default_value}")

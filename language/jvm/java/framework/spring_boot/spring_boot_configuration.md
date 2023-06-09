@@ -33,9 +33,6 @@ java -jar xxx.jar --spring.profiles.active=develop
 - dev
 - test
 
-- sit:System Integrate Test（系统集成测试）
-- uat:User Acceptance Test（用户验收测试）
-- pet:Performance Evaluation Test（性能评估测试）
 
 - live
 - prod

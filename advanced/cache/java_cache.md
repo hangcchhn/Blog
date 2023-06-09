@@ -1,6 +1,6 @@
 # Java Cache
 
-- JSR-107(Java Specification Requests)
+
 
 
 - cache-api
@@ -12,7 +12,11 @@
 </dependency>
 
 ```
+
+
+---
 ## JCache
+> JSR-107
 
 - `CacheingProvider`接口：管理多个`CacheManager`对象
 - `CacheManager`接口：管理多个`Cache`对象

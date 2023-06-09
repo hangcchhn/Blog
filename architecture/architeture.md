@@ -1,4 +1,6 @@
-# architeture
+# 架构
+> architeture
+
 
 ## 分布式系统
 > distributed system
@@ -42,3 +44,15 @@
 - Leader选举
 
 - Logger复制
+
+
+---
+# 测试
+
+
+- 系统集成测试：SIT(System Integrate Test)（）
+- 用户验收测试：UAT(User Acceptance Test)
+- 性能评估测试：PET(Performance Evaluation Test)
+
+- 灰度测试
+- A/B测试

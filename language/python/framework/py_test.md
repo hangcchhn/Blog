@@ -1,23 +1,21 @@
+# Python测试
 
 
+## unittest
+```sh
 import unittest
-
-
-
-
-
 
 python -m unittest -v py_unittest.py
 
 python -m unittest discover -s project_directory -p "*_test.py"
+````
+```py
+@unittest.skip("skip test")
+```
+---
 
 
- @unittest.skip("skip test")
-
---------------------------------------------------------------------------------------------------
-
-
-
+## pytest
 
 pip install pytest
 
@@ -45,16 +43,12 @@ teardown
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
+```sh
+pytest py_test.py
 
-pytest  py_test.py 
-
--s:显示print和debug信息
--v,--verbose:显示每个测试结果
--q,--quiet:只显示整体测试结果
-
-指定测试用例
+# 指定测试用例
 -k "Test_class and test_method"
 
 -h:帮助
@@ -63,43 +57,41 @@ pytest  py_test.py
 -x 2,--maxfail=2
 
 pip install pytest-xdist
-多线程或者分布式
--n 2 
+# 多线程或者分布式
+-n 2
 
 pip install pytest-rerunfailures
-失败重跑实例阈值
+# 失败重跑实例阈值
 --reruns=2
 
 
-网页测试报告
+# 网页测试报告
 pip install pytest-html
 --html=report.html
 
+```
 
 
-
-插件
-pytest-selenium
-
-
-pytest--ordering
-pytest-rerunfailures
-pytest-sugar
+### 插件
+- pytest-selenium
+- pytest-ordering
+- pytest-rerunfailures
+- pytest-sugar
 
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
-装饰器
-@pytest.mark.xxx
+### 装饰器
+`@pytest.mark.xxx`
 -m "xxx"
 
 
 
-@pytest.mark.slow
+`@pytest.mark.slow`
 pytest -m slow
 
 
-@pytest.mark.website
+`@pytest.mark.website`
 pytest -m "website" py_pytest.py

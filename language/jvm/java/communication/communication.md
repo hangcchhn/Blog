@@ -16,8 +16,17 @@
 | PATCH /user/id | 更新指定用户部分信息 |
 | DELETE /user/id | 删除指定用户 |
 
-## SOAP
+## Web Service
 > XML
 
+- SOAP
+- WSDL
+- UDDI
 
-## gRPC
+---
+## RPC
+> Remote Procedure Call
+- 远程过程调用
+
+---
+

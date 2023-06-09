@@ -1,48 +1,52 @@
 # Java Framework
 
-
 ---
-## J2EE
-- java
-- maven
-- tomcat
-- servlet
+## Spring Framework
+- [spring-framework](spring/spring_framework.md)
 
 
 ---
-## SSH
-- Spring
-- Struts2
-- Hibernate
+## microservice
+
+- Spring Cloud
+- Quarkus
+- Micronaut
 
 
 ---
-## SSM
-- Spring
-- Spring MVC
-- MyBatis
+## persistence
 
+---
+## Apache commons-xxx
 
 
 ---
-## spring boot
+## Application Server
 
----
-## spring cloud 1.x
+- Web Container
 
-
----
-## spring cloud 2.x
+- EJB Container
 
 
+- Apache
+- Tomcat
+- Jetty
+- JBoss
+    - Redhat
+- GlassFish
 
----
-## commons
 
-
-
----
-
+- Resin
+    - Caucho
+- WebSphere
+    - IBM
+- WebLogic
+    - bea
+- IIS(Internet Information Services)
+    - Microsoft
+    - ASP(Active Server Pages)
+    - .net
+    - C#(C Sharp)
 
 
 ---
@@ -61,6 +65,9 @@
 
 ---
 ## ShardingSphere
-分布式关系型数据库中间件
+> 分布式关系型数据库中间件
 
-Sharding-JDBC、Sharding-Proxy和Sharding-Sidecar
+- Sharding-JDBC
+- Sharding-Proxy
+- Sharding-Sidecar
+

@@ -1,6 +1,9 @@
 # Spring IoC
 - 控制反转IoC(Inversion of Control)
 
+- 依赖倒置原则（设计原则之一）
+    -
+
 ---
 ## 依赖注入的方式
 - set方法注入
