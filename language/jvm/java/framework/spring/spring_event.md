@@ -1,8 +1,30 @@
 # Spring Event
 
-- 领域驱动设计(Domain Driven Design, DDD)
+- 领域驱动设计DDD(Domain Driven Design)
+
+- 聚合
+
+- 批量
+
+- 实现事件源模式
+- 限界上下文集成
 
 
+
+---
+
+
+
+- 实现`ApplicationListener`接口，重写`onApplicationEvent`方法
+- 添加`@EventListener`或`@TransactionEventListener`
+    - `@TransactionEventListener`注解：事务提交后处理事件，必须在事务上下文中
+- 使用`@Async`注解
+
+
+- 发布事件：`ApplicationEventPublisher`类`publishEvent`方法
+
+
+---
 ```java
 
 public class MyEvent {
@@ -46,13 +68,3 @@ public class MyEventPublisher {
 ```
 
 
----
-
-
-```java
-     @TransactionalEventListener
-    public void handleMyTransactionalEvent(MyTransactionalEvent event) {
-        // 处理 MyTransactionalEvent
-    }
-
-```

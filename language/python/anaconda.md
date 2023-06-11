@@ -8,38 +8,32 @@
 - Anaconda Prompt
 - 恢复菜单：`python .\Lib\_nsis.py mkmenus`
 - 替换图标
-C:\ProgramFiles\Anaconda\Menu\Iconleak-Atrous-Console.ico
+.\Anaconda\Menu\Iconleak-Atrous-Console.ico
 %SystemRoot%\System32\cmd.exe
 
 
 ```
 
-C:\ProgramFiles\Anaconda\Library\mingw-w64\bin
-C:\ProgramFiles\Anaconda\Library\usr\bin
-C:\ProgramFiles\Anaconda\Library\bin
+.\Anaconda\Library\mingw-w64\bin
+.\Anaconda\Library\usr\bin
+.\Anaconda\Library\bin
 
 
-C:\ProgramFiles\Anaconda\
-C:\ProgramFiles\Anaconda\Scripts
+.\Anaconda\
+.\Anaconda\Scripts
 
 https://repo.anaconda.com/pkgs/main/win-32
 https://repo.anaconda.com/pkgs/main/noarch
 https://repo.anaconda.com/pkgs/free/win-32
 https://repo.anaconda.com/pkgs/free/noarch
-https://repo.anaconda.com/pkgs/r/win-32
-https://repo.anaconda.com/pkgs/r/noarch
-https://repo.anaconda.com/pkgs/pro/win-32
-https://repo.anaconda.com/pkgs/pro/noarch
-https://repo.anaconda.com/pkgs/msys2/win-32
-https://repo.anaconda.com/pkgs/msys2/noarch
+
 
 ```
 
 ```
 conda config --add channels http://mirrors.aliyun.com/anaconda/pkgs/main
 conda config --add channels http://mirrors.aliyun.com/anaconda/pkgs/free
-conda config --add channels http://mirrors.aliyun.com/anaconda/pkgs/r
-conda config --add channels http://mirrors.aliyun.com/anaconda/pkgs/msys2
+
 
 conda config --set show_channel_urls yes
 ```
@@ -47,10 +41,8 @@ conda config --set show_channel_urls yes
 - .condarc
 ```
 channels:
-  - http://mirrors.aliyun.com/anaconda/pkgs/msys2
-  - http://mirrors.aliyun.com/anaconda/pkgs/r
-  - http://mirrors.aliyun.com/anaconda/pkgs/free
   - http://mirrors.aliyun.com/anaconda/pkgs/main
+  - http://mirrors.aliyun.com/anaconda/pkgs/free
   - defaults
 ssl_verify: true
 show_channel_urls: true

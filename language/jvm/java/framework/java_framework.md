@@ -34,7 +34,7 @@
 - JBoss
     - Redhat
 - GlassFish
-
+- WildFly
 
 - Resin
     - Caucho
