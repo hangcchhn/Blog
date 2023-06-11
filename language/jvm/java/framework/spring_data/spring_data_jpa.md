@@ -1,6 +1,7 @@
 
 # Spring Data JPA
-数据库持久层
+
+- 数据库持久层
 
 
 JPA（Java Persistence API——Java 持久化 API）
@@ -15,7 +16,7 @@ JPA依赖hibernate框架，hibernate框架是ORM框架，给JPA提供ORM实现
 
 ---
 
-maven:pom.xml
+- pom.xml
 ```xml
 <dependency>
     <groupId>org.springframework.data</groupId>
@@ -33,32 +34,8 @@ maven:pom.xml
     <version>5.1.6</version>
 </dependency>
 ```
----
 
-
-实体类中配置映射关系
-```java
-// 表名=类名
-@Entity
-@Table(name = "table_name")
-public class TableClass implements Serializable {
-
-    // 主键
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pk_id")
-    private Integer pkId;
-
-    // 列名=属性
-    @Column(name = "column_name")
-    private String columnField;
-}
-```
-
----
-
-
-在maven工程的resources路径下创建一个名为META-INF的文件夹，在文件夹下创建一个名为persistence.xml的配置文件
+- META-INF/persistence.xml
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
@@ -90,7 +67,6 @@ public class TableClass implements Serializable {
     </persistence-unit>
 </persistence>
 ```
----
 
 ```java
 EntityManagerFactory factory = Persistence.createEntityManagerFactory("springdata");
@@ -102,6 +78,39 @@ Article article = entityManager.find(Article.class, 1);
 transaction.commit();
 entityManager.close();
 ```
+---
+
+
+- 实体类中配置映射关系
+```java
+// 表名=类名
+@Entity
+@Table(name = "table_name")
+public class TableClass implements Serializable {
+
+    // 主键
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pk_id")
+    private Integer pkId;
+
+    // 列名=属性
+    @Column(name = "column_name")
+    private String columnField;
+
+    // 忽略字段
+    @Transient
+    private String ignoreField;
+}
+```
+
+---
+
+
+
+---
+
+
 ---
 
 
@@ -119,7 +128,7 @@ EntityManagerFactory是一个线程安全的对象，并且其创建极其浪费
 
 ---
 
-spring-boot:application.properties
+- application.properties
 ```ini
 # 设置数据库平台：指定数据库方言
 # spring.jpa.database=MySQL
@@ -144,7 +153,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 - PagingAndSortingRepository
 
-- JpaRepository
+- `JpaRepository`
 
 
 Spring框架会使用`JdkDynamicAopProxy`为`Repository`接口生成一个代理对象
@@ -153,9 +162,7 @@ Spring框架会使用`JdkDynamicAopProxy`为`Repository`接口生成一个代理
 `EntityManager`对象
 
 
-Spring Data JPA底层还是用的JPA的API，
-Spring Data JPA只是对标准JPA操作进行了些封装
-
+- Spring Data JPA动态查询通过JpaSpecificationExecutor接口实现
 
 ---
 方法命名规则查询
@@ -197,4 +204,3 @@ SPEL表达式
 
 
 
-Spring Data JPA动态查询通过JpaSpecificationExecutor接口实现

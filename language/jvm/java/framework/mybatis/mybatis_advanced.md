@@ -40,6 +40,13 @@ public interface ResultHandler<T> {
 - `ResultContext`
 
 ---
+## 流式查询
+- `Cursor`接口继承`Iterable`接口
+
+
+
+
+---
 
 ## 缓存
 

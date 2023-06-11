@@ -108,16 +108,6 @@ ELK(ElasticsSearch, Logstash, Kibana)
 OSS(OpenSourceSystem)
 
 
---------------------------------------------------------------------------------------------------
-
-面试准备工作：
-1.简历
-2.jvm
-3.spring
-4.redis
-5.mysql
-6.kafka
-7.python
 
 
 

@@ -2,12 +2,12 @@
 
 
 
-
+- Java 1.6~1.8自带监控工具，Java 9之后不再自带
 ---
 
 - ./etc/visualvm.conf
 ```ini
-visualvm_jdkhome="D:\jdk\jdk1.8.0_202"
+visualvm_jdkhome="E:\Windows\java"
 
 ```
 

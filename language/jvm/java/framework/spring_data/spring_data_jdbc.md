@@ -10,7 +10,6 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-jdbc</artifactId>
 </dependency
-
 ```
 
 
@@ -30,28 +29,12 @@ public class JdbcServiceImpl {
         return list;
     }
 
-
 }
 
-
-
-
-
 ```
 
 
 
-- application.yml
-```yaml
 
-spring:
-    jdbc:
-        template:
-            query-timeout: -1
-            fetch-size: -1
-            max-rows: -1
-
-
-```
 
 
