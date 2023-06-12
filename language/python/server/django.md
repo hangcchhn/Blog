@@ -1,12 +1,12 @@
 # Django
 
-- LTS：1.4，1.8，1.11，2.2，3.2
+- LTS：1.11，2.2，3.2，4.2
 
 
-- MVT
-Model：模型
-View：视图
-Template：模版
+- MVT模型
+    - Model模型
+    - View视图
+    - Template模版
 
 ## django命令
 ```sh

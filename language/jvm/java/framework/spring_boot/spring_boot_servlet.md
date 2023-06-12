@@ -1,21 +1,26 @@
 # Spring Boot & Servlet
+> Servlet 3.0
 
-Servlet 3.0
-不依赖web.xml，支持注解配置
+## 不再依赖web.xml，支持注解配置
 
-ServletContainerInitializer接口通过SPI机制
+- 通过SPI机制解析配置文件中的`ServletContainerInitializer`接口实现类
+- `SpringServletContainerInitializer`类实现`ServletContainerInitializer`接口，通过`@HandlesTypes`注解配置`WebApplicationInitializer`接口，获取所有`WebApplicationInitializer`接口实现类作为`onStartup`方法的第一个参数
 
-在META-INF/services/javax.servlet.ServletContainerInitializer中
-配置ServletContainerInitializer接口实现类的绝对路径
+- `AbstractContextLoaderInitializer`抽象类实现`WebApplicationInitializer`接口
+    `registerContextLoaderListener`方法
+- `AbstractDispatcherServletInitializer`抽象类继承`AbstractContextLoaderInitializer`抽象类
+    - `registerDispatcherServlet`方法
 
-SpringServletContainerInitializer实现ServletContainerInitializer接口
+## Tomcat Embed
+- `ContextConfig`：通过BCEL技术，扫描/WEB-INF/classes目录，解析class文件
 
-WebApplicationInitializer接口实现类
+
+## Java字节码
+- BCEL(Byte Code Engineering Library)：
+- javaassist
+- ASM
 
 ---
-# 打包war
-
-
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -34,9 +39,4 @@ public class MySpringBootServletInitializer extends SpringBootServletInitializer
 }
 ```
 
----
-## Spring MVC
-- WebMvcConfigurer
-Interceptor,ViewResolver,MessageConverter
 
-在Spring Boot 1.5.x中重写WebMvcConfigurerAdapter抽象类，到Spring Boot 2.x后弃用，推荐实现WebMvcConfigurer接口或继承继承WebMvcConfigurationSupport类

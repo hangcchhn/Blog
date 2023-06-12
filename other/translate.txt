@@ -304,7 +304,10 @@ divide
 
 属性:properties
 
-Pseudo-Distrubuted
+伪分布式Pseudo-Distrubuted
+
+
+解释器Interpreter
 
 --------------------------------------------------------------------------------------------------
 

@@ -59,3 +59,12 @@
 - Bean对象默认是单例模式，是非线程安全的，尽量使用局部变量，不要使用成员变量
 
 - 在Tomcat服务中，`Servlet`是单例的
+
+
+---
+- 执行顺序
+1. HandlerInterceptor.preHandle
+2. ResponseBodyAdvice.supports
+3. ResponseBodyAdvice.beforeBodyWrite
+4. HandlerInterceptor.postHandle
+5. HandlerInterceptor.afterCompletion

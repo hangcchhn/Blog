@@ -2,11 +2,13 @@
 
 ## windows
 
-- Windows xp + WinPython 2.7.10.3
+- Windows XP + WinPython 2.7.10.3
 
-- Windows thin + Anaconda2 5.0.1
+- Windows Thin + Anaconda2 5.0.1
 
-- Windows thin + Anaconda3 5.2.0
+- Windows Thin + Anaconda3 5.2.0
+
+- Python 3.9不再支持Windows 7
 
 ## linux
 

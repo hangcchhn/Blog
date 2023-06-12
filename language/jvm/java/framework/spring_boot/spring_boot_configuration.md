@@ -6,10 +6,11 @@
 3. 包路径:`classpath*:/`
 
 ---
-## 默认配置文件读取顺序
-- .properties > .yml
-- ./config/ >  ./
-- file:./ > classpath:./
+- 默认配置文件读取顺序：按顺序加载配置，重复配置会覆盖
+    - .properties > .yml
+    - ./config/ >  ./
+    - file:./ > classpath:./
+
 
 ---
 
@@ -28,14 +29,6 @@ java -jar xxx.jar --spring.profiles.active=develop
 
 ---
 
-## 按顺序加载配置，重复配置会覆盖
-- local
-- dev
-- test
-
-
-- live
-- prod
 
 ---
 - 配置文件应用监听:`org.springframework.boot.context.config.ConfigFileApplicationListener`
@@ -81,6 +74,11 @@ server.context-path=/xxx
 server.servlet.context-path=/xxx
 
 ```
+
+- `server.context-path` & `server.servlet-path=/xxx`
+    - DispatcherServlet
+    - Spring Boot 1.x配置，Spring Boot 2.x没有
+
 ---
 
 - Parameter.java
