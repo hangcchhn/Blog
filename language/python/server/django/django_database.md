@@ -1,39 +1,4 @@
-# Django
-
-- LTS：1.11，2.2，3.2，4.2
-
-
-- MVT模型
-    - Model模型
-    - View视图
-    - Template模版
-
-## django命令
-```sh
-# 创建项目
-django-admin startproject project_name
-# 创建应用
-django-admin startapp app_name
-python manage.py startapp app_name
-
-# 迁移数据：将代码中的实体类转化为数据库中的表格
-
-# 生成：0001_initial.py
-python manage.py makemigrations
-# 生成：db.sqlite3
-python manage.py migrate
-
-python manage.py shell
-
-
-python manage.py runserver host:port
-curl http://127.0.0.1:8000
-
-
-python manage.py createsuperuser
-python manage.py changepassword
-
-```
+#  数据库
 
 ## Django ORM
 
@@ -48,7 +13,7 @@ python manage.py changepassword
 
 
 
-### 数据库配置参数
+## 数据库配置
 - settings.py
 ```py
 DATABASES = {

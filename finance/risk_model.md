@@ -201,6 +201,41 @@ $$
 
 
 
+---
+
+- 机构化风险模型:barra,axioma,northfield
+
+
+- Barra模型
+    - 美国USE4模型
+    - 中国CNE5模型
+
+
+### 三大风险因子
+- 市场因子Market Factor
+- 行业因子
+- 风格因子
+
+
+### 十个大类因子
+- 贝塔:Beta
+- 动量:Momentum(Relative Strength)
+- 大盘=市值:Size
+- 中盘=非线性市值:Non-linear Size
+- 盈利率:Earnings Yield=EP(Earnings-to-Price)
+- 价值:Value=BP(Book-to-Price)
+- 成长:Growth
+- 杠杆率:Leverage
+- 流动性:Liquidity
+- 残差波动率:Residual Volatility
+- 滚动波动率:Rolling Volatility
+
+
+
+- 超额收益 = 因子收益 + 特质收益
+- 因子收益 = 市场因子收益 + 行业因子收益 + 风格因子收益
+- 特质收益 = 残差特质收益
+
 
 
 

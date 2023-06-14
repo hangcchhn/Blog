@@ -75,6 +75,9 @@
 
 贷款市场报价利率LPR(Loan Prime Rate)
 期权调整价差OAS(Option Adjusted Spread)：相对无风险利率的价差
+
+
+
 ### 分类
 ---
 
@@ -103,6 +106,10 @@
     - DR007：存款类机构间利率债质押的7天回购利率
 
 - 将利差用基点(basis points)表示，1bp(bps) = 0.01%。
+
+- 基点价值PVBP(price value of a basis point)
+- 基点美元值DV01(dollar value of all 01)
+
 
 - 付息方式
     - 票息债券
