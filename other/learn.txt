@@ -190,4 +190,20 @@ SOAP方式发送短信
 
 债券
 
-python flask django
+python flask
+
+
+airflow
+
+django
+djang-rest-framework
+celery
+supervisor
+mock
+coverage
+gevent
+gunicorn
+
+pydantic
+python-dotenv
+.example.env
