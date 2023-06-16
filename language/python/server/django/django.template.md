@@ -23,8 +23,8 @@ from .models import Question
 
 
 def template(request):
-
-    template = loader.get_template('polls/template.html')
+    # ./templates可以省略
+    template = loader.get_template('module/template.html')
     context = {
         'latest_question_list': latest_question_list,
     }

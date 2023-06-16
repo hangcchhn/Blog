@@ -7,7 +7,7 @@
 ```py
 
 INSTALLED_APPS = [
-    'project.app.apps.config',# apps.py
+    'app_module',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -25,7 +25,7 @@ INSTALLED_APPS = [
 
 from django.apps.AppConfig
 
-class AppsConfig():
-    name = 'project.app.apps.config'
+class AppModuleConfig():
+    name = 'app_module'
 
 ```

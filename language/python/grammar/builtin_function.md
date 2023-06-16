@@ -63,9 +63,9 @@
 - eval()
 
 ---
-- classmethod()
-- staticmethod()
-- property()
+- `@classmethod()`
+- `@staticmethod()`
+- `@property()`
 
 ---
 ```py

@@ -134,7 +134,7 @@ print('x:----------\n', x, sep='')
 
 ---
 - 切片slice->index下标
-```py
+
 X[start:step:stop]
 
 区间前闭后开:[start, stop)
@@ -152,7 +152,7 @@ X[start:] = X[start:len(X)] = X[start:len(X):1]
 反转
 x[::-1]
 
-
+```py
 for value in collections:
 
     pass

@@ -42,9 +42,8 @@ print var
 print(var)
 ```
 - Python2不支持使用冒号指定类型，Python3支持
-------------------------------------------------
 
-### ### Python3:
+### Python3:
 
 ```py
 s:str = input("")
@@ -59,10 +58,7 @@ print(var)
 - range(n):列表list
 - xrange(n):对象xrange
 
-------------------------------------------------
-
-
-### ### Python3:
+### Python3:
 - range(n):对象range, range对象中的元素不可以改变
 - list(range(n)):列表list，效果同Python2中的range(n)
 - xrange(n):`name 'xrange' is not defined`
@@ -78,14 +74,14 @@ range(start, stop, step)
 ---
 ## 自定义类
 
-- ### Python2:
+### Python2:
 ```py
 class ExtentsObject(object):
 
 
     pass
 ```
-- ### ### Python3:
+### Python3:
 ```
 class CustomClass:
 

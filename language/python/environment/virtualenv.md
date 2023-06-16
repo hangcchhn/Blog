@@ -62,6 +62,11 @@ rmvirtualenv virtualenv_name
 ```
 
 
+```sh
+virtualenv  -p python3.6 py36
+
+
+```
 
 
 

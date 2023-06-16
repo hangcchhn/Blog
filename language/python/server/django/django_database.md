@@ -24,13 +24,37 @@ DATABASES = {
 }
 DATABASES = {
     'default': {
-        'ENGINE': '数据库驱动，已支持数据类型如下',
-        'NAME': '数据库名称',
-        'USER': '用户名',
-        'PASSWORD': '密码',
-        'HOST': '数据库服务器ip，本地可以使用localhost，127.0.0.1',
-        'PORT': '端口，默认为3306',
+        # pip install mysqlclient
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_project',
+        'USER': 'root',
+        'PASSWORD': 'chench',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 ```
-- 已支持的数据库类型：mysql、sqlite3、oracle
+
+- models.py
+```py
+from django.db import models
+
+class PersonModel(models.Model):
+    name = models.CharField(max_length=128,)
+    status = models.IntegerField()
+    birthday = models.DateField(default='2000-01-01')
+
+    pass
+
+```
+
+
+- admin.py
+```py
+from django.contrib import admin
+
+from app_module.models import PersonModel
+
+admin.site.register(PersonModel)
+
+```
