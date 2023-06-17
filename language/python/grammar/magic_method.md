@@ -1,4 +1,4 @@
-# 魔法函数
+# 魔法方法
 > `__xxx__()`
 
 ---
@@ -23,7 +23,7 @@ __reversed__()
 
 __getitem__()
 __setitem__()
-
+__delitem__()
 
 ```
 ---
@@ -34,10 +34,9 @@ __new__()
 
 __getattr__()
 __setattr__()
-
+__delattr__()
 
 __getattribute__()
-# __setattribute__()
 
 __dir__()
 
@@ -49,6 +48,7 @@ __doc__()
 __get__()
 __set__()
 
+__del__()
 __delete__()
 
 ```
@@ -63,6 +63,12 @@ __anext__()
 __aenter__()
 __aexit__()
 
+```
+
+---
+## 数学
+
+```py
 
 
 __abs__()
@@ -74,6 +80,8 @@ __index__()
 
 ```
 ---
+## 比较
+
 ```py
 __eq__()
 __ne__()

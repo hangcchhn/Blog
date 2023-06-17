@@ -54,5 +54,13 @@ wsl --shutdown
 # 关闭指定分发
 wsl --terminate Ubuntu
 
+
+# 导出指定分发到指定压缩文件
+wsl --export Ubuntu D:/Ubuntu.tar
+# 注销并删除指定分发
+wsl --unregister Ubuntu
+# 根据指定压缩文件导入到指定目录
+wsl --import Ubuntu D:/Ubuntu D:/Ubuntu.tar
+wsl --distribution Ubuntu
 ```
 
