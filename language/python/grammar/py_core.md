@@ -1,4 +1,4 @@
-
+# Python
 ---
 - 编码格式
 ```py
@@ -31,14 +31,14 @@ name = func(data = data, \
     xxx = xxx, yyy = yyy)
 
 
-# 一行多句使用;隔开
+# 一行多句使用逗号;隔开
 s = 'str'; print(s)
 
 ```
 
 
 ---
-- 启动入口
+## 启动入口
 - `__file__`:源码脚步文件名
 - `__name__`:程序运行模块名
 
@@ -49,6 +49,7 @@ if __name__ == '__main__':
 ```
 
 ---
+## 特殊注释
 ```py
 
 # 自动检查忽略错误
@@ -56,11 +57,22 @@ if __name__ == '__main__':
 #
 #
 ```
+---
+```py
+instance_name: class_name = class_name()
 
+if isinstance(instance_name, class_name):
 
+    pass
+
+def function_name() -> return_type:
+
+    pass
+
+```
 
 ---
-
+## 表达式
 ```py
 # 三元表达式
 result = true_value if flag else false_value
@@ -70,19 +82,7 @@ result = true_value if flag else false_value
 to_list = [expression for i in from_list]
 
 ```
----
-lambda表达式 -> 匿名函数
-```py
-def func(x):
-    return expression(x)
 
-func = lambda x: expression(x)
-
-
-
-map(lambda x:)
-filter(lambda x:)
-```
 
 ---
 
@@ -135,3 +135,9 @@ zip(*iter)=iter
     只有*，没有**；只支持Python3，不支持Python2
 
 ---
+---
+
+动态代码，拼接语句
+
+eval:执行表达式
+exec:执行代码块

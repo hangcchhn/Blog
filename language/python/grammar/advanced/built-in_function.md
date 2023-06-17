@@ -40,6 +40,7 @@
 
 
 ---
+## 属性
 - hasattr()
 - getattr()
 - setattr()
@@ -65,6 +66,8 @@
 - eval()
 
 ---
+# 装饰器
+
 - `@classmethod()`
 - `@staticmethod()`
 - `@property()`

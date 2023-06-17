@@ -71,43 +71,7 @@ range(start, stop, step)
 ```
 - 包含start但不包含stop
 
----
-## 自定义类
 
-### Python2:
-```py
-class ExtentsObject(object):
-
-
-    pass
-```
-### Python3:
-```
-class CustomClass:
-
-    def __init__():
-
-        pass
-
-    def method():
-
-        pass
-
-    @classmethod
-    def classmethod
-
-        pass
-
-    @staticmethod
-    def staticmethod():
-
-        pass
-
-    pass
-```
-- 构造函数:`__init__()`定义类的属性self.field
-- 类方法:`@classmethod`(可访问class不可访问self)
-- 静态方法:`@staticmethod`(不可访问self和class)
 
 ---
 
