@@ -141,3 +141,58 @@ zip(*iter)=iter
 
 eval:执行表达式
 exec:执行代码块
+
+
+---
+
+## json
+```py
+import json
+
+# 处理json字符串
+string = json.dumps(object)
+object = json.loads(string)
+
+# 处理json文件
+json.dump(string, file)
+string = json.load(file)
+```
+- python -> json
+
+| python | json |
+| :- | :- |
+| dict | object|
+| list, tuple | array|
+| str, unicode | string|
+| int, long, float | number|
+| True  | true|
+| False | false|
+| None | null|
+
+- json -> python
+| json | python |
+| :- | :- |
+| object | dict|
+| array | list|
+| string | unicode|
+| number(int) | int, long|
+| number(real) | float|
+| true | True|
+| false | False|
+| null | None|
+
+- curl调用restful接口格式化输出json
+`curl http://xxx | python -m json.tool`
+
+
+
+---
+## logging
+> 日志
+
+- https://docs.python.org/3/library/logging.html#logrecord-attributes
+
+
+
+
+---

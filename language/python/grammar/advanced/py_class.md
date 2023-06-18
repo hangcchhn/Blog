@@ -79,3 +79,27 @@ class MethodClass(object):
 
 
 ```
+
+---
+## ABC
+> Abstract Base Class
+
+- 抽象基类ABC
+```py
+from abc import ABCMeta, abstractmethod
+
+class AbstractClass(metaclass=ABCMate):
+
+    @abstractmethod
+    def func():
+        pass
+
+
+
+class ImplementClass(AbstractClass):
+
+    def func():
+        # code
+        pass
+
+```

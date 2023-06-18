@@ -28,15 +28,6 @@ compileall.compile_dir(r'/path')
 
 
 
----
-
-
-
----
-
-
-缓存机制
-
 
 ---
 
