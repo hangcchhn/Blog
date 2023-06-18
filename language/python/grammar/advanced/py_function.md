@@ -23,7 +23,14 @@ def function_name(parameters) -> return_type:
 
 - return & yield
 
+---
+##
 
+```py
+def function(var0, var1=None):
+    pass
+
+```
 
 ---
 ## lambda表达式 -> 匿名函数

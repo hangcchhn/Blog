@@ -16,11 +16,40 @@
 - 字典`dict`：`{key1:val1, key2:val2, ...}`
 
 ---
-- 不可变类型：所有数值类型，字符串，元组；其他都是可变类型
+## 其他类型
+
+- 函数function
+- 类class
+- 方法method
+
+```py
+from inspect import isclass, ismethod, isfunction
+
+from types import
+
+
+```
+
+
+---
+- `immutable`不可变类型：所有数值类型，字符串，元组；其他都是可变类型
     - 每次修改变量都会重新创建对象，变量中存储的内存地址都会改变
 
 
+- `Awaitable`可等待类型
+```py
+class Awaitable(metaclass=ABCMeta):
 
+    pass
+
+class Coroutine(Awaitable):
+```
+
+- `callable()`可调用类型
+    - function
+    - method
+    - class
+    - instance：`def __call__(self):`
 ---
 ## 字符串类型
 > str
@@ -95,3 +124,9 @@ for index, value in enumerate(collections):
 
     pass
 ```
+
+
+---
+
+- `import types`
+    - `@types.coroutine`

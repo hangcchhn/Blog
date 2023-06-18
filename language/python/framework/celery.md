@@ -2,30 +2,41 @@
 
 # celery
 
-
-
 - 分布式
 - 任务调度
 - 消息队列
 
+---
+## 组件
+
+- Celery Beat：任务调度
+- Celery Worker：
+- Broker：代理
+- Producer：
+- Result Backend：
 
 
+---
 - `pip install celery`
 
 
-py_celery.py
+- py_celery.py
+```py
 
 
-linux|mac
-celery -A py_celery worker  --loglevel=info
+```
+
+
+- *nix:Linux,unix(macOS)
+`celery -A py_celery worker  --loglevel=info`
 
 
 
-windows
-
+- Windows
+```bat
 pip install eventlet
 celery -A py_celery worker -l info -P eventlet -E
-
+```
 
 ---
 
@@ -34,11 +45,11 @@ celery -A py_celery worker -l info -P eventlet -E
 
 
 ---
-
-启动职程
+```sh
+# 启动职程
 celery worker --help
 
-
+```
 
 
 

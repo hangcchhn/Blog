@@ -103,3 +103,54 @@ class ImplementClass(AbstractClass):
         pass
 
 ```
+
+---
+## 元类
+
+- 类是用来创建对象的，元类是用来创建类的
+- 默认元类：`metaclass=type`
+
+- ORM
+- 设计模式：单例模式
+
+- 元编程(metaprogramming)
+
+```py
+class TypeClass(type):
+
+    def __new__(cls, class_name, base_class, attr_method_dict):
+        # return type(class_name, base_class, attr_method_dict)
+        # return type.__new__(cls, class_name, base_class, attr_method_dict)
+        return super(TypeClass, cls).__new__(cls, class_name, base_class, attr_method_dict)
+
+    pass
+
+
+class MetaClass(object, metaclass=TypeClass):
+    pass
+
+
+```
+
+- 动态创建类
+```py
+def init(self, args):
+    self.attr = args
+    pass
+
+
+def function(self):
+    print(str(self))
+    pass
+
+
+def dynamic_type():
+    """动态类型"""
+    Dynamic = type('Dynamic', (object,), {'__init__': init, 'method': function, 'attr': 'args', })
+    dynamic = Dynamic('name')
+    dynamic.method()
+    print(Dynamic.attr)
+    print(dynamic.attr)
+    pass
+
+```

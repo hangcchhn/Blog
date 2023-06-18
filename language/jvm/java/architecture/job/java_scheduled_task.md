@@ -14,6 +14,7 @@
 ## Spring框架多种方式配置定时任务
 
 - spring-context
+- `scheduling`包
 - `@Scheduled`注解
 
 ---

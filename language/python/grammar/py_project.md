@@ -85,6 +85,35 @@ import importlib
 ## 协程
 > coroutine
 
+- `async`添加在函数声明前
+    - Python 3.5+
 
+```py
+
+def function_name():
+    return object
+
+def generator_name():
+    yield object
+
+async def coroutine_name(): # coroutine
+    return object
+
+def async_generator():
+    yield object
+```
+
+
+- `await`必须在函数里使用
+
+
+- `coroutine`
+- `Future`
+- `Task`
+
+---
+
+- `yield from`
+- `@asyncio.coroutine`
 
 
