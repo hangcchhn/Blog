@@ -1,6 +1,6 @@
-# install python
+# Python安装
 
-## windows
+## Windows
 
 - Windows XP + WinPython 2.7.10.3
 
@@ -10,13 +10,12 @@
 
 - Python 3.9不再支持Windows 7
 
-## linux
+## Linux
 
 ---
 - centos 6.10 + python 3.6.5
 
-```
-
+```sh
 
 wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
 

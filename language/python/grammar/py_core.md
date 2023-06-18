@@ -88,109 +88,57 @@ to_list = [expression for i in from_list]
 
 
 
-python中*或**的多重含义
+## python中*或**的多重含义
 
-函数参数*args, **kwargs
+- 乘法：`x * y`，乘方（幂）：`x ** y`
 
+### 函数或方法的参数`*args, **kwargs`
 
-*args:非键值对集合
-
+- `*args`
+    - 形参：多个无名参数，本质是`tuple`元组
+    - 实参：集合
+```py
 args = (value1, value2,)
 args = [value1, value2,]
 args = {value1, value2,}
 func(*args)
 
 func(value1, value2,)
+```
 
-**kwargs:键值对
+- `**kwargs`
+    - 形参：多个带名参数，本质是`dict`字典
+    - 实参：字典
+```py
 kwargs = {key1:value1, key2:value2,}
 func(**kwargs)
 
 func(key1=value1, key2=value2)
+```
 
 
-zip(iter):
-- Python2将元素转成元组，整体组成列表
-- Python3将元素转成元组，整体组成对象，对象可转列表
+---
+# 序列解包
+
+- `zip(iter)`
+    - Python2将元素转成元组，整体组成列表
+    - Python3将元素转成元组，整体组成对象，对象可转列表
 
 以多个参数的维度的最小值为长度，取每个参数一个元素组成一个元组
 
-zip(*iter)=iter
-序列解包:"*表达式"只支持Python3，不支持Python2
-使用"*表达式"获取任意长度的Iterable对象中某些固定模式数据
-"*表达式"可以位于第一个位置、最后一个位置或中间任意的位置
-
-1.算数运算
-    *   代表乘法
-    **  代表乘方
-
-2.函数形参
-    *args 表示多个无名参数，它本质是一个 tuple
-    **kwargs 表示多个带名参数，它本质上是一个 dict
-
-3.函数实参
-    对元组和字典进行解引用
-
-4.序列解包
-    只有*，没有**；只支持Python3，不支持Python2
-
----
----
-
-动态代码，拼接语句
-
-eval:执行表达式
-exec:执行代码块
-
+- `zip(*iter)=iter`
+    - 序列解包:"*表达式"只支持Python3，不支持Python2
+    - 使用"*表达式"获取任意长度的Iterable对象中某些固定模式数据
+    - "*表达式"可以位于第一个位置、最后一个位置或中间任意的位置
 
 ---
 
-## json
-```py
-import json
+## 动态代码，拼接语句
 
-# 处理json字符串
-string = json.dumps(object)
-object = json.loads(string)
-
-# 处理json文件
-json.dump(string, file)
-string = json.load(file)
-```
-- python -> json
-
-| python | json |
-| :- | :- |
-| dict | object|
-| list, tuple | array|
-| str, unicode | string|
-| int, long, float | number|
-| True  | true|
-| False | false|
-| None | null|
-
-- json -> python
-| json | python |
-| :- | :- |
-| object | dict|
-| array | list|
-| string | unicode|
-| number(int) | int, long|
-| number(real) | float|
-| true | True|
-| false | False|
-| null | None|
-
-- curl调用restful接口格式化输出json
-`curl http://xxx | python -m json.tool`
+- `eval()`函数：执行表达式
+- `exec()`函数：执行代码块
 
 
-
----
-## logging
-> 日志
-
-- https://docs.python.org/3/library/logging.html#logrecord-attributes
 
 
 
