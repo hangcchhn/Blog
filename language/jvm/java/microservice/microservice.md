@@ -22,3 +22,15 @@
 
 
 - Zookeeper:服务注册
+
+
+---
+
+
+## 服务调用
+
+- HttpClient
+
+- RestTemplate
+
+- OpenFeign

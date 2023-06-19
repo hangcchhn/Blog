@@ -19,7 +19,7 @@
 - flask-sqlalchemy
     - sqlalchemy
 
-
+---
 ### Tornado
 >
 >
@@ -32,6 +32,15 @@
 - reactor模型：netty框架
 
 
+
+### Gevent
+
+- aiohttp
+- aiofile
+
+- asyncpg
+
+---
 
 #### FastAPI
 > Python 3.6+
@@ -66,7 +75,9 @@
 
 ---
 
+## 定时任务
 
-Tornado
-Twisted
-Gevent
+- APScheduler(Advanceded Python Scheduler)
+    - 基于Quartz
+
+- Celery

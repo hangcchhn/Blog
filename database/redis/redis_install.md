@@ -13,16 +13,14 @@
 
 ```sh
 make
-
 make test
-
 make install
 ```
 
 ## Windows
 
 - Redis on Windows:https://github.com/MSOpenTech/redis/releases
-- Redis Desktop Manager:https://github.com/uglide/RedisDesktopManager/releases/tag/0.9.3
+
 
 ```
 redis-server --service-install redis.windows-service.conf --loglevel verbose

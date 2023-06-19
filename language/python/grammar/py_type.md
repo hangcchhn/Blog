@@ -36,15 +36,6 @@ from types import
     - 每次修改变量都会重新创建对象，变量中存储的内存地址都会改变
 
 
-- `Awaitable`可等待类型
-```py
-class Awaitable(metaclass=ABCMeta):
-
-    pass
-
-class Coroutine(Awaitable):
-```
-
 - `callable()`可调用类型
     - function
     - method
