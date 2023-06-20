@@ -30,6 +30,7 @@ from types import
 
 ```
 
+- `Ellipsis`省略类型：`...`
 
 ---
 - `immutable`不可变类型：所有数值类型，字符串，元组；其他都是可变类型
