@@ -1,26 +1,28 @@
 性能优化
 
 
-python多线程无法利用多核处理器加速
-
-cpython版本的python解释器
-
-全局解释器锁GIL(Global Interpreter Lock)
-同一时刻只允许一个线程在解释器中运行
-互斥锁，保证python在单核cpu上的使用率
-
-线程安全
-
-python多线程对IO密集型任务要不CPU密集型任务更加友好
 
 
-python多进程之间没有GIL，但是进程本身资源消耗较大
 
-指定处理器运行线程（使用affinity模块）
+- 全局解释器锁GIL(Global Interpreter Lock)
+    - 同一时刻只允许一个线程在解释器中运行
+    - Cpython版本的Python解释器：转化为C语言代码
+    - 互斥锁，线程安全
+    - 保证在单核处理器上的使用率
+    - 多线程无法利用多核处理器加速
 
-jpython，ironpython等解释器没有GIL
 
-协程
+
+- 多线程对IO密集型任务要比CPU密集型任务更加友好
+    - IO密集型：多线程，协程
+    - CPU密集型：多进程，进程池
+- 多进程之间没有GIL，但是进程本身资源消耗较大
+
+- 指定处理器运行线程：使用affinity模块
+
+- Jpython，Ironpython等解释器没有GIL
+
+
 
 
 

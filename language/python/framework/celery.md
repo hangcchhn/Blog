@@ -28,7 +28,7 @@
 
 
 - *nix:Linux,unix(macOS)
-`celery -A py_celery worker  --loglevel=info`
+`celery -A py_celery worker --loglevel=info`
 
 
 

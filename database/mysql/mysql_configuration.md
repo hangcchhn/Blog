@@ -16,12 +16,6 @@
 - C:\ProgramFiles\MySQL\my.cnf
 
 
-- HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Services/Eventlog/Application/MySQL
-- HKEY_LOCAL_MACHINE/SYSTEM/ControlSet001/Services/Eventlog/Application/MySQL
-- HKEY_LOCAL_MACHINE/SYSTEM/ControlSet00N/Services/Eventlog/Application/MySQL
-
-
-
 
 
 

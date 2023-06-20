@@ -6,13 +6,7 @@
 ## MySQL用户管理
 > 远程连接:`host=%`
 
-- 给每个数据库配置一个用户
-```sql
-grant all privileges on database_name.* to 'root'@'%' identified by 'chench' with grant option;
-flush privileges;
-```
-
-- 配置最大权限的用户
+- MySQL 5.x：配置最大权限的用户
 ```sql
 grant all privileges on *.* to 'root'@'%' identified by 'chench' with grant option;
 flush privileges;
@@ -35,7 +29,18 @@ drop user 'root'@'%';
 show grants for 'root';
 grant all privileges on *.* to 'root'@'%' with grant option;
 flush privileges;
+
+
 ```
+
+- 给每个数据库配置一个用户
+```sql
+grant all privileges on database_name.* to 'user_name'@'%' with grant option;
+grant create,insert,update,delete,select
+on database_name.* to 'user_name'@'%' with grant option;
+flush privileges;
+```
+
 
 - my.cnf|my.ini:
 ```ini

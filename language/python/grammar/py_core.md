@@ -144,3 +144,17 @@ func(key1=value1, key2=value2)
 
 
 ---
+## 变量解析
+- 变量命名空间，即作用域
+
+- 变量解析原则LEGB
+    - 本地Local：函数function
+    - 嵌套Enclosing：外层嵌套函数，可以是函数function，类class
+    - 全局Global：模块module
+    - 内置Build-in：语言python
+
+
+---
+
+- 鸭子类型
+- 自省Introspection：运行时判断对象的类型
