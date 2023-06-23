@@ -1,21 +1,23 @@
 
-maven settings.xml
+maven
 
+
+- settings.xml
+```xml
 <server>
     <id>10.44.4.246</id>
     <username>root</username>
     <password>123456</password>
 </server>
-
+```
 
 pom.xml
+
+```xml
 <properties>
     <tomcat.path>/usr/tomcat/apache-tomcat-8.5.38</tomcat.path>
     <server.host>10.44.4.246</server.host>
 </properties>
-
-
-
 
 <build>
     <finalName>${project.artifactId}</finalName>
@@ -47,12 +49,12 @@ pom.xml
     </plugins>
 </build>
 
+```
+
+- `mvn clean package wagon:upload wagon:sshexec`
 
 
-mvn clean package wagon:upload wagon:sshexec
-
-
-<fromFile>target/${project.artifactId}.war</fromFile>
-mvn wagon:upload-single		
+- `<fromFile>target/${project.artifactId}.war</fromFile>`
+- `mvn wagon:upload-single`
 
 
