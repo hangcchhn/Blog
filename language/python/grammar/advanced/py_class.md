@@ -81,6 +81,10 @@ class MethodClass(object):
 ```
 
 ---
+- python默认使用dict保存类的实例属性，浪费内存空间
+- `__slots__`属性指定类的实例属性范围，节约内存空间
+
+---
 ## ABC
 > Abstract Base Class
 

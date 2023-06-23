@@ -1,10 +1,8 @@
-# scala & java
-> scala和java语法对比
+# Scala语法
 
 ## 语句
 - 一行多语句使用分号;分隔，每行结尾分后;可省略
 ```scala
-
 
 // 常量
 val constant: Type = Any
@@ -30,8 +28,8 @@ println(str)
 print(str, i)
 ```
 
-
-- 方法&函数
+---
+## 方法&函数
 
 ```scala
 // 方法
@@ -73,8 +71,8 @@ object Main extends App {
 
 ```
 
-
-- 类和对象
+---
+## 类和对象
 
 ```scala
 

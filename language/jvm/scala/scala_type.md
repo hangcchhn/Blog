@@ -1,12 +1,4 @@
-# scala type
-
-
----
-
-
----
-## 类型
-
+# Scala类型
 
 - Any:所有类型的基类
     - AnyVal:数值类型的基类
@@ -48,7 +40,7 @@ println(tuple._N)
 
 - 定长和变长
 
-# 可变和不可变
+## 可变和不可变
 - scala.collection.mutable.XxxBuffer
 - scala.collection.immutable.Xxx
 ---
@@ -87,9 +79,7 @@ println(tuple._N)
 
 
 
----
-## Set
-> 集合
+
 
 ---
 ## Map
