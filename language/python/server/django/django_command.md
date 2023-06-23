@@ -14,9 +14,10 @@ python manage.py startapp app_server
 
 
 
-
-python manage.py runserver host:port
+# --noreload：关闭自动加载
+python manage.py runserver --noreload host:port
 curl http://127.0.0.1:8000
+
 
 
 ```

@@ -24,5 +24,5 @@ umount -l local_path
 # --mount --verbose
 fuser -mv local_path
 #  --kill
-
+fuser -k local_path
 ```
