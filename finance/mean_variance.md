@@ -1,8 +1,7 @@
 # 均值-方差
-> mean variance
 > Markowitz在1952年提出
 
-
+- Mean-Variance
 - 均值-方差模型
 - 均值-方差优化
 

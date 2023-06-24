@@ -81,3 +81,13 @@
     - 基于Quartz
 
 - Celery
+
+
+
+---
+
+- Fabric
+
+- Gunicorn
+
+- Ansible
