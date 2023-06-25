@@ -26,9 +26,14 @@ INSTALLED_APPS = [
 
 ## generics
 
-
-
 ## permissions & authentication
+
+
+## 过滤器
+> filter
+- BaseFilterBackend
+- SearchFilter
+- OrderingFilter
 
 
 

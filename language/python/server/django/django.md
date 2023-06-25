@@ -80,6 +80,8 @@ class Table(Model):
 
 ## 分页
 
+- paginator
+
 ## 安全
 
 ## 信号
