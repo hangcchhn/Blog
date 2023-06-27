@@ -17,25 +17,34 @@
 
 
 ---
-- `pip install celery`
+- 安装：`pip install celery`
 
 
-- py_celery.py
+- app.py
 ```py
+# -*- coding: utf-8 -*-
 
+from celery import Celery
+
+import config
+
+app = Celery('app')
+app.config_from_object(config)
+
+if __name__ == '__main__':
+    app.start()
+    pass
 
 ```
 
-
+## 启动
 - *nix:Linux,unix(macOS)
-`celery -A py_celery worker --loglevel=info`
-
-
+`celery -A app worker --loglevel=info`
 
 - Windows
 ```bat
 pip install eventlet
-celery -A py_celery worker -l info -P eventlet -E
+celery -A app worker -l info -P eventlet -E
 ```
 
 ---

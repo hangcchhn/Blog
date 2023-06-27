@@ -27,6 +27,7 @@ wsl --help
 
 # 分发distribution:Linux子系统Ubuntu
 # 列出所有容器版本
+wsl -l -v
 wsl --list --verbose
   NAME                   STATE           VERSION
 * Ubuntu                 Running         1
