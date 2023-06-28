@@ -24,3 +24,10 @@
 - Lock:互斥锁
 - RLock:可重入互斥锁
 - Semaphore:信号量
+
+
+---
+
+- `multiprocessing.managers`
+    - `BaseManager`
+    - `SyncManager`
