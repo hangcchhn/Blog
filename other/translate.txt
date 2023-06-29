@@ -220,8 +220,14 @@ GARCH
 3.一致性(consistency)
 
 
+申购Purchase
+赎回Redemption
+分红Dividend
+
 申购费(Sales Loads, 买基金的费用)
 赎回费(Redemption Fee, 卖基金的费用)
+
+
 
 
 

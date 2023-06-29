@@ -20,31 +20,39 @@
 - 安装：`pip install celery`
 
 
-- app.py
+- pkg/app.py
 ```py
-# -*- coding: utf-8 -*-
-
 from celery import Celery
-
 import config
 
-app = Celery('app')
-app.config_from_object(config)
+pkg_app = Celery('pkg-app')
+pkg_app.config_from_object(config)
 
-if __name__ == '__main__':
-    app.start()
+```
+- 命令参数`-A pkg.app`：指定导包路径
+
+---
+- tasks.py
+```py
+@shared_task(name='task0', bind=True, serializer='json')
+def task0(self, a: int, b: int):
+    print('task0')
+    self.update_state(state="PROGRESS", meta={'progress': 50})
     pass
 
 ```
 
+- `bind=True`和`self`配合使用
+
+
 ## 启动
 - *nix:Linux,unix(macOS)
-`celery -A app worker --loglevel=info`
+`celery -A pkg.app worker --loglevel=info`
 
 - Windows
 ```bat
 pip install eventlet
-celery -A app worker -l info -P eventlet -E
+celery -A pkg.app worker -l info -P eventlet -E
 ```
 
 ---
@@ -78,6 +86,22 @@ celery multi start|restart|stop|stopwait w1 -A py_celery -l info
 --logfile=/var/log/celery/%n%I.log
 
 
+
+---
+- flower
+```sh
+pip install flower
+
+celery -A pkg.app flower 
+--address=0.0.0.0 --port=5555
+
+```
+
+
+---
+
+- AttributeError: 'EntryPoints' object has no attribute 'get'
+    - `pip install importlib-metadata==4.13.0`
 
 
 

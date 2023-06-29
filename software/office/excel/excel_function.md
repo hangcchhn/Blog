@@ -5,18 +5,12 @@
 
 
 
-- VLOOKUP
-=VLOOKUP(
-    - 要查找的项,
-    - 要查找位置,
-    - 区域中包含要返回的值的列号,
-    - 返回近似匹配或精确匹配 - 指示为 1/TRUE 或 0/FALSE
-)
+- `=VLOOKUP(@A:A,A:B,2,FALSE)`
 
 - LN(x):$\ln(x)$
 
 
-- EXP():$\exp(x)$
+- EXP(x):$\exp(x)$
 
 
 - NORMDIST(x, $\mu$, $\sigma$, cumulative)
@@ -31,7 +25,7 @@ $$
 
 
 
-- PRODUCT(x0:xN)
+- PRODUCT($x_1$:$x_N$)
 $$
 \prod\limits_{i = 1}^{N}{x_i}
 
@@ -52,3 +46,9 @@ $$
 
 - TRANSPOSE
     - 矩阵转置
+
+---
+
+- `=A1=B1`
+- `=IF(A1=B1,"","")`
+- `=EXACT(A1,B1)`

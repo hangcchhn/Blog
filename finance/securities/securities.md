@@ -97,4 +97,13 @@
 
 - OTC(Over The Counter):柜台交易方式或场外交易方式
 
+- BC：柜台交易
+- Z：续发增发
+
+---
+
+- REITs(Real Estate Investment Trust)：房地产投资信托基金
+    - 权益型和抵押型
+    - 强制分红制度：最少一年一次，90%以上
+
 

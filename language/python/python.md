@@ -37,6 +37,15 @@
 
 - visual studio code
 
+---
+## 命令
+
+```sh
+
+python -m xxx
+
+
+```
 
 
 
