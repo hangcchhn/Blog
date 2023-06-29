@@ -47,7 +47,10 @@ def task0(self, a: int, b: int):
 
 ## 启动
 - *nix:Linux,unix(macOS)
-`celery -A pkg.app worker --loglevel=info`
+```
+celery -A pkg.app beat --l info
+celery -A pkg.app worker --l info
+```
 
 - Windows
 ```bat
