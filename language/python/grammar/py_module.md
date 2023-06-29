@@ -55,6 +55,14 @@ dir(functools)
 ## 模块
 - `inspect`模块
 - `functools`模块
+- `typing`模块
+    - `int`，`float`，`bool`，`str`
+    - `Tuple`，`List`，`Set`，`Dict`
+    - `Iterable`，`Iterator`，`Generator`，`Sequence`，
+    - `Any`，`Union[int, float]`，`Callable[[int], str]`，`TypeVar`，
+    - `Optional[int]` -> `Union[int, None]`，`Generic`，
+    - `NewType('id', int)`
+
 
 
 ---
