@@ -1,3 +1,5 @@
+#
+
 
 IDEA_JDK
 IDEA_JDK_64
@@ -14,29 +16,29 @@ IDEA_IDE_NEW:Preferences->Plugins->Choose Runtime 安装IDEA查看
 
 java必须与idea系统位数保持一致
 
---------------------------------------------------------------------------------------------------
+---
 
 
 
 
-配置文件路径
+### 配置文件路径
 
-IDEA 2020.1 以上社区版Community
-win:~/AppData/Roaming/JetBrains/IdeaICXXXX.x/
-mac:~/Library/Application\ Support/JetBrains/IdeaICXXXX.x/
-linux:~/.config/JetBrains/IdeaICXXXX.x/
-
-
-IDEA 2019.3 以下专业版Ultimate|Professional
-win:~/.IntelliJIdeaXXXX.x/
-mac:~/Library/Preferences/IntelliJIdeaXXXX.x/
-linux:~/.IntelliJIdeaXXXX.x/
+- IDEA 2020.1 以上社区版Community
+    - win:~/AppData/Roaming/JetBrains/IdeaICXXXX.x/
+    - mac:~/Library/Application\ Support/JetBrains/IdeaICXXXX.x/
+    - linux:~/.config/JetBrains/IdeaICXXXX.x/
 
 
+- IDEA 2019.3 以下专业版Ultimate|Professional
+    - win:~/.IntelliJIdeaXXXX.x/
+    - mac:~/Library/Preferences/IntelliJIdeaXXXX.x/
+    - linux:~/.IntelliJIdeaXXXX.x/
 
 
 
---------------------------------------------------------------------------------------------------
+
+
+---
 
 
 idea - eclipse：
@@ -45,15 +47,16 @@ idea - eclipse：
 
 
 # 模板配置
-file and code template
--Djdk.util.zip.ensureTrailingSlash=false
+- file and code template
+    - `-Djdk.util.zip.ensureTrailingSlash=false`
 
 
-编辑模式 LightEdit mode
+- 编辑模式(LightEdit mode)
+```
 idea -e ***.txt
 idea64 -e ***.txt
-
---------------------------------------------------------------------------------------------------
+```
+---
 
 
 
@@ -69,20 +72,6 @@ NO--show hints for:
 
 
 
-
-black
-File->Settings->Editor->Color Scheme->Language Defaults->Inline parameter hints->Current->Backgroud->305D78
-File->Settings->Editor->Color Scheme->Genneral->Code->Identifier under caret,(write)->Backgroud->305D78
-
-
-white
-File->Settings->Editor->Color Scheme->Genneral->Editor->Selection backgroud->Backgroud->A6D2FF
-File->Settings->Editor->Color Scheme->Genneral->Code->Identifier under caret,(write)->Backgroud->A6D2FF
-
-
-
-
-
 win:
 File->Settings->Keymap->Other->Debug context configuration->Add Keyboard Shortcut->Ctrl+Shift+F9
 
@@ -90,10 +79,11 @@ File->Settings->Keymap->Other->Debug context configuration->Add Keyboard Shortcu
 mac:
 IDEA->Preferences->Keymap->Main Menu->Navigate->Back,Forward->remove command+[,]
 
---------------------------------------------------------------------------------------------------
+---
 
 
-快捷键
+## 快捷键
+> key map
 
 win = mac
 Ctrl = Command
@@ -144,8 +134,6 @@ Extend Selection:Ctrl + Alt + W
 Shrink Selection:Ctrl + Shift + W
 
 
-显示历史: Ctrl + Alt + H
-显示差异: Ctrl + Alt + D
 
 
 调试
@@ -157,7 +145,7 @@ Ctrl + Alt + U
 Ctrl + F12
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 win|mac
@@ -187,7 +175,7 @@ Ctrl + End
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 idea:
@@ -199,7 +187,7 @@ idea:
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 
@@ -212,6 +200,3 @@ Java Method Breakpoints
 
 
 
---------------------------------------------------------------------------------------------------
-
-Project -> Show Options Menu -> Compact Middle Packages

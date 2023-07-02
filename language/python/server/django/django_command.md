@@ -8,8 +8,8 @@ django-admin startproject django_project
 
 cd django_project
 # 创建应用
-# django-admin startapp app_server
-python manage.py startapp app_server
+# django-admin startapp application
+python manage.py startapp application
 
 
 
@@ -25,10 +25,10 @@ curl http://127.0.0.1:8000
 - migrate迁移：将代码中的实体类转化为数据库中的表格
 ```sh
 # 修改实体类后重新生成数据库脚本
-python manage.py makemigrations app_server
+python manage.py makemigrations application
 # ./migrations/0001_initial.py
 # 显示脚本
-python manage.py sqlmigrate app_server 001
+python manage.py sqlmigrate application 001
 # Create model
 # 检查脚本
 python manage.py check
@@ -45,11 +45,11 @@ python manage.py changepassword admin
 
 # rm -rf ./migrations/*
 python manage.py migrate --fake
-python manage.py migrate --fake app_server zero
+python manage.py migrate --fake application zero
 python manage.py migrate --fake-inital
 
 
-python manage.py makemigrations --empty app_server
+python manage.py makemigrations --empty application
 
 
 ```

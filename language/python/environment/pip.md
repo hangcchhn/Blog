@@ -1,4 +1,8 @@
 # pip
+
+- PYTHONHOME:D:\Python\python
+- .\Lib\site-packages
+
 ---
 
 ```sh

@@ -14,7 +14,7 @@
 
 
 ## 数据库配置
-- settings.py
+- settings.py：默认SQLite
 ```py
 DATABASES = {
     'default': {
@@ -22,9 +22,13 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+```
+
+- 使用MySQL：`pip install mysqlclient`
+```py
 DATABASES = {
     'default': {
-        # pip install mysqlclient
+
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_project',
         'USER': 'root',
