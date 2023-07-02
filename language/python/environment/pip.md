@@ -6,7 +6,7 @@
 ---
 
 ```sh
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip config set global.index-url https://repo.huaweicloud.com/repository/pypi/simple 
 
 ```
 

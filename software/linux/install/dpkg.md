@@ -32,3 +32,8 @@ dpkg -c, --contents
 
 
 ```
+
+
+---
+
+- dpkg-reconfigure locales
