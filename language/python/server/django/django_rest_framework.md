@@ -1,4 +1,4 @@
-# Django REST Framework
+hench# Django REST Framework
 
 
 - `pip install djangorestframework`
@@ -24,6 +24,22 @@ INSTALLED_APPS = [
 ---
 ## views
 - `APIView`继承`View`
+
+- 权限
+
+```py
+perform_authentication
+
+
+
+
+
+
+
+```
+- `APIView`
+- `request.user`
+- `for authenticator in self.authenticators:`
 
 
 ## mixins
@@ -52,7 +68,23 @@ INSTALLED_APPS = [
 - `GenericViewSet`继承`ViewSetMixin`和`GenericAPIView`
 
 
-## permissions & authentication
+## authentication
+- 基类`BaseAuthentication`
+- 基础`BasicAuthentication`
+    - header:`Authorization Basic base64.encode(username:password)`
+- 会话`SessionAuthentication`
+    - form-data
+- 令牌`TokenAuthentication`
+
+
+## permissions 
+
+- `BasePermission`
+- `AllowAny`
+- `IsAuthenticated`
+- `IsAdminUser`
+- `IsAuthenticatedOrReadOnly`
+
 
 
 ## 过滤器
