@@ -65,6 +65,19 @@ class Table(Model):
 > template
 
 
+---
+
+- 请求
+    - `HttpRequest`
+
+- 响应
+
+
+- `HttpRequest.META`
+
+---
+
+
 ## admin
 
 - User

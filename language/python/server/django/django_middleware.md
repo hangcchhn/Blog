@@ -5,6 +5,7 @@
 ---
 
 - settings.py
+- 中间件配置注意顺序
 ```py
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -16,3 +17,25 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ```
+
+---
+- `SessionMiddleware`
+    - `request.session`
+- `AuthenticationMiddleware`
+    - `request.user`
+
+---
+
+
+## CSRF
+
+- 中间件：`django.middleware.csrf.CsrfViewMiddleware`
+- 装饰器：`from django.views.decorators.csrf import csrf_exempt`
+
+- 响应头：`Set-Cookie: "csrftoken=xxx;"`
+- 请求头：`X-CSRFTOKEN: "xxx"`
+
+
+
+
+---

@@ -1,5 +1,8 @@
 # settings.py
 
+- 参考`django.conf.global_settings.py`
+---
+
 - `INSTALLED_APPS`
     - `django.contrib`包下的应用
     - `startapp`命令创建的应用
