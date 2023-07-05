@@ -2,7 +2,7 @@ hench# Django REST Framework
 
 
 - `pip install djangorestframework`
-- `pip install djangorestframework-jwt`
+
 
 
 ```py
@@ -77,7 +77,7 @@ perform_authentication
 - 令牌`TokenAuthentication`
 
 
-## permissions 
+## permissions
 
 - `BasePermission`
 - `AllowAny`
@@ -97,3 +97,11 @@ perform_authentication
 
 ## 渲染器
 > renderer
+
+
+
+---
+## JWT
+
+- `pip install djangorestframework-jwt`
+

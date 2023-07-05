@@ -98,3 +98,8 @@ class Table(Model):
 ## 安全
 
 ## 信号
+
+---
+## 缓存
+
+- `CacheMiddleware`

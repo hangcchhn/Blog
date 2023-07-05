@@ -10,3 +10,9 @@
 
 ## django-celery
 - 版本问题：django-celery>3.0要求celery<4.0
+
+
+
+---
+
+
