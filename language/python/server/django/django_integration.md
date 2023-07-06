@@ -3,7 +3,7 @@
 
 ## django-filter
 
-- 注意版本不同，包
+- 注意版本不同，包路径有所不同
 
 
 ## django_simpleui
