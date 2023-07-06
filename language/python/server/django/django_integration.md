@@ -3,6 +3,8 @@
 
 ## django-filter
 
+- 注意版本不同，包
+
 
 ## django_simpleui
 

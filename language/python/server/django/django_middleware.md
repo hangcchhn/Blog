@@ -30,7 +30,10 @@ MIDDLEWARE = [
 ## CSRF
 
 - 中间件：`django.middleware.csrf.CsrfViewMiddleware`
-- 装饰器：`from django.views.decorators.csrf import csrf_exempt`
+- 装饰器：`from django.views.decorators.csrf import csrf_exempt, csrf_protect`
+```py
+
+```
 
 - 响应头：`Set-Cookie: "csrftoken=xxx;"`
 - 请求头：`X-CSRFTOKEN: "xxx"`
