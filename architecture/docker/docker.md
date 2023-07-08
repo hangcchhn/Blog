@@ -2,13 +2,24 @@
 
 - image
 - container
+- network
+- volume
 
--
+
+- docker registry
 
 
 ---
-- docker-engine
-- docker.io从版本1.13.x后分为企业版docker-ee和社区版docker-ce
+- dockerd(Docker Daemon)
+
+
+- Docker Hub
+
+---
+- Docker Engine 17.03
+- docker.io从版本1.13.x后分为
+    - 企业版Docker EE
+    - 社区版Docker CE
 - docker.io由Debian团队维护，采用apt管理依赖
 ---
 守护进程Docker Daemon

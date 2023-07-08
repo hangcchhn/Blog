@@ -43,3 +43,25 @@ docker run --name nginx -p 80:80 -d nginx
 
 
 ```
+
+
+---
+## 运行镜像举例说明
+
+
+```sh
+docker run -it centos:7 /bin/bash
+
+docker run -it ubuntu:20.04 /bin/bash
+
+docker run --name theia -it -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia:1.5.0
+
+docker run --name theia -it -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia-java:1.5.0
+
+docker run --name theide --security-opt seccomp=unconfined -e GO111MODULE=auto --rm -d   -p 3000:3000/tcp -v "$(pwd):/home/project:cached" theiaide/theia-full:1.5.0
+
+docker run --name cheide -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /root/cheide:/data eclipse/che start
+```
+
+
+---

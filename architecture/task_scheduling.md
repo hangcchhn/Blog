@@ -2,5 +2,5 @@
 > task scheduling
 
 - DAG工作流
-- Hadoop：Map-Reduce
+- Hadoop：MapReduce
 - Spark：Job
