@@ -75,12 +75,15 @@ def function_name() -> return_type:
 ## 表达式
 ```py
 # 三元表达式
-result = true_value if flag else false_value
+result = true_value if condition else false_value
 
 
 # 列表表达式
 to_list = [expression for i in from_list]
+to_tuple = (expression for i in from_list)
+to_set = {expression for i in from_list}
 
+to_set = {key:value for i in from_list}
 ```
 
 

@@ -3,7 +3,7 @@
 ---
 
 ## Redis
-```
+```sh
 docker pull redis
 
 docker run --name redis-start -p 6379:6379 -d redis
@@ -27,7 +27,7 @@ CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
 
 ## Nginx
 
-```
+```sh
 docker pull nginx
 
 docker run --name nginx -p 80:80 -d nginx
@@ -38,7 +38,7 @@ docker run --name nginx -p 80:80 -d nginx
 
 ## MySQL
 
-```
+```sh
 
 
 
