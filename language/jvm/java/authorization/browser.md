@@ -48,7 +48,8 @@
 
 - 存储在客户端，存储在Local Storage中
 
-- Header:Authorization
+- Header
+    - Authorization: "Token xxx"
 
 - 默认base64加密
 - Token可以放在Cookie中
