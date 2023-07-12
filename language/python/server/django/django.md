@@ -87,6 +87,8 @@ class Table(Model):
 
 - `AuthenticationMiddleware`
 
+- 密码md5加密
+
 
 ## mail
 

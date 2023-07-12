@@ -48,8 +48,8 @@ def task0(self, a: int, b: int):
 ## 启动
 - *nix:Linux,unix(macOS)
 ```
-celery -A pkg.app beat --l info
-celery -A pkg.app worker --l info
+celery -A pkg.app beat l info
+celery -A pkg.app worker -l info
 ```
 
 - Windows
@@ -95,7 +95,7 @@ celery multi start|restart|stop|stopwait w1 -A py_celery -l info
 ```sh
 pip install flower
 
-celery -A pkg.app flower 
+celery -A pkg.app flower
 --address=0.0.0.0 --port=5555
 
 ```

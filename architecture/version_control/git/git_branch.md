@@ -58,7 +58,8 @@ git push
 
 ```
 ---
-# merge
+## 合并
+> merge
 
 ```sh
 # fast-forward
@@ -76,3 +77,5 @@ git merge --abort
 
 ---
 
+## 变基
+> rebase

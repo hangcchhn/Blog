@@ -47,6 +47,23 @@ perform_authentication
 ## mixins
 - 可以重写`perform_xxx`方法
 
+
+### ModelMixin
+
+- `CreateModelMixin`
+    - `POST`
+    - `preform_create`
+- `ListModelMixin`
+    - `GET`
+- `RetrieveModelMixin`
+    - `GET`
+- `UpdateModelMixin`
+    - `PUT`|`PATCH`
+- `DestroyModelMixin`
+    - `DELETE`
+
+
+
 ## generics
 
 - `GenericAPIView`

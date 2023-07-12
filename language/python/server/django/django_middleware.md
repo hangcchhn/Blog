@@ -4,8 +4,7 @@
 
 ---
 
-- settings.py
-- 中间件配置注意顺序
+- settings.py：中间件配置注意顺序
 ```py
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
