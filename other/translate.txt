@@ -147,6 +147,9 @@ QDII(qualified domestic institutional investor)
 固定收益，货币和商品
 FICC(Fixed Income, Currencies and Commodities)
 
+中国银行间债券市场
+CIBM(China Innerbank Bond Market)
+
 
 
 NAV(Net Asset Value):净资产值
