@@ -47,8 +47,10 @@ def task0(self, a: int, b: int):
 
 ## 启动
 - *nix:Linux,unix(macOS)
-```
+```sh
+# 定时任务调度
 celery -A pkg.app beat l info
+#
 celery -A pkg.app worker -l info
 ```
 
@@ -56,6 +58,10 @@ celery -A pkg.app worker -l info
 ```bat
 pip install eventlet
 celery -A pkg.app worker -l info -P eventlet -E
+
+pip install gevent
+celery -A pkg.app worker -l info -P gevent
+
 ```
 
 ---
