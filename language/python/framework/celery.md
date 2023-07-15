@@ -60,7 +60,7 @@ pip install eventlet
 celery -A pkg.app worker -l info -P eventlet -E
 
 pip install gevent
-celery -A pkg.app worker -l info -P gevent
+celery -A pkg.app worker -l info -P gevent -E
 
 ```
 

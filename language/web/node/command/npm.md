@@ -33,5 +33,5 @@ npm install -g koa
 npm install --save redux
 
 
-npm config set registry
+npm config set registry https://registry.npm.taobao.org
 

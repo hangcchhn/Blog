@@ -6,8 +6,8 @@
 ---
 
 ```sh
-pip config set global.index-url https://repo.huaweicloud.com/repository/pypi/simple 
-
+pip config set global.index-url https://repo.huaweicloud.com/repository/pypi/simple
+pip config set install.trusted-host repo.huaweicloud.com
 ```
 
 - windows:~/pip/pip.ini
