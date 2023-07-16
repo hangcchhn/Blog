@@ -89,14 +89,21 @@ def function_name() -> return_type:
 
 ---
 ## 变量解析
-- 变量命名空间，即作用域
+- 变量命名空间，即作用域Scope
 
 - 变量解析原则LEGB
     - 本地Local：函数function
-    - 嵌套Enclosing：外层嵌套函数，可以是函数function，类class
+    - 嵌套Enclosing：外层嵌套函数
     - 全局Global：模块module
     - 内置Build-in：语言python
 
+---
+
+- 在不使用特殊修饰变量时
+- 内层函数无法解析外层函数的局部变量
+- 函数内可以使用解析全局变量，但不能修改全局变量的值
+
+- 在函数内给函数外变量赋值，相当于定义新的局部变量，不影响函数外变量的值
 
 ```py
 
