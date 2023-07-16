@@ -11,3 +11,16 @@ curl "" | python -m json.tool
 ```
 
 ---
+
+
+```sh
+
+python -m venv venv_name
+
+python -m pip install -r requirement.txt
+
+
+
+
+
+```

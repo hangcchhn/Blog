@@ -71,20 +71,7 @@ def function_name() -> return_type:
 
 ```
 
----
-## 表达式
-```py
-# 三元表达式
-result = true_value if condition else false_value
 
-
-# 列表表达式
-to_list = [expression for i in from_list]
-to_tuple = (expression for i in from_list)
-to_set = {expression for i in from_list}
-
-to_set = {key:value for i in from_list}
-```
 
 
 ---
@@ -117,4 +104,5 @@ to_set = {key:value for i in from_list}
 - 自省Introspection：运行时判断对象的类型
 
 
-- `bool`类型：`if`判断时`None`和空字符串都是`False`
+- `bool`类型判断真假时：0，`None`，空字符串,空列表，空元组，空集合，空字典都是`False`
+- 字符串使用`in`进行子串判断

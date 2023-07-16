@@ -99,4 +99,19 @@ if __name__ == '__main__':
 
 - 字典解析式：`{key:value from item in collection if condition}`
 
+---
+## 表达式
+```py
+# 三元表达式
+result = true_value if condition else false_value
 
+
+
+
+# 列表表达式
+to_list = [expression(i) for i in iterable if condition(i) ]
+to_tuple = (expression(i) for i in iterable )
+
+to_set = {expression(i) for i in iterable}
+to_dict = {key(i):value(i) for i in iterable}
+```

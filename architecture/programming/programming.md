@@ -1,14 +1,31 @@
-# 编程语言
+# 编程
+> programming
+
+---
+## 编程范式
+> programming paradigm
+- 结构化编程，面向过程编程，过程式编程
+
+- 面向对象编程OOP(Object Oriented Programming)
+    - 面向切面编程AOP(Aspect Oriented Programming)
+
+- 事件驱动设计DDD(Domain Driven Design)
+
+
+- 函数式编程(Functional Programming)
+
+
+- 命令式编程
+- 声明式编程
+
+
+
+## 编程语言
 > programming language
 
 - 机器语言：二进制01
 - 汇编语言
 - 高级语言：由编译器翻译成汇编语言
-
----
-- 面向过程：C语言
-- 面向对象
-- 函数式编程
 
 ---
 - 脚本语言：Shell，SQL，JavaScript
