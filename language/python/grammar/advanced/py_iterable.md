@@ -1,4 +1,4 @@
-# 迭代器
+# 可迭代
 > iterable -> iterator -> generator
 
 ---

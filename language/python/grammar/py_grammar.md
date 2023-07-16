@@ -98,6 +98,15 @@ def function_name() -> return_type:
     - 内置Build-in：语言python
 
 
+```py
+
+
+global
+
+nonlocal
+
+```
+
 ---
 
 - 鸭子类型

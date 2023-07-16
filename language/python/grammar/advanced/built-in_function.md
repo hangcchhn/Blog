@@ -1,4 +1,4 @@
-# Python内置函数
+# 内置函数
 
 - builtins.py
 
