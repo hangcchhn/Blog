@@ -1,4 +1,4 @@
-# Python内置函数
+# 内置函数
 
 - builtins.py
 
@@ -19,8 +19,21 @@
 - filter(func, iter)
 - next(iter)
 ---
+- enumerate(x)
+```py
+for index, value in enumerate(x):
+
+    pass
+
+```
 
 - zip(*iter)
+```py
+for item0, item1 in zip(iter0, iter1):
+
+    pass
+
+```
 
 ---
 - hash(x)
@@ -103,7 +116,6 @@ __import('')__
 
 - iter(x)
 
-- enumerate(x)
 
 - object()
 

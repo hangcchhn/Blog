@@ -1,12 +1,6 @@
-# 虚拟机
-> VM(Virtual Machine)
 
-
-- 物理机Physical Machine
-
-- 基础设施Infrastructure
-
-## 虚拟化(Virtualization)
+# 虚拟化
+> Virtualization
 
 
 - 应用Application
@@ -18,6 +12,19 @@
 - Hypervisor Layer
 ---
 - Virtual Machine Manager
+
+## 虚拟机
+> VM(Virtual Machine)
+
+
+- 物理机Physical Machine
+
+- 基础设施Infrastructure
+
+
+
+
+
 
 ## Hypervisor
 

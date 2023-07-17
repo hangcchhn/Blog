@@ -2,17 +2,7 @@
 
 - 动态类型
 
----
-## 参数传入方式
 
-- 按元组方式传入
-    - 可不带参数名
-- 按字典方式传入
-    - 必须带参数名
-
-### Python 3.8+
-- 符号`/`之前的参数必须按元组方式传入
-- 符号`*`之后的参数必须按字典方式传入
 
 
 ---
@@ -21,15 +11,15 @@
 
 - 乘法：`x * y`，乘方（幂）：`x ** y`
 
-### 函数或方法的参数`*args, **kwargs`
+### 参数：`*args`，`**kwargs`
 
 - `*args`
     - 形参：多个无名参数，本质是`tuple`元组
     - 实参：集合
 ```py
 args = (value1, value2,)
-args = [value1, value2,]
-args = {value1, value2,}
+# args = [value1, value2,]
+# args = {value1, value2,}
 func(*args)
 
 func(value1, value2,)
@@ -79,7 +69,7 @@ func(key1=value1, key2=value2)
 
 
 ---
-- `:=`海象运算符：先赋值后判断
+- `:=`海象运算符：先赋值后使用，使用括号包其他类提高优先级
 ```py
 i = 0
 while (i := i + 1) < 10:

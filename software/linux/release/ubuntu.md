@@ -36,6 +36,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 ```sh
 pro attach C1V3QbcGdqMPsWaacx1tNPiA1kGed
+pro detach
+
 apt install ubuntu-advantage-tools
 ```
 ---

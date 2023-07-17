@@ -7,20 +7,29 @@
 __str__
 __repr__
 
+# 可迭代
 __iter__
 __next__
+# 反转
+__reversed__
+# 包含
+__contains__
+# 长度
+__len__
 
 
+# 上下文管理器
 __enter__
 __exit__
 
-
+# 可调用
 __call__
 
-__len__
-__contains__
-__reversed__
 
+
+
+
+# []：索引或切片
 __getitem__
 __setitem__
 __delitem__
@@ -29,9 +38,12 @@ __delitem__
 ---
 
 ```py
+# 初始化
 __init__
+# 创建
 __new__
 
+# 属性
 __getattr__
 __setattr__
 __delattr__
