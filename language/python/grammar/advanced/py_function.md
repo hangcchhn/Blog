@@ -31,7 +31,7 @@ def function_name(parameters) -> return_type:
 - 位置参数
 - 缺省参数，可选参数
 - 可变参数
-- 关键字参数
+- 关键字参数(keyword arguments)
 - 可变关键字参数
 
 ---

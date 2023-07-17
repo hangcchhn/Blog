@@ -93,6 +93,7 @@ perform_authentication
     - header:`Authorization Basic base64.encode(username:password)`
 - 会话`SessionAuthentication`
     - form-data
+    - pasword md5
 - 令牌`TokenAuthentication`
 
 
