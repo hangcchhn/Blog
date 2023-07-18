@@ -17,7 +17,7 @@
 ## Kafka
 
 
-
+---
 
 ## Strom
 - 实时处理：低延迟->低吞吐
@@ -59,6 +59,12 @@
 ## Spring Batch
 
 
+---
+
+## Sqoop
+> SQL to Hadoop
+
+## Doris
 
 ---
 ## 版本

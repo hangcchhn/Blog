@@ -17,7 +17,7 @@
 
 
 ---
-- 盈亏PNL(Profit and Loss)
+- 盈亏(Profit and Loss)
 
 ---
 
@@ -36,6 +36,12 @@
 - 利率类型：固定利率，浮动利率
 
 
+
+- 净价
+- 全价
+---
+
+
 ## 交易市场
 - 柜台市场
 ### 交易所市场
@@ -50,8 +56,6 @@
     - 借贷交易
 
 
-- 利率互换(IR Swap)
-    - 信用等级不同
 
 ### 银行间市场
 - 中债登
@@ -78,7 +82,7 @@
 - 利率IR(Interest Rate)
     - 年利率
     -
-- 利差：利率变化的单位是基点，1bp=0.01%
+- 利差Spread：利率变化的单位是基点，1bp=0.01%
 
 
 
@@ -101,8 +105,8 @@ $$
     - 再贴现
 
 
-贷款市场报价利率LPR(Loan Prime Rate)
-期权调整价差OAS(Option Adjusted Spread)：相对无风险利率的价差
+- 贷款市场报价利率LPR(Loan Prime Rate)
+- 期权调整价差OAS(Option Adjusted Spread)：相对无风险利率的价差
 
 
 
@@ -121,7 +125,7 @@ $$
 
 - 计息方式
     - 固定利率债券(fixed-rate bond)
-    - 浮动利率债券(floating-rate bond)
+    - 浮动利率债券(float-rate bond)
         - 浮动利率 = 基准利率 + 利差
         - 浮动利率上限(顶cap)，下限(底floor)
     - 零息债券(zero-coupon bond)
