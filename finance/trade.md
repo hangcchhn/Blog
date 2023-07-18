@@ -2,6 +2,7 @@
 > trade
 
 
+
 - 交易日
 
 
@@ -92,8 +93,15 @@
 
 
 ---
+## 交易场所
+- 场内交易市场：交易所(Exchange)
+    - 上海证券交易所SSE
+    - 深圳证券交易所SZSE
+    - 北京证券交易所BSE
+- 场外交易市场OTC(over-the-counter market)
+    - 银行间(Innerbank)
 
-- 上海证券交易所SSE
-- 深圳证券交易所SZSE
+
+
 
 - 中国金融期货交易所CFFEX

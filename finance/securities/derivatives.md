@@ -32,6 +32,8 @@
     - 期货合约(futures contract)
     - 期权合约(options contract)
     - 互换合约(swap contract)
+        - 利率互换条约
+        - 货币互换条约
     - 结构化金融衍生工具
 
 - 产品形态
@@ -43,9 +45,7 @@
     - 信用衍生工具
     - 商品衍生工具
     - 其他衍生工具
-- 交易场所
-    - 交易所
-    - 场外交易市场OTC(over-the-counter market)
+
 
 ---
 
