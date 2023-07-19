@@ -54,6 +54,11 @@
 ---
 ## 非标
 
+- 净值型
+- 利率型
+
+
+
 ---
 
 - 同业拆借(Interbank Lending)
@@ -88,13 +93,20 @@
 - 清算clear
 
 
+- 交易trade
+- 交割delivery
+
 - 抵押品collateral
 - 抵押贷款mortgage
+---
+## 分红
+> Dividend
 
+- 现金流(cashflow)
 
 ---
 ## 交易场所
-- 场内交易市场：交易所(Exchange)
+- 场内交易市场：证券交易所(Stock Exchange)
     - 上海证券交易所SSE
     - 深圳证券交易所SZSE
     - 北京证券交易所BSE
@@ -105,3 +117,9 @@
 
 
 - 中国金融期货交易所CFFEX
+
+
+
+- 中债CNBD(China Bond)
+- 中证CSI(China Security Index)
+- 上清所SCH(Shanghai Clearing House)

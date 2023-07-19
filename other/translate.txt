@@ -1,61 +1,6 @@
 
 中英翻译
 
-金融finance
-证券securities
-
-
-
-
-投资组合portfolio
-基金fund
-现金cash
-
-经理manager
-机构company
-
-权益equity
-
-股票stock
-债券bond
-
-期货future
-期权option
-
-commodities：大宗商品，商品期货
-currencies：货币，外汇
-
-衍生品derivatives
-
-市场market
-基准benchmark
-
-指数index
-因子factor
-
-
-投资investment
-资产asset
-
-业绩performance
-
-行业industry
-风格style
-
-归因attribution
-分析analysis
-
-指标indicator
-
-估值valuation
-持仓position
-
-
-回撤withdraw
-
-再平衡rebanlance
-
-滚动rolling
 
 
 风险贡献
@@ -128,45 +73,6 @@ interval
 
 标点符号punctuation
 
-FOF(Fund of Funds)
-MOM(Manager of Managers)
-
-
-
-CTA(Commodity Trading Advisor)策略:商品交易顾问策略，管理期货(Managed Futures)策略
-
-
-交易型开放式指数基金，交易所交易基金
-ETF(Exchange Traded Fund)
-上市型开放式基金
-LOF(Listed Open-ended Fund)
-
-合格境内机构投资者
-QDII(qualified domestic institutional investor)
-
-固定收益，货币和商品
-FICC(Fixed Income, Currencies and Commodities)
-
-中国银行间债券市场
-CIBM(China Innerbank Bond Market)
-
-
-
-NAV(Net Asset Value):净资产值
-TNA(Total Net Asset):总净资产
-
-
-资本配置线
-CAL(Capital Allocation Line)
-资本市场线
-CML(Capital Market Line)
-证券市场线
-SML(Security Market Line)
-
-HBSA(Holding-based Style Analysis):基于持仓的风格分析
-PBSA(Portfolio-based Style Analysis):基于持仓的风格分析
-RBSA(Return-based Style Analysis):基于收益率的风格分析
-
 
 --------------------------------------------------------------------------------------------------
 
@@ -225,7 +131,7 @@ GARCH
 
 申购Purchase
 赎回Redemption
-分红Dividend
+
 
 申购费(Sales Loads, 买基金的费用)
 赎回费(Redemption Fee, 卖基金的费用)

@@ -112,3 +112,16 @@ B类份额不参与定期折算，所以它的净值不变。
 申购|赎回基金份额 = （申购|赎回金额 - 交易手续费）/ 基金单位净值
 
 
+
+---
+
+- ETF(Exchange Traded Fund)
+    - 交易型开放式指数基金，交易所交易基金
+
+- LOF(Listed Open-ended Fund)
+    - 上市型开放式基金
+
+
+
+- QDII(qualified domestic institutional investor)
+    - 合格境内机构投资者
