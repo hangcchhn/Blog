@@ -15,10 +15,12 @@ comment '注释';
 
 -- 删除列
 alter table table_name drop column_name;
--- 修改列名
+-- 修改列
 alter table table_name change old_column_name new_column_name new_column_type;
 -- 修改列类型
 alter table table_name modify old_column_name new_column_type;
+-- 修改列名：MySQL version 8.0+
+alter table table_name rename column old_column_name new_column_name;
 -- 修改表名
 alter table old_table_name rename new_table_name;
 
