@@ -15,11 +15,10 @@
 - 期权option
 - 期货future
 
-- 衍生品derivatives
-
+- 衍生工具derivatives
 - 投资组合portfolio
-- 基金fund
 
+- 基金fund
 - 经理manager
 - 机构company
 
