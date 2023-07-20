@@ -1,8 +1,10 @@
 # 风险
 > risk
 
-## 压力测试
-> stress test
+
+## 市场风险度量
+### 风险价值
+> VaR(Value at Risk)
 
 ### 敏感度分析
 > sensitive analysis
@@ -13,9 +15,12 @@
 ### 情景分析
 > scenario analysis
 
+### 压力测试
+> stress test
+
 
 ### 回溯测试
-> back testing
+> back test
 
 - 获取收益率：
     - $r_i$:投资标的(investment)
