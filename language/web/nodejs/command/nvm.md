@@ -1,9 +1,4 @@
-
- ## 一、工具
-
-
-
-## nvm
+# NVM
 > Node Version Manager
 
 - nvm（unix|linux）|nvmw(windows)
@@ -28,23 +23,6 @@ nvm npm_mirror https://npmmirror.com/mirrors/npm/
 nvm node_mirror https://npmmirror.com/mirrors/node/
 
 ```
-
-
-
-
-
-### npm
-> Node Package Manager
-
-```sh
-npm install
--g:--global
--P:--save-prov
--D:--save-dev
-
-
-```
-
 
 
 

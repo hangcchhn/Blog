@@ -1,6 +1,6 @@
-# node
+# Node.js
 
-
+- open-source, cross-platform JavaScript runtime environment
 ## version
 
 - LTS——Long Term Support
