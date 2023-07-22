@@ -26,7 +26,24 @@ docker image history image_id
 
 ```
 
-### 删除镜像
+---
+
+
+## Docker Hub
+
+
+- alpine
+
+- slim
+    - buildpack-deps
+- debain
+    - buster
+
+
+
+
+---
+## 删除镜像
 
 ```sh
 

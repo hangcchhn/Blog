@@ -282,3 +282,11 @@ Concurrency:并发数
 - 方差Var(Variance)
 - 风险价值VaR(Value at Risk)
 - 向量自回归VAR(Vector AutoRegressive)
+
+
+
+--------------------------------------------------------------------------------------------------
+
+十亿：billion
+百万：million
+千：kilo
