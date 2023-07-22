@@ -40,6 +40,7 @@ python manage.py migrate
 
 # 创建用户需要在数据库表格生成之后
 python manage.py createsuperuser --username=admin --email=admin@django.com
+# Password:1024CCHpwd
 python manage.py changepassword admin
 # http://127.0.0.1:8000/admin
 
