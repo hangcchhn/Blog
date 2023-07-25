@@ -32,7 +32,7 @@ docker update --restart=no container_id
 ## 文件传输
 ```sh
 
-# docker cp = scp
+# docker cp命令类似linux scp命令
 docker cp container_id:remote local
 docker cp local container_id:remote
 

@@ -46,6 +46,18 @@ docker run --name nginx -p 80:80 -d nginx
 
 
 ---
+
+## Jenkins
+
+```sh
+
+docker run -d -p 9095:8080 -p 50000:50000 --name jenkins -v /home/jenkins_home:/var/jenkins_home -v /etc/localtime:/etc/localtime jenkins/jenkins
+
+
+```
+
+
+---
 ## 运行镜像举例说明
 
 
