@@ -200,7 +200,7 @@ np.linspace()
 
 np.float
 np.inf
-np.nan
+np.nan = float('nan')
 两个nan是不相等的
 nan与任何数值计算都得nan
 
