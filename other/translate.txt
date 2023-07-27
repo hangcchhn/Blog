@@ -157,6 +157,7 @@ both:(多空)
 edit:编辑
 modify:修改
 update:更新
+amend:修改
 
 add:添加
 insert:插入
