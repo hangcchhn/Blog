@@ -2,14 +2,16 @@
 
 ---
 
-- spring-boot 1.4.2
+- Spring Boot 1.4.2
 最后一个版本支持jsp页面打包到jar包中
 
 
-- spring-boot 1.5.x
+- Spring Boot 1.5.x
 ---
 
+- Spring Boot 2.4.13
 
+- Spring Boot 2.3.x.Release
 ---
 
 # Spring Boot 3.0

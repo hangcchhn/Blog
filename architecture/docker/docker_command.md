@@ -64,8 +64,6 @@ command_line = /bin/bash
 # 查看容器的控制台日志
 docker logs -f -t --tail -100 container_id
 
-docker inspect container_id
-
 /var/lib/docker/containers/container_uuid
 
 tail -10f container_uuid-json.log

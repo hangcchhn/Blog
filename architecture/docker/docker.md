@@ -17,7 +17,7 @@
 
 ---
 - Docker Engine 17.03
-- docker.io从版本1.13.x后分为
+- docker.io从版本1.13.1后分为
     - 企业版Docker EE
     - 社区版Docker CE
 - docker.io由Debian团队维护，采用apt管理依赖
