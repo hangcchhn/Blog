@@ -7,8 +7,16 @@
 - `pip install sqlalchemy`
 
 
-## ORM
 
+
+---
+
+## 版本
+
+- SQLAlchemy 1.x版本
+
+
+- SQLAlchemy 2.x版本
 
 ---
 
@@ -19,9 +27,6 @@
     - `mysql+mysqldb://<user>:<password>@<host>[:<port>]/<dbname>`
     - `mysql+pymysql://<username>:<password>@<host>/<dbname>[?<options>]`
     - `mysql+mysqlconnector://<user>:<password>@<host>[:<port>]/<dbname>`
-
-
-
 
 - oracle:
     - `oracle+cx_oracle://user:pass@host:port/dbname[?key=value&key=value...]`
@@ -34,3 +39,6 @@
     - `postgresql+psycopg2://user:password@host:port/dbname[?key=value&key=value...]`
 
 
+---
+
+## sqlacodegen

@@ -1,17 +1,25 @@
-
+# module
 
 ```py
 # 处理重名问题
 from __future__ import absolute_import
+```
 
+```py
+# py文件
+__all__ = [
+    '',
+]
 
 ```
+
+
 
 ---
 
 
 - 格式化源码
-```
+```sh
 pip install autopep8
 autopep8 --aggressive --aggressive name.py
 
