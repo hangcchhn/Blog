@@ -70,9 +70,11 @@ python -m pip install -U pip==version
 ```
 
 ---
+```sh
+# 导出安装第三包的版本
+pip freeze > requirements.txt
 
-导出安装第三包的版本:`pip freeze > requirements.txt`
-
+```
 - requirements.txt:
 package==version
 

@@ -35,6 +35,8 @@ python manage.py check
 # 执行脚本
 python manage.py migrate
 
+python manage.py inspectdb > models.py
+
 
 
 

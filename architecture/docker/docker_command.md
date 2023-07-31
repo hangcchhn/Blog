@@ -39,7 +39,7 @@ docker cp local container_id:remote
 
 # 路径映射volume
 docker run -v "/local_path:/remote_path"
-# 端口映射port
+# 端口映射publish
 docker run -p local_port:remote_port
 
 ```
@@ -83,7 +83,7 @@ docker attach container_id
 # 连接已运行的容器的控制台(command_line = /bin/bash)
 docker exec -it container_id command_line
 
-# 守护daemon
+# 守护daemon(detach)
 # 根据镜像创建容器，并启动容器(-d后台运行否者前台启动)
 docker run  # 不会执行dockerfile中的ENTRYPOINT
 docker run -it -d --name container_name image_name:image_tag command_line

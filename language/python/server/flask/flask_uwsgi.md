@@ -22,7 +22,7 @@ wsgi-file=app.py
 callable=app
 
 # 配置后台运行和日志路径
-# 注意在Dockerfile的ENTRYPOINT
+# 注意在dockerfile的ENTRYPOINT
 # 使用uwsgi --ini uwsgi.ini命令
 # 使用daemonize会使容器启动后退出
 daemonize = /root/flask/uwsgi.log

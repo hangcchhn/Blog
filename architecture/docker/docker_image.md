@@ -11,6 +11,9 @@ docker images -a = dokcer image ls -a
 
 
 
+# dangling image REPOSITORY<none> TAG<none>
+docker image prune
+
 # 搜索镜像
 docker search image_name
 
