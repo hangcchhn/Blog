@@ -27,6 +27,17 @@ docker image inpect image_id
 # 查看镜像构建历史
 docker image history image_id
 
+
+
+docker tag image_name:image_tag repository_host:repository_port/repository_path
+
+docker push image_repo/image_name:image_tag
+
+docker login repository_host:repository_port
+--username=
+--password=
+
+
 ```
 
 ---

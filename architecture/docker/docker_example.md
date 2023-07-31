@@ -7,6 +7,8 @@
 docker pull redis
 
 docker run --name redis-start -p 6379:6379 -d redis
+# 指定密码
+--requirepass chench
 
 ```
 - dockerfile
@@ -39,8 +41,10 @@ docker run --name nginx -p 80:80 -d nginx
 ## MySQL
 
 ```sh
-
-
+# 设置root密码
+-e MYSQL_ROOT_PASSWORD=chench
+# 创建数据库
+-e MYSQL_DATABASE=test
 
 ```
 

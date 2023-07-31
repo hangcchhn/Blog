@@ -88,9 +88,20 @@ docker exec -it container_id command_line
 docker run  # 不会执行dockerfile中的ENTRYPOINT
 docker run -it -d --name container_name image_name:image_tag command_line
 
+
+
+
 ```
 
 ---
 
+```sh
 
+
+docker run --help
+# 环境变量
+-e, --env JAVA_HOME=/path
+
+
+```
 

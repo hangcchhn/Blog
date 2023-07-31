@@ -38,11 +38,17 @@ docker network create --driver bridge bridge_network
 
 docker network inspect bridge_network
 
+# 为已存在的容器添加网络
+docker network connect bridge_network container_name
+docker network disconnect bridge_network container_name
+
+
+
 
 # 容器相互访问
 docker run --network bridge_network --network-alias container_host  --name container_name -it -d image_name:image_tag
 
-docker run --link=container_id:container_link -it -d image_name:image_tag
+docker run --link container_id:container_link -it -d image_name:image_tag
 
 
 
