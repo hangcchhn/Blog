@@ -64,7 +64,7 @@ if __name__ == '__main__':
 - *nix:Linux,unix(macOS)
 ```sh
 # 定时任务调度
-celery -A pkg.app beat l info
+celery -A pkg.app beat -l info
 # celery worker --help
 celery -A pkg.app worker -l info -E
 ```
@@ -125,6 +125,15 @@ pip install flower
 
 celery -A pkg.app flower
 --address=0.0.0.0 --port=5555
+
+```
+
+---
+
+```sh
+
+pip install django-celery-results
+pip install django_celery_beat
 
 ```
 

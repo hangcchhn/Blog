@@ -42,10 +42,10 @@ workon
 workon virtualenv_name
 
 
-# 到处安装模块的名称和版本
-pip freeze > packages.txt
+# 导出安装模块的名称和版本
+pip freeze > requirements.txt
 # 指定模块的名称和版本安装
-pip install -r packages.txt
+pip install -r requirements.txt
 
 # 新建并且激活虚拟环境
 mkvirtualenv virtualenv_name

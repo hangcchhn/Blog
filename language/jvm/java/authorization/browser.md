@@ -3,6 +3,10 @@
 
 - HTTP是无状态的
 
+- 分布式系统，集群部署，登录状态
+    - 服务器存储：缓存Redis存储Session
+    - 客户端存储：Token，JWT
+
 ## Cookie
 
 - 存储在客户端
