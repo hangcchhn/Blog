@@ -42,11 +42,13 @@ class Class(object):
     - 在REPL(read-eval-print loop)中使用返回上一表达式结果
 - `var_`：用于解决命名冲突问题(与关键字冲突)
 - `_var`：用于保护变量(使用通配符导入调用方法无效)
-- `__var`：用于私有变量（名称改写）
+- `__var`：用于私有变量（名称改写_Class__var）
 - `__var__`：用于魔术方法（内置函数）
 
 ```py
 
+
+vars(obj)
 
 
 
@@ -76,7 +78,20 @@ class MethodClass(object):
 
     pass
 
+class PropertyClass(object):
 
+    @property
+    def prop(self):
+        pass
+
+    @prop.setter
+    def prop_setter(self, name)
+        pass
+
+    @prop.deleter
+    def prop_deleter(self, name)
+        pass
+    pass
 
 ```
 
