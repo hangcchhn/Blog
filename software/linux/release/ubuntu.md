@@ -38,6 +38,11 @@ export PATH=$JAVA_HOME/bin:$PATH
 pro attach C1V3QbcGdqMPsWaacx1tNPiA1kGed
 pro detach
 
+pro status --all
+pro enable xxx
+
+pro fix xxx
+
 apt install ubuntu-advantage-tools
 ```
 ---

@@ -12,11 +12,13 @@ pip config set install.trusted-host repo.huaweicloud.com
 
 - windows:~/pip/pip.ini
 - linix:~/.pip/pip.conf
-
+```ini
 [global]
 index-url=https://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host=mirrors.aliyun.com
+```
+
 
 
 
@@ -85,6 +87,7 @@ pip install -c constraints.txt
 # 升级
 pip install -U package
 
+pip install -U pip setuptools
 
 pip install -i http://xxx/pypi/simple package
 

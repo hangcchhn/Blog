@@ -55,6 +55,10 @@ docker login repository_host:repository_port
 
 
 
+- bitnami
+    - vmware
+- rapidfort
+
 
 ---
 ## 删除镜像
