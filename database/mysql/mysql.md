@@ -33,4 +33,12 @@ mysqladmin kill Id
 
 
 
+---
+
+## database
+- information_schema
+- performance_schema
+
+- mysql
+- sys
 
