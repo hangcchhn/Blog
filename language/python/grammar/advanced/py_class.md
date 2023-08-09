@@ -99,29 +99,6 @@ class PropertyClass(object):
 - python默认使用dict保存类的实例属性，浪费内存空间
 - `__slots__`属性指定类的实例属性范围，节约内存空间
 
----
-## ABC
-> Abstract Base Class
-
-- 抽象基类ABC
-```py
-from abc import ABCMeta, abstractmethod
-
-class AbstractClass(metaclass=ABCMate):
-
-    @abstractmethod
-    def func():
-        pass
-
-
-
-class ImplementClass(AbstractClass):
-
-    def func():
-        # code
-        pass
-
-```
 
 ---
 ## 元类
@@ -150,8 +127,8 @@ class MetaClass(object, metaclass=TypeClass):
 
 
 ```
-
-- 动态创建类
+---
+## 动态创建类
 ```py
 def init(self, args):
     self.attr = args
@@ -171,5 +148,118 @@ def dynamic_type():
     print(Dynamic.attr)
     print(dynamic.attr)
     pass
+
+```
+
+---
+## 接口
+
+```py
+
+class Interface(object):
+
+
+    def interface_method(self):
+        raise NotImplementedError()
+
+    pass
+
+class Implement(Interface):
+
+    def interface_method(self):
+        # code
+        pass
+
+```
+
+
+
+---
+
+## Mixin
+
+```py
+
+class TestMixin(object):
+
+    def mixin_method(self):
+        return super().method()
+
+    pass
+
+class DemoClass(object):
+
+    def class_method(self):
+
+        pass
+
+    pass
+
+class TestDemo(TestMixin, DemoClass):
+
+    pass
+
+
+test_demo = TestDemo()
+test_demo.mixin_method()
+```
+
+
+---
+## 抽象类和抽象方法
+
+- 抽象基类ABC(Abstract Base Class)
+
+```py
+from abc import ABC, ABCMeta, abstractmethod
+
+
+class AbstractClass(ABC):
+
+    @abstractmethod
+    def abstract_method():
+        pass
+
+class AbstractClass(metaclass=ABCMate):
+
+    @abstractmethod
+    def abstract_method():
+        pass
+
+
+
+class ImplementClass(AbstractClass):
+
+    def abstract_method():
+        # code
+        pass
+
+```
+
+
+---
+
+- MRD(Method Resolution Order)
+    - 方法解析顺序：C3算法
+
+```py
+class Class0(object):
+
+    pass
+
+class Class1(Class0):
+
+    pass
+
+class Class2(Class1):
+
+    pass
+
+
+class Class3(Class0, class1):
+
+    pass
+
+Class2.__mro__
 
 ```
