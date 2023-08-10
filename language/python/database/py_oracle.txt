@@ -9,8 +9,11 @@ pip install cx_oracle
 
 cx_Oracle.DatabaseError: DPI-1047: 64-bit Oracle Client library cannot be loaded
 
-配置环境变量 Oracle Instant Client
+## Oracle Instant Client
 
+下载：https://www.oracle.com/cn/database/technologies/instant-client/downloads.html
+
+配置环境变量
 win系统配置PATH变量
 
 mac系统配置DYLD_LIBRARY_PATH环境变量

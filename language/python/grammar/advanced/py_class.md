@@ -177,7 +177,7 @@ class Implement(Interface):
 ---
 
 ## Mixin
-
+> mix-in
 ```py
 
 class TestMixin(object):
