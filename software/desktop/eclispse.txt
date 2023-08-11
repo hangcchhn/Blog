@@ -19,3 +19,9 @@ Content Assist->Ctrl+Space->Alt+/
 
 
 --------------------------------------------------------------------------------------------------
+
+
+DBeaver
+
+数据库驱动路径
+~\AppData\Roaming\DBeaverData\drivers
