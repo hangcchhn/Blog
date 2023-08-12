@@ -79,10 +79,10 @@ service network-manager restart
 ---
 
 ```sh
-# Ubuntu <= 18.04
+# Ubuntu <= 16.04
 apt install unity-tweak-tool
 
-# Ubuntu >= 20.04
+# Ubuntu >= 18.04
 apt install gnome-tweaks
 
 ```
