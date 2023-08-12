@@ -88,9 +88,27 @@
 ## Linux Font (Tweaks)
 
 
-- WenQuanYi Micro Hei Mono(文泉驿等宽微米黑):
-11:Ubuntu,CentOS
+- WenQuanYi Micro Hei Mono
+    - 文泉驿等宽微米黑
+```sh
+# Ubuntu
+apt install fonts-wqy-microhei
+# CentOS
+yum install wqy-microhei-fonts
 
+```
+---
+- Noto:Google&Adobe
+    - Noto Mono
+    - Noto Serif
+    - Noto Sans
+    - Noto Sans Mono
 
-
-
+---
+- CJK
+    - Chinese
+        - TC(Traditional Chinese)
+        - SC(Simplified Chinese)
+        - HK(Hong Kong)
+    - JP(Japanese)
+    - KR(Korean)

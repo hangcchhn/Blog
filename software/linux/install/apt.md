@@ -65,7 +65,7 @@ apt-cache depends xxx
 
 ```sh
 
-apt install fonts-wqy-microhei
+
 apt install ibus-libpinyin
 
 apt install nautilus-open-terminal
