@@ -53,3 +53,17 @@ windows xp desktop
 "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\%USERPROFILE%\桌面"
 C:\ProgramFiles\Desktop
 
+
+---
+- 盘符
+- 导航
+
+```bat
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace
+```
+
+---
+
