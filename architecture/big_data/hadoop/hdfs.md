@@ -2,7 +2,7 @@
 > Hadoop Distributed File System
 
 - Google发表三篇论文，GFS(Google File System)
-- Doug Cutting
+
 
 ---
 
@@ -11,26 +11,15 @@
 - DataNode
 - Secondary NameNode
 
+- JournalNode
+
 ---
 ## 分布式文件系统
 - 一次写入
 - 多次读取
 - 按流处理
 
-
-
-
-- Active NameNode是系统的主节点，只有一个，
-管理文件系统命名空间，维护文件元数据信息，
-管理HDFS的副本策略，处理客户端的读写请求。
-
-
-- Standby NameNode是Active NameNode的热备节点，
-周期性同步edits的编辑日志，定期合并fsimage和eidts到本地磁盘，
-当Active NameNode出现故障时，集群可以几乎无缝切换到Standby NameNode
-
-
-
+---
 
 - NameNode元数据文件包括edits和fsimage
 edits保存客户端对文件的写操作记录，
@@ -53,3 +42,19 @@ DataNode通过心跳机制定期向NameNode汇报运行状态和所有块的信�
 Block数据块是HDFS的最小存储单元，将存储的数据按照固定大小切分成Block数据块
 Block数据块的大小固定，Hadoop2.0默认128M，1. 0默认64MB，可自定义修改
 默认每个Block数据块有三个副本，存放在不同的DataNode工作节点
+
+
+---
+
+## 高可用HA
+
+- Active NameNode是系统的主节点，只有一个，
+    - 管理文件系统命名空间，维护文件元数据信息，
+    - 管理HDFS的副本策略，处理客户端的读写请求。
+
+
+- Standby NameNode是Active NameNode的热备节点，
+- 周期性同步edits的编辑日志，定期合并fsimage和eidts到本地磁盘，
+- 当Active NameNode出现故障时，集群可以几乎无缝切换到Standby NameNode
+
+

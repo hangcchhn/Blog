@@ -1,5 +1,8 @@
-# CDH
-> Cloudera Hadoop
+# Cloudera
+
+
+
+- CDH(Cloudera Distribution Hadoop)
 
 - CDP(Cloudera Data Platform)
 - Cloudera Manager

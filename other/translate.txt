@@ -73,8 +73,15 @@ interval
 
 缩写abbreviation
 
+
+
+
 标点符号punctuation
 
+
+CLI(Command Line Interface)
+
+GUI(Graphical User Interface)
 
 --------------------------------------------------------------------------------------------------
 
