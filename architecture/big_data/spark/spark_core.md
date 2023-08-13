@@ -11,17 +11,20 @@
 ---
 
 
+
+
+- DAG Scheduler：根据RDD将DAG划分为多个Stage
+- Task Scheduler：将Task分发给Woker Node进行计算
+
+
 - SparkContext
-    - RDD
-    - DAG
-    - DAG Scheduler：根据RDD将DAG划分为多个Stage
-    - Task Scheduler：将Task分发给Woker Node进行计算
-    - SparkEnv
-
--
+- SparkConf
 
 
-- Master-Slave
+
+---
+
+- Master-Slave架构
 
 Client -> Driver -> Cluster Manager -> Worker Node
 

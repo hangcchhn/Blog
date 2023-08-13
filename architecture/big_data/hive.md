@@ -22,7 +22,7 @@
 - 分区Partition
 - 桶Bucket
 
-- 元数据MetaStore
+- 元数据Metastore
     - 默认存储在自带的Derby数据库中，推荐使用MySQL存储元数据
 
 

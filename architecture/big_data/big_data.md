@@ -77,9 +77,20 @@
 
 ---
 
-## Oozie
 
-- 作业流调度
+## Oozie
+> Cloudera
+
+- 任务调度
+- 重量级
+
+
+## Azkaban
+> LinkedIn
+
+
+
+- 轻量级
 
 ---
 

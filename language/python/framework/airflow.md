@@ -1,18 +1,32 @@
-# airflow
+# Airflow
 
+- Airbnb
+
+
+- 使用Python语言实现
+
+
+- http://airflow.apache.org/
+- Airflow 1.10.x -> Python 2.7.x
+- Airflow 2.2.x -> Python 3.6.x
 
 
 ---
 
 - airflow-scheduler
+    -
+
 - airflow-webserver
+
+
 - airflow-worker
 - airflow-triggerer
 - airflow- init
 - postgres
 - redis
----
 
+---
+## 部署
 ```sh
 
 airflow db init
@@ -25,3 +39,31 @@ airflow webserver
 airflow scheduler
 
 ```
+
+
+---
+## 组件
+
+- DAG：一个DAG包含多个Task
+
+- Task
+
+- Web UI
+    - Flask
+    - Jinja2
+
+- Scheduler
+- Worker
+
+- Executor
+    - SequentialExecutor
+    - LocalExecutor
+    - CeleryExecutor
+
+
+
+- Operator
+    - BashOperator
+    - PythonOperator
+    - MySQLOperator
+    - SimpleHttpOperator
