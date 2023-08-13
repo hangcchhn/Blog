@@ -40,6 +40,12 @@ airflow scheduler
 
 ```
 
+```sh
+
+pip install apache-airflow==1.10.15 \
+ --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-1.10.15/constraints-3.6.txt"
+```
+
 
 ---
 ## 组件
