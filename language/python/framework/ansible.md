@@ -1,6 +1,6 @@
 # Ansible
 
-- 基于python开发的自动化运维工具
+- 基于Python语言开发的自动化运维工具
 ```sh
 # Ubuntu
 apt install ansible

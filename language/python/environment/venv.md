@@ -4,13 +4,14 @@
 - Python 3.6+默认安装
 
 ```sh
-python -m venv venv_name
-
-source ./venv_name/bin/activate
+# 命令的第二个参数venv是虚拟环境目录
+python -m venv venv
+# PyCharm默认使用venv作为虚拟环境名称
+source ./venv/bin/activate
 
 # Windwos
-.\venv_name\Scripts\activate.bat
-.\venv_name\Scripts\activate.ps1
+.\venv\Scripts\activate.bat
+.\venv\Scripts\activate.ps1
 
 deactivate
 ```
