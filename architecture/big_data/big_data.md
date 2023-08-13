@@ -63,7 +63,11 @@
 
 - 集群学习
 
+---
 ## Spark
+
+---
+## Tez
 
 ## Flink
 > Alibaba
@@ -101,11 +105,16 @@
 - 日志收集
 
 
----
-- Tez
+
 
 ---
 ## HUE
+> Cloudra
+
+---
+## Ambari
+> Hortonworks
+
 
 
 ---

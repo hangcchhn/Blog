@@ -6,10 +6,11 @@
 
 - Lucene -> Nutch - Hadoop
 ---
+## 发行版
 
 - CDH：Cloudera
 - HDP：Hortonworks
-
+- Apache Hadoop
 
 ---
 ## Hadoop 1.x:
@@ -28,5 +29,3 @@
 - 分布式资源调度YARN
 
 
-
-- Master-Slave架构
