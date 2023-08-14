@@ -4,9 +4,9 @@
 
 ## Redis
 ```sh
-docker pull redis
+docker pull redis:lastest
 
-docker run --name redis-start -p 6379:6379 -d redis
+docker run --name redis-name -p 6379:6379 -d redis:lastest
 # 指定密码
 --requirepass chench
 
@@ -30,9 +30,9 @@ CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
 ## Nginx
 
 ```sh
-docker pull nginx
+docker pull nginx:lastest
 
-docker run --name nginx -p 80:80 -d nginx
+docker run --name nginx-name -p 80:80 -d nginx:lastest
 
 ```
 

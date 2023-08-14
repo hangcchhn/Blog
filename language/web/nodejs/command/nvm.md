@@ -3,6 +3,17 @@
 
 - nvm（unix|linux）|nvmw(windows)
 
+- 设置镜像
+```sh
+
+# npm镜像
+nvm npm_mirror https://npmmirror.com/mirrors/npm/
+
+# node镜像
+nvm node_mirror https://npmmirror.com/mirrors/node/
+
+```
+
 ```sh
 # 安装
 nvm install 8.16.2
@@ -16,11 +27,6 @@ nvm ls
 nvm ls-remove
 nvm reinstall-package
 
-# npm镜像
-nvm npm_mirror https://npmmirror.com/mirrors/npm/
-
-# node镜像
-nvm node_mirror https://npmmirror.com/mirrors/node/
 
 ```
 
