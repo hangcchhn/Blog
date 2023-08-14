@@ -1,7 +1,19 @@
 # Python类
 > class
 
+- `self`：对象
+- `cls`：类
+
+- Python默认使用dict保存类的实例属性，浪费内存空间
+- `__slots__`属性指定类的实例属性范围，节约内存空间
+
+
+
+
+
 - 所有`class`都继承`object`类，多继承时使用广度优先搜索
+
+
 
 ---
 
@@ -12,25 +24,6 @@
     - 先执行`__new__`，再执行`__init__`
 - `__del__(self)`：释放内存空间
     - `del instance`操作不一定会触发`__del__`方法
-
-```py
-
-class Class(object):
-
-    def __new__(cls, attr):
-        print('__new__')
-        return super(Class, cls).__new__(cls)
-
-    def __init__(self, attr):
-        print('__init__')
-        self.attr = attr
-        pass
-
-    def __del__(self):
-        print('__del__')
-        pass
-
-```
 
 - 当继承不可变类型时，使用`__new__`方法实现自定义实例化对象过程
 
@@ -53,51 +46,6 @@ vars(obj)
 
 
 ```
-
-
----
-- `self`：对象
-- `cls`：类
-
-```py
-
-class MethodClass(object):
-    def __init__(self): # 初始化函数
-        pass
-
-    def instance_method(self):  # 实例方法
-        pass
-
-    @classmethod
-    def class_method(cls):  # 类方法
-        pass
-
-    @staticmethod
-    def static_method():  # 静态方法
-        pass
-
-    pass
-
-class PropertyClass(object):
-
-    @property
-    def prop(self):
-        pass
-
-    @prop.setter
-    def prop_setter(self, name)
-        pass
-
-    @prop.deleter
-    def prop_deleter(self, name)
-        pass
-    pass
-
-```
-
----
-- python默认使用dict保存类的实例属性，浪费内存空间
-- `__slots__`属性指定类的实例属性范围，节约内存空间
 
 
 ---
@@ -261,5 +209,53 @@ class Class3(Class0, class1):
     pass
 
 Class2.__mro__
+
+
+```
+## 分派
+> dispatch
+
+- 单分派(single dispatch)
+- 多分派(multiple dispatch)
+- 泛函数(generic function)
+
+- 工厂模式：避免if-elif-else判断
+    - 函数也可类似操作
+
+```py
+
+class_factory:dict = {
+    'Class1':Class1,
+    'Class2':Class2,
+    'Class3':Class3,
+}
+def dispatch():
+    value = class_factory.get(key, default)
+    if value:
+        instance = value()
+    else:
+        raise RuntimeError(f'dispatch {key} error')
+
+class Dispatcher(object):
+
+    def dispatch(self, instance):
+        value = class_factory.get(key, default)
+        if value:
+            instance = value()
+        else:
+            raise RuntimeError(f'dispatch {key} error')
+
+    pass
+
+
+```
+
+---
+
+```py
+
+
+
+
 
 ```

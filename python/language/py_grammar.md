@@ -116,7 +116,7 @@ nonlocal
 
 ---
 
-- 鸭子类型
+- 鸭子类型(duck typing)
 - 自省Introspection：运行时判断对象的类型
 
 
