@@ -1,8 +1,7 @@
 # markdown math
 
+## 加减乘除
 
-### 加减乘除
----
 - 加减
     - $x \pm y=z$
     - $x \mp y=z$
@@ -13,11 +12,25 @@
     - 叉乘：$x \times y=z$
     - 除法：$x \div y=z$
 
-### 分式
----
-- $\frac{x+y}{y+z}$
+## 分式
+> fraction
 
-- $\dfrac{x+y}{y+z}$
+
+- tiny
+
+$$
+\frac{x+y}{y+\frac{x+y}{y+z}}
+\\
+\tfrac{x+y}{y+z}
+\\
+\dfrac{x+y}{y+\dfrac{x+y}{y+z}}
+\\
+\cfrac{x+y}{y+\cfrac{x+y}{y+z}}
+\\
+{x+y \over y+z}
+$$
+
+
 
 #### 开方
 ---

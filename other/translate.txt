@@ -8,7 +8,8 @@
 风险贡献
 RC(Risk Contribution)
 
-
+fraction
+分数，小数
 分子numerator
 分母denominator
 
