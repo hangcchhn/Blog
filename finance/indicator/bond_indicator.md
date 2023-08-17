@@ -151,7 +151,7 @@ $$
 
 - 到期收益率与票面利率
 
-- 债券价格与是到期收益率的多项式函数
+
 
 - 债券收益率：到期收益率
 
@@ -181,7 +181,6 @@ P = \sum\limits_{n = 1}^{N}{
 $$
 
 
-- 久期：债券价格对收益率的一阶导数
 
 - $D_{mac}$：麦考利久期
 $$
@@ -226,21 +225,60 @@ $$
 - 在给定收益率变化下，债券价格的变化与修正久期的变化方向是相反的
 
 ## 凸性(convexity)
-- 凸性：债券价格对收益率的二阶导数
+
+
+- 债券价格与是到期收益率的多项式函数
+$$
+P = f(y)
+
+
+$$
+- 根据泰勒定理可得
+$$
+
+f(y + \Delta{y}) = f(y) + f'(y) \Delta{y} + \dfrac{1}{2} f''(y) (\Delta{y})^2
+ + o\Big( (\Delta{y})^3 \Big)
+
+$$
+
+
+$$
+
+\dfrac{\Delta{P}}{P} = \dfrac{f(y + \Delta{y}) - f(y)}{f(y)}
+= \dfrac{f'(y)}{f(y)} \Delta{y} + \dfrac{1}{2} \dfrac{f''(y)}{f(y)} (\Delta{y})^2
+ + o\Big( (\Delta{y})^3 \Big)
+
+$$
+- 凸性$D$：
+$$
+D = \dfrac{f'(y)}{f(y)}
+$$
+- 久期$C$：
+$$
+C = \dfrac{f''(y)}{f(y)}
+$$
+
+$$
+\dfrac{\Delta{P}}{P} \approx - D \Delta{y} + \dfrac{1}{2} C (\Delta{y})^2
+$$
 
 
 - 在其他特性相同时，投资者应当选择凸性更高的债券进行投资
-
 
 
 ---
 ## 基点价值
 
 - PVBP(price value of a basis point)
-- DV01(dollar value of all 01)
+    - 基点价值：每百元面值的债券，当收益率变动1bp，债券价格变动的绝对值
+- DV01(dollar value of an 01)
     - 基点美元值
 
 
+
+$$
+PVBP = P \Big[ - D \cdot 0.01\% + \dfrac{1}{2} C \cdot (0.01\%)^2 \Big]
+$$
 
 ---
 
