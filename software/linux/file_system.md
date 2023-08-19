@@ -1,7 +1,8 @@
 # 文件系统
-
+> file system
 
 - /:根路径
+
 - /bin/:
 - /lib/:
 - /sbin/:
@@ -43,7 +44,7 @@
     - `cat /proc/cpuinfo | grep "cpu cores" | uniq`
 
 
-processor = physical id * cpu cores
+- processor = physical id * cpu cores
 
 
 

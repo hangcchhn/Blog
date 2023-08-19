@@ -1,5 +1,5 @@
 # 磁盘扩容
->
+> disk extend
 
 - CentOS 7.x
 - VMware 10G
