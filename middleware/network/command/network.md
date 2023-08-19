@@ -16,28 +16,24 @@
 
 - tun/tap
 - veth pair
+
+
 ---
-## 静态IP
+## system-config-network
 
 
 
 ### CentOS
 
-
--
-- CentOS 6.10
-- ifcfg-eth0
-```
-BOOTPROTO=dhcp|static
-ONBOOT=yes
-IPADDR=192.168.10.153
-NETMASK=255.255.255.0
-GATEWAY=192.168.10.2
-DNS1=8.8.8.8
-DNS2=114.114.114.114
-
-```
 - CentOS 7.x
+```sh
+# ens33
+vim /etc/sysconfig/network-scripts/ifcfg-ens33
+
+# reboot
+systemctl restart network
+```
+---
 - ifcfg-ens33
 ```ini
 TYPE="Ethernet"
@@ -63,16 +59,25 @@ DNS2=114.114.114.114
 
 ```
 
+
+
+
+---
+### Ubuntu
+
+
+
 ---
 
+## NetworkManager
+
+
 ```sh
-# ens33
-vim /etc/sysconfig/network-scripts/ifcfg-ens33
 
-# reboot
-systemctl restart network
+nmcli --help
+
+
+nmcli n on
+nmcli n connectivity
+
 ```
-
-
-
-### Ubuntu
