@@ -172,6 +172,9 @@ Ctrl + Shift + Enter
 
 
 
+列编辑模式
+Shift + Right
+
 
 
 

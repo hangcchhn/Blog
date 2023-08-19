@@ -81,14 +81,14 @@
 - `ForkJoinPool`类继承`AbstractExecutorService`抽象类
     - `fork()`方法将任务放在队列中
     - `join()`方法让线程处理其他任务直到子任务完成
-- 分治算法：先拆分再合并，类似MapReduce
+- 分治思想：先拆分再合并，类似MapReduce
 - 工作窃取(work-stealing)
     - 每个工作线程`ForkJoinWorkerThread`都对应一个工作队列`WorkQueue`，使用随机哈希关联
 
 - `WorkQueue`双端队列，对应工作线程从头部存取任务，其他工作线程从尾部窃取任务
 - `ManagedBlocker`接口
 
-- `ForkJoinTask`
+- `ForkJoinTask`：采用递归算法
     - 递归任务`RecursiveTask`
     - 递归动作`RecursiveAction`
     - `CountedCompleter`

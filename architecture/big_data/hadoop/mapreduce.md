@@ -1,5 +1,12 @@
 # MapReduce
 
+
+
+
+- 分而治之
+
+---
+
 - Map
 - Reduce
 

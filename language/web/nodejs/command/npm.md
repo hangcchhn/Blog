@@ -28,7 +28,9 @@ npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass
 
 npm install --legacy-peer-deps
 
-npm install --global
+npm install package --global
+npm install package@version --save
+
 npm list
 
 npm dedupe
@@ -38,6 +40,8 @@ npm prune
 
 
 rm -rf package-lock.json node_modules/
+
+
 
 ```
 

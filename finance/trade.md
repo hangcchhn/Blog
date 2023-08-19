@@ -153,8 +153,6 @@
 - 抵押品collateral
 - 抵押贷款mortgage
 
-- Coupon
-- 期限tenor
 
 
 - 交割券
