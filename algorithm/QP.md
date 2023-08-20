@@ -4,6 +4,13 @@
 
 
 
+- 凸优化
+- SOCP问题
+- ADMM算法
+
+- 压缩矩阵CSC(Compressed Sparse Column)
+
+
 
 
 

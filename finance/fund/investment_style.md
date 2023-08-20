@@ -39,17 +39,6 @@ w^p_1 + w^p_2 + \cdots + w^p_N = 1
 
 $$
 
----
-
-## 二次规划
-> QP问题
-- 凸优化
-- SOCP问题
-- ADMM算法
-
-- 压缩矩阵
-> CSC(Compressed Sparse Column)
-
 
 
 ---
