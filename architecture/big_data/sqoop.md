@@ -7,7 +7,7 @@
 
 
 - 支持数据库：MySQL，Oracle，SQL Server
-- 支持文本文件，Avro文件，Sequence文件
+- 支持Text文件，Avro文件，Sequence文件
 
 ---
 

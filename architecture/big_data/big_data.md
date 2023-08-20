@@ -40,7 +40,9 @@
 
 
 ## Kafka
-> LinkedIn
+> Apache
+
+- LinkedIn拆分Confluent
 
 - Samza
 
@@ -70,8 +72,11 @@
 ## Tez
 
 ## Flink
-> Alibaba
+> Apache
 
+- Alibaba收购Ververica
+
+- Confluent收购Immerok
 ---
 
 ## Sqoop
@@ -123,6 +128,15 @@
 
 - MapReduce
 - Spark
+
+
+---
+
+## Presto
+> Facebook
+
+## Trino
+- Presto
 
 ---
 ## 版本

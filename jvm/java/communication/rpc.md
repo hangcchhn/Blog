@@ -32,6 +32,8 @@
 - XML
 - JSON
 
+- avro
+
 - Java原生序列化Serializable
 
 
