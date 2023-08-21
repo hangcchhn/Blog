@@ -1,7 +1,52 @@
 # 交易所
 > exchange
 
+- 上交所
+- 深交所
+- 北交所
+- 港交所
 
+- 银行间
+
+- 机构间
+
+- 上海期货交易所
+- 上海票据交易所
+- 上海黄金交易所
+
+- 郑州商品交易所
+- 大连商品交易所
+
+- 银登中心：银行业信贷资产登记流转中心有限公司
+- 场外
+
+- 北京金融资产交易所
+    - CFAE(China Financial Assets Exchange)
+- 中金所：中国金融期货交易所
+    - CFFEX(China Financial Futures Exchange)
+
+- 中国外汇交易中心
+    - CFETS(China Foreign Exchange Trade System)
+
+---
+## 交易场所
+- 场内交易市场：证券交易所(Stock Exchange)
+    - 上海证券交易所SSE
+    - 深圳证券交易所SZSE
+    - 北京证券交易所BSE
+- 场外交易市场OTC(over-the-counter market)
+    - 银行间(Innerbank)
+
+
+
+
+-
+
+
+
+- 中债CNBD(China Bond)
+- 中证CSI(China Security Index)
+- 上清所SCH(Shanghai Clearing House)
 
 ---
 ## 债券市场
@@ -37,8 +82,19 @@
     - 二级市场：交易原则是竞价交易和全价结算
 
 
-- 执行市场
+## 执行市场
+- 上交所
+    - 上交所固定收益平台
+    - 上交所大宗交易平台
+    - 上交所竞价撮合平台
+    - 上交所综合业务平台
+    - 上交所新债券交易平台
 
+
+- 深交所
+    - 深交所竞价撮合平台
+    - 深交所综合协议平台
+    - 深交所新债券交易平台
 
 ---
 

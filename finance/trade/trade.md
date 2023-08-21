@@ -137,25 +137,7 @@
 
 - 现金流(cashflow)
 
----
-## 交易场所
-- 场内交易市场：证券交易所(Stock Exchange)
-    - 上海证券交易所SSE
-    - 深圳证券交易所SZSE
-    - 北京证券交易所BSE
-- 场外交易市场OTC(over-the-counter market)
-    - 银行间(Innerbank)
 
-
-
-
-- 中国金融期货交易所CFFEX
-
-
-
-- 中债CNBD(China Bond)
-- 中证CSI(China Security Index)
-- 上清所SCH(Shanghai Clearing House)
 
 
 ---

@@ -34,8 +34,6 @@
 
 - 货币篮子
 
-中国外汇交易中心
-CFETS(China Foreign Exchange Trade System)
 
 国际清算银行
 BIS()
