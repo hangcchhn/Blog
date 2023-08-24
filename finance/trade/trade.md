@@ -122,6 +122,8 @@
 - 交易trade
 - 交割delivery
 
+
+- 抵押pledge
 - 抵押品collateral
 - 抵押贷款mortgage
 
