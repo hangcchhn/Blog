@@ -30,7 +30,7 @@
 
 ---
 ## 交易场所
-- 场内交易市场：证券交易所(Stock Exchange)
+- 场内交易市场：证券交易所(Stock Exchange)，
     - 上海证券交易所SSE
     - 深圳证券交易所SZSE
     - 北京证券交易所BSE
