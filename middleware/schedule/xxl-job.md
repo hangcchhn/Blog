@@ -24,3 +24,12 @@ spring.datasource.*
 - xxl-job-executor-*.jar
 
 - xxl-job-core
+
+
+```sh
+docker pull xuxueli/xxl-job-admin
+
+docker run -p 8080:8080 -v /tmp:/data/applogs --name xxl-job-admin  -d xuxueli/xxl-job-admin
+
+
+```

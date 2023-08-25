@@ -8,6 +8,18 @@
     - 结算日
     - 清算日
 
+
+- 结算settle
+- 清算clear
+
+
+- 交易trade
+- 交割delivery
+- 交收
+- 清算交收
+- Value Date
+- 到期日
+
 - 交割速度
     - T+0
     - T+1
@@ -102,13 +114,6 @@
 
 ---
 
-
-- 结算settle
-- 清算clear
-
-
-- 交易trade
-- 交割delivery
 
 
 - 抵押pledge
