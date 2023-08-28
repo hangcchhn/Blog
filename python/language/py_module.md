@@ -1,5 +1,7 @@
 # module
 
+- 完全限定：全限定名
+
 ```py
 # 处理重名问题
 from __future__ import absolute_import
@@ -12,8 +14,6 @@ __all__ = [
 ]
 
 ```
-
-
 
 ---
 

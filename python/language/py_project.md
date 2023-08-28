@@ -3,11 +3,11 @@
 
 
 
-Python PATH:
-python环境变量
+## 环境变量
+- Python环境变量：
 C:\ProgramFiles\Python\;C:\ProgramFiles\Python\Scripts
 
-Anaconda环境变量
+- Anaconda环境变量：
 C:\ProgramFiles\Anaconda;C:\ProgramFiles\Anaconda\Scripts
 
 
@@ -37,6 +37,13 @@ cd project_directory
 python relative_directory/file_name.py
 ```
 
+
+```sh
+# 执行包内模块
+python -m package.module
+
+```
+
 - 默认会将file_name.py所在路径添加到sys.path中
     - 只会将absolute_directory添加到sys.path中
     - 不会将project_directory添加到sys.path中
@@ -57,7 +64,9 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir)))
 # 在导入项目中的模块之前添加
 ```
-- 注意循环导入
+
+
+- 循环导入
 
 ---
 - vscode执行py文件 -> python执行py文件
