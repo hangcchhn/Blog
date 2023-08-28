@@ -1,4 +1,11 @@
-# 归因
+# 业绩归因
+> attribution
+
+- 业绩归因
+- 归因分析
+
+
+---
 
 ### 基金业绩评价
 - 财务评价
@@ -47,35 +54,21 @@
 
 - 多因子模型
 
-### Brinson模型
-
-
-
-1.单期Brinson模型
-2.多期Brinson模型
-
-
 
 ---
 
-
-## 债券归因
-
-### Campisi模型
-
-- 票息
-- 无风险
-- 利差
 
 
 ---
 ### Fama分解模型
 > Fama在1972年提出
+
 - $r_p$:投资组合收益率
 - $r_m$:市场指数收益率
 - $r_f$:无风险收益率
 - $r_\beta$:SML上相同系统风险的收益率
 
+---
 $$
 
 r_p - r_f = (r_p - r_\beta) + (r_\beta - r_f)
@@ -85,17 +78,19 @@ r_p - r_f = (r_p - r_\beta) + (r_\beta - r_f)
 r_\beta = \beta_p \times (r_m - r_f)
 
 $$
+
+
 - $r_p - r_f$:超额收益
 - $r_p - r_\beta$:选择回报（詹森指数）
 - $r_\beta - r_f$:风险回报
-
+---
 $$
 r_p - r_\beta = r_D + r_N
 $$
 - $r_D$:可分散回报(Diversification)
 - $r_N$:净选择回报(Net Selectivity)
 
-
+---
 $$
 r_d = (r_m - r_f) \times (
     \dfrac{\sigma_p}{\sigma_m} - \beta_p
@@ -123,41 +118,34 @@ $$
 
 - $\beta_I$:投资者目标风险
 
-
-
----
-### Brinson模型
-
-- 对股票投资组合进行相对收益的归因分析
-
-#### 单期Brinson模型
-
 ---
 ### BHB模型
 > Brinson，Hood和Beebower在1986年提出
 
 #### 基金业绩分解
+
+---
+
 - 投资策略（战略资产配置）
 - 选股贡献
 - 择时贡献
 - 选股择时交互影响
 
+---
 
 - $w^p_i$:投资组合资产类别i的权重
 - $r^p_i$:投资组合中资产类别i的收益率
-
 - $w^b_i$:基准指数中资产类别i的权重
 - $r^b_i$:基准指数中资产类别i的收益率
 
-
-
+---
 
 - $A = \sum(w^b_i \times r^b_i)$:基准指数的收益率
 - $B = \sum(w^p_i \times r^b_i)$:
 - $C = \sum(w^b_i \times r^p_i)$:
 - $D = \sum(w^p_i \times r^p_i)$:投资组合的收益率
 
-
+---
 
 - 配置效应(Allocation):$B - A$
 $$
@@ -266,17 +254,6 @@ $$
 ### BF模型
 > Brinson和Fachler
 
-#### 多期Brinson模型
-
-
-
-$$
-$$
-
-
-
-
-
 ### 相对收益，又称超额收益，基金收益超出业绩比较基准的部分
 > ER(Excess Return)
 
@@ -298,10 +275,3 @@ ER_g = \dfrac{R_p + 1}{R_b + 1} - 1
 
 $$
 
-
----
-
-## Brinson模型
-
----
-## Campisi模型

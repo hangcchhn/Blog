@@ -8,6 +8,12 @@ pip install fastapi
 pip install uvicorn
 
 ```
+
+
+- Starlette
+- Pydantic
+    - data validation library
+
 ---
 
 - main.py
@@ -28,7 +34,7 @@ def read_root():
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
-
+;
 
 ```
 ---

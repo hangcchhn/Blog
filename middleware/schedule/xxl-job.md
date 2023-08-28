@@ -25,11 +25,17 @@ spring.datasource.*
 
 - xxl-job-core
 
+- docker
 
 ```sh
-docker pull xuxueli/xxl-job-admin
+docker pull xuxueli/xxl-job-admin:2.4.0
 
-docker run -p 8080:8080 -v /tmp:/data/applogs --name xxl-job-admin  -d xuxueli/xxl-job-admin
+docker run -p 8080:8080 -v /tmp:/data/applogs --name xxl-job-admin  -d xuxueli/xxl-job-admin:2.4.0
 
+docker run --name xxl-job-admin -p 8080:8080 -d xuxueli/xxl-job-admin:2.4.0
 
 ```
+
+---
+
+- GLUE(JAVA):继承`IJobHandler`类

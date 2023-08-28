@@ -104,6 +104,9 @@ db = SQLAlchemy(app)
 
 ---
 ## 扩展模块
+
+- APIFlask
+
 - Flask-WTF
 - Flask-Login
 - Flask-Cache

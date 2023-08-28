@@ -4,6 +4,8 @@
 - `async`添加在函数声明前
     - Python 3.5+
 
+- asyncio模块
+
 ```py
 
 def function_name():
