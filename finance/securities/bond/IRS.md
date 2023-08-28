@@ -1,19 +1,26 @@
-# IRS
-> Interest Rate Swap
-
-- 利率互换
+# 利率互换
+> IRS(Interest Rate Swap)
 
 
 ---
 
 - 名义本金：
-- 固定利率
-- 浮动利率
-    - 参照基准：Shibor或FR007
 
 - 交易方向
     - 支付固定利率Pay
     - 收取固定利率Receive
+
+
+- 固定fixed
+    - 固定利率
+    - 计息基准
+
+- 浮动float
+    - 基准利率：Shibor-3M或FR007
+    - 利差
+    - 支付周期
+    - 计息基准
+
 
 
 
