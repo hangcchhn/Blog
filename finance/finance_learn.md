@@ -8,9 +8,12 @@
 
 
 
-
-
-
+- 公开市场业务(OMO)
+    - 正/逆回购
+    - 短期流动性调节工具(short-term liquidity operations，SLO)
+    - 备借贷便利(standing lending facility，SLF)
+    - 中期借贷便利(medium-term lending facility， MLF)
+    - 抵押补充贷款(pledged supplemental lending，PSL)
 
 
 
@@ -48,7 +51,7 @@
 > 财务状况变动表
 - 经营活动产生的现金流量(cash flow from operations,CFO)
 - 投资活动产生的现金流量(cash flow from investment,CFI)
-- 筹资（也称融资）活动产生的现金流量(cash flow from financing,CFF)
+- 筹资(也称融资)活动产生的现金流量(cash flow from financing,CFF)
 - 净现金流(net cash flow) NCF = CFO + CFI + CFF
 
 ---
