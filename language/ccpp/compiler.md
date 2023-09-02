@@ -14,7 +14,7 @@
 -
 
 ---
-## gcc
+## GCC
 > GNU Compiler Collection
 
 
@@ -34,8 +34,7 @@ GPL(GNU General Public License):GNU通用公共许可证
 
 - g++
 
-- mingw
-> Minimalist GNU for Windows
+- MinGW(Minimalist GNU for Windows)
 
 ---
 ## clang
@@ -51,13 +50,13 @@ GPL(GNU General Public License):GNU通用公共许可证
 
 
 ---
-## msvc
-> microsoft
+## MSVC
+> Microsoft
 
 
 - 编译器:cl.exe
 - 链接器:link.exe
 
 
-- visual studio
+- Visual Studio
 

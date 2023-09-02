@@ -5,12 +5,12 @@
 ## 语言
 - C & C++
 - Objective-C & Objective-C++
-- swift
+- Swift
 
 
 ---
 ## 系统
 - iOS
 
-- OS X
+- macOS
 
