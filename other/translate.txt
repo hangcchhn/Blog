@@ -230,6 +230,9 @@ divide
 
 属性:properties
 
+
+组件:component
+
 伪分布式Pseudo-Distrubuted
 
 

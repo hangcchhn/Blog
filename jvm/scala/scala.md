@@ -17,8 +17,9 @@
 ```sh
 scala
 scala> :help
+scala> :quit
 ```
-- :quit
+
 
 
 

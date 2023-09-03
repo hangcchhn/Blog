@@ -8,7 +8,10 @@
 - Cloudera Manager
 
 
-docker
+- Impala
+
+---
+- docker
 ```sh
 
 docker pull cloudera/quickstart

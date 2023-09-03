@@ -1,6 +1,4 @@
-
-
-# spark install
+# Spark安装
 
 ## 单机模式
 
@@ -62,7 +60,8 @@ wordCount.saveAsTextFile("hdfs://192.168.10.169:8020/word_count/count.txt")
 - http://192.168.10.169:4040
 
 
-- ubuntu
+---
+### Ubuntu
 - java.lang.NumberFormatException: For input string: "0x100"
 ```sh
 export TERM=xterm-color

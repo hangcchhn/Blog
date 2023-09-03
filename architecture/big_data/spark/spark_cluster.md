@@ -106,16 +106,7 @@ ${SPARK_HOME}/sbin/start-history-server.sh
 ## Standalone部署代码提交发布模式：
 
 
----
-## spark部署
-- Local模式
-- Standalone模式
-- Yarn模式
-```sh
---master:local[*],spark://cent01:7077,yarn
-```
-
-## spark执行
+## Spark执行
 1. client模式
 ```sh
 # 使用client模式执行

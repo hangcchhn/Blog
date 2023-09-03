@@ -131,7 +131,7 @@ echo "start $pids:$jar_path"
 
 
 ---
-## 使用Maven构建的Spring Boot项目读取src/java/resource下文件
+- 使用Maven构建的Spring Boot项目读取src/java/resource下文件
 
 
 ```java

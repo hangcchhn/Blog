@@ -8,11 +8,6 @@
 
 ---
 - .service
-    - [Unit]
-        -
-    - [Service]
-        - Type:simple,forking,notify,oneshot,exec,dbus,idle
-    - [Install]
 ```ini
 [Unit]
 Description=nginx
@@ -23,6 +18,7 @@ Wants=
 Requires=
 
 [Service]
+# simple,forking,notify,oneshot,exec,dbus,idle
 Type=forking
 
 ExecStart=
@@ -35,27 +31,37 @@ PrivateTmp=true # 是否分配独立空间
 WantedBy=multi-user.target # 多用户命令行
 
 ```
----
-## CentOS 6.x
-> Ubuntu
-
-- service
-- chkconfig
+## service
 
 ```sh
 
 # 服务状态|开启|停止|重启
 service ****** status|start|stop|restart
 
+service --status-all
+```
+## chkconfig
+```sh
+
+apt install chkconfig
+yum install chkconfig
+
 # 服务开机启用|禁用
 chkconfig ****** on|off
 
 chkconfig --list
 ```
----
 
-## CentOS 7.x
-- systemctl
+- sysv-rc-conf
+```sh
+
+# Ubuntu 16.04使用sysv-rc-conf替代chkconfig
+apt install sysv-rc-conf
+cp /usr/sbin/sysv-rc-conf /usr/sbin/chkconfig
+```
+
+
+## systemctl
 
 ```sh
 # 服务状态|开启|停止|重启
@@ -73,11 +79,3 @@ systemctl daemon-reload
 
 ```
 
----
-- Ubuntu
-```sh
-apt install chkconfig
-# Ubuntu 16.04使用sysv-rc-conf替代chkconfig
-apt install sysv-rc-conf
-cp /usr/sbin/sysv-rc-conf /usr/sbin/chkconfig
-```

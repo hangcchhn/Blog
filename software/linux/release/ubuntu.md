@@ -100,7 +100,7 @@ sudo apt install libfuse2
 
 
 
-service --status-all
+
 
 
 
