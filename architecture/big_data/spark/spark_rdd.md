@@ -4,11 +4,15 @@
 - 分区(Partition)：
 
 - 只读(read-only)
+    - immutable
+
+- 并行(parallel)
+
 - 容错
 
 
 - Value数据类型
-- Key-Value数据类型
+- key-value类型
 
 
 - 转换Transformation：会在一个已经存在的 RDD 上创建一个新的 RDD
@@ -21,19 +25,59 @@
 
 
 
+---
+
+## 容错机制
+
+
+
+- CheckPoint
+    - CheckPoint Data
+    - Logging Update
+
+
+---
+
+- Shuffle
+    - Shuffle Write
+    - Shuffle Fetch
+
 
 
 ### 属性
-- 分区列表Partition List
 
-- 计算函数Compute Function
 
+
+- 分区列表
+    - `def getPartitions`
+
+- 计算函数
+    - `def compute`
+
+- 依赖关系
+    - `def getDependencies`
+
+---
+#### 可选
+- 优先位置
+    - `def getPreferredLocations`
+
+- 分区函数
+    - `val partitioner`
+    - `HashPartitioner`
+    - `RangePartitioner`
+
+
+---
+
+
+
+
+---
+
+- 血统Lineage
 - 依赖关系Dependencies：
     - 窄依赖(Narrow Dependency)：每个父分区最多只有一个子分区
         - map、filter、union
     - 宽依赖(Wide Dependency)
         - groupByKey、reduceByKey、sortByKey
-- 分区器Partitioner
-
-- 首选位置Preferred Location
-

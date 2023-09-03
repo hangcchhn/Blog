@@ -1,4 +1,4 @@
-# Hadoop配置
+# Hadoop部署
 > hadoop 2.x
 
 -

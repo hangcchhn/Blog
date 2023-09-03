@@ -1,4 +1,4 @@
-# spark core
+# Spark核心
 
 
 - 广播Broadcast
@@ -27,4 +27,8 @@ Client -> Driver -> Cluster Manager -> Worker Node
 ---
 
 
-
+- 获取数据
+    - HDFS
+    - HBase
+    - Cassandra
+    - Kafka

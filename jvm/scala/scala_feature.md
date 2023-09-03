@@ -1,5 +1,43 @@
 # Scala特性
 
+
+## 下划线
+> `_`
+
+
+- 占位符
+```scala
+
+
+
+
+```
+
+
+
+- 通配符
+- 默认值
+- getter/setter
+```scala
+class IntClass() {
+    // 默认值
+    private var _int: Int = _
+
+    // getter
+    def int: Int = _int
+
+    // setter
+    def int_(int: Int): Unit = {
+        _int = int
+    }
+}
+```
+
+- 将方法转换成函数
+---
+- 偏应用函数
+    - partially applied function
+
 ---
 ## Trait
 > 特征

@@ -23,22 +23,7 @@
 
 
 
----
 
-## 容错机制
-
-- Lineage
-
-- CheckPoint
-    - CheckPoint Data
-    - Logging Update
-
-
----
-
-- Shuffle
-    - Shuffle Write
-    - Shuffle Fetch
 
 ---
 ## API

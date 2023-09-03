@@ -6,18 +6,19 @@
 
 - Local
 
-- Standalone
+- Cluster
+    - Standalone
 
-- YARN
+    - YARN
 
-- Mesos
+    - Mesos
 
 - Cloud
-
+    - Kubernetes模式
 
 
 ---
 
 
-- Spark web UI
+- Spark UI
     - 默认端口4040
