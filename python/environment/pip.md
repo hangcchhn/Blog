@@ -1,7 +1,7 @@
 # pip
 
 - PYTHONHOME:D:\Python\python
-- .\Lib\site-packages
+    - .\Lib\site-packages
 
 ---
 

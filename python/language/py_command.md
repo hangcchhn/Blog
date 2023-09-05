@@ -1,5 +1,10 @@
 # Python命令
 
+```sh
+# 执行包内模块
+python -m package.module
+
+```
 
 ```sh
 # 启动HTTP服务端

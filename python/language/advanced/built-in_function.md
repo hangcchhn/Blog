@@ -7,21 +7,24 @@
 
 
 - help(x):帮助
-- type(x):类型
 
 
 - id(x):内存地址
 
-- len(x):元素个数
+
 
 ---
 - map(func, iter)
 - filter(func, iter)
 - next(iter)
+
+
+
+
 ---
-- enumerate(x)
+- enumerate(iter)
 ```py
-for index, value in enumerate(x):
+for index, value in enumerate(iter):
 
     pass
 
@@ -35,21 +38,22 @@ for item0, item1 in zip(iter0, iter1):
 
 ```
 
+
 ---
 - hash(x)
-- repr(x)
-- ascii(x)
+    - `x.__hash__()`
+
 - format()
-- vars(x)
+    - - `x.__format__()`
+
+
+
+- repr(obj)
+- ascii(obj)
+
 
 ---
-- isinstance()
-- issubclass()
 
----
-
-- all(x)
-- any(x)
 
 
 ---
@@ -60,26 +64,40 @@ for item0, item1 in zip(iter0, iter1):
 - delattr()
 
 ---
-- callable()
+
+- iter(x)
+
+
+---
+- isinstance(obj, cls)
+- issubclass(cls, base)
+
+- base = super()
+- obj = object()
+- cls = type(obj)
+
+- callable(obj)
 
 - globals():全局变量
 - locals():局部变量
 
+- vars():本地命名空间
+- vars(obj):对象命名空间
 
 ---
-- input()
-- print()
+- x = input()
+- print(x)
 
 - open(, mode='')
 
 ---
 
-- compile
+- compile(string)
 - exec()
 - eval()
 
 ---
-# 装饰器
+## 装饰器
 
 - `@classmethod()`
 - `@staticmethod()`
@@ -112,31 +130,31 @@ __import('')__
 
 - frozenset(x)
 
-- range(x)
+- range(start, stop. step)
 
-- iter(x)
-
-
-- object()
-
-- super()
-
-- slice(x)
+- slice(start, stop. step)
 - sorted(x, key=None, reverse=False)
 - reversed(seq)
+
 ---
 ## 数学计算
 
-- abs(x)
-- min(x)
-- max(x)
-- sum(x)
+- len(seq)
+- sum(iter)
+
+- min(iter)
+- max(iter)
+
 - pow(x)
+- abs(x)
+
+- all(iter)
+- any(iter)
 
 - round(x)
 
 
-- divmod(x)
+- divmod(x, y)
 ```py
 
 ```

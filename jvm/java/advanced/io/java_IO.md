@@ -53,18 +53,8 @@ Future->ListenableFuture
 GenericFutureListener->FutureCallback
 
 
----
-### 文件描述符
-> Socket套接字
 
-I/O多路复用:单个线程可以处理多个IO操作
-核心函数:select，poll，epoll
 
-- NIO->Reactor模型
-- AIO->Proactor模型
 
-- Java->selector模型
-- Linux->epoll模型
-- Unix->kqueue模型
 
 

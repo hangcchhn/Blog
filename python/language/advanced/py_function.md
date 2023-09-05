@@ -55,8 +55,13 @@ def function_name(parameters) -> return_type:
 ##
 
 ```py
-def function(var0, var1=None):
+def function():
     pass
+
+
+function.__module__
+
+function.__globals__['variable']
 
 ```
 

@@ -1,4 +1,10 @@
 # Linux发行版
+> release
+```sh
+
+cat /etc/os-release
+
+```
 
 ## Debian
 

@@ -195,15 +195,6 @@ directory:目录
 dir
 
 
-读写
-read
-write
-输入输出
-IO
-Input
-Output
-
-
 加减乘除
 add
 subtract
@@ -307,3 +298,19 @@ Concurrency:并发数
 十亿：billion
 百万：million
 千：kilo
+
+
+--------------------------------------------------------------------------------------------------
+
+
+缓存cache
+缓冲区buffer
+
+fork线程
+
+块
+chunk
+block
+
+2->to
+4->for
