@@ -3,14 +3,24 @@
 ## 加减乘除
 
 - 加减
-    - $x \pm y=z$
-    - $x \mp y=z$
+    - `x+y`
+    - `x-y`
+    - $x \pm y$
+    - $x \mp y$
 
 - 乘除
-    - 点乘：$x \cdot y=z$
-    - 星乘：$x \ast y=z$
-    - 叉乘：$x \times y=z$
-    - 除法：$x \div y=z$
+    - 点乘
+        - `x·y`
+        - $x \cdot y$
+    - 星乘
+        - `x*y`
+        - $x \ast y$
+    - 叉乘
+        - `x×y`
+        - $x \times y$
+    - 除法
+        - `x÷y`
+        - $x \div y$
 
 ## 分式
 > fraction

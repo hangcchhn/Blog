@@ -1,18 +1,18 @@
-# database sql
+# DataBase SQL
 
 ---
 ## 不同类型数据库
-1. MySQL(mariadb)
+1. MySQL
 ```sql
 
 
 ```
-2. Oracle(inspur)
+2. Oracle
 ```sql
 
 
 ```
-3. SQL Server(sybase)
+3. SQL Server
 ```sql
 
 
@@ -22,44 +22,44 @@
 ---
 ## 别名as可以省略直接空格隔开
 > 别名分为表别名 和列别名
-1. MySQL(mariadb)
+1. MySQL
 as 支持 表别名和列别名
 
-2. Oracle(inspur)
+2. Oracle
 as 只支持列别名 不支持表别名
 
-3. SQL Server(sybase)
+3. SQL Server
 as 支持 表别名和列别名
 
 ---
 ## 关键字与字段名冲突：
 
-1. MySQL(mariadb)
+1. MySQL
 ```sql
 -- 使用``，例如：`create`
 
 ```
-2. Oracle(inspur)
+2. Oracle
 - 注意Oracle数据库关键字使用双引号时区分大小
 ```sql
 -- 使用""，例如："create"
 ```
-3. SQL Server(sybase)
+3. SQL Server
 ```sql
 --
 ```
 
 ---
 ## 校验表名是否存在
-1. MySQL(mariadb)
+1. MySQL
 ```sql
 select 1 as len from information_schema. tables where table_schema=(select database()) and table_name=?
 ```
-2. Oracle(inspur)
+2. Oracle
 ```sql
 select 1 as len from user_tables where table_name=upper(?)
 ```
-3. SQL Server(sybase)
+3. SQL Server
 ```sql
 select 1 as len from sysobjects where type='u' and name=?
 
@@ -68,19 +68,19 @@ select 1 as len from information_schema. tables where table_name=?
 
 ---
 ## 查询表名主键列名
-1. MySQL(mariadb)
+1. MySQL
 ```sql
 select column_name from information_schema. key_column_usage where table_schema=(select database())  and table_name=?
 ```
 
-2. Oracle(inspur)
+2. Oracle
 ```sql
 select * from user_cons_columns where constraint_name in(select constraint_name from user_constraints where table_name=upper(?) and constraint_type='p')
 
 select cols. *, cons. * from user_cons_columns as cols, user_constraints as cons where cols. constraint_name= cons. constraint_name and cons. constraint_type='p' and table_name=upper(?)
 ```
 
-3. SQL Server(sybase)
+3. SQL Server
 ```sql
 select column_name from information_schema. key_column_usage where table_name=?
 ```
@@ -93,7 +93,7 @@ select column_name from information_schema. key_column_usage where table_name=?
 - **特别说明:**
     - order by 后跟的排序字段如果存在重复或空值时，使用分页查询会出现重复或乱序的问题，解决方案是在排序字段最后再加上唯一索引或主键
 
-1. MySQL(mariadb)
+1. MySQL
 ```sql
 limit _number
 
@@ -103,7 +103,7 @@ limit _number offset _offset
 
 ```
 
-2. Oracle(inspur)
+2. Oracle
 ```sql
 
 -- rownum
@@ -120,7 +120,7 @@ where t.no_id > _offset and t.no_id <= _offset + _number
 offset _offset rows fetch next _number rows only
 ```
 
-3. SQL Server(sybase)
+3. SQL Server
 ```sql
 
 select top _number|_percent column_name ...
@@ -144,7 +144,7 @@ offset _offset rows fetch next _number rows only
 ---
 ## 判断语法
 
-1. MySQL(mariadb)
+1. MySQL
 函数if(condition, true_value, false_value)
 如果condition为真则返回true_value，为假则返回true_value
 
@@ -175,7 +175,7 @@ end
 如果conditionn都为假则返回default
 
 
-2. Oracle(inspur)
+2. Oracle
 函数decode(expression, value1, result1, . . . , valuen, resultn, default)
 
 如果expression等于valuen就返回resultn
@@ -199,7 +199,7 @@ end
 如果conditionn为真则返回searchn
 如果conditionn都为假则返回default
 
-3. SQL Server(sybase)
+3. SQL Server
 
 - 分支语句：
 ```sql
@@ -240,13 +240,13 @@ end
 如果expr1为空则返回expr2
 如果expr1不为空则返回expr1
 
-1. MySQL(mariadb)
+1. MySQL
 `ifnull(expr1,expr2)`
 
-2. Oracle(inspur)
+2. Oracle
 `nvl(expr1,expr2)`
 
-3. SQL Server(sybase)
+3. SQL Server
 `isnull(expr1,expr2)`
 
 
@@ -259,18 +259,18 @@ end
     整数部分按digits从底位开始依次使用0替换
 
 
-1. MySQL(mariadb)
+1. MySQL
 
 - 函数`truncate(number, digits)`：number数值，保留小数位数digits
 - 函数`convert(number, decimal(length, digits))`
 
-2. Oracle(inspur)
+2. Oracle
 
 - 函数`trunc(number[, digits])`：number数值，保留小数位数digits
 如果没有digits参数，表示去掉小数，保留整数， 视此状为默认情况
 
 
-3. SQL Server(sybase)
+3. SQL Server
 
 - 函数round(number, digits)：number数值，保留小数位数digits
 - 函数convert(decimal(length, digits), number)
@@ -279,15 +279,15 @@ end
 
 ---
 ## 字符串拼接
-1. MySQL(mariadb)
+1. MySQL
 ```sql
 like concat('%','string','%')
 ```
-2. Oracle(inspur)
+2. Oracle
 ```sql
 like ('%' || 'string' || '%')
 ```
-3. SQL Server(sybase)
+3. SQL Server
 
 
 
@@ -298,7 +298,7 @@ like ('%' || 'string' || '%')
 > 分类：单条记录保存和批量保存记录
 > on后的关联条件前后必须使用括号()
 
-1. MySQL(mariadb)
+1. MySQL
 ```sql
 -- 单条记录保存
 insert into table_name(insert_column1, insert_column2,...) values
@@ -321,7 +321,7 @@ on duplicate key update
 
 
 ```
-2. Oracle(inspur)
+2. Oracle
 ```sql
 -- 单条记录保存
 merge into table_name using dual
@@ -355,14 +355,14 @@ values (temp_table.insert_column1, temp_table.insert_column2,...)
 
 
 ```
-3. SQL Server(sybase)
+3. SQL Server
 
 
 
 
 ---
 ## 批量插入
-1. MySQL(mariadb)
+1. MySQL
 ```sql
 insert into table_name(insert_column1, insert_column2,...) values
     (value1_column1, value1_column2,...),
@@ -370,7 +370,7 @@ insert into table_name(insert_column1, insert_column2,...) values
 
 ```
 
-2. Oracle(inspur)
+2. Oracle
 ```sql
 insert all
     into table_name(insert_column1, insert_column2,...)
@@ -386,7 +386,7 @@ union all (select value2_column1, value2_column2,... from dual)
 ...
 
 ```
-3. SQL Server(sybase)
+3. SQL Server
 ```sql
 
 
