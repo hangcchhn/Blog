@@ -1,5 +1,5 @@
 # JWT
-> JSON Web Tokens
+> JSON Web Token
 
 - 开发行业标准方案(RFC 7519)
 - JWT由Header(头部)，Payload(载荷)、Signature(签名)三部分组成

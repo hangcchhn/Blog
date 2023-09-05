@@ -37,4 +37,7 @@ webSocket.addEventListener('message', function (event) {
 
 ---
 
+## Server Send Event
+- 服务器发送事件SSE
 
+- `Content-Type:text/event-stream`

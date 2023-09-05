@@ -83,11 +83,6 @@ class Table(Model):
 - User
 - Group
 
-## auth
-
-- `AuthenticationMiddleware`
-
-- 密码md5加密
 
 
 ## mail

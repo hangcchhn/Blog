@@ -7,10 +7,11 @@
 -- 截取子串，下标从1开始，包头不包尾
 select substr('1234567890', 1, 3) from dual; -- 123
 
---
+-- 返回下标
+select instr('1234567890','3',1) from dual; -- 3
 
-select instr('12345678.SZ','3',1) from dual; -- 3
-
+-- 包含
+select contains('abc',  'd') from dual;
 
 
 ```
