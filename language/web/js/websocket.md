@@ -35,9 +35,3 @@ webSocket.addEventListener('message', function (event) {
 - 基于WebSocket的
 - 基于帧的线路格式层
 
----
-
-## Server Send Event
-- 服务器发送事件SSE
-
-- `Content-Type:text/event-stream`
