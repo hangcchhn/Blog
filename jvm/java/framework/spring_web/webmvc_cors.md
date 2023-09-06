@@ -1,4 +1,6 @@
-#
+# CORS
+
+- 跨域资源共享(Cross-Orign Resources Sharing)
 
 ```java
 

@@ -52,23 +52,23 @@ update table_ set money_ = money_ - price_ where pk = id and money_ - price_ >= 
 #### 获取锁
 
 - Redis 2.6.12之前：
-```
+```sh
 SETNX lock true
 EXPIRE lock 1000
 
-两条语句是非原子操作
+# 两条语句是非原子操作
 
 ```
 - Redis 2.6.12新增：
 
-```
+```sh
 
 SET lock true NX EX 1
 SET lock true NX PX 1000
 
-NX不存在则创建
-EX设置过期时间（单位秒）
-PX设置过期时间（单位毫秒）
+# NX不存在则创建
+# EX设置过期时间（单位秒）
+# PX设置过期时间（单位毫秒）
 ```
 
 #### 释放锁

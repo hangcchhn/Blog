@@ -6,30 +6,22 @@
 
 
 ---
-## Windows
 
-- C:\Windows\my.ini
-- C:\Windows\my.cnf
-- C:\my.ini
-- C:\my.cnf
-- C:\ProgramFiles\MySQL\my.ini
-- C:\ProgramFiles\MySQL\my.cnf
+## 配置文件路径
+- Windows
+    - C:\Windows\my.ini
+    - C:\Windows\my.cnf
+    - C:\my.ini
+    - C:\my.cnf
+    - C:\ProgramFiles\MySQL\my.ini
+    - C:\ProgramFiles\MySQL\my.cnf
 
-
-
-
-
-
-
----
-## Linux
-
-- /etc/my.cnf
-- /etc/mysql/my.cnf
-- /usr/local/mysql/etc/my.cnf
-
-- ~/.my.cnf
-- ./my.cnf
+- Linux
+    - /etc/my.cnf
+    - /etc/mysql/my.cnf
+    - /usr/local/mysql/etc/my.cnf
+    - /home/chench/my.cnf
+    - /opt/mysql/my.cnf
 
 
 ```sh
@@ -134,8 +126,8 @@ default-character-set=utf8
 ---
 
 
-# 设置全局连接等待超时
-mysql> set global wait_timeout=10;
+## 超时配置
+mysql> show variables like "%timeout%";
 
 # 查看连接相关配置参数
 mysql> show variables like "%connect%";

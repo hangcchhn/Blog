@@ -45,5 +45,6 @@ import importlib
 
 
 
-- `__pycache__`文件夹下`xxx.pyc`文件：编译
+- `__pycache__/`文件夹下`source.pyc`文件：编译
 
+- `module.pyi`

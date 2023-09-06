@@ -4,7 +4,7 @@
 > redis命令
 
 
-## 0.基本操作
+## 基本操作
 
 ```sh
 redis-cli -h host -p port -a auth
@@ -28,9 +28,13 @@ del keys
 # 重命名
 rename oldkey newkey
 
-# 过期时间（单位：秒）
+set key value
+set key value nx ex second
+# 过期时间second（单位：秒）
 expire key second
+# -1(键没有设置即无限长);-2(键已经不存在了即过期了)
 ttl key
+
 
 
 # 切换数据库：dbindex默认0~15
