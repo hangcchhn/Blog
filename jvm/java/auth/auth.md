@@ -1,6 +1,9 @@
 # 权限
 > authorization
 
+- 认证Authentication
+- 授权Authorization
+
 ---
 
 # RBAC(Role-Based Access Control)

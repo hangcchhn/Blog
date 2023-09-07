@@ -24,7 +24,7 @@
     "typ":"JWT",
 }
 ```
-- alg():
+- alg(algorithm):
     - HMAC
     - SHA256
     - RSA.
@@ -75,3 +75,12 @@
 - 前端将JWT校验后保存在Local Storage中，退出登录前删除
 - 发送业务请求时将JWT放在请求头的Authorization中传给后端
 
+
+
+---
+
+
+- JWE(JSON Web Encryption)
+- JWK(JSON Web Key)
+- JWA(JSON Web Algorithm)
+- JWS(JSON Web Signature)
