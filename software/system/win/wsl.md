@@ -65,3 +65,12 @@ wsl --import Ubuntu D:/Ubuntu D:/Ubuntu.tar
 wsl --distribution Ubuntu
 ```
 
+---
+
+
+```sh
+
+# start error:WSL,Docker
+netsh winsock reset
+
+```

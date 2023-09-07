@@ -107,3 +107,15 @@ set update_column1 = update_column1,
 
 --------------------------------------------------------------------------------------------------
 
+
+
+update table1 t1, table2 t2
+set t1.column1 = xxx
+, t2.column2 = xx
+where
+
+update table1 t1, table2 t2
+inner join table2 t
+on t1.c1 = t.c1
+set
+where

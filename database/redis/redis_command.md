@@ -1,8 +1,4 @@
-
-# Redis Command
-
-> redis命令
-
+# Redis 命令
 
 ## 基本操作
 
@@ -21,9 +17,9 @@ keys *
 
 # 类型
 type key
-# 判断存在
+# 0(不存在);1(已存在)
 exists key
-# 删除（可多个）
+# 删除（可多个空格分割）
 del keys
 # 重命名
 rename oldkey newkey
@@ -45,7 +41,7 @@ dbsize
 move key dbindex
 
 # 持久化
-flushdb
+flushdbisis
 flushall
 
 ```
