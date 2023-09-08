@@ -78,8 +78,9 @@ for item0, item1 in zip(iter0, iter1):
 
 - callable(obj)
 
-- globals():全局变量
-- locals():局部变量
+- 返回list:记录命名空间内的
+    - globals():全局变量
+    - locals():局部变量
 
 - vars():本地命名空间
 - vars(obj):对象命名空间

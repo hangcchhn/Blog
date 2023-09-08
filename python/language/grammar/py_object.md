@@ -36,3 +36,8 @@ var2 = copy.deepcopy(var0)  # 深复制
     - `==`->`True`
 
 
+---
+
+头等对象
+
+

@@ -1,6 +1,4 @@
 
-
-
 ```java
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
@@ -24,4 +22,3 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
 ```
-
