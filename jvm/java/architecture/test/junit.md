@@ -79,7 +79,7 @@ public class Test {
 
 
 - JUnit Platform
-- JUnit JUpiter
+- JUnit Jupiter
 - JUnit Vintage
 
 

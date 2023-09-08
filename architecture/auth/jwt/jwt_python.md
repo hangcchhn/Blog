@@ -1,0 +1,5 @@
+
+```sh
+pip install pyjwt
+```
+
