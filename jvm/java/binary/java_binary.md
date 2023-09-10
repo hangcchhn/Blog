@@ -103,6 +103,35 @@ jhat -port 7000 filename.hprof
 > Java Mission Control
 
 
-##
 
 
+---
+
+## jdb
+
+```sh
+
+jdb MainClass
+> stop in MainClass.methodName
+> run
+> next
+
+```
+---
+## jhsdb
+
+```sh
+# 命令行
+jhsdb clhsdb  --pid pid
+# 图形化
+jhsdb hsdb --pid pid
+
+```
+
+
+---
+## jcmd
+
+---
+
+## jdeps

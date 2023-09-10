@@ -1,4 +1,24 @@
 # 通讯
+> communication
+
+
+
+
+
+
+
+
+
+## SPI
+
+
+## RMI
+
+
+## RPC
+> Remote Procedure Call
+- 远程过程调用
+
 
 
 ## RESTful API
@@ -6,6 +26,7 @@
 
 - REST(Representational State Transfer):具象状态传输
 - `Content-Type:application/json`
+
 ---
 | 请求方法 | 接口功能 |
 | :- | :- |
@@ -16,6 +37,8 @@
 | PATCH /user/id | 更新指定用户部分信息 |
 | DELETE /user/id | 删除指定用户 |
 
+
+
 ## Web Service
 > XML
 
@@ -23,10 +46,6 @@
 - WSDL
 - UDDI
 
----
-## RPC
-> Remote Procedure Call
-- 远程过程调用
 
----
+
 

@@ -2,10 +2,6 @@
 > 中间件
 
 
-
-## Log architecture
-
-
 ---
 ## Elasticsearch + Logstash + Kibana
 

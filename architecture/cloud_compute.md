@@ -18,3 +18,19 @@ AWS(Amazon Web Service)
 Marathon
 Mesosphere
 Apache Mesos
+
+
+---
+
+amazon aws lambbda
+
+
+alibaba aliyun function compute
+
+
+microsoft azure functions
+
+
+google cloud functions
+
+

@@ -1,12 +1,11 @@
 # 云原生
 > Cloud Native
 - CNCF:云原生计算基金会(Cloud Native Computing Foundation)
-- 云原生Cloud Native Landscape
+- Cloud Native Landscape
 ---
-- DevOps:开发(Development)和运维(Operations)
 
-- 微服务(Microservice)
-- 无服务(Serverless)
+- 微服务(MicroService)
+- 无服务(ServerLess)
 - 服务网格(Service Mesh)
     - Istio
 
@@ -19,6 +18,7 @@
 - 监控
     - Prometheus
 
+- DevOps:开发(Development)和运维(Operations)
 
 
 - CI/CD:持续集成(Continuous Integration)和持续交付(Continuous Delivery)

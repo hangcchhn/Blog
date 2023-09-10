@@ -57,10 +57,10 @@
 - Java SE(Standard Edition)：标准版
 - Java EE(Enterprise Edition)：企业版
     - JPA(Java Persistence API)
-    - JSF(Java Server Faces)
-    - JSP(Java Server Pages )
-    - JAX-RS(RESTful Service)
-    - EJB(Enterprise Java Beans)：
+    - JSF(Java Server Face)
+    - JSP(Java Server Page)
+    - JAX-RS(RESTful Servic)
+    - EJB(Enterprise Java Bean)：
     - CDI(Context Dependency Injection)：上下文和依赖注入
 - Java EE(Micro Edition)：微型版
 

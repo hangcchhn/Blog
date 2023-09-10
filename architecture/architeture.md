@@ -50,7 +50,7 @@
 # 测试
 
 
-- 系统集成测试：SIT(System Integrate Test)（）
+- 系统集成测试：SIT(System Integrate Test)
 - 用户验收测试：UAT(User Acceptance Test)
 - 性能评估测试：PET(Performance Evaluation Test)
 

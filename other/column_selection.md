@@ -1,5 +1,5 @@
-# 列选择模式
-> column selection mode
+# 列选择
+> column selection
 
 
 ## IntelliJ IDEA

@@ -86,68 +86,11 @@ java -cp .:library.jar:execute.jar package.MainClass
 java -jar -Dxxx=yyy xxx.jar --xxx=yyy
 
 ```
----
-## 远程调试
-```
-java \
-    -Dcom.sun.management.jmxremote.ssl=false \
-    -Dcom.sun.management.jmxremote.authenticate=false \
-    -Dcom.sun.management.jmxremote.port=10569  \
-    -jar mvn_pkg.jar
-
-java -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=10569 -jar mvn_pkg.jar
-
-```
 
 
 
 
 
 
----
 
 
-## JConsole
-
-
-
-- Memory
-    - Heap:Eden Space,Survivor Space, Tenured Gen
-    - Non-Heap:Metaspace(Perm Gen) Code Cache
-    - 垃圾回收GC: 
-        - 新生代:多少秒一次 seconds on Copy (公共多少次 collections)
-        - 老年代:多少秒一次 seconds on MarkSweepCompact (公共多少次 collections)
-        - PS MarkSweep(mirror gc)
-        - PS Scavenge(full gc)
-
-
----
-
-## jdb
-
-```sh
-
-jdb MainClass
-> stop in MainClass.methodName
-> run
-> next
-
-```
----
-## jhsdb
-
-```sh
-# 命令行
-jhsdb clhsdb  --pid pid
-# 图形化
-jhsdb hsdb --pid pid
-
-```
-
-
----
-## jcmd
-
----
-
-## jdeps

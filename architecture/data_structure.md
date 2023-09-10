@@ -1,4 +1,4 @@
-# data structure
+# Data Structure
 > 数据结构
 
 ## 存储方式

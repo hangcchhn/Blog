@@ -1,52 +1,12 @@
 # Java Framework
 
----
+
 ## Spring Framework
-- [spring-framework](spring/spring_framework.md)
 
 
----
-## microservice
+## Apache
 
-- Spring Cloud
-- Quarkus
-- Micronaut
-
-
----
-## persistence
-
----
-## Apache commons-xxx
-
-
----
-## Application Server
-
-- Web Container
-
-- EJB Container
-
-
-- Apache
-- Tomcat
-- Jetty
-- JBoss
-    - Redhat
-- GlassFish
-- WildFly
-
-- Resin
-    - Caucho
-- WebSphere
-    - IBM
-- WebLogic
-    - bea
-- IIS(Internet Information Services)
-    - Microsoft
-    - ASP(Active Server Pages)
-    - .net
-    - C#(C Sharp)
+- commons-xxx
 
 
 ---

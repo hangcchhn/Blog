@@ -1,5 +1,5 @@
 # CDC
-> Change Data Capture
+- Change Data Capture
 - 更改数据捕获
 
 ## 日志
