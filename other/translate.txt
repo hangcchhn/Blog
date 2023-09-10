@@ -262,6 +262,10 @@ rpt
 并发:Concurrency
 并行:Parallelism
 
+
+悲观Pessimistic
+乐观Optimistic
+
 上下文:context
 
 dispatch
