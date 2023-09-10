@@ -1,11 +1,7 @@
-# Java版本
-> version
+# Java特色
 
-
-## Java1.8
-> 52.0
 ---
-### lambda表达式
+## lambda表达式
 > lambda expression
 
 - 匿名函数：lambda表达式由匿名内部类演变而来
@@ -30,7 +26,7 @@ Runnable runnable = ()-> System.out.println("runnable");
 
 
 ---
-### 方法引用
+## 方法引用
 > Method Reference
 
 - 双冒号(::)
@@ -53,7 +49,7 @@ Runnable runnable = ()-> System.out.println("runnable");
 
 
 ---
-### 函数接口
+## 函数接口
 > Function Interface
 - 函数接口`@FunctionInterface`注解
 - 有且仅有一个`abstract`方法的接口，
@@ -62,7 +58,8 @@ Runnable runnable = ()-> System.out.println("runnable");
 
 ---
 
-## 接口类型：`java.util.function`
+## 接口类型
+> `java.util.function`
 - `Runnable`：`() -> void`
 - 消费者接口：`accept`方法
     - `Consumer`：`(P) -> void`
@@ -87,42 +84,6 @@ Runnable runnable = ()-> System.out.println("runnable");
 
 
 ```
-### Stream
-[Stream](java_stream.md)
 
-
-
----
-
-## Java11
-> 55.0
-
----
-
-- 动态类型：`var`
-
-
-- 模块化：`module-info.java`
-
----
-
-
-- Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
-
-```sh
-
-# -XX:+UseConcMarkSweepGC
--XX:+UseG1GC
-
-```
-
-- Unrecognized VM option
-```sh
-# -XX:+UseCMSCompactAtFullCollection
-# -XX:+UseFastAccessorMethods
-```
-
----
-## Java17
 
 

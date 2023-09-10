@@ -65,9 +65,10 @@ try {
 ---
 ## AutoCloseable
 > java1.7
-流对应的类都实现了自动关闭接口AutoCloseable
-stream:创建流对象语句，如果多个，使用';'隔开
-此语句总会执行语句执行对非空流对象进行关闭操作
+
+- 流对应的类都实现了自动关闭接口AutoCloseable
+- stream:创建流对象语句，如果多个，使用';'隔开
+- 此语句总会执行语句执行对非空流对象进行关闭操作
 - try-with-resources
 ```java
 
