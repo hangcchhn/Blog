@@ -5,6 +5,11 @@
 
 - SparkContext
 - SparkConf
+- SparkEnv
+- SparkSession
+
+
+- MetricsSystem
 
 
 - Spark依赖Hadoop环境
