@@ -224,6 +224,8 @@ divide
 
 组件:component
 
+解决方案solution
+
 伪分布式Pseudo-Distrubuted
 
 
@@ -287,7 +289,7 @@ QPS(Queries Per Second):每秒查询
 TPS(Transactions Per Second):每秒事务
 RT(Response Time):响应时间
 Concurrency:并发数
-吞吐量
+throughput:吞吐量
 
 ---
 
@@ -303,6 +305,11 @@ Concurrency:并发数
 百万：million
 千：kilo
 
+PB
+TB
+GB
+MB
+KB
 
 --------------------------------------------------------------------------------------------------
 
