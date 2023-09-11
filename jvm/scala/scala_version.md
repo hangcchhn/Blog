@@ -6,6 +6,7 @@
 
 
 ## Scala 3
+- LTS:3.3.x
 
 - 省略花括号
 ```scala
