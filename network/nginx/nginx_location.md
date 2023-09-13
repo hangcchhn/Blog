@@ -35,32 +35,7 @@ server {
         return 200 $uri;
     }
 
-    location /test5 {
-        return 200 $uri;
-    }
 }
 ```
 
----
-```nginx
 
-server {
-    listen 81;
-    server_name localhost;
-
-    location / {
-        return 200 'index';
-    }
-    # 前缀匹配/api/v2
-    location ^~ /api/v2 {
-        return 200 'api-v2';
-    }
-
-    # 普通匹配/api：优先级比前缀匹配/api/v2低
-    location /api {
-        return 200 'api-v1';
-    }
-
-}
-
-```

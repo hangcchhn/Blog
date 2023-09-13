@@ -5,6 +5,9 @@
 - 字符串函数
 ```sql
 
+substr()
+substring()
+
 -- 返回字串：按分隔符在第几处截取字串
 select substring_index('yyyy-mm-dd', '-', 2);-- yyyy-mm
 

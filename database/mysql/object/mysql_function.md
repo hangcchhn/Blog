@@ -2,7 +2,6 @@
 > function
 
 - 字符串相关
-    - substring()
     - trim()
     - rtrim()
     - ltrim()
