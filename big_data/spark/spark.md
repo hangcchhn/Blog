@@ -11,12 +11,21 @@
 ## 组件
 
 - Spark Core
-- Spark Streaming
-- Spark SQL
+- Spark Streaming：实时流处理
+- Spark SQL：即时查询
 - MLlib：机器学习ML
 - GraphX：图
 
 
+
+---
+
+- 内核原理
+- 资源调度
+- 离线计算
+- 流式计算
+- 任务计算
+- 机器学习
 
 
 

@@ -36,6 +36,9 @@
 # 文件格式
 
 - Text文件
+- JSON
+- CSV
+- XML
 - Sequence文件
 - RC文件
 - ORC文件：RC文件优化版本
