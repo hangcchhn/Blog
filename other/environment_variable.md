@@ -3,7 +3,7 @@
 > 环境变量
 
 ---
-## Linux系统
+## Linux
 ```sh
 env key=value
 
@@ -16,7 +16,7 @@ env key=value
 
 ---
 
-## Windows系统
+## Windows
 
 ### 图形化设置
 ```
@@ -47,7 +47,7 @@ setx key value
 
 
 ---
-## python语言
+## Python
 
 ```py
 import os

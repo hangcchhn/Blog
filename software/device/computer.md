@@ -1,4 +1,3 @@
-# 计算机
 > computer
 
 
@@ -62,6 +61,8 @@
 - DRAM(Dynamic RAM)
 
 ## 存储
+> Storage
 
-- Storage
-   dasd
+
+- Disk
+

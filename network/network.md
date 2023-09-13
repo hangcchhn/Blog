@@ -1,5 +1,5 @@
-# compute network
-> 计算机网络
+# Network
+> 网络
 
 ---
 

@@ -1,11 +1,18 @@
-# operating system
-> OS:操作系统
+# 软件
+> software
+
+- OS
+- command
+- execute
+- service
+- desktop
+
+---
 
 ## Unix
 ## Linux
- 
 
----
+
 ## Apple
 - macOS
 - iOS

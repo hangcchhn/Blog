@@ -1,29 +1,20 @@
 
-msc(manager servies control)
+# MSC
+- Manager Servie Control
 
-
-services.msc
-
-
-
-taskschd.msc
-
-
-本地组策略编辑器
-gpedit.msc
-
-
-fsmgmt.msc
-
-
-diskmgmt.msc
-
-
-devmgmt.msc
-
-dfrg.msc
 ---
-|  | :- |
+
+- services.msc
+- taskschd.msc
+- gpedit.msc：本地组策略编辑器
+- fsmgmt.msc
+- diskmgmt.msc
+- devmgmt.msc
+- dfrg.msc
+
+---
+
+| 英文 | 中文 |
 | :- | :- |
 | azman.msc | 授权管理器 |
 | certlm.msc | 证书-本地计算机 |

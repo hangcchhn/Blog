@@ -105,3 +105,9 @@
 ---
 
 - ExecutorAllocationManager
+
+- BlockManager
+
+- 持久化
+
+- 广播变量

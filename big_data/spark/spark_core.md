@@ -24,11 +24,3 @@ Client -> Driver -> Cluster Manager -> Worker Node
 
 
 
----
-
-
-- 获取数据
-    - HDFS
-    - HBase
-    - Cassandra
-    - Kafka

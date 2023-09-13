@@ -73,7 +73,7 @@
 
 ---
 
-## Mac OS X Font
+## macOS Font
 
 - Menlo:
 - Monaco:
@@ -85,9 +85,9 @@
 
 ---
 
-## Linux Font (Tweaks)
+## Linux Font
 
-
+- Tweaks
 - WenQuanYi Micro Hei Mono
     - 文泉驿等宽微米黑
 ```sh
@@ -112,3 +112,10 @@ yum install wqy-microhei-fonts
         - HK(Hong Kong)
     - JP(Japanese)
     - KR(Korean)
+
+
+```sh
+apt install fonts-noto-mono
+
+
+```
