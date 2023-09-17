@@ -21,25 +21,15 @@
 - 以太网Ethernet
 
 ---
-- HTTPS
+
+# 安全
+> Secure
 
 
-- 安全套接字层SSL(Secure Socket Layer)
-- 传输协议安全TLS(Transport Layer Security)
--
-
-- CA
 ---
 
-
-## 服务端
->  server
-## 客户端
-> client
-
-
-## 浏览器
-> browser
+## 协议
+> protocol
 
 
 scheme://[user[:password]@]host[:port][/path][?query][#fragment]
