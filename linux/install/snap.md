@@ -58,6 +58,8 @@ snap install sublime-text --classic
 snap install sublime-merge --classic
 
 
+snap install intellij-idea-ultimate --channel=2022.2/stable --classic
+
 ```
 
 ---

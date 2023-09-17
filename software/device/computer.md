@@ -52,17 +52,19 @@
 
 - 总线嗅探(Snoop)机制：CPU和内存通过总线互通消息
 
-
-
 ## 内存
-> Memory
+> memory
+
+- RAM
+    - SRAM
+    - DRAM
 
 
-- DRAM(Dynamic RAM)
+- DDR3/DDR3L
 
-## 存储
-> Storage
+## 硬盘
+> Drive
 
-
-- Disk
-
+- SSD(Solid State Drive):固态硬盘
+- HHD(Hybrid Hard Drive)
+- HDD(Hard Disk Drive)

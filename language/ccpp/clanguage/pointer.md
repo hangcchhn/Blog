@@ -60,30 +60,7 @@ char char_array[] = "string";
 
 
 
----
-## 指针的申请和释放
 
-- C语言使用malloc和free对内存进行申请和释放
-- C++语言使用new和delete对内存进行申请和释放
-- C++语言时兼容C语言的，主要是比C语言多了面向对象编程
-
----
-
-- clanguage中malloc和free是函数
-```c
-#include<stdlib.h>
-#include<malloc.h>
-
-Struct *ps = (Struct*) malloc(sizeof(Struct));
-free(ps);
-
-```
-
-- cplusplus中new和delete是关键字
-```cpp
-Class *pc = new Class();
-delete pc;
-```
 
 
 

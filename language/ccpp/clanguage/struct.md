@@ -2,17 +2,40 @@
 # 结构体
 > struct
 
-## C语言——结构体
+- 结构体的成员变量没有权限控制，类有
 
-- 成员变量没有权限控制
+
+- C++语言可以在结构体内定义函数，C语言不可以
+- C++语言中，如果结构体的成员类型存在类，创建结构体类型的变量时就只能使用new，而不能使用malloc，因为malloc只会分配内存，不会调用类的构造函数实例化对象
+
+
+---
+## 结构体
+
+
 
 
 ```c
-typedef struct Struct
+
+
+// 即适用C语言又适用C++语言
+// 定义
+struct DataType
 {
     int i;
+}Variable;
+// DataType是结构体数据类型
+// Variable是结构体类型变量
 
+// 别名
+typedef struct
+{
+    int i;
 }Struct, *PStruct;
+// Struct为结构体类型
+// PStruct为结构体指针
+
+
 
 void printfStruct(Struct s)
 {
@@ -37,27 +60,3 @@ int main()
 
 
 
----
-## C++语言——结构体
-
-```cpp
-typedef struct Struct
-{
-    int i;
-    // C++语言可以在结构体内定义函数，C语言不可以
-    void coutStruct()
-    {
-        cout << i << endl;
-    }
-
-}Struct, *PStruct;
-
-
-int main()
-{
-    Struct s = {1};
-    s.coutStruct();
-    return 0;
-}
-
-```

@@ -1,14 +1,11 @@
 # C/C++
 
 
----
-## c & cpp
-### clanguage
-
+- clanguage
 ```c
 
 ```
-### cplusplus
+- cplusplus
 ```cpp
 
 ```
@@ -51,63 +48,6 @@ int main(int argc, char* argv[])
 
 
 ```
----
-### clanguage
-
-```c
-// 即适用C语言又适用C++语言
-// 定义
-struct DataType
-{
-    int i;
-}Variable;
-// DataType是结构体数据类型
-// Variable是结构体类型变量
-
-// 别名
-typedef struct
-{
-    int i;
-}Struct, *PStruct;
-// Struct为结构体类型
-// PStruct为结构体指针
-
-
-```
-### cplusplus
-
-- C++语言可以在结构体内定义函数，C语言不可以
-- C++语言中如果结构体定义对象类型成员，创建结构体类型变量就只能使用new，而不能使用malloc，因为malloc只会分配内存，不会调用类的构造函数实例化对象
-
-```cpp
-class Class
-{
-    int i;
-}
-
-```
----
-## 字符串
-
-### clanguage
-
-```c
-
-char char_array[] = "string";//字符数组
-char *char_pointer = "string";//字符指针
-
-```
-### cplusplus
-```cpp
-
-```
-
-- C++语言中字符串是常量
-    - `const char* p = "string";`
 
 
 ---
-## 编译
-> compile
-## 链接
-> link

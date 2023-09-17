@@ -1,7 +1,15 @@
-# gcc & gdb
->
+# GNU
+
+
+- gcc
+- gdb
+- glibc
+- g++
 
 ---
+
+
+
 ## gcc编译器
 - 生成默认的目标文件a.out：`gcc helloworld.c`
 - 生成指定的目标文件：`gcc helloworld.c -o helloworld`
@@ -11,23 +19,12 @@
 
 
 
----
+
 ## gdb调试器
 ```sh
-gdb				//进入gdb调试器
+gdb
 ```
 
----
 ## g++编译器
 
 
-makefile
-
-
-make
-
-
-cmake
-
-
-qmake

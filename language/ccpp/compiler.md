@@ -22,18 +22,9 @@
 - GPL(GNU General Public License):GNU通用公共许可证
 - GCC(GNU Compiler Collection):GNU编译器套装
 
-
-
-
-- gcc
-- gdb
-- glibc
-- g++
-
 - MinGW(Minimalist GNU for Windows)
 
-
-
+- [GNU](gnu.md "GNU")
 
 ---
 ## MSVC

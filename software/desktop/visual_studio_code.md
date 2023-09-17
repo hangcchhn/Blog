@@ -1,6 +1,6 @@
 # Visual Studio Code
 
-- Account:hangcchhn@outlook.com
+
 
 ---
 
