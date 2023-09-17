@@ -59,8 +59,9 @@
     - M2
 
 - Intel
-    - Core:酷睿
+    - Core:酷睿，桌面端
         - i3,i5,i7,i9
+        - Windows 11L:性能核P，能效核E
     - Xeon:至强，服务器
     - Iris:显卡
         - Xe
