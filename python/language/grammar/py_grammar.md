@@ -50,12 +50,12 @@ if __name__ == '__main__':
 
 ---
 ## 特殊注释
-```py
+- NOQA:NO Quality Assurance
+    - 自动检查忽略错误
 
-# 自动检查忽略错误
-# NOQA:no quality assurance
-#
-#
+```py
+# noqa
+
 ```
 ---
 ```py

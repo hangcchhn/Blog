@@ -12,8 +12,14 @@
 
 ## ORM
 
+---
+
+## Session
 
 
+- scoped_session
+
+- 线程本地存储(Thread Local Storage)
 ---
 
 ## 版本

@@ -4,15 +4,13 @@
 - 数据库持久层
 
 
-JPA（Java Persistence API——Java 持久化 API）
+- JPA(Java Persistence API):Java持久化API
+- ORM(Object Relational Mapping):对象关系映射
 
-ORM（Object Relational Mapping——对象关系映射）
 
-
-JPA是SUN公司推出的一套基于ORM的规范，
-注意不是ORM框架，JPA并未提供ORM实现。
-
-JPA依赖hibernate框架，hibernate框架是ORM框架，给JPA提供ORM实现
+- JPA是SUN公司推出的一套基于ORM的规范，
+- 注意不是ORM框架，JPA并未提供ORM实现。
+- JPA依赖hibernate框架，hibernate框架是ORM框架，给JPA提供ORM实现
 
 ---
 

@@ -132,8 +132,3 @@ public class CloneClass implements Cloneable {
 
 
 
-
----
-jmh——Java Micro-benchmark Harness
-
-
