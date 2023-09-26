@@ -12,6 +12,10 @@
 
 ## Visual Studio Code
 
+- Menu -> Selection
+
+- Alt + Left
+- Ctrl + Left
 
 ## Sublime Text
 

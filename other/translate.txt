@@ -128,12 +128,13 @@ category
 
 声明:Declare
 
+排序:sort
+逆转:reverse
 
-逆序:reverse
 递归:recursive
 
-并发:Concurrency
-并行:Parallelism
+并发:concurrency
+并行:parallelism
 
 
 悲观Pessimistic
