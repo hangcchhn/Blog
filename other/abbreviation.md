@@ -12,6 +12,9 @@ CLI(Command Line Interface)
 GUI(Graphical User Interface)
 
 
+内容分发网络
+CDN(Content Delivery Network)
+
 ---
 
 - Co:Company公司

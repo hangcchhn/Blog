@@ -126,22 +126,25 @@ FastAPI使用uvicorn部署
 
 ---
 
-债券
-
-python flask
-
 
 airflow
 
-django
-djang-rest-framework
-celery
+
 supervisor
 mock
 coverage
+
 gevent
 gunicorn
 
-pydantic
-python-dotenv
-.example.env
+
+----
+
+
+结构化并发
+Structured Concurrency
+
+JDK 21
+
+
+StructuredTaskScope

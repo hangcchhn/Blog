@@ -1,4 +1,4 @@
-性能优化
+# Python性能
 
 
 
@@ -26,7 +26,7 @@
 
 
 
---------------------------------------------------------------------------------------------------
+---
 
 
 
@@ -38,36 +38,41 @@ linux统计式性能分析器oprofile
 
 python统计式性能分析器statprof
 
---------------------------------------------------------------------------------------------------
+---
 
 
-timeit
+- timeit
 
-profile
+- profile
 
---------------------------------------------------------------------------------------------------
+---
 
 
-cProfile
+## cProfile
+```sh
 python -m cProfile -o prof.prof py_cprofile.py
 runsnake prof.prof
 
 python -m pstats prof.prof
 
+```
 
 
-ncalls   函数总的调用次数
-tottime  函数内部（不包括子函数）的占用时间
-percall （第一个） tottime/ncalls
-cumtime  函数包括子函数所占用的时间
-percall （第二个）cumtime/ncalls
+
+
+
+- ncalls   函数总的调用次数
+- tottime  函数内部（不包括子函数）的占用时间
+- percall （第一个） tottime/ncalls
+- cumtime  函数包括子函数所占用的时间
+- percall （第二个）cumtime/ncalls
 
 filename:lineno(function)
 文件:行号(函数)
 
 
---------------------------------------------------------------------------------------------------
-statprof
+---
+## statprof
 pip install statprof
 
 python py_cprofile.py
@@ -75,9 +80,10 @@ python py_cprofile.py
 windows不支持statprof无反应
 centos：python2测试无结果，python3测试报错
 
---------------------------------------------------------------------------------------------------
+---
 
-line_profiler
+## line_profiler
+
 pip3 install line_profiler==3.3.0
 pip2 install line_profiler==2.1.2
 kernprof命令属于line_profiler
@@ -96,13 +102,13 @@ Per Hit：代码行平均消耗时间
 % Time：代码行时间消耗比例
 Line Contents：行内容
 
---------------------------------------------------------------------------------------------------
+---
 
 pip install memory_profiler
 
 pip install objgraph
 
---------------------------------------------------------------------------------------------------
+---
 
 pip install pyprof2calltree
 pyprof2calltree -i prof.prof
@@ -114,8 +120,8 @@ pyprof2calltree生成prof.prof.log
 linux:kcachegrind
 win/mac:qcachegrind
 
---------------------------------------------------------------------------------------------------
-
+---
+## RunSnakeRun
 
 win:pip install RunSnakeRun
 mac:pip install RunSnake
@@ -143,4 +149,10 @@ python -m cProfile -o prof.prof py_cprofile.py
 runsnake prof.prof
 
 
---------------------------------------------------------------------------------------------------
+---
+
+## kcachegrind
+
+---
+
+## Valgrind

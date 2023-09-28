@@ -66,19 +66,25 @@ function.__globals__['variable']
 ```
 
 ---
-## lambda表达式 -> 匿名函数
+## lambda表达式
+
+- 匿名函数
+
+- 有输入和输出
+- 独立命名空间
 
 
 ```py
-def function_name(x):
-    return expression(x)
+def function(argument):
+    return expression(argument)
 
-lambda_expression = lambda x: expression(x)
+lambda_expression = lambda argument: expression(argument)
 
 
 
 map(lambda x:)
 filter(lambda x:)
+sorted(lambda x,y:)
 ```
 
 

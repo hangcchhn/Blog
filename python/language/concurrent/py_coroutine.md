@@ -4,17 +4,20 @@
 - `async`添加在函数声明前
     - Python 3.5+
 
-- asyncio模块
+- asyncio
+- trio
+- AnyIO
+
 
 ```py
 
-def function_name():
+def function():
     return object
 
-def generator_name():
+def generator():
     yield object
 
-async def coroutine_name(): # coroutine
+async def coroutine():
     return object
 
 
