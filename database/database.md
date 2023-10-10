@@ -42,3 +42,11 @@
     - Apache Lucene
 
 
+
+
+## Apache Ignite
+
+- 分布式数据库
+- 内存
+- 计算
+- 支持SQL语法，H2，ANSI-99

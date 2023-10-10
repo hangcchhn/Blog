@@ -1,15 +1,17 @@
-
+# Python语言concurrent包
 
 
 ---
 ## concurrent.futures
 
 
-- Executor
-    - ThreadPoolExecutor
-    - ProcessPoolExecutor
+## Executor
+- ThreadPoolExecutor
+- ProcessPoolExecutor
 
-- sublime
+
+
+- submit
 - map
 - shutdown
 -
@@ -17,4 +19,4 @@
 
 ---
 
-- Future
+## Future
