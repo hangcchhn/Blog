@@ -21,9 +21,6 @@
 
 ---
 ### Tornado
->
->
->
 - 高并发、可扩展
 
 ### Twisted
@@ -42,35 +39,22 @@
 
 ---
 
-#### FastAPI
+## FastAPI
 > Python 3.6+
 - uvicorn
 - swagger
 
-#### Bottle
+- Bottle
 
 
 
-#### web2py
+- web2py
 
 
-#### web.py
-
-
-
-## ORM
-
-
-### SQLAlchemy
-
-### Django ORM
+- web.py
 
 
 
-
-
-
-### peewee
 
 
 ---

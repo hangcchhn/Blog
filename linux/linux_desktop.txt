@@ -65,3 +65,16 @@ X-UnityGenerated=true
 - MATE
 - Cinnamon
     - Linux Mint默认
+
+- GTK
+
+- X协议
+- X Window
+    - X Server
+    - X Client
+
+- window manager
+- display server
+
+- X11
+- Wayland

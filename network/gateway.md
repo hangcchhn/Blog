@@ -9,6 +9,8 @@
 
 - Traefik
 
+- Sentinel
+
 
 ## APISIX
 > Apache

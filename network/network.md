@@ -1,10 +1,8 @@
 # Network
 > 网络
 
----
 
-
-
+## 类型
 
 - 广域网WAN(Wide Area Network)
 
@@ -16,29 +14,15 @@
     - 基于IEEE 802.11b的无线局域网
 
 
----
-
 - 以太网Ethernet
 
----
 
-# 安全
-> Secure
+## 框架
 
-
----
-
-## 协议
-> protocol
+- Nginx
+- OpenResty
+- Kong
+- Pingora
 
 
-scheme://[user[:password]@]host[:port][/path][?query][#fragment]
-
-- scheme
-    - http
-    - ftp
-- host
-    - ip
-- port
-- path
 

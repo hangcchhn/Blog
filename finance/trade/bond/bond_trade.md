@@ -11,6 +11,7 @@
     - 在同业拆借市场，无担保资金融通行为
     - 拆入，拆出
 
+- 同业拆放IBLB(inter-bank lending borrowing)
 
 - 同业存单
 
