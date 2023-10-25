@@ -64,33 +64,3 @@ python manage.py shell
 
 ```
 
-
-- test
-```py
-
-from django.db.models import Model, CharField, IntegerField, DateField
-
-
-class UserModel(Model):
-    user_name = CharField(max_length=128,)
-    mobile = CharField(max_length=11,)
-    status = IntegerField()
-    birthday = DateField(default='2000-01-01')
-
-    pass
-```
-
-
-```sh
-
-
-python manage.py test --keepdb
-python manage.py test --noinput
-
-python manage.py test # all
-python manage.py test django_service # package
-python manage.py test django_service.tests # module
-python manage.py test django_service.tests.MenuTestCase # class
-python manage.py test django_service.tests.MenuTestCase.test_menu_filter # method
-
-```

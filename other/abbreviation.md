@@ -27,6 +27,15 @@ CDN(Content Delivery Network)
 - 短信:SMS(Short Message Service)
 - 应用编程接口:API(Application Programming Interface)
 
+
+---
+
+- 联机事务处理OLTP(On-Line Transaction Processing)
+    - INSERT, UPDATE, DELETE
+
+- 联机分析处理OLAP(On-Line Analytical Processing)
+    - SELECT
+
 ---
 
 

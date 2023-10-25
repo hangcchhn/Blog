@@ -15,3 +15,8 @@
 - 免疫策略(immunization strategies)
     - 所得免疫(income immunization)
     - 价格免疫(price immunization)
+
+
+
+- 净值 = 资产 / 份额
+- net_value = asset / unit

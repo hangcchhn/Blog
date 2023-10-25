@@ -58,11 +58,16 @@
 - 默认base64加密
 - Token可以放在Cookie中
 
+### Token过期和续期
+- 单Token
+    - 刷新Token
 
-### 类型
-- `access_token`：有效期短
-- `refresh_token`：有效期长，
-- 登录接口生成`refresh_token`，`refresh_token`用来获取`access_token`，`access_token`访问业务接口
+- 双Token
+    - `access_token`：有效期短
+    - `refresh_token`：有效期长
+    - 登录接口返回`refresh_token`
+    - 使用`refresh_token`刷新`access_token`
+    - 使用`access_token`访问业务接口
 
 
 

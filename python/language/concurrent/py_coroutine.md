@@ -1,8 +1,9 @@
 # 协程
 > coroutine
 
-- `async`添加在函数声明前， 使用`await`调用异步函数
+- `async`添加在函数声明前，使用`await`调用异步函数
     - Python 3.5+
+- `await`代替`yield from`
 
 - asyncio
 - trio
