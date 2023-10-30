@@ -1,7 +1,9 @@
 
 # Django Test
 
+- 参考unittest框架
 
+- 测试用例所在文件命名规则:`test*.py`
 ```py
 
 from django.db.models import Model, CharField, IntegerField, DateField
@@ -66,5 +68,6 @@ python manage.py test django_service.tests.MenuTestCase.test_menu_filter # metho
 
 
 
+python manage.py test --pattern="test_*.py"
 
 ```
