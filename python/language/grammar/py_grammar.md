@@ -110,7 +110,15 @@ def function_name() -> return_type:
 ```py
 
 
-global
+# 修改全局变量时需要提前声明
+
+global_variable = 0
+
+def function()
+    global global_variable
+    global_variable = 1
+
+    pass
 
 nonlocal
 

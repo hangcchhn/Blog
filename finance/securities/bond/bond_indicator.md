@@ -46,8 +46,14 @@
 
 - 浮动利率 = 基准利率 + 利差
 - 基准利率：按金融市场分
-    - 国际：上海银行间同业拆借利率Shibor(ShangHai InterBank Offered Rate)
-    - 中国：伦敦银行间同业拆借利率Libor(London InterBank Offered Rate)
+    - 中国：上海银行间同业拆借利率SHIBOR(ShangHai InterBank Offered Rate)
+    - 国际：伦敦银行间同业拆借利率LIBOR(London InterBank Offered Rate)
+        - SOFR(Secured Overnight Financing Rate)
+        - 担保隔夜融资利率：基于美国国债抵押回购市场的隔夜利率；
+        - 以美元计价，被广泛用作美元金融衍生品和贷款的利率基准。
+        - 国际互换与衍生品协会ISDA浮动利率基准使用SOFR替换LIBOR
+            - International Swaps and Derivatives Association
+
 ---
 
 - 票面利率(Coupon Rate)
@@ -138,6 +144,11 @@ $$
 - 投资人应收到而发行人尚未支付的累计票息收入的计提。
 
 - 实际天数ACT：算头不算尾
+
+- 区分债券和利率互换
+
+
+
 
 ### 贴现债券
 - 发行价格与票面价值之间的差值

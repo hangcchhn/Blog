@@ -64,8 +64,12 @@
 - APScheduler(Advanceded Python Scheduler)
     - 基于Quartz
 
+
+
 - Celery
 
+
+- Airflow
 
 
 ---

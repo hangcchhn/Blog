@@ -16,7 +16,7 @@
     - 计息基准
 
 - 浮动float
-    - 基准利率：Shibor-3M或FR007
+    - 基准利率：SHIBOR-3M或FR007
     - 利差
     - 支付周期
     - 计息基准
@@ -33,10 +33,10 @@
 
 
 - FR007：
-- Shibor-3M：
+- SHIBOR-3M：
+- SHIBOR-ON：
 
-
-
+    -
 ---
 
 
