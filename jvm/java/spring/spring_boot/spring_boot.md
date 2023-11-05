@@ -119,9 +119,8 @@ logging.logback.
 
 ## 程序启动执行接口
 
-- implements ApplicationRunner
-
-- implements CommandLineRunner
+- `ApplicationRunner`
+- `CommandLineRunner`
 
 
 ---

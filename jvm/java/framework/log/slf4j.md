@@ -26,8 +26,9 @@
 
 ## MDC
 > Mapped Diagnostic Context
+- 映射诊断式上下文
 
-- `MDC`类是线程安全的，底层使用`ThreadLocal`
+- `MDC`类是线程安全的，底层使用`ThreadLocal`类
 
 ```java
 MDC.put(key, value);

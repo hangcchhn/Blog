@@ -67,10 +67,12 @@ if __name__ == '__main__':
 celery -A pkg.app beat -l info
 # celery worker --help
 celery -A pkg.app worker -l info -E
+
+
 ```
 
 - Windows系统支持不好，需要指定`-P, --pool`
-```bat
+```sh
 celery -A pkg.app worker -l info -P threads -E
 
 pip install eventlet
@@ -79,16 +81,18 @@ celery -A pkg.app worker -l info -P eventlet -E
 pip install gevent
 celery -A pkg.app worker -l info -P gevent -E
 
+# -c, --concurrency N
+
+# 心跳检测
+--without-heartbeat
+–-heartbeat-interval=10
+
 ```
 
-## 调试
-
-- PyCharm执行`celery worker`：指定命令`celery`文件路径
-    - 实测：Windows系统只能run不能debug，Ubuntu系统都能
 
 ---
 
-# 配置文件
+# 配置
 
 
 
