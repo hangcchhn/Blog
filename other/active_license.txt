@@ -115,6 +115,23 @@ MP10-733-3P1E-FE7A-D3BM
 
 --------------------------------------------------------------------------------------------------
 
+VMware Workstation 17
+4A4RR-813DK-M81A9-4U35H-06KND
+NZ4RR-FTK5H-H81C1-Q30QH-1V2LA
+JU090-6039P-08409-8J0QH-2YR7F
+4Y09U-AJK97-089Z0-A3054-83KLA
+4C21U-2KK9Q-M8130-4V2QH-CF810
+
+VMware Fusion 13
+4C21U-2KK9Q-M8130-4V2QH-CF810
+ZF3R0-FHED2-M80TY-8QYGC-NPKYF
+YF390-0HF8P-M81RQ-2DXQE-M2UT6
+ZF71R-DMX85-08DQY-8YMNC-PPHV8
+
+17：JU090-6039P-08409-8J0QH-2YR7F
+
+22H2：ZA5RU-6FYD5-48EPY-3XXEE-PAUGD
+--------------------------------------------------------------------------------------------------
 
 
 
