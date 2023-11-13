@@ -69,3 +69,7 @@ dir(functools)
 
 - `pickle`模块：持久化，本地文件，用法类似`json`
 ---
+
+
+- AsyncIO
+- timeit

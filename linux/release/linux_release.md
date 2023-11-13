@@ -58,8 +58,13 @@ cat /etc/os-release
 ## Linux Mint
 
 ## Arch Linux
+
+### Manjaro
+- 基于Arch Linux
+- AUR(Arch User Repository)
+
 ## Kali Linux
-## Manjaro Linux
+
 ## Gentoo Linux
 ## Oracle Linux
 

@@ -59,3 +59,8 @@ group by子句必须出现在where子句之后，order by子句之前. having语
 ---
 
 
+```sql
+-- 类型转换
+select cast(column_name as column_name_type)
+
+```

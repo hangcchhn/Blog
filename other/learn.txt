@@ -75,7 +75,12 @@ ELK(ElasticsSearch, Logstash, Kibana)
 OSS(OpenSourceSystem)
 
 
+GraphicsMagick
+ImageMagick
 
+Ghostscript
+
+FFmpeg
 
 
 --------------------------------------------------------------------------------------------------

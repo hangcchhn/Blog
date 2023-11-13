@@ -1,4 +1,18 @@
-# jmeter
+# JMeter
+
+---
+
+- Test Plan
+- Thread Group
+- Sampler
+    - HTTP Request
+- HTTP Header Manager
+- HTTP Cookie Manager
+- HTTP Cache Manager
+- Listener
+    - View Results Tree
+    - Summary Report
+        - s
 
 
 
@@ -54,5 +68,8 @@
 ---
 ## 执行命令
 ```sh
+# Windows
+jmeterw.cmd
+
 jmeter -n -t jmeter.jmx -l jmeter.jtl
 ```
