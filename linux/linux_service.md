@@ -38,7 +38,10 @@ WantedBy=multi-user.target # 多用户命令行
 # 服务状态|开启|停止|重启
 service ****** status|start|stop|restart
 
+# 查询所有服务状态
 service --status-all
+
+
 ```
 ## chkconfig
 ```sh

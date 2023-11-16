@@ -43,7 +43,7 @@ docker login repository_host:repository_port
 ---
 
 
-## Docker Hub
+## Docker仓库
 
 
 - alpine
@@ -53,12 +53,16 @@ docker login repository_host:repository_port
 - debain
     - buster
 
-
+---
+### hub.docker.com
 
 - bitnami
-    - vmware
+    - VMware
+
 - rapidfort
 
+### quay.io
+    - RedHat
 
 ---
 ## 删除镜像
