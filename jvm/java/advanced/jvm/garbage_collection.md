@@ -74,10 +74,13 @@ Reference Chain 引用链
 - 老年代垃圾回收频率低，速度慢。
 
 
+
 - New generation分为一个Eden区(伊甸园)、from Survivor和to Survivor(幸存区)。
 
-- 两个Survivor是同个等级的，同一时间两个Survivor中有一个用来保存对象(from Survivor)
-，而另一个是空的(to Survivor)，在下次的新生代GC中保存对象，关于from和to Survivor是动态的。
+- 两个Survivorr的大小是相同的
+- 两个Survivor是同个等级的，
+- 同一时间两个Survivor中有一个用来保存对象(from Survivor)，而另一个是空的(to Survivor)，在下次的新生代GC中保存对象，
+- 关于from和to Survivor是动态的。
 
 - 创建对象都放在Eden区，当Eden区满了之后会触发minor GC，将Eden区和from Survivor中存活对象转移到to Survivor，上述过程是循环的，此时from和to Survivor的名称进行对调。
 
@@ -95,7 +98,7 @@ New代对象在Survivor区经过15次GC之后才进入Old代，设置为0表示�
 - 有可能还没到阈值就从survive直接转到Old generation
 - 当对象大小超过设置的阀值gc后直接转到Old generation
 
-- -XX:PretenureSizeThreshOld=1024k
+- `-XX:PretenureSizeThreshOld=1024k`
 New代对象大小超过1024k时GC之后就进入Old代，设置为0表示直接进入Old代
 
 ---
@@ -126,31 +129,41 @@ Old generation的GC称为major GC，
 
 
 ## 参数
-```
-禁用显示垃圾回收
--XX:DisableExplicitGC
-// 显式垃圾回收
+```java
+// 显式垃圾回收Full GC：新生代和老年代的垃圾回收
 System.gc();
-// full GC:新生代和老年代的垃圾回收
+```
+
+```sh
+
+# 禁用显示垃圾回收
+-XX:DisableExplicitGC
 
 -Xx:-UseGCOverheadLimit
 限制GC的运行时间。如果GC耗时过长，就抛OOM，默认开启
 
--verbose:gc             查看GC的详细信息
+# 查看GC的详细信息
+-verbose:gc
 
--XX:+PrintGC            打印GC的简要信息
--XX:+PrintGCDetails     打印GC的详细信息
--XX:+PrintGCTimeStamps  打印CG发生的时间戳
--XX:+PrintHeapAtGC      每次GC前后都打印堆信息
--Xloggc:log/gc.log      指定GC日志输出文件位置
+# 打印GC的简要信息
+-XX:+PrintGC
+# 打印GC的详细信息
+-XX:+PrintGCDetails
+# 打印CG发生的时间戳
+-XX:+PrintGCTimeStamps
+# 每次GC前后都打印堆信息
+-XX:+PrintHeapAtGC
+指定GC日志输出文件位置
+-Xloggc:log/gc.log
 
-
--XX:+PrintGCApplicationConcurrentTime   打印每次垃圾回收前程序执行时间
+# 打印每次垃圾回收前程序执行时间
+-XX:+PrintGCApplicationConcurrentTime
     Application time: 0.5291524 seconds
--XX:+PrintGCApplicationStoppedTime      打印垃圾回收期间程序暂停的时间
+# 打印垃圾回收期间程序暂停的时间
+-XX:+PrintGCApplicationStoppedTime
     Total time for which application threads were stopped: 0.0468229 seconds
-
--XX:+PrintTenuringDistribution      在垃圾回收时打印Survivor区的对象的大小和年龄
+# 在垃圾回收时打印Survivor区的对象的大小和年龄
+-XX:+PrintTenuringDistribution
     Desired Survivor size 163840 bytes, New threshold 1 (max 15)
 
 ```
