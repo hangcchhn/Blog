@@ -34,7 +34,7 @@
 
 ---
 - 新生代初始大小
-    - `-XX:NewSize=n`
+    - `-XX:NewSize=256m`
 - 新生代最大大小
     - `-Xmn512m`
     - `-XX:MaxNewSize=512m`

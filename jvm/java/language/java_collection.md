@@ -77,6 +77,10 @@ Arrays.ArrayList类虽然实现了List接口，但是没有完整的实现List�
 - `CopyOnWriteArrayList`是`ArrayList`的线程安全版本
 - `LinkedBlokingQueue`
 
+- 线程不安全的
+    - ArrayList
+    - HashSet
+    - HashMap
 
 ---
 
