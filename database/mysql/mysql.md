@@ -42,3 +42,38 @@ mysqladmin kill Id
 - mysql
 - sys
 
+
+
+---
+
+
+```sql
+
+-- 导出csv文件
+select * from table_name
+    into outfile '/folder/file.csv'
+    fields terminated by ","
+    escaped by '' optionally
+    enclosed  by ''   lines
+    terminated by '\n' ;
+
+
+show variables like '%secure%';
+-- secure_file_priv
+-- ini:secure-file-priv=/folder
+
+
+
+```
+---
+
+```sh
+mysqldump -u<username> -p<password> \
+-t -T /folder database  table \
+--fields-terminated-by=',' \
+--fields-escaped-by='' \
+--fields-optionally-enclosed-by=''
+
+
+```
+- `-t`：只导表数据，不导表结构

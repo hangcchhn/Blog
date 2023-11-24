@@ -1,5 +1,3 @@
-
-
 # celery
 
 - 分布式
@@ -87,40 +85,43 @@ celery -A pkg.app worker -l info -P gevent -E
 --without-heartbeat
 –-heartbeat-interval=10
 
-```
+# 清空任务队列
+--purge, --discard
 
-
----
-
-# 配置
-
-
-
----
-```sh
-# 启动职程
-celery worker --help
-
-```
-
-
-
-
-
-
-
-
-
-
----
-
-后台运行
+# 后台运行
 celery multi start|restart|stop|stopwait w1 -A py_celery -l info
 
 --pidfile=/var/run/celery/%n.pid
 --logfile=/var/log/celery/%n%I.log
 
+```
 
+
+---
+
+## 配置
+
+
+
+```py
+
+
+```
+
+
+
+## 版本
+
+
+
+
+
+
+---
+
+
+
+## 插件
 
 ---
 - flower
@@ -143,7 +144,7 @@ pip install django_celery_beat
 
 
 ---
-
+## 问题
 - AttributeError: 'EntryPoints' object has no attribute 'get'
     - `pip install importlib-metadata==4.13.0`
 
@@ -151,6 +152,7 @@ pip install django_celery_beat
     - 没有使用`@pkg_app.task`，而是使用`@shared_task`，也要导入`from pkg.app import pkg_app`
 
 
+- 内存泄漏
 
 
 

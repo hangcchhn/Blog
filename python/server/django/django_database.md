@@ -62,3 +62,35 @@ from app_module.models import PersonModel
 admin.site.register(PersonModel)
 
 ```
+
+
+## QuerySet
+
+- 惰性
+```py
+
+TableModel.queryset()
+
+
+```
+
+
+
+- 缓存
+
+
+```py
+# 生成器：分页
+def get_page():
+    yield queryset[start:end]
+
+
+# 迭代器：遍历
+for item in queryset.iterator():
+
+    pass
+
+
+
+
+```
