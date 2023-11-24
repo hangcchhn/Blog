@@ -44,6 +44,17 @@
 
 
 
+---
+
+
+- OOP(Ordinary Object Pointer):原始对象指针
+
+- 引用地址长度:64bit变成32bit
+- `-XX:+UseCompressedOops`:默认启动
+- `-XX:CompressedClassSpaceSize=1g`:默认大小1g
+
+
+- Compressed Class Space属于Metaspace(jdk>8)
 
 
 ## 非堆内存
@@ -57,6 +68,14 @@
     - `-XX:PermSize=256m`
 - 非堆内存最大大小，默认是系统内存的1/4
     - `-XX:MaxPermSize=1g`
+
+## 直接内存
+- `-XX:MaxDirectMemorySize=16m`
+
+---
+## 代码缓存
+- `-XX:InitialCodeCacheSize=4m`
+- `-XX:ReservedCodeCacheSize=8m`
 
 
 
