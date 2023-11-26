@@ -94,7 +94,14 @@ celery multi start|restart|stop|stopwait w1 -A py_celery -l info
 --pidfile=/var/run/celery/%n.pid
 --logfile=/var/log/celery/%n%I.log
 
+
+# linux process = perfork
+celery -A pkg.app worker -l info -P prefork -E
+--max-tasks-per-child=1 --max-memory-per-child=1g
+
 ```
+
+- 参数`--max-tasks-per-child=1 --max-memory-per-child=1g`只支持`--pool=prefork`
 
 
 ---
@@ -152,7 +159,6 @@ pip install django_celery_beat
     - 没有使用`@pkg_app.task`，而是使用`@shared_task`，也要导入`from pkg.app import pkg_app`
 
 
-- 内存泄漏
 
 
 

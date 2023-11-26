@@ -76,7 +76,8 @@ systemctl enable|disable ******|******.service
 
 
 systemctl list-unit-files
-systemctl list-units
+systemctl list-units --type=service
+systemctl list-units --state=active
 
 systemctl daemon-reload
 
