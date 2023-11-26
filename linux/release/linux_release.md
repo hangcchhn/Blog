@@ -63,6 +63,10 @@ cat /etc/os-release
 - 基于Arch Linux
 - AUR(Arch User Repository)
 
+- intel:driver=intel
+- AMD:driver=mesa
+- acpi_osi=! acpi_osi="Windows2009"
+
 ## Kali Linux
 
 ## Gentoo Linux
