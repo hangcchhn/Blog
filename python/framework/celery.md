@@ -97,11 +97,14 @@ celery multi start|restart|stop|stopwait w1 -A py_celery -l info
 
 # linux process = perfork
 celery -A pkg.app worker -l info -P prefork -E
---max-tasks-per-child=1 --max-memory-per-child=1g
+#
+--max-tasks-per-child=10
+# 单位KB
+--max-memory-per-child=1024
 
 ```
 
-- 参数`--max-tasks-per-child=1 --max-memory-per-child=1g`只支持`--pool=prefork`
+- 参数`--max-tasks-per-child=1 --max-memory-per-child=1024`只支持`--pool=prefork`模式
 
 
 ---

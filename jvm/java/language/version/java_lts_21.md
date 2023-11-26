@@ -39,6 +39,18 @@ switch (o) {
 
 
 ## 虚拟线程
-> Visual Thread
+> Virtual Threads
+- 协程
+
+- Spring Boot 3.2.0
+- Java 21
 
 
+### CRaC(Coordinated Restore at Checkpoint)
+- OpenJDK
+
+
+- Micrometer
+
+
+- GraalVM

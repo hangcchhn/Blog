@@ -152,9 +152,27 @@ $$
 $$
 
 ---
+## 矩阵分解
+> Matrix Decomposition
+
+### LU分解
 
 
-## 奇异值分解
+### QR分解
+
+
+
+### Cholesky分解
+> Cholesky Decomposition
+
+### 特征分解
+> Eigen Decomposition
+
+- Eigen Value
+
+- Eigen Vector
+
+### 奇异值分解
 > SVD(Singular Value Decomposition)
 $$
 
