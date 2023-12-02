@@ -56,7 +56,7 @@ date -d '1 day' +'%Y-%m-%d'
 一天前
 date -d '-1 day'  +'%Y-%m-%d'
 date -d '1 day ago'  +'%Y-%m-%d'
-
+date -d '1 day ago'  +'%Y-%m-%d'
 year,month,day,hour,minute,second
 
 ```

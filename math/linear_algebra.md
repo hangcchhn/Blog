@@ -50,16 +50,17 @@ $$
 - $|\pmb{A}| = \det(\pmb{A})$
 
 $$
-\det(\pmb{A}) = \sum\limits_{j = 1}^{N}{a_{ij}A_{ij}} \quad i = 1, 2, \cdots, N
-
-\\
-\pmb{A}_{ij} = (-1)^{i + j} \pmb{M}_{ij}
-\\
-
+\det(\pmb{A}) = \sum\limits_{i = 1}^{N}\sum\limits_{j = 1}^{N}{a_{ij}A_{ij}}
 $$
 
-- $\pmb{A}_{ij}$:元素$a_{ij}$的代数余子式
-- 把N阶行列式 中的元素$a_{ij}$所在第i行和第j列去掉后。剩下的N-1阶行列式，称元素$a_{ij}$的余子式，记$\pmb{M}_{ij}$
+
+$$
+\pmb{A}_{ij} = (-1)^{i + j} \pmb{M}_{ij}
+$$
+
+- $\pmb{A}_{ij}$:元素$a_{ij}$的代数余子式。
+- 把N阶行列式 中的元素$a_{ij}$所在第i行和第j列去掉后。
+- 剩下的N-1阶行列式，称元素$a_{ij}$的余子式，记$\pmb{M}_{ij}$。
 
 - $\det(\pmb{A}) \neq 0 \iff \pmb{A}$ 是非奇异矩阵
 $$

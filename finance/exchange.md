@@ -15,16 +15,14 @@
 - 上海票据交易所
 - 上海黄金交易所
 
-- 郑州商品交易所
-- 大连商品交易所
+
 
 - 银登中心：银行业信贷资产登记流转中心有限公司
 - 场外
 
 - 北京金融资产交易所
     - CFAE(China Financial Assets Exchange)
-- 中金所：中国金融期货交易所
-    - CFFEX(China Financial Futures Exchange)
+
 
 - 中国外汇交易中心
     - CFETS(China Foreign Exchange Trade System)
